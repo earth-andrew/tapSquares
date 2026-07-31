@@ -1,0 +1,5 @@
+scoreID,patchLevel?,trigger,property,value,localTarget,playerTarget,loop?,playerMarker,operation,show?,imageName,column,round_play,phase
+1,TRUE,,,0,totalHarvestedLight,,FALSE,,set,FALSE,,,1 2 3,1
+2,TRUE,,,0,totalHarvestedHeavy,,FALSE,,set,FALSE,,,1 2 3,1
+4,TRUE,selected?,currentChoice = 1,5,totalHarvestedLight,,FALSE,selectedBy,add,TRUE,harvestLight,1,1 2 3,1
+5,TRUE,selected?,currentChoice = 2,10,totalHarvestedHeavy,,FALSE,selectedBy,add,TRUE,harvestHeavy,1,1 2 3,1

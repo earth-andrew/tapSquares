@@ -1,0 +1,19 @@
+;; game details.nls
+;; Tiger game — Stage 1 of 10
+;; See the tapSquares Builder Guide for the goals, key concepts, and testing
+;; goals associated with this stage.
+
+patches-own [
+  treeCount
+  grassMass
+]
+
+to set-initial-player-conditions
+end
+
+to set-initial-patch-conditions
+end
+
+to set-additional-game-level-conditions
+
+end

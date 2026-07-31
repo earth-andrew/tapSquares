@@ -1,0 +1,13 @@
+functionID,expression,round_play,phase
+1,foreach n-values numPlayers [?1 -> ?1] [?1 -> ask one-of patches with [inGame? and member? (?1 + 1)  playerAccess] [set animalCount replace-item ?1 animalCount numAnimals]],0,2
+2,ask displayTurtles with [identity = 2] [set fed? false if [grassMass + forageMass] of patch-here >=  (minGrassMass + grassPerTurnEat) [set fed? true ask patch-here [let currentEat grassPerTurnEat let currentForage (min list currentEat forageMass) set forageMass (forageMass - currentForage) set currentEat (currentEat - currentForage) set grassMass (grassMass - currentEat) set forageCount (ceiling (forageMass / grassMass_forage)) ]]],1 2 3 4 5 6 7 8 9 10,1 2
+3,ask patches with [inGame? and (count displayTurtles-here with [identity = 3] ) > forageCount] [ask n-of ((count displayTurtles-here with [identity = 3] ) -  forageCount) displayTurtles-here with [identity = 3] [die]],1 2 3 4 5 6 7 8 9 10,1 2
+4,ask displayTurtles with [identity = 2 and not fed?] [if random-float 1 < pDie_unfed [die]],1 2 3 4 5 6 7 8 9 10,1 2
+5,ask displayTurtles with [identity = 2 and [not fenced?] of patch-here] [let checkNeighbor one-of neighbors with [inGame?] if [grassMass + forageMass] of checkNeighbor > [grassMass + forageMass] of patch-here [move-to checkNeighbor setxy (pxcor - 0.5 + random-float 1) (pycor - 0.5 + random-float 1)]],1 2 3 4 5 6 7 8 9 10,1 2
+6,foreach n-values numPlayers [?1 -> ?1][?1 -> ask displayTurtles with [identity = 2 and owner = (?1 + 1)] [let placedPatches patches with [selectedBy = (?1 + 1) and currentChoice = 1] if any? placedPatches [move-to one-of placedPatches setxy (pxcor - 0.5 + random-float 1) (pycor - 0.5 + random-float 1)]]],1 2 3 4 5 6 7 8 9 10,1 2
+7,ask patches with [inGame?] [foreach n-values numPlayers [?1 -> ?1] [?1 -> set animalCount replace-item ?1 animalCount count displayTurtles-here with [identity = 2 and owner = (?1 + 1)]]],1 2 3 4 5 6 7 8 9 10,1 2
+8,ask patches with [inGame? and currentChoice = 4] [set fenced? TRUE],1 2 3 4 5 6 7 8 9 10,1 2
+9,"ask borders with [identity = \""fenced?\""] [die]",1 2 3 4 5 6 7 8 9 10,1 2
+10,"make-shared-borders \""line-fence\"" brown \""fenced?\"" FALSE",1 2 3 4 5 6 7 8 9 10,1 2
+11,ask patches with [inGame? and currentChoice = 2] [set forageCount (forageCount + 1) set forageMass forageMass + grassMass_forage],1 2 3 4 5 6 7 8 9 10,1 2
+12,foreach n-values numPlayers [?1 -> ?1] [?1 -> set playerOffFarmIncome replace-item ?1 playerOffFarmIncome (floor  ((item ?1 playerCurrentResources) / cost_offFarmIncome) * cost_offFarmIncome * mult_offFarmIncome)],1 2 3 4 5 6 7 8 9 10,1 2

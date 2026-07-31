@@ -1,0 +1,4 @@
+actionID,imageName,round_play,phaseAvailable,effort,flags
+1,placeAnimals,1 2 3 4 5 6 7 8,1 2,2,
+2,addForage,1 2 3 4 5 6 7 8,1 2,5,
+3,buildFence,1 2 3 4 5 6 7 8,1 2,10,

@@ -1,0 +1,4 @@
+functionID,trigger,localVariables,localTargets,expression,round_play,phase,xOffset,yOffset
+1,currentChoice = 1,,,"set cropped? TRUE set vegCount 0 set cropCount soilQuality * fullCrop ask displayTurtles-here with [shape = \""grass\"" or shape = \""tree\""] [die]",1 2 3 4,1 2 3 4,0,0
+2,cropped?,,,"ask displayTurtles-here with [shape = \""crop\"" ] [set size size + (cropR * size * (1 - size / cropMaxSize) * rainFactor)]",1 2 3 4,1 2 3 4,0,0
+3,not cropped? and not water?,,,"ask displayTurtles-here with [shape = \""grass\"" ] [set size size + (vegR * size * (1 - size / vegMaxSize) * rainFactor) ]",1 2 3 4,1 2 3 4,0,0

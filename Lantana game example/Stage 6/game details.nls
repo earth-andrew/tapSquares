@@ -1,0 +1,50 @@
+;; game details.nls
+;; Lantana game — Stage 6 of 6
+;; See the tapSquares Builder Guide for the goals, key concepts, and testing
+;; goals associated with this stage.
+
+globals [
+  pDegraded_increment
+]
+
+patches-own [
+  hasResource
+  degraded
+  pDegraded
+  totalHarvestedLight
+  totalHarvestedHeavy
+  totalCropped
+]
+
+to set-initial-player-conditions
+
+end
+
+to set-initial-patch-conditions
+  set hasResource false
+  set degraded false
+  set pDegraded 0
+  set totalHarvestedLight 0
+  set totalHarvestedHeavy 0
+  set totalCropped 0
+end
+
+to set-additional-game-level-conditions
+
+end
+
+;; Shared by scoringFunction.csv (scoreID 7) and infoScreenList.csv
+;; (screenID 1), which both need "everything this patch has earned" — one
+;; reporter instead of duplicating the same expression in two CSV files.
+to-report total-patch-score-components
+  report totalHarvestedLight + totalHarvestedHeavy + totalCropped
+end
+
+;; Note on spatialFunctionList.csv functionID 7 ("degraded = FALSE and
+;; (currentChoice = 4)" -> "set pDegraded 0"): functionID 1 already resets
+;; pDegraded to 0 unconditionally on every not-yet-degraded patch, earlier
+;; in the same pass, and nothing between rows 1 and 7 can raise pDegraded
+;; back up on a patch where currentChoice = 4 (the one row that does,
+;; functionID 6, requires currentChoice = 2 instead — mutually exclusive).
+;; So functionID 7 is inert exactly as authored in the original game; it's
+;; preserved here rather than removed, since it's harmless.

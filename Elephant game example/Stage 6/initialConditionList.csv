@@ -1,0 +1,4 @@
+conditionID,variable,conditionType,probability,onlyIf,notIf,valueMode,valueExpression,minValue,maxValue
+1,vegCount,boolean,1,,"""water?""",expression,soilQuality * fullVeg,,
+2,treeCount,boolean,0.3,,"""water?""",integer,,1,2
+3,elephantCount,boolean,0.1,,"""water?""",integer,,3,9

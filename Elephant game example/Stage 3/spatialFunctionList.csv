@@ -1,0 +1,2 @@
+functionID,trigger,localVariables,localTargets,expression,round_play,phase,xOffset,yOffset
+1,currentChoice = 1,,,"set cropped? TRUE set vegCount 0 set cropCount soilQuality * fullCrop ask displayTurtles-here with [shape = \""grass\"" or shape = \""tree\""] [die]",1 2 3 4,1 2 3 4,0,0

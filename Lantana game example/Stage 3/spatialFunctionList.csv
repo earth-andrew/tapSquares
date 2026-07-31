@@ -1,0 +1,7 @@
+functionID,trigger,localVariables,localTargets,expression,round_play,phase,xOffset,yOffset
+1,degraded = FALSE,,,set pDegraded  0,1 2 3,1,0,0
+2,degraded = TRUE,,,set pDegraded (pDegraded + pDegraded_increment),1 2 3,1,-1,0
+3,degraded = TRUE,,,set pDegraded (pDegraded + pDegraded_increment),1 2 3,1,1,0
+4,degraded = TRUE,,,set pDegraded (pDegraded + pDegraded_increment),1 2 3,1,0,-1
+5,degraded = TRUE,,,set pDegraded (pDegraded + pDegraded_increment),1 2 3,1,0,1
+8,degraded = FALSE,,,set degraded  (random-float 1 < pDegraded),1 2 3,1,0,0

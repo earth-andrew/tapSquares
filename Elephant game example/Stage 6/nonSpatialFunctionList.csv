@@ -1,0 +1,4 @@
+functionID,expression,round_play,phase
+1,assign-elephants,0,1
+2,move-elephants,1 2 3 4,1 2 3 4
+3,feed-elephants,1 2 3 4,1 2 3 4

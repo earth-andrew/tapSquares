@@ -1,0 +1,339 @@
+globals [
+  ;; Proportion of playable patches that become water.
+  ;; Read from sessionList.csv.
+  fractionWater
+
+  ;; Probability that a new water patch is added beside
+  ;; an existing water patch when that is possible.
+  ;; Read from sessionList.csv.
+  probWaterConnected
+  
+  ;;Max number of plants per patch
+  fullVeg
+  
+  ;;Max number of crops per patch
+  fullCrop
+  
+  ;;Size ranges for veg and crops
+  cropMinSize
+  cropMaxSize
+  vegMinSize
+  vegMaxSize
+  
+  ;;growth parameters for crops and veg
+  cropR
+  vegR
+  
+  ;;movement parameters for elephants
+  elephantLookRadius
+  firstCutPatches
+  elephantMoveNoise
+  
+  elephantEatRadius
+  elephantNeedsTurn
+  
+  
+  ;;rain and water parameters
+  deepestWaterColor
+
+  raindropMaxLength
+  raindropHeading
+  raindropsPerSquareMax
+  
+  pRain
+  rainFactor
+  rainFactorMin
+  
+]
+
+breed [raindrops raindrop]
+
+patches-own [
+
+
+  ;; True when this patch belongs to the water landscape.
+  water?
+  
+  ;; True when this patch has been selected for cropping
+  cropped?
+
+  ;; True when water hole is dried up
+  driedUp?
+  
+  ;;Number of crop plants in the patch
+  cropCount
+  
+  ;;Number of plants in the patch
+  vegCount
+  
+  ;;Number of trees in the patch
+  treeCount
+  
+  ;;Number of elephants spawning here
+  elephantCount
+  
+  ;;Quality of soil in the patch
+  soilQuality
+  
+  ;;level of water (if water)
+  waterLevel
+]
+
+
+to set-initial-patch-conditions
+  set water? false
+  set cropped? false
+  set driedUp? false
+  
+  set cropCount 0
+  set vegCount 0
+  set treeCount 0
+  set elephantCount 0
+  set waterLevel -99
+ 
+
+end
+
+
+to set-initial-player-conditions
+  ;; No additional player conditions are required in Stage 1.
+end
+
+
+to set-additional-game-level-conditions
+  
+  set cropMinSize 0.05
+  set cropMaxSize 0.35
+  set vegMinSize 0.05
+  set vegMaxSize 0.35
+  
+  set elephantLookRadius 3
+  set firstCutPatches 3
+  set elephantMoveNoise 1
+  set elephantEatRadius 1
+  set elephantNeedsTurn 2
+  
+  set deepestWaterColor 92
+  
+  set raindropMaxLength 0.5 
+  set raindropHeading 30 
+  set raindropsPerSquareMax 10 
+  
+  set-default-shape raindrops "line"
+  set pRain runresult (word "list " pRain)
+  
+  setup-soil
+  initialize-water
+  
+  ask one-of turtles [make-rain (last pRain)]
+  
+end
+
+
+to initialize-water
+
+  ;; Calculate the desired number of water patches.
+  let numWaterPatches round (
+    fractionWater * count patches with [inGame?]
+  )
+
+  repeat numWaterPatches [
+
+    ;; Record whether this iteration successfully added
+    ;; a patch beside existing water.
+    let newWaterFound false
+
+    ;; With the specified probability, try to extend an
+    ;; existing water body.
+    if (
+      random-float 1 < probWaterConnected
+      and any? patches with [inGame? and water?]
+    ) [
+      let waterEdges patch-set (
+        [neighbors4 with [inGame? and not water?]]
+        of patches with [inGame? and water?]
+      )
+
+      if any? waterEdges [
+       ask one-of waterEdges [
+          set water? true 
+          set waterLevel ([waterLevel + 1] of one-of neighbors4 with [inGame? and water?])
+        ]
+ 
+
+        set newWaterFound true
+      ]
+    ]
+
+    ;; If no connected patch was added, begin a new water
+    ;; patch elsewhere on the playable landscape.
+    if not newWaterFound [
+      let availableLand patches with [
+        inGame? and not water?
+      ]
+
+      if any? availableLand [
+        ask one-of availableLand [
+          set water? true
+          set waterLevel 0
+        ]
+      ]
+    ]
+  ]
+end
+
+to make-rain [currentP]
+  
+  ;;remove other raindrops, if any
+  ask raindrops [die]
+
+  ;;if it rains this turn
+  ifelse random-float 1 < currentP [
+    
+    ;;set rainFactor to 1 - no impact
+    set rainFactor 1
+    
+    ;;make raindrops as a visualization of raining
+    hatch-raindrops (max-pycor * max-pycor * raindropsPerSquareMax) [
+      set size random-float raindropMaxLength
+      set color sky
+      set heading raindropHeading
+      setxy random-xcor random-ycor
+    ]
+    
+    ;;let any water hole fill up
+    ask patches with [inGame? and water?][set driedUp? false]
+    
+  ] [
+    
+    ;;if it doesn't rain, set rainFactor to whatever impact it has when its dry
+    set rainFactor rainFactorMin
+    
+    ;;let the current shallowest water holes dry up
+    let shallowestWater max [waterLevel] of patches with [inGame? and water? and not driedUp?]
+      ask patches with [inGame? and water? and waterLevel = shallowestWater] [set driedUp? true]
+    
+  ]
+  
+end
+
+to setup-soil
+  ; 1. Initialize patches with random uniform values
+  ask patches with [inGame?] [ set soilQuality random-float 1 ]
+  
+  ; 2. Smooth the patches to create spatial correlation
+  repeat 10 [
+    ask patches with [inGame?] [
+      ; Each patch takes the average of its neighbors plus a tiny random noise
+      let neighbor-mean mean [soilQuality] of neighbors with [inGame?]
+      set soilQuality (neighbor-mean * 0.9) + ((random-float 0.1) * 0.1)
+    ]
+  ]
+  
+  ; 3. Normalize values back to 0-100 range
+  let max-q max [soilQuality] of patches with [inGame?]
+  let min-q min [soilQuality] of patches with [inGame?]
+  ask patches with [inGame?] [
+    set soilQuality ((soilQuality - min-q) / (max-q - min-q))
+  ]
+  
+end
+
+to assign-elephants
+  
+  ;;sets up each group of elephants as a herd with a matriarch
+  ask patches with [any? displayTurtles-here with [shape = "elephant"]] [
+    
+    ;;identify the herd
+    let herd turtle-set displayTurtles-here with [shape = "elephant"]
+    
+    ;;mark the matriarch, and have her tell the others
+    ask max-one-of herd [size] [set secondIdentity "mom" ask other herd [set secondIdentity myself]]
+    
+  ]
+  
+end
+
+to move-elephants
+  
+  ;;ask the matriarchs
+  ask displayTurtles with [secondIdentity = "mom"] [
+    
+    ;;identify the set of best food patches around
+    let goodFoodPatches max-n-of firstCutPatches patches in-radius elephantLookRadius [sum [size] of displayTurtles-here with [shape = "crop"] + sum [size] of displayTurtles-here with [shape = "grass"]]
+   
+    ;;pick the one that is closest to water
+    let foodDestination min-one-of goodFoodPatches [ distance min-one-of (patches with [inGame? and water?]) [distance myself] ]
+
+    ;;go there
+    move-to foodDestination
+    
+  ]
+  
+  ;;ask the other elephants
+  ask displayTurtles with [shape = "elephant" and not (secondIdentity = "mom") ] [
+    
+    ;;move somewehere near the matriarch
+    move-to secondIDentity
+    set xcor (min list max-pxcor (max list 0 (xcor + (random-float 2 * elephantMoveNoise - 1))))
+    set ycor (min list max-pycor (max list 0 (ycor + (random-float 2 * elephantMoveNoise - 1))))
+    
+  ]
+  
+  ;;update the patch-level counters for how many elephants are supposed to be here
+  ask patches with [inGame?] [set elephantCount count displayTurtles-here with [shape = "elephant"]]
+end
+
+to feed-elephants
+  
+  ;;ask all the elephants
+  ask displayTurtles with [shape = "elephant"] [
+   
+    ;;mark out our current needs
+    let currentNeeds elephantNeedsTurn
+    
+    ;;make a flag that signals whether to keep looping
+    let notDone true
+    
+    
+    while [notDone] [
+      
+      ;;pick the biggest crop or veg in sight, if there is one
+      let currentTarget max-one-of displayTurtles with [shape = "grass" or shape = "crop"] in-radius elephantEatRadius [size]
+      
+      (ifelse 
+        
+        ;;if there's nothing, do nothing
+        currentTarget = nobody [
+          
+          ;;there's nothing here
+          
+        ]
+        
+        ;;otherwise if its crop or grass, eat as much as we need or whatever's left
+        [shape] of currentTarget = "crop" [
+          let currentBite (min list currentNeeds ([size - cropMinSize] of currentTarget))
+          ask currentTarget [set size (size - currentBite)]
+          set currentNeeds currentNeeds - currentBite
+          
+        
+        ]
+        
+        [shape] of currentTarget = "grass" [
+ 
+          let currentBite (min list currentNeeds ([size - vegMinSize] of currentTarget))
+          ask currentTarget [set size (size - currentBite)]
+          set currentNeeds currentNeeds - currentBite
+        
+ 
+      ])  
+      
+      ;;if we have what we need, stop
+      if currentNeeds <= 0 [set notDone false]
+      
+      ;;if there's nothing left to eat, stop
+      if not any? displayTurtles with [(shape = "grass" and size > vegMinSize) or (shape = "crop" and size > cropMinSize)] in-radius elephantEatRadius [set notDone false]
+    ]
+    
+  ]
+end

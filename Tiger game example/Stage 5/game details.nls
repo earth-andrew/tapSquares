@@ -1,0 +1,37 @@
+;; game details.nls
+;; Tiger game — Stage 5 of 10
+;; See the tapSquares Builder Guide for the goals, key concepts, and testing
+;; goals associated with this stage.
+
+globals [
+  grassR
+  grassK
+  numAnimals
+  minGrassMass
+  grassPerTurnEat
+  pDie_unfed
+  grassMass_forage
+]
+
+patches-own [
+  treeCount
+  grassMass
+  animalCount
+  forageCount
+  forageMass
+  fenced?
+]
+
+to set-initial-player-conditions
+end
+
+to set-initial-patch-conditions
+  set animalCount n-values numPlayers [0]
+  set forageCount 0
+  set forageMass 0
+  set fenced? false
+end
+
+to set-additional-game-level-conditions
+
+end

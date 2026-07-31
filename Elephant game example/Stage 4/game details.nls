@@ -1,0 +1,155 @@
+globals [
+  ;; Proportion of playable patches that become water.
+  ;; Read from sessionList.csv.
+  fractionWater
+
+  ;; Probability that a new water patch is added beside
+  ;; an existing water patch when that is possible.
+  ;; Read from sessionList.csv.
+  probWaterConnected
+  
+  ;;Max number of plants per patch
+  fullVeg
+  
+  ;;Max number of crops per patch
+  fullCrop
+  
+  ;;Size ranges for veg and crops
+  cropMinSize
+  cropMaxSize
+  vegMinSize
+  vegMaxSize
+  
+  ;;growth parameters for crops and veg
+  cropR
+  vegR
+  
+]
+
+patches-own [
+
+
+  ;; True when this patch belongs to the water landscape.
+  water?
+  
+  ;; True when this patch has been selected for cropping
+  cropped?
+
+  ;;Number of crop plants in the patch
+  cropCount
+  
+  ;;Number of plants in the patch
+  vegCount
+  
+  ;;Number of trees in the patch
+  treeCount
+  
+  ;;Number of elephants spawning here
+  elephantCount
+  
+  ;;Quality of soil in the patch
+  soilQuality
+  
+]
+
+
+to set-initial-patch-conditions
+  set water? false
+  set cropped? false
+  
+  set cropCount 0
+  set vegCount 0
+  set treeCount 0
+  set elephantCount 0
+ 
+
+end
+
+
+to set-initial-player-conditions
+  ;; No additional player conditions are required in Stage 1.
+end
+
+
+to set-additional-game-level-conditions
+  
+  set cropMinSize 0.05
+  set cropMaxSize 0.35
+  set vegMinSize 0.05
+  set vegMaxSize 0.35
+  
+  setup-soil
+  initialize-water
+end
+
+
+to initialize-water
+
+  ;; Calculate the desired number of water patches.
+  let numWaterPatches round (
+    fractionWater * count patches with [inGame?]
+  )
+
+  repeat numWaterPatches [
+
+    ;; Record whether this iteration successfully added
+    ;; a patch beside existing water.
+    let newWaterFound false
+
+    ;; With the specified probability, try to extend an
+    ;; existing water body.
+    if (
+      random-float 1 < probWaterConnected
+      and any? patches with [inGame? and water?]
+    ) [
+      let waterEdges patch-set (
+        [neighbors4 with [inGame? and not water?]]
+        of patches with [inGame? and water?]
+      )
+
+      if any? waterEdges [
+        ask one-of waterEdges [
+          set water? true
+        ]
+
+        set newWaterFound true
+      ]
+    ]
+
+    ;; If no connected patch was added, begin a new water
+    ;; patch elsewhere on the playable landscape.
+    if not newWaterFound [
+      let availableLand patches with [
+        inGame? and not water?
+      ]
+
+      if any? availableLand [
+        ask one-of availableLand [
+          set water? true
+        ]
+      ]
+    ]
+  ]
+end
+
+to setup-soil
+  ; 1. Initialize patches with random uniform values
+  ask patches with [inGame?] [ set soilQuality random-float 1 ]
+  
+  ; 2. Smooth the patches to create spatial correlation
+  repeat 10 [
+    ask patches with [inGame?] [
+      ; Each patch takes the average of its neighbors plus a tiny random noise
+      let neighbor-mean mean [soilQuality] of neighbors with [inGame?]
+      set soilQuality (neighbor-mean * 0.9) + ((random-float 0.1) * 0.1)
+    ]
+  ]
+  
+  ; 3. Normalize values back to 0-100 range
+  let max-q max [soilQuality] of patches with [inGame?]
+  let min-q min [soilQuality] of patches with [inGame?]
+  ask patches with [inGame?] [
+    set soilQuality ((soilQuality - min-q) / (max-q - min-q))
+  ]
+  
+end
