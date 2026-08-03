@@ -2,8 +2,7 @@
 <model version="NetLogo 7.0.3" snapToGrid="false">
   <code><![CDATA[extensions [bitmap csv palette]
 
-__includes [
-]
+__includes ["game details.nls"]
 
 ;;Game builders may opt for game-specific breeds
 breed [borders border]
