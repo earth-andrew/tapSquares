@@ -1,0 +1,32 @@
+globals [
+  
+    ;;GAME-SPECIFIC GLOBALS
+  ;;(game builders should expect to change these values as they build)
+  ;;these should be initialized in game input files
+
+  
+]
+
+
+patches-own [ ]
+
+
+to set-initial-patch-conditions
+  
+
+end
+
+to set-initial-player-conditions
+  
+
+  
+end
+
+to set-additional-game-level-conditions
+
+  
+end
+
+
+
+
