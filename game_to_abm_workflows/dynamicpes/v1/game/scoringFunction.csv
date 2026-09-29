@@ -1,0 +1,7 @@
+scoreID,patchLevel?,trigger,property,value,localTarget,playerTarget,loop?,playerMarker,operation,show?,imageName,column,round_play,phase
+1,TRUE,,,0,canolaPoints,,FALSE,,set,FALSE,,,1 2 3 4 5 6 7 8,2
+2,TRUE,,,0,paymentPoints,,FALSE,,set,FALSE,,,1 2 3 4 5 6 7 8,2
+3,TRUE,hasCanola = TRUE,round(yield),1,canolaPoints,,FALSE,ownedBy,add,TRUE,canola,1,1 2 3 4 5 6 7 8,2
+4,TRUE,hasFlower = TRUE,hasFlower = TRUE,bonusFlower,paymentPoints,,FALSE,ownedBy,add,FALSE,,,1 2 3 4 5 6 7 8,2
+5,TRUE,hasGrass = true,hasGrass = true,bonusGrass,paymentPoints,,FALSE,ownedBy,add,TRUE,payment,1,1 2 3 4 5 6 7 8,2
+6,TRUE,,canolaPoints + paymentPoints,1,,playerCurrentScore,FALSE,ownedBy,add,TRUE,,2,1 2 3 4 5 6 7 8,2

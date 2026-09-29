@@ -1,0 +1,91 @@
+functionID,trigger,localVariables,localTargets,expression,round_play,phase,xOffset,yOffset
+1,currentChoice = 1,,,set hasCanola TRUE set hasGrass FALSE set hasFlower FALSE set canolaCount soilQuality * fullCanola set flowerCount 0 set grassCount 0 ask displayTurtles-here [die],1 2 3 4 5 6 7 8,1,0,0
+2,currentChoice = 2,,,set hasCanola FALSE set hasGrass TRUE set hasFlower FALSE set grassCount soilQuality * fullGrass set canolaCount 0 set flowerCount 0 ask displayTurtles-here [die],1 2 3 4 5 6 7 8,1,0,0
+3,currentChoice = 3,,,set hasCanola FALSE set hasGrass FALSE set hasFlower TRUE set flowerCount soilQuality * fullFlower set canolaCount 0 set grassCount 0 ask displayTurtles-here [die],1 2 3 4 5 6 7 8,1,0,0
+4,currentChoice > 0,,,set predatorCount initial_predator_count set pollinatorCount initial_pollinator_count set pestcount initial_pest_count,1 2 3 4 5 6 7 8,1,0,0
+5,currentChoice = 4,,,set pestCount (max (list 0 (pestCount - sprayMortality * pestCount))) set predatorCount (max (list 0 (predatorCount - sprayMortality * predatorCount))) set pollinatorCount (max (list 0 (pollinatorCount - sprayMortality * pollinatorCount))),1 2 3 4 5 6 7 8,2,0,0
+6,currentChoice = 4,,,set pestCount (max (list 0 (pestCount - sprayMortality * pestCount * increment_orth_1))) set predatorCount (max (list 0 (predatorCount - sprayMortality * predatorCount * increment_orth_1))) set pollinatorCount (max (list 0 (pollinatorCount - sprayMortality * pollinatorCount * increment_orth_1))),1 2 3 4 5 6 7 8,2,-1,0
+7,currentChoice = 4,,,set pestCount (max (list 0 (pestCount - sprayMortality * pestCount * increment_orth_1))) set predatorCount (max (list 0 (predatorCount - sprayMortality * predatorCount * increment_orth_1))) set pollinatorCount (max (list 0 (pollinatorCount - sprayMortality * pollinatorCount * increment_orth_1))),1 2 3 4 5 6 7 8,2,1,0
+8,currentChoice = 4,,,set pestCount (max (list 0 (pestCount - sprayMortality * pestCount * increment_orth_1))) set predatorCount (max (list 0 (predatorCount - sprayMortality * predatorCount * increment_orth_1))) set pollinatorCount (max (list 0 (pollinatorCount - sprayMortality * pollinatorCount * increment_orth_1))),1 2 3 4 5 6 7 8,2,0,-1
+9,currentChoice = 4,,,set pestCount (max (list 0 (pestCount - sprayMortality * pestCount * increment_orth_1))) set predatorCount (max (list 0 (predatorCount - sprayMortality * predatorCount * increment_orth_1))) set pollinatorCount (max (list 0 (pollinatorCount - sprayMortality * pollinatorCount * increment_orth_1))),1 2 3 4 5 6 7 8,2,0,1
+10,currentChoice = 4,,,set pestCount (max (list 0 (pestCount - sprayMortality * pestCount * increment_diagonal_1))) set predatorCount (max (list 0 (predatorCount - sprayMortality * predatorCount * increment_diagonal_1))) set pollinatorCount (max (list 0 (pollinatorCount - sprayMortality * pollinatorCount * increment_diagonal_1))),1 2 3 4 5 6 7 8,2,-1,1
+11,currentChoice = 4,,,set pestCount (max (list 0 (pestCount - sprayMortality * pestCount * increment_diagonal_1))) set predatorCount (max (list 0 (predatorCount - sprayMortality * predatorCount * increment_diagonal_1))) set pollinatorCount (max (list 0 (pollinatorCount - sprayMortality * pollinatorCount * increment_diagonal_1))),1 2 3 4 5 6 7 8,2,1,1
+12,currentChoice = 4,,,set pestCount (max (list 0 (pestCount - sprayMortality * pestCount * increment_diagonal_1))) set predatorCount (max (list 0 (predatorCount - sprayMortality * predatorCount * increment_diagonal_1))) set pollinatorCount (max (list 0 (pollinatorCount - sprayMortality * pollinatorCount * increment_diagonal_1))),1 2 3 4 5 6 7 8,2,1,-1
+13,currentChoice = 4,,,set pestCount (max (list 0 (pestCount - sprayMortality * pestCount * increment_diagonal_1))) set predatorCount (max (list 0 (predatorCount - sprayMortality * predatorCount * increment_diagonal_1))) set pollinatorCount (max (list 0 (pollinatorCount - sprayMortality * pollinatorCount * increment_diagonal_1))),1 2 3 4 5 6 7 8,2,-1,-1
+14,hasCanola = TRUE,,,set predatorK  canola_predatorK set pollinatorK canola_pollinatorK set pestK canola_pestK,1 2 3 4 5 6 7 8,2,0,0
+15,hasFlower  = TRUE,,,set predatorK  flower_predatorK set pollinatorK flower_pollinatorK set pestK flower_pestK,1 2 3 4 5 6 7 8,2,0,0
+16,hasGrass  = TRUE,,,set predatorK  grass_predatorK set pollinatorK grass_pollinatorK set pestK grass_pestK,1 2 3 4 5 6 7 8,2,0,0
+17,hasFlower  = TRUE,"""tempValue""","""soilQuality""",set pollinatorK (pollinatorK + increment_orth_1 * tempValue),1 2 3 4 5 6 7 8,2,-1,0
+18,hasFlower  = TRUE,"""tempValue""","""soilQuality""",set pollinatorK (pollinatorK + increment_orth_1 * tempValue),1 2 3 4 5 6 7 8,2,1,0
+19,hasFlower  = TRUE,"""tempValue""","""soilQuality""",set pollinatorK (pollinatorK + increment_orth_1 * tempValue),1 2 3 4 5 6 7 8,2,0,-1
+20,hasFlower  = TRUE,"""tempValue""","""soilQuality""",set pollinatorK (pollinatorK + increment_orth_1 * tempValue),1 2 3 4 5 6 7 8,2,0,1
+21,hasFlower  = TRUE,"""tempValue""","""soilQuality""",set pollinatorK (pollinatorK + increment_diagonal_1 * tempValue),1 2 3 4 5 6 7 8,2,-1,1
+22,hasFlower  = TRUE,"""tempValue""","""soilQuality""",set pollinatorK (pollinatorK + increment_diagonal_1 * tempValue),1 2 3 4 5 6 7 8,2,1,1
+23,hasFlower  = TRUE,"""tempValue""","""soilQuality""",set pollinatorK (pollinatorK + increment_diagonal_1 * tempValue),1 2 3 4 5 6 7 8,2,1,-1
+24,hasFlower  = TRUE,"""tempValue""","""soilQuality""",set pollinatorK (pollinatorK + increment_diagonal_1 * tempValue),1 2 3 4 5 6 7 8,2,-1,-1
+25,hasCanola  = TRUE,"""tempValue""","""soilQuality""",set pestK (pestK + increment_orth_1 * tempValue),1 2 3 4 5 6 7 8,2,-1,0
+26,hasCanola  = TRUE,"""tempValue""","""soilQuality""",set pestK (pestK + increment_orth_1 * tempValue),1 2 3 4 5 6 7 8,2,1,0
+27,hasCanola  = TRUE,"""tempValue""","""soilQuality""",set pestK (pestK + increment_orth_1 * tempValue),1 2 3 4 5 6 7 8,2,0,-1
+28,hasCanola  = TRUE,"""tempValue""","""soilQuality""",set pestK (pestK + increment_orth_1 * tempValue),1 2 3 4 5 6 7 8,2,0,1
+29,hasCanola  = TRUE,"""tempValue""","""soilQuality""",set pestK (pestK + increment_diagonal_1 * tempValue),1 2 3 4 5 6 7 8,2,-1,1
+30,hasCanola  = TRUE,"""tempValue""","""soilQuality""",set pestK (pestK + increment_diagonal_1 * tempValue),1 2 3 4 5 6 7 8,2,1,1
+31,hasCanola  = TRUE,"""tempValue""","""soilQuality""",set pestK (pestK + increment_diagonal_1 * tempValue),1 2 3 4 5 6 7 8,2,1,-1
+32,hasCanola  = TRUE,"""tempValue""","""soilQuality""",set pestK (pestK + increment_diagonal_1 * tempValue),1 2 3 4 5 6 7 8,2,-1,-1
+33,hasGrass  = TRUE,"""tempValue""","""soilQuality""",set predatorK (predatorK + increment_orth_1 * tempValue),1 2 3 4 5 6 7 8,2,-1,0
+34,hasGrass  = TRUE,"""tempValue""","""soilQuality""",set predatorK (predatorK + increment_orth_1 * tempValue),1 2 3 4 5 6 7 8,2,1,0
+35,hasGrass  = TRUE,"""tempValue""","""soilQuality""",set predatorK (predatorK + increment_orth_1 * tempValue),1 2 3 4 5 6 7 8,2,0,-1
+36,hasGrass  = TRUE,"""tempValue""","""soilQuality""",set predatorK (predatorK + increment_orth_1 * tempValue),1 2 3 4 5 6 7 8,2,0,1
+37,hasGrass  = TRUE,"""tempValue""","""soilQuality""",set predatorK (predatorK + increment_diagonal_1 * tempValue),1 2 3 4 5 6 7 8,2,-1,1
+38,hasGrass  = TRUE,"""tempValue""","""soilQuality""",set predatorK (predatorK + increment_diagonal_1 * tempValue),1 2 3 4 5 6 7 8,2,1,1
+39,hasGrass  = TRUE,"""tempValue""","""soilQuality""",set predatorK (predatorK + increment_diagonal_1 * tempValue),1 2 3 4 5 6 7 8,2,1,-1
+40,hasGrass  = TRUE,"""tempValue""","""soilQuality""",set predatorK (predatorK + increment_diagonal_1 * tempValue),1 2 3 4 5 6 7 8,2,-1,-1
+41,inGame?,,,set predatorK predatorK * soilQuality set pollinatorK pollinatorK * soilQuality set pestK pestK * soilQuality,1 2 3 4 5 6 7 8,2,0,0
+42,inGame?,,,if pollinatorK > 0 [ set pollinatorCount pollinatorCount + (pollinatorR * pollinatorCount * (1 - (pollinatorCount / pollinatorK))) ],1 2 3 4 5 6 7 8,2,0,0
+43,inGame?,,,if pestK > 0 [ set pestCount pestCount + (pestR * pestCount * (1 - (pestCount / pestK))) ],1 2 3 4 5 6 7 8,2,0,0
+44,inGame?,,,if predatorK > 0 [ set predatorCount predatorCount + (predatorR * predatorCount * (1 - (predatorCount / predatorK))) ],1 2 3 4 5 6 7 8,2,0,0
+45,hasCanola = TRUE,,,set yield canola_baseYield * soilQuality,1 2 3 4 5 6 7 8,2,0,0
+46,inGame?,,,set pestCount (max (list 0 (pestCount - dPest_predator * predatorCount))),1 2 3 4 5 6 7 8,2,0,0
+47,inGame?,"""tempValue""","""predatorCount""",set pestCount (max (list 0 (pestCount - dPest_predator * tempValue * increment_orth_1))),1 2 3 4 5 6 7 8,2,-1,0
+48,inGame?,"""tempValue""","""predatorCount""",set pestCount (max (list 0 (pestCount - dPest_predator * tempValue * increment_orth_1))),1 2 3 4 5 6 7 8,2,1,0
+49,inGame?,"""tempValue""","""predatorCount""",set pestCount (max (list 0 (pestCount - dPest_predator * tempValue * increment_orth_1))),1 2 3 4 5 6 7 8,2,0,-1
+50,inGame?,"""tempValue""","""predatorCount""",set pestCount (max (list 0 (pestCount - dPest_predator * tempValue * increment_orth_1))),1 2 3 4 5 6 7 8,2,0,1
+51,inGame?,"""tempValue""","""predatorCount""",set pestCount (max (list 0 (pestCount - dPest_predator * tempValue * increment_diagonal_1))),1 2 3 4 5 6 7 8,2,-1,1
+52,inGame?,"""tempValue""","""predatorCount""",set pestCount (max (list 0 (pestCount - dPest_predator * tempValue * increment_diagonal_1))),1 2 3 4 5 6 7 8,2,1,1
+53,inGame?,"""tempValue""","""predatorCount""",set pestCount (max (list 0 (pestCount - dPest_predator * tempValue * increment_diagonal_1))),1 2 3 4 5 6 7 8,2,1,-1
+54,inGame?,"""tempValue""","""predatorCount""",set pestCount (max (list 0 (pestCount - dPest_predator * tempValue * increment_diagonal_1))),1 2 3 4 5 6 7 8,2,-1,-1
+55,inGame?,,,set yield yield + dYIeld_pollinator * pollinatorCount,1 2 3 4 5 6 7 8,2,0,0
+56,inGame?,"""tempValue""","""pollinatorCount""",set yield yield + dYIeld_pollinator * tempValue * increment_orth_1,1 2 3 4 5 6 7 8,2,-1,0
+57,inGame?,"""tempValue""","""pollinatorCount""",set yield yield + dYIeld_pollinator * tempValue * increment_orth_1,1 2 3 4 5 6 7 8,2,1,0
+58,inGame?,"""tempValue""","""pollinatorCount""",set yield yield + dYIeld_pollinator * tempValue * increment_orth_1,1 2 3 4 5 6 7 8,2,0,-1
+59,inGame?,"""tempValue""","""pollinatorCount""",set yield yield + dYIeld_pollinator * tempValue * increment_orth_1,1 2 3 4 5 6 7 8,2,0,1
+60,inGame?,"""tempValue""","""pollinatorCount""",set yield yield + dYIeld_pollinator * tempValue * increment_diagonal_1,1 2 3 4 5 6 7 8,2,-1,1
+61,inGame?,"""tempValue""","""pollinatorCount""",set yield yield + dYIeld_pollinator * tempValue * increment_diagonal_1,1 2 3 4 5 6 7 8,2,1,1
+62,inGame?,"""tempValue""","""pollinatorCount""",set yield yield + dYIeld_pollinator * tempValue * increment_diagonal_1,1 2 3 4 5 6 7 8,2,1,-1
+63,inGame?,"""tempValue""","""pollinatorCount""",set yield yield + dYIeld_pollinator * tempValue * increment_diagonal_1,1 2 3 4 5 6 7 8,2,-1,-1
+64,inGame?,"""tempValue""","""pollinatorCount""",set yield yield + dYIeld_pollinator * tempValue * increment_orth_2,1 2 3 4 5 6 7 8,2,-2,0
+65,inGame?,"""tempValue""","""pollinatorCount""",set yield yield + dYIeld_pollinator * tempValue * increment_orth_2,1 2 3 4 5 6 7 8,2,2,0
+66,inGame?,"""tempValue""","""pollinatorCount""",set yield yield + dYIeld_pollinator * tempValue * increment_orth_2,1 2 3 4 5 6 7 8,2,0,-2
+67,inGame?,"""tempValue""","""pollinatorCount""",set yield yield + dYIeld_pollinator * tempValue * increment_orth_2,1 2 3 4 5 6 7 8,2,0,2
+68,inGame?,"""tempValue""","""pollinatorCount""",set yield yield + dYIeld_pollinator * tempValue * increment_diagonal_2,1 2 3 4 5 6 7 8,2,-2,2
+69,inGame?,"""tempValue""","""pollinatorCount""",set yield yield + dYIeld_pollinator * tempValue * increment_diagonal_2,1 2 3 4 5 6 7 8,2,2,2
+70,inGame?,"""tempValue""","""pollinatorCount""",set yield yield + dYIeld_pollinator * tempValue * increment_diagonal_2,1 2 3 4 5 6 7 8,2,2,-2
+71,inGame?,"""tempValue""","""pollinatorCount""",set yield yield + dYIeld_pollinator * tempValue * increment_diagonal_2,1 2 3 4 5 6 7 8,2,-2,-2
+72,inGame?,"""tempValue""","""pollinatorCount""",set yield yield + dYIeld_pollinator * tempValue * increment_mixed_2,1 2 3 4 5 6 7 8,2,-2,1
+73,inGame?,"""tempValue""","""pollinatorCount""",set yield yield + dYIeld_pollinator * tempValue * increment_mixed_2,1 2 3 4 5 6 7 8,2,2,1
+74,inGame?,"""tempValue""","""pollinatorCount""",set yield yield + dYIeld_pollinator * tempValue * increment_mixed_2,1 2 3 4 5 6 7 8,2,1,-2
+75,inGame?,"""tempValue""","""pollinatorCount""",set yield yield + dYIeld_pollinator * tempValue * increment_mixed_2,1 2 3 4 5 6 7 8,2,-1,-2
+76,inGame?,"""tempValue""","""pollinatorCount""",set yield yield + dYIeld_pollinator * tempValue * increment_mixed_2,1 2 3 4 5 6 7 8,2,-1,2
+77,inGame?,"""tempValue""","""pollinatorCount""",set yield yield + dYIeld_pollinator * tempValue * increment_mixed_2,1 2 3 4 5 6 7 8,2,1,2
+78,inGame?,"""tempValue""","""pollinatorCount""",set yield yield + dYIeld_pollinator * tempValue * increment_mixed_2,1 2 3 4 5 6 7 8,2,2,-1
+79,inGame?,"""tempValue""","""pollinatorCount""",set yield yield + dYIeld_pollinator * tempValue * increment_mixed_2,1 2 3 4 5 6 7 8,2,-2,-1
+80,inGame?,,,set yield yield + dYIeld_pest * pestCount,1 2 3 4 5 6 7 8,2,0,0
+81,inGame?,"""tempValue""","""pestCount""",set yield yield + dYIeld_pest * tempValue * increment_orth_1,1 2 3 4 5 6 7 8,2,-1,0
+82,inGame?,"""tempValue""","""pestCount""",set yield yield + dYIeld_pest * tempValue * increment_orth_1,1 2 3 4 5 6 7 8,2,1,0
+83,inGame?,"""tempValue""","""pestCount""",set yield yield + dYIeld_pest * tempValue * increment_orth_1,1 2 3 4 5 6 7 8,2,0,-1
+84,inGame?,"""tempValue""","""pestCount""",set yield yield + dYIeld_pest * tempValue * increment_orth_1,1 2 3 4 5 6 7 8,2,0,1
+85,inGame?,"""tempValue""","""pestCount""",set yield yield + dYIeld_pest * tempValue * increment_diagonal_1,1 2 3 4 5 6 7 8,2,-1,1
+86,inGame?,"""tempValue""","""pestCount""",set yield yield + dYIeld_pest * tempValue * increment_diagonal_1,1 2 3 4 5 6 7 8,2,1,1
+87,inGame?,"""tempValue""","""pestCount""",set yield yield + dYIeld_pest * tempValue * increment_diagonal_1,1 2 3 4 5 6 7 8,2,1,-1
+88,inGame?,"""tempValue""","""pestCount""",set yield yield + dYIeld_pest * tempValue * increment_diagonal_1,1 2 3 4 5 6 7 8,2,-1,-1
+89,inGame?,,,set yield (max (list 0 yield)),1 2 3 4 5 6 7 8,2,0,0
+90,hasCanola = FALSE,,,set yield 0,1 2 3 4 5 6 7 8,2,0,0

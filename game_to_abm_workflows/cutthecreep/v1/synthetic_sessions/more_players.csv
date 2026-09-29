@@ -1,0 +1,721 @@
+PHASE|phase-1-1|12:00:04.000 PM 28-Sep-2026
+STATE|1|1|0|0|hasResource|false
+STATE|1|1|0|0|degraded|true
+STATE|1|1|0|0|pDegraded|9.16
+STATE|1|1|0|0|totalHarvestedLight|4.74
+STATE|1|1|0|0|totalHarvestedHeavy|5.81
+STATE|1|1|0|0|totalCropped|6.06
+STATE|1|1|0|0|ownedBy|2
+STATE|1|1|0|0|village|1
+STATE|1|1|0|0|shared?|false
+STATE|1|1|0|1|hasResource|true
+STATE|1|1|0|1|degraded|false
+STATE|1|1|0|1|pDegraded|5.41
+STATE|1|1|0|1|totalHarvestedLight|5.5
+STATE|1|1|0|1|totalHarvestedHeavy|3.97
+STATE|1|1|0|1|totalCropped|8.61
+STATE|1|1|0|1|ownedBy|0
+STATE|1|1|0|1|village|3
+STATE|1|1|0|1|shared?|true
+STATE|1|1|0|2|hasResource|false
+STATE|1|1|0|2|degraded|true
+STATE|1|1|0|2|pDegraded|0.15
+STATE|1|1|0|2|totalHarvestedLight|7.77
+STATE|1|1|0|2|totalHarvestedHeavy|1.59
+STATE|1|1|0|2|totalCropped|9.57
+STATE|1|1|0|2|ownedBy|0
+STATE|1|1|0|2|village|1
+STATE|1|1|0|2|shared?|false
+STATE|1|1|0|3|hasResource|false
+STATE|1|1|0|3|degraded|true
+STATE|1|1|0|3|pDegraded|5.95
+STATE|1|1|0|3|totalHarvestedLight|9.2
+STATE|1|1|0|3|totalHarvestedHeavy|3.88
+STATE|1|1|0|3|totalCropped|7.88
+STATE|1|1|0|3|ownedBy|2
+STATE|1|1|0|3|village|2
+STATE|1|1|0|3|shared?|false
+STATE|1|1|1|0|hasResource|false
+STATE|1|1|1|0|degraded|false
+STATE|1|1|1|0|pDegraded|1.34
+STATE|1|1|1|0|totalHarvestedLight|3.66
+STATE|1|1|1|0|totalHarvestedHeavy|0.36
+STATE|1|1|1|0|totalCropped|4.95
+STATE|1|1|1|0|ownedBy|1
+STATE|1|1|1|0|village|3
+STATE|1|1|1|0|shared?|true
+STATE|1|1|1|1|hasResource|false
+STATE|1|1|1|1|degraded|true
+STATE|1|1|1|1|pDegraded|5.07
+STATE|1|1|1|1|totalHarvestedLight|3.86
+STATE|1|1|1|1|totalHarvestedHeavy|3.51
+STATE|1|1|1|1|totalCropped|5.85
+STATE|1|1|1|1|ownedBy|3
+STATE|1|1|1|1|village|0
+STATE|1|1|1|1|shared?|false
+STATE|1|1|1|2|hasResource|false
+STATE|1|1|1|2|degraded|false
+STATE|1|1|1|2|pDegraded|8.56
+STATE|1|1|1|2|totalHarvestedLight|9.91
+STATE|1|1|1|2|totalHarvestedHeavy|6.71
+STATE|1|1|1|2|totalCropped|1.63
+STATE|1|1|1|2|ownedBy|1
+STATE|1|1|1|2|village|3
+STATE|1|1|1|2|shared?|false
+STATE|1|1|1|3|hasResource|false
+STATE|1|1|1|3|degraded|false
+STATE|1|1|1|3|pDegraded|2.11
+STATE|1|1|1|3|totalHarvestedLight|8.32
+STATE|1|1|1|3|totalHarvestedHeavy|5.74
+STATE|1|1|1|3|totalCropped|2.85
+STATE|1|1|1|3|ownedBy|0
+STATE|1|1|1|3|village|2
+STATE|1|1|1|3|shared?|false
+STATE|1|1|2|0|hasResource|false
+STATE|1|1|2|0|degraded|true
+STATE|1|1|2|0|pDegraded|8.01
+STATE|1|1|2|0|totalHarvestedLight|4.1
+STATE|1|1|2|0|totalHarvestedHeavy|1.51
+STATE|1|1|2|0|totalCropped|2.94
+STATE|1|1|2|0|ownedBy|2
+STATE|1|1|2|0|village|0
+STATE|1|1|2|0|shared?|true
+STATE|1|1|2|1|hasResource|false
+STATE|1|1|2|1|degraded|true
+STATE|1|1|2|1|pDegraded|7.18
+STATE|1|1|2|1|totalHarvestedLight|3.31
+STATE|1|1|2|1|totalHarvestedHeavy|8.81
+STATE|1|1|2|1|totalCropped|9.81
+STATE|1|1|2|1|ownedBy|3
+STATE|1|1|2|1|village|0
+STATE|1|1|2|1|shared?|false
+STATE|1|1|2|2|hasResource|true
+STATE|1|1|2|2|degraded|true
+STATE|1|1|2|2|pDegraded|6.0
+STATE|1|1|2|2|totalHarvestedLight|0.31
+STATE|1|1|2|2|totalHarvestedHeavy|1.97
+STATE|1|1|2|2|totalCropped|4.08
+STATE|1|1|2|2|ownedBy|3
+STATE|1|1|2|2|village|1
+STATE|1|1|2|2|shared?|true
+STATE|1|1|2|3|hasResource|true
+STATE|1|1|2|3|degraded|false
+STATE|1|1|2|3|pDegraded|3.14
+STATE|1|1|2|3|totalHarvestedLight|9.59
+STATE|1|1|2|3|totalHarvestedHeavy|8.97
+STATE|1|1|2|3|totalCropped|3.78
+STATE|1|1|2|3|ownedBy|2
+STATE|1|1|2|3|village|3
+STATE|1|1|2|3|shared?|true
+STATE|1|1|3|0|hasResource|false
+STATE|1|1|3|0|degraded|false
+STATE|1|1|3|0|pDegraded|1.03
+STATE|1|1|3|0|totalHarvestedLight|9.73
+STATE|1|1|3|0|totalHarvestedHeavy|8.12
+STATE|1|1|3|0|totalCropped|2.71
+STATE|1|1|3|0|ownedBy|3
+STATE|1|1|3|0|village|3
+STATE|1|1|3|0|shared?|false
+STATE|1|1|3|1|hasResource|false
+STATE|1|1|3|1|degraded|true
+STATE|1|1|3|1|pDegraded|2.58
+STATE|1|1|3|1|totalHarvestedLight|3.03
+STATE|1|1|3|1|totalHarvestedHeavy|3.39
+STATE|1|1|3|1|totalCropped|7.88
+STATE|1|1|3|1|ownedBy|3
+STATE|1|1|3|1|village|1
+STATE|1|1|3|1|shared?|true
+STATE|1|1|3|2|hasResource|false
+STATE|1|1|3|2|degraded|false
+STATE|1|1|3|2|pDegraded|0.6
+STATE|1|1|3|2|totalHarvestedLight|6.27
+STATE|1|1|3|2|totalHarvestedHeavy|4.66
+STATE|1|1|3|2|totalCropped|6.79
+STATE|1|1|3|2|ownedBy|1
+STATE|1|1|3|2|village|3
+STATE|1|1|3|2|shared?|false
+STATE|1|1|3|3|hasResource|false
+STATE|1|1|3|3|degraded|true
+STATE|1|1|3|3|pDegraded|0.61
+STATE|1|1|3|3|totalHarvestedLight|6.76
+STATE|1|1|3|3|totalHarvestedHeavy|9.63
+STATE|1|1|3|3|totalCropped|2.51
+STATE|1|1|3|3|ownedBy|2
+STATE|1|1|3|3|village|1
+STATE|1|1|3|3|shared?|false
+CHOICE|1|1|1|1|2|3|12:00:18.000 PM 28-Sep-2026
+CHOICE|1|1|1|2|3|1|12:00:28.000 PM 28-Sep-2026
+CONFIRM|1|1|1|12:00:39.000 PM 28-Sep-2026
+CHOICE|1|1|2|1|2|3|12:00:43.000 PM 28-Sep-2026
+CHOICE|1|1|2|3|0|3|12:00:49.000 PM 28-Sep-2026
+CHOICE|1|1|2|1|3|2|12:00:51.000 PM 28-Sep-2026
+CONFIRM|1|1|2|12:00:57.000 PM 28-Sep-2026
+CHOICE|1|1|3|1|3|1|12:00:58.000 PM 28-Sep-2026
+CHOICE|1|1|3|1|2|2|12:01:12.000 PM 28-Sep-2026
+CHOICE|1|1|3|1|2|1|12:01:25.000 PM 28-Sep-2026
+CONFIRM|1|1|3|12:01:35.000 PM 28-Sep-2026
+CHOICE|1|1|4|1|3|3|12:01:43.000 PM 28-Sep-2026
+CHOICE|1|1|4|3|2|4|12:01:44.000 PM 28-Sep-2026
+CONFIRM|1|1|4|12:01:59.000 PM 28-Sep-2026
+CHOICE|1|1|5|1|1|-99|12:02:13.000 PM 28-Sep-2026
+CHOICE|1|1|5|3|1|-99|12:02:21.000 PM 28-Sep-2026
+CONFIRM|1|1|5|12:02:35.000 PM 28-Sep-2026
+CHOICE|1|1|6|2|2|1|12:02:49.000 PM 28-Sep-2026
+CHOICE|1|1|6|2|0|1|12:02:50.000 PM 28-Sep-2026
+CHOICE|1|1|6|1|3|1|12:02:58.000 PM 28-Sep-2026
+CONFIRM|1|1|6|12:03:10.000 PM 28-Sep-2026
+CHOICE|1|1|7|1|2|1|12:03:19.000 PM 28-Sep-2026
+CONFIRM|1|1|7|12:03:28.000 PM 28-Sep-2026
+CHOICE|1|1|8|0|0|3|12:03:42.000 PM 28-Sep-2026
+CHOICE|1|1|8|0|2|1|12:03:51.000 PM 28-Sep-2026
+CONFIRM|1|1|8|12:04:06.000 PM 28-Sep-2026
+CHOICE|1|1|9|1|1|2|12:04:20.000 PM 28-Sep-2026
+CONFIRM|1|1|9|12:04:35.000 PM 28-Sep-2026
+CHOICE|1|1|10|3|3|-99|12:04:40.000 PM 28-Sep-2026
+CONFIRM|1|1|10|12:04:44.000 PM 28-Sep-2026
+CHOICE|1|1|11|3|0|1|12:04:58.000 PM 28-Sep-2026
+CHOICE|1|1|11|3|0|1|12:04:59.000 PM 28-Sep-2026
+CONFIRM|1|1|11|12:05:01.000 PM 28-Sep-2026
+CHOICE|1|1|12|0|0|4|12:05:07.000 PM 28-Sep-2026
+CHOICE|1|1|12|0|0|-99|12:05:14.000 PM 28-Sep-2026
+CONFIRM|1|1|12|12:05:25.000 PM 28-Sep-2026
+CHOICE|1|1|13|2|2|3|12:05:32.000 PM 28-Sep-2026
+CHOICE|1|1|13|2|2|4|12:05:45.000 PM 28-Sep-2026
+CONFIRM|1|1|13|12:05:47.000 PM 28-Sep-2026
+CHOICE|1|1|14|1|0|4|12:05:58.000 PM 28-Sep-2026
+CHOICE|1|1|14|3|0|4|12:06:11.000 PM 28-Sep-2026
+CHOICE|1|1|14|3|3|2|12:06:15.000 PM 28-Sep-2026
+CONFIRM|1|1|14|12:06:24.000 PM 28-Sep-2026
+CHOICE|1|1|15|0|3|2|12:06:39.000 PM 28-Sep-2026
+CHOICE|1|1|15|0|3|3|12:06:41.000 PM 28-Sep-2026
+CONFIRM|1|1|15|12:06:49.000 PM 28-Sep-2026
+CHOICE|1|1|16|0|3|3|12:06:59.000 PM 28-Sep-2026
+CHOICE|1|1|16|0|3|4|12:07:00.000 PM 28-Sep-2026
+CHOICE|1|1|16|0|3|1|12:07:06.000 PM 28-Sep-2026
+CONFIRM|1|1|16|12:07:20.000 PM 28-Sep-2026
+CHOICE|1|1|17|0|0|3|12:07:30.000 PM 28-Sep-2026
+CONFIRM|1|1|17|12:07:35.000 PM 28-Sep-2026
+CHOICE|1|1|18|0|1|1|12:07:50.000 PM 28-Sep-2026
+CONFIRM|1|1|18|12:07:59.000 PM 28-Sep-2026
+CHOICE|1|1|19|2|1|2|12:08:02.000 PM 28-Sep-2026
+CONFIRM|1|1|19|12:08:13.000 PM 28-Sep-2026
+CHOICE|1|1|20|3|3|4|12:08:19.000 PM 28-Sep-2026
+CONFIRM|1|1|20|12:08:28.000 PM 28-Sep-2026
+CHOICE|1|1|21|0|3|4|12:08:42.000 PM 28-Sep-2026
+CHOICE|1|1|21|1|3|4|12:08:45.000 PM 28-Sep-2026
+CONFIRM|1|1|21|12:08:56.000 PM 28-Sep-2026
+CHOICE|1|1|22|1|1|-99|12:09:08.000 PM 28-Sep-2026
+CHOICE|1|1|22|3|1|2|12:09:11.000 PM 28-Sep-2026
+CONFIRM|1|1|22|12:09:21.000 PM 28-Sep-2026
+CHOICE|1|1|23|2|1|3|12:09:32.000 PM 28-Sep-2026
+CHOICE|1|1|23|3|2|3|12:09:33.000 PM 28-Sep-2026
+CHOICE|1|1|23|3|2|2|12:09:36.000 PM 28-Sep-2026
+CONFIRM|1|1|23|12:09:46.000 PM 28-Sep-2026
+CHOICE|1|1|24|1|2|2|12:09:53.000 PM 28-Sep-2026
+CHOICE|1|1|24|3|1|1|12:10:01.000 PM 28-Sep-2026
+CONFIRM|1|1|24|12:10:13.000 PM 28-Sep-2026
+SCORE|1|1|1|2|27|1
+SCORE|1|1|2|14|28|7
+SCORE|1|1|3|20|65|2
+SCORE|1|1|4|6|22|7
+SCORE|1|1|5|6|55|8
+SCORE|1|1|6|4|15|19
+SCORE|1|1|7|1|17|5
+SCORE|1|1|8|1|21|5
+SCORE|1|1|9|13|18|2
+SCORE|1|1|10|3|8|8
+SCORE|1|1|11|9|11|11
+SCORE|1|1|12|14|51|10
+SCORE|1|1|13|0|1|10
+SCORE|1|1|14|10|37|12
+SCORE|1|1|15|15|19|6
+SCORE|1|1|16|20|57|15
+SCORE|1|1|17|12|20|17
+SCORE|1|1|18|10|17|8
+SCORE|1|1|19|2|44|13
+SCORE|1|1|20|3|31|16
+SCORE|1|1|21|8|14|16
+SCORE|1|1|22|11|54|11
+SCORE|1|1|23|14|32|20
+SCORE|1|1|24|8|14|10
+PHASE|phase-2-1|12:10:24.000 PM 28-Sep-2026
+STATE|2|1|0|0|hasResource|false
+STATE|2|1|0|0|degraded|false
+STATE|2|1|0|0|pDegraded|6.67
+STATE|2|1|0|0|totalHarvestedLight|5.09
+STATE|2|1|0|0|totalHarvestedHeavy|0.6
+STATE|2|1|0|0|totalCropped|2.94
+STATE|2|1|0|0|ownedBy|3
+STATE|2|1|0|0|village|3
+STATE|2|1|0|0|shared?|false
+STATE|2|1|0|1|hasResource|false
+STATE|2|1|0|1|degraded|false
+STATE|2|1|0|1|pDegraded|1.5
+STATE|2|1|0|1|totalHarvestedLight|3.71
+STATE|2|1|0|1|totalHarvestedHeavy|9.2
+STATE|2|1|0|1|totalCropped|4.54
+STATE|2|1|0|1|ownedBy|0
+STATE|2|1|0|1|village|3
+STATE|2|1|0|1|shared?|true
+STATE|2|1|0|2|hasResource|true
+STATE|2|1|0|2|degraded|false
+STATE|2|1|0|2|pDegraded|5.97
+STATE|2|1|0|2|totalHarvestedLight|5.55
+STATE|2|1|0|2|totalHarvestedHeavy|6.47
+STATE|2|1|0|2|totalCropped|4.58
+STATE|2|1|0|2|ownedBy|1
+STATE|2|1|0|2|village|0
+STATE|2|1|0|2|shared?|false
+STATE|2|1|0|3|hasResource|true
+STATE|2|1|0|3|degraded|true
+STATE|2|1|0|3|pDegraded|5.54
+STATE|2|1|0|3|totalHarvestedLight|5.76
+STATE|2|1|0|3|totalHarvestedHeavy|3.92
+STATE|2|1|0|3|totalCropped|1.0
+STATE|2|1|0|3|ownedBy|1
+STATE|2|1|0|3|village|2
+STATE|2|1|0|3|shared?|true
+STATE|2|1|1|0|hasResource|true
+STATE|2|1|1|0|degraded|true
+STATE|2|1|1|0|pDegraded|2.71
+STATE|2|1|1|0|totalHarvestedLight|6.95
+STATE|2|1|1|0|totalHarvestedHeavy|5.15
+STATE|2|1|1|0|totalCropped|8.75
+STATE|2|1|1|0|ownedBy|2
+STATE|2|1|1|0|village|2
+STATE|2|1|1|0|shared?|false
+STATE|2|1|1|1|hasResource|false
+STATE|2|1|1|1|degraded|true
+STATE|2|1|1|1|pDegraded|8.47
+STATE|2|1|1|1|totalHarvestedLight|1.12
+STATE|2|1|1|1|totalHarvestedHeavy|2.7
+STATE|2|1|1|1|totalCropped|1.0
+STATE|2|1|1|1|ownedBy|0
+STATE|2|1|1|1|village|3
+STATE|2|1|1|1|shared?|false
+STATE|2|1|1|2|hasResource|false
+STATE|2|1|1|2|degraded|true
+STATE|2|1|1|2|pDegraded|1.89
+STATE|2|1|1|2|totalHarvestedLight|4.17
+STATE|2|1|1|2|totalHarvestedHeavy|7.43
+STATE|2|1|1|2|totalCropped|8.16
+STATE|2|1|1|2|ownedBy|3
+STATE|2|1|1|2|village|0
+STATE|2|1|1|2|shared?|false
+STATE|2|1|1|3|hasResource|true
+STATE|2|1|1|3|degraded|true
+STATE|2|1|1|3|pDegraded|1.94
+STATE|2|1|1|3|totalHarvestedLight|5.28
+STATE|2|1|1|3|totalHarvestedHeavy|5.68
+STATE|2|1|1|3|totalCropped|2.02
+STATE|2|1|1|3|ownedBy|1
+STATE|2|1|1|3|village|1
+STATE|2|1|1|3|shared?|false
+STATE|2|1|2|0|hasResource|true
+STATE|2|1|2|0|degraded|false
+STATE|2|1|2|0|pDegraded|8.91
+STATE|2|1|2|0|totalHarvestedLight|9.49
+STATE|2|1|2|0|totalHarvestedHeavy|3.83
+STATE|2|1|2|0|totalCropped|5.53
+STATE|2|1|2|0|ownedBy|3
+STATE|2|1|2|0|village|1
+STATE|2|1|2|0|shared?|false
+STATE|2|1|2|1|hasResource|false
+STATE|2|1|2|1|degraded|false
+STATE|2|1|2|1|pDegraded|2.99
+STATE|2|1|2|1|totalHarvestedLight|8.6
+STATE|2|1|2|1|totalHarvestedHeavy|4.84
+STATE|2|1|2|1|totalCropped|6.01
+STATE|2|1|2|1|ownedBy|3
+STATE|2|1|2|1|village|3
+STATE|2|1|2|1|shared?|true
+STATE|2|1|2|2|hasResource|false
+STATE|2|1|2|2|degraded|false
+STATE|2|1|2|2|pDegraded|4.92
+STATE|2|1|2|2|totalHarvestedLight|5.24
+STATE|2|1|2|2|totalHarvestedHeavy|4.61
+STATE|2|1|2|2|totalCropped|1.93
+STATE|2|1|2|2|ownedBy|3
+STATE|2|1|2|2|village|0
+STATE|2|1|2|2|shared?|true
+STATE|2|1|2|3|hasResource|false
+STATE|2|1|2|3|degraded|false
+STATE|2|1|2|3|pDegraded|4.44
+STATE|2|1|2|3|totalHarvestedLight|5.66
+STATE|2|1|2|3|totalHarvestedHeavy|9.59
+STATE|2|1|2|3|totalCropped|8.92
+STATE|2|1|2|3|ownedBy|0
+STATE|2|1|2|3|village|2
+STATE|2|1|2|3|shared?|false
+STATE|2|1|3|0|hasResource|false
+STATE|2|1|3|0|degraded|true
+STATE|2|1|3|0|pDegraded|3.6
+STATE|2|1|3|0|totalHarvestedLight|2.33
+STATE|2|1|3|0|totalHarvestedHeavy|0.78
+STATE|2|1|3|0|totalCropped|5.39
+STATE|2|1|3|0|ownedBy|1
+STATE|2|1|3|0|village|1
+STATE|2|1|3|0|shared?|true
+STATE|2|1|3|1|hasResource|true
+STATE|2|1|3|1|degraded|false
+STATE|2|1|3|1|pDegraded|0.81
+STATE|2|1|3|1|totalHarvestedLight|8.39
+STATE|2|1|3|1|totalHarvestedHeavy|7.75
+STATE|2|1|3|1|totalCropped|0.34
+STATE|2|1|3|1|ownedBy|0
+STATE|2|1|3|1|village|3
+STATE|2|1|3|1|shared?|false
+STATE|2|1|3|2|hasResource|false
+STATE|2|1|3|2|degraded|true
+STATE|2|1|3|2|pDegraded|0.63
+STATE|2|1|3|2|totalHarvestedLight|2.0
+STATE|2|1|3|2|totalHarvestedHeavy|6.99
+STATE|2|1|3|2|totalCropped|2.21
+STATE|2|1|3|2|ownedBy|1
+STATE|2|1|3|2|village|0
+STATE|2|1|3|2|shared?|false
+STATE|2|1|3|3|hasResource|true
+STATE|2|1|3|3|degraded|false
+STATE|2|1|3|3|pDegraded|7.06
+STATE|2|1|3|3|totalHarvestedLight|3.91
+STATE|2|1|3|3|totalHarvestedHeavy|4.73
+STATE|2|1|3|3|totalCropped|0.68
+STATE|2|1|3|3|ownedBy|2
+STATE|2|1|3|3|village|0
+STATE|2|1|3|3|shared?|false
+CHOICE|2|1|1|0|3|4|12:10:32.000 PM 28-Sep-2026
+CHOICE|2|1|1|0|3|3|12:10:38.000 PM 28-Sep-2026
+CONFIRM|2|1|1|12:10:52.000 PM 28-Sep-2026
+CHOICE|2|1|2|3|2|2|12:10:53.000 PM 28-Sep-2026
+CHOICE|2|1|2|2|2|4|12:11:02.000 PM 28-Sep-2026
+CONFIRM|2|1|2|12:11:06.000 PM 28-Sep-2026
+CHOICE|2|1|3|1|0|4|12:11:15.000 PM 28-Sep-2026
+CONFIRM|2|1|3|12:11:18.000 PM 28-Sep-2026
+CHOICE|2|1|4|0|1|2|12:11:26.000 PM 28-Sep-2026
+CHOICE|2|1|4|0|0|3|12:11:33.000 PM 28-Sep-2026
+CHOICE|2|1|4|0|0|2|12:11:40.000 PM 28-Sep-2026
+CONFIRM|2|1|4|12:11:41.000 PM 28-Sep-2026
+CHOICE|2|1|5|3|0|2|12:11:45.000 PM 28-Sep-2026
+CHOICE|2|1|5|3|0|2|12:11:51.000 PM 28-Sep-2026
+CONFIRM|2|1|5|12:12:01.000 PM 28-Sep-2026
+CHOICE|2|1|6|2|0|3|12:12:06.000 PM 28-Sep-2026
+CONFIRM|2|1|6|12:12:19.000 PM 28-Sep-2026
+CHOICE|2|1|7|2|3|3|12:12:20.000 PM 28-Sep-2026
+CHOICE|2|1|7|2|2|-99|12:12:31.000 PM 28-Sep-2026
+CONFIRM|2|1|7|12:12:38.000 PM 28-Sep-2026
+CHOICE|2|1|8|0|0|-99|12:12:40.000 PM 28-Sep-2026
+CONFIRM|2|1|8|12:12:41.000 PM 28-Sep-2026
+CHOICE|2|1|9|0|3|-99|12:12:52.000 PM 28-Sep-2026
+CONFIRM|2|1|9|12:13:01.000 PM 28-Sep-2026
+CHOICE|2|1|10|1|3|4|12:13:16.000 PM 28-Sep-2026
+CHOICE|2|1|10|0|3|4|12:13:18.000 PM 28-Sep-2026
+CONFIRM|2|1|10|12:13:23.000 PM 28-Sep-2026
+CHOICE|2|1|11|3|0|3|12:13:32.000 PM 28-Sep-2026
+CONFIRM|2|1|11|12:13:43.000 PM 28-Sep-2026
+CHOICE|2|1|12|1|3|3|12:13:58.000 PM 28-Sep-2026
+CHOICE|2|1|12|1|3|4|12:14:02.000 PM 28-Sep-2026
+CONFIRM|2|1|12|12:14:10.000 PM 28-Sep-2026
+CHOICE|2|1|13|3|2|2|12:14:19.000 PM 28-Sep-2026
+CHOICE|2|1|13|3|3|-99|12:14:22.000 PM 28-Sep-2026
+CHOICE|2|1|13|0|3|-99|12:14:34.000 PM 28-Sep-2026
+CONFIRM|2|1|13|12:14:45.000 PM 28-Sep-2026
+CHOICE|2|1|14|0|2|1|12:15:00.000 PM 28-Sep-2026
+CHOICE|2|1|14|0|3|3|12:15:06.000 PM 28-Sep-2026
+CHOICE|2|1|14|0|3|1|12:15:12.000 PM 28-Sep-2026
+CONFIRM|2|1|14|12:15:22.000 PM 28-Sep-2026
+CHOICE|2|1|15|0|3|-99|12:15:33.000 PM 28-Sep-2026
+CHOICE|2|1|15|0|3|2|12:15:48.000 PM 28-Sep-2026
+CONFIRM|2|1|15|12:15:59.000 PM 28-Sep-2026
+CHOICE|2|1|16|0|0|2|12:16:03.000 PM 28-Sep-2026
+CONFIRM|2|1|16|12:16:17.000 PM 28-Sep-2026
+CHOICE|2|1|17|3|2|2|12:16:25.000 PM 28-Sep-2026
+CHOICE|2|1|17|3|2|-99|12:16:39.000 PM 28-Sep-2026
+CHOICE|2|1|17|0|0|3|12:16:41.000 PM 28-Sep-2026
+CONFIRM|2|1|17|12:16:43.000 PM 28-Sep-2026
+CHOICE|2|1|18|3|1|1|12:16:54.000 PM 28-Sep-2026
+CHOICE|2|1|18|2|3|4|12:17:07.000 PM 28-Sep-2026
+CONFIRM|2|1|18|12:17:09.000 PM 28-Sep-2026
+CHOICE|2|1|19|3|3|1|12:17:17.000 PM 28-Sep-2026
+CHOICE|2|1|19|3|3|3|12:17:23.000 PM 28-Sep-2026
+CONFIRM|2|1|19|12:17:27.000 PM 28-Sep-2026
+CHOICE|2|1|20|0|2|1|12:17:37.000 PM 28-Sep-2026
+CHOICE|2|1|20|1|2|1|12:17:43.000 PM 28-Sep-2026
+CONFIRM|2|1|20|12:17:47.000 PM 28-Sep-2026
+CHOICE|2|1|21|3|0|3|12:17:50.000 PM 28-Sep-2026
+CHOICE|2|1|21|1|1|4|12:18:05.000 PM 28-Sep-2026
+CONFIRM|2|1|21|12:18:17.000 PM 28-Sep-2026
+CHOICE|2|1|22|3|2|4|12:18:25.000 PM 28-Sep-2026
+CHOICE|2|1|22|3|3|1|12:18:30.000 PM 28-Sep-2026
+CHOICE|2|1|22|0|1|1|12:18:42.000 PM 28-Sep-2026
+CONFIRM|2|1|22|12:18:45.000 PM 28-Sep-2026
+CHOICE|2|1|23|0|3|-99|12:18:57.000 PM 28-Sep-2026
+CHOICE|2|1|23|0|3|1|12:19:03.000 PM 28-Sep-2026
+CONFIRM|2|1|23|12:19:11.000 PM 28-Sep-2026
+CHOICE|2|1|24|1|2|4|12:19:16.000 PM 28-Sep-2026
+CHOICE|2|1|24|3|0|4|12:19:29.000 PM 28-Sep-2026
+CHOICE|2|1|24|2|3|3|12:19:32.000 PM 28-Sep-2026
+CONFIRM|2|1|24|12:19:39.000 PM 28-Sep-2026
+SCORE|2|1|1|9|38|15
+SCORE|2|1|2|16|50|7
+SCORE|2|1|3|11|29|9
+SCORE|2|1|4|0|29|11
+SCORE|2|1|5|11|30|7
+SCORE|2|1|6|16|16|0
+SCORE|2|1|7|4|44|16
+SCORE|2|1|8|4|38|0
+SCORE|2|1|9|5|8|0
+SCORE|2|1|10|6|55|14
+SCORE|2|1|11|11|61|11
+SCORE|2|1|12|17|19|15
+SCORE|2|1|13|5|20|0
+SCORE|2|1|14|8|35|10
+SCORE|2|1|15|1|39|17
+SCORE|2|1|16|3|31|9
+SCORE|2|1|17|8|23|15
+SCORE|2|1|18|13|59|8
+SCORE|2|1|19|10|12|0
+SCORE|2|1|20|13|15|20
+SCORE|2|1|21|5|53|18
+SCORE|2|1|22|7|15|13
+SCORE|2|1|23|16|64|10
+SCORE|2|1|24|17|25|8
+PHASE|phase-3-1|12:19:40.000 PM 28-Sep-2026
+STATE|3|1|0|0|hasResource|true
+STATE|3|1|0|0|degraded|true
+STATE|3|1|0|0|pDegraded|6.43
+STATE|3|1|0|0|totalHarvestedLight|8.97
+STATE|3|1|0|0|totalHarvestedHeavy|9.06
+STATE|3|1|0|0|totalCropped|4.67
+STATE|3|1|0|0|ownedBy|3
+STATE|3|1|0|0|village|3
+STATE|3|1|0|0|shared?|false
+STATE|3|1|0|1|hasResource|true
+STATE|3|1|0|1|degraded|false
+STATE|3|1|0|1|pDegraded|2.94
+STATE|3|1|0|1|totalHarvestedLight|0.74
+STATE|3|1|0|1|totalHarvestedHeavy|1.4
+STATE|3|1|0|1|totalCropped|8.32
+STATE|3|1|0|1|ownedBy|0
+STATE|3|1|0|1|village|2
+STATE|3|1|0|1|shared?|false
+STATE|3|1|0|2|hasResource|true
+STATE|3|1|0|2|degraded|true
+STATE|3|1|0|2|pDegraded|2.56
+STATE|3|1|0|2|totalHarvestedLight|2.83
+STATE|3|1|0|2|totalHarvestedHeavy|5.3
+STATE|3|1|0|2|totalCropped|5.77
+STATE|3|1|0|2|ownedBy|0
+STATE|3|1|0|2|village|3
+STATE|3|1|0|2|shared?|true
+STATE|3|1|0|3|hasResource|true
+STATE|3|1|0|3|degraded|true
+STATE|3|1|0|3|pDegraded|4.59
+STATE|3|1|0|3|totalHarvestedLight|5.86
+STATE|3|1|0|3|totalHarvestedHeavy|2.73
+STATE|3|1|0|3|totalCropped|3.17
+STATE|3|1|0|3|ownedBy|3
+STATE|3|1|0|3|village|3
+STATE|3|1|0|3|shared?|true
+STATE|3|1|1|0|hasResource|true
+STATE|3|1|1|0|degraded|false
+STATE|3|1|1|0|pDegraded|7.54
+STATE|3|1|1|0|totalHarvestedLight|2.68
+STATE|3|1|1|0|totalHarvestedHeavy|4.35
+STATE|3|1|1|0|totalCropped|0.76
+STATE|3|1|1|0|ownedBy|0
+STATE|3|1|1|0|village|3
+STATE|3|1|1|0|shared?|true
+STATE|3|1|1|1|hasResource|false
+STATE|3|1|1|1|degraded|false
+STATE|3|1|1|1|pDegraded|4.48
+STATE|3|1|1|1|totalHarvestedLight|3.11
+STATE|3|1|1|1|totalHarvestedHeavy|3.46
+STATE|3|1|1|1|totalCropped|6.54
+STATE|3|1|1|1|ownedBy|2
+STATE|3|1|1|1|village|1
+STATE|3|1|1|1|shared?|true
+STATE|3|1|1|2|hasResource|true
+STATE|3|1|1|2|degraded|true
+STATE|3|1|1|2|pDegraded|3.17
+STATE|3|1|1|2|totalHarvestedLight|6.11
+STATE|3|1|1|2|totalHarvestedHeavy|5.55
+STATE|3|1|1|2|totalCropped|0.36
+STATE|3|1|1|2|ownedBy|2
+STATE|3|1|1|2|village|1
+STATE|3|1|1|2|shared?|true
+STATE|3|1|1|3|hasResource|false
+STATE|3|1|1|3|degraded|true
+STATE|3|1|1|3|pDegraded|9.57
+STATE|3|1|1|3|totalHarvestedLight|7.37
+STATE|3|1|1|3|totalHarvestedHeavy|6.98
+STATE|3|1|1|3|totalCropped|1.15
+STATE|3|1|1|3|ownedBy|3
+STATE|3|1|1|3|village|0
+STATE|3|1|1|3|shared?|false
+STATE|3|1|2|0|hasResource|false
+STATE|3|1|2|0|degraded|true
+STATE|3|1|2|0|pDegraded|2.82
+STATE|3|1|2|0|totalHarvestedLight|9.61
+STATE|3|1|2|0|totalHarvestedHeavy|0.69
+STATE|3|1|2|0|totalCropped|2.68
+STATE|3|1|2|0|ownedBy|2
+STATE|3|1|2|0|village|2
+STATE|3|1|2|0|shared?|true
+STATE|3|1|2|1|hasResource|false
+STATE|3|1|2|1|degraded|true
+STATE|3|1|2|1|pDegraded|2.36
+STATE|3|1|2|1|totalHarvestedLight|9.58
+STATE|3|1|2|1|totalHarvestedHeavy|1.44
+STATE|3|1|2|1|totalCropped|9.05
+STATE|3|1|2|1|ownedBy|0
+STATE|3|1|2|1|village|3
+STATE|3|1|2|1|shared?|false
+STATE|3|1|2|2|hasResource|false
+STATE|3|1|2|2|degraded|false
+STATE|3|1|2|2|pDegraded|1.42
+STATE|3|1|2|2|totalHarvestedLight|0.55
+STATE|3|1|2|2|totalHarvestedHeavy|7.59
+STATE|3|1|2|2|totalCropped|1.76
+STATE|3|1|2|2|ownedBy|0
+STATE|3|1|2|2|village|3
+STATE|3|1|2|2|shared?|false
+STATE|3|1|2|3|hasResource|false
+STATE|3|1|2|3|degraded|true
+STATE|3|1|2|3|pDegraded|9.61
+STATE|3|1|2|3|totalHarvestedLight|5.35
+STATE|3|1|2|3|totalHarvestedHeavy|3.82
+STATE|3|1|2|3|totalCropped|1.07
+STATE|3|1|2|3|ownedBy|2
+STATE|3|1|2|3|village|0
+STATE|3|1|2|3|shared?|false
+STATE|3|1|3|0|hasResource|true
+STATE|3|1|3|0|degraded|true
+STATE|3|1|3|0|pDegraded|1.45
+STATE|3|1|3|0|totalHarvestedLight|1.27
+STATE|3|1|3|0|totalHarvestedHeavy|3.52
+STATE|3|1|3|0|totalCropped|9.15
+STATE|3|1|3|0|ownedBy|0
+STATE|3|1|3|0|village|0
+STATE|3|1|3|0|shared?|true
+STATE|3|1|3|1|hasResource|true
+STATE|3|1|3|1|degraded|true
+STATE|3|1|3|1|pDegraded|4.78
+STATE|3|1|3|1|totalHarvestedLight|0.64
+STATE|3|1|3|1|totalHarvestedHeavy|5.46
+STATE|3|1|3|1|totalCropped|8.95
+STATE|3|1|3|1|ownedBy|0
+STATE|3|1|3|1|village|3
+STATE|3|1|3|1|shared?|false
+STATE|3|1|3|2|hasResource|true
+STATE|3|1|3|2|degraded|false
+STATE|3|1|3|2|pDegraded|5.31
+STATE|3|1|3|2|totalHarvestedLight|8.54
+STATE|3|1|3|2|totalHarvestedHeavy|4.42
+STATE|3|1|3|2|totalCropped|4.07
+STATE|3|1|3|2|ownedBy|3
+STATE|3|1|3|2|village|3
+STATE|3|1|3|2|shared?|true
+STATE|3|1|3|3|hasResource|true
+STATE|3|1|3|3|degraded|true
+STATE|3|1|3|3|pDegraded|3.84
+STATE|3|1|3|3|totalHarvestedLight|7.57
+STATE|3|1|3|3|totalHarvestedHeavy|2.96
+STATE|3|1|3|3|totalCropped|7.5
+STATE|3|1|3|3|ownedBy|3
+STATE|3|1|3|3|village|0
+STATE|3|1|3|3|shared?|true
+CHOICE|3|1|1|2|2|2|12:19:41.000 PM 28-Sep-2026
+CONFIRM|3|1|1|12:19:51.000 PM 28-Sep-2026
+CHOICE|3|1|2|3|1|1|12:19:54.000 PM 28-Sep-2026
+CONFIRM|3|1|2|12:20:08.000 PM 28-Sep-2026
+CHOICE|3|1|3|3|2|3|12:20:10.000 PM 28-Sep-2026
+CONFIRM|3|1|3|12:20:18.000 PM 28-Sep-2026
+CHOICE|3|1|4|3|2|2|12:20:24.000 PM 28-Sep-2026
+CHOICE|3|1|4|2|2|3|12:20:38.000 PM 28-Sep-2026
+CHOICE|3|1|4|2|2|3|12:20:43.000 PM 28-Sep-2026
+CONFIRM|3|1|4|12:20:46.000 PM 28-Sep-2026
+CHOICE|3|1|5|1|2|2|12:20:51.000 PM 28-Sep-2026
+CONFIRM|3|1|5|12:20:58.000 PM 28-Sep-2026
+CHOICE|3|1|6|3|1|2|12:21:08.000 PM 28-Sep-2026
+CHOICE|3|1|6|3|0|-99|12:21:15.000 PM 28-Sep-2026
+CONFIRM|3|1|6|12:21:24.000 PM 28-Sep-2026
+CHOICE|3|1|7|2|0|4|12:21:31.000 PM 28-Sep-2026
+CHOICE|3|1|7|2|0|-99|12:21:40.000 PM 28-Sep-2026
+CHOICE|3|1|7|2|0|1|12:21:47.000 PM 28-Sep-2026
+CONFIRM|3|1|7|12:21:59.000 PM 28-Sep-2026
+CHOICE|3|1|8|2|0|3|12:22:06.000 PM 28-Sep-2026
+CHOICE|3|1|8|0|3|2|12:22:07.000 PM 28-Sep-2026
+CONFIRM|3|1|8|12:22:13.000 PM 28-Sep-2026
+CHOICE|3|1|9|0|1|2|12:22:19.000 PM 28-Sep-2026
+CONFIRM|3|1|9|12:22:26.000 PM 28-Sep-2026
+CHOICE|3|1|10|1|0|-99|12:22:38.000 PM 28-Sep-2026
+CHOICE|3|1|10|3|2|2|12:22:46.000 PM 28-Sep-2026
+CONFIRM|3|1|10|12:22:52.000 PM 28-Sep-2026
+CHOICE|3|1|11|0|3|2|12:23:07.000 PM 28-Sep-2026
+CHOICE|3|1|11|1|0|1|12:23:14.000 PM 28-Sep-2026
+CHOICE|3|1|11|1|0|1|12:23:22.000 PM 28-Sep-2026
+CONFIRM|3|1|11|12:23:36.000 PM 28-Sep-2026
+CHOICE|3|1|12|3|2|2|12:23:45.000 PM 28-Sep-2026
+CONFIRM|3|1|12|12:23:56.000 PM 28-Sep-2026
+CHOICE|3|1|13|2|3|1|12:23:58.000 PM 28-Sep-2026
+CHOICE|3|1|13|2|0|3|12:24:06.000 PM 28-Sep-2026
+CONFIRM|3|1|13|12:24:21.000 PM 28-Sep-2026
+CHOICE|3|1|14|0|2|2|12:24:36.000 PM 28-Sep-2026
+CHOICE|3|1|14|3|0|-99|12:24:45.000 PM 28-Sep-2026
+CONFIRM|3|1|14|12:24:46.000 PM 28-Sep-2026
+CHOICE|3|1|15|1|0|4|12:25:00.000 PM 28-Sep-2026
+CHOICE|3|1|15|3|2|4|12:25:11.000 PM 28-Sep-2026
+CHOICE|3|1|15|1|1|3|12:25:26.000 PM 28-Sep-2026
+CONFIRM|3|1|15|12:25:36.000 PM 28-Sep-2026
+CHOICE|3|1|16|2|2|2|12:25:44.000 PM 28-Sep-2026
+CONFIRM|3|1|16|12:25:45.000 PM 28-Sep-2026
+CHOICE|3|1|17|3|2|4|12:25:59.000 PM 28-Sep-2026
+CHOICE|3|1|17|1|0|1|12:26:14.000 PM 28-Sep-2026
+CHOICE|3|1|17|3|1|1|12:26:20.000 PM 28-Sep-2026
+CONFIRM|3|1|17|12:26:28.000 PM 28-Sep-2026
+CHOICE|3|1|18|3|0|3|12:26:35.000 PM 28-Sep-2026
+CONFIRM|3|1|18|12:26:39.000 PM 28-Sep-2026
+CHOICE|3|1|19|2|2|1|12:26:51.000 PM 28-Sep-2026
+CONFIRM|3|1|19|12:26:57.000 PM 28-Sep-2026
+CHOICE|3|1|20|0|1|4|12:27:00.000 PM 28-Sep-2026
+CHOICE|3|1|20|1|3|2|12:27:13.000 PM 28-Sep-2026
+CHOICE|3|1|20|1|1|4|12:27:23.000 PM 28-Sep-2026
+CONFIRM|3|1|20|12:27:32.000 PM 28-Sep-2026
+CHOICE|3|1|21|1|2|1|12:27:34.000 PM 28-Sep-2026
+CHOICE|3|1|21|3|3|-99|12:27:37.000 PM 28-Sep-2026
+CONFIRM|3|1|21|12:27:42.000 PM 28-Sep-2026
+CHOICE|3|1|22|3|3|4|12:27:48.000 PM 28-Sep-2026
+CHOICE|3|1|22|3|1|4|12:27:54.000 PM 28-Sep-2026
+CHOICE|3|1|22|1|2|2|12:28:08.000 PM 28-Sep-2026
+CONFIRM|3|1|22|12:28:13.000 PM 28-Sep-2026
+CHOICE|3|1|23|1|3|1|12:28:23.000 PM 28-Sep-2026
+CHOICE|3|1|23|1|0|3|12:28:33.000 PM 28-Sep-2026
+CONFIRM|3|1|23|12:28:48.000 PM 28-Sep-2026
+CHOICE|3|1|24|2|2|3|12:29:03.000 PM 28-Sep-2026
+CHOICE|3|1|24|2|2|3|12:29:10.000 PM 28-Sep-2026
+CHOICE|3|1|24|1|1|2|12:29:20.000 PM 28-Sep-2026
+CONFIRM|3|1|24|12:29:34.000 PM 28-Sep-2026
+SCORE|3|1|1|12|57|3
+SCORE|3|1|2|10|45|5
+SCORE|3|1|3|10|56|15
+SCORE|3|1|4|5|39|12
+SCORE|3|1|5|14|26|13
+SCORE|3|1|6|17|53|11
+SCORE|3|1|7|3|49|1
+SCORE|3|1|8|19|49|6
+SCORE|3|1|9|5|37|5
+SCORE|3|1|10|3|9|17
+SCORE|3|1|11|17|24|12
+SCORE|3|1|12|17|49|10
+SCORE|3|1|13|12|29|2
+SCORE|3|1|14|15|32|10
+SCORE|3|1|15|7|23|3
+SCORE|3|1|16|6|13|15
+SCORE|3|1|17|11|38|4
+SCORE|3|1|18|8|31|5
+SCORE|3|1|19|8|44|16
+SCORE|3|1|20|6|48|7
+SCORE|3|1|21|7|23|11
+SCORE|3|1|22|10|16|3
+SCORE|3|1|23|4|52|2
+SCORE|3|1|24|7|36|10

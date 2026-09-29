@@ -1,3 +1,0 @@
-stateID,flags,imageName,stateColor
-1,"""water?""",water,deepestWaterColor + [waterLevel] of patch-here
-2,"""cropped?""",furrows,

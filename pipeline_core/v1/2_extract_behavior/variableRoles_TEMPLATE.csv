@@ -1,0 +1,6 @@
+variable,role,encoding,period,unassignedValue,treatmentCandidate,notes
+round,counter,exclude,,,, "Default: excluded, same as before. Set encoding to numeric/cyclical/categorical to test it as a real predictor (e.g. multi-year climate cycles a player could learn)."
+phase,counter,exclude,,,, "Same as round -- exclude by default, override encoding to test."
+ownedBy,ownership_individual,categorical,,0,FALSE,"Sentinel 0 = unassigned/unowned patch. Modeled as a factor with an explicit 'unassigned' level, not dropped."
+village,ownership_group,categorical,,0,FALSE,"Group/shared-ownership id. Sentinel 0 = unassigned. Distinct from ownedBy -- a patch can have a village and no individual owner, or vice versa, depending on the game."
+shared?,ownership_flag,boolean,,,FALSE,"Already boolean -- included automatically like any other patches-own boolean, no special handling needed beyond flagging its role for documentation."

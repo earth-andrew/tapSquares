@@ -1,0 +1,2167 @@
+PHASE|phase-1-1|12:00:14.000 PM 28-Sep-2026
+STATE|1|1|0|0|length 0|9.48
+STATE|1|1|0|0|hasGrass|true
+STATE|1|1|0|0|hasCanola|true
+STATE|1|1|0|0|hasFlower|false
+STATE|1|1|0|0|soilQuality|7.36
+STATE|1|1|0|0|grassCount|6.7
+STATE|1|1|0|0|canolaCount|3.08
+STATE|1|1|0|0|flowerCount|6.06
+STATE|1|1|0|0|predatorCount|6.07
+STATE|1|1|0|0|pollinatorCount|5.81
+STATE|1|1|0|0|pestCount|1.58
+STATE|1|1|0|0|predatorK|4.31
+STATE|1|1|0|0|pollinatorK|3.94
+STATE|1|1|0|0|pestK|7.23
+STATE|1|1|0|0|yield|9.95
+STATE|1|1|0|0|canolaPoints|9.49
+STATE|1|1|0|0|paymentPoints|5.44
+STATE|1|1|0|0|ownedBy|2
+STATE|1|1|0|0|village|3
+STATE|1|1|0|0|shared?|true
+STATE|1|1|0|1|length 0|0.36
+STATE|1|1|0|1|hasGrass|true
+STATE|1|1|0|1|hasCanola|true
+STATE|1|1|0|1|hasFlower|true
+STATE|1|1|0|1|soilQuality|3.8
+STATE|1|1|0|1|grassCount|8.92
+STATE|1|1|0|1|canolaCount|5.26
+STATE|1|1|0|1|flowerCount|5.61
+STATE|1|1|0|1|predatorCount|2.36
+STATE|1|1|0|1|pollinatorCount|0.24
+STATE|1|1|0|1|pestCount|3.25
+STATE|1|1|0|1|predatorK|1.37
+STATE|1|1|0|1|pollinatorK|5.1
+STATE|1|1|0|1|pestK|9.99
+STATE|1|1|0|1|yield|6.74
+STATE|1|1|0|1|canolaPoints|1.82
+STATE|1|1|0|1|paymentPoints|8.94
+STATE|1|1|0|1|ownedBy|2
+STATE|1|1|0|1|village|3
+STATE|1|1|0|1|shared?|false
+STATE|1|1|0|2|length 0|9.08
+STATE|1|1|0|2|hasGrass|true
+STATE|1|1|0|2|hasCanola|false
+STATE|1|1|0|2|hasFlower|true
+STATE|1|1|0|2|soilQuality|8.59
+STATE|1|1|0|2|grassCount|4.46
+STATE|1|1|0|2|canolaCount|9.55
+STATE|1|1|0|2|flowerCount|4.0
+STATE|1|1|0|2|predatorCount|7.39
+STATE|1|1|0|2|pollinatorCount|6.55
+STATE|1|1|0|2|pestCount|2.5
+STATE|1|1|0|2|predatorK|2.79
+STATE|1|1|0|2|pollinatorK|4.98
+STATE|1|1|0|2|pestK|5.15
+STATE|1|1|0|2|yield|7.96
+STATE|1|1|0|2|canolaPoints|6.62
+STATE|1|1|0|2|paymentPoints|4.55
+STATE|1|1|0|2|ownedBy|2
+STATE|1|1|0|2|village|1
+STATE|1|1|0|2|shared?|false
+STATE|1|1|0|3|length 0|9.2
+STATE|1|1|0|3|hasGrass|false
+STATE|1|1|0|3|hasCanola|true
+STATE|1|1|0|3|hasFlower|true
+STATE|1|1|0|3|soilQuality|3.25
+STATE|1|1|0|3|grassCount|7.0
+STATE|1|1|0|3|canolaCount|1.66
+STATE|1|1|0|3|flowerCount|9.08
+STATE|1|1|0|3|predatorCount|2.68
+STATE|1|1|0|3|pollinatorCount|9.11
+STATE|1|1|0|3|pestCount|3.1
+STATE|1|1|0|3|predatorK|9.57
+STATE|1|1|0|3|pollinatorK|7.06
+STATE|1|1|0|3|pestK|5.04
+STATE|1|1|0|3|yield|5.18
+STATE|1|1|0|3|canolaPoints|6.51
+STATE|1|1|0|3|paymentPoints|5.88
+STATE|1|1|0|3|ownedBy|1
+STATE|1|1|0|3|village|3
+STATE|1|1|0|3|shared?|true
+STATE|1|1|1|0|length 0|5.12
+STATE|1|1|1|0|hasGrass|false
+STATE|1|1|1|0|hasCanola|false
+STATE|1|1|1|0|hasFlower|true
+STATE|1|1|1|0|soilQuality|8.2
+STATE|1|1|1|0|grassCount|7.26
+STATE|1|1|1|0|canolaCount|9.08
+STATE|1|1|1|0|flowerCount|1.91
+STATE|1|1|1|0|predatorCount|7.45
+STATE|1|1|1|0|pollinatorCount|0.59
+STATE|1|1|1|0|pestCount|6.53
+STATE|1|1|1|0|predatorK|2.73
+STATE|1|1|1|0|pollinatorK|2.27
+STATE|1|1|1|0|pestK|8.75
+STATE|1|1|1|0|yield|1.06
+STATE|1|1|1|0|canolaPoints|5.22
+STATE|1|1|1|0|paymentPoints|8.54
+STATE|1|1|1|0|ownedBy|0
+STATE|1|1|1|0|village|0
+STATE|1|1|1|0|shared?|false
+STATE|1|1|1|1|length 0|0.6
+STATE|1|1|1|1|hasGrass|false
+STATE|1|1|1|1|hasCanola|false
+STATE|1|1|1|1|hasFlower|true
+STATE|1|1|1|1|soilQuality|3.6
+STATE|1|1|1|1|grassCount|2.5
+STATE|1|1|1|1|canolaCount|0.23
+STATE|1|1|1|1|flowerCount|1.15
+STATE|1|1|1|1|predatorCount|0.67
+STATE|1|1|1|1|pollinatorCount|0.41
+STATE|1|1|1|1|pestCount|9.19
+STATE|1|1|1|1|predatorK|3.73
+STATE|1|1|1|1|pollinatorK|1.28
+STATE|1|1|1|1|pestK|9.36
+STATE|1|1|1|1|yield|7.35
+STATE|1|1|1|1|canolaPoints|5.23
+STATE|1|1|1|1|paymentPoints|0.02
+STATE|1|1|1|1|ownedBy|3
+STATE|1|1|1|1|village|0
+STATE|1|1|1|1|shared?|false
+STATE|1|1|1|2|length 0|2.48
+STATE|1|1|1|2|hasGrass|false
+STATE|1|1|1|2|hasCanola|true
+STATE|1|1|1|2|hasFlower|false
+STATE|1|1|1|2|soilQuality|6.28
+STATE|1|1|1|2|grassCount|7.48
+STATE|1|1|1|2|canolaCount|2.86
+STATE|1|1|1|2|flowerCount|4.89
+STATE|1|1|1|2|predatorCount|3.08
+STATE|1|1|1|2|pollinatorCount|5.52
+STATE|1|1|1|2|pestCount|6.05
+STATE|1|1|1|2|predatorK|0.46
+STATE|1|1|1|2|pollinatorK|2.64
+STATE|1|1|1|2|pestK|4.02
+STATE|1|1|1|2|yield|6.22
+STATE|1|1|1|2|canolaPoints|1.53
+STATE|1|1|1|2|paymentPoints|9.59
+STATE|1|1|1|2|ownedBy|0
+STATE|1|1|1|2|village|3
+STATE|1|1|1|2|shared?|false
+STATE|1|1|1|3|length 0|8.38
+STATE|1|1|1|3|hasGrass|true
+STATE|1|1|1|3|hasCanola|false
+STATE|1|1|1|3|hasFlower|false
+STATE|1|1|1|3|soilQuality|5.18
+STATE|1|1|1|3|grassCount|7.81
+STATE|1|1|1|3|canolaCount|4.87
+STATE|1|1|1|3|flowerCount|3.28
+STATE|1|1|1|3|predatorCount|8.74
+STATE|1|1|1|3|pollinatorCount|3.41
+STATE|1|1|1|3|pestCount|2.62
+STATE|1|1|1|3|predatorK|9.71
+STATE|1|1|1|3|pollinatorK|6.53
+STATE|1|1|1|3|pestK|6.99
+STATE|1|1|1|3|yield|9.59
+STATE|1|1|1|3|canolaPoints|6.71
+STATE|1|1|1|3|paymentPoints|2.53
+STATE|1|1|1|3|ownedBy|0
+STATE|1|1|1|3|village|0
+STATE|1|1|1|3|shared?|true
+STATE|1|1|2|0|length 0|4.53
+STATE|1|1|2|0|hasGrass|true
+STATE|1|1|2|0|hasCanola|false
+STATE|1|1|2|0|hasFlower|false
+STATE|1|1|2|0|soilQuality|0.31
+STATE|1|1|2|0|grassCount|2.47
+STATE|1|1|2|0|canolaCount|7.14
+STATE|1|1|2|0|flowerCount|0.74
+STATE|1|1|2|0|predatorCount|0.8
+STATE|1|1|2|0|pollinatorCount|2.28
+STATE|1|1|2|0|pestCount|7.92
+STATE|1|1|2|0|predatorK|6.24
+STATE|1|1|2|0|pollinatorK|3.6
+STATE|1|1|2|0|pestK|6.85
+STATE|1|1|2|0|yield|2.79
+STATE|1|1|2|0|canolaPoints|7.51
+STATE|1|1|2|0|paymentPoints|1.51
+STATE|1|1|2|0|ownedBy|2
+STATE|1|1|2|0|village|2
+STATE|1|1|2|0|shared?|true
+STATE|1|1|2|1|length 0|5.12
+STATE|1|1|2|1|hasGrass|true
+STATE|1|1|2|1|hasCanola|true
+STATE|1|1|2|1|hasFlower|true
+STATE|1|1|2|1|soilQuality|7.51
+STATE|1|1|2|1|grassCount|1.05
+STATE|1|1|2|1|canolaCount|0.24
+STATE|1|1|2|1|flowerCount|6.69
+STATE|1|1|2|1|predatorCount|4.54
+STATE|1|1|2|1|pollinatorCount|5.36
+STATE|1|1|2|1|pestCount|3.8
+STATE|1|1|2|1|predatorK|6.85
+STATE|1|1|2|1|pollinatorK|7.61
+STATE|1|1|2|1|pestK|2.1
+STATE|1|1|2|1|yield|8.06
+STATE|1|1|2|1|canolaPoints|4.26
+STATE|1|1|2|1|paymentPoints|0.21
+STATE|1|1|2|1|ownedBy|3
+STATE|1|1|2|1|village|0
+STATE|1|1|2|1|shared?|false
+STATE|1|1|2|2|length 0|9.29
+STATE|1|1|2|2|hasGrass|false
+STATE|1|1|2|2|hasCanola|false
+STATE|1|1|2|2|hasFlower|false
+STATE|1|1|2|2|soilQuality|4.8
+STATE|1|1|2|2|grassCount|0.19
+STATE|1|1|2|2|canolaCount|9.61
+STATE|1|1|2|2|flowerCount|1.19
+STATE|1|1|2|2|predatorCount|3.66
+STATE|1|1|2|2|pollinatorCount|6.9
+STATE|1|1|2|2|pestCount|9.32
+STATE|1|1|2|2|predatorK|3.08
+STATE|1|1|2|2|pollinatorK|8.74
+STATE|1|1|2|2|pestK|4.12
+STATE|1|1|2|2|yield|1.05
+STATE|1|1|2|2|canolaPoints|1.98
+STATE|1|1|2|2|paymentPoints|7.75
+STATE|1|1|2|2|ownedBy|0
+STATE|1|1|2|2|village|2
+STATE|1|1|2|2|shared?|true
+STATE|1|1|2|3|length 0|6.37
+STATE|1|1|2|3|hasGrass|true
+STATE|1|1|2|3|hasCanola|false
+STATE|1|1|2|3|hasFlower|false
+STATE|1|1|2|3|soilQuality|0.05
+STATE|1|1|2|3|grassCount|0.24
+STATE|1|1|2|3|canolaCount|3.06
+STATE|1|1|2|3|flowerCount|7.24
+STATE|1|1|2|3|predatorCount|2.19
+STATE|1|1|2|3|pollinatorCount|4.9
+STATE|1|1|2|3|pestCount|1.16
+STATE|1|1|2|3|predatorK|3.73
+STATE|1|1|2|3|pollinatorK|7.16
+STATE|1|1|2|3|pestK|1.4
+STATE|1|1|2|3|yield|3.45
+STATE|1|1|2|3|canolaPoints|8.88
+STATE|1|1|2|3|paymentPoints|2.54
+STATE|1|1|2|3|ownedBy|0
+STATE|1|1|2|3|village|0
+STATE|1|1|2|3|shared?|false
+STATE|1|1|3|0|length 0|3.34
+STATE|1|1|3|0|hasGrass|true
+STATE|1|1|3|0|hasCanola|true
+STATE|1|1|3|0|hasFlower|true
+STATE|1|1|3|0|soilQuality|6.18
+STATE|1|1|3|0|grassCount|4.7
+STATE|1|1|3|0|canolaCount|0.43
+STATE|1|1|3|0|flowerCount|7.06
+STATE|1|1|3|0|predatorCount|2.91
+STATE|1|1|3|0|pollinatorCount|9.6
+STATE|1|1|3|0|pestCount|1.41
+STATE|1|1|3|0|predatorK|3.75
+STATE|1|1|3|0|pollinatorK|4.84
+STATE|1|1|3|0|pestK|8.66
+STATE|1|1|3|0|yield|7.2
+STATE|1|1|3|0|canolaPoints|7.28
+STATE|1|1|3|0|paymentPoints|4.19
+STATE|1|1|3|0|ownedBy|2
+STATE|1|1|3|0|village|3
+STATE|1|1|3|0|shared?|true
+STATE|1|1|3|1|length 0|2.32
+STATE|1|1|3|1|hasGrass|true
+STATE|1|1|3|1|hasCanola|true
+STATE|1|1|3|1|hasFlower|true
+STATE|1|1|3|1|soilQuality|6.79
+STATE|1|1|3|1|grassCount|9.19
+STATE|1|1|3|1|canolaCount|5.86
+STATE|1|1|3|1|flowerCount|8.18
+STATE|1|1|3|1|predatorCount|0.96
+STATE|1|1|3|1|pollinatorCount|3.56
+STATE|1|1|3|1|pestCount|9.98
+STATE|1|1|3|1|predatorK|1.47
+STATE|1|1|3|1|pollinatorK|4.17
+STATE|1|1|3|1|pestK|0.67
+STATE|1|1|3|1|yield|0.86
+STATE|1|1|3|1|canolaPoints|8.96
+STATE|1|1|3|1|paymentPoints|9.89
+STATE|1|1|3|1|ownedBy|3
+STATE|1|1|3|1|village|0
+STATE|1|1|3|1|shared?|true
+STATE|1|1|3|2|length 0|2.96
+STATE|1|1|3|2|hasGrass|true
+STATE|1|1|3|2|hasCanola|false
+STATE|1|1|3|2|hasFlower|false
+STATE|1|1|3|2|soilQuality|4.39
+STATE|1|1|3|2|grassCount|5.24
+STATE|1|1|3|2|canolaCount|1.12
+STATE|1|1|3|2|flowerCount|5.41
+STATE|1|1|3|2|predatorCount|9.5
+STATE|1|1|3|2|pollinatorCount|7.56
+STATE|1|1|3|2|pestCount|0.96
+STATE|1|1|3|2|predatorK|5.17
+STATE|1|1|3|2|pollinatorK|7.15
+STATE|1|1|3|2|pestK|2.57
+STATE|1|1|3|2|yield|8.95
+STATE|1|1|3|2|canolaPoints|4.61
+STATE|1|1|3|2|paymentPoints|7.03
+STATE|1|1|3|2|ownedBy|2
+STATE|1|1|3|2|village|1
+STATE|1|1|3|2|shared?|false
+STATE|1|1|3|3|length 0|5.73
+STATE|1|1|3|3|hasGrass|true
+STATE|1|1|3|3|hasCanola|true
+STATE|1|1|3|3|hasFlower|true
+STATE|1|1|3|3|soilQuality|5.95
+STATE|1|1|3|3|grassCount|8.82
+STATE|1|1|3|3|canolaCount|1.8
+STATE|1|1|3|3|flowerCount|5.1
+STATE|1|1|3|3|predatorCount|4.82
+STATE|1|1|3|3|pollinatorCount|4.05
+STATE|1|1|3|3|pestCount|7.1
+STATE|1|1|3|3|predatorK|9.37
+STATE|1|1|3|3|pollinatorK|7.05
+STATE|1|1|3|3|pestK|4.72
+STATE|1|1|3|3|yield|9.62
+STATE|1|1|3|3|canolaPoints|3.31
+STATE|1|1|3|3|paymentPoints|7.46
+STATE|1|1|3|3|ownedBy|3
+STATE|1|1|3|3|village|0
+STATE|1|1|3|3|shared?|false
+CHOICE|1|1|1|1|1|4|12:00:29.000 PM 28-Sep-2026
+CHOICE|1|1|1|0|2|4|12:00:40.000 PM 28-Sep-2026
+CHOICE|1|1|1|0|2|-99|12:00:47.000 PM 28-Sep-2026
+CONFIRM|1|1|1|12:00:51.000 PM 28-Sep-2026
+CHOICE|1|1|2|3|1|1|12:00:58.000 PM 28-Sep-2026
+CHOICE|1|1|2|1|2|2|12:01:06.000 PM 28-Sep-2026
+CHOICE|1|1|2|1|0|4|12:01:14.000 PM 28-Sep-2026
+CONFIRM|1|1|2|12:01:19.000 PM 28-Sep-2026
+CHOICE|1|1|3|1|3|1|12:01:25.000 PM 28-Sep-2026
+CHOICE|1|1|3|1|3|1|12:01:38.000 PM 28-Sep-2026
+CHOICE|1|1|3|2|3|4|12:01:39.000 PM 28-Sep-2026
+CONFIRM|1|1|3|12:01:41.000 PM 28-Sep-2026
+CHOICE|1|1|4|2|1|4|12:01:46.000 PM 28-Sep-2026
+CHOICE|1|1|4|1|0|4|12:01:54.000 PM 28-Sep-2026
+CHOICE|1|1|4|1|0|4|12:01:55.000 PM 28-Sep-2026
+CONFIRM|1|1|4|12:02:01.000 PM 28-Sep-2026
+CHOICE|1|1|5|3|3|3|12:02:09.000 PM 28-Sep-2026
+CONFIRM|1|1|5|12:02:20.000 PM 28-Sep-2026
+CHOICE|1|1|6|3|2|-99|12:02:34.000 PM 28-Sep-2026
+CONFIRM|1|1|6|12:02:40.000 PM 28-Sep-2026
+CHOICE|1|1|7|2|2|4|12:02:49.000 PM 28-Sep-2026
+CHOICE|1|1|7|0|1|2|12:03:02.000 PM 28-Sep-2026
+CONFIRM|1|1|7|12:03:11.000 PM 28-Sep-2026
+CHOICE|1|1|8|0|2|-99|12:03:19.000 PM 28-Sep-2026
+CHOICE|1|1|8|2|0|1|12:03:30.000 PM 28-Sep-2026
+CHOICE|1|1|8|3|2|3|12:03:32.000 PM 28-Sep-2026
+CONFIRM|1|1|8|12:03:38.000 PM 28-Sep-2026
+CHOICE|1|1|9|2|1|3|12:03:46.000 PM 28-Sep-2026
+CHOICE|1|1|9|3|1|3|12:03:49.000 PM 28-Sep-2026
+CONFIRM|1|1|9|12:03:51.000 PM 28-Sep-2026
+CHOICE|1|1|10|3|1|3|12:03:54.000 PM 28-Sep-2026
+CONFIRM|1|1|10|12:04:00.000 PM 28-Sep-2026
+SCORE|1|1|1|4|54|4
+SCORE|1|1|2|7|24|17
+SCORE|1|1|3|20|44|12
+SCORE|1|1|4|10|27|19
+SCORE|1|1|5|16|53|10
+SCORE|1|1|6|12|60|20
+SCORE|1|1|7|9|43|19
+SCORE|1|1|8|20|62|2
+SCORE|1|1|9|11|30|12
+SCORE|1|1|10|15|26|8
+PHASE|phase-1-2|12:04:15.000 PM 28-Sep-2026
+STATE|1|2|0|0|length 0|3.54
+STATE|1|2|0|0|hasGrass|true
+STATE|1|2|0|0|hasCanola|false
+STATE|1|2|0|0|hasFlower|true
+STATE|1|2|0|0|soilQuality|9.61
+STATE|1|2|0|0|grassCount|1.27
+STATE|1|2|0|0|canolaCount|0.28
+STATE|1|2|0|0|flowerCount|3.51
+STATE|1|2|0|0|predatorCount|3.59
+STATE|1|2|0|0|pollinatorCount|9.18
+STATE|1|2|0|0|pestCount|8.83
+STATE|1|2|0|0|predatorK|7.62
+STATE|1|2|0|0|pollinatorK|4.36
+STATE|1|2|0|0|pestK|5.43
+STATE|1|2|0|0|yield|2.37
+STATE|1|2|0|0|canolaPoints|8.34
+STATE|1|2|0|0|paymentPoints|3.9
+STATE|1|2|0|0|ownedBy|1
+STATE|1|2|0|0|village|2
+STATE|1|2|0|0|shared?|false
+STATE|1|2|0|1|length 0|1.51
+STATE|1|2|0|1|hasGrass|true
+STATE|1|2|0|1|hasCanola|false
+STATE|1|2|0|1|hasFlower|true
+STATE|1|2|0|1|soilQuality|1.42
+STATE|1|2|0|1|grassCount|2.04
+STATE|1|2|0|1|canolaCount|2.51
+STATE|1|2|0|1|flowerCount|4.2
+STATE|1|2|0|1|predatorCount|2.5
+STATE|1|2|0|1|pollinatorCount|3.43
+STATE|1|2|0|1|pestCount|2.46
+STATE|1|2|0|1|predatorK|2.4
+STATE|1|2|0|1|pollinatorK|6.11
+STATE|1|2|0|1|pestK|3.36
+STATE|1|2|0|1|yield|3.73
+STATE|1|2|0|1|canolaPoints|7.68
+STATE|1|2|0|1|paymentPoints|0.62
+STATE|1|2|0|1|ownedBy|0
+STATE|1|2|0|1|village|0
+STATE|1|2|0|1|shared?|false
+STATE|1|2|0|2|length 0|4.3
+STATE|1|2|0|2|hasGrass|false
+STATE|1|2|0|2|hasCanola|true
+STATE|1|2|0|2|hasFlower|false
+STATE|1|2|0|2|soilQuality|8.45
+STATE|1|2|0|2|grassCount|3.38
+STATE|1|2|0|2|canolaCount|7.68
+STATE|1|2|0|2|flowerCount|6.1
+STATE|1|2|0|2|predatorCount|3.95
+STATE|1|2|0|2|pollinatorCount|9.97
+STATE|1|2|0|2|pestCount|3.92
+STATE|1|2|0|2|predatorK|4.74
+STATE|1|2|0|2|pollinatorK|6.19
+STATE|1|2|0|2|pestK|3.17
+STATE|1|2|0|2|yield|8.38
+STATE|1|2|0|2|canolaPoints|5.98
+STATE|1|2|0|2|paymentPoints|5.88
+STATE|1|2|0|2|ownedBy|3
+STATE|1|2|0|2|village|3
+STATE|1|2|0|2|shared?|false
+STATE|1|2|0|3|length 0|9.89
+STATE|1|2|0|3|hasGrass|false
+STATE|1|2|0|3|hasCanola|true
+STATE|1|2|0|3|hasFlower|true
+STATE|1|2|0|3|soilQuality|5.25
+STATE|1|2|0|3|grassCount|0.46
+STATE|1|2|0|3|canolaCount|1.08
+STATE|1|2|0|3|flowerCount|9.95
+STATE|1|2|0|3|predatorCount|1.28
+STATE|1|2|0|3|pollinatorCount|9.37
+STATE|1|2|0|3|pestCount|6.8
+STATE|1|2|0|3|predatorK|9.15
+STATE|1|2|0|3|pollinatorK|0.77
+STATE|1|2|0|3|pestK|3.06
+STATE|1|2|0|3|yield|7.98
+STATE|1|2|0|3|canolaPoints|0.09
+STATE|1|2|0|3|paymentPoints|1.06
+STATE|1|2|0|3|ownedBy|1
+STATE|1|2|0|3|village|0
+STATE|1|2|0|3|shared?|true
+STATE|1|2|1|0|length 0|1.47
+STATE|1|2|1|0|hasGrass|false
+STATE|1|2|1|0|hasCanola|true
+STATE|1|2|1|0|hasFlower|false
+STATE|1|2|1|0|soilQuality|6.49
+STATE|1|2|1|0|grassCount|0.5
+STATE|1|2|1|0|canolaCount|8.99
+STATE|1|2|1|0|flowerCount|2.42
+STATE|1|2|1|0|predatorCount|4.81
+STATE|1|2|1|0|pollinatorCount|5.59
+STATE|1|2|1|0|pestCount|1.39
+STATE|1|2|1|0|predatorK|5.02
+STATE|1|2|1|0|pollinatorK|0.6
+STATE|1|2|1|0|pestK|2.0
+STATE|1|2|1|0|yield|9.19
+STATE|1|2|1|0|canolaPoints|8.22
+STATE|1|2|1|0|paymentPoints|5.23
+STATE|1|2|1|0|ownedBy|3
+STATE|1|2|1|0|village|3
+STATE|1|2|1|0|shared?|false
+STATE|1|2|1|1|length 0|1.4
+STATE|1|2|1|1|hasGrass|true
+STATE|1|2|1|1|hasCanola|true
+STATE|1|2|1|1|hasFlower|true
+STATE|1|2|1|1|soilQuality|1.08
+STATE|1|2|1|1|grassCount|2.12
+STATE|1|2|1|1|canolaCount|0.53
+STATE|1|2|1|1|flowerCount|2.15
+STATE|1|2|1|1|predatorCount|3.79
+STATE|1|2|1|1|pollinatorCount|6.23
+STATE|1|2|1|1|pestCount|8.59
+STATE|1|2|1|1|predatorK|9.04
+STATE|1|2|1|1|pollinatorK|7.18
+STATE|1|2|1|1|pestK|5.07
+STATE|1|2|1|1|yield|9.17
+STATE|1|2|1|1|canolaPoints|1.63
+STATE|1|2|1|1|paymentPoints|1.05
+STATE|1|2|1|1|ownedBy|0
+STATE|1|2|1|1|village|3
+STATE|1|2|1|1|shared?|false
+STATE|1|2|1|2|length 0|1.73
+STATE|1|2|1|2|hasGrass|true
+STATE|1|2|1|2|hasCanola|true
+STATE|1|2|1|2|hasFlower|true
+STATE|1|2|1|2|soilQuality|1.3
+STATE|1|2|1|2|grassCount|3.14
+STATE|1|2|1|2|canolaCount|2.99
+STATE|1|2|1|2|flowerCount|0.99
+STATE|1|2|1|2|predatorCount|1.0
+STATE|1|2|1|2|pollinatorCount|2.72
+STATE|1|2|1|2|pestCount|5.27
+STATE|1|2|1|2|predatorK|4.89
+STATE|1|2|1|2|pollinatorK|2.8
+STATE|1|2|1|2|pestK|4.21
+STATE|1|2|1|2|yield|1.38
+STATE|1|2|1|2|canolaPoints|5.47
+STATE|1|2|1|2|paymentPoints|1.04
+STATE|1|2|1|2|ownedBy|3
+STATE|1|2|1|2|village|3
+STATE|1|2|1|2|shared?|false
+STATE|1|2|1|3|length 0|2.12
+STATE|1|2|1|3|hasGrass|true
+STATE|1|2|1|3|hasCanola|true
+STATE|1|2|1|3|hasFlower|true
+STATE|1|2|1|3|soilQuality|0.24
+STATE|1|2|1|3|grassCount|2.63
+STATE|1|2|1|3|canolaCount|7.22
+STATE|1|2|1|3|flowerCount|5.4
+STATE|1|2|1|3|predatorCount|7.37
+STATE|1|2|1|3|pollinatorCount|8.61
+STATE|1|2|1|3|pestCount|2.25
+STATE|1|2|1|3|predatorK|1.44
+STATE|1|2|1|3|pollinatorK|3.13
+STATE|1|2|1|3|pestK|6.89
+STATE|1|2|1|3|yield|9.97
+STATE|1|2|1|3|canolaPoints|1.4
+STATE|1|2|1|3|paymentPoints|6.94
+STATE|1|2|1|3|ownedBy|0
+STATE|1|2|1|3|village|0
+STATE|1|2|1|3|shared?|false
+STATE|1|2|2|0|length 0|8.99
+STATE|1|2|2|0|hasGrass|true
+STATE|1|2|2|0|hasCanola|true
+STATE|1|2|2|0|hasFlower|true
+STATE|1|2|2|0|soilQuality|8.24
+STATE|1|2|2|0|grassCount|7.01
+STATE|1|2|2|0|canolaCount|2.77
+STATE|1|2|2|0|flowerCount|9.02
+STATE|1|2|2|0|predatorCount|5.69
+STATE|1|2|2|0|pollinatorCount|4.13
+STATE|1|2|2|0|pestCount|4.15
+STATE|1|2|2|0|predatorK|7.2
+STATE|1|2|2|0|pollinatorK|4.55
+STATE|1|2|2|0|pestK|6.59
+STATE|1|2|2|0|yield|1.22
+STATE|1|2|2|0|canolaPoints|7.02
+STATE|1|2|2|0|paymentPoints|2.72
+STATE|1|2|2|0|ownedBy|0
+STATE|1|2|2|0|village|0
+STATE|1|2|2|0|shared?|true
+STATE|1|2|2|1|length 0|2.61
+STATE|1|2|2|1|hasGrass|false
+STATE|1|2|2|1|hasCanola|false
+STATE|1|2|2|1|hasFlower|false
+STATE|1|2|2|1|soilQuality|8.92
+STATE|1|2|2|1|grassCount|4.3
+STATE|1|2|2|1|canolaCount|1.29
+STATE|1|2|2|1|flowerCount|1.71
+STATE|1|2|2|1|predatorCount|8.74
+STATE|1|2|2|1|pollinatorCount|8.71
+STATE|1|2|2|1|pestCount|9.7
+STATE|1|2|2|1|predatorK|3.83
+STATE|1|2|2|1|pollinatorK|6.13
+STATE|1|2|2|1|pestK|6.15
+STATE|1|2|2|1|yield|5.81
+STATE|1|2|2|1|canolaPoints|4.45
+STATE|1|2|2|1|paymentPoints|7.55
+STATE|1|2|2|1|ownedBy|3
+STATE|1|2|2|1|village|1
+STATE|1|2|2|1|shared?|true
+STATE|1|2|2|2|length 0|1.7
+STATE|1|2|2|2|hasGrass|false
+STATE|1|2|2|2|hasCanola|false
+STATE|1|2|2|2|hasFlower|true
+STATE|1|2|2|2|soilQuality|6.16
+STATE|1|2|2|2|grassCount|6.59
+STATE|1|2|2|2|canolaCount|8.85
+STATE|1|2|2|2|flowerCount|6.82
+STATE|1|2|2|2|predatorCount|3.08
+STATE|1|2|2|2|pollinatorCount|2.07
+STATE|1|2|2|2|pestCount|8.37
+STATE|1|2|2|2|predatorK|2.99
+STATE|1|2|2|2|pollinatorK|0.13
+STATE|1|2|2|2|pestK|8.7
+STATE|1|2|2|2|yield|1.98
+STATE|1|2|2|2|canolaPoints|3.13
+STATE|1|2|2|2|paymentPoints|3.19
+STATE|1|2|2|2|ownedBy|1
+STATE|1|2|2|2|village|3
+STATE|1|2|2|2|shared?|false
+STATE|1|2|2|3|length 0|8.23
+STATE|1|2|2|3|hasGrass|true
+STATE|1|2|2|3|hasCanola|true
+STATE|1|2|2|3|hasFlower|false
+STATE|1|2|2|3|soilQuality|2.83
+STATE|1|2|2|3|grassCount|5.74
+STATE|1|2|2|3|canolaCount|2.12
+STATE|1|2|2|3|flowerCount|1.62
+STATE|1|2|2|3|predatorCount|7.71
+STATE|1|2|2|3|pollinatorCount|7.21
+STATE|1|2|2|3|pestCount|6.33
+STATE|1|2|2|3|predatorK|4.47
+STATE|1|2|2|3|pollinatorK|2.79
+STATE|1|2|2|3|pestK|0.82
+STATE|1|2|2|3|yield|4.79
+STATE|1|2|2|3|canolaPoints|7.88
+STATE|1|2|2|3|paymentPoints|2.38
+STATE|1|2|2|3|ownedBy|3
+STATE|1|2|2|3|village|1
+STATE|1|2|2|3|shared?|false
+STATE|1|2|3|0|length 0|8.56
+STATE|1|2|3|0|hasGrass|true
+STATE|1|2|3|0|hasCanola|false
+STATE|1|2|3|0|hasFlower|false
+STATE|1|2|3|0|soilQuality|3.35
+STATE|1|2|3|0|grassCount|6.16
+STATE|1|2|3|0|canolaCount|3.92
+STATE|1|2|3|0|flowerCount|4.07
+STATE|1|2|3|0|predatorCount|6.44
+STATE|1|2|3|0|pollinatorCount|5.61
+STATE|1|2|3|0|pestCount|2.61
+STATE|1|2|3|0|predatorK|2.49
+STATE|1|2|3|0|pollinatorK|9.43
+STATE|1|2|3|0|pestK|7.32
+STATE|1|2|3|0|yield|8.24
+STATE|1|2|3|0|canolaPoints|1.19
+STATE|1|2|3|0|paymentPoints|4.56
+STATE|1|2|3|0|ownedBy|2
+STATE|1|2|3|0|village|2
+STATE|1|2|3|0|shared?|false
+STATE|1|2|3|1|length 0|2.85
+STATE|1|2|3|1|hasGrass|true
+STATE|1|2|3|1|hasCanola|true
+STATE|1|2|3|1|hasFlower|false
+STATE|1|2|3|1|soilQuality|8.86
+STATE|1|2|3|1|grassCount|6.03
+STATE|1|2|3|1|canolaCount|5.44
+STATE|1|2|3|1|flowerCount|0.04
+STATE|1|2|3|1|predatorCount|3.87
+STATE|1|2|3|1|pollinatorCount|4.31
+STATE|1|2|3|1|pestCount|2.31
+STATE|1|2|3|1|predatorK|2.73
+STATE|1|2|3|1|pollinatorK|3.64
+STATE|1|2|3|1|pestK|3.61
+STATE|1|2|3|1|yield|9.42
+STATE|1|2|3|1|canolaPoints|4.93
+STATE|1|2|3|1|paymentPoints|0.7
+STATE|1|2|3|1|ownedBy|2
+STATE|1|2|3|1|village|3
+STATE|1|2|3|1|shared?|false
+STATE|1|2|3|2|length 0|2.8
+STATE|1|2|3|2|hasGrass|true
+STATE|1|2|3|2|hasCanola|true
+STATE|1|2|3|2|hasFlower|false
+STATE|1|2|3|2|soilQuality|2.06
+STATE|1|2|3|2|grassCount|2.41
+STATE|1|2|3|2|canolaCount|0.49
+STATE|1|2|3|2|flowerCount|1.45
+STATE|1|2|3|2|predatorCount|2.95
+STATE|1|2|3|2|pollinatorCount|7.62
+STATE|1|2|3|2|pestCount|6.41
+STATE|1|2|3|2|predatorK|5.41
+STATE|1|2|3|2|pollinatorK|6.78
+STATE|1|2|3|2|pestK|1.36
+STATE|1|2|3|2|yield|7.07
+STATE|1|2|3|2|canolaPoints|0.34
+STATE|1|2|3|2|paymentPoints|5.11
+STATE|1|2|3|2|ownedBy|1
+STATE|1|2|3|2|village|2
+STATE|1|2|3|2|shared?|true
+STATE|1|2|3|3|length 0|5.56
+STATE|1|2|3|3|hasGrass|false
+STATE|1|2|3|3|hasCanola|false
+STATE|1|2|3|3|hasFlower|true
+STATE|1|2|3|3|soilQuality|3.6
+STATE|1|2|3|3|grassCount|6.09
+STATE|1|2|3|3|canolaCount|3.48
+STATE|1|2|3|3|flowerCount|7.95
+STATE|1|2|3|3|predatorCount|9.41
+STATE|1|2|3|3|pollinatorCount|2.76
+STATE|1|2|3|3|pestCount|4.78
+STATE|1|2|3|3|predatorK|2.83
+STATE|1|2|3|3|pollinatorK|6.0
+STATE|1|2|3|3|pestK|1.5
+STATE|1|2|3|3|yield|0.44
+STATE|1|2|3|3|canolaPoints|4.34
+STATE|1|2|3|3|paymentPoints|6.33
+STATE|1|2|3|3|ownedBy|1
+STATE|1|2|3|3|village|3
+STATE|1|2|3|3|shared?|false
+CHOICE|1|2|1|0|0|4|12:04:22.000 PM 28-Sep-2026
+CHOICE|1|2|1|1|1|1|12:04:32.000 PM 28-Sep-2026
+CHOICE|1|2|1|2|1|1|12:04:36.000 PM 28-Sep-2026
+CONFIRM|1|2|1|12:04:46.000 PM 28-Sep-2026
+CHOICE|1|2|2|3|0|1|12:05:01.000 PM 28-Sep-2026
+CONFIRM|1|2|2|12:05:11.000 PM 28-Sep-2026
+CHOICE|1|2|3|1|1|1|12:05:12.000 PM 28-Sep-2026
+CONFIRM|1|2|3|12:05:24.000 PM 28-Sep-2026
+CHOICE|1|2|4|0|2|2|12:05:25.000 PM 28-Sep-2026
+CHOICE|1|2|4|3|3|2|12:05:28.000 PM 28-Sep-2026
+CONFIRM|1|2|4|12:05:35.000 PM 28-Sep-2026
+CHOICE|1|2|5|3|2|-99|12:05:45.000 PM 28-Sep-2026
+CONFIRM|1|2|5|12:05:48.000 PM 28-Sep-2026
+CHOICE|1|2|6|3|3|4|12:05:51.000 PM 28-Sep-2026
+CHOICE|1|2|6|1|2|3|12:06:03.000 PM 28-Sep-2026
+CHOICE|1|2|6|1|2|4|12:06:13.000 PM 28-Sep-2026
+CONFIRM|1|2|6|12:06:24.000 PM 28-Sep-2026
+CHOICE|1|2|7|3|3|4|12:06:31.000 PM 28-Sep-2026
+CHOICE|1|2|7|3|3|1|12:06:45.000 PM 28-Sep-2026
+CONFIRM|1|2|7|12:06:52.000 PM 28-Sep-2026
+CHOICE|1|2|8|0|3|1|12:07:07.000 PM 28-Sep-2026
+CHOICE|1|2|8|2|2|4|12:07:13.000 PM 28-Sep-2026
+CHOICE|1|2|8|3|1|2|12:07:21.000 PM 28-Sep-2026
+CONFIRM|1|2|8|12:07:26.000 PM 28-Sep-2026
+CHOICE|1|2|9|3|0|2|12:07:38.000 PM 28-Sep-2026
+CHOICE|1|2|9|3|0|4|12:07:48.000 PM 28-Sep-2026
+CONFIRM|1|2|9|12:07:57.000 PM 28-Sep-2026
+CHOICE|1|2|10|0|3|3|12:08:12.000 PM 28-Sep-2026
+CHOICE|1|2|10|2|1|2|12:08:19.000 PM 28-Sep-2026
+CONFIRM|1|2|10|12:08:27.000 PM 28-Sep-2026
+SCORE|1|2|1|15|60|5
+SCORE|1|2|2|13|29|10
+SCORE|1|2|3|18|43|9
+SCORE|1|2|4|20|65|8
+SCORE|1|2|5|10|52|0
+SCORE|1|2|6|12|49|1
+SCORE|1|2|7|6|35|3
+SCORE|1|2|8|3|3|11
+SCORE|1|2|9|10|48|10
+SCORE|1|2|10|12|23|10
+PHASE|phase-2-1|12:08:40.000 PM 28-Sep-2026
+STATE|2|1|0|0|length 0|0.8
+STATE|2|1|0|0|hasGrass|false
+STATE|2|1|0|0|hasCanola|true
+STATE|2|1|0|0|hasFlower|false
+STATE|2|1|0|0|soilQuality|4.45
+STATE|2|1|0|0|grassCount|0.94
+STATE|2|1|0|0|canolaCount|0.18
+STATE|2|1|0|0|flowerCount|0.3
+STATE|2|1|0|0|predatorCount|4.93
+STATE|2|1|0|0|pollinatorCount|7.14
+STATE|2|1|0|0|pestCount|0.51
+STATE|2|1|0|0|predatorK|3.3
+STATE|2|1|0|0|pollinatorK|4.78
+STATE|2|1|0|0|pestK|8.98
+STATE|2|1|0|0|yield|9.71
+STATE|2|1|0|0|canolaPoints|8.75
+STATE|2|1|0|0|paymentPoints|6.39
+STATE|2|1|0|0|ownedBy|3
+STATE|2|1|0|0|village|0
+STATE|2|1|0|0|shared?|true
+STATE|2|1|0|1|length 0|6.12
+STATE|2|1|0|1|hasGrass|true
+STATE|2|1|0|1|hasCanola|true
+STATE|2|1|0|1|hasFlower|false
+STATE|2|1|0|1|soilQuality|5.68
+STATE|2|1|0|1|grassCount|7.26
+STATE|2|1|0|1|canolaCount|4.65
+STATE|2|1|0|1|flowerCount|2.79
+STATE|2|1|0|1|predatorCount|5.04
+STATE|2|1|0|1|pollinatorCount|5.73
+STATE|2|1|0|1|pestCount|2.42
+STATE|2|1|0|1|predatorK|8.45
+STATE|2|1|0|1|pollinatorK|9.81
+STATE|2|1|0|1|pestK|1.81
+STATE|2|1|0|1|yield|2.42
+STATE|2|1|0|1|canolaPoints|8.11
+STATE|2|1|0|1|paymentPoints|7.22
+STATE|2|1|0|1|ownedBy|0
+STATE|2|1|0|1|village|0
+STATE|2|1|0|1|shared?|false
+STATE|2|1|0|2|length 0|2.38
+STATE|2|1|0|2|hasGrass|false
+STATE|2|1|0|2|hasCanola|false
+STATE|2|1|0|2|hasFlower|false
+STATE|2|1|0|2|soilQuality|1.62
+STATE|2|1|0|2|grassCount|4.06
+STATE|2|1|0|2|canolaCount|4.73
+STATE|2|1|0|2|flowerCount|3.62
+STATE|2|1|0|2|predatorCount|1.8
+STATE|2|1|0|2|pollinatorCount|1.98
+STATE|2|1|0|2|pestCount|7.0
+STATE|2|1|0|2|predatorK|9.25
+STATE|2|1|0|2|pollinatorK|8.44
+STATE|2|1|0|2|pestK|6.15
+STATE|2|1|0|2|yield|7.91
+STATE|2|1|0|2|canolaPoints|1.34
+STATE|2|1|0|2|paymentPoints|2.1
+STATE|2|1|0|2|ownedBy|3
+STATE|2|1|0|2|village|0
+STATE|2|1|0|2|shared?|true
+STATE|2|1|0|3|length 0|0.84
+STATE|2|1|0|3|hasGrass|false
+STATE|2|1|0|3|hasCanola|true
+STATE|2|1|0|3|hasFlower|true
+STATE|2|1|0|3|soilQuality|3.95
+STATE|2|1|0|3|grassCount|8.37
+STATE|2|1|0|3|canolaCount|0.1
+STATE|2|1|0|3|flowerCount|8.77
+STATE|2|1|0|3|predatorCount|3.05
+STATE|2|1|0|3|pollinatorCount|5.71
+STATE|2|1|0|3|pestCount|4.73
+STATE|2|1|0|3|predatorK|1.22
+STATE|2|1|0|3|pollinatorK|9.58
+STATE|2|1|0|3|pestK|1.76
+STATE|2|1|0|3|yield|8.05
+STATE|2|1|0|3|canolaPoints|8.79
+STATE|2|1|0|3|paymentPoints|4.54
+STATE|2|1|0|3|ownedBy|3
+STATE|2|1|0|3|village|0
+STATE|2|1|0|3|shared?|true
+STATE|2|1|1|0|length 0|8.7
+STATE|2|1|1|0|hasGrass|false
+STATE|2|1|1|0|hasCanola|false
+STATE|2|1|1|0|hasFlower|false
+STATE|2|1|1|0|soilQuality|7.07
+STATE|2|1|1|0|grassCount|2.92
+STATE|2|1|1|0|canolaCount|9.16
+STATE|2|1|1|0|flowerCount|5.47
+STATE|2|1|1|0|predatorCount|5.6
+STATE|2|1|1|0|pollinatorCount|0.78
+STATE|2|1|1|0|pestCount|9.11
+STATE|2|1|1|0|predatorK|1.86
+STATE|2|1|1|0|pollinatorK|3.08
+STATE|2|1|1|0|pestK|9.25
+STATE|2|1|1|0|yield|8.57
+STATE|2|1|1|0|canolaPoints|6.96
+STATE|2|1|1|0|paymentPoints|4.59
+STATE|2|1|1|0|ownedBy|0
+STATE|2|1|1|0|village|0
+STATE|2|1|1|0|shared?|false
+STATE|2|1|1|1|length 0|8.53
+STATE|2|1|1|1|hasGrass|true
+STATE|2|1|1|1|hasCanola|true
+STATE|2|1|1|1|hasFlower|false
+STATE|2|1|1|1|soilQuality|1.08
+STATE|2|1|1|1|grassCount|1.9
+STATE|2|1|1|1|canolaCount|8.14
+STATE|2|1|1|1|flowerCount|2.22
+STATE|2|1|1|1|predatorCount|3.23
+STATE|2|1|1|1|pollinatorCount|2.73
+STATE|2|1|1|1|pestCount|3.73
+STATE|2|1|1|1|predatorK|0.72
+STATE|2|1|1|1|pollinatorK|8.1
+STATE|2|1|1|1|pestK|8.52
+STATE|2|1|1|1|yield|9.58
+STATE|2|1|1|1|canolaPoints|7.18
+STATE|2|1|1|1|paymentPoints|1.36
+STATE|2|1|1|1|ownedBy|0
+STATE|2|1|1|1|village|2
+STATE|2|1|1|1|shared?|false
+STATE|2|1|1|2|length 0|1.96
+STATE|2|1|1|2|hasGrass|false
+STATE|2|1|1|2|hasCanola|true
+STATE|2|1|1|2|hasFlower|true
+STATE|2|1|1|2|soilQuality|6.39
+STATE|2|1|1|2|grassCount|7.19
+STATE|2|1|1|2|canolaCount|8.61
+STATE|2|1|1|2|flowerCount|7.53
+STATE|2|1|1|2|predatorCount|1.37
+STATE|2|1|1|2|pollinatorCount|7.38
+STATE|2|1|1|2|pestCount|9.81
+STATE|2|1|1|2|predatorK|6.77
+STATE|2|1|1|2|pollinatorK|4.81
+STATE|2|1|1|2|pestK|2.95
+STATE|2|1|1|2|yield|0.64
+STATE|2|1|1|2|canolaPoints|6.25
+STATE|2|1|1|2|paymentPoints|9.62
+STATE|2|1|1|2|ownedBy|0
+STATE|2|1|1|2|village|0
+STATE|2|1|1|2|shared?|false
+STATE|2|1|1|3|length 0|8.98
+STATE|2|1|1|3|hasGrass|true
+STATE|2|1|1|3|hasCanola|false
+STATE|2|1|1|3|hasFlower|true
+STATE|2|1|1|3|soilQuality|3.01
+STATE|2|1|1|3|grassCount|5.66
+STATE|2|1|1|3|canolaCount|8.8
+STATE|2|1|1|3|flowerCount|5.36
+STATE|2|1|1|3|predatorCount|0.89
+STATE|2|1|1|3|pollinatorCount|9.3
+STATE|2|1|1|3|pestCount|5.72
+STATE|2|1|1|3|predatorK|7.79
+STATE|2|1|1|3|pollinatorK|2.3
+STATE|2|1|1|3|pestK|3.35
+STATE|2|1|1|3|yield|0.9
+STATE|2|1|1|3|canolaPoints|1.87
+STATE|2|1|1|3|paymentPoints|4.37
+STATE|2|1|1|3|ownedBy|2
+STATE|2|1|1|3|village|3
+STATE|2|1|1|3|shared?|false
+STATE|2|1|2|0|length 0|8.34
+STATE|2|1|2|0|hasGrass|true
+STATE|2|1|2|0|hasCanola|false
+STATE|2|1|2|0|hasFlower|false
+STATE|2|1|2|0|soilQuality|3.45
+STATE|2|1|2|0|grassCount|1.85
+STATE|2|1|2|0|canolaCount|9.56
+STATE|2|1|2|0|flowerCount|6.57
+STATE|2|1|2|0|predatorCount|0.43
+STATE|2|1|2|0|pollinatorCount|6.85
+STATE|2|1|2|0|pestCount|3.78
+STATE|2|1|2|0|predatorK|4.21
+STATE|2|1|2|0|pollinatorK|7.66
+STATE|2|1|2|0|pestK|2.23
+STATE|2|1|2|0|yield|2.68
+STATE|2|1|2|0|canolaPoints|5.4
+STATE|2|1|2|0|paymentPoints|9.05
+STATE|2|1|2|0|ownedBy|0
+STATE|2|1|2|0|village|3
+STATE|2|1|2|0|shared?|false
+STATE|2|1|2|1|length 0|7.21
+STATE|2|1|2|1|hasGrass|true
+STATE|2|1|2|1|hasCanola|false
+STATE|2|1|2|1|hasFlower|false
+STATE|2|1|2|1|soilQuality|7.1
+STATE|2|1|2|1|grassCount|5.37
+STATE|2|1|2|1|canolaCount|3.14
+STATE|2|1|2|1|flowerCount|5.03
+STATE|2|1|2|1|predatorCount|2.38
+STATE|2|1|2|1|pollinatorCount|4.55
+STATE|2|1|2|1|pestCount|4.06
+STATE|2|1|2|1|predatorK|1.07
+STATE|2|1|2|1|pollinatorK|2.32
+STATE|2|1|2|1|pestK|3.44
+STATE|2|1|2|1|yield|3.94
+STATE|2|1|2|1|canolaPoints|5.63
+STATE|2|1|2|1|paymentPoints|7.47
+STATE|2|1|2|1|ownedBy|1
+STATE|2|1|2|1|village|1
+STATE|2|1|2|1|shared?|false
+STATE|2|1|2|2|length 0|3.38
+STATE|2|1|2|2|hasGrass|true
+STATE|2|1|2|2|hasCanola|true
+STATE|2|1|2|2|hasFlower|false
+STATE|2|1|2|2|soilQuality|9.32
+STATE|2|1|2|2|grassCount|8.31
+STATE|2|1|2|2|canolaCount|1.72
+STATE|2|1|2|2|flowerCount|1.51
+STATE|2|1|2|2|predatorCount|1.04
+STATE|2|1|2|2|pollinatorCount|3.0
+STATE|2|1|2|2|pestCount|4.26
+STATE|2|1|2|2|predatorK|0.07
+STATE|2|1|2|2|pollinatorK|4.22
+STATE|2|1|2|2|pestK|6.89
+STATE|2|1|2|2|yield|8.34
+STATE|2|1|2|2|canolaPoints|1.9
+STATE|2|1|2|2|paymentPoints|0.02
+STATE|2|1|2|2|ownedBy|2
+STATE|2|1|2|2|village|1
+STATE|2|1|2|2|shared?|false
+STATE|2|1|2|3|length 0|1.74
+STATE|2|1|2|3|hasGrass|false
+STATE|2|1|2|3|hasCanola|false
+STATE|2|1|2|3|hasFlower|false
+STATE|2|1|2|3|soilQuality|9.65
+STATE|2|1|2|3|grassCount|9.47
+STATE|2|1|2|3|canolaCount|3.09
+STATE|2|1|2|3|flowerCount|5.63
+STATE|2|1|2|3|predatorCount|4.98
+STATE|2|1|2|3|pollinatorCount|8.64
+STATE|2|1|2|3|pestCount|3.86
+STATE|2|1|2|3|predatorK|2.95
+STATE|2|1|2|3|pollinatorK|3.94
+STATE|2|1|2|3|pestK|6.53
+STATE|2|1|2|3|yield|4.2
+STATE|2|1|2|3|canolaPoints|7.9
+STATE|2|1|2|3|paymentPoints|4.61
+STATE|2|1|2|3|ownedBy|2
+STATE|2|1|2|3|village|3
+STATE|2|1|2|3|shared?|false
+STATE|2|1|3|0|length 0|5.39
+STATE|2|1|3|0|hasGrass|false
+STATE|2|1|3|0|hasCanola|true
+STATE|2|1|3|0|hasFlower|true
+STATE|2|1|3|0|soilQuality|5.82
+STATE|2|1|3|0|grassCount|7.24
+STATE|2|1|3|0|canolaCount|8.92
+STATE|2|1|3|0|flowerCount|8.49
+STATE|2|1|3|0|predatorCount|5.41
+STATE|2|1|3|0|pollinatorCount|5.24
+STATE|2|1|3|0|pestCount|2.78
+STATE|2|1|3|0|predatorK|9.66
+STATE|2|1|3|0|pollinatorK|3.7
+STATE|2|1|3|0|pestK|1.06
+STATE|2|1|3|0|yield|2.22
+STATE|2|1|3|0|canolaPoints|2.11
+STATE|2|1|3|0|paymentPoints|1.26
+STATE|2|1|3|0|ownedBy|3
+STATE|2|1|3|0|village|0
+STATE|2|1|3|0|shared?|false
+STATE|2|1|3|1|length 0|8.92
+STATE|2|1|3|1|hasGrass|true
+STATE|2|1|3|1|hasCanola|true
+STATE|2|1|3|1|hasFlower|false
+STATE|2|1|3|1|soilQuality|1.41
+STATE|2|1|3|1|grassCount|5.15
+STATE|2|1|3|1|canolaCount|7.37
+STATE|2|1|3|1|flowerCount|6.79
+STATE|2|1|3|1|predatorCount|2.2
+STATE|2|1|3|1|pollinatorCount|7.87
+STATE|2|1|3|1|pestCount|0.43
+STATE|2|1|3|1|predatorK|5.62
+STATE|2|1|3|1|pollinatorK|8.98
+STATE|2|1|3|1|pestK|5.46
+STATE|2|1|3|1|yield|3.03
+STATE|2|1|3|1|canolaPoints|9.97
+STATE|2|1|3|1|paymentPoints|7.27
+STATE|2|1|3|1|ownedBy|0
+STATE|2|1|3|1|village|0
+STATE|2|1|3|1|shared?|false
+STATE|2|1|3|2|length 0|8.24
+STATE|2|1|3|2|hasGrass|false
+STATE|2|1|3|2|hasCanola|true
+STATE|2|1|3|2|hasFlower|true
+STATE|2|1|3|2|soilQuality|2.62
+STATE|2|1|3|2|grassCount|0.26
+STATE|2|1|3|2|canolaCount|6.2
+STATE|2|1|3|2|flowerCount|4.0
+STATE|2|1|3|2|predatorCount|9.1
+STATE|2|1|3|2|pollinatorCount|0.51
+STATE|2|1|3|2|pestCount|7.83
+STATE|2|1|3|2|predatorK|1.95
+STATE|2|1|3|2|pollinatorK|3.24
+STATE|2|1|3|2|pestK|2.93
+STATE|2|1|3|2|yield|9.57
+STATE|2|1|3|2|canolaPoints|6.46
+STATE|2|1|3|2|paymentPoints|4.67
+STATE|2|1|3|2|ownedBy|0
+STATE|2|1|3|2|village|2
+STATE|2|1|3|2|shared?|true
+STATE|2|1|3|3|length 0|3.67
+STATE|2|1|3|3|hasGrass|false
+STATE|2|1|3|3|hasCanola|true
+STATE|2|1|3|3|hasFlower|false
+STATE|2|1|3|3|soilQuality|8.8
+STATE|2|1|3|3|grassCount|0.48
+STATE|2|1|3|3|canolaCount|3.21
+STATE|2|1|3|3|flowerCount|4.18
+STATE|2|1|3|3|predatorCount|2.26
+STATE|2|1|3|3|pollinatorCount|3.83
+STATE|2|1|3|3|pestCount|6.81
+STATE|2|1|3|3|predatorK|1.35
+STATE|2|1|3|3|pollinatorK|6.94
+STATE|2|1|3|3|pestK|2.97
+STATE|2|1|3|3|yield|6.57
+STATE|2|1|3|3|canolaPoints|1.74
+STATE|2|1|3|3|paymentPoints|7.89
+STATE|2|1|3|3|ownedBy|2
+STATE|2|1|3|3|village|0
+STATE|2|1|3|3|shared?|false
+CHOICE|2|1|1|1|0|-99|12:08:44.000 PM 28-Sep-2026
+CHOICE|2|1|1|3|3|3|12:08:46.000 PM 28-Sep-2026
+CHOICE|2|1|1|0|1|-99|12:08:55.000 PM 28-Sep-2026
+CONFIRM|2|1|1|12:09:09.000 PM 28-Sep-2026
+CHOICE|2|1|2|0|1|-99|12:09:14.000 PM 28-Sep-2026
+CHOICE|2|1|2|0|1|1|12:09:29.000 PM 28-Sep-2026
+CHOICE|2|1|2|2|0|2|12:09:36.000 PM 28-Sep-2026
+CONFIRM|2|1|2|12:09:37.000 PM 28-Sep-2026
+CHOICE|2|1|3|1|1|4|12:09:46.000 PM 28-Sep-2026
+CONFIRM|2|1|3|12:10:00.000 PM 28-Sep-2026
+CHOICE|2|1|4|2|0|2|12:10:01.000 PM 28-Sep-2026
+CONFIRM|2|1|4|12:10:05.000 PM 28-Sep-2026
+CHOICE|2|1|5|1|1|1|12:10:08.000 PM 28-Sep-2026
+CHOICE|2|1|5|1|1|1|12:10:23.000 PM 28-Sep-2026
+CHOICE|2|1|5|1|1|3|12:10:31.000 PM 28-Sep-2026
+CONFIRM|2|1|5|12:10:43.000 PM 28-Sep-2026
+CHOICE|2|1|6|1|1|1|12:10:45.000 PM 28-Sep-2026
+CONFIRM|2|1|6|12:10:49.000 PM 28-Sep-2026
+CHOICE|2|1|7|2|2|3|12:11:00.000 PM 28-Sep-2026
+CHOICE|2|1|7|2|2|1|12:11:08.000 PM 28-Sep-2026
+CHOICE|2|1|7|1|2|4|12:11:18.000 PM 28-Sep-2026
+CONFIRM|2|1|7|12:11:25.000 PM 28-Sep-2026
+CHOICE|2|1|8|0|1|2|12:11:40.000 PM 28-Sep-2026
+CHOICE|2|1|8|1|0|2|12:11:48.000 PM 28-Sep-2026
+CHOICE|2|1|8|1|0|4|12:11:54.000 PM 28-Sep-2026
+CONFIRM|2|1|8|12:12:03.000 PM 28-Sep-2026
+CHOICE|2|1|9|1|3|1|12:12:09.000 PM 28-Sep-2026
+CHOICE|2|1|9|3|1|3|12:12:17.000 PM 28-Sep-2026
+CHOICE|2|1|9|0|0|-99|12:12:21.000 PM 28-Sep-2026
+CONFIRM|2|1|9|12:12:26.000 PM 28-Sep-2026
+CHOICE|2|1|10|3|1|1|12:12:27.000 PM 28-Sep-2026
+CONFIRM|2|1|10|12:12:28.000 PM 28-Sep-2026
+SCORE|2|1|1|3|27|3
+SCORE|2|1|2|13|49|18
+SCORE|2|1|3|13|53|16
+SCORE|2|1|4|0|48|0
+SCORE|2|1|5|5|12|6
+SCORE|2|1|6|7|12|8
+SCORE|2|1|7|16|50|8
+SCORE|2|1|8|3|52|5
+SCORE|2|1|9|19|38|6
+SCORE|2|1|10|19|24|5
+PHASE|phase-2-2|12:12:39.000 PM 28-Sep-2026
+STATE|2|2|0|0|length 0|9.68
+STATE|2|2|0|0|hasGrass|false
+STATE|2|2|0|0|hasCanola|false
+STATE|2|2|0|0|hasFlower|false
+STATE|2|2|0|0|soilQuality|8.01
+STATE|2|2|0|0|grassCount|4.6
+STATE|2|2|0|0|canolaCount|0.18
+STATE|2|2|0|0|flowerCount|8.94
+STATE|2|2|0|0|predatorCount|0.03
+STATE|2|2|0|0|pollinatorCount|8.96
+STATE|2|2|0|0|pestCount|2.27
+STATE|2|2|0|0|predatorK|7.01
+STATE|2|2|0|0|pollinatorK|6.72
+STATE|2|2|0|0|pestK|2.4
+STATE|2|2|0|0|yield|6.94
+STATE|2|2|0|0|canolaPoints|7.83
+STATE|2|2|0|0|paymentPoints|9.76
+STATE|2|2|0|0|ownedBy|0
+STATE|2|2|0|0|village|0
+STATE|2|2|0|0|shared?|false
+STATE|2|2|0|1|length 0|0.84
+STATE|2|2|0|1|hasGrass|false
+STATE|2|2|0|1|hasCanola|true
+STATE|2|2|0|1|hasFlower|true
+STATE|2|2|0|1|soilQuality|1.17
+STATE|2|2|0|1|grassCount|5.96
+STATE|2|2|0|1|canolaCount|1.46
+STATE|2|2|0|1|flowerCount|3.24
+STATE|2|2|0|1|predatorCount|2.19
+STATE|2|2|0|1|pollinatorCount|9.95
+STATE|2|2|0|1|pestCount|1.98
+STATE|2|2|0|1|predatorK|4.91
+STATE|2|2|0|1|pollinatorK|1.13
+STATE|2|2|0|1|pestK|3.93
+STATE|2|2|0|1|yield|8.71
+STATE|2|2|0|1|canolaPoints|7.15
+STATE|2|2|0|1|paymentPoints|0.6
+STATE|2|2|0|1|ownedBy|0
+STATE|2|2|0|1|village|2
+STATE|2|2|0|1|shared?|true
+STATE|2|2|0|2|length 0|9.51
+STATE|2|2|0|2|hasGrass|false
+STATE|2|2|0|2|hasCanola|false
+STATE|2|2|0|2|hasFlower|true
+STATE|2|2|0|2|soilQuality|5.53
+STATE|2|2|0|2|grassCount|5.53
+STATE|2|2|0|2|canolaCount|7.51
+STATE|2|2|0|2|flowerCount|8.88
+STATE|2|2|0|2|predatorCount|7.82
+STATE|2|2|0|2|pollinatorCount|8.11
+STATE|2|2|0|2|pestCount|9.67
+STATE|2|2|0|2|predatorK|2.69
+STATE|2|2|0|2|pollinatorK|4.51
+STATE|2|2|0|2|pestK|3.03
+STATE|2|2|0|2|yield|9.49
+STATE|2|2|0|2|canolaPoints|4.2
+STATE|2|2|0|2|paymentPoints|2.4
+STATE|2|2|0|2|ownedBy|3
+STATE|2|2|0|2|village|0
+STATE|2|2|0|2|shared?|false
+STATE|2|2|0|3|length 0|2.43
+STATE|2|2|0|3|hasGrass|true
+STATE|2|2|0|3|hasCanola|true
+STATE|2|2|0|3|hasFlower|false
+STATE|2|2|0|3|soilQuality|1.28
+STATE|2|2|0|3|grassCount|8.8
+STATE|2|2|0|3|canolaCount|5.82
+STATE|2|2|0|3|flowerCount|0.32
+STATE|2|2|0|3|predatorCount|6.86
+STATE|2|2|0|3|pollinatorCount|7.07
+STATE|2|2|0|3|pestCount|0.44
+STATE|2|2|0|3|predatorK|9.25
+STATE|2|2|0|3|pollinatorK|0.37
+STATE|2|2|0|3|pestK|9.07
+STATE|2|2|0|3|yield|7.13
+STATE|2|2|0|3|canolaPoints|5.38
+STATE|2|2|0|3|paymentPoints|8.36
+STATE|2|2|0|3|ownedBy|0
+STATE|2|2|0|3|village|2
+STATE|2|2|0|3|shared?|false
+STATE|2|2|1|0|length 0|6.74
+STATE|2|2|1|0|hasGrass|false
+STATE|2|2|1|0|hasCanola|false
+STATE|2|2|1|0|hasFlower|false
+STATE|2|2|1|0|soilQuality|1.64
+STATE|2|2|1|0|grassCount|4.18
+STATE|2|2|1|0|canolaCount|2.45
+STATE|2|2|1|0|flowerCount|6.31
+STATE|2|2|1|0|predatorCount|7.7
+STATE|2|2|1|0|pollinatorCount|0.58
+STATE|2|2|1|0|pestCount|2.25
+STATE|2|2|1|0|predatorK|8.13
+STATE|2|2|1|0|pollinatorK|6.85
+STATE|2|2|1|0|pestK|8.81
+STATE|2|2|1|0|yield|7.5
+STATE|2|2|1|0|canolaPoints|4.52
+STATE|2|2|1|0|paymentPoints|7.6
+STATE|2|2|1|0|ownedBy|0
+STATE|2|2|1|0|village|0
+STATE|2|2|1|0|shared?|true
+STATE|2|2|1|1|length 0|8.45
+STATE|2|2|1|1|hasGrass|false
+STATE|2|2|1|1|hasCanola|false
+STATE|2|2|1|1|hasFlower|true
+STATE|2|2|1|1|soilQuality|4.24
+STATE|2|2|1|1|grassCount|4.55
+STATE|2|2|1|1|canolaCount|5.27
+STATE|2|2|1|1|flowerCount|6.58
+STATE|2|2|1|1|predatorCount|5.58
+STATE|2|2|1|1|pollinatorCount|2.99
+STATE|2|2|1|1|pestCount|9.44
+STATE|2|2|1|1|predatorK|7.16
+STATE|2|2|1|1|pollinatorK|8.52
+STATE|2|2|1|1|pestK|5.16
+STATE|2|2|1|1|yield|0.28
+STATE|2|2|1|1|canolaPoints|7.26
+STATE|2|2|1|1|paymentPoints|0.55
+STATE|2|2|1|1|ownedBy|3
+STATE|2|2|1|1|village|3
+STATE|2|2|1|1|shared?|true
+STATE|2|2|1|2|length 0|8.07
+STATE|2|2|1|2|hasGrass|true
+STATE|2|2|1|2|hasCanola|false
+STATE|2|2|1|2|hasFlower|false
+STATE|2|2|1|2|soilQuality|1.3
+STATE|2|2|1|2|grassCount|5.69
+STATE|2|2|1|2|canolaCount|1.41
+STATE|2|2|1|2|flowerCount|9.15
+STATE|2|2|1|2|predatorCount|3.4
+STATE|2|2|1|2|pollinatorCount|3.22
+STATE|2|2|1|2|pestCount|8.92
+STATE|2|2|1|2|predatorK|8.5
+STATE|2|2|1|2|pollinatorK|8.74
+STATE|2|2|1|2|pestK|0.49
+STATE|2|2|1|2|yield|3.61
+STATE|2|2|1|2|canolaPoints|0.13
+STATE|2|2|1|2|paymentPoints|6.84
+STATE|2|2|1|2|ownedBy|2
+STATE|2|2|1|2|village|3
+STATE|2|2|1|2|shared?|true
+STATE|2|2|1|3|length 0|0.48
+STATE|2|2|1|3|hasGrass|false
+STATE|2|2|1|3|hasCanola|true
+STATE|2|2|1|3|hasFlower|true
+STATE|2|2|1|3|soilQuality|5.16
+STATE|2|2|1|3|grassCount|1.05
+STATE|2|2|1|3|canolaCount|8.43
+STATE|2|2|1|3|flowerCount|2.52
+STATE|2|2|1|3|predatorCount|4.98
+STATE|2|2|1|3|pollinatorCount|9.12
+STATE|2|2|1|3|pestCount|2.77
+STATE|2|2|1|3|predatorK|7.28
+STATE|2|2|1|3|pollinatorK|2.12
+STATE|2|2|1|3|pestK|5.5
+STATE|2|2|1|3|yield|6.14
+STATE|2|2|1|3|canolaPoints|0.01
+STATE|2|2|1|3|paymentPoints|6.01
+STATE|2|2|1|3|ownedBy|3
+STATE|2|2|1|3|village|0
+STATE|2|2|1|3|shared?|true
+STATE|2|2|2|0|length 0|4.26
+STATE|2|2|2|0|hasGrass|false
+STATE|2|2|2|0|hasCanola|false
+STATE|2|2|2|0|hasFlower|true
+STATE|2|2|2|0|soilQuality|7.58
+STATE|2|2|2|0|grassCount|9.57
+STATE|2|2|2|0|canolaCount|2.54
+STATE|2|2|2|0|flowerCount|0.17
+STATE|2|2|2|0|predatorCount|1.62
+STATE|2|2|2|0|pollinatorCount|6.45
+STATE|2|2|2|0|pestCount|2.16
+STATE|2|2|2|0|predatorK|9.48
+STATE|2|2|2|0|pollinatorK|0.92
+STATE|2|2|2|0|pestK|8.95
+STATE|2|2|2|0|yield|3.54
+STATE|2|2|2|0|canolaPoints|9.2
+STATE|2|2|2|0|paymentPoints|3.39
+STATE|2|2|2|0|ownedBy|0
+STATE|2|2|2|0|village|1
+STATE|2|2|2|0|shared?|false
+STATE|2|2|2|1|length 0|2.99
+STATE|2|2|2|1|hasGrass|false
+STATE|2|2|2|1|hasCanola|false
+STATE|2|2|2|1|hasFlower|true
+STATE|2|2|2|1|soilQuality|4.9
+STATE|2|2|2|1|grassCount|5.5
+STATE|2|2|2|1|canolaCount|7.73
+STATE|2|2|2|1|flowerCount|2.64
+STATE|2|2|2|1|predatorCount|5.66
+STATE|2|2|2|1|pollinatorCount|5.19
+STATE|2|2|2|1|pestCount|5.88
+STATE|2|2|2|1|predatorK|5.55
+STATE|2|2|2|1|pollinatorK|4.32
+STATE|2|2|2|1|pestK|3.87
+STATE|2|2|2|1|yield|3.95
+STATE|2|2|2|1|canolaPoints|9.94
+STATE|2|2|2|1|paymentPoints|5.22
+STATE|2|2|2|1|ownedBy|0
+STATE|2|2|2|1|village|1
+STATE|2|2|2|1|shared?|true
+STATE|2|2|2|2|length 0|7.66
+STATE|2|2|2|2|hasGrass|false
+STATE|2|2|2|2|hasCanola|true
+STATE|2|2|2|2|hasFlower|true
+STATE|2|2|2|2|soilQuality|4.52
+STATE|2|2|2|2|grassCount|8.45
+STATE|2|2|2|2|canolaCount|2.67
+STATE|2|2|2|2|flowerCount|9.16
+STATE|2|2|2|2|predatorCount|8.14
+STATE|2|2|2|2|pollinatorCount|0.2
+STATE|2|2|2|2|pestCount|4.97
+STATE|2|2|2|2|predatorK|5.33
+STATE|2|2|2|2|pollinatorK|6.31
+STATE|2|2|2|2|pestK|8.88
+STATE|2|2|2|2|yield|2.02
+STATE|2|2|2|2|canolaPoints|8.28
+STATE|2|2|2|2|paymentPoints|0.09
+STATE|2|2|2|2|ownedBy|3
+STATE|2|2|2|2|village|1
+STATE|2|2|2|2|shared?|false
+STATE|2|2|2|3|length 0|2.92
+STATE|2|2|2|3|hasGrass|false
+STATE|2|2|2|3|hasCanola|true
+STATE|2|2|2|3|hasFlower|true
+STATE|2|2|2|3|soilQuality|3.12
+STATE|2|2|2|3|grassCount|7.03
+STATE|2|2|2|3|canolaCount|8.25
+STATE|2|2|2|3|flowerCount|4.31
+STATE|2|2|2|3|predatorCount|5.06
+STATE|2|2|2|3|pollinatorCount|6.06
+STATE|2|2|2|3|pestCount|3.93
+STATE|2|2|2|3|predatorK|0.0
+STATE|2|2|2|3|pollinatorK|1.82
+STATE|2|2|2|3|pestK|2.88
+STATE|2|2|2|3|yield|1.99
+STATE|2|2|2|3|canolaPoints|1.99
+STATE|2|2|2|3|paymentPoints|3.26
+STATE|2|2|2|3|ownedBy|1
+STATE|2|2|2|3|village|3
+STATE|2|2|2|3|shared?|true
+STATE|2|2|3|0|length 0|6.79
+STATE|2|2|3|0|hasGrass|true
+STATE|2|2|3|0|hasCanola|true
+STATE|2|2|3|0|hasFlower|true
+STATE|2|2|3|0|soilQuality|0.49
+STATE|2|2|3|0|grassCount|2.49
+STATE|2|2|3|0|canolaCount|6.58
+STATE|2|2|3|0|flowerCount|3.8
+STATE|2|2|3|0|predatorCount|1.38
+STATE|2|2|3|0|pollinatorCount|2.01
+STATE|2|2|3|0|pestCount|4.06
+STATE|2|2|3|0|predatorK|0.32
+STATE|2|2|3|0|pollinatorK|8.61
+STATE|2|2|3|0|pestK|8.28
+STATE|2|2|3|0|yield|3.41
+STATE|2|2|3|0|canolaPoints|2.1
+STATE|2|2|3|0|paymentPoints|9.48
+STATE|2|2|3|0|ownedBy|3
+STATE|2|2|3|0|village|3
+STATE|2|2|3|0|shared?|false
+STATE|2|2|3|1|length 0|4.62
+STATE|2|2|3|1|hasGrass|true
+STATE|2|2|3|1|hasCanola|true
+STATE|2|2|3|1|hasFlower|false
+STATE|2|2|3|1|soilQuality|2.26
+STATE|2|2|3|1|grassCount|4.61
+STATE|2|2|3|1|canolaCount|6.3
+STATE|2|2|3|1|flowerCount|8.27
+STATE|2|2|3|1|predatorCount|6.36
+STATE|2|2|3|1|pollinatorCount|2.09
+STATE|2|2|3|1|pestCount|4.74
+STATE|2|2|3|1|predatorK|9.1
+STATE|2|2|3|1|pollinatorK|8.37
+STATE|2|2|3|1|pestK|0.28
+STATE|2|2|3|1|yield|5.3
+STATE|2|2|3|1|canolaPoints|9.1
+STATE|2|2|3|1|paymentPoints|3.15
+STATE|2|2|3|1|ownedBy|3
+STATE|2|2|3|1|village|3
+STATE|2|2|3|1|shared?|true
+STATE|2|2|3|2|length 0|0.83
+STATE|2|2|3|2|hasGrass|false
+STATE|2|2|3|2|hasCanola|false
+STATE|2|2|3|2|hasFlower|true
+STATE|2|2|3|2|soilQuality|2.87
+STATE|2|2|3|2|grassCount|5.32
+STATE|2|2|3|2|canolaCount|6.55
+STATE|2|2|3|2|flowerCount|7.6
+STATE|2|2|3|2|predatorCount|6.29
+STATE|2|2|3|2|pollinatorCount|1.03
+STATE|2|2|3|2|pestCount|2.54
+STATE|2|2|3|2|predatorK|4.53
+STATE|2|2|3|2|pollinatorK|5.06
+STATE|2|2|3|2|pestK|1.46
+STATE|2|2|3|2|yield|1.89
+STATE|2|2|3|2|canolaPoints|1.18
+STATE|2|2|3|2|paymentPoints|5.25
+STATE|2|2|3|2|ownedBy|2
+STATE|2|2|3|2|village|2
+STATE|2|2|3|2|shared?|false
+STATE|2|2|3|3|length 0|7.74
+STATE|2|2|3|3|hasGrass|true
+STATE|2|2|3|3|hasCanola|false
+STATE|2|2|3|3|hasFlower|true
+STATE|2|2|3|3|soilQuality|0.29
+STATE|2|2|3|3|grassCount|4.22
+STATE|2|2|3|3|canolaCount|5.3
+STATE|2|2|3|3|flowerCount|1.83
+STATE|2|2|3|3|predatorCount|8.8
+STATE|2|2|3|3|pollinatorCount|5.97
+STATE|2|2|3|3|pestCount|5.2
+STATE|2|2|3|3|predatorK|2.84
+STATE|2|2|3|3|pollinatorK|1.33
+STATE|2|2|3|3|pestK|2.76
+STATE|2|2|3|3|yield|6.41
+STATE|2|2|3|3|canolaPoints|6.83
+STATE|2|2|3|3|paymentPoints|6.83
+STATE|2|2|3|3|ownedBy|0
+STATE|2|2|3|3|village|0
+STATE|2|2|3|3|shared?|false
+CHOICE|2|2|1|1|3|2|12:12:52.000 PM 28-Sep-2026
+CHOICE|2|2|1|1|3|3|12:13:02.000 PM 28-Sep-2026
+CHOICE|2|2|1|1|0|-99|12:13:11.000 PM 28-Sep-2026
+CONFIRM|2|2|1|12:13:23.000 PM 28-Sep-2026
+CHOICE|2|2|2|3|0|2|12:13:24.000 PM 28-Sep-2026
+CHOICE|2|2|2|3|0|2|12:13:31.000 PM 28-Sep-2026
+CHOICE|2|2|2|3|0|3|12:13:45.000 PM 28-Sep-2026
+CONFIRM|2|2|2|12:13:52.000 PM 28-Sep-2026
+CHOICE|2|2|3|1|0|4|12:14:07.000 PM 28-Sep-2026
+CHOICE|2|2|3|0|3|2|12:14:22.000 PM 28-Sep-2026
+CONFIRM|2|2|3|12:14:25.000 PM 28-Sep-2026
+CHOICE|2|2|4|0|3|2|12:14:27.000 PM 28-Sep-2026
+CONFIRM|2|2|4|12:14:32.000 PM 28-Sep-2026
+CHOICE|2|2|5|0|2|1|12:14:36.000 PM 28-Sep-2026
+CONFIRM|2|2|5|12:14:48.000 PM 28-Sep-2026
+CHOICE|2|2|6|1|3|2|12:15:02.000 PM 28-Sep-2026
+CHOICE|2|2|6|1|0|1|12:15:08.000 PM 28-Sep-2026
+CONFIRM|2|2|6|12:15:23.000 PM 28-Sep-2026
+CHOICE|2|2|7|1|1|4|12:15:29.000 PM 28-Sep-2026
+CHOICE|2|2|7|1|3|3|12:15:38.000 PM 28-Sep-2026
+CHOICE|2|2|7|0|0|2|12:15:44.000 PM 28-Sep-2026
+CONFIRM|2|2|7|12:15:53.000 PM 28-Sep-2026
+CHOICE|2|2|8|1|1|4|12:16:05.000 PM 28-Sep-2026
+CONFIRM|2|2|8|12:16:12.000 PM 28-Sep-2026
+CHOICE|2|2|9|1|2|4|12:16:21.000 PM 28-Sep-2026
+CHOICE|2|2|9|3|1|3|12:16:30.000 PM 28-Sep-2026
+CONFIRM|2|2|9|12:16:40.000 PM 28-Sep-2026
+CHOICE|2|2|10|1|3|1|12:16:52.000 PM 28-Sep-2026
+CONFIRM|2|2|10|12:16:59.000 PM 28-Sep-2026
+SCORE|2|2|1|15|39|2
+SCORE|2|2|2|2|33|14
+SCORE|2|2|3|15|59|1
+SCORE|2|2|4|5|20|11
+SCORE|2|2|5|12|32|19
+SCORE|2|2|6|10|48|8
+SCORE|2|2|7|18|60|17
+SCORE|2|2|8|14|51|13
+SCORE|2|2|9|13|57|4
+SCORE|2|2|10|16|55|4
+PHASE|phase-3-1|12:17:03.000 PM 28-Sep-2026
+STATE|3|1|0|0|length 0|9.06
+STATE|3|1|0|0|hasGrass|true
+STATE|3|1|0|0|hasCanola|true
+STATE|3|1|0|0|hasFlower|true
+STATE|3|1|0|0|soilQuality|4.19
+STATE|3|1|0|0|grassCount|4.01
+STATE|3|1|0|0|canolaCount|8.18
+STATE|3|1|0|0|flowerCount|1.72
+STATE|3|1|0|0|predatorCount|3.77
+STATE|3|1|0|0|pollinatorCount|7.7
+STATE|3|1|0|0|pestCount|0.24
+STATE|3|1|0|0|predatorK|4.13
+STATE|3|1|0|0|pollinatorK|1.49
+STATE|3|1|0|0|pestK|7.7
+STATE|3|1|0|0|yield|2.99
+STATE|3|1|0|0|canolaPoints|1.41
+STATE|3|1|0|0|paymentPoints|1.12
+STATE|3|1|0|0|ownedBy|0
+STATE|3|1|0|0|village|0
+STATE|3|1|0|0|shared?|false
+STATE|3|1|0|1|length 0|1.16
+STATE|3|1|0|1|hasGrass|true
+STATE|3|1|0|1|hasCanola|true
+STATE|3|1|0|1|hasFlower|true
+STATE|3|1|0|1|soilQuality|7.31
+STATE|3|1|0|1|grassCount|7.58
+STATE|3|1|0|1|canolaCount|5.33
+STATE|3|1|0|1|flowerCount|3.34
+STATE|3|1|0|1|predatorCount|0.39
+STATE|3|1|0|1|pollinatorCount|7.15
+STATE|3|1|0|1|pestCount|2.42
+STATE|3|1|0|1|predatorK|5.49
+STATE|3|1|0|1|pollinatorK|9.88
+STATE|3|1|0|1|pestK|2.4
+STATE|3|1|0|1|yield|6.88
+STATE|3|1|0|1|canolaPoints|4.38
+STATE|3|1|0|1|paymentPoints|5.34
+STATE|3|1|0|1|ownedBy|2
+STATE|3|1|0|1|village|1
+STATE|3|1|0|1|shared?|false
+STATE|3|1|0|2|length 0|5.21
+STATE|3|1|0|2|hasGrass|true
+STATE|3|1|0|2|hasCanola|false
+STATE|3|1|0|2|hasFlower|true
+STATE|3|1|0|2|soilQuality|3.51
+STATE|3|1|0|2|grassCount|4.79
+STATE|3|1|0|2|canolaCount|5.94
+STATE|3|1|0|2|flowerCount|7.57
+STATE|3|1|0|2|predatorCount|1.19
+STATE|3|1|0|2|pollinatorCount|3.83
+STATE|3|1|0|2|pestCount|6.21
+STATE|3|1|0|2|predatorK|4.71
+STATE|3|1|0|2|pollinatorK|2.43
+STATE|3|1|0|2|pestK|7.96
+STATE|3|1|0|2|yield|9.63
+STATE|3|1|0|2|canolaPoints|6.45
+STATE|3|1|0|2|paymentPoints|5.35
+STATE|3|1|0|2|ownedBy|0
+STATE|3|1|0|2|village|0
+STATE|3|1|0|2|shared?|true
+STATE|3|1|0|3|length 0|7.85
+STATE|3|1|0|3|hasGrass|true
+STATE|3|1|0|3|hasCanola|true
+STATE|3|1|0|3|hasFlower|true
+STATE|3|1|0|3|soilQuality|3.09
+STATE|3|1|0|3|grassCount|6.16
+STATE|3|1|0|3|canolaCount|2.96
+STATE|3|1|0|3|flowerCount|9.22
+STATE|3|1|0|3|predatorCount|8.38
+STATE|3|1|0|3|pollinatorCount|3.08
+STATE|3|1|0|3|pestCount|0.67
+STATE|3|1|0|3|predatorK|0.23
+STATE|3|1|0|3|pollinatorK|8.14
+STATE|3|1|0|3|pestK|4.23
+STATE|3|1|0|3|yield|1.2
+STATE|3|1|0|3|canolaPoints|0.48
+STATE|3|1|0|3|paymentPoints|7.81
+STATE|3|1|0|3|ownedBy|0
+STATE|3|1|0|3|village|3
+STATE|3|1|0|3|shared?|false
+STATE|3|1|1|0|length 0|3.57
+STATE|3|1|1|0|hasGrass|false
+STATE|3|1|1|0|hasCanola|true
+STATE|3|1|1|0|hasFlower|false
+STATE|3|1|1|0|soilQuality|1.41
+STATE|3|1|1|0|grassCount|2.67
+STATE|3|1|1|0|canolaCount|1.22
+STATE|3|1|1|0|flowerCount|0.63
+STATE|3|1|1|0|predatorCount|5.63
+STATE|3|1|1|0|pollinatorCount|9.92
+STATE|3|1|1|0|pestCount|0.07
+STATE|3|1|1|0|predatorK|8.78
+STATE|3|1|1|0|pollinatorK|2.87
+STATE|3|1|1|0|pestK|1.6
+STATE|3|1|1|0|yield|0.31
+STATE|3|1|1|0|canolaPoints|3.5
+STATE|3|1|1|0|paymentPoints|0.86
+STATE|3|1|1|0|ownedBy|2
+STATE|3|1|1|0|village|3
+STATE|3|1|1|0|shared?|true
+STATE|3|1|1|1|length 0|1.67
+STATE|3|1|1|1|hasGrass|false
+STATE|3|1|1|1|hasCanola|false
+STATE|3|1|1|1|hasFlower|false
+STATE|3|1|1|1|soilQuality|2.4
+STATE|3|1|1|1|grassCount|7.22
+STATE|3|1|1|1|canolaCount|6.95
+STATE|3|1|1|1|flowerCount|7.74
+STATE|3|1|1|1|predatorCount|1.86
+STATE|3|1|1|1|pollinatorCount|9.49
+STATE|3|1|1|1|pestCount|4.56
+STATE|3|1|1|1|predatorK|0.8
+STATE|3|1|1|1|pollinatorK|9.22
+STATE|3|1|1|1|pestK|3.06
+STATE|3|1|1|1|yield|8.96
+STATE|3|1|1|1|canolaPoints|2.08
+STATE|3|1|1|1|paymentPoints|0.73
+STATE|3|1|1|1|ownedBy|3
+STATE|3|1|1|1|village|2
+STATE|3|1|1|1|shared?|false
+STATE|3|1|1|2|length 0|6.74
+STATE|3|1|1|2|hasGrass|false
+STATE|3|1|1|2|hasCanola|true
+STATE|3|1|1|2|hasFlower|false
+STATE|3|1|1|2|soilQuality|5.15
+STATE|3|1|1|2|grassCount|1.45
+STATE|3|1|1|2|canolaCount|5.84
+STATE|3|1|1|2|flowerCount|3.52
+STATE|3|1|1|2|predatorCount|5.45
+STATE|3|1|1|2|pollinatorCount|1.58
+STATE|3|1|1|2|pestCount|2.53
+STATE|3|1|1|2|predatorK|2.65
+STATE|3|1|1|2|pollinatorK|6.64
+STATE|3|1|1|2|pestK|0.24
+STATE|3|1|1|2|yield|4.16
+STATE|3|1|1|2|canolaPoints|4.02
+STATE|3|1|1|2|paymentPoints|8.74
+STATE|3|1|1|2|ownedBy|0
+STATE|3|1|1|2|village|3
+STATE|3|1|1|2|shared?|false
+STATE|3|1|1|3|length 0|3.5
+STATE|3|1|1|3|hasGrass|true
+STATE|3|1|1|3|hasCanola|false
+STATE|3|1|1|3|hasFlower|true
+STATE|3|1|1|3|soilQuality|0.36
+STATE|3|1|1|3|grassCount|3.95
+STATE|3|1|1|3|canolaCount|0.68
+STATE|3|1|1|3|flowerCount|8.1
+STATE|3|1|1|3|predatorCount|9.05
+STATE|3|1|1|3|pollinatorCount|8.19
+STATE|3|1|1|3|pestCount|7.27
+STATE|3|1|1|3|predatorK|1.39
+STATE|3|1|1|3|pollinatorK|8.23
+STATE|3|1|1|3|pestK|1.21
+STATE|3|1|1|3|yield|4.1
+STATE|3|1|1|3|canolaPoints|8.69
+STATE|3|1|1|3|paymentPoints|9.43
+STATE|3|1|1|3|ownedBy|2
+STATE|3|1|1|3|village|0
+STATE|3|1|1|3|shared?|false
+STATE|3|1|2|0|length 0|7.42
+STATE|3|1|2|0|hasGrass|true
+STATE|3|1|2|0|hasCanola|true
+STATE|3|1|2|0|hasFlower|true
+STATE|3|1|2|0|soilQuality|4.5
+STATE|3|1|2|0|grassCount|4.9
+STATE|3|1|2|0|canolaCount|0.17
+STATE|3|1|2|0|flowerCount|8.2
+STATE|3|1|2|0|predatorCount|5.47
+STATE|3|1|2|0|pollinatorCount|7.31
+STATE|3|1|2|0|pestCount|9.66
+STATE|3|1|2|0|predatorK|7.64
+STATE|3|1|2|0|pollinatorK|7.47
+STATE|3|1|2|0|pestK|6.38
+STATE|3|1|2|0|yield|5.25
+STATE|3|1|2|0|canolaPoints|7.68
+STATE|3|1|2|0|paymentPoints|7.83
+STATE|3|1|2|0|ownedBy|1
+STATE|3|1|2|0|village|3
+STATE|3|1|2|0|shared?|false
+STATE|3|1|2|1|length 0|1.49
+STATE|3|1|2|1|hasGrass|false
+STATE|3|1|2|1|hasCanola|false
+STATE|3|1|2|1|hasFlower|true
+STATE|3|1|2|1|soilQuality|8.91
+STATE|3|1|2|1|grassCount|4.84
+STATE|3|1|2|1|canolaCount|7.3
+STATE|3|1|2|1|flowerCount|1.51
+STATE|3|1|2|1|predatorCount|0.51
+STATE|3|1|2|1|pollinatorCount|2.51
+STATE|3|1|2|1|pestCount|5.96
+STATE|3|1|2|1|predatorK|8.92
+STATE|3|1|2|1|pollinatorK|5.65
+STATE|3|1|2|1|pestK|5.22
+STATE|3|1|2|1|yield|3.8
+STATE|3|1|2|1|canolaPoints|5.01
+STATE|3|1|2|1|paymentPoints|7.14
+STATE|3|1|2|1|ownedBy|0
+STATE|3|1|2|1|village|1
+STATE|3|1|2|1|shared?|false
+STATE|3|1|2|2|length 0|9.6
+STATE|3|1|2|2|hasGrass|true
+STATE|3|1|2|2|hasCanola|true
+STATE|3|1|2|2|hasFlower|true
+STATE|3|1|2|2|soilQuality|0.17
+STATE|3|1|2|2|grassCount|9.89
+STATE|3|1|2|2|canolaCount|2.38
+STATE|3|1|2|2|flowerCount|1.2
+STATE|3|1|2|2|predatorCount|6.43
+STATE|3|1|2|2|pollinatorCount|0.17
+STATE|3|1|2|2|pestCount|8.81
+STATE|3|1|2|2|predatorK|8.18
+STATE|3|1|2|2|pollinatorK|4.52
+STATE|3|1|2|2|pestK|1.58
+STATE|3|1|2|2|yield|3.17
+STATE|3|1|2|2|canolaPoints|6.13
+STATE|3|1|2|2|paymentPoints|6.95
+STATE|3|1|2|2|ownedBy|3
+STATE|3|1|2|2|village|1
+STATE|3|1|2|2|shared?|true
+STATE|3|1|2|3|length 0|7.18
+STATE|3|1|2|3|hasGrass|false
+STATE|3|1|2|3|hasCanola|true
+STATE|3|1|2|3|hasFlower|true
+STATE|3|1|2|3|soilQuality|6.47
+STATE|3|1|2|3|grassCount|3.18
+STATE|3|1|2|3|canolaCount|9.02
+STATE|3|1|2|3|flowerCount|5.57
+STATE|3|1|2|3|predatorCount|8.98
+STATE|3|1|2|3|pollinatorCount|8.0
+STATE|3|1|2|3|pestCount|6.59
+STATE|3|1|2|3|predatorK|0.79
+STATE|3|1|2|3|pollinatorK|9.19
+STATE|3|1|2|3|pestK|1.37
+STATE|3|1|2|3|yield|5.65
+STATE|3|1|2|3|canolaPoints|3.66
+STATE|3|1|2|3|paymentPoints|4.94
+STATE|3|1|2|3|ownedBy|3
+STATE|3|1|2|3|village|1
+STATE|3|1|2|3|shared?|false
+STATE|3|1|3|0|length 0|4.66
+STATE|3|1|3|0|hasGrass|true
+STATE|3|1|3|0|hasCanola|false
+STATE|3|1|3|0|hasFlower|false
+STATE|3|1|3|0|soilQuality|6.98
+STATE|3|1|3|0|grassCount|8.83
+STATE|3|1|3|0|canolaCount|2.69
+STATE|3|1|3|0|flowerCount|1.05
+STATE|3|1|3|0|predatorCount|9.69
+STATE|3|1|3|0|pollinatorCount|5.34
+STATE|3|1|3|0|pestCount|8.88
+STATE|3|1|3|0|predatorK|6.04
+STATE|3|1|3|0|pollinatorK|9.01
+STATE|3|1|3|0|pestK|6.02
+STATE|3|1|3|0|yield|7.26
+STATE|3|1|3|0|canolaPoints|6.34
+STATE|3|1|3|0|paymentPoints|9.53
+STATE|3|1|3|0|ownedBy|0
+STATE|3|1|3|0|village|3
+STATE|3|1|3|0|shared?|true
+STATE|3|1|3|1|length 0|2.06
+STATE|3|1|3|1|hasGrass|true
+STATE|3|1|3|1|hasCanola|true
+STATE|3|1|3|1|hasFlower|false
+STATE|3|1|3|1|soilQuality|6.89
+STATE|3|1|3|1|grassCount|4.65
+STATE|3|1|3|1|canolaCount|9.65
+STATE|3|1|3|1|flowerCount|4.05
+STATE|3|1|3|1|predatorCount|0.09
+STATE|3|1|3|1|pollinatorCount|5.28
+STATE|3|1|3|1|pestCount|6.58
+STATE|3|1|3|1|predatorK|2.42
+STATE|3|1|3|1|pollinatorK|7.42
+STATE|3|1|3|1|pestK|1.97
+STATE|3|1|3|1|yield|9.04
+STATE|3|1|3|1|canolaPoints|4.46
+STATE|3|1|3|1|paymentPoints|9.52
+STATE|3|1|3|1|ownedBy|3
+STATE|3|1|3|1|village|3
+STATE|3|1|3|1|shared?|false
+STATE|3|1|3|2|length 0|2.06
+STATE|3|1|3|2|hasGrass|false
+STATE|3|1|3|2|hasCanola|false
+STATE|3|1|3|2|hasFlower|true
+STATE|3|1|3|2|soilQuality|5.79
+STATE|3|1|3|2|grassCount|1.6
+STATE|3|1|3|2|canolaCount|8.8
+STATE|3|1|3|2|flowerCount|8.65
+STATE|3|1|3|2|predatorCount|9.12
+STATE|3|1|3|2|pollinatorCount|7.68
+STATE|3|1|3|2|pestCount|3.88
+STATE|3|1|3|2|predatorK|6.32
+STATE|3|1|3|2|pollinatorK|0.59
+STATE|3|1|3|2|pestK|1.06
+STATE|3|1|3|2|yield|5.55
+STATE|3|1|3|2|canolaPoints|7.41
+STATE|3|1|3|2|paymentPoints|2.94
+STATE|3|1|3|2|ownedBy|0
+STATE|3|1|3|2|village|3
+STATE|3|1|3|2|shared?|true
+STATE|3|1|3|3|length 0|3.3
+STATE|3|1|3|3|hasGrass|true
+STATE|3|1|3|3|hasCanola|false
+STATE|3|1|3|3|hasFlower|false
+STATE|3|1|3|3|soilQuality|8.82
+STATE|3|1|3|3|grassCount|7.56
+STATE|3|1|3|3|canolaCount|7.01
+STATE|3|1|3|3|flowerCount|7.63
+STATE|3|1|3|3|predatorCount|2.22
+STATE|3|1|3|3|pollinatorCount|7.58
+STATE|3|1|3|3|pestCount|5.81
+STATE|3|1|3|3|predatorK|6.44
+STATE|3|1|3|3|pollinatorK|4.96
+STATE|3|1|3|3|pestK|4.48
+STATE|3|1|3|3|yield|8.44
+STATE|3|1|3|3|canolaPoints|8.0
+STATE|3|1|3|3|paymentPoints|1.93
+STATE|3|1|3|3|ownedBy|2
+STATE|3|1|3|3|village|3
+STATE|3|1|3|3|shared?|false
+CHOICE|3|1|1|0|3|3|12:17:08.000 PM 28-Sep-2026
+CONFIRM|3|1|1|12:17:17.000 PM 28-Sep-2026
+CHOICE|3|1|2|3|0|2|12:17:18.000 PM 28-Sep-2026
+CONFIRM|3|1|2|12:17:31.000 PM 28-Sep-2026
+CHOICE|3|1|3|3|0|2|12:17:42.000 PM 28-Sep-2026
+CHOICE|3|1|3|0|2|4|12:17:52.000 PM 28-Sep-2026
+CHOICE|3|1|3|2|0|2|12:18:07.000 PM 28-Sep-2026
+CONFIRM|3|1|3|12:18:08.000 PM 28-Sep-2026
+CHOICE|3|1|4|0|1|4|12:18:16.000 PM 28-Sep-2026
+CHOICE|3|1|4|2|1|2|12:18:29.000 PM 28-Sep-2026
+CONFIRM|3|1|4|12:18:34.000 PM 28-Sep-2026
+CHOICE|3|1|5|3|0|4|12:18:38.000 PM 28-Sep-2026
+CHOICE|3|1|5|2|1|2|12:18:50.000 PM 28-Sep-2026
+CONFIRM|3|1|5|12:18:56.000 PM 28-Sep-2026
+CHOICE|3|1|6|0|2|1|12:19:11.000 PM 28-Sep-2026
+CHOICE|3|1|6|0|1|2|12:19:19.000 PM 28-Sep-2026
+CHOICE|3|1|6|0|1|1|12:19:29.000 PM 28-Sep-2026
+CONFIRM|3|1|6|12:19:35.000 PM 28-Sep-2026
+CHOICE|3|1|7|3|2|2|12:19:39.000 PM 28-Sep-2026
+CONFIRM|3|1|7|12:19:44.000 PM 28-Sep-2026
+CHOICE|3|1|8|1|1|3|12:19:57.000 PM 28-Sep-2026
+CHOICE|3|1|8|0|2|-99|12:20:02.000 PM 28-Sep-2026
+CONFIRM|3|1|8|12:20:09.000 PM 28-Sep-2026
+CHOICE|3|1|9|3|2|3|12:20:13.000 PM 28-Sep-2026
+CHOICE|3|1|9|3|1|3|12:20:15.000 PM 28-Sep-2026
+CONFIRM|3|1|9|12:20:29.000 PM 28-Sep-2026
+CHOICE|3|1|10|3|1|4|12:20:30.000 PM 28-Sep-2026
+CHOICE|3|1|10|3|1|1|12:20:45.000 PM 28-Sep-2026
+CONFIRM|3|1|10|12:20:56.000 PM 28-Sep-2026
+SCORE|3|1|1|0|42|2
+SCORE|3|1|2|19|27|2
+SCORE|3|1|3|0|1|6
+SCORE|3|1|4|5|37|0
+SCORE|3|1|5|11|46|11
+SCORE|3|1|6|2|7|15
+SCORE|3|1|7|7|33|8
+SCORE|3|1|8|7|46|13
+SCORE|3|1|9|1|11|11
+SCORE|3|1|10|7|26|13
+PHASE|phase-3-2|12:21:03.000 PM 28-Sep-2026
+STATE|3|2|0|0|length 0|9.94
+STATE|3|2|0|0|hasGrass|false
+STATE|3|2|0|0|hasCanola|true
+STATE|3|2|0|0|hasFlower|false
+STATE|3|2|0|0|soilQuality|3.98
+STATE|3|2|0|0|grassCount|4.96
+STATE|3|2|0|0|canolaCount|2.8
+STATE|3|2|0|0|flowerCount|1.74
+STATE|3|2|0|0|predatorCount|9.86
+STATE|3|2|0|0|pollinatorCount|3.9
+STATE|3|2|0|0|pestCount|2.06
+STATE|3|2|0|0|predatorK|8.02
+STATE|3|2|0|0|pollinatorK|1.05
+STATE|3|2|0|0|pestK|4.13
+STATE|3|2|0|0|yield|1.15
+STATE|3|2|0|0|canolaPoints|0.35
+STATE|3|2|0|0|paymentPoints|9.84
+STATE|3|2|0|0|ownedBy|2
+STATE|3|2|0|0|village|0
+STATE|3|2|0|0|shared?|false
+STATE|3|2|0|1|length 0|1.47
+STATE|3|2|0|1|hasGrass|true
+STATE|3|2|0|1|hasCanola|true
+STATE|3|2|0|1|hasFlower|false
+STATE|3|2|0|1|soilQuality|0.08
+STATE|3|2|0|1|grassCount|9.4
+STATE|3|2|0|1|canolaCount|9.61
+STATE|3|2|0|1|flowerCount|1.98
+STATE|3|2|0|1|predatorCount|2.87
+STATE|3|2|0|1|pollinatorCount|1.78
+STATE|3|2|0|1|pestCount|0.25
+STATE|3|2|0|1|predatorK|4.75
+STATE|3|2|0|1|pollinatorK|5.26
+STATE|3|2|0|1|pestK|8.83
+STATE|3|2|0|1|yield|4.82
+STATE|3|2|0|1|canolaPoints|1.74
+STATE|3|2|0|1|paymentPoints|4.29
+STATE|3|2|0|1|ownedBy|0
+STATE|3|2|0|1|village|0
+STATE|3|2|0|1|shared?|true
+STATE|3|2|0|2|length 0|3.88
+STATE|3|2|0|2|hasGrass|false
+STATE|3|2|0|2|hasCanola|true
+STATE|3|2|0|2|hasFlower|false
+STATE|3|2|0|2|soilQuality|8.41
+STATE|3|2|0|2|grassCount|9.94
+STATE|3|2|0|2|canolaCount|5.95
+STATE|3|2|0|2|flowerCount|3.08
+STATE|3|2|0|2|predatorCount|7.7
+STATE|3|2|0|2|pollinatorCount|1.49
+STATE|3|2|0|2|pestCount|5.22
+STATE|3|2|0|2|predatorK|8.32
+STATE|3|2|0|2|pollinatorK|5.37
+STATE|3|2|0|2|pestK|7.65
+STATE|3|2|0|2|yield|1.79
+STATE|3|2|0|2|canolaPoints|8.62
+STATE|3|2|0|2|paymentPoints|1.51
+STATE|3|2|0|2|ownedBy|1
+STATE|3|2|0|2|village|2
+STATE|3|2|0|2|shared?|false
+STATE|3|2|0|3|length 0|9.17
+STATE|3|2|0|3|hasGrass|true
+STATE|3|2|0|3|hasCanola|true
+STATE|3|2|0|3|hasFlower|false
+STATE|3|2|0|3|soilQuality|2.47
+STATE|3|2|0|3|grassCount|3.93
+STATE|3|2|0|3|canolaCount|1.8
+STATE|3|2|0|3|flowerCount|9.91
+STATE|3|2|0|3|predatorCount|7.87
+STATE|3|2|0|3|pollinatorCount|3.79
+STATE|3|2|0|3|pestCount|9.94
+STATE|3|2|0|3|predatorK|8.86
+STATE|3|2|0|3|pollinatorK|3.21
+STATE|3|2|0|3|pestK|0.75
+STATE|3|2|0|3|yield|7.17
+STATE|3|2|0|3|canolaPoints|6.36
+STATE|3|2|0|3|paymentPoints|2.65
+STATE|3|2|0|3|ownedBy|0
+STATE|3|2|0|3|village|2
+STATE|3|2|0|3|shared?|true
+STATE|3|2|1|0|length 0|9.32
+STATE|3|2|1|0|hasGrass|false
+STATE|3|2|1|0|hasCanola|false
+STATE|3|2|1|0|hasFlower|false
+STATE|3|2|1|0|soilQuality|2.7
+STATE|3|2|1|0|grassCount|8.8
+STATE|3|2|1|0|canolaCount|4.72
+STATE|3|2|1|0|flowerCount|9.27
+STATE|3|2|1|0|predatorCount|6.11
+STATE|3|2|1|0|pollinatorCount|6.81
+STATE|3|2|1|0|pestCount|8.72
+STATE|3|2|1|0|predatorK|9.81
+STATE|3|2|1|0|pollinatorK|7.14
+STATE|3|2|1|0|pestK|9.44
+STATE|3|2|1|0|yield|4.12
+STATE|3|2|1|0|canolaPoints|3.15
+STATE|3|2|1|0|paymentPoints|2.6
+STATE|3|2|1|0|ownedBy|1
+STATE|3|2|1|0|village|3
+STATE|3|2|1|0|shared?|false
+STATE|3|2|1|1|length 0|3.27
+STATE|3|2|1|1|hasGrass|true
+STATE|3|2|1|1|hasCanola|true
+STATE|3|2|1|1|hasFlower|false
+STATE|3|2|1|1|soilQuality|9.33
+STATE|3|2|1|1|grassCount|4.24
+STATE|3|2|1|1|canolaCount|1.53
+STATE|3|2|1|1|flowerCount|7.63
+STATE|3|2|1|1|predatorCount|8.49
+STATE|3|2|1|1|pollinatorCount|4.07
+STATE|3|2|1|1|pestCount|4.73
+STATE|3|2|1|1|predatorK|3.74
+STATE|3|2|1|1|pollinatorK|5.35
+STATE|3|2|1|1|pestK|6.61
+STATE|3|2|1|1|yield|9.25
+STATE|3|2|1|1|canolaPoints|3.34
+STATE|3|2|1|1|paymentPoints|9.63
+STATE|3|2|1|1|ownedBy|3
+STATE|3|2|1|1|village|0
+STATE|3|2|1|1|shared?|true
+STATE|3|2|1|2|length 0|8.43
+STATE|3|2|1|2|hasGrass|true
+STATE|3|2|1|2|hasCanola|false
+STATE|3|2|1|2|hasFlower|false
+STATE|3|2|1|2|soilQuality|8.34
+STATE|3|2|1|2|grassCount|8.61
+STATE|3|2|1|2|canolaCount|5.3
+STATE|3|2|1|2|flowerCount|6.45
+STATE|3|2|1|2|predatorCount|7.81
+STATE|3|2|1|2|pollinatorCount|2.45
+STATE|3|2|1|2|pestCount|9.65
+STATE|3|2|1|2|predatorK|8.0
+STATE|3|2|1|2|pollinatorK|4.88
+STATE|3|2|1|2|pestK|5.99
+STATE|3|2|1|2|yield|9.47
+STATE|3|2|1|2|canolaPoints|0.14
+STATE|3|2|1|2|paymentPoints|2.74
+STATE|3|2|1|2|ownedBy|0
+STATE|3|2|1|2|village|0
+STATE|3|2|1|2|shared?|true
+STATE|3|2|1|3|length 0|5.8
+STATE|3|2|1|3|hasGrass|false
+STATE|3|2|1|3|hasCanola|true
+STATE|3|2|1|3|hasFlower|true
+STATE|3|2|1|3|soilQuality|0.82
+STATE|3|2|1|3|grassCount|4.23
+STATE|3|2|1|3|canolaCount|9.7
+STATE|3|2|1|3|flowerCount|7.18
+STATE|3|2|1|3|predatorCount|1.78
+STATE|3|2|1|3|pollinatorCount|1.03
+STATE|3|2|1|3|pestCount|2.14
+STATE|3|2|1|3|predatorK|7.55
+STATE|3|2|1|3|pollinatorK|5.09
+STATE|3|2|1|3|pestK|5.91
+STATE|3|2|1|3|yield|4.44
+STATE|3|2|1|3|canolaPoints|6.82
+STATE|3|2|1|3|paymentPoints|7.38
+STATE|3|2|1|3|ownedBy|3
+STATE|3|2|1|3|village|1
+STATE|3|2|1|3|shared?|true
+STATE|3|2|2|0|length 0|5.74
+STATE|3|2|2|0|hasGrass|true
+STATE|3|2|2|0|hasCanola|false
+STATE|3|2|2|0|hasFlower|false
+STATE|3|2|2|0|soilQuality|3.34
+STATE|3|2|2|0|grassCount|6.27
+STATE|3|2|2|0|canolaCount|3.57
+STATE|3|2|2|0|flowerCount|4.92
+STATE|3|2|2|0|predatorCount|5.86
+STATE|3|2|2|0|pollinatorCount|8.0
+STATE|3|2|2|0|pestCount|1.92
+STATE|3|2|2|0|predatorK|9.64
+STATE|3|2|2|0|pollinatorK|8.49
+STATE|3|2|2|0|pestK|1.88
+STATE|3|2|2|0|yield|9.11
+STATE|3|2|2|0|canolaPoints|2.68
+STATE|3|2|2|0|paymentPoints|8.46
+STATE|3|2|2|0|ownedBy|0
+STATE|3|2|2|0|village|3
+STATE|3|2|2|0|shared?|false
+STATE|3|2|2|1|length 0|5.59
+STATE|3|2|2|1|hasGrass|false
+STATE|3|2|2|1|hasCanola|false
+STATE|3|2|2|1|hasFlower|false
+STATE|3|2|2|1|soilQuality|3.35
+STATE|3|2|2|1|grassCount|7.7
+STATE|3|2|2|1|canolaCount|9.03
+STATE|3|2|2|1|flowerCount|5.36
+STATE|3|2|2|1|predatorCount|8.59
+STATE|3|2|2|1|pollinatorCount|3.61
+STATE|3|2|2|1|pestCount|4.48
+STATE|3|2|2|1|predatorK|6.8
+STATE|3|2|2|1|pollinatorK|3.18
+STATE|3|2|2|1|pestK|7.89
+STATE|3|2|2|1|yield|7.96
+STATE|3|2|2|1|canolaPoints|2.06
+STATE|3|2|2|1|paymentPoints|4.01
+STATE|3|2|2|1|ownedBy|0
+STATE|3|2|2|1|village|3
+STATE|3|2|2|1|shared?|true
+STATE|3|2|2|2|length 0|4.94
+STATE|3|2|2|2|hasGrass|false
+STATE|3|2|2|2|hasCanola|true
+STATE|3|2|2|2|hasFlower|true
+STATE|3|2|2|2|soilQuality|5.93
+STATE|3|2|2|2|grassCount|4.8
+STATE|3|2|2|2|canolaCount|5.62
+STATE|3|2|2|2|flowerCount|2.11
+STATE|3|2|2|2|predatorCount|3.35
+STATE|3|2|2|2|pollinatorCount|8.75
+STATE|3|2|2|2|pestCount|8.95
+STATE|3|2|2|2|predatorK|9.15
+STATE|3|2|2|2|pollinatorK|2.28
+STATE|3|2|2|2|pestK|2.49
+STATE|3|2|2|2|yield|3.09
+STATE|3|2|2|2|canolaPoints|0.98
+STATE|3|2|2|2|paymentPoints|1.32
+STATE|3|2|2|2|ownedBy|3
+STATE|3|2|2|2|village|3
+STATE|3|2|2|2|shared?|true
+STATE|3|2|2|3|length 0|8.36
+STATE|3|2|2|3|hasGrass|true
+STATE|3|2|2|3|hasCanola|false
+STATE|3|2|2|3|hasFlower|false
+STATE|3|2|2|3|soilQuality|6.27
+STATE|3|2|2|3|grassCount|2.38
+STATE|3|2|2|3|canolaCount|8.62
+STATE|3|2|2|3|flowerCount|3.62
+STATE|3|2|2|3|predatorCount|5.75
+STATE|3|2|2|3|pollinatorCount|0.59
+STATE|3|2|2|3|pestCount|6.74
+STATE|3|2|2|3|predatorK|8.42
+STATE|3|2|2|3|pollinatorK|6.15
+STATE|3|2|2|3|pestK|8.08
+STATE|3|2|2|3|yield|5.7
+STATE|3|2|2|3|canolaPoints|5.56
+STATE|3|2|2|3|paymentPoints|8.32
+STATE|3|2|2|3|ownedBy|0
+STATE|3|2|2|3|village|1
+STATE|3|2|2|3|shared?|true
+STATE|3|2|3|0|length 0|8.04
+STATE|3|2|3|0|hasGrass|false
+STATE|3|2|3|0|hasCanola|false
+STATE|3|2|3|0|hasFlower|false
+STATE|3|2|3|0|soilQuality|6.71
+STATE|3|2|3|0|grassCount|6.37
+STATE|3|2|3|0|canolaCount|2.26
+STATE|3|2|3|0|flowerCount|7.74
+STATE|3|2|3|0|predatorCount|8.18
+STATE|3|2|3|0|pollinatorCount|2.32
+STATE|3|2|3|0|pestCount|3.75
+STATE|3|2|3|0|predatorK|4.32
+STATE|3|2|3|0|pollinatorK|7.34
+STATE|3|2|3|0|pestK|0.75
+STATE|3|2|3|0|yield|1.24
+STATE|3|2|3|0|canolaPoints|9.23
+STATE|3|2|3|0|paymentPoints|7.69
+STATE|3|2|3|0|ownedBy|2
+STATE|3|2|3|0|village|2
+STATE|3|2|3|0|shared?|true
+STATE|3|2|3|1|length 0|0.04
+STATE|3|2|3|1|hasGrass|true
+STATE|3|2|3|1|hasCanola|false
+STATE|3|2|3|1|hasFlower|true
+STATE|3|2|3|1|soilQuality|8.5
+STATE|3|2|3|1|grassCount|1.8
+STATE|3|2|3|1|canolaCount|8.03
+STATE|3|2|3|1|flowerCount|2.27
+STATE|3|2|3|1|predatorCount|7.05
+STATE|3|2|3|1|pollinatorCount|7.7
+STATE|3|2|3|1|pestCount|5.18
+STATE|3|2|3|1|predatorK|2.41
+STATE|3|2|3|1|pollinatorK|4.96
+STATE|3|2|3|1|pestK|2.45
+STATE|3|2|3|1|yield|9.71
+STATE|3|2|3|1|canolaPoints|4.6
+STATE|3|2|3|1|paymentPoints|5.73
+STATE|3|2|3|1|ownedBy|1
+STATE|3|2|3|1|village|2
+STATE|3|2|3|1|shared?|true
+STATE|3|2|3|2|length 0|9.0
+STATE|3|2|3|2|hasGrass|false
+STATE|3|2|3|2|hasCanola|false
+STATE|3|2|3|2|hasFlower|false
+STATE|3|2|3|2|soilQuality|9.9
+STATE|3|2|3|2|grassCount|0.15
+STATE|3|2|3|2|canolaCount|2.89
+STATE|3|2|3|2|flowerCount|0.91
+STATE|3|2|3|2|predatorCount|8.37
+STATE|3|2|3|2|pollinatorCount|1.45
+STATE|3|2|3|2|pestCount|7.93
+STATE|3|2|3|2|predatorK|1.93
+STATE|3|2|3|2|pollinatorK|2.01
+STATE|3|2|3|2|pestK|3.24
+STATE|3|2|3|2|yield|8.93
+STATE|3|2|3|2|canolaPoints|2.49
+STATE|3|2|3|2|paymentPoints|1.9
+STATE|3|2|3|2|ownedBy|3
+STATE|3|2|3|2|village|1
+STATE|3|2|3|2|shared?|false
+STATE|3|2|3|3|length 0|4.33
+STATE|3|2|3|3|hasGrass|false
+STATE|3|2|3|3|hasCanola|false
+STATE|3|2|3|3|hasFlower|false
+STATE|3|2|3|3|soilQuality|7.9
+STATE|3|2|3|3|grassCount|0.49
+STATE|3|2|3|3|canolaCount|9.51
+STATE|3|2|3|3|flowerCount|6.3
+STATE|3|2|3|3|predatorCount|0.41
+STATE|3|2|3|3|pollinatorCount|3.85
+STATE|3|2|3|3|pestCount|4.75
+STATE|3|2|3|3|predatorK|7.45
+STATE|3|2|3|3|pollinatorK|2.28
+STATE|3|2|3|3|pestK|7.34
+STATE|3|2|3|3|yield|7.86
+STATE|3|2|3|3|canolaPoints|6.05
+STATE|3|2|3|3|paymentPoints|6.73
+STATE|3|2|3|3|ownedBy|3
+STATE|3|2|3|3|village|1
+STATE|3|2|3|3|shared?|false
+CHOICE|3|2|1|3|3|4|12:21:08.000 PM 28-Sep-2026
+CONFIRM|3|2|1|12:21:23.000 PM 28-Sep-2026
+CHOICE|3|2|2|1|3|1|12:21:25.000 PM 28-Sep-2026
+CHOICE|3|2|2|2|3|2|12:21:34.000 PM 28-Sep-2026
+CONFIRM|3|2|2|12:21:49.000 PM 28-Sep-2026
+CHOICE|3|2|3|1|2|2|12:21:54.000 PM 28-Sep-2026
+CONFIRM|3|2|3|12:22:08.000 PM 28-Sep-2026
+CHOICE|3|2|4|2|3|3|12:22:16.000 PM 28-Sep-2026
+CHOICE|3|2|4|0|2|1|12:22:28.000 PM 28-Sep-2026
+CHOICE|3|2|4|0|2|3|12:22:40.000 PM 28-Sep-2026
+CONFIRM|3|2|4|12:22:42.000 PM 28-Sep-2026
+CHOICE|3|2|5|3|2|1|12:22:45.000 PM 28-Sep-2026
+CHOICE|3|2|5|0|3|1|12:22:51.000 PM 28-Sep-2026
+CHOICE|3|2|5|2|0|2|12:23:02.000 PM 28-Sep-2026
+CONFIRM|3|2|5|12:23:08.000 PM 28-Sep-2026
+CHOICE|3|2|6|3|1|4|12:23:10.000 PM 28-Sep-2026
+CHOICE|3|2|6|0|0|4|12:23:15.000 PM 28-Sep-2026
+CONFIRM|3|2|6|12:23:19.000 PM 28-Sep-2026
+CHOICE|3|2|7|0|2|3|12:23:22.000 PM 28-Sep-2026
+CONFIRM|3|2|7|12:23:30.000 PM 28-Sep-2026
+CHOICE|3|2|8|1|2|-99|12:23:42.000 PM 28-Sep-2026
+CHOICE|3|2|8|2|2|4|12:23:57.000 PM 28-Sep-2026
+CONFIRM|3|2|8|12:24:04.000 PM 28-Sep-2026
+CHOICE|3|2|9|3|0|2|12:24:06.000 PM 28-Sep-2026
+CHOICE|3|2|9|0|2|4|12:24:14.000 PM 28-Sep-2026
+CONFIRM|3|2|9|12:24:25.000 PM 28-Sep-2026
+CHOICE|3|2|10|0|2|3|12:24:35.000 PM 28-Sep-2026
+CHOICE|3|2|10|1|2|2|12:24:46.000 PM 28-Sep-2026
+CONFIRM|3|2|10|12:24:53.000 PM 28-Sep-2026
+SCORE|3|2|1|19|41|20
+SCORE|3|2|2|15|17|17
+SCORE|3|2|3|9|14|5
+SCORE|3|2|4|9|41|5
+SCORE|3|2|5|20|28|1
+SCORE|3|2|6|5|47|2
+SCORE|3|2|7|6|6|8
+SCORE|3|2|8|17|58|11
+SCORE|3|2|9|1|20|2
+SCORE|3|2|10|3|19|13

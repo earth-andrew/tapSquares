@@ -1,0 +1,8 @@
+session_file,numRounds,numPlayers,grid,varied_params,notes
+baseline.csv,3,20,4x4,baseline,"2405 log lines, seed=1"
+fewer_players.csv,3,10,4x4,fewer players,"2167 log lines, seed=2"
+more_players.csv,3,24,4x4,more players,"2500 log lines, seed=3"
+more_rounds.csv,9,20,4x4,more rounds,"7194 log lines, seed=4"
+larger_world.csv,3,20,8x8,larger world,"8157 log lines, seed=5"
+high_no_action.csv,3,20,4x4,high no action,"2409 log lines, seed=6"
+heavy_retapping.csv,3,20,4x4,heavy retapping,"2414 log lines, seed=7"

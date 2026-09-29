@@ -1,0 +1,4 @@
+screenID,level,parameter,round_play,phase
+1,patch,round(harvestYield),1 2 3 4,1 2 3 4
+2,player,playerTotalHarvestRound,1 2 3 4,4
+3,player,playerTotalFines,1 2 3 4,4

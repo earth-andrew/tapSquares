@@ -1,4 +1,0 @@
-conditionID,variable,conditionType,probability,onlyIf,notIf,valueMode,valueExpression,minValue,maxValue
-1,hasResource,boolean,0.25,,,fixed,TRUE,,
-2,degraded,boolean,0.2,,"""hasResource""",fixed,TRUE,,
-3,degraded,boolean,0.1,,,fixed,TRUE,,

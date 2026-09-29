@@ -1,0 +1,11 @@
+plotID,plotLabel,reporter,penColor
+1,total canola yield,"sum [yield] of patches with [inGame? and hasCanola]",green
+2,total pollinator population,"sum [pollinatorCount] of patches with [inGame?]",yellow
+3,total pest population,"sum [pestCount] of patches with [inGame?]",red
+4,total predator population,"sum [predatorCount] of patches with [inGame?]",brown
+5,share of land in habitat (grass/flower),"(count patches with [inGame? and (hasGrass or hasFlower)]) / (count patches with [inGame?])",violet
+6,share of land in canola,"(count patches with [inGame? and hasCanola]) / (count patches with [inGame?])",orange
+7,total PES payments disbursed,"sum [paymentPoints] of patches with [inGame?]",blue
+8,cumulative total player score,"sum playerTotalScore",gray
+9,score inequality (max minus min),"(max playerTotalScore) - (min playerTotalScore)",magenta
+10,average soil quality,"mean [soilQuality] of patches with [inGame?]",sky

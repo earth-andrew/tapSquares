@@ -1,4 +1,0 @@
-functionID,expression,round_play,phase
-1,foreach n-values numPlayers [?1 -> ?1] [?1 -> ask one-of patches with [inGame? and member? (?1 + 1)  playerAccess] [set animalCount replace-item ?1 animalCount numAnimals]],0,2
-6,foreach n-values numPlayers [?1 -> ?1][?1 -> ask displayTurtles with [identity = 2 and owner = (?1 + 1)] [let placedPatches patches with [selectedBy = (?1 + 1) and currentChoice = 1] if any? placedPatches [move-to one-of placedPatches setxy (pxcor - 0.5 + random-float 1) (pycor - 0.5 + random-float 1)]]],1 2 3 4 5 6 7 8 9 10,1 2
-7,ask patches with [inGame?] [foreach n-values numPlayers [?1 -> ?1] [?1 -> set animalCount replace-item ?1 animalCount count displayTurtles-here with [identity = 2 and owner = (?1 + 1)]]],1 2 3 4 5 6 7 8 9 10,1 2

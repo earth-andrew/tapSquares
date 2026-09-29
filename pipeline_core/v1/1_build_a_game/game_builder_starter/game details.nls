@@ -1,0 +1,33 @@
+globals [
+
+    ;;GAME-SPECIFIC GLOBALS
+  ;;(game builders should expect to change these values as they build)
+  ;;these should be initialized in a column of sessionList.csv
+
+
+]
+
+
+patches-own [ ]
+
+
+to set-initial-patch-conditions
+
+
+end
+
+to set-initial-player-conditions
+
+
+end
+
+to set-additional-game-level-conditions
+
+  ;; This is also where patchPropertyList gets set -- the whitelist of
+  ;; patches-own variable names that get written into every round's
+  ;; STATE| log line. A patches-own variable not listed here is invisible
+  ;; to the R behavior-extraction step later, even if your game logic
+  ;; reads and sets it correctly. Example:
+  ;;   set patchPropertyList (list "myVariable" "anotherVariable")
+
+end

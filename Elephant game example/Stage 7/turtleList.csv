@@ -1,5 +1,0 @@
-turtleID,countMeasure,imageName,mobile?,turtleSizeMin,turtleSizeMax
-1,cropCount,crop,FALSE,0.1,0.25
-2,vegCount,grass,FALSE,0.1,0.25
-3,treeCount,tree,FALSE,0.4,0.7
-4,elephantCount,elephant,FALSE,0.4,0.6

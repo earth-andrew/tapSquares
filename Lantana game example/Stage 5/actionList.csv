@@ -1,4 +1,0 @@
-actionID,imageName,round_play,phaseAvailable,effort,flags
-1,harvestLight,1 2 3,1,3,"""hasResource"" ""not degraded"""
-2,harvestHeavy,1 2 3,1,5,"""hasResource"" ""not degraded"""
-3,restore,1 2 3,1,5,"""degraded"""

@@ -1,0 +1,22 @@
+functionID,trigger,localVariables,localTargets,expression,round_play,phase,xOffset,yOffset
+1,currentChoice = 3,,,set grassMass minGrassMass,1 2 3 4 5 6 7 8 9 10,1 2,0,0
+2,grassMass > 0,,,set grassMass (grassMass + (grassR * grassMass * (1 - (grassMass / grassK)))),1 2 3 4 5 6 7 8 9 10,1 2,0,0
+3,inGame?,,,set pAttack  0,1 2 3 4 5 6 7 8 9 10,1 2,0,0
+4,inGame?,,,set attacked? False,1 2 3 4 5 6 7 8 9 10,1 2,0,0
+5,inGame?,,,ask displayTurtles-here with [shape = "lion"] [die],1 2 3 4 5 6 7 8 9 10,1 2,0,0
+6,inGame?,,,set animalLoss 0,1 2 3 4 5 6 7 8 9 10,1 2,0,0
+7,treeCount > 0,,,set pAttack (pAttack + pAttack_increment),1 2 3 4 5 6 7 8 9 10,1 2,0,0
+8,treeCount > 0,,,set pAttack (pAttack + pAttack_increment),1 2 3 4 5 6 7 8 9 10,1 2,-1,0
+9,treeCount > 0,,,set pAttack (pAttack + pAttack_increment),1 2 3 4 5 6 7 8 9 10,1 2,1,0
+10,treeCount > 0,,,set pAttack (pAttack + pAttack_increment),1 2 3 4 5 6 7 8 9 10,1 2,0,-1
+11,treeCount > 0,,,set pAttack (pAttack + pAttack_increment),1 2 3 4 5 6 7 8 9 10,1 2,0,1
+12,max animalCount > 0,,,set pAttack (pAttack + pAttack_increment),1 2 3 4 5 6 7 8 9 10,1 2,0,0
+13,max animalCount > 0,,,set pAttack (pAttack + pAttack_increment),1 2 3 4 5 6 7 8 9 10,1 2,-1,0
+14,max animalCount > 0,,,set pAttack (pAttack + pAttack_increment),1 2 3 4 5 6 7 8 9 10,1 2,1,0
+15,max animalCount > 0,,,set pAttack (pAttack + pAttack_increment),1 2 3 4 5 6 7 8 9 10,1 2,0,-1
+16,max animalCount > 0,,,set pAttack (pAttack + pAttack_increment),1 2 3 4 5 6 7 8 9 10,1 2,0,1
+17,fenced?,,,set pAttack 0,1 2 3 4 5 6 7 8 9 10,1 2,0,0
+18,max animalCount > 0,,,set attacked? random-float 1 < pAttack,1 2 3 4 5 6 7 8 9 10,1 2,0,0
+19,attacked?,,,ask one-of displayTurtles-here with [identity = 2] [die] set animalLoss (animalLoss + 1),1 2 3 4 5 6 7 8 9 10,1 2,0,0
+20,attacked?,,,"sprout-displayTurtles 1 [set shape \""lion\"" set size 1 set mobile? true]",1 2 3 4 5 6 7 8 9 10,1 2,0,0
+21,attacked?,,,foreach n-values numPlayers [?1 -> ?1] [?1 -> set animalCount replace-item ?1 animalCount count displayTurtles-here with [identity = 2 and owner = (?1 + 1)]],1 2 3 4 5 6 7 8 9 10,1 2,0,0

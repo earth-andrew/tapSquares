@@ -1,0 +1,4 @@
+plotID,plotLabel,reporter,penColor
+1,total harvest yield,sum [harvestYield] of patches with [inGame?],green
+2,elephant count,"count displayTurtles with [shape = ""elephant""]",brown
+3,cropped patches,count patches with [inGame? and cropped?],orange

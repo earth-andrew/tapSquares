@@ -1,0 +1,5 @@
+variable,role,encoding,period,unassignedValue,treatmentCandidate,notes
+round,counter,exclude,,,,"Default: excluded from the choice model. Set encoding to numeric/cyclical/categorical if this game embeds real state in its round counter (e.g. a climate cycle) worth testing -- needs a human call, not guessed."
+phase,counter,exclude,,,,"Same as round."
+ownedBy,ownership_individual,categorical,,0,FALSE,"Logged unconditionally by the core template regardless of patchPropertyList. Sentinel 0 = unassigned/unowned patch."
+village,ownership_group,categorical,,0,FALSE,"Logged unconditionally by the core template. Sentinel 0 = unassigned."

@@ -1,0 +1,5 @@
+scoreID,patchLevel?,trigger,property,value,localTarget,playerTarget,loop?,playerMarker,operation,show?,imageName,column,round_play,phase
+1,TRUE,harvestYield > 0,harvestYield,pointsPerYield,,playerCurrentScore,FALSE,selectedBy,add,TRUE,payment,1,1 2 3 4,1 2 3 4
+2,TRUE,fined? and cropOwner > 0,fined?,fine,fineAmount,,FALSE,cropOwner,set,TRUE,fine,1,1 2 3 4,1 2 3 4
+3,TRUE,fined? and cropOwner > 0,fined?,fine * (- 1),,playerCurrentScore,FALSE,cropOwner,add,FALSE,,,1 2 3 4,1 2 3 4
+4,TRUE,fined? and cropOwner > 0,fined?,fine,,playerTotalFines,FALSE,cropOwner,add,FALSE,,,1 2 3 4,1 2 3 4

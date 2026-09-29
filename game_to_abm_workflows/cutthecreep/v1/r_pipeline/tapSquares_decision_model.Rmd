@@ -1,0 +1,750 @@
+---
+title: "tapSquares Decision Modeling"
+subtitle: "Parsing session logs, allowing for heterogeneous players, and exporting an agent-behavior CSV for the ABM interpreter"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    df_print: paged
+---
+
+<!--
+HOW TO USE THIS FILE (R Markdown basics)
+=============================================================
+This is an R Markdown notebook (.Rmd) -- plain-text explanation (like
+this comment) mixed with "chunks" of R code, delimited by ```{r} ... ```.
+Run a chunk with the green play arrow at its top-right or Cmd/Ctrl+Enter
+with your cursor in it; run top to bottom the first time through, since
+later chunks depend on objects earlier ones create. "Knit" runs the
+whole thing and produces one HTML report.
+
+PIPELINE_CORE v1 -- reconciled from three copies that had diverged
+across games (CropRaider/PES were untouched from the original;
+Lantana had added an `excluded_predictors` mechanism and hardened
+round/phase into a permanent exclusion; Tiger only differed in a
+commented-out toggle). This version is the merge point going forward
+-- see CHANGELOG.md in this folder for the full list of what changed
+and why. Game-specific behavior belongs in that game's
+`variableRoles.csv` (optional, see Step 4a below), never in an edited
+copy of this file.
+
+What changed in this version, compared to the one that ran clean
+end-to-end on real CropRaider data:
+  1. Round/phase (or year, or whatever a game calls its counter) are
+     no longer unconditionally barred from being predictors. Some
+     games embed real structure in that counter (a multi-year climate
+     cycle, a seasonal effect) that a player could plausibly learn
+     even with no explicit variable telling them about it. Step 4a
+     reads an optional `variableRoles.csv` that can opt a counter
+     variable in, and choose how it's encoded (raw numeric, cyclical
+     sin/cos for a known period, or categorical) so the model can
+     extrapolate to round/phase values it never saw in training
+     instead of erroring or silently ignoring a real effect. Default
+     behavior with no config file present, or a counter not listed in
+     it, is unchanged: excluded, exactly as before.
+  2. Land-ownership variables (`ownedBy`, `village`, and similar) get
+     explicit handling: a configured sentinel value (e.g. 0) is kept
+     as its own real "unassigned" factor level rather than being
+     treated as just another number on a continuous scale. This
+     matters because ownership in tapSquares games is sometimes
+     player-selected, sometimes randomly/game-assigned, and some
+     patches can stay unassigned the whole game -- the model needs to
+     tell those cases apart, not average over them.
+  3. `excluded_predictors` (from the Lantana branch) is kept as-is: a
+     simple named-variable dropout list for anything that's a real
+     predictor you just don't want in this particular fit.
+  4. At the end, if `sessionList.csv` is present in the working
+     directory, this notebook now writes `sessionList_ABM.csv` itself
+     -- copying every column over and adding the three that point at
+     this notebook's own outputs (`agent_behavior_weights.csv`,
+     `agent_behavior_reference.csv`, `outcomePlotList.csv`). That
+     wiring used to be a manual, error-prone edit; now it's automatic.
+     Any other tuning for the ABM run (agent counts, world size, etc.)
+     is still a manual edit on top of the generated file.
+
+Honesty check, carried forward: steps 1-3 (parsing, pivoting, the
+original single dedup+join+pooled-model path) have run against real
+data and work. Steps 7-9 (per-player fits, clustering, per-class
+refit, long-format export) were carefully traced by hand but are less
+battle-tested -- treat a first error there as a real bug, not caution.
+Steps 4a/4b (variable-role handling) are new in this version and have
+only been checked against synthetic data, not real session logs yet.
+-->
+
+## Setup
+
+```{r setup, message = FALSE}
+# knitr/rmarkdown must be installed BEFORE this file can even be
+# opened/knit (RStudio's rendering pipeline depends on them). If you see
+# "there is no package called 'knitr'", run in the Console first:
+#   install.packages(c("rmarkdown", "knitr"))
+
+needed <- c("rmarkdown", "knitr", "readr", "dplyr", "stringr", "tidyr", "purrr", "nnet", "ggplot2")
+missing_pkgs <- needed[!needed %in% installed.packages()[, "Package"]]
+if (length(missing_pkgs) > 0) install.packages(missing_pkgs)
+
+knitr::opts_chunk$set(warning = TRUE, message = FALSE)
+
+library(readr)
+library(dplyr)
+library(stringr)
+library(tidyr)
+library(purrr)
+library(nnet)
+library(ggplot2)
+```
+
+## Point this at your session log(s)
+
+```{r path}
+# Default: every .csv in sample_sessions/. Swap to a single file (or a
+# short explicit vector) once you're working with one real session:
+#   log_paths <- "real_session.csv"
+log_paths <- list.files("sample_sessions", pattern = "\\.csv$", full.names = TRUE)
+
+# MANIFEST.csv (and anything else non-log dropped in this folder, e.g. a
+# README) isn't a session log -- exclude by name rather than assuming the
+# folder only ever holds log files.
+log_paths <- log_paths[!grepl("MANIFEST", log_paths, ignore.case = TRUE)]
+
+if (length(log_paths) == 0) {
+  stop("log_paths is empty -- check your working directory (", getwd(), ").")
+}
+missing_files <- log_paths[!file.exists(log_paths)]
+if (length(missing_files) > 0) {
+  stop("Can't find: ", paste(missing_files, collapse = ", "), " (working directory: ", getwd(), "). ",
+       "Check the path, and Session > Set Working Directory in RStudio if needed.")
+}
+
+log_paths
+```
+
+## Step 1: parse one file into tagged tables
+
+```{r parse-function}
+tag_schema <- list(
+  STATE             = c("round", "phase", "x", "y", "name", "value"),
+  CHOICE            = c("round", "phase", "player", "x", "y", "actionID", "timestamp"),
+  CONFIRM           = c("round", "phase", "player", "timestamp"),
+  VILLAGE           = c("round", "phase", "player", "x", "y", "status", "timestamp"),
+  VILLAGECONFIRMED  = c("village", "x", "y", "status", "timestamp"),
+  PRIVATE           = c("round", "phase", "player", "x", "y", "status", "timestamp"),
+  PRIVATECONFIRMED  = c("player", "x", "y", "status", "timestamp"),
+  SCORE             = c("round", "phase", "player", "currentScore", "totalScore", "resources"),
+  PHASE             = c("label", "timestamp")
+)
+
+build_table <- function(split_lines, tags_found, tag, session_id) {
+  cols <- tag_schema[[tag]]
+  rows <- split_lines[tags_found == tag]
+  rows <- map(rows, ~ .x[-1])
+  good <- map_lgl(rows, ~ length(.x) == length(cols))
+  if (any(!good)) {
+    warning(sprintf("%s (%s): dropped %d malformed line(s) with the wrong field count",
+                     tag, session_id, sum(!good)))
+  }
+  rows <- rows[good]
+  if (length(rows) == 0) {
+    empty <- setNames(as.list(rep(character(0), length(cols))), cols)
+    df <- tibble::as_tibble(empty)
+  } else {
+    df <- as.data.frame(do.call(rbind, rows), stringsAsFactors = FALSE)
+    names(df) <- cols
+    df <- tibble::as_tibble(df)
+  }
+  df$session_id <- session_id
+  df
+}
+
+parse_one_log <- function(path) {
+  session_id <- tools::file_path_sans_ext(basename(path))
+  raw_lines <- read_lines(path)
+  split_lines <- str_split(raw_lines, fixed("|"))
+  tags_found  <- map_chr(split_lines, ~ .x[1])
+
+  list(
+    state   = build_table(split_lines, tags_found, "STATE", session_id),
+    choice  = build_table(split_lines, tags_found, "CHOICE", session_id),
+    confirm = build_table(split_lines, tags_found, "CONFIRM", session_id),
+    score   = build_table(split_lines, tags_found, "SCORE", session_id)
+  )
+}
+```
+
+## Step 2: parse every file and combine
+
+```{r parse-all}
+parsed_sessions <- map(log_paths, parse_one_log)
+
+state_long <- map(parsed_sessions, "state")   %>% bind_rows()
+choice     <- map(parsed_sessions, "choice")  %>% bind_rows()
+confirm    <- map(parsed_sessions, "confirm") %>% bind_rows()
+score      <- map(parsed_sessions, "score")   %>% bind_rows()
+
+to_num <- function(df, cols) df %>% mutate(across(all_of(cols), as.numeric))
+
+state_long <- to_num(state_long, c("round", "phase", "x", "y"))
+choice     <- to_num(choice, c("round", "phase", "player", "x", "y", "actionID"))
+score      <- to_num(score, c("round", "phase", "player", "currentScore", "totalScore", "resources"))
+
+cat("sessions:", n_distinct(choice$session_id), "\n")
+cat("state rows:", nrow(state_long), " choice rows:", nrow(choice),
+    " confirm rows:", nrow(confirm), " score rows:", nrow(score), "\n")
+
+choice %>% group_by(session_id) %>% summarise(n_players = n_distinct(player))
+```
+
+## Step 3: reshape state from long to wide
+
+```{r pivot-state}
+state_wide <- state_long %>%
+  pivot_wider(id_cols = c(session_id, round, phase, x, y), names_from = name, values_from = value)
+
+smart_coerce <- function(x) {
+  if (all(x %in% c("true", "false", NA))) return(x == "true")
+  numeric_try <- suppressWarnings(as.numeric(x))
+  if (!any(is.na(numeric_try) & !is.na(x))) return(numeric_try)
+  x  # leave as character -- e.g. playerHarvestRound's "[1 2 3]" list literal
+}
+
+state_wide <- state_wide %>% mutate(across(-c(session_id, round, phase, x, y), smart_coerce))
+
+list_shaped <- names(state_wide)[map_lgl(state_wide, ~ is.character(.x) && any(str_detect(.x, fixed("[")), na.rm = TRUE))]
+if (length(list_shaped) > 0) {
+  message("List-shaped columns left as text, not used as predictors below: ",
+          paste(list_shaped, collapse = ", "))
+}
+```
+
+## Step 4: collapse taps into real decisions, without losing the taps themselves
+
+One row per action, per the earlier reasoning (a turn can span several
+patches, so one-row-per-turn doesn't fit a rectangular dataset). But
+`update-current-choice` cycles through options each time a player taps
+the *same* patch again, so only the last tap per patch is the real
+decision -- the earlier ones are menu-browsing, not separate choices.
+
+The count is kept as `n_taps_patch` (how many times this specific
+patch was retapped) and `n_taps_turn` (how many total taps happened
+across every patch this player touched that round/phase). Read these
+two differently: `n_taps_turn` is a reasonable candidate *predictor*
+-- it describes how much deliberation a player brought to the whole
+turn, independent of which specific action they ended up taking
+anywhere in it. `n_taps_patch` is murkier as a predictor of the action
+chosen *on that same patch*, since the cycling order itself is fixed
+by the game code. Left in as a candidate either way -- just worth
+treating with more suspicion than the state variables.
+
+```{r dedup-choice}
+cat("choice rows before collapsing cycling taps:", nrow(choice), "\n")
+
+choice <- choice %>%
+  group_by(session_id, round, phase, player, x, y) %>%
+  mutate(n_taps_patch = n()) %>%
+  ungroup() %>%
+  group_by(session_id, round, phase, player) %>%
+  mutate(n_taps_turn = n()) %>%
+  ungroup()
+
+choice_real <- choice %>%
+  group_by(session_id, round, phase, player, x, y) %>%
+  slice_tail(n = 1) %>%
+  ungroup()
+
+cat("choice rows after collapsing to real decisions:", nrow(choice_real), "\n")
+
+# tapSquares uses -99 as the sentinel for "explicitly chose nothing here."
+# TRUE keeps it as a real outcome level (modeling "did they act at all,
+# and on what" together); FALSE models only the choice of *which* action,
+# conditional on having taken one. Either is defensible -- flip this and
+# re-run rather than picking one silently.
+include_no_action_choice <- TRUE
+if (!include_no_action_choice) {
+  choice_real <- choice_real %>% filter(actionID != -99)
+  cat("choice rows after dropping 'no action' (-99):", nrow(choice_real), "\n")
+}
+```
+
+## Step 4a: load this game's variable-roles config (optional)
+
+`variableRoles.csv` is per-game, optional, and lives alongside the
+session logs. It tells this notebook how to treat three kinds of
+variable that need more than "is it numeric or logical":
+
+- **counters** (`round`, `phase`, `year`, or whatever a game calls its
+  turn/cycle number). Default (not listed, or no config file at all)
+  is `exclude` -- identical to every prior version of this notebook.
+  List one here with `encoding = numeric` to test it as a plain linear
+  predictor, or `encoding = cyclical` with a `period` to test it as a
+  repeating cycle (encoded as sin/cos pairs so the model can
+  extrapolate to a round number it never saw in training, rather than
+  needing every value seen during fitting).
+- **ownership** (`ownedBy`, `village`, or similar). `role =
+  ownership_individual`/`ownership_group` treats the variable as a
+  category (its sentinel value, e.g. 0 for unassigned, becomes its own
+  distinct level) rather than a number the model averages over.
+  `unassignedValue` is documentation for humans reading the config --
+  not consumed by this notebook -- so the raw value stays the level
+  text, matching what the ABM generator reads back from the patch.
+- **treatment candidates**: `treatmentCandidate = TRUE` doesn't change
+  modeling at all -- it's a flag carried through to the export/notes
+  so an ABM user knows which variables are the ones worth sweeping.
+
+A blank template with all of this documented lives at
+`variableRoles_TEMPLATE.csv` in pipeline_core.
+
+```{r load-variable-roles}
+role_schema <- c("variable", "role", "encoding", "period", "unassignedValue", "treatmentCandidate", "notes")
+
+if (file.exists("variableRoles.csv")) {
+  variable_roles <- read_csv("variableRoles.csv", col_types = cols(.default = "c"), show_col_types = FALSE)
+  missing_cols <- setdiff(role_schema, names(variable_roles))
+  if (length(missing_cols) > 0) {
+    stop("variableRoles.csv is missing column(s): ", paste(missing_cols, collapse = ", "))
+  }
+  cat("Loaded variableRoles.csv:", nrow(variable_roles), "variable(s) configured.\n")
+} else {
+  variable_roles <- tibble(variable = character(), role = character(), encoding = character(),
+                            period = character(), unassignedValue = character(),
+                            treatmentCandidate = character(), notes = character())
+  message("No variableRoles.csv found -- using defaults (round/phase excluded, everything else auto-detected).")
+}
+
+variable_roles
+```
+
+## Step 4b: apply counter and ownership encodings to the wide state table
+
+```{r apply-variable-roles}
+counter_defaults <- c("round", "phase")  # always excluded unless explicitly overridden below
+
+# Cyclical counters: replace the raw column with sin/cos pairs.
+cyclical_rows <- variable_roles %>% filter(role == "counter", encoding == "cyclical")
+for (i in seq_len(nrow(cyclical_rows))) {
+  v <- cyclical_rows$variable[i]
+  p <- suppressWarnings(as.numeric(cyclical_rows$period[i]))
+  if (v %in% names(state_wide) && !is.na(p) && p > 0) {
+    state_wide[[paste0(v, "_sin")]] <- sin(2 * pi * state_wide[[v]] / p)
+    state_wide[[paste0(v, "_cos")]] <- cos(2 * pi * state_wide[[v]] / p)
+    message(v, ": encoded as cyclical (period = ", p, ") -> ", v, "_sin, ", v, "_cos")
+  } else if (v %in% names(state_wide)) {
+    warning(v, ": role=counter, encoding=cyclical but no valid 'period' given -- left out of the model.")
+  }
+}
+
+# Numeric counters: leave the raw column in place, just don't structurally exclude it below.
+numeric_counter_vars <- variable_roles %>% filter(role == "counter", encoding == "numeric") %>% pull(variable)
+
+# Categorical counters (rare -- won't extrapolate to an unseen round/phase value,
+# only use this if you specifically want "round 3" treated as a distinct category).
+categorical_counter_vars <- variable_roles %>% filter(role == "counter", encoding == "categorical") %>% pull(variable)
+for (v in categorical_counter_vars) {
+  if (v %in% names(state_wide)) state_wide[[v]] <- factor(state_wide[[v]])
+}
+
+# Ownership variables: treated as a category (factor), not a number on a
+# continuous scale, so the sentinel (e.g. 0 = unassigned) is just another
+# distinct level rather than something the model averages toward. The raw
+# value is kept AS the level text (e.g. "0", "1", "2") rather than
+# relabeled to a word like "unassigned" -- R's dummy-coded coefficient
+# name is then <varname><rawvalue> (e.g. "village0"), which the ABM
+# generator's get-feature-value resolves by reading that same patch
+# variable's current value back as text. Relabeling to a word here would
+# require the ABM side to separately know the unassignedValue mapping
+# from variableRoles.csv just to reverse it -- unnecessary coupling for
+# no modeling benefit, since factor() already gives 0 its own level
+# either way. unassignedValue in variableRoles.csv is documentation for
+# humans reading the config, not consumed here.
+ownership_rows <- variable_roles %>% filter(role %in% c("ownership_individual", "ownership_group"))
+for (i in seq_len(nrow(ownership_rows))) {
+  v <- ownership_rows$variable[i]
+  if (v %in% names(state_wide)) {
+    state_wide[[v]] <- factor(as.character(state_wide[[v]]))
+    message(v, ": encoded as ownership factor (levels: ",
+            paste(levels(state_wide[[v]]), collapse = ", "), ")")
+  }
+}
+
+# round/phase stay excluded from the id-column list below UNLESS they were
+# given a non-"exclude" encoding above (numeric, cyclical, or categorical).
+counter_included <- variable_roles %>%
+  filter(role == "counter", encoding %in% c("numeric", "cyclical", "categorical")) %>%
+  pull(variable)
+counters_to_exclude <- setdiff(counter_defaults, counter_included)
+
+cat("Counters excluded from modeling:", paste(counters_to_exclude, collapse = ", "), "\n")
+if (length(counter_included) > 0) cat("Counters included (see encoding above):", paste(counter_included, collapse = ", "), "\n")
+```
+
+## Step 5: build one row per decision
+
+```{r model-data}
+model_data <- choice_real %>%
+  left_join(state_wide, by = c("session_id", "round", "phase", "x", "y")) %>%
+  left_join(score, by = c("session_id", "round", "phase", "player"))
+
+# Always-bookkeeping columns: join keys / identifiers, never candidate
+# predictors regardless of configuration. round/phase are handled
+# separately just above -- excluded by default, includable via
+# variableRoles.csv -- since unlike these, a game *can* meaningfully
+# encode real state in its counter.
+id_cols <- c("session_id", "player", "x", "y", "actionID", "timestamp")
+id_cols <- union(id_cols, counters_to_exclude)
+
+predictor_cols <- setdiff(names(model_data), id_cols)
+predictor_cols <- predictor_cols[map_lgl(model_data[predictor_cols],
+                                          ~ is.numeric(.x) || is.logical(.x) || is.factor(.x))]
+
+## Choose which real predictors the choice model may use
+##
+## `session_id`, `player`, `x`, `y`, `actionID`, and `timestamp` are
+## never candidates -- they're bookkeeping from the log format itself
+## (join keys and identifiers), not variables that exist anywhere in
+## the actual game/ABM. round/phase are excluded by the same logic
+## UNLESS variableRoles.csv opted them in (Step 4a/4b) -- see that
+## section for why a game might want to.
+##
+## What *does* belong in excluded_predictors below: any predictor
+## that's real (a patches-own variable that's actually in this game,
+## or a score-derived feature like `resources`) but that you know
+## isn't meaningful for this analysis and want dropped without
+## touching the data or the model-fitting code. Empty by default.
+excluded_predictors <- c()
+
+predictor_cols <- setdiff(predictor_cols, excluded_predictors)
+
+cat("Excluded from the choice model by name (edit excluded_predictors above to add any):\n",
+    if (length(excluded_predictors) == 0) "(none)" else paste(excluded_predictors, collapse = ", "), "\n")
+
+# tapSquares names boolean patches-own variables with a trailing "?"
+# (water?, cropped?, ...) -- not valid bare terms in an R formula, so
+# every predictor gets backtick-wrapped regardless of whether it needs
+# it. Works the same for factor columns (ownership, categorical
+# counters) as for numeric/logical ones.
+predictor_terms <- paste0("`", predictor_cols, "`")
+
+cat("Predictors used (includes n_taps_patch, n_taps_turn):\n", paste(predictor_cols, collapse = ", "), "\n")
+
+# Coefficients from separately-fit models are only comparable if every
+# model uses the same reference/baseline outcome category. Fix one
+# explicitly and reuse it for every fit below (pooled, per-player,
+# per-class) rather than letting each fit pick its own default.
+#
+# The reference category MUST be -99 ("do nothing") whenever it's present
+# in the data, not just "whichever action happens to be most common."
+# A multinomial logit's reference level always scores exactly 0 -- no
+# fitted coefficients, no dependence on state at all, by construction --
+# and the ABM (choose-actions-for-agent, tapSquares_ABM_generator.nlogox)
+# picks every action by comparing its fitted score against -99's fitted
+# score (the margin over "doing nothing"). That comparison is only
+# mathematically sound when -99 itself is the reference: then every real
+# action's score directly IS its own log-odds relative to doing nothing,
+# and "margin > 0" means exactly what it's supposed to. Pick anything
+# else as reference and that ONE action instead gets pinned to a flat,
+# state-independent 0 score forever, while -99 gets real (often
+# comparatively favorable) fitted coefficients -- so the reference action
+# ends up silently, permanently excluded from every ABM agent's choices,
+# for a reason that has nothing to do with real behavior, just an
+# artifact of which action happened to get picked as the baseline.
+# Confirmed live: Crouching Tiger's synthetic training data (near-uniform
+# random action choice, no real signal) happened to make actionID 4
+# (buildFence) the most-frequent action by sampling noise alone -- it
+# became the reference, and fence-building was never chosen by any ABM
+# agent afterward, regardless of session/round/patch state.
+if (-99 %in% model_data$actionID) {
+  reference_action <- -99
+} else {
+  # -99 never appears in this session's data (every player acted every
+  # turn) -- fall back to the most frequent real action, same as before.
+  reference_action <- model_data %>% count(actionID, sort = TRUE) %>% slice(1) %>% pull(actionID)
+  message("Note: -99 (\"do nothing\") never appears in this session's data -- ",
+          "falling back to the most frequent action (", reference_action,
+          ") as the reference category instead.")
+}
+model_data <- model_data %>% mutate(actionID_f = relevel(factor(actionID), ref = as.character(reference_action)))
+cat("Reference category for all model fits below: actionID =", reference_action, "\n")
+
+form <- as.formula(paste("actionID_f ~", paste(predictor_terms, collapse = " + ")))
+can_fit_model <- n_distinct(model_data$actionID) >= 2
+if (!can_fit_model) {
+  message("Only one action type appears in this data -- can't fit a choice model yet.")
+}
+
+model_data
+```
+
+## Step 6: a single pooled model, as a baseline
+
+Useful as a sanity check and a point of comparison against the
+per-player/per-class versions below -- if the pooled and per-class
+models end up looking nearly identical, that's itself informative (not
+much heterogeneity to find, at least not yet, with this much data).
+
+```{r fit-pooled}
+if (can_fit_model) {
+  fit <- multinom(form, data = model_data, trace = FALSE)
+  summary(fit)
+}
+```
+
+```{r plot-coefs}
+if (exists("fit")) {
+  coefs <- as.data.frame(coef(fit))
+  coefs$outcome_level <- rownames(coefs)
+  coefs_long <- coefs %>% pivot_longer(-outcome_level, names_to = "term", values_to = "weight")
+
+  ggplot(coefs_long, aes(x = term, y = weight, fill = outcome_level)) +
+    geom_col(position = "dodge") +
+    coord_flip() +
+    labs(title = "Pooled model: fitted feature weights per action",
+         x = NULL, y = "coefficient (log-odds scale, relative to the reference action)") +
+    theme_minimal()
+}
+```
+
+## Step 7: let players differ -- fit one model per player, then cluster
+
+This is a practical two-step *approximation* to a true latent-class
+discrete choice model, not the real thing. A proper joint estimator
+(e.g. the `gmnl` package's latent-class multinomial logit) fits all
+classes simultaneously via EM, sharing information across players in a
+statistically principled way. That needs a data format (`mlogit`-style
+long-by-alternative, via `dfidx`) that's easy to get subtly wrong
+without being able to test it live, and with only a few players from
+one session there often isn't yet enough data to make a joint
+estimator worth the risk. This fit-per-player-then-cluster version
+reuses only the already-validated `multinom()` machinery, so it's far
+more likely to actually run -- worth upgrading to `gmnl` once there
+are enough sessions/players for a joint estimate to be meaningfully
+more powerful than this approximation.
+
+**With only a handful of players, treat this whole step as a
+mechanics check, not a real result** until there's enough data to say
+otherwise.
+
+```{r fit-per-player}
+fit_one_player <- function(pid) {
+  player_data <- model_data %>% filter(player == pid)
+  if (n_distinct(player_data$actionID) < 2) {
+    message("Player ", pid, ": only one action type observed -- skipping.")
+    return(NULL)
+  }
+  tryCatch(
+    multinom(form, data = player_data, trace = FALSE),
+    error = function(e) {
+      message("Player ", pid, ": model failed to fit (", conditionMessage(e), ")")
+      NULL
+    }
+  )
+}
+
+if (can_fit_model) {
+  player_ids <- sort(unique(model_data$player))
+  player_fits <- set_names(map(player_ids, fit_one_player), player_ids)
+  player_fits <- compact(player_fits)
+  cat("Per-player models fit successfully for players:", paste(names(player_fits), collapse = ", "), "\n")
+}
+```
+
+```{r cluster-players}
+# nnet::multinom's coef() returns a matrix when there are 3+ outcome
+# levels, but a plain vector when there are exactly 2 -- a real
+# possibility with this little data per player. Rather than guess at
+# reconstructing the matrix shape without being able to test it, players
+# who land in that case get skipped here with a message, not silently
+# mishandled.
+extract_coefs_long <- function(model, player_id) {
+  cm <- coef(model)
+  if (is.null(dim(cm))) {
+    message("Player ", player_id, ": exactly two action levels in this player's ",
+            "data, which changes coef()'s output shape -- skipping in clustering.")
+    return(NULL)
+  }
+  as.data.frame(cm) %>%
+    tibble::as_tibble() %>%
+    mutate(outcome_level = rownames(cm), player = player_id) %>%
+    pivot_longer(-c(outcome_level, player), names_to = "feature", values_to = "weight")
+}
+
+player_classes <- NULL
+
+if (can_fit_model && length(player_fits) > 0) {
+  player_coefs_long <- map2(player_fits, names(player_fits), extract_coefs_long) %>%
+    compact() %>%
+    bind_rows()
+
+  if (nrow(player_coefs_long) > 0) {
+    player_coefs_wide <- player_coefs_long %>%
+      mutate(col_name = paste(outcome_level, feature, sep = "__")) %>%
+      select(player, col_name, weight) %>%
+      pivot_wider(names_from = col_name, values_from = weight)
+
+    # a player who never took a given action won't have a coefficient for
+    # it -- treating that as 0 for clustering purposes only (not a real
+    # statistical imputation) is a simplification worth revisiting once
+    # more players make full coverage more likely.
+    player_coefs_matrix <- player_coefs_wide %>%
+      select(-player) %>%
+      mutate(across(everything(), ~ replace(.x, is.na(.x), 0))) %>%
+      as.matrix()
+    rownames(player_coefs_matrix) <- player_coefs_wide$player
+
+    n_players_clusterable <- nrow(player_coefs_matrix)
+    col_sds <- apply(player_coefs_matrix, 2, sd)
+    usable_cols <- col_sds > 1e-8
+
+    if (n_players_clusterable < 3 || sum(usable_cols) == 0) {
+      message("Not enough variation across players to cluster meaningfully yet ",
+              "(", n_players_clusterable, " player(s), ", sum(usable_cols),
+              " varying feature(s)) -- skipping clustering, will fall back to ",
+              "the pooled model for export below.")
+    } else {
+      k <- min(2, n_players_clusterable - 1)
+      set.seed(1)
+      km <- kmeans(scale(player_coefs_matrix[, usable_cols, drop = FALSE]), centers = k)
+      player_classes <- tibble(player = as.numeric(rownames(player_coefs_matrix)),
+                                class = paste0("class_", km$cluster))
+    }
+  }
+}
+
+player_classes
+```
+
+## Step 8: refit one pooled model per discovered class
+
+```{r fit-per-class}
+class_fits <- list()
+
+if (!is.null(player_classes)) {
+  model_data_classed <- model_data %>% left_join(player_classes, by = "player")
+
+  fit_one_class <- function(cid) {
+    class_data <- model_data_classed %>% filter(class == cid)
+    if (n_distinct(class_data$actionID) < 2) {
+      message("Class ", cid, ": only one action type observed -- skipping.")
+      return(NULL)
+    }
+    tryCatch(
+      multinom(form, data = class_data, trace = FALSE),
+      error = function(e) {
+        message("Class ", cid, ": failed to fit (", conditionMessage(e), ")")
+        NULL
+      }
+    )
+  }
+
+  class_ids <- sort(unique(model_data_classed$class))
+  class_fits <- set_names(map(class_ids, fit_one_class), class_ids)
+  class_fits <- compact(class_fits)
+  cat("Per-class models fit successfully for:", paste(names(class_fits), collapse = ", "), "\n")
+}
+```
+
+## Step 9: export the agent-behavior CSV, and the ABM session list, for the interpreter
+
+Long format: `agent_type` (which class of player this row describes),
+`decision_stage` (fixed at `"action_choice"` for everyone right now --
+a placeholder column, not yet doing anything, since nothing in the
+data so far has justified a genuine two-stage strategy-then-tactic
+model), `outcome_option` (which action), `feature`, and `weight`.
+Falls back to the single pooled model, tagged `agent_type = "pooled"`,
+if clustering didn't produce usable per-class fits.
+
+```{r export}
+extract_export_rows <- function(model, agent_type) {
+  cm <- coef(model)
+  if (is.null(dim(cm))) {
+    message(agent_type, ": exactly two action levels -- skipping in export (see Step 7's note).")
+    return(NULL)
+  }
+  as.data.frame(cm) %>%
+    tibble::as_tibble() %>%
+    mutate(outcome_option = rownames(cm)) %>%
+    pivot_longer(-outcome_option, names_to = "feature", values_to = "weight") %>%
+    mutate(agent_type = agent_type, decision_stage = "action_choice") %>%
+    select(agent_type, decision_stage, outcome_option, feature, weight)
+}
+
+export_rows <- tibble()
+
+if (length(class_fits) > 0) {
+  export_rows <- map2(class_fits, names(class_fits), extract_export_rows) %>% compact() %>% bind_rows()
+}
+
+if (nrow(export_rows) == 0 && exists("fit")) {
+  message("No usable per-class models -- exporting the pooled model instead, as agent_type = 'pooled'.")
+  export_rows <- extract_export_rows(fit, "pooled")
+}
+
+if (nrow(export_rows) > 0) {
+  write_csv(export_rows, "agent_behavior_weights.csv")
+
+  # The ABM interpreter needs to know which actionID was the reference/
+  # baseline category, since a multinomial logit's reference level has no
+  # row in coef() at all -- its score is implicitly 0, everything else is
+  # a log-odds relative to it. Writing it out explicitly here rather than
+  # making the NetLogo side infer it.
+  write_csv(tibble(reference_actionID = reference_action), "agent_behavior_reference.csv")
+}
+
+export_rows
+```
+
+```{r export-sessionlist-abm}
+# Wire the ABM run's sessionList.csv automatically: same columns as the
+# game's own sessionList.csv, plus the three pointers to this notebook's
+# own outputs. Any other ABM-specific tuning (agent counts, a bigger
+# world, etc.) is still a manual edit on top of the file this writes --
+# only the error-prone pointer wiring is automated here.
+if (file.exists("sessionList.csv") && nrow(export_rows) > 0) {
+  session_list <- read_csv("sessionList.csv", show_col_types = FALSE)
+  session_list$behaviorListFileName     <- "agent_behavior_weights.csv"
+  session_list$referenceActionFileName  <- "agent_behavior_reference.csv"
+  session_list$outcomePlotListFileName  <- "outcomePlotList.csv"
+  # na = "" (not readr's default "NA") -- sessionList.csv can legitimately
+  # leave an optional column blank (e.g. patch_color_property, meaning "no
+  # property-driven shading, use the default color"). read_csv() reads
+  # that blank cell as R's NA; write_csv()'s default na="NA" would then
+  # serialize it back out as the literal 3-character string "NA", not an
+  # empty cell. The ABM generator's generic CSV-driven config loader has
+  # no way to tell "the text NA" apart from a real value, so it tries to
+  # runresult "NA" as a NetLogo expression and crashes ("Nothing named NA
+  # has been defined") the moment that column is used -- confirmed live,
+  # Cut the Creep's patch_color_property. na="" keeps a blank cell blank
+  # all the way through the round-trip, matching what a human-authored
+  # sessionList.csv would have.
+  write_csv(session_list, "sessionList_ABM.csv", na = "")
+  cat("Wrote sessionList_ABM.csv (", nrow(session_list), "row(s), from sessionList.csv plus the three output pointers).\n")
+} else if (!file.exists("sessionList.csv")) {
+  message("No sessionList.csv in the working directory -- skipped writing sessionList_ABM.csv. ",
+          "Copy the game's sessionList.csv here (or point setwd() at the game folder) and re-run this chunk.")
+}
+```
+
+## Notes / what this notebook deliberately doesn't do yet
+
+- **Own-patch state only.** Predictors come only from the patch a
+  player acted on, not the fuller board-wide / multi-scale feature set
+  discussed earlier.
+- **No visibility-treatment handling** yet.
+- **Player identity isn't tracked across sessions** -- `player` numbers
+  reset per session.
+- **Assumes one consistent game per batch of files** (same
+  `patchPropertyList` schema across sessions).
+- **The per-player-then-cluster approach is an approximation.** A real
+  latent-class discrete choice model (`gmnl`, `model = "lc"`) is the
+  more rigorous version, worth moving to once there's enough data
+  across enough sessions/players to make joint EM estimation pay off
+  over this simpler two-step version.
+- **The two-stage `decision_stage` column is a placeholder.** Nothing
+  currently populates more than one stage.
+- **Exactly two available actions is a rough edge** for `coef()`'s
+  output shape, handled by skipping (with a message) rather than
+  guessing at a fix, in the per-player, clustering, and export steps.
+- **Categorical counter/ownership levels unseen at prediction time**
+  are this notebook's problem only insofar as they can't be fit on
+  data that doesn't contain them. Making the *ABM generator* degrade
+  gracefully (rather than erroring) when it encounters an unseen
+  categorical level at runtime is separate NetLogo-side work, tracked
+  alongside this file, not solved here.

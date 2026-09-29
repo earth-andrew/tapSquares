@@ -1,3 +1,0 @@
-conditionID,variable,conditionType,probability,onlyIf,notIf,valueMode,valueExpression,minValue,maxValue
-1,treeCount,boolean,0.3,,,integer,,3,7
-2,grassMass,boolean,1,,,integer,,10,20

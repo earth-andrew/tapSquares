@@ -1,0 +1,5 @@
+actionID,imageName,round_play,phaseAvailable,effort,flags
+1,plantCanola,1 2 3 4 5 6 7 8,1,5,"""not hasCanola"""
+2,plantGrass,1 2 3 4 5 6 7 8,1,5,"""not hasGrass"""
+3,plantFlower,1 2 3 4 5 6 7 8,1,5,"""not hasFlower"""
+4,spray,1 2 3 4 5 6 7 8,2,2,"""hasCanola"""

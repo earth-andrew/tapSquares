@@ -1,0 +1,5909 @@
+PHASE|phase-1-1|12:00:06.000 PM 28-Sep-2026
+STATE|1|1|0|0|protected?|false
+STATE|1|1|0|0|water?|true
+STATE|1|1|0|0|cropped?|true
+STATE|1|1|0|0|driedUp?|false
+STATE|1|1|0|0|soilQuality|0.94
+STATE|1|1|0|0|treeCount|5.83
+STATE|1|1|0|0|currentBiomass|9.1
+STATE|1|1|0|0|waterLevel|2.15
+STATE|1|1|0|0|elephantCount|0.86
+STATE|1|1|0|0|myWaterDistance|4.18
+STATE|1|1|0|0|harvestYield|2.41
+STATE|1|1|0|0|playerHarvestRound|[8 6 0 9 1 3 10 10]
+STATE|1|1|0|0|fined?|false
+STATE|1|1|0|0|fineAmount|0.62
+STATE|1|1|0|0|cropOwner|5.86
+STATE|1|1|0|0|defended?|true
+STATE|1|1|0|0|cropCount|2.21
+STATE|1|1|0|0|vegCount|5.57
+STATE|1|1|0|0|ownedBy|0
+STATE|1|1|0|0|village|1
+STATE|1|1|0|0|shared?|true
+STATE|1|1|0|1|protected?|false
+STATE|1|1|0|1|water?|false
+STATE|1|1|0|1|cropped?|false
+STATE|1|1|0|1|driedUp?|false
+STATE|1|1|0|1|soilQuality|1.03
+STATE|1|1|0|1|treeCount|5.71
+STATE|1|1|0|1|currentBiomass|1.88
+STATE|1|1|0|1|waterLevel|0.97
+STATE|1|1|0|1|elephantCount|7.12
+STATE|1|1|0|1|myWaterDistance|5.64
+STATE|1|1|0|1|harvestYield|6.19
+STATE|1|1|0|1|playerHarvestRound|[7 10 8 6 5 7 9 7]
+STATE|1|1|0|1|fined?|true
+STATE|1|1|0|1|fineAmount|2.48
+STATE|1|1|0|1|cropOwner|1.8
+STATE|1|1|0|1|defended?|false
+STATE|1|1|0|1|cropCount|0.82
+STATE|1|1|0|1|vegCount|3.0
+STATE|1|1|0|1|ownedBy|2
+STATE|1|1|0|1|village|1
+STATE|1|1|0|1|shared?|false
+STATE|1|1|0|2|protected?|true
+STATE|1|1|0|2|water?|false
+STATE|1|1|0|2|cropped?|true
+STATE|1|1|0|2|driedUp?|true
+STATE|1|1|0|2|soilQuality|7.57
+STATE|1|1|0|2|treeCount|1.52
+STATE|1|1|0|2|currentBiomass|4.89
+STATE|1|1|0|2|waterLevel|0.39
+STATE|1|1|0|2|elephantCount|6.68
+STATE|1|1|0|2|myWaterDistance|7.65
+STATE|1|1|0|2|harvestYield|5.73
+STATE|1|1|0|2|playerHarvestRound|[5 5 5 9 7 9 7 1]
+STATE|1|1|0|2|fined?|false
+STATE|1|1|0|2|fineAmount|9.45
+STATE|1|1|0|2|cropOwner|4.74
+STATE|1|1|0|2|defended?|false
+STATE|1|1|0|2|cropCount|0.61
+STATE|1|1|0|2|vegCount|7.01
+STATE|1|1|0|2|ownedBy|3
+STATE|1|1|0|2|village|3
+STATE|1|1|0|2|shared?|false
+STATE|1|1|0|3|protected?|false
+STATE|1|1|0|3|water?|true
+STATE|1|1|0|3|cropped?|true
+STATE|1|1|0|3|driedUp?|false
+STATE|1|1|0|3|soilQuality|0.23
+STATE|1|1|0|3|treeCount|4.62
+STATE|1|1|0|3|currentBiomass|1.68
+STATE|1|1|0|3|waterLevel|1.17
+STATE|1|1|0|3|elephantCount|0.59
+STATE|1|1|0|3|myWaterDistance|7.68
+STATE|1|1|0|3|harvestYield|1.29
+STATE|1|1|0|3|playerHarvestRound|[3 6 6 7 1 2 7 6]
+STATE|1|1|0|3|fined?|false
+STATE|1|1|0|3|fineAmount|8.83
+STATE|1|1|0|3|cropOwner|8.19
+STATE|1|1|0|3|defended?|false
+STATE|1|1|0|3|cropCount|2.78
+STATE|1|1|0|3|vegCount|4.15
+STATE|1|1|0|3|ownedBy|1
+STATE|1|1|0|3|village|3
+STATE|1|1|0|3|shared?|false
+STATE|1|1|1|0|protected?|false
+STATE|1|1|1|0|water?|true
+STATE|1|1|1|0|cropped?|true
+STATE|1|1|1|0|driedUp?|true
+STATE|1|1|1|0|soilQuality|2.33
+STATE|1|1|1|0|treeCount|4.85
+STATE|1|1|1|0|currentBiomass|5.89
+STATE|1|1|1|0|waterLevel|2.63
+STATE|1|1|1|0|elephantCount|0.04
+STATE|1|1|1|0|myWaterDistance|4.19
+STATE|1|1|1|0|harvestYield|3.69
+STATE|1|1|1|0|playerHarvestRound|[9 5 2 8 9 10 10 0]
+STATE|1|1|1|0|fined?|true
+STATE|1|1|1|0|fineAmount|8.71
+STATE|1|1|1|0|cropOwner|9.52
+STATE|1|1|1|0|defended?|false
+STATE|1|1|1|0|cropCount|5.59
+STATE|1|1|1|0|vegCount|3.98
+STATE|1|1|1|0|ownedBy|2
+STATE|1|1|1|0|village|0
+STATE|1|1|1|0|shared?|true
+STATE|1|1|1|1|protected?|true
+STATE|1|1|1|1|water?|true
+STATE|1|1|1|1|cropped?|false
+STATE|1|1|1|1|driedUp?|true
+STATE|1|1|1|1|soilQuality|1.1
+STATE|1|1|1|1|treeCount|6.01
+STATE|1|1|1|1|currentBiomass|1.02
+STATE|1|1|1|1|waterLevel|5.67
+STATE|1|1|1|1|elephantCount|5.37
+STATE|1|1|1|1|myWaterDistance|9.49
+STATE|1|1|1|1|harvestYield|6.14
+STATE|1|1|1|1|playerHarvestRound|[1 3 9 6 2 10 4 5]
+STATE|1|1|1|1|fined?|false
+STATE|1|1|1|1|fineAmount|4.74
+STATE|1|1|1|1|cropOwner|1.15
+STATE|1|1|1|1|defended?|true
+STATE|1|1|1|1|cropCount|9.78
+STATE|1|1|1|1|vegCount|4.8
+STATE|1|1|1|1|ownedBy|1
+STATE|1|1|1|1|village|0
+STATE|1|1|1|1|shared?|true
+STATE|1|1|1|2|protected?|false
+STATE|1|1|1|2|water?|false
+STATE|1|1|1|2|cropped?|true
+STATE|1|1|1|2|driedUp?|false
+STATE|1|1|1|2|soilQuality|5.16
+STATE|1|1|1|2|treeCount|2.05
+STATE|1|1|1|2|currentBiomass|9.52
+STATE|1|1|1|2|waterLevel|3.62
+STATE|1|1|1|2|elephantCount|6.9
+STATE|1|1|1|2|myWaterDistance|9.14
+STATE|1|1|1|2|harvestYield|7.58
+STATE|1|1|1|2|playerHarvestRound|[4 10 1 4 8 5 2 5]
+STATE|1|1|1|2|fined?|false
+STATE|1|1|1|2|fineAmount|5.33
+STATE|1|1|1|2|cropOwner|7.79
+STATE|1|1|1|2|defended?|true
+STATE|1|1|1|2|cropCount|2.23
+STATE|1|1|1|2|vegCount|8.12
+STATE|1|1|1|2|ownedBy|0
+STATE|1|1|1|2|village|0
+STATE|1|1|1|2|shared?|false
+STATE|1|1|1|3|protected?|false
+STATE|1|1|1|3|water?|true
+STATE|1|1|1|3|cropped?|false
+STATE|1|1|1|3|driedUp?|true
+STATE|1|1|1|3|soilQuality|0.29
+STATE|1|1|1|3|treeCount|0.28
+STATE|1|1|1|3|currentBiomass|2.79
+STATE|1|1|1|3|waterLevel|2.59
+STATE|1|1|1|3|elephantCount|6.93
+STATE|1|1|1|3|myWaterDistance|9.57
+STATE|1|1|1|3|harvestYield|4.47
+STATE|1|1|1|3|playerHarvestRound|[5 5 1 3 1 3 7 3]
+STATE|1|1|1|3|fined?|true
+STATE|1|1|1|3|fineAmount|4.83
+STATE|1|1|1|3|cropOwner|9.85
+STATE|1|1|1|3|defended?|false
+STATE|1|1|1|3|cropCount|0.02
+STATE|1|1|1|3|vegCount|9.09
+STATE|1|1|1|3|ownedBy|1
+STATE|1|1|1|3|village|3
+STATE|1|1|1|3|shared?|true
+STATE|1|1|2|0|protected?|false
+STATE|1|1|2|0|water?|false
+STATE|1|1|2|0|cropped?|false
+STATE|1|1|2|0|driedUp?|false
+STATE|1|1|2|0|soilQuality|4.78
+STATE|1|1|2|0|treeCount|1.79
+STATE|1|1|2|0|currentBiomass|7.89
+STATE|1|1|2|0|waterLevel|3.33
+STATE|1|1|2|0|elephantCount|8.01
+STATE|1|1|2|0|myWaterDistance|9.72
+STATE|1|1|2|0|harvestYield|3.96
+STATE|1|1|2|0|playerHarvestRound|[6 1 2 2 2 0 2 9]
+STATE|1|1|2|0|fined?|false
+STATE|1|1|2|0|fineAmount|8.07
+STATE|1|1|2|0|cropOwner|1.46
+STATE|1|1|2|0|defended?|false
+STATE|1|1|2|0|cropCount|9.8
+STATE|1|1|2|0|vegCount|6.57
+STATE|1|1|2|0|ownedBy|1
+STATE|1|1|2|0|village|0
+STATE|1|1|2|0|shared?|false
+STATE|1|1|2|1|protected?|true
+STATE|1|1|2|1|water?|true
+STATE|1|1|2|1|cropped?|false
+STATE|1|1|2|1|driedUp?|false
+STATE|1|1|2|1|soilQuality|5.27
+STATE|1|1|2|1|treeCount|9.34
+STATE|1|1|2|1|currentBiomass|4.34
+STATE|1|1|2|1|waterLevel|8.72
+STATE|1|1|2|1|elephantCount|8.26
+STATE|1|1|2|1|myWaterDistance|2.11
+STATE|1|1|2|1|harvestYield|2.52
+STATE|1|1|2|1|playerHarvestRound|[4 8 3 9 5 4 8 6]
+STATE|1|1|2|1|fined?|false
+STATE|1|1|2|1|fineAmount|0.61
+STATE|1|1|2|1|cropOwner|7.4
+STATE|1|1|2|1|defended?|false
+STATE|1|1|2|1|cropCount|6.62
+STATE|1|1|2|1|vegCount|8.15
+STATE|1|1|2|1|ownedBy|3
+STATE|1|1|2|1|village|2
+STATE|1|1|2|1|shared?|false
+STATE|1|1|2|2|protected?|false
+STATE|1|1|2|2|water?|true
+STATE|1|1|2|2|cropped?|true
+STATE|1|1|2|2|driedUp?|false
+STATE|1|1|2|2|soilQuality|8.73
+STATE|1|1|2|2|treeCount|7.77
+STATE|1|1|2|2|currentBiomass|6.09
+STATE|1|1|2|2|waterLevel|7.76
+STATE|1|1|2|2|elephantCount|1.5
+STATE|1|1|2|2|myWaterDistance|1.42
+STATE|1|1|2|2|harvestYield|6.19
+STATE|1|1|2|2|playerHarvestRound|[1 8 0 5 10 8 8 8]
+STATE|1|1|2|2|fined?|true
+STATE|1|1|2|2|fineAmount|7.76
+STATE|1|1|2|2|cropOwner|8.83
+STATE|1|1|2|2|defended?|true
+STATE|1|1|2|2|cropCount|1.91
+STATE|1|1|2|2|vegCount|0.42
+STATE|1|1|2|2|ownedBy|0
+STATE|1|1|2|2|village|3
+STATE|1|1|2|2|shared?|true
+STATE|1|1|2|3|protected?|true
+STATE|1|1|2|3|water?|false
+STATE|1|1|2|3|cropped?|true
+STATE|1|1|2|3|driedUp?|true
+STATE|1|1|2|3|soilQuality|9.73
+STATE|1|1|2|3|treeCount|6.06
+STATE|1|1|2|3|currentBiomass|1.99
+STATE|1|1|2|3|waterLevel|2.77
+STATE|1|1|2|3|elephantCount|5.08
+STATE|1|1|2|3|myWaterDistance|8.07
+STATE|1|1|2|3|harvestYield|5.08
+STATE|1|1|2|3|playerHarvestRound|[3 8 4 8 3 7 2 6]
+STATE|1|1|2|3|fined?|true
+STATE|1|1|2|3|fineAmount|4.42
+STATE|1|1|2|3|cropOwner|0.73
+STATE|1|1|2|3|defended?|true
+STATE|1|1|2|3|cropCount|0.73
+STATE|1|1|2|3|vegCount|6.69
+STATE|1|1|2|3|ownedBy|0
+STATE|1|1|2|3|village|0
+STATE|1|1|2|3|shared?|false
+STATE|1|1|3|0|protected?|false
+STATE|1|1|3|0|water?|true
+STATE|1|1|3|0|cropped?|true
+STATE|1|1|3|0|driedUp?|true
+STATE|1|1|3|0|soilQuality|4.68
+STATE|1|1|3|0|treeCount|7.47
+STATE|1|1|3|0|currentBiomass|0.94
+STATE|1|1|3|0|waterLevel|8.85
+STATE|1|1|3|0|elephantCount|1.63
+STATE|1|1|3|0|myWaterDistance|6.68
+STATE|1|1|3|0|harvestYield|2.24
+STATE|1|1|3|0|playerHarvestRound|[6 8 6 5 6 3 5 5]
+STATE|1|1|3|0|fined?|true
+STATE|1|1|3|0|fineAmount|3.66
+STATE|1|1|3|0|cropOwner|3.38
+STATE|1|1|3|0|defended?|true
+STATE|1|1|3|0|cropCount|7.03
+STATE|1|1|3|0|vegCount|3.84
+STATE|1|1|3|0|ownedBy|3
+STATE|1|1|3|0|village|3
+STATE|1|1|3|0|shared?|true
+STATE|1|1|3|1|protected?|false
+STATE|1|1|3|1|water?|true
+STATE|1|1|3|1|cropped?|false
+STATE|1|1|3|1|driedUp?|true
+STATE|1|1|3|1|soilQuality|8.76
+STATE|1|1|3|1|treeCount|0.84
+STATE|1|1|3|1|currentBiomass|2.72
+STATE|1|1|3|1|waterLevel|9.06
+STATE|1|1|3|1|elephantCount|1.82
+STATE|1|1|3|1|myWaterDistance|7.56
+STATE|1|1|3|1|harvestYield|8.2
+STATE|1|1|3|1|playerHarvestRound|[10 4 6 2 8 8 9 7]
+STATE|1|1|3|1|fined?|false
+STATE|1|1|3|1|fineAmount|0.89
+STATE|1|1|3|1|cropOwner|0.58
+STATE|1|1|3|1|defended?|false
+STATE|1|1|3|1|cropCount|4.25
+STATE|1|1|3|1|vegCount|0.72
+STATE|1|1|3|1|ownedBy|0
+STATE|1|1|3|1|village|3
+STATE|1|1|3|1|shared?|true
+STATE|1|1|3|2|protected?|true
+STATE|1|1|3|2|water?|false
+STATE|1|1|3|2|cropped?|true
+STATE|1|1|3|2|driedUp?|true
+STATE|1|1|3|2|soilQuality|1.22
+STATE|1|1|3|2|treeCount|0.12
+STATE|1|1|3|2|currentBiomass|9.94
+STATE|1|1|3|2|waterLevel|4.18
+STATE|1|1|3|2|elephantCount|9.15
+STATE|1|1|3|2|myWaterDistance|6.22
+STATE|1|1|3|2|harvestYield|0.43
+STATE|1|1|3|2|playerHarvestRound|[3 1 2 4 0 2 3 4]
+STATE|1|1|3|2|fined?|false
+STATE|1|1|3|2|fineAmount|5.31
+STATE|1|1|3|2|cropOwner|2.06
+STATE|1|1|3|2|defended?|true
+STATE|1|1|3|2|cropCount|6.72
+STATE|1|1|3|2|vegCount|2.71
+STATE|1|1|3|2|ownedBy|0
+STATE|1|1|3|2|village|1
+STATE|1|1|3|2|shared?|true
+STATE|1|1|3|3|protected?|true
+STATE|1|1|3|3|water?|false
+STATE|1|1|3|3|cropped?|false
+STATE|1|1|3|3|driedUp?|false
+STATE|1|1|3|3|soilQuality|2.46
+STATE|1|1|3|3|treeCount|4.47
+STATE|1|1|3|3|currentBiomass|6.58
+STATE|1|1|3|3|waterLevel|6.5
+STATE|1|1|3|3|elephantCount|6.57
+STATE|1|1|3|3|myWaterDistance|5.46
+STATE|1|1|3|3|harvestYield|8.89
+STATE|1|1|3|3|playerHarvestRound|[8 4 3 3 5 3 10 2]
+STATE|1|1|3|3|fined?|true
+STATE|1|1|3|3|fineAmount|3.48
+STATE|1|1|3|3|cropOwner|0.54
+STATE|1|1|3|3|defended?|true
+STATE|1|1|3|3|cropCount|0.71
+STATE|1|1|3|3|vegCount|7.41
+STATE|1|1|3|3|ownedBy|1
+STATE|1|1|3|3|village|2
+STATE|1|1|3|3|shared?|true
+CHOICE|1|1|1|3|2|3|12:00:07.000 PM 28-Sep-2026
+CONFIRM|1|1|1|12:00:15.000 PM 28-Sep-2026
+CHOICE|1|1|2|1|2|3|12:00:21.000 PM 28-Sep-2026
+CONFIRM|1|1|2|12:00:27.000 PM 28-Sep-2026
+CHOICE|1|1|3|2|1|-99|12:00:42.000 PM 28-Sep-2026
+CHOICE|1|1|3|2|1|1|12:00:48.000 PM 28-Sep-2026
+CHOICE|1|1|3|2|1|2|12:00:52.000 PM 28-Sep-2026
+CONFIRM|1|1|3|12:01:01.000 PM 28-Sep-2026
+CHOICE|1|1|4|0|2|2|12:01:08.000 PM 28-Sep-2026
+CONFIRM|1|1|4|12:01:18.000 PM 28-Sep-2026
+CHOICE|1|1|5|3|0|2|12:01:20.000 PM 28-Sep-2026
+CONFIRM|1|1|5|12:01:30.000 PM 28-Sep-2026
+CHOICE|1|1|6|1|3|4|12:01:33.000 PM 28-Sep-2026
+CHOICE|1|1|6|1|3|2|12:01:34.000 PM 28-Sep-2026
+CHOICE|1|1|6|3|1|1|12:01:48.000 PM 28-Sep-2026
+CONFIRM|1|1|6|12:01:59.000 PM 28-Sep-2026
+CHOICE|1|1|7|1|0|-99|12:02:02.000 PM 28-Sep-2026
+CHOICE|1|1|7|1|0|4|12:02:16.000 PM 28-Sep-2026
+CHOICE|1|1|7|1|0|-99|12:02:17.000 PM 28-Sep-2026
+CONFIRM|1|1|7|12:02:28.000 PM 28-Sep-2026
+CHOICE|1|1|8|1|3|4|12:02:41.000 PM 28-Sep-2026
+CHOICE|1|1|8|1|3|1|12:02:52.000 PM 28-Sep-2026
+CHOICE|1|1|8|1|3|4|12:02:57.000 PM 28-Sep-2026
+CONFIRM|1|1|8|12:03:10.000 PM 28-Sep-2026
+SCORE|1|1|1|2|18|7
+SCORE|1|1|2|6|20|20
+SCORE|1|1|3|14|45|12
+SCORE|1|1|4|2|32|9
+SCORE|1|1|5|1|40|20
+SCORE|1|1|6|20|32|2
+SCORE|1|1|7|19|28|10
+SCORE|1|1|8|8|49|9
+PHASE|phase-1-2|12:03:20.000 PM 28-Sep-2026
+STATE|1|2|0|0|protected?|false
+STATE|1|2|0|0|water?|true
+STATE|1|2|0|0|cropped?|true
+STATE|1|2|0|0|driedUp?|true
+STATE|1|2|0|0|soilQuality|6.72
+STATE|1|2|0|0|treeCount|6.92
+STATE|1|2|0|0|currentBiomass|6.76
+STATE|1|2|0|0|waterLevel|2.91
+STATE|1|2|0|0|elephantCount|5.17
+STATE|1|2|0|0|myWaterDistance|4.65
+STATE|1|2|0|0|harvestYield|4.66
+STATE|1|2|0|0|playerHarvestRound|[1 8 3 4 1 7 0 4]
+STATE|1|2|0|0|fined?|true
+STATE|1|2|0|0|fineAmount|8.2
+STATE|1|2|0|0|cropOwner|9.68
+STATE|1|2|0|0|defended?|true
+STATE|1|2|0|0|cropCount|2.69
+STATE|1|2|0|0|vegCount|2.1
+STATE|1|2|0|0|ownedBy|0
+STATE|1|2|0|0|village|0
+STATE|1|2|0|0|shared?|false
+STATE|1|2|0|1|protected?|true
+STATE|1|2|0|1|water?|false
+STATE|1|2|0|1|cropped?|false
+STATE|1|2|0|1|driedUp?|true
+STATE|1|2|0|1|soilQuality|8.2
+STATE|1|2|0|1|treeCount|5.09
+STATE|1|2|0|1|currentBiomass|8.87
+STATE|1|2|0|1|waterLevel|7.03
+STATE|1|2|0|1|elephantCount|2.31
+STATE|1|2|0|1|myWaterDistance|8.98
+STATE|1|2|0|1|harvestYield|4.86
+STATE|1|2|0|1|playerHarvestRound|[0 2 0 7 10 7 6 4]
+STATE|1|2|0|1|fined?|false
+STATE|1|2|0|1|fineAmount|4.16
+STATE|1|2|0|1|cropOwner|3.76
+STATE|1|2|0|1|defended?|true
+STATE|1|2|0|1|cropCount|3.31
+STATE|1|2|0|1|vegCount|3.25
+STATE|1|2|0|1|ownedBy|1
+STATE|1|2|0|1|village|2
+STATE|1|2|0|1|shared?|true
+STATE|1|2|0|2|protected?|false
+STATE|1|2|0|2|water?|false
+STATE|1|2|0|2|cropped?|false
+STATE|1|2|0|2|driedUp?|true
+STATE|1|2|0|2|soilQuality|3.72
+STATE|1|2|0|2|treeCount|3.93
+STATE|1|2|0|2|currentBiomass|9.99
+STATE|1|2|0|2|waterLevel|5.89
+STATE|1|2|0|2|elephantCount|3.61
+STATE|1|2|0|2|myWaterDistance|4.28
+STATE|1|2|0|2|harvestYield|2.75
+STATE|1|2|0|2|playerHarvestRound|[0 4 1 0 10 4 10 2]
+STATE|1|2|0|2|fined?|true
+STATE|1|2|0|2|fineAmount|2.66
+STATE|1|2|0|2|cropOwner|5.11
+STATE|1|2|0|2|defended?|true
+STATE|1|2|0|2|cropCount|3.73
+STATE|1|2|0|2|vegCount|9.56
+STATE|1|2|0|2|ownedBy|0
+STATE|1|2|0|2|village|3
+STATE|1|2|0|2|shared?|true
+STATE|1|2|0|3|protected?|false
+STATE|1|2|0|3|water?|false
+STATE|1|2|0|3|cropped?|true
+STATE|1|2|0|3|driedUp?|true
+STATE|1|2|0|3|soilQuality|9.33
+STATE|1|2|0|3|treeCount|4.11
+STATE|1|2|0|3|currentBiomass|6.15
+STATE|1|2|0|3|waterLevel|1.39
+STATE|1|2|0|3|elephantCount|8.69
+STATE|1|2|0|3|myWaterDistance|4.86
+STATE|1|2|0|3|harvestYield|9.12
+STATE|1|2|0|3|playerHarvestRound|[8 2 2 7 6 5 4 4]
+STATE|1|2|0|3|fined?|true
+STATE|1|2|0|3|fineAmount|7.39
+STATE|1|2|0|3|cropOwner|6.53
+STATE|1|2|0|3|defended?|true
+STATE|1|2|0|3|cropCount|2.39
+STATE|1|2|0|3|vegCount|4.83
+STATE|1|2|0|3|ownedBy|3
+STATE|1|2|0|3|village|2
+STATE|1|2|0|3|shared?|true
+STATE|1|2|1|0|protected?|false
+STATE|1|2|1|0|water?|true
+STATE|1|2|1|0|cropped?|false
+STATE|1|2|1|0|driedUp?|false
+STATE|1|2|1|0|soilQuality|5.5
+STATE|1|2|1|0|treeCount|4.53
+STATE|1|2|1|0|currentBiomass|3.33
+STATE|1|2|1|0|waterLevel|7.59
+STATE|1|2|1|0|elephantCount|4.27
+STATE|1|2|1|0|myWaterDistance|5.48
+STATE|1|2|1|0|harvestYield|2.44
+STATE|1|2|1|0|playerHarvestRound|[2 5 8 1 5 3 5 4]
+STATE|1|2|1|0|fined?|false
+STATE|1|2|1|0|fineAmount|2.02
+STATE|1|2|1|0|cropOwner|0.2
+STATE|1|2|1|0|defended?|false
+STATE|1|2|1|0|cropCount|3.83
+STATE|1|2|1|0|vegCount|7.46
+STATE|1|2|1|0|ownedBy|0
+STATE|1|2|1|0|village|2
+STATE|1|2|1|0|shared?|true
+STATE|1|2|1|1|protected?|false
+STATE|1|2|1|1|water?|true
+STATE|1|2|1|1|cropped?|false
+STATE|1|2|1|1|driedUp?|true
+STATE|1|2|1|1|soilQuality|6.87
+STATE|1|2|1|1|treeCount|5.29
+STATE|1|2|1|1|currentBiomass|7.9
+STATE|1|2|1|1|waterLevel|8.49
+STATE|1|2|1|1|elephantCount|0.93
+STATE|1|2|1|1|myWaterDistance|8.97
+STATE|1|2|1|1|harvestYield|3.85
+STATE|1|2|1|1|playerHarvestRound|[10 7 6 4 0 2 0 6]
+STATE|1|2|1|1|fined?|false
+STATE|1|2|1|1|fineAmount|8.96
+STATE|1|2|1|1|cropOwner|4.73
+STATE|1|2|1|1|defended?|false
+STATE|1|2|1|1|cropCount|0.0
+STATE|1|2|1|1|vegCount|3.92
+STATE|1|2|1|1|ownedBy|3
+STATE|1|2|1|1|village|2
+STATE|1|2|1|1|shared?|false
+STATE|1|2|1|2|protected?|true
+STATE|1|2|1|2|water?|true
+STATE|1|2|1|2|cropped?|true
+STATE|1|2|1|2|driedUp?|false
+STATE|1|2|1|2|soilQuality|6.82
+STATE|1|2|1|2|treeCount|9.41
+STATE|1|2|1|2|currentBiomass|7.22
+STATE|1|2|1|2|waterLevel|6.47
+STATE|1|2|1|2|elephantCount|7.65
+STATE|1|2|1|2|myWaterDistance|4.57
+STATE|1|2|1|2|harvestYield|5.52
+STATE|1|2|1|2|playerHarvestRound|[0 0 2 3 9 0 10 4]
+STATE|1|2|1|2|fined?|false
+STATE|1|2|1|2|fineAmount|6.26
+STATE|1|2|1|2|cropOwner|5.28
+STATE|1|2|1|2|defended?|true
+STATE|1|2|1|2|cropCount|7.64
+STATE|1|2|1|2|vegCount|0.99
+STATE|1|2|1|2|ownedBy|1
+STATE|1|2|1|2|village|3
+STATE|1|2|1|2|shared?|false
+STATE|1|2|1|3|protected?|true
+STATE|1|2|1|3|water?|true
+STATE|1|2|1|3|cropped?|false
+STATE|1|2|1|3|driedUp?|true
+STATE|1|2|1|3|soilQuality|5.37
+STATE|1|2|1|3|treeCount|9.96
+STATE|1|2|1|3|currentBiomass|2.79
+STATE|1|2|1|3|waterLevel|3.16
+STATE|1|2|1|3|elephantCount|8.39
+STATE|1|2|1|3|myWaterDistance|2.42
+STATE|1|2|1|3|harvestYield|5.26
+STATE|1|2|1|3|playerHarvestRound|[8 3 0 6 10 4 0 0]
+STATE|1|2|1|3|fined?|true
+STATE|1|2|1|3|fineAmount|8.85
+STATE|1|2|1|3|cropOwner|6.47
+STATE|1|2|1|3|defended?|true
+STATE|1|2|1|3|cropCount|2.28
+STATE|1|2|1|3|vegCount|4.24
+STATE|1|2|1|3|ownedBy|1
+STATE|1|2|1|3|village|0
+STATE|1|2|1|3|shared?|true
+STATE|1|2|2|0|protected?|false
+STATE|1|2|2|0|water?|false
+STATE|1|2|2|0|cropped?|true
+STATE|1|2|2|0|driedUp?|true
+STATE|1|2|2|0|soilQuality|0.07
+STATE|1|2|2|0|treeCount|2.92
+STATE|1|2|2|0|currentBiomass|8.45
+STATE|1|2|2|0|waterLevel|0.67
+STATE|1|2|2|0|elephantCount|4.96
+STATE|1|2|2|0|myWaterDistance|2.0
+STATE|1|2|2|0|harvestYield|7.66
+STATE|1|2|2|0|playerHarvestRound|[3 3 7 3 4 4 1 9]
+STATE|1|2|2|0|fined?|true
+STATE|1|2|2|0|fineAmount|1.87
+STATE|1|2|2|0|cropOwner|2.23
+STATE|1|2|2|0|defended?|true
+STATE|1|2|2|0|cropCount|6.65
+STATE|1|2|2|0|vegCount|9.49
+STATE|1|2|2|0|ownedBy|0
+STATE|1|2|2|0|village|2
+STATE|1|2|2|0|shared?|true
+STATE|1|2|2|1|protected?|true
+STATE|1|2|2|1|water?|false
+STATE|1|2|2|1|cropped?|true
+STATE|1|2|2|1|driedUp?|false
+STATE|1|2|2|1|soilQuality|1.84
+STATE|1|2|2|1|treeCount|4.5
+STATE|1|2|2|1|currentBiomass|7.12
+STATE|1|2|2|1|waterLevel|3.14
+STATE|1|2|2|1|elephantCount|1.13
+STATE|1|2|2|1|myWaterDistance|0.79
+STATE|1|2|2|1|harvestYield|1.66
+STATE|1|2|2|1|playerHarvestRound|[3 2 10 8 7 0 4 10]
+STATE|1|2|2|1|fined?|false
+STATE|1|2|2|1|fineAmount|8.39
+STATE|1|2|2|1|cropOwner|9.85
+STATE|1|2|2|1|defended?|true
+STATE|1|2|2|1|cropCount|1.09
+STATE|1|2|2|1|vegCount|0.78
+STATE|1|2|2|1|ownedBy|0
+STATE|1|2|2|1|village|1
+STATE|1|2|2|1|shared?|true
+STATE|1|2|2|2|protected?|false
+STATE|1|2|2|2|water?|false
+STATE|1|2|2|2|cropped?|false
+STATE|1|2|2|2|driedUp?|true
+STATE|1|2|2|2|soilQuality|7.69
+STATE|1|2|2|2|treeCount|3.09
+STATE|1|2|2|2|currentBiomass|8.04
+STATE|1|2|2|2|waterLevel|0.88
+STATE|1|2|2|2|elephantCount|7.05
+STATE|1|2|2|2|myWaterDistance|1.96
+STATE|1|2|2|2|harvestYield|5.42
+STATE|1|2|2|2|playerHarvestRound|[7 3 5 5 7 0 10 6]
+STATE|1|2|2|2|fined?|true
+STATE|1|2|2|2|fineAmount|6.25
+STATE|1|2|2|2|cropOwner|4.05
+STATE|1|2|2|2|defended?|true
+STATE|1|2|2|2|cropCount|4.64
+STATE|1|2|2|2|vegCount|8.03
+STATE|1|2|2|2|ownedBy|0
+STATE|1|2|2|2|village|1
+STATE|1|2|2|2|shared?|true
+STATE|1|2|2|3|protected?|true
+STATE|1|2|2|3|water?|false
+STATE|1|2|2|3|cropped?|true
+STATE|1|2|2|3|driedUp?|true
+STATE|1|2|2|3|soilQuality|9.54
+STATE|1|2|2|3|treeCount|0.44
+STATE|1|2|2|3|currentBiomass|7.46
+STATE|1|2|2|3|waterLevel|6.9
+STATE|1|2|2|3|elephantCount|9.24
+STATE|1|2|2|3|myWaterDistance|2.97
+STATE|1|2|2|3|harvestYield|7.22
+STATE|1|2|2|3|playerHarvestRound|[9 10 1 0 3 1 7 7]
+STATE|1|2|2|3|fined?|false
+STATE|1|2|2|3|fineAmount|3.87
+STATE|1|2|2|3|cropOwner|2.51
+STATE|1|2|2|3|defended?|true
+STATE|1|2|2|3|cropCount|4.93
+STATE|1|2|2|3|vegCount|9.28
+STATE|1|2|2|3|ownedBy|0
+STATE|1|2|2|3|village|0
+STATE|1|2|2|3|shared?|false
+STATE|1|2|3|0|protected?|false
+STATE|1|2|3|0|water?|false
+STATE|1|2|3|0|cropped?|false
+STATE|1|2|3|0|driedUp?|false
+STATE|1|2|3|0|soilQuality|3.28
+STATE|1|2|3|0|treeCount|3.2
+STATE|1|2|3|0|currentBiomass|3.62
+STATE|1|2|3|0|waterLevel|7.82
+STATE|1|2|3|0|elephantCount|0.79
+STATE|1|2|3|0|myWaterDistance|1.97
+STATE|1|2|3|0|harvestYield|7.53
+STATE|1|2|3|0|playerHarvestRound|[3 6 1 10 0 7 8 8]
+STATE|1|2|3|0|fined?|true
+STATE|1|2|3|0|fineAmount|9.8
+STATE|1|2|3|0|cropOwner|8.83
+STATE|1|2|3|0|defended?|false
+STATE|1|2|3|0|cropCount|2.65
+STATE|1|2|3|0|vegCount|0.84
+STATE|1|2|3|0|ownedBy|0
+STATE|1|2|3|0|village|2
+STATE|1|2|3|0|shared?|true
+STATE|1|2|3|1|protected?|false
+STATE|1|2|3|1|water?|true
+STATE|1|2|3|1|cropped?|true
+STATE|1|2|3|1|driedUp?|true
+STATE|1|2|3|1|soilQuality|6.2
+STATE|1|2|3|1|treeCount|6.74
+STATE|1|2|3|1|currentBiomass|7.48
+STATE|1|2|3|1|waterLevel|8.47
+STATE|1|2|3|1|elephantCount|6.64
+STATE|1|2|3|1|myWaterDistance|1.21
+STATE|1|2|3|1|harvestYield|8.41
+STATE|1|2|3|1|playerHarvestRound|[4 4 9 4 5 4 4 3]
+STATE|1|2|3|1|fined?|true
+STATE|1|2|3|1|fineAmount|1.86
+STATE|1|2|3|1|cropOwner|2.36
+STATE|1|2|3|1|defended?|true
+STATE|1|2|3|1|cropCount|9.08
+STATE|1|2|3|1|vegCount|1.88
+STATE|1|2|3|1|ownedBy|0
+STATE|1|2|3|1|village|2
+STATE|1|2|3|1|shared?|true
+STATE|1|2|3|2|protected?|true
+STATE|1|2|3|2|water?|false
+STATE|1|2|3|2|cropped?|false
+STATE|1|2|3|2|driedUp?|true
+STATE|1|2|3|2|soilQuality|4.64
+STATE|1|2|3|2|treeCount|0.37
+STATE|1|2|3|2|currentBiomass|0.04
+STATE|1|2|3|2|waterLevel|8.83
+STATE|1|2|3|2|elephantCount|2.31
+STATE|1|2|3|2|myWaterDistance|4.48
+STATE|1|2|3|2|harvestYield|3.74
+STATE|1|2|3|2|playerHarvestRound|[4 3 1 0 3 9 9 3]
+STATE|1|2|3|2|fined?|false
+STATE|1|2|3|2|fineAmount|3.72
+STATE|1|2|3|2|cropOwner|8.66
+STATE|1|2|3|2|defended?|true
+STATE|1|2|3|2|cropCount|2.6
+STATE|1|2|3|2|vegCount|7.78
+STATE|1|2|3|2|ownedBy|0
+STATE|1|2|3|2|village|0
+STATE|1|2|3|2|shared?|false
+STATE|1|2|3|3|protected?|false
+STATE|1|2|3|3|water?|true
+STATE|1|2|3|3|cropped?|true
+STATE|1|2|3|3|driedUp?|true
+STATE|1|2|3|3|soilQuality|0.44
+STATE|1|2|3|3|treeCount|10.0
+STATE|1|2|3|3|currentBiomass|0.38
+STATE|1|2|3|3|waterLevel|7.32
+STATE|1|2|3|3|elephantCount|9.14
+STATE|1|2|3|3|myWaterDistance|8.15
+STATE|1|2|3|3|harvestYield|8.19
+STATE|1|2|3|3|playerHarvestRound|[6 10 5 2 9 4 1 3]
+STATE|1|2|3|3|fined?|true
+STATE|1|2|3|3|fineAmount|4.96
+STATE|1|2|3|3|cropOwner|4.84
+STATE|1|2|3|3|defended?|true
+STATE|1|2|3|3|cropCount|7.96
+STATE|1|2|3|3|vegCount|6.64
+STATE|1|2|3|3|ownedBy|0
+STATE|1|2|3|3|village|3
+STATE|1|2|3|3|shared?|false
+CHOICE|1|2|1|1|3|4|12:03:25.000 PM 28-Sep-2026
+CHOICE|1|2|1|1|3|1|12:03:30.000 PM 28-Sep-2026
+CHOICE|1|2|1|2|3|3|12:03:41.000 PM 28-Sep-2026
+CONFIRM|1|2|1|12:03:45.000 PM 28-Sep-2026
+CHOICE|1|2|2|3|1|4|12:04:00.000 PM 28-Sep-2026
+CHOICE|1|2|2|3|1|1|12:04:07.000 PM 28-Sep-2026
+CONFIRM|1|2|2|12:04:17.000 PM 28-Sep-2026
+CHOICE|1|2|3|3|1|1|12:04:26.000 PM 28-Sep-2026
+CHOICE|1|2|3|3|1|4|12:04:28.000 PM 28-Sep-2026
+CONFIRM|1|2|3|12:04:38.000 PM 28-Sep-2026
+CHOICE|1|2|4|2|1|3|12:04:41.000 PM 28-Sep-2026
+CHOICE|1|2|4|2|1|1|12:04:48.000 PM 28-Sep-2026
+CHOICE|1|2|4|2|1|2|12:04:53.000 PM 28-Sep-2026
+CONFIRM|1|2|4|12:04:56.000 PM 28-Sep-2026
+CHOICE|1|2|5|3|2|-99|12:05:11.000 PM 28-Sep-2026
+CONFIRM|1|2|5|12:05:22.000 PM 28-Sep-2026
+CHOICE|1|2|6|0|1|2|12:05:32.000 PM 28-Sep-2026
+CHOICE|1|2|6|0|1|4|12:05:35.000 PM 28-Sep-2026
+CONFIRM|1|2|6|12:05:45.000 PM 28-Sep-2026
+CHOICE|1|2|7|0|3|2|12:05:52.000 PM 28-Sep-2026
+CONFIRM|1|2|7|12:05:58.000 PM 28-Sep-2026
+CHOICE|1|2|8|1|1|2|12:05:59.000 PM 28-Sep-2026
+CONFIRM|1|2|8|12:06:14.000 PM 28-Sep-2026
+SCORE|1|2|1|17|65|1
+SCORE|1|2|2|10|17|12
+SCORE|1|2|3|19|48|17
+SCORE|1|2|4|20|69|9
+SCORE|1|2|5|20|46|9
+SCORE|1|2|6|18|33|13
+SCORE|1|2|7|12|54|11
+SCORE|1|2|8|14|46|14
+PHASE|phase-1-3|12:06:17.000 PM 28-Sep-2026
+STATE|1|3|0|0|protected?|true
+STATE|1|3|0|0|water?|false
+STATE|1|3|0|0|cropped?|true
+STATE|1|3|0|0|driedUp?|true
+STATE|1|3|0|0|soilQuality|7.64
+STATE|1|3|0|0|treeCount|7.8
+STATE|1|3|0|0|currentBiomass|4.58
+STATE|1|3|0|0|waterLevel|1.8
+STATE|1|3|0|0|elephantCount|4.73
+STATE|1|3|0|0|myWaterDistance|1.07
+STATE|1|3|0|0|harvestYield|1.28
+STATE|1|3|0|0|playerHarvestRound|[6 5 1 7 8 8 10 0]
+STATE|1|3|0|0|fined?|true
+STATE|1|3|0|0|fineAmount|1.3
+STATE|1|3|0|0|cropOwner|9.22
+STATE|1|3|0|0|defended?|true
+STATE|1|3|0|0|cropCount|7.2
+STATE|1|3|0|0|vegCount|0.8
+STATE|1|3|0|0|ownedBy|3
+STATE|1|3|0|0|village|2
+STATE|1|3|0|0|shared?|false
+STATE|1|3|0|1|protected?|false
+STATE|1|3|0|1|water?|true
+STATE|1|3|0|1|cropped?|true
+STATE|1|3|0|1|driedUp?|false
+STATE|1|3|0|1|soilQuality|6.93
+STATE|1|3|0|1|treeCount|1.1
+STATE|1|3|0|1|currentBiomass|1.32
+STATE|1|3|0|1|waterLevel|8.86
+STATE|1|3|0|1|elephantCount|2.88
+STATE|1|3|0|1|myWaterDistance|8.11
+STATE|1|3|0|1|harvestYield|7.95
+STATE|1|3|0|1|playerHarvestRound|[10 3 1 5 9 4 2 5]
+STATE|1|3|0|1|fined?|false
+STATE|1|3|0|1|fineAmount|2.75
+STATE|1|3|0|1|cropOwner|8.16
+STATE|1|3|0|1|defended?|true
+STATE|1|3|0|1|cropCount|5.02
+STATE|1|3|0|1|vegCount|9.2
+STATE|1|3|0|1|ownedBy|0
+STATE|1|3|0|1|village|3
+STATE|1|3|0|1|shared?|true
+STATE|1|3|0|2|protected?|false
+STATE|1|3|0|2|water?|true
+STATE|1|3|0|2|cropped?|true
+STATE|1|3|0|2|driedUp?|true
+STATE|1|3|0|2|soilQuality|1.61
+STATE|1|3|0|2|treeCount|9.36
+STATE|1|3|0|2|currentBiomass|6.8
+STATE|1|3|0|2|waterLevel|8.95
+STATE|1|3|0|2|elephantCount|1.69
+STATE|1|3|0|2|myWaterDistance|7.85
+STATE|1|3|0|2|harvestYield|1.15
+STATE|1|3|0|2|playerHarvestRound|[8 0 10 5 7 8 8 9]
+STATE|1|3|0|2|fined?|false
+STATE|1|3|0|2|fineAmount|8.96
+STATE|1|3|0|2|cropOwner|2.52
+STATE|1|3|0|2|defended?|false
+STATE|1|3|0|2|cropCount|8.57
+STATE|1|3|0|2|vegCount|7.38
+STATE|1|3|0|2|ownedBy|1
+STATE|1|3|0|2|village|1
+STATE|1|3|0|2|shared?|true
+STATE|1|3|0|3|protected?|true
+STATE|1|3|0|3|water?|true
+STATE|1|3|0|3|cropped?|true
+STATE|1|3|0|3|driedUp?|true
+STATE|1|3|0|3|soilQuality|2.3
+STATE|1|3|0|3|treeCount|6.15
+STATE|1|3|0|3|currentBiomass|9.58
+STATE|1|3|0|3|waterLevel|2.96
+STATE|1|3|0|3|elephantCount|5.16
+STATE|1|3|0|3|myWaterDistance|3.1
+STATE|1|3|0|3|harvestYield|9.66
+STATE|1|3|0|3|playerHarvestRound|[9 10 5 0 0 3 2 4]
+STATE|1|3|0|3|fined?|false
+STATE|1|3|0|3|fineAmount|4.32
+STATE|1|3|0|3|cropOwner|5.13
+STATE|1|3|0|3|defended?|false
+STATE|1|3|0|3|cropCount|1.32
+STATE|1|3|0|3|vegCount|2.27
+STATE|1|3|0|3|ownedBy|3
+STATE|1|3|0|3|village|0
+STATE|1|3|0|3|shared?|true
+STATE|1|3|1|0|protected?|true
+STATE|1|3|1|0|water?|true
+STATE|1|3|1|0|cropped?|true
+STATE|1|3|1|0|driedUp?|true
+STATE|1|3|1|0|soilQuality|2.24
+STATE|1|3|1|0|treeCount|5.84
+STATE|1|3|1|0|currentBiomass|5.89
+STATE|1|3|1|0|waterLevel|2.04
+STATE|1|3|1|0|elephantCount|6.24
+STATE|1|3|1|0|myWaterDistance|4.75
+STATE|1|3|1|0|harvestYield|1.35
+STATE|1|3|1|0|playerHarvestRound|[3 2 7 1 1 10 2 10]
+STATE|1|3|1|0|fined?|false
+STATE|1|3|1|0|fineAmount|4.02
+STATE|1|3|1|0|cropOwner|2.64
+STATE|1|3|1|0|defended?|true
+STATE|1|3|1|0|cropCount|6.45
+STATE|1|3|1|0|vegCount|5.62
+STATE|1|3|1|0|ownedBy|1
+STATE|1|3|1|0|village|3
+STATE|1|3|1|0|shared?|false
+STATE|1|3|1|1|protected?|true
+STATE|1|3|1|1|water?|false
+STATE|1|3|1|1|cropped?|false
+STATE|1|3|1|1|driedUp?|true
+STATE|1|3|1|1|soilQuality|9.04
+STATE|1|3|1|1|treeCount|0.44
+STATE|1|3|1|1|currentBiomass|5.32
+STATE|1|3|1|1|waterLevel|4.06
+STATE|1|3|1|1|elephantCount|2.38
+STATE|1|3|1|1|myWaterDistance|0.58
+STATE|1|3|1|1|harvestYield|7.79
+STATE|1|3|1|1|playerHarvestRound|[0 9 8 10 3 2 6 3]
+STATE|1|3|1|1|fined?|false
+STATE|1|3|1|1|fineAmount|6.43
+STATE|1|3|1|1|cropOwner|6.48
+STATE|1|3|1|1|defended?|true
+STATE|1|3|1|1|cropCount|6.13
+STATE|1|3|1|1|vegCount|5.09
+STATE|1|3|1|1|ownedBy|0
+STATE|1|3|1|1|village|1
+STATE|1|3|1|1|shared?|false
+STATE|1|3|1|2|protected?|false
+STATE|1|3|1|2|water?|false
+STATE|1|3|1|2|cropped?|true
+STATE|1|3|1|2|driedUp?|false
+STATE|1|3|1|2|soilQuality|3.75
+STATE|1|3|1|2|treeCount|4.37
+STATE|1|3|1|2|currentBiomass|9.12
+STATE|1|3|1|2|waterLevel|0.8
+STATE|1|3|1|2|elephantCount|6.56
+STATE|1|3|1|2|myWaterDistance|1.75
+STATE|1|3|1|2|harvestYield|9.97
+STATE|1|3|1|2|playerHarvestRound|[4 3 10 0 1 5 4 0]
+STATE|1|3|1|2|fined?|true
+STATE|1|3|1|2|fineAmount|5.54
+STATE|1|3|1|2|cropOwner|4.36
+STATE|1|3|1|2|defended?|false
+STATE|1|3|1|2|cropCount|5.23
+STATE|1|3|1|2|vegCount|2.65
+STATE|1|3|1|2|ownedBy|3
+STATE|1|3|1|2|village|0
+STATE|1|3|1|2|shared?|true
+STATE|1|3|1|3|protected?|false
+STATE|1|3|1|3|water?|true
+STATE|1|3|1|3|cropped?|false
+STATE|1|3|1|3|driedUp?|false
+STATE|1|3|1|3|soilQuality|2.03
+STATE|1|3|1|3|treeCount|1.59
+STATE|1|3|1|3|currentBiomass|9.15
+STATE|1|3|1|3|waterLevel|1.92
+STATE|1|3|1|3|elephantCount|3.89
+STATE|1|3|1|3|myWaterDistance|6.01
+STATE|1|3|1|3|harvestYield|3.79
+STATE|1|3|1|3|playerHarvestRound|[10 10 8 7 7 8 0 0]
+STATE|1|3|1|3|fined?|true
+STATE|1|3|1|3|fineAmount|7.25
+STATE|1|3|1|3|cropOwner|5.7
+STATE|1|3|1|3|defended?|true
+STATE|1|3|1|3|cropCount|2.12
+STATE|1|3|1|3|vegCount|6.23
+STATE|1|3|1|3|ownedBy|0
+STATE|1|3|1|3|village|3
+STATE|1|3|1|3|shared?|false
+STATE|1|3|2|0|protected?|true
+STATE|1|3|2|0|water?|true
+STATE|1|3|2|0|cropped?|true
+STATE|1|3|2|0|driedUp?|false
+STATE|1|3|2|0|soilQuality|3.45
+STATE|1|3|2|0|treeCount|1.42
+STATE|1|3|2|0|currentBiomass|0.29
+STATE|1|3|2|0|waterLevel|0.42
+STATE|1|3|2|0|elephantCount|6.93
+STATE|1|3|2|0|myWaterDistance|6.34
+STATE|1|3|2|0|harvestYield|6.97
+STATE|1|3|2|0|playerHarvestRound|[0 1 9 5 3 8 10 1]
+STATE|1|3|2|0|fined?|false
+STATE|1|3|2|0|fineAmount|7.56
+STATE|1|3|2|0|cropOwner|7.11
+STATE|1|3|2|0|defended?|true
+STATE|1|3|2|0|cropCount|2.47
+STATE|1|3|2|0|vegCount|2.03
+STATE|1|3|2|0|ownedBy|0
+STATE|1|3|2|0|village|0
+STATE|1|3|2|0|shared?|false
+STATE|1|3|2|1|protected?|false
+STATE|1|3|2|1|water?|false
+STATE|1|3|2|1|cropped?|true
+STATE|1|3|2|1|driedUp?|false
+STATE|1|3|2|1|soilQuality|6.32
+STATE|1|3|2|1|treeCount|4.77
+STATE|1|3|2|1|currentBiomass|1.33
+STATE|1|3|2|1|waterLevel|7.92
+STATE|1|3|2|1|elephantCount|6.46
+STATE|1|3|2|1|myWaterDistance|2.94
+STATE|1|3|2|1|harvestYield|3.37
+STATE|1|3|2|1|playerHarvestRound|[4 0 5 4 4 0 5 5]
+STATE|1|3|2|1|fined?|false
+STATE|1|3|2|1|fineAmount|6.02
+STATE|1|3|2|1|cropOwner|4.76
+STATE|1|3|2|1|defended?|true
+STATE|1|3|2|1|cropCount|7.46
+STATE|1|3|2|1|vegCount|7.89
+STATE|1|3|2|1|ownedBy|0
+STATE|1|3|2|1|village|2
+STATE|1|3|2|1|shared?|false
+STATE|1|3|2|2|protected?|true
+STATE|1|3|2|2|water?|true
+STATE|1|3|2|2|cropped?|true
+STATE|1|3|2|2|driedUp?|false
+STATE|1|3|2|2|soilQuality|7.14
+STATE|1|3|2|2|treeCount|8.28
+STATE|1|3|2|2|currentBiomass|5.75
+STATE|1|3|2|2|waterLevel|2.87
+STATE|1|3|2|2|elephantCount|4.36
+STATE|1|3|2|2|myWaterDistance|5.24
+STATE|1|3|2|2|harvestYield|2.88
+STATE|1|3|2|2|playerHarvestRound|[0 0 5 7 1 7 2 7]
+STATE|1|3|2|2|fined?|false
+STATE|1|3|2|2|fineAmount|9.57
+STATE|1|3|2|2|cropOwner|5.15
+STATE|1|3|2|2|defended?|false
+STATE|1|3|2|2|cropCount|1.59
+STATE|1|3|2|2|vegCount|8.15
+STATE|1|3|2|2|ownedBy|3
+STATE|1|3|2|2|village|0
+STATE|1|3|2|2|shared?|true
+STATE|1|3|2|3|protected?|true
+STATE|1|3|2|3|water?|false
+STATE|1|3|2|3|cropped?|true
+STATE|1|3|2|3|driedUp?|false
+STATE|1|3|2|3|soilQuality|6.97
+STATE|1|3|2|3|treeCount|7.87
+STATE|1|3|2|3|currentBiomass|6.28
+STATE|1|3|2|3|waterLevel|3.56
+STATE|1|3|2|3|elephantCount|4.01
+STATE|1|3|2|3|myWaterDistance|3.95
+STATE|1|3|2|3|harvestYield|8.9
+STATE|1|3|2|3|playerHarvestRound|[1 6 10 0 5 3 4 4]
+STATE|1|3|2|3|fined?|true
+STATE|1|3|2|3|fineAmount|5.45
+STATE|1|3|2|3|cropOwner|1.71
+STATE|1|3|2|3|defended?|false
+STATE|1|3|2|3|cropCount|6.31
+STATE|1|3|2|3|vegCount|9.44
+STATE|1|3|2|3|ownedBy|0
+STATE|1|3|2|3|village|3
+STATE|1|3|2|3|shared?|false
+STATE|1|3|3|0|protected?|false
+STATE|1|3|3|0|water?|false
+STATE|1|3|3|0|cropped?|true
+STATE|1|3|3|0|driedUp?|false
+STATE|1|3|3|0|soilQuality|5.22
+STATE|1|3|3|0|treeCount|8.68
+STATE|1|3|3|0|currentBiomass|4.5
+STATE|1|3|3|0|waterLevel|5.54
+STATE|1|3|3|0|elephantCount|3.23
+STATE|1|3|3|0|myWaterDistance|4.63
+STATE|1|3|3|0|harvestYield|6.89
+STATE|1|3|3|0|playerHarvestRound|[4 9 3 2 5 7 10 3]
+STATE|1|3|3|0|fined?|false
+STATE|1|3|3|0|fineAmount|2.67
+STATE|1|3|3|0|cropOwner|7.55
+STATE|1|3|3|0|defended?|false
+STATE|1|3|3|0|cropCount|6.17
+STATE|1|3|3|0|vegCount|7.23
+STATE|1|3|3|0|ownedBy|0
+STATE|1|3|3|0|village|3
+STATE|1|3|3|0|shared?|true
+STATE|1|3|3|1|protected?|false
+STATE|1|3|3|1|water?|true
+STATE|1|3|3|1|cropped?|true
+STATE|1|3|3|1|driedUp?|true
+STATE|1|3|3|1|soilQuality|9.75
+STATE|1|3|3|1|treeCount|7.29
+STATE|1|3|3|1|currentBiomass|1.02
+STATE|1|3|3|1|waterLevel|9.62
+STATE|1|3|3|1|elephantCount|1.02
+STATE|1|3|3|1|myWaterDistance|3.84
+STATE|1|3|3|1|harvestYield|9.84
+STATE|1|3|3|1|playerHarvestRound|[4 4 6 4 3 1 10 1]
+STATE|1|3|3|1|fined?|true
+STATE|1|3|3|1|fineAmount|8.85
+STATE|1|3|3|1|cropOwner|4.64
+STATE|1|3|3|1|defended?|true
+STATE|1|3|3|1|cropCount|8.54
+STATE|1|3|3|1|vegCount|4.37
+STATE|1|3|3|1|ownedBy|0
+STATE|1|3|3|1|village|3
+STATE|1|3|3|1|shared?|false
+STATE|1|3|3|2|protected?|true
+STATE|1|3|3|2|water?|true
+STATE|1|3|3|2|cropped?|true
+STATE|1|3|3|2|driedUp?|false
+STATE|1|3|3|2|soilQuality|0.06
+STATE|1|3|3|2|treeCount|2.42
+STATE|1|3|3|2|currentBiomass|8.53
+STATE|1|3|3|2|waterLevel|7.01
+STATE|1|3|3|2|elephantCount|5.87
+STATE|1|3|3|2|myWaterDistance|6.47
+STATE|1|3|3|2|harvestYield|8.46
+STATE|1|3|3|2|playerHarvestRound|[10 10 10 9 3 10 2 10]
+STATE|1|3|3|2|fined?|true
+STATE|1|3|3|2|fineAmount|4.33
+STATE|1|3|3|2|cropOwner|2.6
+STATE|1|3|3|2|defended?|false
+STATE|1|3|3|2|cropCount|8.95
+STATE|1|3|3|2|vegCount|2.42
+STATE|1|3|3|2|ownedBy|2
+STATE|1|3|3|2|village|3
+STATE|1|3|3|2|shared?|false
+STATE|1|3|3|3|protected?|true
+STATE|1|3|3|3|water?|false
+STATE|1|3|3|3|cropped?|true
+STATE|1|3|3|3|driedUp?|true
+STATE|1|3|3|3|soilQuality|8.59
+STATE|1|3|3|3|treeCount|5.18
+STATE|1|3|3|3|currentBiomass|6.61
+STATE|1|3|3|3|waterLevel|8.73
+STATE|1|3|3|3|elephantCount|8.94
+STATE|1|3|3|3|myWaterDistance|3.28
+STATE|1|3|3|3|harvestYield|0.11
+STATE|1|3|3|3|playerHarvestRound|[7 1 0 4 8 3 2 3]
+STATE|1|3|3|3|fined?|false
+STATE|1|3|3|3|fineAmount|1.01
+STATE|1|3|3|3|cropOwner|5.75
+STATE|1|3|3|3|defended?|false
+STATE|1|3|3|3|cropCount|7.17
+STATE|1|3|3|3|vegCount|5.12
+STATE|1|3|3|3|ownedBy|3
+STATE|1|3|3|3|village|1
+STATE|1|3|3|3|shared?|false
+CHOICE|1|3|1|3|1|2|12:06:24.000 PM 28-Sep-2026
+CHOICE|1|3|1|3|1|3|12:06:35.000 PM 28-Sep-2026
+CONFIRM|1|3|1|12:06:36.000 PM 28-Sep-2026
+CHOICE|1|3|2|2|3|1|12:06:38.000 PM 28-Sep-2026
+CHOICE|1|3|2|2|3|3|12:06:48.000 PM 28-Sep-2026
+CONFIRM|1|3|2|12:06:53.000 PM 28-Sep-2026
+CHOICE|1|3|3|1|2|2|12:07:06.000 PM 28-Sep-2026
+CONFIRM|1|3|3|12:07:13.000 PM 28-Sep-2026
+CHOICE|1|3|4|1|1|1|12:07:26.000 PM 28-Sep-2026
+CHOICE|1|3|4|1|3|2|12:07:40.000 PM 28-Sep-2026
+CONFIRM|1|3|4|12:07:43.000 PM 28-Sep-2026
+CHOICE|1|3|5|3|3|2|12:07:56.000 PM 28-Sep-2026
+CHOICE|1|3|5|2|1|4|12:08:07.000 PM 28-Sep-2026
+CONFIRM|1|3|5|12:08:12.000 PM 28-Sep-2026
+CHOICE|1|3|6|1|3|-99|12:08:24.000 PM 28-Sep-2026
+CHOICE|1|3|6|2|1|3|12:08:32.000 PM 28-Sep-2026
+CONFIRM|1|3|6|12:08:40.000 PM 28-Sep-2026
+CHOICE|1|3|7|0|2|3|12:08:54.000 PM 28-Sep-2026
+CHOICE|1|3|7|0|2|-99|12:09:04.000 PM 28-Sep-2026
+CONFIRM|1|3|7|12:09:19.000 PM 28-Sep-2026
+CHOICE|1|3|8|1|2|1|12:09:30.000 PM 28-Sep-2026
+CHOICE|1|3|8|1|2|3|12:09:35.000 PM 28-Sep-2026
+CONFIRM|1|3|8|12:09:45.000 PM 28-Sep-2026
+SCORE|1|3|1|3|40|4
+SCORE|1|3|2|7|18|14
+SCORE|1|3|3|11|61|4
+SCORE|1|3|4|6|31|17
+SCORE|1|3|5|5|44|19
+SCORE|1|3|6|2|44|17
+SCORE|1|3|7|20|39|6
+SCORE|1|3|8|15|59|6
+PHASE|phase-1-4|12:09:54.000 PM 28-Sep-2026
+STATE|1|4|0|0|protected?|true
+STATE|1|4|0|0|water?|false
+STATE|1|4|0|0|cropped?|false
+STATE|1|4|0|0|driedUp?|true
+STATE|1|4|0|0|soilQuality|1.18
+STATE|1|4|0|0|treeCount|4.19
+STATE|1|4|0|0|currentBiomass|8.27
+STATE|1|4|0|0|waterLevel|4.73
+STATE|1|4|0|0|elephantCount|5.57
+STATE|1|4|0|0|myWaterDistance|4.84
+STATE|1|4|0|0|harvestYield|9.05
+STATE|1|4|0|0|playerHarvestRound|[7 3 7 2 8 9 0 2]
+STATE|1|4|0|0|fined?|false
+STATE|1|4|0|0|fineAmount|4.68
+STATE|1|4|0|0|cropOwner|5.63
+STATE|1|4|0|0|defended?|false
+STATE|1|4|0|0|cropCount|8.41
+STATE|1|4|0|0|vegCount|3.75
+STATE|1|4|0|0|ownedBy|2
+STATE|1|4|0|0|village|3
+STATE|1|4|0|0|shared?|true
+STATE|1|4|0|1|protected?|false
+STATE|1|4|0|1|water?|false
+STATE|1|4|0|1|cropped?|true
+STATE|1|4|0|1|driedUp?|false
+STATE|1|4|0|1|soilQuality|6.83
+STATE|1|4|0|1|treeCount|9.31
+STATE|1|4|0|1|currentBiomass|3.3
+STATE|1|4|0|1|waterLevel|9.82
+STATE|1|4|0|1|elephantCount|5.11
+STATE|1|4|0|1|myWaterDistance|4.85
+STATE|1|4|0|1|harvestYield|8.98
+STATE|1|4|0|1|playerHarvestRound|[0 3 6 10 2 5 1 10]
+STATE|1|4|0|1|fined?|true
+STATE|1|4|0|1|fineAmount|4.75
+STATE|1|4|0|1|cropOwner|5.26
+STATE|1|4|0|1|defended?|false
+STATE|1|4|0|1|cropCount|2.11
+STATE|1|4|0|1|vegCount|4.35
+STATE|1|4|0|1|ownedBy|2
+STATE|1|4|0|1|village|1
+STATE|1|4|0|1|shared?|false
+STATE|1|4|0|2|protected?|false
+STATE|1|4|0|2|water?|true
+STATE|1|4|0|2|cropped?|false
+STATE|1|4|0|2|driedUp?|true
+STATE|1|4|0|2|soilQuality|5.04
+STATE|1|4|0|2|treeCount|2.72
+STATE|1|4|0|2|currentBiomass|5.06
+STATE|1|4|0|2|waterLevel|9.75
+STATE|1|4|0|2|elephantCount|6.55
+STATE|1|4|0|2|myWaterDistance|7.92
+STATE|1|4|0|2|harvestYield|3.31
+STATE|1|4|0|2|playerHarvestRound|[5 4 2 9 10 1 0 6]
+STATE|1|4|0|2|fined?|false
+STATE|1|4|0|2|fineAmount|8.86
+STATE|1|4|0|2|cropOwner|5.45
+STATE|1|4|0|2|defended?|true
+STATE|1|4|0|2|cropCount|3.0
+STATE|1|4|0|2|vegCount|0.06
+STATE|1|4|0|2|ownedBy|0
+STATE|1|4|0|2|village|2
+STATE|1|4|0|2|shared?|false
+STATE|1|4|0|3|protected?|false
+STATE|1|4|0|3|water?|false
+STATE|1|4|0|3|cropped?|false
+STATE|1|4|0|3|driedUp?|false
+STATE|1|4|0|3|soilQuality|6.17
+STATE|1|4|0|3|treeCount|6.27
+STATE|1|4|0|3|currentBiomass|6.96
+STATE|1|4|0|3|waterLevel|5.96
+STATE|1|4|0|3|elephantCount|6.81
+STATE|1|4|0|3|myWaterDistance|2.13
+STATE|1|4|0|3|harvestYield|6.67
+STATE|1|4|0|3|playerHarvestRound|[7 10 2 1 10 2 0 6]
+STATE|1|4|0|3|fined?|false
+STATE|1|4|0|3|fineAmount|9.14
+STATE|1|4|0|3|cropOwner|6.56
+STATE|1|4|0|3|defended?|true
+STATE|1|4|0|3|cropCount|8.23
+STATE|1|4|0|3|vegCount|7.87
+STATE|1|4|0|3|ownedBy|3
+STATE|1|4|0|3|village|3
+STATE|1|4|0|3|shared?|true
+STATE|1|4|1|0|protected?|true
+STATE|1|4|1|0|water?|true
+STATE|1|4|1|0|cropped?|true
+STATE|1|4|1|0|driedUp?|true
+STATE|1|4|1|0|soilQuality|6.42
+STATE|1|4|1|0|treeCount|9.34
+STATE|1|4|1|0|currentBiomass|0.55
+STATE|1|4|1|0|waterLevel|5.68
+STATE|1|4|1|0|elephantCount|0.39
+STATE|1|4|1|0|myWaterDistance|1.19
+STATE|1|4|1|0|harvestYield|8.1
+STATE|1|4|1|0|playerHarvestRound|[9 6 7 1 0 10 6 9]
+STATE|1|4|1|0|fined?|false
+STATE|1|4|1|0|fineAmount|9.38
+STATE|1|4|1|0|cropOwner|9.81
+STATE|1|4|1|0|defended?|true
+STATE|1|4|1|0|cropCount|4.12
+STATE|1|4|1|0|vegCount|1.02
+STATE|1|4|1|0|ownedBy|3
+STATE|1|4|1|0|village|2
+STATE|1|4|1|0|shared?|true
+STATE|1|4|1|1|protected?|true
+STATE|1|4|1|1|water?|true
+STATE|1|4|1|1|cropped?|true
+STATE|1|4|1|1|driedUp?|false
+STATE|1|4|1|1|soilQuality|1.22
+STATE|1|4|1|1|treeCount|9.66
+STATE|1|4|1|1|currentBiomass|0.88
+STATE|1|4|1|1|waterLevel|8.7
+STATE|1|4|1|1|elephantCount|1.29
+STATE|1|4|1|1|myWaterDistance|0.18
+STATE|1|4|1|1|harvestYield|7.19
+STATE|1|4|1|1|playerHarvestRound|[3 7 2 0 5 2 1 4]
+STATE|1|4|1|1|fined?|false
+STATE|1|4|1|1|fineAmount|7.09
+STATE|1|4|1|1|cropOwner|4.61
+STATE|1|4|1|1|defended?|false
+STATE|1|4|1|1|cropCount|2.54
+STATE|1|4|1|1|vegCount|9.64
+STATE|1|4|1|1|ownedBy|3
+STATE|1|4|1|1|village|0
+STATE|1|4|1|1|shared?|true
+STATE|1|4|1|2|protected?|true
+STATE|1|4|1|2|water?|false
+STATE|1|4|1|2|cropped?|false
+STATE|1|4|1|2|driedUp?|true
+STATE|1|4|1|2|soilQuality|3.11
+STATE|1|4|1|2|treeCount|7.29
+STATE|1|4|1|2|currentBiomass|1.66
+STATE|1|4|1|2|waterLevel|8.61
+STATE|1|4|1|2|elephantCount|4.86
+STATE|1|4|1|2|myWaterDistance|0.6
+STATE|1|4|1|2|harvestYield|3.68
+STATE|1|4|1|2|playerHarvestRound|[9 7 7 10 2 2 1 5]
+STATE|1|4|1|2|fined?|false
+STATE|1|4|1|2|fineAmount|1.64
+STATE|1|4|1|2|cropOwner|8.02
+STATE|1|4|1|2|defended?|true
+STATE|1|4|1|2|cropCount|7.78
+STATE|1|4|1|2|vegCount|4.53
+STATE|1|4|1|2|ownedBy|1
+STATE|1|4|1|2|village|3
+STATE|1|4|1|2|shared?|true
+STATE|1|4|1|3|protected?|true
+STATE|1|4|1|3|water?|false
+STATE|1|4|1|3|cropped?|false
+STATE|1|4|1|3|driedUp?|false
+STATE|1|4|1|3|soilQuality|6.0
+STATE|1|4|1|3|treeCount|8.7
+STATE|1|4|1|3|currentBiomass|7.26
+STATE|1|4|1|3|waterLevel|0.16
+STATE|1|4|1|3|elephantCount|1.51
+STATE|1|4|1|3|myWaterDistance|8.33
+STATE|1|4|1|3|harvestYield|5.85
+STATE|1|4|1|3|playerHarvestRound|[3 6 6 10 6 9 3 7]
+STATE|1|4|1|3|fined?|true
+STATE|1|4|1|3|fineAmount|0.02
+STATE|1|4|1|3|cropOwner|2.63
+STATE|1|4|1|3|defended?|true
+STATE|1|4|1|3|cropCount|5.87
+STATE|1|4|1|3|vegCount|8.16
+STATE|1|4|1|3|ownedBy|0
+STATE|1|4|1|3|village|1
+STATE|1|4|1|3|shared?|false
+STATE|1|4|2|0|protected?|false
+STATE|1|4|2|0|water?|false
+STATE|1|4|2|0|cropped?|false
+STATE|1|4|2|0|driedUp?|true
+STATE|1|4|2|0|soilQuality|8.51
+STATE|1|4|2|0|treeCount|8.07
+STATE|1|4|2|0|currentBiomass|6.85
+STATE|1|4|2|0|waterLevel|9.14
+STATE|1|4|2|0|elephantCount|3.47
+STATE|1|4|2|0|myWaterDistance|0.85
+STATE|1|4|2|0|harvestYield|5.54
+STATE|1|4|2|0|playerHarvestRound|[6 3 3 4 9 0 10 6]
+STATE|1|4|2|0|fined?|true
+STATE|1|4|2|0|fineAmount|2.07
+STATE|1|4|2|0|cropOwner|2.55
+STATE|1|4|2|0|defended?|false
+STATE|1|4|2|0|cropCount|7.92
+STATE|1|4|2|0|vegCount|4.6
+STATE|1|4|2|0|ownedBy|0
+STATE|1|4|2|0|village|3
+STATE|1|4|2|0|shared?|false
+STATE|1|4|2|1|protected?|false
+STATE|1|4|2|1|water?|true
+STATE|1|4|2|1|cropped?|false
+STATE|1|4|2|1|driedUp?|false
+STATE|1|4|2|1|soilQuality|8.85
+STATE|1|4|2|1|treeCount|5.22
+STATE|1|4|2|1|currentBiomass|4.77
+STATE|1|4|2|1|waterLevel|5.89
+STATE|1|4|2|1|elephantCount|1.89
+STATE|1|4|2|1|myWaterDistance|1.92
+STATE|1|4|2|1|harvestYield|1.81
+STATE|1|4|2|1|playerHarvestRound|[4 5 9 9 5 6 8 2]
+STATE|1|4|2|1|fined?|true
+STATE|1|4|2|1|fineAmount|9.23
+STATE|1|4|2|1|cropOwner|4.93
+STATE|1|4|2|1|defended?|false
+STATE|1|4|2|1|cropCount|3.72
+STATE|1|4|2|1|vegCount|4.63
+STATE|1|4|2|1|ownedBy|0
+STATE|1|4|2|1|village|0
+STATE|1|4|2|1|shared?|true
+STATE|1|4|2|2|protected?|true
+STATE|1|4|2|2|water?|true
+STATE|1|4|2|2|cropped?|false
+STATE|1|4|2|2|driedUp?|true
+STATE|1|4|2|2|soilQuality|2.05
+STATE|1|4|2|2|treeCount|8.71
+STATE|1|4|2|2|currentBiomass|5.65
+STATE|1|4|2|2|waterLevel|5.87
+STATE|1|4|2|2|elephantCount|2.14
+STATE|1|4|2|2|myWaterDistance|9.25
+STATE|1|4|2|2|harvestYield|2.8
+STATE|1|4|2|2|playerHarvestRound|[1 7 9 9 2 4 0 5]
+STATE|1|4|2|2|fined?|true
+STATE|1|4|2|2|fineAmount|1.81
+STATE|1|4|2|2|cropOwner|0.84
+STATE|1|4|2|2|defended?|true
+STATE|1|4|2|2|cropCount|5.57
+STATE|1|4|2|2|vegCount|8.71
+STATE|1|4|2|2|ownedBy|2
+STATE|1|4|2|2|village|2
+STATE|1|4|2|2|shared?|false
+STATE|1|4|2|3|protected?|false
+STATE|1|4|2|3|water?|true
+STATE|1|4|2|3|cropped?|false
+STATE|1|4|2|3|driedUp?|true
+STATE|1|4|2|3|soilQuality|1.2
+STATE|1|4|2|3|treeCount|9.59
+STATE|1|4|2|3|currentBiomass|2.57
+STATE|1|4|2|3|waterLevel|5.64
+STATE|1|4|2|3|elephantCount|6.41
+STATE|1|4|2|3|myWaterDistance|9.56
+STATE|1|4|2|3|harvestYield|6.7
+STATE|1|4|2|3|playerHarvestRound|[6 2 7 2 5 3 3 2]
+STATE|1|4|2|3|fined?|true
+STATE|1|4|2|3|fineAmount|2.56
+STATE|1|4|2|3|cropOwner|3.52
+STATE|1|4|2|3|defended?|false
+STATE|1|4|2|3|cropCount|9.05
+STATE|1|4|2|3|vegCount|8.37
+STATE|1|4|2|3|ownedBy|0
+STATE|1|4|2|3|village|1
+STATE|1|4|2|3|shared?|false
+STATE|1|4|3|0|protected?|false
+STATE|1|4|3|0|water?|false
+STATE|1|4|3|0|cropped?|false
+STATE|1|4|3|0|driedUp?|true
+STATE|1|4|3|0|soilQuality|1.45
+STATE|1|4|3|0|treeCount|7.55
+STATE|1|4|3|0|currentBiomass|9.39
+STATE|1|4|3|0|waterLevel|6.77
+STATE|1|4|3|0|elephantCount|2.99
+STATE|1|4|3|0|myWaterDistance|5.91
+STATE|1|4|3|0|harvestYield|7.58
+STATE|1|4|3|0|playerHarvestRound|[1 7 5 5 4 6 1 5]
+STATE|1|4|3|0|fined?|true
+STATE|1|4|3|0|fineAmount|1.69
+STATE|1|4|3|0|cropOwner|2.38
+STATE|1|4|3|0|defended?|true
+STATE|1|4|3|0|cropCount|6.78
+STATE|1|4|3|0|vegCount|0.13
+STATE|1|4|3|0|ownedBy|3
+STATE|1|4|3|0|village|0
+STATE|1|4|3|0|shared?|false
+STATE|1|4|3|1|protected?|true
+STATE|1|4|3|1|water?|false
+STATE|1|4|3|1|cropped?|true
+STATE|1|4|3|1|driedUp?|false
+STATE|1|4|3|1|soilQuality|3.73
+STATE|1|4|3|1|treeCount|7.49
+STATE|1|4|3|1|currentBiomass|7.78
+STATE|1|4|3|1|waterLevel|9.58
+STATE|1|4|3|1|elephantCount|9.26
+STATE|1|4|3|1|myWaterDistance|3.85
+STATE|1|4|3|1|harvestYield|0.22
+STATE|1|4|3|1|playerHarvestRound|[1 7 5 5 3 7 1 10]
+STATE|1|4|3|1|fined?|true
+STATE|1|4|3|1|fineAmount|3.32
+STATE|1|4|3|1|cropOwner|7.36
+STATE|1|4|3|1|defended?|true
+STATE|1|4|3|1|cropCount|4.51
+STATE|1|4|3|1|vegCount|8.89
+STATE|1|4|3|1|ownedBy|2
+STATE|1|4|3|1|village|0
+STATE|1|4|3|1|shared?|true
+STATE|1|4|3|2|protected?|true
+STATE|1|4|3|2|water?|true
+STATE|1|4|3|2|cropped?|true
+STATE|1|4|3|2|driedUp?|false
+STATE|1|4|3|2|soilQuality|3.35
+STATE|1|4|3|2|treeCount|1.68
+STATE|1|4|3|2|currentBiomass|4.91
+STATE|1|4|3|2|waterLevel|3.18
+STATE|1|4|3|2|elephantCount|9.03
+STATE|1|4|3|2|myWaterDistance|1.14
+STATE|1|4|3|2|harvestYield|9.79
+STATE|1|4|3|2|playerHarvestRound|[0 10 10 3 8 7 4 1]
+STATE|1|4|3|2|fined?|true
+STATE|1|4|3|2|fineAmount|2.02
+STATE|1|4|3|2|cropOwner|3.64
+STATE|1|4|3|2|defended?|false
+STATE|1|4|3|2|cropCount|9.98
+STATE|1|4|3|2|vegCount|9.25
+STATE|1|4|3|2|ownedBy|0
+STATE|1|4|3|2|village|2
+STATE|1|4|3|2|shared?|true
+STATE|1|4|3|3|protected?|false
+STATE|1|4|3|3|water?|true
+STATE|1|4|3|3|cropped?|false
+STATE|1|4|3|3|driedUp?|true
+STATE|1|4|3|3|soilQuality|9.79
+STATE|1|4|3|3|treeCount|0.16
+STATE|1|4|3|3|currentBiomass|8.07
+STATE|1|4|3|3|waterLevel|3.41
+STATE|1|4|3|3|elephantCount|1.4
+STATE|1|4|3|3|myWaterDistance|0.02
+STATE|1|4|3|3|harvestYield|8.32
+STATE|1|4|3|3|playerHarvestRound|[8 4 2 5 6 0 6 3]
+STATE|1|4|3|3|fined?|true
+STATE|1|4|3|3|fineAmount|1.81
+STATE|1|4|3|3|cropOwner|8.43
+STATE|1|4|3|3|defended?|false
+STATE|1|4|3|3|cropCount|2.3
+STATE|1|4|3|3|vegCount|1.76
+STATE|1|4|3|3|ownedBy|3
+STATE|1|4|3|3|village|0
+STATE|1|4|3|3|shared?|false
+CHOICE|1|4|1|3|2|2|12:10:04.000 PM 28-Sep-2026
+CHOICE|1|4|1|3|2|2|12:10:14.000 PM 28-Sep-2026
+CHOICE|1|4|1|3|2|-99|12:10:26.000 PM 28-Sep-2026
+CONFIRM|1|4|1|12:10:38.000 PM 28-Sep-2026
+CHOICE|1|4|2|3|0|3|12:10:44.000 PM 28-Sep-2026
+CHOICE|1|4|2|3|0|4|12:10:46.000 PM 28-Sep-2026
+CHOICE|1|4|2|3|0|4|12:10:49.000 PM 28-Sep-2026
+CONFIRM|1|4|2|12:11:03.000 PM 28-Sep-2026
+CHOICE|1|4|3|2|1|3|12:11:04.000 PM 28-Sep-2026
+CHOICE|1|4|3|2|1|1|12:11:10.000 PM 28-Sep-2026
+CHOICE|1|4|3|2|1|1|12:11:12.000 PM 28-Sep-2026
+CONFIRM|1|4|3|12:11:18.000 PM 28-Sep-2026
+CHOICE|1|4|4|1|2|4|12:11:28.000 PM 28-Sep-2026
+CHOICE|1|4|4|0|2|4|12:11:36.000 PM 28-Sep-2026
+CHOICE|1|4|4|0|2|2|12:11:37.000 PM 28-Sep-2026
+CONFIRM|1|4|4|12:11:41.000 PM 28-Sep-2026
+CHOICE|1|4|5|1|1|3|12:11:46.000 PM 28-Sep-2026
+CONFIRM|1|4|5|12:11:55.000 PM 28-Sep-2026
+CHOICE|1|4|6|0|0|2|12:12:00.000 PM 28-Sep-2026
+CONFIRM|1|4|6|12:12:01.000 PM 28-Sep-2026
+CHOICE|1|4|7|3|1|1|12:12:07.000 PM 28-Sep-2026
+CHOICE|1|4|7|1|0|4|12:12:15.000 PM 28-Sep-2026
+CHOICE|1|4|7|1|0|1|12:12:17.000 PM 28-Sep-2026
+CONFIRM|1|4|7|12:12:19.000 PM 28-Sep-2026
+CHOICE|1|4|8|1|1|2|12:12:30.000 PM 28-Sep-2026
+CHOICE|1|4|8|1|1|2|12:12:44.000 PM 28-Sep-2026
+CONFIRM|1|4|8|12:12:45.000 PM 28-Sep-2026
+SCORE|1|4|1|20|44|13
+SCORE|1|4|2|19|57|16
+SCORE|1|4|3|1|26|1
+SCORE|1|4|4|11|32|12
+SCORE|1|4|5|7|28|13
+SCORE|1|4|6|18|38|12
+SCORE|1|4|7|17|20|10
+SCORE|1|4|8|16|25|11
+PHASE|phase-2-1|12:12:49.000 PM 28-Sep-2026
+STATE|2|1|0|0|protected?|false
+STATE|2|1|0|0|water?|false
+STATE|2|1|0|0|cropped?|true
+STATE|2|1|0|0|driedUp?|true
+STATE|2|1|0|0|soilQuality|1.87
+STATE|2|1|0|0|treeCount|3.24
+STATE|2|1|0|0|currentBiomass|2.01
+STATE|2|1|0|0|waterLevel|6.69
+STATE|2|1|0|0|elephantCount|2.25
+STATE|2|1|0|0|myWaterDistance|4.21
+STATE|2|1|0|0|harvestYield|3.97
+STATE|2|1|0|0|playerHarvestRound|[7 10 0 0 0 10 9 4]
+STATE|2|1|0|0|fined?|false
+STATE|2|1|0|0|fineAmount|6.23
+STATE|2|1|0|0|cropOwner|6.28
+STATE|2|1|0|0|defended?|false
+STATE|2|1|0|0|cropCount|0.36
+STATE|2|1|0|0|vegCount|1.01
+STATE|2|1|0|0|ownedBy|0
+STATE|2|1|0|0|village|3
+STATE|2|1|0|0|shared?|true
+STATE|2|1|0|1|protected?|true
+STATE|2|1|0|1|water?|true
+STATE|2|1|0|1|cropped?|true
+STATE|2|1|0|1|driedUp?|true
+STATE|2|1|0|1|soilQuality|1.67
+STATE|2|1|0|1|treeCount|0.6
+STATE|2|1|0|1|currentBiomass|9.59
+STATE|2|1|0|1|waterLevel|9.21
+STATE|2|1|0|1|elephantCount|9.01
+STATE|2|1|0|1|myWaterDistance|0.84
+STATE|2|1|0|1|harvestYield|5.9
+STATE|2|1|0|1|playerHarvestRound|[2 7 1 8 2 4 6 9]
+STATE|2|1|0|1|fined?|true
+STATE|2|1|0|1|fineAmount|2.43
+STATE|2|1|0|1|cropOwner|0.88
+STATE|2|1|0|1|defended?|false
+STATE|2|1|0|1|cropCount|8.4
+STATE|2|1|0|1|vegCount|6.1
+STATE|2|1|0|1|ownedBy|3
+STATE|2|1|0|1|village|0
+STATE|2|1|0|1|shared?|false
+STATE|2|1|0|2|protected?|true
+STATE|2|1|0|2|water?|false
+STATE|2|1|0|2|cropped?|true
+STATE|2|1|0|2|driedUp?|false
+STATE|2|1|0|2|soilQuality|6.13
+STATE|2|1|0|2|treeCount|4.69
+STATE|2|1|0|2|currentBiomass|3.11
+STATE|2|1|0|2|waterLevel|2.42
+STATE|2|1|0|2|elephantCount|2.22
+STATE|2|1|0|2|myWaterDistance|5.12
+STATE|2|1|0|2|harvestYield|3.83
+STATE|2|1|0|2|playerHarvestRound|[9 6 0 5 2 3 5 8]
+STATE|2|1|0|2|fined?|true
+STATE|2|1|0|2|fineAmount|2.7
+STATE|2|1|0|2|cropOwner|8.78
+STATE|2|1|0|2|defended?|true
+STATE|2|1|0|2|cropCount|0.57
+STATE|2|1|0|2|vegCount|0.22
+STATE|2|1|0|2|ownedBy|3
+STATE|2|1|0|2|village|0
+STATE|2|1|0|2|shared?|false
+STATE|2|1|0|3|protected?|true
+STATE|2|1|0|3|water?|false
+STATE|2|1|0|3|cropped?|false
+STATE|2|1|0|3|driedUp?|false
+STATE|2|1|0|3|soilQuality|3.54
+STATE|2|1|0|3|treeCount|7.63
+STATE|2|1|0|3|currentBiomass|5.21
+STATE|2|1|0|3|waterLevel|9.89
+STATE|2|1|0|3|elephantCount|6.78
+STATE|2|1|0|3|myWaterDistance|9.34
+STATE|2|1|0|3|harvestYield|4.17
+STATE|2|1|0|3|playerHarvestRound|[10 5 2 10 3 9 9 4]
+STATE|2|1|0|3|fined?|false
+STATE|2|1|0|3|fineAmount|5.18
+STATE|2|1|0|3|cropOwner|7.39
+STATE|2|1|0|3|defended?|false
+STATE|2|1|0|3|cropCount|7.6
+STATE|2|1|0|3|vegCount|4.75
+STATE|2|1|0|3|ownedBy|3
+STATE|2|1|0|3|village|3
+STATE|2|1|0|3|shared?|false
+STATE|2|1|1|0|protected?|false
+STATE|2|1|1|0|water?|true
+STATE|2|1|1|0|cropped?|true
+STATE|2|1|1|0|driedUp?|true
+STATE|2|1|1|0|soilQuality|5.5
+STATE|2|1|1|0|treeCount|1.17
+STATE|2|1|1|0|currentBiomass|3.97
+STATE|2|1|1|0|waterLevel|9.93
+STATE|2|1|1|0|elephantCount|1.5
+STATE|2|1|1|0|myWaterDistance|8.5
+STATE|2|1|1|0|harvestYield|2.79
+STATE|2|1|1|0|playerHarvestRound|[9 9 1 6 7 7 4 5]
+STATE|2|1|1|0|fined?|true
+STATE|2|1|1|0|fineAmount|3.91
+STATE|2|1|1|0|cropOwner|5.55
+STATE|2|1|1|0|defended?|true
+STATE|2|1|1|0|cropCount|3.22
+STATE|2|1|1|0|vegCount|7.87
+STATE|2|1|1|0|ownedBy|2
+STATE|2|1|1|0|village|2
+STATE|2|1|1|0|shared?|true
+STATE|2|1|1|1|protected?|true
+STATE|2|1|1|1|water?|true
+STATE|2|1|1|1|cropped?|true
+STATE|2|1|1|1|driedUp?|false
+STATE|2|1|1|1|soilQuality|5.82
+STATE|2|1|1|1|treeCount|0.88
+STATE|2|1|1|1|currentBiomass|9.2
+STATE|2|1|1|1|waterLevel|3.24
+STATE|2|1|1|1|elephantCount|8.43
+STATE|2|1|1|1|myWaterDistance|8.38
+STATE|2|1|1|1|harvestYield|9.59
+STATE|2|1|1|1|playerHarvestRound|[3 6 0 0 0 4 9 7]
+STATE|2|1|1|1|fined?|true
+STATE|2|1|1|1|fineAmount|5.36
+STATE|2|1|1|1|cropOwner|3.12
+STATE|2|1|1|1|defended?|false
+STATE|2|1|1|1|cropCount|4.37
+STATE|2|1|1|1|vegCount|8.26
+STATE|2|1|1|1|ownedBy|3
+STATE|2|1|1|1|village|3
+STATE|2|1|1|1|shared?|true
+STATE|2|1|1|2|protected?|true
+STATE|2|1|1|2|water?|true
+STATE|2|1|1|2|cropped?|false
+STATE|2|1|1|2|driedUp?|true
+STATE|2|1|1|2|soilQuality|0.1
+STATE|2|1|1|2|treeCount|0.68
+STATE|2|1|1|2|currentBiomass|2.29
+STATE|2|1|1|2|waterLevel|4.1
+STATE|2|1|1|2|elephantCount|5.01
+STATE|2|1|1|2|myWaterDistance|6.49
+STATE|2|1|1|2|harvestYield|9.28
+STATE|2|1|1|2|playerHarvestRound|[2 3 6 7 6 7 9 9]
+STATE|2|1|1|2|fined?|true
+STATE|2|1|1|2|fineAmount|5.3
+STATE|2|1|1|2|cropOwner|8.16
+STATE|2|1|1|2|defended?|true
+STATE|2|1|1|2|cropCount|3.18
+STATE|2|1|1|2|vegCount|9.78
+STATE|2|1|1|2|ownedBy|1
+STATE|2|1|1|2|village|3
+STATE|2|1|1|2|shared?|true
+STATE|2|1|1|3|protected?|false
+STATE|2|1|1|3|water?|true
+STATE|2|1|1|3|cropped?|true
+STATE|2|1|1|3|driedUp?|false
+STATE|2|1|1|3|soilQuality|5.09
+STATE|2|1|1|3|treeCount|9.71
+STATE|2|1|1|3|currentBiomass|6.31
+STATE|2|1|1|3|waterLevel|5.24
+STATE|2|1|1|3|elephantCount|8.16
+STATE|2|1|1|3|myWaterDistance|2.08
+STATE|2|1|1|3|harvestYield|8.93
+STATE|2|1|1|3|playerHarvestRound|[6 2 0 10 9 9 1 5]
+STATE|2|1|1|3|fined?|false
+STATE|2|1|1|3|fineAmount|6.31
+STATE|2|1|1|3|cropOwner|7.23
+STATE|2|1|1|3|defended?|false
+STATE|2|1|1|3|cropCount|0.11
+STATE|2|1|1|3|vegCount|0.03
+STATE|2|1|1|3|ownedBy|3
+STATE|2|1|1|3|village|3
+STATE|2|1|1|3|shared?|false
+STATE|2|1|2|0|protected?|false
+STATE|2|1|2|0|water?|true
+STATE|2|1|2|0|cropped?|true
+STATE|2|1|2|0|driedUp?|true
+STATE|2|1|2|0|soilQuality|0.3
+STATE|2|1|2|0|treeCount|1.75
+STATE|2|1|2|0|currentBiomass|7.69
+STATE|2|1|2|0|waterLevel|5.67
+STATE|2|1|2|0|elephantCount|8.71
+STATE|2|1|2|0|myWaterDistance|8.96
+STATE|2|1|2|0|harvestYield|5.14
+STATE|2|1|2|0|playerHarvestRound|[2 9 3 6 9 1 2 2]
+STATE|2|1|2|0|fined?|false
+STATE|2|1|2|0|fineAmount|5.09
+STATE|2|1|2|0|cropOwner|0.29
+STATE|2|1|2|0|defended?|true
+STATE|2|1|2|0|cropCount|9.48
+STATE|2|1|2|0|vegCount|4.9
+STATE|2|1|2|0|ownedBy|2
+STATE|2|1|2|0|village|3
+STATE|2|1|2|0|shared?|true
+STATE|2|1|2|1|protected?|false
+STATE|2|1|2|1|water?|false
+STATE|2|1|2|1|cropped?|false
+STATE|2|1|2|1|driedUp?|false
+STATE|2|1|2|1|soilQuality|1.44
+STATE|2|1|2|1|treeCount|2.38
+STATE|2|1|2|1|currentBiomass|2.75
+STATE|2|1|2|1|waterLevel|0.33
+STATE|2|1|2|1|elephantCount|6.29
+STATE|2|1|2|1|myWaterDistance|8.59
+STATE|2|1|2|1|harvestYield|9.48
+STATE|2|1|2|1|playerHarvestRound|[1 5 3 7 9 6 0 0]
+STATE|2|1|2|1|fined?|true
+STATE|2|1|2|1|fineAmount|3.96
+STATE|2|1|2|1|cropOwner|7.64
+STATE|2|1|2|1|defended?|true
+STATE|2|1|2|1|cropCount|0.55
+STATE|2|1|2|1|vegCount|2.38
+STATE|2|1|2|1|ownedBy|0
+STATE|2|1|2|1|village|0
+STATE|2|1|2|1|shared?|true
+STATE|2|1|2|2|protected?|false
+STATE|2|1|2|2|water?|true
+STATE|2|1|2|2|cropped?|true
+STATE|2|1|2|2|driedUp?|false
+STATE|2|1|2|2|soilQuality|4.55
+STATE|2|1|2|2|treeCount|4.18
+STATE|2|1|2|2|currentBiomass|2.52
+STATE|2|1|2|2|waterLevel|8.87
+STATE|2|1|2|2|elephantCount|9.8
+STATE|2|1|2|2|myWaterDistance|0.68
+STATE|2|1|2|2|harvestYield|6.77
+STATE|2|1|2|2|playerHarvestRound|[10 9 3 6 4 6 7 0]
+STATE|2|1|2|2|fined?|false
+STATE|2|1|2|2|fineAmount|2.43
+STATE|2|1|2|2|cropOwner|1.73
+STATE|2|1|2|2|defended?|true
+STATE|2|1|2|2|cropCount|1.87
+STATE|2|1|2|2|vegCount|9.72
+STATE|2|1|2|2|ownedBy|1
+STATE|2|1|2|2|village|2
+STATE|2|1|2|2|shared?|false
+STATE|2|1|2|3|protected?|true
+STATE|2|1|2|3|water?|false
+STATE|2|1|2|3|cropped?|true
+STATE|2|1|2|3|driedUp?|true
+STATE|2|1|2|3|soilQuality|0.65
+STATE|2|1|2|3|treeCount|1.23
+STATE|2|1|2|3|currentBiomass|8.26
+STATE|2|1|2|3|waterLevel|3.51
+STATE|2|1|2|3|elephantCount|2.45
+STATE|2|1|2|3|myWaterDistance|1.91
+STATE|2|1|2|3|harvestYield|2.84
+STATE|2|1|2|3|playerHarvestRound|[3 6 0 4 10 0 5 2]
+STATE|2|1|2|3|fined?|true
+STATE|2|1|2|3|fineAmount|1.3
+STATE|2|1|2|3|cropOwner|1.96
+STATE|2|1|2|3|defended?|false
+STATE|2|1|2|3|cropCount|7.87
+STATE|2|1|2|3|vegCount|5.55
+STATE|2|1|2|3|ownedBy|2
+STATE|2|1|2|3|village|0
+STATE|2|1|2|3|shared?|true
+STATE|2|1|3|0|protected?|true
+STATE|2|1|3|0|water?|false
+STATE|2|1|3|0|cropped?|true
+STATE|2|1|3|0|driedUp?|false
+STATE|2|1|3|0|soilQuality|2.08
+STATE|2|1|3|0|treeCount|9.51
+STATE|2|1|3|0|currentBiomass|5.05
+STATE|2|1|3|0|waterLevel|2.27
+STATE|2|1|3|0|elephantCount|4.53
+STATE|2|1|3|0|myWaterDistance|1.31
+STATE|2|1|3|0|harvestYield|7.06
+STATE|2|1|3|0|playerHarvestRound|[4 9 7 9 5 8 3 6]
+STATE|2|1|3|0|fined?|false
+STATE|2|1|3|0|fineAmount|2.13
+STATE|2|1|3|0|cropOwner|8.72
+STATE|2|1|3|0|defended?|true
+STATE|2|1|3|0|cropCount|5.13
+STATE|2|1|3|0|vegCount|5.43
+STATE|2|1|3|0|ownedBy|1
+STATE|2|1|3|0|village|3
+STATE|2|1|3|0|shared?|false
+STATE|2|1|3|1|protected?|true
+STATE|2|1|3|1|water?|false
+STATE|2|1|3|1|cropped?|false
+STATE|2|1|3|1|driedUp?|true
+STATE|2|1|3|1|soilQuality|3.9
+STATE|2|1|3|1|treeCount|0.86
+STATE|2|1|3|1|currentBiomass|1.77
+STATE|2|1|3|1|waterLevel|8.51
+STATE|2|1|3|1|elephantCount|3.21
+STATE|2|1|3|1|myWaterDistance|6.63
+STATE|2|1|3|1|harvestYield|1.09
+STATE|2|1|3|1|playerHarvestRound|[8 5 8 4 3 1 4 1]
+STATE|2|1|3|1|fined?|true
+STATE|2|1|3|1|fineAmount|1.26
+STATE|2|1|3|1|cropOwner|7.17
+STATE|2|1|3|1|defended?|true
+STATE|2|1|3|1|cropCount|4.03
+STATE|2|1|3|1|vegCount|9.09
+STATE|2|1|3|1|ownedBy|3
+STATE|2|1|3|1|village|3
+STATE|2|1|3|1|shared?|false
+STATE|2|1|3|2|protected?|true
+STATE|2|1|3|2|water?|true
+STATE|2|1|3|2|cropped?|true
+STATE|2|1|3|2|driedUp?|false
+STATE|2|1|3|2|soilQuality|6.64
+STATE|2|1|3|2|treeCount|3.51
+STATE|2|1|3|2|currentBiomass|4.13
+STATE|2|1|3|2|waterLevel|6.59
+STATE|2|1|3|2|elephantCount|6.99
+STATE|2|1|3|2|myWaterDistance|2.48
+STATE|2|1|3|2|harvestYield|8.47
+STATE|2|1|3|2|playerHarvestRound|[5 10 1 2 4 1 4 9]
+STATE|2|1|3|2|fined?|false
+STATE|2|1|3|2|fineAmount|7.13
+STATE|2|1|3|2|cropOwner|0.4
+STATE|2|1|3|2|defended?|true
+STATE|2|1|3|2|cropCount|1.62
+STATE|2|1|3|2|vegCount|1.98
+STATE|2|1|3|2|ownedBy|1
+STATE|2|1|3|2|village|0
+STATE|2|1|3|2|shared?|true
+STATE|2|1|3|3|protected?|true
+STATE|2|1|3|3|water?|true
+STATE|2|1|3|3|cropped?|false
+STATE|2|1|3|3|driedUp?|true
+STATE|2|1|3|3|soilQuality|8.39
+STATE|2|1|3|3|treeCount|5.7
+STATE|2|1|3|3|currentBiomass|7.17
+STATE|2|1|3|3|waterLevel|2.55
+STATE|2|1|3|3|elephantCount|4.35
+STATE|2|1|3|3|myWaterDistance|6.84
+STATE|2|1|3|3|harvestYield|3.49
+STATE|2|1|3|3|playerHarvestRound|[0 1 10 4 0 9 9 0]
+STATE|2|1|3|3|fined?|false
+STATE|2|1|3|3|fineAmount|6.81
+STATE|2|1|3|3|cropOwner|0.37
+STATE|2|1|3|3|defended?|true
+STATE|2|1|3|3|cropCount|7.77
+STATE|2|1|3|3|vegCount|3.46
+STATE|2|1|3|3|ownedBy|0
+STATE|2|1|3|3|village|2
+STATE|2|1|3|3|shared?|false
+CHOICE|2|1|1|1|2|3|12:12:56.000 PM 28-Sep-2026
+CHOICE|2|1|1|1|2|4|12:13:05.000 PM 28-Sep-2026
+CONFIRM|2|1|1|12:13:06.000 PM 28-Sep-2026
+CHOICE|2|1|2|1|3|2|12:13:14.000 PM 28-Sep-2026
+CHOICE|2|1|2|0|2|2|12:13:27.000 PM 28-Sep-2026
+CHOICE|2|1|2|0|2|2|12:13:28.000 PM 28-Sep-2026
+CONFIRM|2|1|2|12:13:31.000 PM 28-Sep-2026
+CHOICE|2|1|3|2|3|-99|12:13:42.000 PM 28-Sep-2026
+CHOICE|2|1|3|2|3|4|12:13:53.000 PM 28-Sep-2026
+CONFIRM|2|1|3|12:14:01.000 PM 28-Sep-2026
+CHOICE|2|1|4|1|0|4|12:14:04.000 PM 28-Sep-2026
+CONFIRM|2|1|4|12:14:19.000 PM 28-Sep-2026
+CHOICE|2|1|5|2|2|2|12:14:29.000 PM 28-Sep-2026
+CHOICE|2|1|5|2|2|1|12:14:38.000 PM 28-Sep-2026
+CHOICE|2|1|5|2|2|2|12:14:48.000 PM 28-Sep-2026
+CONFIRM|2|1|5|12:14:56.000 PM 28-Sep-2026
+CHOICE|2|1|6|1|0|1|12:15:02.000 PM 28-Sep-2026
+CHOICE|2|1|6|1|0|-99|12:15:17.000 PM 28-Sep-2026
+CONFIRM|2|1|6|12:15:22.000 PM 28-Sep-2026
+CHOICE|2|1|7|1|0|4|12:15:24.000 PM 28-Sep-2026
+CHOICE|2|1|7|1|0|3|12:15:29.000 PM 28-Sep-2026
+CONFIRM|2|1|7|12:15:32.000 PM 28-Sep-2026
+CHOICE|2|1|8|0|0|-99|12:15:45.000 PM 28-Sep-2026
+CHOICE|2|1|8|0|0|3|12:15:57.000 PM 28-Sep-2026
+CHOICE|2|1|8|0|0|4|12:16:04.000 PM 28-Sep-2026
+CONFIRM|2|1|8|12:16:12.000 PM 28-Sep-2026
+SCORE|2|1|1|6|56|17
+SCORE|2|1|2|10|10|11
+SCORE|2|1|3|2|43|9
+SCORE|2|1|4|20|59|20
+SCORE|2|1|5|8|49|7
+SCORE|2|1|6|2|10|0
+SCORE|2|1|7|0|49|12
+SCORE|2|1|8|4|22|11
+PHASE|phase-2-2|12:16:15.000 PM 28-Sep-2026
+STATE|2|2|0|0|protected?|false
+STATE|2|2|0|0|water?|false
+STATE|2|2|0|0|cropped?|false
+STATE|2|2|0|0|driedUp?|false
+STATE|2|2|0|0|soilQuality|1.02
+STATE|2|2|0|0|treeCount|7.19
+STATE|2|2|0|0|currentBiomass|3.1
+STATE|2|2|0|0|waterLevel|6.17
+STATE|2|2|0|0|elephantCount|3.79
+STATE|2|2|0|0|myWaterDistance|6.47
+STATE|2|2|0|0|harvestYield|3.56
+STATE|2|2|0|0|playerHarvestRound|[3 5 2 8 5 4 3 0]
+STATE|2|2|0|0|fined?|true
+STATE|2|2|0|0|fineAmount|5.67
+STATE|2|2|0|0|cropOwner|6.28
+STATE|2|2|0|0|defended?|false
+STATE|2|2|0|0|cropCount|7.06
+STATE|2|2|0|0|vegCount|9.05
+STATE|2|2|0|0|ownedBy|0
+STATE|2|2|0|0|village|2
+STATE|2|2|0|0|shared?|true
+STATE|2|2|0|1|protected?|false
+STATE|2|2|0|1|water?|false
+STATE|2|2|0|1|cropped?|false
+STATE|2|2|0|1|driedUp?|false
+STATE|2|2|0|1|soilQuality|1.42
+STATE|2|2|0|1|treeCount|2.27
+STATE|2|2|0|1|currentBiomass|1.38
+STATE|2|2|0|1|waterLevel|6.37
+STATE|2|2|0|1|elephantCount|4.01
+STATE|2|2|0|1|myWaterDistance|9.79
+STATE|2|2|0|1|harvestYield|8.51
+STATE|2|2|0|1|playerHarvestRound|[7 3 3 5 0 0 9 8]
+STATE|2|2|0|1|fined?|true
+STATE|2|2|0|1|fineAmount|2.83
+STATE|2|2|0|1|cropOwner|6.62
+STATE|2|2|0|1|defended?|false
+STATE|2|2|0|1|cropCount|4.21
+STATE|2|2|0|1|vegCount|3.39
+STATE|2|2|0|1|ownedBy|2
+STATE|2|2|0|1|village|0
+STATE|2|2|0|1|shared?|false
+STATE|2|2|0|2|protected?|false
+STATE|2|2|0|2|water?|false
+STATE|2|2|0|2|cropped?|true
+STATE|2|2|0|2|driedUp?|true
+STATE|2|2|0|2|soilQuality|4.43
+STATE|2|2|0|2|treeCount|5.63
+STATE|2|2|0|2|currentBiomass|3.48
+STATE|2|2|0|2|waterLevel|1.95
+STATE|2|2|0|2|elephantCount|0.85
+STATE|2|2|0|2|myWaterDistance|3.24
+STATE|2|2|0|2|harvestYield|4.6
+STATE|2|2|0|2|playerHarvestRound|[8 10 2 6 9 9 1 0]
+STATE|2|2|0|2|fined?|false
+STATE|2|2|0|2|fineAmount|3.32
+STATE|2|2|0|2|cropOwner|6.58
+STATE|2|2|0|2|defended?|false
+STATE|2|2|0|2|cropCount|4.21
+STATE|2|2|0|2|vegCount|3.69
+STATE|2|2|0|2|ownedBy|3
+STATE|2|2|0|2|village|3
+STATE|2|2|0|2|shared?|true
+STATE|2|2|0|3|protected?|false
+STATE|2|2|0|3|water?|false
+STATE|2|2|0|3|cropped?|false
+STATE|2|2|0|3|driedUp?|false
+STATE|2|2|0|3|soilQuality|2.22
+STATE|2|2|0|3|treeCount|7.4
+STATE|2|2|0|3|currentBiomass|6.91
+STATE|2|2|0|3|waterLevel|1.47
+STATE|2|2|0|3|elephantCount|5.79
+STATE|2|2|0|3|myWaterDistance|5.55
+STATE|2|2|0|3|harvestYield|9.43
+STATE|2|2|0|3|playerHarvestRound|[5 8 3 9 7 6 4 1]
+STATE|2|2|0|3|fined?|true
+STATE|2|2|0|3|fineAmount|9.69
+STATE|2|2|0|3|cropOwner|2.03
+STATE|2|2|0|3|defended?|false
+STATE|2|2|0|3|cropCount|2.21
+STATE|2|2|0|3|vegCount|8.37
+STATE|2|2|0|3|ownedBy|3
+STATE|2|2|0|3|village|0
+STATE|2|2|0|3|shared?|true
+STATE|2|2|1|0|protected?|false
+STATE|2|2|1|0|water?|false
+STATE|2|2|1|0|cropped?|true
+STATE|2|2|1|0|driedUp?|true
+STATE|2|2|1|0|soilQuality|5.41
+STATE|2|2|1|0|treeCount|6.97
+STATE|2|2|1|0|currentBiomass|7.36
+STATE|2|2|1|0|waterLevel|9.09
+STATE|2|2|1|0|elephantCount|5.67
+STATE|2|2|1|0|myWaterDistance|8.52
+STATE|2|2|1|0|harvestYield|6.79
+STATE|2|2|1|0|playerHarvestRound|[7 2 8 8 8 1 10 8]
+STATE|2|2|1|0|fined?|true
+STATE|2|2|1|0|fineAmount|8.3
+STATE|2|2|1|0|cropOwner|3.92
+STATE|2|2|1|0|defended?|true
+STATE|2|2|1|0|cropCount|9.6
+STATE|2|2|1|0|vegCount|5.63
+STATE|2|2|1|0|ownedBy|0
+STATE|2|2|1|0|village|0
+STATE|2|2|1|0|shared?|true
+STATE|2|2|1|1|protected?|false
+STATE|2|2|1|1|water?|true
+STATE|2|2|1|1|cropped?|true
+STATE|2|2|1|1|driedUp?|true
+STATE|2|2|1|1|soilQuality|7.02
+STATE|2|2|1|1|treeCount|9.56
+STATE|2|2|1|1|currentBiomass|4.6
+STATE|2|2|1|1|waterLevel|1.21
+STATE|2|2|1|1|elephantCount|1.36
+STATE|2|2|1|1|myWaterDistance|9.09
+STATE|2|2|1|1|harvestYield|0.88
+STATE|2|2|1|1|playerHarvestRound|[3 9 1 5 2 5 5 10]
+STATE|2|2|1|1|fined?|true
+STATE|2|2|1|1|fineAmount|2.56
+STATE|2|2|1|1|cropOwner|2.39
+STATE|2|2|1|1|defended?|false
+STATE|2|2|1|1|cropCount|5.25
+STATE|2|2|1|1|vegCount|3.57
+STATE|2|2|1|1|ownedBy|2
+STATE|2|2|1|1|village|0
+STATE|2|2|1|1|shared?|false
+STATE|2|2|1|2|protected?|true
+STATE|2|2|1|2|water?|true
+STATE|2|2|1|2|cropped?|true
+STATE|2|2|1|2|driedUp?|false
+STATE|2|2|1|2|soilQuality|0.34
+STATE|2|2|1|2|treeCount|9.1
+STATE|2|2|1|2|currentBiomass|2.42
+STATE|2|2|1|2|waterLevel|3.54
+STATE|2|2|1|2|elephantCount|6.94
+STATE|2|2|1|2|myWaterDistance|0.21
+STATE|2|2|1|2|harvestYield|9.89
+STATE|2|2|1|2|playerHarvestRound|[7 1 0 7 1 1 4 2]
+STATE|2|2|1|2|fined?|true
+STATE|2|2|1|2|fineAmount|9.31
+STATE|2|2|1|2|cropOwner|8.74
+STATE|2|2|1|2|defended?|false
+STATE|2|2|1|2|cropCount|8.36
+STATE|2|2|1|2|vegCount|5.88
+STATE|2|2|1|2|ownedBy|1
+STATE|2|2|1|2|village|3
+STATE|2|2|1|2|shared?|false
+STATE|2|2|1|3|protected?|false
+STATE|2|2|1|3|water?|true
+STATE|2|2|1|3|cropped?|true
+STATE|2|2|1|3|driedUp?|true
+STATE|2|2|1|3|soilQuality|9.94
+STATE|2|2|1|3|treeCount|4.87
+STATE|2|2|1|3|currentBiomass|4.84
+STATE|2|2|1|3|waterLevel|0.32
+STATE|2|2|1|3|elephantCount|8.37
+STATE|2|2|1|3|myWaterDistance|0.75
+STATE|2|2|1|3|harvestYield|6.2
+STATE|2|2|1|3|playerHarvestRound|[10 10 9 6 7 2 7 6]
+STATE|2|2|1|3|fined?|true
+STATE|2|2|1|3|fineAmount|9.58
+STATE|2|2|1|3|cropOwner|5.17
+STATE|2|2|1|3|defended?|true
+STATE|2|2|1|3|cropCount|5.28
+STATE|2|2|1|3|vegCount|3.11
+STATE|2|2|1|3|ownedBy|0
+STATE|2|2|1|3|village|3
+STATE|2|2|1|3|shared?|false
+STATE|2|2|2|0|protected?|true
+STATE|2|2|2|0|water?|false
+STATE|2|2|2|0|cropped?|false
+STATE|2|2|2|0|driedUp?|true
+STATE|2|2|2|0|soilQuality|4.68
+STATE|2|2|2|0|treeCount|9.37
+STATE|2|2|2|0|currentBiomass|3.14
+STATE|2|2|2|0|waterLevel|3.36
+STATE|2|2|2|0|elephantCount|4.83
+STATE|2|2|2|0|myWaterDistance|2.27
+STATE|2|2|2|0|harvestYield|2.49
+STATE|2|2|2|0|playerHarvestRound|[9 0 10 2 10 2 4 6]
+STATE|2|2|2|0|fined?|true
+STATE|2|2|2|0|fineAmount|5.0
+STATE|2|2|2|0|cropOwner|2.62
+STATE|2|2|2|0|defended?|false
+STATE|2|2|2|0|cropCount|5.28
+STATE|2|2|2|0|vegCount|9.57
+STATE|2|2|2|0|ownedBy|3
+STATE|2|2|2|0|village|0
+STATE|2|2|2|0|shared?|false
+STATE|2|2|2|1|protected?|false
+STATE|2|2|2|1|water?|true
+STATE|2|2|2|1|cropped?|true
+STATE|2|2|2|1|driedUp?|true
+STATE|2|2|2|1|soilQuality|5.72
+STATE|2|2|2|1|treeCount|0.99
+STATE|2|2|2|1|currentBiomass|7.92
+STATE|2|2|2|1|waterLevel|7.93
+STATE|2|2|2|1|elephantCount|2.38
+STATE|2|2|2|1|myWaterDistance|7.97
+STATE|2|2|2|1|harvestYield|1.41
+STATE|2|2|2|1|playerHarvestRound|[1 4 5 5 8 10 3 5]
+STATE|2|2|2|1|fined?|false
+STATE|2|2|2|1|fineAmount|7.16
+STATE|2|2|2|1|cropOwner|3.34
+STATE|2|2|2|1|defended?|false
+STATE|2|2|2|1|cropCount|6.72
+STATE|2|2|2|1|vegCount|8.84
+STATE|2|2|2|1|ownedBy|2
+STATE|2|2|2|1|village|3
+STATE|2|2|2|1|shared?|true
+STATE|2|2|2|2|protected?|true
+STATE|2|2|2|2|water?|true
+STATE|2|2|2|2|cropped?|true
+STATE|2|2|2|2|driedUp?|true
+STATE|2|2|2|2|soilQuality|0.07
+STATE|2|2|2|2|treeCount|8.71
+STATE|2|2|2|2|currentBiomass|4.53
+STATE|2|2|2|2|waterLevel|4.46
+STATE|2|2|2|2|elephantCount|5.69
+STATE|2|2|2|2|myWaterDistance|3.02
+STATE|2|2|2|2|harvestYield|1.69
+STATE|2|2|2|2|playerHarvestRound|[1 2 4 4 4 9 8 10]
+STATE|2|2|2|2|fined?|false
+STATE|2|2|2|2|fineAmount|3.4
+STATE|2|2|2|2|cropOwner|9.21
+STATE|2|2|2|2|defended?|false
+STATE|2|2|2|2|cropCount|0.8
+STATE|2|2|2|2|vegCount|1.79
+STATE|2|2|2|2|ownedBy|3
+STATE|2|2|2|2|village|1
+STATE|2|2|2|2|shared?|false
+STATE|2|2|2|3|protected?|true
+STATE|2|2|2|3|water?|false
+STATE|2|2|2|3|cropped?|true
+STATE|2|2|2|3|driedUp?|false
+STATE|2|2|2|3|soilQuality|0.68
+STATE|2|2|2|3|treeCount|4.85
+STATE|2|2|2|3|currentBiomass|8.99
+STATE|2|2|2|3|waterLevel|2.76
+STATE|2|2|2|3|elephantCount|2.58
+STATE|2|2|2|3|myWaterDistance|0.23
+STATE|2|2|2|3|harvestYield|1.65
+STATE|2|2|2|3|playerHarvestRound|[4 3 0 3 0 6 7 3]
+STATE|2|2|2|3|fined?|false
+STATE|2|2|2|3|fineAmount|2.83
+STATE|2|2|2|3|cropOwner|5.02
+STATE|2|2|2|3|defended?|true
+STATE|2|2|2|3|cropCount|2.42
+STATE|2|2|2|3|vegCount|0.57
+STATE|2|2|2|3|ownedBy|0
+STATE|2|2|2|3|village|3
+STATE|2|2|2|3|shared?|true
+STATE|2|2|3|0|protected?|true
+STATE|2|2|3|0|water?|false
+STATE|2|2|3|0|cropped?|false
+STATE|2|2|3|0|driedUp?|false
+STATE|2|2|3|0|soilQuality|0.05
+STATE|2|2|3|0|treeCount|2.71
+STATE|2|2|3|0|currentBiomass|6.42
+STATE|2|2|3|0|waterLevel|0.15
+STATE|2|2|3|0|elephantCount|3.23
+STATE|2|2|3|0|myWaterDistance|0.28
+STATE|2|2|3|0|harvestYield|3.22
+STATE|2|2|3|0|playerHarvestRound|[0 10 7 6 9 10 5 2]
+STATE|2|2|3|0|fined?|true
+STATE|2|2|3|0|fineAmount|4.14
+STATE|2|2|3|0|cropOwner|0.45
+STATE|2|2|3|0|defended?|false
+STATE|2|2|3|0|cropCount|3.35
+STATE|2|2|3|0|vegCount|4.94
+STATE|2|2|3|0|ownedBy|3
+STATE|2|2|3|0|village|2
+STATE|2|2|3|0|shared?|true
+STATE|2|2|3|1|protected?|true
+STATE|2|2|3|1|water?|true
+STATE|2|2|3|1|cropped?|false
+STATE|2|2|3|1|driedUp?|false
+STATE|2|2|3|1|soilQuality|9.88
+STATE|2|2|3|1|treeCount|0.56
+STATE|2|2|3|1|currentBiomass|6.14
+STATE|2|2|3|1|waterLevel|7.24
+STATE|2|2|3|1|elephantCount|3.29
+STATE|2|2|3|1|myWaterDistance|0.93
+STATE|2|2|3|1|harvestYield|1.56
+STATE|2|2|3|1|playerHarvestRound|[2 8 1 5 5 6 5 8]
+STATE|2|2|3|1|fined?|false
+STATE|2|2|3|1|fineAmount|8.66
+STATE|2|2|3|1|cropOwner|1.53
+STATE|2|2|3|1|defended?|false
+STATE|2|2|3|1|cropCount|5.75
+STATE|2|2|3|1|vegCount|2.3
+STATE|2|2|3|1|ownedBy|3
+STATE|2|2|3|1|village|1
+STATE|2|2|3|1|shared?|false
+STATE|2|2|3|2|protected?|true
+STATE|2|2|3|2|water?|true
+STATE|2|2|3|2|cropped?|false
+STATE|2|2|3|2|driedUp?|false
+STATE|2|2|3|2|soilQuality|5.49
+STATE|2|2|3|2|treeCount|7.06
+STATE|2|2|3|2|currentBiomass|5.59
+STATE|2|2|3|2|waterLevel|3.61
+STATE|2|2|3|2|elephantCount|5.3
+STATE|2|2|3|2|myWaterDistance|2.74
+STATE|2|2|3|2|harvestYield|2.53
+STATE|2|2|3|2|playerHarvestRound|[8 7 1 10 5 2 10 3]
+STATE|2|2|3|2|fined?|true
+STATE|2|2|3|2|fineAmount|9.79
+STATE|2|2|3|2|cropOwner|9.37
+STATE|2|2|3|2|defended?|false
+STATE|2|2|3|2|cropCount|1.22
+STATE|2|2|3|2|vegCount|5.43
+STATE|2|2|3|2|ownedBy|0
+STATE|2|2|3|2|village|3
+STATE|2|2|3|2|shared?|false
+STATE|2|2|3|3|protected?|true
+STATE|2|2|3|3|water?|false
+STATE|2|2|3|3|cropped?|false
+STATE|2|2|3|3|driedUp?|false
+STATE|2|2|3|3|soilQuality|8.71
+STATE|2|2|3|3|treeCount|8.56
+STATE|2|2|3|3|currentBiomass|7.79
+STATE|2|2|3|3|waterLevel|5.28
+STATE|2|2|3|3|elephantCount|3.51
+STATE|2|2|3|3|myWaterDistance|7.1
+STATE|2|2|3|3|harvestYield|4.42
+STATE|2|2|3|3|playerHarvestRound|[7 3 10 5 6 7 3 5]
+STATE|2|2|3|3|fined?|false
+STATE|2|2|3|3|fineAmount|0.26
+STATE|2|2|3|3|cropOwner|6.6
+STATE|2|2|3|3|defended?|true
+STATE|2|2|3|3|cropCount|8.07
+STATE|2|2|3|3|vegCount|9.14
+STATE|2|2|3|3|ownedBy|3
+STATE|2|2|3|3|village|1
+STATE|2|2|3|3|shared?|true
+CHOICE|2|2|1|3|3|4|12:16:26.000 PM 28-Sep-2026
+CHOICE|2|2|1|3|3|3|12:16:27.000 PM 28-Sep-2026
+CHOICE|2|2|1|3|3|2|12:16:33.000 PM 28-Sep-2026
+CONFIRM|2|2|1|12:16:37.000 PM 28-Sep-2026
+CHOICE|2|2|2|3|2|4|12:16:41.000 PM 28-Sep-2026
+CHOICE|2|2|2|1|3|3|12:16:54.000 PM 28-Sep-2026
+CONFIRM|2|2|2|12:16:57.000 PM 28-Sep-2026
+CHOICE|2|2|3|2|0|4|12:17:11.000 PM 28-Sep-2026
+CHOICE|2|2|3|1|2|4|12:17:15.000 PM 28-Sep-2026
+CONFIRM|2|2|3|12:17:25.000 PM 28-Sep-2026
+CHOICE|2|2|4|1|2|-99|12:17:38.000 PM 28-Sep-2026
+CONFIRM|2|2|4|12:17:52.000 PM 28-Sep-2026
+CHOICE|2|2|5|1|3|3|12:18:03.000 PM 28-Sep-2026
+CHOICE|2|2|5|1|3|1|12:18:06.000 PM 28-Sep-2026
+CONFIRM|2|2|5|12:18:21.000 PM 28-Sep-2026
+CHOICE|2|2|6|1|2|-99|12:18:24.000 PM 28-Sep-2026
+CHOICE|2|2|6|1|2|4|12:18:30.000 PM 28-Sep-2026
+CONFIRM|2|2|6|12:18:41.000 PM 28-Sep-2026
+CHOICE|2|2|7|3|2|1|12:18:51.000 PM 28-Sep-2026
+CHOICE|2|2|7|3|2|1|12:18:52.000 PM 28-Sep-2026
+CHOICE|2|2|7|3|2|4|12:19:04.000 PM 28-Sep-2026
+CONFIRM|2|2|7|12:19:06.000 PM 28-Sep-2026
+CHOICE|2|2|8|0|0|3|12:19:08.000 PM 28-Sep-2026
+CHOICE|2|2|8|0|3|4|12:19:09.000 PM 28-Sep-2026
+CHOICE|2|2|8|0|3|2|12:19:20.000 PM 28-Sep-2026
+CONFIRM|2|2|8|12:19:32.000 PM 28-Sep-2026
+SCORE|2|2|1|17|49|3
+SCORE|2|2|2|16|38|15
+SCORE|2|2|3|2|24|6
+SCORE|2|2|4|7|53|2
+SCORE|2|2|5|8|53|5
+SCORE|2|2|6|0|16|8
+SCORE|2|2|7|2|4|6
+SCORE|2|2|8|16|19|13
+PHASE|phase-2-3|12:19:45.000 PM 28-Sep-2026
+STATE|2|3|0|0|protected?|false
+STATE|2|3|0|0|water?|true
+STATE|2|3|0|0|cropped?|true
+STATE|2|3|0|0|driedUp?|false
+STATE|2|3|0|0|soilQuality|6.53
+STATE|2|3|0|0|treeCount|5.44
+STATE|2|3|0|0|currentBiomass|5.49
+STATE|2|3|0|0|waterLevel|6.9
+STATE|2|3|0|0|elephantCount|9.82
+STATE|2|3|0|0|myWaterDistance|8.74
+STATE|2|3|0|0|harvestYield|7.18
+STATE|2|3|0|0|playerHarvestRound|[6 6 5 8 6 6 2 6]
+STATE|2|3|0|0|fined?|false
+STATE|2|3|0|0|fineAmount|8.82
+STATE|2|3|0|0|cropOwner|8.04
+STATE|2|3|0|0|defended?|false
+STATE|2|3|0|0|cropCount|6.35
+STATE|2|3|0|0|vegCount|2.39
+STATE|2|3|0|0|ownedBy|3
+STATE|2|3|0|0|village|1
+STATE|2|3|0|0|shared?|false
+STATE|2|3|0|1|protected?|false
+STATE|2|3|0|1|water?|false
+STATE|2|3|0|1|cropped?|false
+STATE|2|3|0|1|driedUp?|false
+STATE|2|3|0|1|soilQuality|0.87
+STATE|2|3|0|1|treeCount|6.21
+STATE|2|3|0|1|currentBiomass|0.34
+STATE|2|3|0|1|waterLevel|7.16
+STATE|2|3|0|1|elephantCount|4.06
+STATE|2|3|0|1|myWaterDistance|5.59
+STATE|2|3|0|1|harvestYield|6.85
+STATE|2|3|0|1|playerHarvestRound|[7 8 10 5 7 9 0 7]
+STATE|2|3|0|1|fined?|false
+STATE|2|3|0|1|fineAmount|8.53
+STATE|2|3|0|1|cropOwner|5.1
+STATE|2|3|0|1|defended?|false
+STATE|2|3|0|1|cropCount|9.95
+STATE|2|3|0|1|vegCount|2.34
+STATE|2|3|0|1|ownedBy|3
+STATE|2|3|0|1|village|3
+STATE|2|3|0|1|shared?|false
+STATE|2|3|0|2|protected?|true
+STATE|2|3|0|2|water?|true
+STATE|2|3|0|2|cropped?|false
+STATE|2|3|0|2|driedUp?|true
+STATE|2|3|0|2|soilQuality|6.6
+STATE|2|3|0|2|treeCount|8.26
+STATE|2|3|0|2|currentBiomass|0.72
+STATE|2|3|0|2|waterLevel|7.97
+STATE|2|3|0|2|elephantCount|6.64
+STATE|2|3|0|2|myWaterDistance|9.24
+STATE|2|3|0|2|harvestYield|7.65
+STATE|2|3|0|2|playerHarvestRound|[4 7 5 8 9 7 9 3]
+STATE|2|3|0|2|fined?|false
+STATE|2|3|0|2|fineAmount|0.66
+STATE|2|3|0|2|cropOwner|7.57
+STATE|2|3|0|2|defended?|true
+STATE|2|3|0|2|cropCount|2.05
+STATE|2|3|0|2|vegCount|1.69
+STATE|2|3|0|2|ownedBy|1
+STATE|2|3|0|2|village|0
+STATE|2|3|0|2|shared?|false
+STATE|2|3|0|3|protected?|true
+STATE|2|3|0|3|water?|false
+STATE|2|3|0|3|cropped?|true
+STATE|2|3|0|3|driedUp?|false
+STATE|2|3|0|3|soilQuality|8.56
+STATE|2|3|0|3|treeCount|6.52
+STATE|2|3|0|3|currentBiomass|9.11
+STATE|2|3|0|3|waterLevel|3.22
+STATE|2|3|0|3|elephantCount|3.62
+STATE|2|3|0|3|myWaterDistance|8.64
+STATE|2|3|0|3|harvestYield|4.28
+STATE|2|3|0|3|playerHarvestRound|[6 2 4 6 1 5 5 10]
+STATE|2|3|0|3|fined?|false
+STATE|2|3|0|3|fineAmount|5.21
+STATE|2|3|0|3|cropOwner|4.53
+STATE|2|3|0|3|defended?|true
+STATE|2|3|0|3|cropCount|3.96
+STATE|2|3|0|3|vegCount|9.97
+STATE|2|3|0|3|ownedBy|3
+STATE|2|3|0|3|village|0
+STATE|2|3|0|3|shared?|true
+STATE|2|3|1|0|protected?|true
+STATE|2|3|1|0|water?|false
+STATE|2|3|1|0|cropped?|false
+STATE|2|3|1|0|driedUp?|true
+STATE|2|3|1|0|soilQuality|6.8
+STATE|2|3|1|0|treeCount|3.67
+STATE|2|3|1|0|currentBiomass|5.21
+STATE|2|3|1|0|waterLevel|2.38
+STATE|2|3|1|0|elephantCount|3.71
+STATE|2|3|1|0|myWaterDistance|3.4
+STATE|2|3|1|0|harvestYield|3.81
+STATE|2|3|1|0|playerHarvestRound|[0 8 3 0 9 4 0 9]
+STATE|2|3|1|0|fined?|true
+STATE|2|3|1|0|fineAmount|7.18
+STATE|2|3|1|0|cropOwner|2.75
+STATE|2|3|1|0|defended?|true
+STATE|2|3|1|0|cropCount|2.42
+STATE|2|3|1|0|vegCount|8.34
+STATE|2|3|1|0|ownedBy|0
+STATE|2|3|1|0|village|3
+STATE|2|3|1|0|shared?|false
+STATE|2|3|1|1|protected?|false
+STATE|2|3|1|1|water?|true
+STATE|2|3|1|1|cropped?|true
+STATE|2|3|1|1|driedUp?|false
+STATE|2|3|1|1|soilQuality|6.18
+STATE|2|3|1|1|treeCount|3.72
+STATE|2|3|1|1|currentBiomass|0.44
+STATE|2|3|1|1|waterLevel|4.43
+STATE|2|3|1|1|elephantCount|3.67
+STATE|2|3|1|1|myWaterDistance|7.13
+STATE|2|3|1|1|harvestYield|2.95
+STATE|2|3|1|1|playerHarvestRound|[6 6 10 9 4 5 3 6]
+STATE|2|3|1|1|fined?|false
+STATE|2|3|1|1|fineAmount|1.29
+STATE|2|3|1|1|cropOwner|6.19
+STATE|2|3|1|1|defended?|false
+STATE|2|3|1|1|cropCount|8.52
+STATE|2|3|1|1|vegCount|5.8
+STATE|2|3|1|1|ownedBy|0
+STATE|2|3|1|1|village|3
+STATE|2|3|1|1|shared?|true
+STATE|2|3|1|2|protected?|false
+STATE|2|3|1|2|water?|true
+STATE|2|3|1|2|cropped?|true
+STATE|2|3|1|2|driedUp?|true
+STATE|2|3|1|2|soilQuality|4.15
+STATE|2|3|1|2|treeCount|9.36
+STATE|2|3|1|2|currentBiomass|6.43
+STATE|2|3|1|2|waterLevel|7.92
+STATE|2|3|1|2|elephantCount|1.08
+STATE|2|3|1|2|myWaterDistance|5.63
+STATE|2|3|1|2|harvestYield|9.35
+STATE|2|3|1|2|playerHarvestRound|[6 6 7 2 1 7 6 7]
+STATE|2|3|1|2|fined?|true
+STATE|2|3|1|2|fineAmount|7.53
+STATE|2|3|1|2|cropOwner|0.1
+STATE|2|3|1|2|defended?|true
+STATE|2|3|1|2|cropCount|2.0
+STATE|2|3|1|2|vegCount|5.42
+STATE|2|3|1|2|ownedBy|3
+STATE|2|3|1|2|village|1
+STATE|2|3|1|2|shared?|false
+STATE|2|3|1|3|protected?|false
+STATE|2|3|1|3|water?|false
+STATE|2|3|1|3|cropped?|true
+STATE|2|3|1|3|driedUp?|true
+STATE|2|3|1|3|soilQuality|0.77
+STATE|2|3|1|3|treeCount|8.17
+STATE|2|3|1|3|currentBiomass|1.02
+STATE|2|3|1|3|waterLevel|0.88
+STATE|2|3|1|3|elephantCount|7.53
+STATE|2|3|1|3|myWaterDistance|5.64
+STATE|2|3|1|3|harvestYield|0.55
+STATE|2|3|1|3|playerHarvestRound|[10 3 5 7 0 8 6 9]
+STATE|2|3|1|3|fined?|true
+STATE|2|3|1|3|fineAmount|4.07
+STATE|2|3|1|3|cropOwner|0.5
+STATE|2|3|1|3|defended?|false
+STATE|2|3|1|3|cropCount|3.2
+STATE|2|3|1|3|vegCount|1.9
+STATE|2|3|1|3|ownedBy|0
+STATE|2|3|1|3|village|0
+STATE|2|3|1|3|shared?|false
+STATE|2|3|2|0|protected?|true
+STATE|2|3|2|0|water?|true
+STATE|2|3|2|0|cropped?|true
+STATE|2|3|2|0|driedUp?|true
+STATE|2|3|2|0|soilQuality|8.59
+STATE|2|3|2|0|treeCount|5.56
+STATE|2|3|2|0|currentBiomass|5.11
+STATE|2|3|2|0|waterLevel|4.2
+STATE|2|3|2|0|elephantCount|0.51
+STATE|2|3|2|0|myWaterDistance|3.04
+STATE|2|3|2|0|harvestYield|8.67
+STATE|2|3|2|0|playerHarvestRound|[6 8 4 4 3 2 0 3]
+STATE|2|3|2|0|fined?|false
+STATE|2|3|2|0|fineAmount|3.74
+STATE|2|3|2|0|cropOwner|4.64
+STATE|2|3|2|0|defended?|true
+STATE|2|3|2|0|cropCount|5.84
+STATE|2|3|2|0|vegCount|3.66
+STATE|2|3|2|0|ownedBy|1
+STATE|2|3|2|0|village|0
+STATE|2|3|2|0|shared?|true
+STATE|2|3|2|1|protected?|false
+STATE|2|3|2|1|water?|false
+STATE|2|3|2|1|cropped?|false
+STATE|2|3|2|1|driedUp?|true
+STATE|2|3|2|1|soilQuality|0.68
+STATE|2|3|2|1|treeCount|9.51
+STATE|2|3|2|1|currentBiomass|8.23
+STATE|2|3|2|1|waterLevel|0.35
+STATE|2|3|2|1|elephantCount|2.2
+STATE|2|3|2|1|myWaterDistance|4.39
+STATE|2|3|2|1|harvestYield|2.01
+STATE|2|3|2|1|playerHarvestRound|[3 9 9 7 6 7 3 3]
+STATE|2|3|2|1|fined?|true
+STATE|2|3|2|1|fineAmount|4.34
+STATE|2|3|2|1|cropOwner|6.39
+STATE|2|3|2|1|defended?|true
+STATE|2|3|2|1|cropCount|8.63
+STATE|2|3|2|1|vegCount|0.72
+STATE|2|3|2|1|ownedBy|3
+STATE|2|3|2|1|village|2
+STATE|2|3|2|1|shared?|true
+STATE|2|3|2|2|protected?|false
+STATE|2|3|2|2|water?|false
+STATE|2|3|2|2|cropped?|false
+STATE|2|3|2|2|driedUp?|true
+STATE|2|3|2|2|soilQuality|6.74
+STATE|2|3|2|2|treeCount|6.75
+STATE|2|3|2|2|currentBiomass|2.95
+STATE|2|3|2|2|waterLevel|2.11
+STATE|2|3|2|2|elephantCount|8.38
+STATE|2|3|2|2|myWaterDistance|1.46
+STATE|2|3|2|2|harvestYield|9.18
+STATE|2|3|2|2|playerHarvestRound|[3 8 1 7 1 3 1 0]
+STATE|2|3|2|2|fined?|true
+STATE|2|3|2|2|fineAmount|6.59
+STATE|2|3|2|2|cropOwner|2.58
+STATE|2|3|2|2|defended?|false
+STATE|2|3|2|2|cropCount|6.86
+STATE|2|3|2|2|vegCount|1.55
+STATE|2|3|2|2|ownedBy|0
+STATE|2|3|2|2|village|3
+STATE|2|3|2|2|shared?|true
+STATE|2|3|2|3|protected?|true
+STATE|2|3|2|3|water?|true
+STATE|2|3|2|3|cropped?|false
+STATE|2|3|2|3|driedUp?|false
+STATE|2|3|2|3|soilQuality|7.97
+STATE|2|3|2|3|treeCount|7.07
+STATE|2|3|2|3|currentBiomass|7.19
+STATE|2|3|2|3|waterLevel|3.1
+STATE|2|3|2|3|elephantCount|2.58
+STATE|2|3|2|3|myWaterDistance|5.49
+STATE|2|3|2|3|harvestYield|2.15
+STATE|2|3|2|3|playerHarvestRound|[10 3 6 0 5 6 2 10]
+STATE|2|3|2|3|fined?|true
+STATE|2|3|2|3|fineAmount|6.55
+STATE|2|3|2|3|cropOwner|6.94
+STATE|2|3|2|3|defended?|true
+STATE|2|3|2|3|cropCount|1.49
+STATE|2|3|2|3|vegCount|1.84
+STATE|2|3|2|3|ownedBy|1
+STATE|2|3|2|3|village|3
+STATE|2|3|2|3|shared?|true
+STATE|2|3|3|0|protected?|true
+STATE|2|3|3|0|water?|true
+STATE|2|3|3|0|cropped?|false
+STATE|2|3|3|0|driedUp?|true
+STATE|2|3|3|0|soilQuality|6.56
+STATE|2|3|3|0|treeCount|5.24
+STATE|2|3|3|0|currentBiomass|0.73
+STATE|2|3|3|0|waterLevel|4.9
+STATE|2|3|3|0|elephantCount|0.18
+STATE|2|3|3|0|myWaterDistance|7.81
+STATE|2|3|3|0|harvestYield|8.89
+STATE|2|3|3|0|playerHarvestRound|[1 3 7 4 4 9 9 8]
+STATE|2|3|3|0|fined?|false
+STATE|2|3|3|0|fineAmount|2.01
+STATE|2|3|3|0|cropOwner|4.7
+STATE|2|3|3|0|defended?|false
+STATE|2|3|3|0|cropCount|7.65
+STATE|2|3|3|0|vegCount|9.04
+STATE|2|3|3|0|ownedBy|3
+STATE|2|3|3|0|village|1
+STATE|2|3|3|0|shared?|true
+STATE|2|3|3|1|protected?|false
+STATE|2|3|3|1|water?|false
+STATE|2|3|3|1|cropped?|true
+STATE|2|3|3|1|driedUp?|false
+STATE|2|3|3|1|soilQuality|6.57
+STATE|2|3|3|1|treeCount|0.5
+STATE|2|3|3|1|currentBiomass|3.33
+STATE|2|3|3|1|waterLevel|4.5
+STATE|2|3|3|1|elephantCount|2.47
+STATE|2|3|3|1|myWaterDistance|7.42
+STATE|2|3|3|1|harvestYield|1.79
+STATE|2|3|3|1|playerHarvestRound|[4 1 8 7 1 8 1 2]
+STATE|2|3|3|1|fined?|false
+STATE|2|3|3|1|fineAmount|4.61
+STATE|2|3|3|1|cropOwner|0.34
+STATE|2|3|3|1|defended?|false
+STATE|2|3|3|1|cropCount|0.97
+STATE|2|3|3|1|vegCount|6.47
+STATE|2|3|3|1|ownedBy|0
+STATE|2|3|3|1|village|2
+STATE|2|3|3|1|shared?|false
+STATE|2|3|3|2|protected?|true
+STATE|2|3|3|2|water?|true
+STATE|2|3|3|2|cropped?|false
+STATE|2|3|3|2|driedUp?|true
+STATE|2|3|3|2|soilQuality|1.7
+STATE|2|3|3|2|treeCount|9.42
+STATE|2|3|3|2|currentBiomass|3.32
+STATE|2|3|3|2|waterLevel|8.42
+STATE|2|3|3|2|elephantCount|8.73
+STATE|2|3|3|2|myWaterDistance|4.8
+STATE|2|3|3|2|harvestYield|1.49
+STATE|2|3|3|2|playerHarvestRound|[1 1 3 1 2 7 4 8]
+STATE|2|3|3|2|fined?|false
+STATE|2|3|3|2|fineAmount|3.24
+STATE|2|3|3|2|cropOwner|2.46
+STATE|2|3|3|2|defended?|false
+STATE|2|3|3|2|cropCount|0.42
+STATE|2|3|3|2|vegCount|2.56
+STATE|2|3|3|2|ownedBy|0
+STATE|2|3|3|2|village|1
+STATE|2|3|3|2|shared?|true
+STATE|2|3|3|3|protected?|true
+STATE|2|3|3|3|water?|true
+STATE|2|3|3|3|cropped?|true
+STATE|2|3|3|3|driedUp?|false
+STATE|2|3|3|3|soilQuality|5.02
+STATE|2|3|3|3|treeCount|8.91
+STATE|2|3|3|3|currentBiomass|0.15
+STATE|2|3|3|3|waterLevel|9.43
+STATE|2|3|3|3|elephantCount|4.88
+STATE|2|3|3|3|myWaterDistance|7.91
+STATE|2|3|3|3|harvestYield|5.7
+STATE|2|3|3|3|playerHarvestRound|[3 1 2 2 4 0 6 6]
+STATE|2|3|3|3|fined?|false
+STATE|2|3|3|3|fineAmount|1.1
+STATE|2|3|3|3|cropOwner|5.7
+STATE|2|3|3|3|defended?|true
+STATE|2|3|3|3|cropCount|6.64
+STATE|2|3|3|3|vegCount|2.18
+STATE|2|3|3|3|ownedBy|0
+STATE|2|3|3|3|village|3
+STATE|2|3|3|3|shared?|false
+CHOICE|2|3|1|0|1|-99|12:19:51.000 PM 28-Sep-2026
+CHOICE|2|3|1|0|1|2|12:20:05.000 PM 28-Sep-2026
+CHOICE|2|3|1|0|1|-99|12:20:18.000 PM 28-Sep-2026
+CONFIRM|2|3|1|12:20:26.000 PM 28-Sep-2026
+CHOICE|2|3|2|1|0|4|12:20:39.000 PM 28-Sep-2026
+CHOICE|2|3|2|1|0|-99|12:20:43.000 PM 28-Sep-2026
+CHOICE|2|3|2|1|0|2|12:20:46.000 PM 28-Sep-2026
+CONFIRM|2|3|2|12:20:59.000 PM 28-Sep-2026
+CHOICE|2|3|3|1|1|2|12:21:10.000 PM 28-Sep-2026
+CHOICE|2|3|3|1|1|1|12:21:23.000 PM 28-Sep-2026
+CONFIRM|2|3|3|12:21:38.000 PM 28-Sep-2026
+CHOICE|2|3|4|0|3|3|12:21:53.000 PM 28-Sep-2026
+CHOICE|2|3|4|0|3|1|12:21:57.000 PM 28-Sep-2026
+CONFIRM|2|3|4|12:22:11.000 PM 28-Sep-2026
+CHOICE|2|3|5|0|2|1|12:22:22.000 PM 28-Sep-2026
+CHOICE|2|3|5|2|1|4|12:22:33.000 PM 28-Sep-2026
+CHOICE|2|3|5|3|1|3|12:22:48.000 PM 28-Sep-2026
+CONFIRM|2|3|5|12:22:49.000 PM 28-Sep-2026
+CHOICE|2|3|6|3|1|3|12:23:01.000 PM 28-Sep-2026
+CHOICE|2|3|6|0|0|3|12:23:14.000 PM 28-Sep-2026
+CHOICE|2|3|6|1|1|4|12:23:23.000 PM 28-Sep-2026
+CONFIRM|2|3|6|12:23:27.000 PM 28-Sep-2026
+CHOICE|2|3|7|0|3|4|12:23:40.000 PM 28-Sep-2026
+CHOICE|2|3|7|0|3|3|12:23:54.000 PM 28-Sep-2026
+CONFIRM|2|3|7|12:24:01.000 PM 28-Sep-2026
+CHOICE|2|3|8|0|1|3|12:24:12.000 PM 28-Sep-2026
+CHOICE|2|3|8|0|1|3|12:24:13.000 PM 28-Sep-2026
+CONFIRM|2|3|8|12:24:18.000 PM 28-Sep-2026
+SCORE|2|3|1|15|53|0
+SCORE|2|3|2|3|33|13
+SCORE|2|3|3|13|51|9
+SCORE|2|3|4|14|23|10
+SCORE|2|3|5|17|30|2
+SCORE|2|3|6|11|36|14
+SCORE|2|3|7|19|21|9
+SCORE|2|3|8|10|15|8
+PHASE|phase-2-4|12:24:21.000 PM 28-Sep-2026
+STATE|2|4|0|0|protected?|false
+STATE|2|4|0|0|water?|true
+STATE|2|4|0|0|cropped?|false
+STATE|2|4|0|0|driedUp?|false
+STATE|2|4|0|0|soilQuality|1.21
+STATE|2|4|0|0|treeCount|6.83
+STATE|2|4|0|0|currentBiomass|0.42
+STATE|2|4|0|0|waterLevel|8.23
+STATE|2|4|0|0|elephantCount|1.84
+STATE|2|4|0|0|myWaterDistance|2.71
+STATE|2|4|0|0|harvestYield|9.58
+STATE|2|4|0|0|playerHarvestRound|[5 2 3 5 9 6 4 7]
+STATE|2|4|0|0|fined?|true
+STATE|2|4|0|0|fineAmount|8.76
+STATE|2|4|0|0|cropOwner|7.91
+STATE|2|4|0|0|defended?|false
+STATE|2|4|0|0|cropCount|8.57
+STATE|2|4|0|0|vegCount|9.68
+STATE|2|4|0|0|ownedBy|2
+STATE|2|4|0|0|village|3
+STATE|2|4|0|0|shared?|true
+STATE|2|4|0|1|protected?|false
+STATE|2|4|0|1|water?|true
+STATE|2|4|0|1|cropped?|true
+STATE|2|4|0|1|driedUp?|false
+STATE|2|4|0|1|soilQuality|6.57
+STATE|2|4|0|1|treeCount|7.37
+STATE|2|4|0|1|currentBiomass|6.76
+STATE|2|4|0|1|waterLevel|9.85
+STATE|2|4|0|1|elephantCount|7.35
+STATE|2|4|0|1|myWaterDistance|7.53
+STATE|2|4|0|1|harvestYield|6.66
+STATE|2|4|0|1|playerHarvestRound|[2 4 10 6 1 8 9 5]
+STATE|2|4|0|1|fined?|true
+STATE|2|4|0|1|fineAmount|9.58
+STATE|2|4|0|1|cropOwner|3.62
+STATE|2|4|0|1|defended?|false
+STATE|2|4|0|1|cropCount|6.32
+STATE|2|4|0|1|vegCount|3.76
+STATE|2|4|0|1|ownedBy|3
+STATE|2|4|0|1|village|3
+STATE|2|4|0|1|shared?|true
+STATE|2|4|0|2|protected?|false
+STATE|2|4|0|2|water?|true
+STATE|2|4|0|2|cropped?|false
+STATE|2|4|0|2|driedUp?|true
+STATE|2|4|0|2|soilQuality|8.75
+STATE|2|4|0|2|treeCount|8.88
+STATE|2|4|0|2|currentBiomass|1.19
+STATE|2|4|0|2|waterLevel|3.77
+STATE|2|4|0|2|elephantCount|3.11
+STATE|2|4|0|2|myWaterDistance|5.12
+STATE|2|4|0|2|harvestYield|1.52
+STATE|2|4|0|2|playerHarvestRound|[9 7 0 5 7 2 0 4]
+STATE|2|4|0|2|fined?|true
+STATE|2|4|0|2|fineAmount|5.88
+STATE|2|4|0|2|cropOwner|5.77
+STATE|2|4|0|2|defended?|true
+STATE|2|4|0|2|cropCount|3.92
+STATE|2|4|0|2|vegCount|7.47
+STATE|2|4|0|2|ownedBy|3
+STATE|2|4|0|2|village|1
+STATE|2|4|0|2|shared?|false
+STATE|2|4|0|3|protected?|true
+STATE|2|4|0|3|water?|false
+STATE|2|4|0|3|cropped?|true
+STATE|2|4|0|3|driedUp?|false
+STATE|2|4|0|3|soilQuality|4.08
+STATE|2|4|0|3|treeCount|0.84
+STATE|2|4|0|3|currentBiomass|9.5
+STATE|2|4|0|3|waterLevel|6.39
+STATE|2|4|0|3|elephantCount|4.93
+STATE|2|4|0|3|myWaterDistance|9.75
+STATE|2|4|0|3|harvestYield|3.6
+STATE|2|4|0|3|playerHarvestRound|[4 5 2 9 7 0 8 5]
+STATE|2|4|0|3|fined?|false
+STATE|2|4|0|3|fineAmount|2.01
+STATE|2|4|0|3|cropOwner|8.07
+STATE|2|4|0|3|defended?|true
+STATE|2|4|0|3|cropCount|3.08
+STATE|2|4|0|3|vegCount|5.21
+STATE|2|4|0|3|ownedBy|3
+STATE|2|4|0|3|village|1
+STATE|2|4|0|3|shared?|false
+STATE|2|4|1|0|protected?|false
+STATE|2|4|1|0|water?|false
+STATE|2|4|1|0|cropped?|false
+STATE|2|4|1|0|driedUp?|true
+STATE|2|4|1|0|soilQuality|6.94
+STATE|2|4|1|0|treeCount|2.72
+STATE|2|4|1|0|currentBiomass|8.91
+STATE|2|4|1|0|waterLevel|4.75
+STATE|2|4|1|0|elephantCount|6.21
+STATE|2|4|1|0|myWaterDistance|9.28
+STATE|2|4|1|0|harvestYield|4.03
+STATE|2|4|1|0|playerHarvestRound|[10 4 5 6 5 6 7 4]
+STATE|2|4|1|0|fined?|true
+STATE|2|4|1|0|fineAmount|9.26
+STATE|2|4|1|0|cropOwner|6.23
+STATE|2|4|1|0|defended?|false
+STATE|2|4|1|0|cropCount|4.08
+STATE|2|4|1|0|vegCount|1.6
+STATE|2|4|1|0|ownedBy|1
+STATE|2|4|1|0|village|0
+STATE|2|4|1|0|shared?|true
+STATE|2|4|1|1|protected?|false
+STATE|2|4|1|1|water?|true
+STATE|2|4|1|1|cropped?|false
+STATE|2|4|1|1|driedUp?|false
+STATE|2|4|1|1|soilQuality|7.53
+STATE|2|4|1|1|treeCount|2.75
+STATE|2|4|1|1|currentBiomass|3.63
+STATE|2|4|1|1|waterLevel|9.17
+STATE|2|4|1|1|elephantCount|5.29
+STATE|2|4|1|1|myWaterDistance|2.88
+STATE|2|4|1|1|harvestYield|6.3
+STATE|2|4|1|1|playerHarvestRound|[4 7 0 0 8 9 4 5]
+STATE|2|4|1|1|fined?|false
+STATE|2|4|1|1|fineAmount|3.6
+STATE|2|4|1|1|cropOwner|9.8
+STATE|2|4|1|1|defended?|false
+STATE|2|4|1|1|cropCount|8.76
+STATE|2|4|1|1|vegCount|0.96
+STATE|2|4|1|1|ownedBy|3
+STATE|2|4|1|1|village|3
+STATE|2|4|1|1|shared?|false
+STATE|2|4|1|2|protected?|false
+STATE|2|4|1|2|water?|false
+STATE|2|4|1|2|cropped?|false
+STATE|2|4|1|2|driedUp?|true
+STATE|2|4|1|2|soilQuality|1.76
+STATE|2|4|1|2|treeCount|7.23
+STATE|2|4|1|2|currentBiomass|7.42
+STATE|2|4|1|2|waterLevel|1.18
+STATE|2|4|1|2|elephantCount|4.04
+STATE|2|4|1|2|myWaterDistance|8.42
+STATE|2|4|1|2|harvestYield|7.9
+STATE|2|4|1|2|playerHarvestRound|[5 6 6 7 5 5 2 2]
+STATE|2|4|1|2|fined?|false
+STATE|2|4|1|2|fineAmount|5.21
+STATE|2|4|1|2|cropOwner|6.69
+STATE|2|4|1|2|defended?|false
+STATE|2|4|1|2|cropCount|1.34
+STATE|2|4|1|2|vegCount|3.39
+STATE|2|4|1|2|ownedBy|0
+STATE|2|4|1|2|village|2
+STATE|2|4|1|2|shared?|true
+STATE|2|4|1|3|protected?|true
+STATE|2|4|1|3|water?|false
+STATE|2|4|1|3|cropped?|true
+STATE|2|4|1|3|driedUp?|true
+STATE|2|4|1|3|soilQuality|2.14
+STATE|2|4|1|3|treeCount|7.29
+STATE|2|4|1|3|currentBiomass|7.85
+STATE|2|4|1|3|waterLevel|6.8
+STATE|2|4|1|3|elephantCount|8.53
+STATE|2|4|1|3|myWaterDistance|1.32
+STATE|2|4|1|3|harvestYield|2.22
+STATE|2|4|1|3|playerHarvestRound|[3 8 1 4 0 10 6 4]
+STATE|2|4|1|3|fined?|true
+STATE|2|4|1|3|fineAmount|7.04
+STATE|2|4|1|3|cropOwner|7.04
+STATE|2|4|1|3|defended?|false
+STATE|2|4|1|3|cropCount|2.75
+STATE|2|4|1|3|vegCount|0.67
+STATE|2|4|1|3|ownedBy|3
+STATE|2|4|1|3|village|3
+STATE|2|4|1|3|shared?|false
+STATE|2|4|2|0|protected?|true
+STATE|2|4|2|0|water?|true
+STATE|2|4|2|0|cropped?|true
+STATE|2|4|2|0|driedUp?|true
+STATE|2|4|2|0|soilQuality|6.76
+STATE|2|4|2|0|treeCount|9.75
+STATE|2|4|2|0|currentBiomass|8.02
+STATE|2|4|2|0|waterLevel|3.6
+STATE|2|4|2|0|elephantCount|6.99
+STATE|2|4|2|0|myWaterDistance|0.72
+STATE|2|4|2|0|harvestYield|8.39
+STATE|2|4|2|0|playerHarvestRound|[5 3 0 7 10 2 7 4]
+STATE|2|4|2|0|fined?|false
+STATE|2|4|2|0|fineAmount|9.77
+STATE|2|4|2|0|cropOwner|5.9
+STATE|2|4|2|0|defended?|false
+STATE|2|4|2|0|cropCount|0.32
+STATE|2|4|2|0|vegCount|5.38
+STATE|2|4|2|0|ownedBy|2
+STATE|2|4|2|0|village|0
+STATE|2|4|2|0|shared?|true
+STATE|2|4|2|1|protected?|true
+STATE|2|4|2|1|water?|false
+STATE|2|4|2|1|cropped?|false
+STATE|2|4|2|1|driedUp?|false
+STATE|2|4|2|1|soilQuality|2.3
+STATE|2|4|2|1|treeCount|5.57
+STATE|2|4|2|1|currentBiomass|8.2
+STATE|2|4|2|1|waterLevel|2.82
+STATE|2|4|2|1|elephantCount|9.74
+STATE|2|4|2|1|myWaterDistance|5.78
+STATE|2|4|2|1|harvestYield|7.13
+STATE|2|4|2|1|playerHarvestRound|[3 2 0 8 4 6 5 1]
+STATE|2|4|2|1|fined?|false
+STATE|2|4|2|1|fineAmount|2.74
+STATE|2|4|2|1|cropOwner|0.9
+STATE|2|4|2|1|defended?|true
+STATE|2|4|2|1|cropCount|3.9
+STATE|2|4|2|1|vegCount|9.55
+STATE|2|4|2|1|ownedBy|2
+STATE|2|4|2|1|village|0
+STATE|2|4|2|1|shared?|false
+STATE|2|4|2|2|protected?|false
+STATE|2|4|2|2|water?|true
+STATE|2|4|2|2|cropped?|true
+STATE|2|4|2|2|driedUp?|false
+STATE|2|4|2|2|soilQuality|6.58
+STATE|2|4|2|2|treeCount|2.52
+STATE|2|4|2|2|currentBiomass|6.42
+STATE|2|4|2|2|waterLevel|5.76
+STATE|2|4|2|2|elephantCount|4.31
+STATE|2|4|2|2|myWaterDistance|9.69
+STATE|2|4|2|2|harvestYield|8.8
+STATE|2|4|2|2|playerHarvestRound|[9 7 3 5 9 3 1 6]
+STATE|2|4|2|2|fined?|true
+STATE|2|4|2|2|fineAmount|7.6
+STATE|2|4|2|2|cropOwner|0.76
+STATE|2|4|2|2|defended?|false
+STATE|2|4|2|2|cropCount|0.17
+STATE|2|4|2|2|vegCount|7.77
+STATE|2|4|2|2|ownedBy|3
+STATE|2|4|2|2|village|3
+STATE|2|4|2|2|shared?|true
+STATE|2|4|2|3|protected?|true
+STATE|2|4|2|3|water?|false
+STATE|2|4|2|3|cropped?|false
+STATE|2|4|2|3|driedUp?|false
+STATE|2|4|2|3|soilQuality|7.48
+STATE|2|4|2|3|treeCount|9.48
+STATE|2|4|2|3|currentBiomass|9.2
+STATE|2|4|2|3|waterLevel|7.23
+STATE|2|4|2|3|elephantCount|7.2
+STATE|2|4|2|3|myWaterDistance|0.63
+STATE|2|4|2|3|harvestYield|2.06
+STATE|2|4|2|3|playerHarvestRound|[0 10 10 8 4 8 5 10]
+STATE|2|4|2|3|fined?|true
+STATE|2|4|2|3|fineAmount|6.32
+STATE|2|4|2|3|cropOwner|9.91
+STATE|2|4|2|3|defended?|true
+STATE|2|4|2|3|cropCount|0.44
+STATE|2|4|2|3|vegCount|1.75
+STATE|2|4|2|3|ownedBy|1
+STATE|2|4|2|3|village|2
+STATE|2|4|2|3|shared?|false
+STATE|2|4|3|0|protected?|false
+STATE|2|4|3|0|water?|true
+STATE|2|4|3|0|cropped?|true
+STATE|2|4|3|0|driedUp?|true
+STATE|2|4|3|0|soilQuality|1.54
+STATE|2|4|3|0|treeCount|7.77
+STATE|2|4|3|0|currentBiomass|4.71
+STATE|2|4|3|0|waterLevel|9.91
+STATE|2|4|3|0|elephantCount|9.12
+STATE|2|4|3|0|myWaterDistance|7.95
+STATE|2|4|3|0|harvestYield|4.76
+STATE|2|4|3|0|playerHarvestRound|[2 1 8 9 4 8 6 3]
+STATE|2|4|3|0|fined?|true
+STATE|2|4|3|0|fineAmount|6.56
+STATE|2|4|3|0|cropOwner|9.38
+STATE|2|4|3|0|defended?|true
+STATE|2|4|3|0|cropCount|2.78
+STATE|2|4|3|0|vegCount|8.15
+STATE|2|4|3|0|ownedBy|3
+STATE|2|4|3|0|village|2
+STATE|2|4|3|0|shared?|false
+STATE|2|4|3|1|protected?|false
+STATE|2|4|3|1|water?|true
+STATE|2|4|3|1|cropped?|false
+STATE|2|4|3|1|driedUp?|true
+STATE|2|4|3|1|soilQuality|1.38
+STATE|2|4|3|1|treeCount|1.11
+STATE|2|4|3|1|currentBiomass|7.28
+STATE|2|4|3|1|waterLevel|5.31
+STATE|2|4|3|1|elephantCount|0.28
+STATE|2|4|3|1|myWaterDistance|8.13
+STATE|2|4|3|1|harvestYield|9.73
+STATE|2|4|3|1|playerHarvestRound|[1 7 0 3 9 8 1 5]
+STATE|2|4|3|1|fined?|true
+STATE|2|4|3|1|fineAmount|5.6
+STATE|2|4|3|1|cropOwner|4.62
+STATE|2|4|3|1|defended?|false
+STATE|2|4|3|1|cropCount|9.04
+STATE|2|4|3|1|vegCount|0.07
+STATE|2|4|3|1|ownedBy|0
+STATE|2|4|3|1|village|1
+STATE|2|4|3|1|shared?|true
+STATE|2|4|3|2|protected?|true
+STATE|2|4|3|2|water?|false
+STATE|2|4|3|2|cropped?|true
+STATE|2|4|3|2|driedUp?|true
+STATE|2|4|3|2|soilQuality|4.56
+STATE|2|4|3|2|treeCount|5.86
+STATE|2|4|3|2|currentBiomass|6.36
+STATE|2|4|3|2|waterLevel|7.07
+STATE|2|4|3|2|elephantCount|4.4
+STATE|2|4|3|2|myWaterDistance|0.68
+STATE|2|4|3|2|harvestYield|7.24
+STATE|2|4|3|2|playerHarvestRound|[0 7 2 6 10 10 3 10]
+STATE|2|4|3|2|fined?|true
+STATE|2|4|3|2|fineAmount|8.81
+STATE|2|4|3|2|cropOwner|6.06
+STATE|2|4|3|2|defended?|true
+STATE|2|4|3|2|cropCount|4.98
+STATE|2|4|3|2|vegCount|3.82
+STATE|2|4|3|2|ownedBy|3
+STATE|2|4|3|2|village|0
+STATE|2|4|3|2|shared?|false
+STATE|2|4|3|3|protected?|false
+STATE|2|4|3|3|water?|true
+STATE|2|4|3|3|cropped?|false
+STATE|2|4|3|3|driedUp?|false
+STATE|2|4|3|3|soilQuality|2.24
+STATE|2|4|3|3|treeCount|7.38
+STATE|2|4|3|3|currentBiomass|6.48
+STATE|2|4|3|3|waterLevel|2.43
+STATE|2|4|3|3|elephantCount|9.08
+STATE|2|4|3|3|myWaterDistance|2.0
+STATE|2|4|3|3|harvestYield|0.01
+STATE|2|4|3|3|playerHarvestRound|[7 0 6 3 3 10 0 8]
+STATE|2|4|3|3|fined?|false
+STATE|2|4|3|3|fineAmount|9.19
+STATE|2|4|3|3|cropOwner|2.63
+STATE|2|4|3|3|defended?|true
+STATE|2|4|3|3|cropCount|0.18
+STATE|2|4|3|3|vegCount|7.57
+STATE|2|4|3|3|ownedBy|0
+STATE|2|4|3|3|village|3
+STATE|2|4|3|3|shared?|true
+CHOICE|2|4|1|1|2|4|12:24:36.000 PM 28-Sep-2026
+CONFIRM|2|4|1|12:24:51.000 PM 28-Sep-2026
+CHOICE|2|4|2|0|0|1|12:25:00.000 PM 28-Sep-2026
+CONFIRM|2|4|2|12:25:09.000 PM 28-Sep-2026
+CHOICE|2|4|3|0|0|3|12:25:17.000 PM 28-Sep-2026
+CHOICE|2|4|3|0|0|-99|12:25:29.000 PM 28-Sep-2026
+CHOICE|2|4|3|0|0|4|12:25:33.000 PM 28-Sep-2026
+CONFIRM|2|4|3|12:25:35.000 PM 28-Sep-2026
+CHOICE|2|4|4|1|3|1|12:25:44.000 PM 28-Sep-2026
+CHOICE|2|4|4|1|3|1|12:25:56.000 PM 28-Sep-2026
+CHOICE|2|4|4|1|3|1|12:25:58.000 PM 28-Sep-2026
+CONFIRM|2|4|4|12:26:04.000 PM 28-Sep-2026
+CHOICE|2|4|5|2|2|2|12:26:12.000 PM 28-Sep-2026
+CHOICE|2|4|5|2|2|2|12:26:13.000 PM 28-Sep-2026
+CONFIRM|2|4|5|12:26:15.000 PM 28-Sep-2026
+CHOICE|2|4|6|0|0|2|12:26:24.000 PM 28-Sep-2026
+CONFIRM|2|4|6|12:26:31.000 PM 28-Sep-2026
+CHOICE|2|4|7|3|1|1|12:26:46.000 PM 28-Sep-2026
+CHOICE|2|4|7|3|1|-99|12:26:58.000 PM 28-Sep-2026
+CONFIRM|2|4|7|12:26:59.000 PM 28-Sep-2026
+CHOICE|2|4|8|1|3|1|12:27:02.000 PM 28-Sep-2026
+CHOICE|2|4|8|1|3|3|12:27:14.000 PM 28-Sep-2026
+CHOICE|2|4|8|1|3|3|12:27:15.000 PM 28-Sep-2026
+CONFIRM|2|4|8|12:27:21.000 PM 28-Sep-2026
+SCORE|2|4|1|12|18|5
+SCORE|2|4|2|14|24|20
+SCORE|2|4|3|20|50|19
+SCORE|2|4|4|10|27|7
+SCORE|2|4|5|0|26|17
+SCORE|2|4|6|0|21|7
+SCORE|2|4|7|17|39|10
+SCORE|2|4|8|0|49|7
+PHASE|phase-3-1|12:27:36.000 PM 28-Sep-2026
+STATE|3|1|0|0|protected?|true
+STATE|3|1|0|0|water?|true
+STATE|3|1|0|0|cropped?|true
+STATE|3|1|0|0|driedUp?|true
+STATE|3|1|0|0|soilQuality|8.51
+STATE|3|1|0|0|treeCount|4.25
+STATE|3|1|0|0|currentBiomass|3.37
+STATE|3|1|0|0|waterLevel|0.64
+STATE|3|1|0|0|elephantCount|1.22
+STATE|3|1|0|0|myWaterDistance|4.58
+STATE|3|1|0|0|harvestYield|2.12
+STATE|3|1|0|0|playerHarvestRound|[0 10 10 8 3 6 8 10]
+STATE|3|1|0|0|fined?|true
+STATE|3|1|0|0|fineAmount|2.12
+STATE|3|1|0|0|cropOwner|2.87
+STATE|3|1|0|0|defended?|false
+STATE|3|1|0|0|cropCount|0.14
+STATE|3|1|0|0|vegCount|2.6
+STATE|3|1|0|0|ownedBy|3
+STATE|3|1|0|0|village|0
+STATE|3|1|0|0|shared?|false
+STATE|3|1|0|1|protected?|true
+STATE|3|1|0|1|water?|true
+STATE|3|1|0|1|cropped?|false
+STATE|3|1|0|1|driedUp?|false
+STATE|3|1|0|1|soilQuality|7.46
+STATE|3|1|0|1|treeCount|7.53
+STATE|3|1|0|1|currentBiomass|2.48
+STATE|3|1|0|1|waterLevel|2.57
+STATE|3|1|0|1|elephantCount|0.28
+STATE|3|1|0|1|myWaterDistance|6.91
+STATE|3|1|0|1|harvestYield|2.09
+STATE|3|1|0|1|playerHarvestRound|[4 9 10 10 9 2 10 1]
+STATE|3|1|0|1|fined?|false
+STATE|3|1|0|1|fineAmount|6.95
+STATE|3|1|0|1|cropOwner|3.04
+STATE|3|1|0|1|defended?|true
+STATE|3|1|0|1|cropCount|0.67
+STATE|3|1|0|1|vegCount|0.15
+STATE|3|1|0|1|ownedBy|1
+STATE|3|1|0|1|village|0
+STATE|3|1|0|1|shared?|true
+STATE|3|1|0|2|protected?|true
+STATE|3|1|0|2|water?|true
+STATE|3|1|0|2|cropped?|false
+STATE|3|1|0|2|driedUp?|false
+STATE|3|1|0|2|soilQuality|2.73
+STATE|3|1|0|2|treeCount|7.69
+STATE|3|1|0|2|currentBiomass|1.78
+STATE|3|1|0|2|waterLevel|1.0
+STATE|3|1|0|2|elephantCount|3.03
+STATE|3|1|0|2|myWaterDistance|4.09
+STATE|3|1|0|2|harvestYield|6.9
+STATE|3|1|0|2|playerHarvestRound|[7 1 7 5 5 3 0 6]
+STATE|3|1|0|2|fined?|false
+STATE|3|1|0|2|fineAmount|2.26
+STATE|3|1|0|2|cropOwner|8.55
+STATE|3|1|0|2|defended?|false
+STATE|3|1|0|2|cropCount|6.71
+STATE|3|1|0|2|vegCount|2.78
+STATE|3|1|0|2|ownedBy|0
+STATE|3|1|0|2|village|0
+STATE|3|1|0|2|shared?|true
+STATE|3|1|0|3|protected?|true
+STATE|3|1|0|3|water?|false
+STATE|3|1|0|3|cropped?|false
+STATE|3|1|0|3|driedUp?|true
+STATE|3|1|0|3|soilQuality|2.63
+STATE|3|1|0|3|treeCount|0.46
+STATE|3|1|0|3|currentBiomass|4.81
+STATE|3|1|0|3|waterLevel|8.37
+STATE|3|1|0|3|elephantCount|0.57
+STATE|3|1|0|3|myWaterDistance|2.54
+STATE|3|1|0|3|harvestYield|0.89
+STATE|3|1|0|3|playerHarvestRound|[9 3 0 1 4 0 4 2]
+STATE|3|1|0|3|fined?|false
+STATE|3|1|0|3|fineAmount|3.55
+STATE|3|1|0|3|cropOwner|5.42
+STATE|3|1|0|3|defended?|true
+STATE|3|1|0|3|cropCount|3.69
+STATE|3|1|0|3|vegCount|7.37
+STATE|3|1|0|3|ownedBy|1
+STATE|3|1|0|3|village|1
+STATE|3|1|0|3|shared?|true
+STATE|3|1|1|0|protected?|false
+STATE|3|1|1|0|water?|false
+STATE|3|1|1|0|cropped?|false
+STATE|3|1|1|0|driedUp?|true
+STATE|3|1|1|0|soilQuality|7.61
+STATE|3|1|1|0|treeCount|9.32
+STATE|3|1|1|0|currentBiomass|0.3
+STATE|3|1|1|0|waterLevel|6.49
+STATE|3|1|1|0|elephantCount|8.87
+STATE|3|1|1|0|myWaterDistance|7.63
+STATE|3|1|1|0|harvestYield|8.53
+STATE|3|1|1|0|playerHarvestRound|[3 10 7 4 0 0 1 10]
+STATE|3|1|1|0|fined?|true
+STATE|3|1|1|0|fineAmount|3.69
+STATE|3|1|1|0|cropOwner|2.82
+STATE|3|1|1|0|defended?|true
+STATE|3|1|1|0|cropCount|4.87
+STATE|3|1|1|0|vegCount|1.1
+STATE|3|1|1|0|ownedBy|3
+STATE|3|1|1|0|village|3
+STATE|3|1|1|0|shared?|true
+STATE|3|1|1|1|protected?|true
+STATE|3|1|1|1|water?|true
+STATE|3|1|1|1|cropped?|false
+STATE|3|1|1|1|driedUp?|false
+STATE|3|1|1|1|soilQuality|4.26
+STATE|3|1|1|1|treeCount|0.61
+STATE|3|1|1|1|currentBiomass|1.91
+STATE|3|1|1|1|waterLevel|2.66
+STATE|3|1|1|1|elephantCount|4.44
+STATE|3|1|1|1|myWaterDistance|2.39
+STATE|3|1|1|1|harvestYield|3.39
+STATE|3|1|1|1|playerHarvestRound|[0 1 8 3 7 3 9 9]
+STATE|3|1|1|1|fined?|false
+STATE|3|1|1|1|fineAmount|9.62
+STATE|3|1|1|1|cropOwner|8.58
+STATE|3|1|1|1|defended?|true
+STATE|3|1|1|1|cropCount|9.44
+STATE|3|1|1|1|vegCount|5.25
+STATE|3|1|1|1|ownedBy|0
+STATE|3|1|1|1|village|3
+STATE|3|1|1|1|shared?|true
+STATE|3|1|1|2|protected?|false
+STATE|3|1|1|2|water?|true
+STATE|3|1|1|2|cropped?|true
+STATE|3|1|1|2|driedUp?|true
+STATE|3|1|1|2|soilQuality|9.24
+STATE|3|1|1|2|treeCount|4.61
+STATE|3|1|1|2|currentBiomass|7.31
+STATE|3|1|1|2|waterLevel|0.74
+STATE|3|1|1|2|elephantCount|4.53
+STATE|3|1|1|2|myWaterDistance|3.18
+STATE|3|1|1|2|harvestYield|2.05
+STATE|3|1|1|2|playerHarvestRound|[10 5 1 1 7 7 4 2]
+STATE|3|1|1|2|fined?|false
+STATE|3|1|1|2|fineAmount|6.28
+STATE|3|1|1|2|cropOwner|8.12
+STATE|3|1|1|2|defended?|false
+STATE|3|1|1|2|cropCount|6.44
+STATE|3|1|1|2|vegCount|6.87
+STATE|3|1|1|2|ownedBy|0
+STATE|3|1|1|2|village|3
+STATE|3|1|1|2|shared?|false
+STATE|3|1|1|3|protected?|false
+STATE|3|1|1|3|water?|false
+STATE|3|1|1|3|cropped?|true
+STATE|3|1|1|3|driedUp?|true
+STATE|3|1|1|3|soilQuality|3.87
+STATE|3|1|1|3|treeCount|8.87
+STATE|3|1|1|3|currentBiomass|3.22
+STATE|3|1|1|3|waterLevel|0.42
+STATE|3|1|1|3|elephantCount|8.58
+STATE|3|1|1|3|myWaterDistance|6.56
+STATE|3|1|1|3|harvestYield|6.51
+STATE|3|1|1|3|playerHarvestRound|[3 0 9 7 1 7 3 0]
+STATE|3|1|1|3|fined?|true
+STATE|3|1|1|3|fineAmount|9.75
+STATE|3|1|1|3|cropOwner|8.39
+STATE|3|1|1|3|defended?|true
+STATE|3|1|1|3|cropCount|3.14
+STATE|3|1|1|3|vegCount|1.99
+STATE|3|1|1|3|ownedBy|0
+STATE|3|1|1|3|village|2
+STATE|3|1|1|3|shared?|true
+STATE|3|1|2|0|protected?|true
+STATE|3|1|2|0|water?|true
+STATE|3|1|2|0|cropped?|true
+STATE|3|1|2|0|driedUp?|true
+STATE|3|1|2|0|soilQuality|3.74
+STATE|3|1|2|0|treeCount|8.53
+STATE|3|1|2|0|currentBiomass|7.42
+STATE|3|1|2|0|waterLevel|6.73
+STATE|3|1|2|0|elephantCount|2.12
+STATE|3|1|2|0|myWaterDistance|9.06
+STATE|3|1|2|0|harvestYield|1.92
+STATE|3|1|2|0|playerHarvestRound|[7 3 4 7 4 3 5 0]
+STATE|3|1|2|0|fined?|true
+STATE|3|1|2|0|fineAmount|3.43
+STATE|3|1|2|0|cropOwner|6.69
+STATE|3|1|2|0|defended?|true
+STATE|3|1|2|0|cropCount|3.74
+STATE|3|1|2|0|vegCount|1.62
+STATE|3|1|2|0|ownedBy|0
+STATE|3|1|2|0|village|0
+STATE|3|1|2|0|shared?|false
+STATE|3|1|2|1|protected?|true
+STATE|3|1|2|1|water?|true
+STATE|3|1|2|1|cropped?|false
+STATE|3|1|2|1|driedUp?|false
+STATE|3|1|2|1|soilQuality|1.38
+STATE|3|1|2|1|treeCount|2.4
+STATE|3|1|2|1|currentBiomass|1.21
+STATE|3|1|2|1|waterLevel|9.6
+STATE|3|1|2|1|elephantCount|1.49
+STATE|3|1|2|1|myWaterDistance|1.37
+STATE|3|1|2|1|harvestYield|5.22
+STATE|3|1|2|1|playerHarvestRound|[9 5 0 2 3 6 2 1]
+STATE|3|1|2|1|fined?|false
+STATE|3|1|2|1|fineAmount|4.52
+STATE|3|1|2|1|cropOwner|4.09
+STATE|3|1|2|1|defended?|false
+STATE|3|1|2|1|cropCount|6.62
+STATE|3|1|2|1|vegCount|8.6
+STATE|3|1|2|1|ownedBy|3
+STATE|3|1|2|1|village|1
+STATE|3|1|2|1|shared?|false
+STATE|3|1|2|2|protected?|false
+STATE|3|1|2|2|water?|true
+STATE|3|1|2|2|cropped?|true
+STATE|3|1|2|2|driedUp?|false
+STATE|3|1|2|2|soilQuality|9.67
+STATE|3|1|2|2|treeCount|9.04
+STATE|3|1|2|2|currentBiomass|0.71
+STATE|3|1|2|2|waterLevel|7.53
+STATE|3|1|2|2|elephantCount|1.75
+STATE|3|1|2|2|myWaterDistance|1.38
+STATE|3|1|2|2|harvestYield|0.73
+STATE|3|1|2|2|playerHarvestRound|[6 4 10 10 8 9 1 7]
+STATE|3|1|2|2|fined?|true
+STATE|3|1|2|2|fineAmount|6.58
+STATE|3|1|2|2|cropOwner|5.86
+STATE|3|1|2|2|defended?|false
+STATE|3|1|2|2|cropCount|8.99
+STATE|3|1|2|2|vegCount|9.62
+STATE|3|1|2|2|ownedBy|0
+STATE|3|1|2|2|village|2
+STATE|3|1|2|2|shared?|true
+STATE|3|1|2|3|protected?|false
+STATE|3|1|2|3|water?|false
+STATE|3|1|2|3|cropped?|true
+STATE|3|1|2|3|driedUp?|false
+STATE|3|1|2|3|soilQuality|2.56
+STATE|3|1|2|3|treeCount|2.37
+STATE|3|1|2|3|currentBiomass|3.66
+STATE|3|1|2|3|waterLevel|5.24
+STATE|3|1|2|3|elephantCount|6.77
+STATE|3|1|2|3|myWaterDistance|0.73
+STATE|3|1|2|3|harvestYield|7.41
+STATE|3|1|2|3|playerHarvestRound|[9 10 7 3 10 5 0 7]
+STATE|3|1|2|3|fined?|true
+STATE|3|1|2|3|fineAmount|6.78
+STATE|3|1|2|3|cropOwner|7.09
+STATE|3|1|2|3|defended?|false
+STATE|3|1|2|3|cropCount|1.8
+STATE|3|1|2|3|vegCount|9.58
+STATE|3|1|2|3|ownedBy|0
+STATE|3|1|2|3|village|2
+STATE|3|1|2|3|shared?|true
+STATE|3|1|3|0|protected?|false
+STATE|3|1|3|0|water?|false
+STATE|3|1|3|0|cropped?|true
+STATE|3|1|3|0|driedUp?|true
+STATE|3|1|3|0|soilQuality|7.47
+STATE|3|1|3|0|treeCount|3.71
+STATE|3|1|3|0|currentBiomass|7.08
+STATE|3|1|3|0|waterLevel|3.8
+STATE|3|1|3|0|elephantCount|4.94
+STATE|3|1|3|0|myWaterDistance|3.65
+STATE|3|1|3|0|harvestYield|9.98
+STATE|3|1|3|0|playerHarvestRound|[10 3 4 1 0 8 2 6]
+STATE|3|1|3|0|fined?|false
+STATE|3|1|3|0|fineAmount|6.46
+STATE|3|1|3|0|cropOwner|4.7
+STATE|3|1|3|0|defended?|true
+STATE|3|1|3|0|cropCount|3.32
+STATE|3|1|3|0|vegCount|5.43
+STATE|3|1|3|0|ownedBy|1
+STATE|3|1|3|0|village|3
+STATE|3|1|3|0|shared?|false
+STATE|3|1|3|1|protected?|true
+STATE|3|1|3|1|water?|false
+STATE|3|1|3|1|cropped?|false
+STATE|3|1|3|1|driedUp?|false
+STATE|3|1|3|1|soilQuality|7.81
+STATE|3|1|3|1|treeCount|3.94
+STATE|3|1|3|1|currentBiomass|1.17
+STATE|3|1|3|1|waterLevel|6.29
+STATE|3|1|3|1|elephantCount|2.92
+STATE|3|1|3|1|myWaterDistance|5.5
+STATE|3|1|3|1|harvestYield|2.04
+STATE|3|1|3|1|playerHarvestRound|[3 9 3 5 4 10 4 2]
+STATE|3|1|3|1|fined?|false
+STATE|3|1|3|1|fineAmount|6.01
+STATE|3|1|3|1|cropOwner|8.5
+STATE|3|1|3|1|defended?|false
+STATE|3|1|3|1|cropCount|5.89
+STATE|3|1|3|1|vegCount|1.98
+STATE|3|1|3|1|ownedBy|0
+STATE|3|1|3|1|village|3
+STATE|3|1|3|1|shared?|false
+STATE|3|1|3|2|protected?|false
+STATE|3|1|3|2|water?|true
+STATE|3|1|3|2|cropped?|true
+STATE|3|1|3|2|driedUp?|true
+STATE|3|1|3|2|soilQuality|1.73
+STATE|3|1|3|2|treeCount|6.96
+STATE|3|1|3|2|currentBiomass|0.04
+STATE|3|1|3|2|waterLevel|2.3
+STATE|3|1|3|2|elephantCount|2.65
+STATE|3|1|3|2|myWaterDistance|7.11
+STATE|3|1|3|2|harvestYield|9.87
+STATE|3|1|3|2|playerHarvestRound|[0 0 1 1 1 3 2 7]
+STATE|3|1|3|2|fined?|true
+STATE|3|1|3|2|fineAmount|5.22
+STATE|3|1|3|2|cropOwner|3.2
+STATE|3|1|3|2|defended?|true
+STATE|3|1|3|2|cropCount|4.79
+STATE|3|1|3|2|vegCount|2.59
+STATE|3|1|3|2|ownedBy|0
+STATE|3|1|3|2|village|0
+STATE|3|1|3|2|shared?|true
+STATE|3|1|3|3|protected?|true
+STATE|3|1|3|3|water?|true
+STATE|3|1|3|3|cropped?|true
+STATE|3|1|3|3|driedUp?|false
+STATE|3|1|3|3|soilQuality|1.32
+STATE|3|1|3|3|treeCount|8.68
+STATE|3|1|3|3|currentBiomass|3.29
+STATE|3|1|3|3|waterLevel|5.02
+STATE|3|1|3|3|elephantCount|1.41
+STATE|3|1|3|3|myWaterDistance|6.05
+STATE|3|1|3|3|harvestYield|9.9
+STATE|3|1|3|3|playerHarvestRound|[0 2 6 6 4 0 3 4]
+STATE|3|1|3|3|fined?|false
+STATE|3|1|3|3|fineAmount|8.02
+STATE|3|1|3|3|cropOwner|0.94
+STATE|3|1|3|3|defended?|false
+STATE|3|1|3|3|cropCount|1.91
+STATE|3|1|3|3|vegCount|7.08
+STATE|3|1|3|3|ownedBy|2
+STATE|3|1|3|3|village|0
+STATE|3|1|3|3|shared?|false
+CHOICE|3|1|1|3|3|2|12:27:51.000 PM 28-Sep-2026
+CHOICE|3|1|1|3|3|4|12:27:55.000 PM 28-Sep-2026
+CHOICE|3|1|1|3|2|1|12:27:59.000 PM 28-Sep-2026
+CONFIRM|3|1|1|12:28:11.000 PM 28-Sep-2026
+CHOICE|3|1|2|1|2|4|12:28:21.000 PM 28-Sep-2026
+CONFIRM|3|1|2|12:28:25.000 PM 28-Sep-2026
+CHOICE|3|1|3|1|2|3|12:28:28.000 PM 28-Sep-2026
+CONFIRM|3|1|3|12:28:31.000 PM 28-Sep-2026
+CHOICE|3|1|4|1|3|3|12:28:38.000 PM 28-Sep-2026
+CONFIRM|3|1|4|12:28:44.000 PM 28-Sep-2026
+CHOICE|3|1|5|2|0|3|12:28:46.000 PM 28-Sep-2026
+CHOICE|3|1|5|2|0|2|12:28:49.000 PM 28-Sep-2026
+CHOICE|3|1|5|2|0|2|12:28:57.000 PM 28-Sep-2026
+CONFIRM|3|1|5|12:28:58.000 PM 28-Sep-2026
+CHOICE|3|1|6|2|0|3|12:29:09.000 PM 28-Sep-2026
+CONFIRM|3|1|6|12:29:21.000 PM 28-Sep-2026
+CHOICE|3|1|7|2|0|1|12:29:31.000 PM 28-Sep-2026
+CHOICE|3|1|7|2|0|3|12:29:44.000 PM 28-Sep-2026
+CONFIRM|3|1|7|12:29:55.000 PM 28-Sep-2026
+CHOICE|3|1|8|1|3|4|12:30:07.000 PM 28-Sep-2026
+CHOICE|3|1|8|1|3|4|12:30:20.000 PM 28-Sep-2026
+CHOICE|3|1|8|2|0|4|12:30:22.000 PM 28-Sep-2026
+CONFIRM|3|1|8|12:30:33.000 PM 28-Sep-2026
+SCORE|3|1|1|8|16|1
+SCORE|3|1|2|17|25|2
+SCORE|3|1|3|14|57|19
+SCORE|3|1|4|1|20|2
+SCORE|3|1|5|10|37|16
+SCORE|3|1|6|2|11|12
+SCORE|3|1|7|3|48|1
+SCORE|3|1|8|1|19|4
+PHASE|phase-3-2|12:30:42.000 PM 28-Sep-2026
+STATE|3|2|0|0|protected?|true
+STATE|3|2|0|0|water?|true
+STATE|3|2|0|0|cropped?|true
+STATE|3|2|0|0|driedUp?|false
+STATE|3|2|0|0|soilQuality|8.33
+STATE|3|2|0|0|treeCount|1.69
+STATE|3|2|0|0|currentBiomass|1.74
+STATE|3|2|0|0|waterLevel|7.65
+STATE|3|2|0|0|elephantCount|4.26
+STATE|3|2|0|0|myWaterDistance|3.38
+STATE|3|2|0|0|harvestYield|1.23
+STATE|3|2|0|0|playerHarvestRound|[3 7 8 1 1 4 6 7]
+STATE|3|2|0|0|fined?|true
+STATE|3|2|0|0|fineAmount|1.85
+STATE|3|2|0|0|cropOwner|8.11
+STATE|3|2|0|0|defended?|false
+STATE|3|2|0|0|cropCount|3.93
+STATE|3|2|0|0|vegCount|2.02
+STATE|3|2|0|0|ownedBy|0
+STATE|3|2|0|0|village|3
+STATE|3|2|0|0|shared?|true
+STATE|3|2|0|1|protected?|false
+STATE|3|2|0|1|water?|true
+STATE|3|2|0|1|cropped?|false
+STATE|3|2|0|1|driedUp?|true
+STATE|3|2|0|1|soilQuality|2.48
+STATE|3|2|0|1|treeCount|2.55
+STATE|3|2|0|1|currentBiomass|4.69
+STATE|3|2|0|1|waterLevel|9.91
+STATE|3|2|0|1|elephantCount|1.49
+STATE|3|2|0|1|myWaterDistance|8.55
+STATE|3|2|0|1|harvestYield|3.21
+STATE|3|2|0|1|playerHarvestRound|[2 5 10 3 10 6 0 0]
+STATE|3|2|0|1|fined?|false
+STATE|3|2|0|1|fineAmount|5.75
+STATE|3|2|0|1|cropOwner|0.1
+STATE|3|2|0|1|defended?|false
+STATE|3|2|0|1|cropCount|6.07
+STATE|3|2|0|1|vegCount|8.99
+STATE|3|2|0|1|ownedBy|1
+STATE|3|2|0|1|village|0
+STATE|3|2|0|1|shared?|false
+STATE|3|2|0|2|protected?|false
+STATE|3|2|0|2|water?|true
+STATE|3|2|0|2|cropped?|true
+STATE|3|2|0|2|driedUp?|true
+STATE|3|2|0|2|soilQuality|3.53
+STATE|3|2|0|2|treeCount|3.78
+STATE|3|2|0|2|currentBiomass|1.1
+STATE|3|2|0|2|waterLevel|2.27
+STATE|3|2|0|2|elephantCount|9.1
+STATE|3|2|0|2|myWaterDistance|4.11
+STATE|3|2|0|2|harvestYield|6.36
+STATE|3|2|0|2|playerHarvestRound|[9 3 10 0 2 2 4 4]
+STATE|3|2|0|2|fined?|false
+STATE|3|2|0|2|fineAmount|3.26
+STATE|3|2|0|2|cropOwner|4.37
+STATE|3|2|0|2|defended?|true
+STATE|3|2|0|2|cropCount|2.4
+STATE|3|2|0|2|vegCount|7.13
+STATE|3|2|0|2|ownedBy|3
+STATE|3|2|0|2|village|0
+STATE|3|2|0|2|shared?|true
+STATE|3|2|0|3|protected?|false
+STATE|3|2|0|3|water?|false
+STATE|3|2|0|3|cropped?|false
+STATE|3|2|0|3|driedUp?|true
+STATE|3|2|0|3|soilQuality|9.38
+STATE|3|2|0|3|treeCount|7.44
+STATE|3|2|0|3|currentBiomass|6.77
+STATE|3|2|0|3|waterLevel|6.52
+STATE|3|2|0|3|elephantCount|0.48
+STATE|3|2|0|3|myWaterDistance|8.7
+STATE|3|2|0|3|harvestYield|5.48
+STATE|3|2|0|3|playerHarvestRound|[7 5 7 7 3 5 5 3]
+STATE|3|2|0|3|fined?|true
+STATE|3|2|0|3|fineAmount|1.18
+STATE|3|2|0|3|cropOwner|8.87
+STATE|3|2|0|3|defended?|false
+STATE|3|2|0|3|cropCount|0.26
+STATE|3|2|0|3|vegCount|3.7
+STATE|3|2|0|3|ownedBy|3
+STATE|3|2|0|3|village|0
+STATE|3|2|0|3|shared?|true
+STATE|3|2|1|0|protected?|true
+STATE|3|2|1|0|water?|false
+STATE|3|2|1|0|cropped?|false
+STATE|3|2|1|0|driedUp?|true
+STATE|3|2|1|0|soilQuality|4.77
+STATE|3|2|1|0|treeCount|3.78
+STATE|3|2|1|0|currentBiomass|6.39
+STATE|3|2|1|0|waterLevel|8.87
+STATE|3|2|1|0|elephantCount|5.77
+STATE|3|2|1|0|myWaterDistance|3.19
+STATE|3|2|1|0|harvestYield|3.45
+STATE|3|2|1|0|playerHarvestRound|[4 5 9 1 9 9 8 1]
+STATE|3|2|1|0|fined?|true
+STATE|3|2|1|0|fineAmount|4.16
+STATE|3|2|1|0|cropOwner|8.8
+STATE|3|2|1|0|defended?|false
+STATE|3|2|1|0|cropCount|2.08
+STATE|3|2|1|0|vegCount|3.62
+STATE|3|2|1|0|ownedBy|1
+STATE|3|2|1|0|village|3
+STATE|3|2|1|0|shared?|false
+STATE|3|2|1|1|protected?|true
+STATE|3|2|1|1|water?|false
+STATE|3|2|1|1|cropped?|true
+STATE|3|2|1|1|driedUp?|false
+STATE|3|2|1|1|soilQuality|4.32
+STATE|3|2|1|1|treeCount|7.17
+STATE|3|2|1|1|currentBiomass|4.29
+STATE|3|2|1|1|waterLevel|0.92
+STATE|3|2|1|1|elephantCount|5.24
+STATE|3|2|1|1|myWaterDistance|8.2
+STATE|3|2|1|1|harvestYield|7.89
+STATE|3|2|1|1|playerHarvestRound|[5 1 3 9 0 3 5 6]
+STATE|3|2|1|1|fined?|true
+STATE|3|2|1|1|fineAmount|6.37
+STATE|3|2|1|1|cropOwner|0.77
+STATE|3|2|1|1|defended?|true
+STATE|3|2|1|1|cropCount|3.27
+STATE|3|2|1|1|vegCount|9.92
+STATE|3|2|1|1|ownedBy|3
+STATE|3|2|1|1|village|3
+STATE|3|2|1|1|shared?|false
+STATE|3|2|1|2|protected?|true
+STATE|3|2|1|2|water?|false
+STATE|3|2|1|2|cropped?|true
+STATE|3|2|1|2|driedUp?|false
+STATE|3|2|1|2|soilQuality|6.05
+STATE|3|2|1|2|treeCount|3.78
+STATE|3|2|1|2|currentBiomass|8.32
+STATE|3|2|1|2|waterLevel|9.0
+STATE|3|2|1|2|elephantCount|1.64
+STATE|3|2|1|2|myWaterDistance|0.18
+STATE|3|2|1|2|harvestYield|6.49
+STATE|3|2|1|2|playerHarvestRound|[1 9 5 0 0 3 8 0]
+STATE|3|2|1|2|fined?|false
+STATE|3|2|1|2|fineAmount|8.51
+STATE|3|2|1|2|cropOwner|7.14
+STATE|3|2|1|2|defended?|false
+STATE|3|2|1|2|cropCount|2.15
+STATE|3|2|1|2|vegCount|4.62
+STATE|3|2|1|2|ownedBy|0
+STATE|3|2|1|2|village|3
+STATE|3|2|1|2|shared?|true
+STATE|3|2|1|3|protected?|true
+STATE|3|2|1|3|water?|true
+STATE|3|2|1|3|cropped?|true
+STATE|3|2|1|3|driedUp?|true
+STATE|3|2|1|3|soilQuality|6.88
+STATE|3|2|1|3|treeCount|6.04
+STATE|3|2|1|3|currentBiomass|2.34
+STATE|3|2|1|3|waterLevel|2.16
+STATE|3|2|1|3|elephantCount|6.28
+STATE|3|2|1|3|myWaterDistance|0.54
+STATE|3|2|1|3|harvestYield|7.74
+STATE|3|2|1|3|playerHarvestRound|[5 2 3 8 4 3 8 2]
+STATE|3|2|1|3|fined?|true
+STATE|3|2|1|3|fineAmount|1.75
+STATE|3|2|1|3|cropOwner|8.72
+STATE|3|2|1|3|defended?|false
+STATE|3|2|1|3|cropCount|7.22
+STATE|3|2|1|3|vegCount|1.1
+STATE|3|2|1|3|ownedBy|2
+STATE|3|2|1|3|village|3
+STATE|3|2|1|3|shared?|false
+STATE|3|2|2|0|protected?|true
+STATE|3|2|2|0|water?|false
+STATE|3|2|2|0|cropped?|true
+STATE|3|2|2|0|driedUp?|false
+STATE|3|2|2|0|soilQuality|4.88
+STATE|3|2|2|0|treeCount|0.02
+STATE|3|2|2|0|currentBiomass|8.69
+STATE|3|2|2|0|waterLevel|8.69
+STATE|3|2|2|0|elephantCount|8.98
+STATE|3|2|2|0|myWaterDistance|5.59
+STATE|3|2|2|0|harvestYield|4.15
+STATE|3|2|2|0|playerHarvestRound|[5 7 2 10 3 8 5 6]
+STATE|3|2|2|0|fined?|false
+STATE|3|2|2|0|fineAmount|2.45
+STATE|3|2|2|0|cropOwner|1.99
+STATE|3|2|2|0|defended?|true
+STATE|3|2|2|0|cropCount|4.1
+STATE|3|2|2|0|vegCount|6.18
+STATE|3|2|2|0|ownedBy|1
+STATE|3|2|2|0|village|1
+STATE|3|2|2|0|shared?|true
+STATE|3|2|2|1|protected?|true
+STATE|3|2|2|1|water?|true
+STATE|3|2|2|1|cropped?|true
+STATE|3|2|2|1|driedUp?|true
+STATE|3|2|2|1|soilQuality|5.05
+STATE|3|2|2|1|treeCount|1.84
+STATE|3|2|2|1|currentBiomass|4.8
+STATE|3|2|2|1|waterLevel|4.4
+STATE|3|2|2|1|elephantCount|9.73
+STATE|3|2|2|1|myWaterDistance|4.86
+STATE|3|2|2|1|harvestYield|9.45
+STATE|3|2|2|1|playerHarvestRound|[7 8 3 7 9 8 2 8]
+STATE|3|2|2|1|fined?|true
+STATE|3|2|2|1|fineAmount|0.73
+STATE|3|2|2|1|cropOwner|7.01
+STATE|3|2|2|1|defended?|false
+STATE|3|2|2|1|cropCount|4.03
+STATE|3|2|2|1|vegCount|3.54
+STATE|3|2|2|1|ownedBy|2
+STATE|3|2|2|1|village|1
+STATE|3|2|2|1|shared?|true
+STATE|3|2|2|2|protected?|false
+STATE|3|2|2|2|water?|true
+STATE|3|2|2|2|cropped?|true
+STATE|3|2|2|2|driedUp?|false
+STATE|3|2|2|2|soilQuality|5.73
+STATE|3|2|2|2|treeCount|0.06
+STATE|3|2|2|2|currentBiomass|8.49
+STATE|3|2|2|2|waterLevel|7.28
+STATE|3|2|2|2|elephantCount|3.54
+STATE|3|2|2|2|myWaterDistance|6.3
+STATE|3|2|2|2|harvestYield|9.2
+STATE|3|2|2|2|playerHarvestRound|[6 6 9 4 2 8 10 10]
+STATE|3|2|2|2|fined?|false
+STATE|3|2|2|2|fineAmount|0.04
+STATE|3|2|2|2|cropOwner|6.86
+STATE|3|2|2|2|defended?|false
+STATE|3|2|2|2|cropCount|6.78
+STATE|3|2|2|2|vegCount|3.99
+STATE|3|2|2|2|ownedBy|1
+STATE|3|2|2|2|village|3
+STATE|3|2|2|2|shared?|false
+STATE|3|2|2|3|protected?|true
+STATE|3|2|2|3|water?|false
+STATE|3|2|2|3|cropped?|true
+STATE|3|2|2|3|driedUp?|false
+STATE|3|2|2|3|soilQuality|6.51
+STATE|3|2|2|3|treeCount|2.86
+STATE|3|2|2|3|currentBiomass|1.36
+STATE|3|2|2|3|waterLevel|9.04
+STATE|3|2|2|3|elephantCount|9.75
+STATE|3|2|2|3|myWaterDistance|6.16
+STATE|3|2|2|3|harvestYield|8.07
+STATE|3|2|2|3|playerHarvestRound|[7 7 4 5 8 0 5 8]
+STATE|3|2|2|3|fined?|false
+STATE|3|2|2|3|fineAmount|9.29
+STATE|3|2|2|3|cropOwner|6.39
+STATE|3|2|2|3|defended?|true
+STATE|3|2|2|3|cropCount|3.33
+STATE|3|2|2|3|vegCount|3.87
+STATE|3|2|2|3|ownedBy|3
+STATE|3|2|2|3|village|3
+STATE|3|2|2|3|shared?|false
+STATE|3|2|3|0|protected?|true
+STATE|3|2|3|0|water?|true
+STATE|3|2|3|0|cropped?|true
+STATE|3|2|3|0|driedUp?|true
+STATE|3|2|3|0|soilQuality|9.13
+STATE|3|2|3|0|treeCount|5.39
+STATE|3|2|3|0|currentBiomass|2.76
+STATE|3|2|3|0|waterLevel|3.32
+STATE|3|2|3|0|elephantCount|8.21
+STATE|3|2|3|0|myWaterDistance|1.6
+STATE|3|2|3|0|harvestYield|6.9
+STATE|3|2|3|0|playerHarvestRound|[0 1 3 3 0 2 2 4]
+STATE|3|2|3|0|fined?|true
+STATE|3|2|3|0|fineAmount|0.58
+STATE|3|2|3|0|cropOwner|2.64
+STATE|3|2|3|0|defended?|false
+STATE|3|2|3|0|cropCount|7.2
+STATE|3|2|3|0|vegCount|9.1
+STATE|3|2|3|0|ownedBy|0
+STATE|3|2|3|0|village|3
+STATE|3|2|3|0|shared?|false
+STATE|3|2|3|1|protected?|false
+STATE|3|2|3|1|water?|false
+STATE|3|2|3|1|cropped?|true
+STATE|3|2|3|1|driedUp?|false
+STATE|3|2|3|1|soilQuality|0.4
+STATE|3|2|3|1|treeCount|4.97
+STATE|3|2|3|1|currentBiomass|7.3
+STATE|3|2|3|1|waterLevel|4.22
+STATE|3|2|3|1|elephantCount|6.3
+STATE|3|2|3|1|myWaterDistance|7.09
+STATE|3|2|3|1|harvestYield|1.79
+STATE|3|2|3|1|playerHarvestRound|[2 4 0 1 0 2 1 0]
+STATE|3|2|3|1|fined?|true
+STATE|3|2|3|1|fineAmount|7.08
+STATE|3|2|3|1|cropOwner|6.3
+STATE|3|2|3|1|defended?|true
+STATE|3|2|3|1|cropCount|1.62
+STATE|3|2|3|1|vegCount|1.81
+STATE|3|2|3|1|ownedBy|3
+STATE|3|2|3|1|village|1
+STATE|3|2|3|1|shared?|false
+STATE|3|2|3|2|protected?|false
+STATE|3|2|3|2|water?|true
+STATE|3|2|3|2|cropped?|false
+STATE|3|2|3|2|driedUp?|true
+STATE|3|2|3|2|soilQuality|3.91
+STATE|3|2|3|2|treeCount|2.53
+STATE|3|2|3|2|currentBiomass|2.33
+STATE|3|2|3|2|waterLevel|9.75
+STATE|3|2|3|2|elephantCount|9.95
+STATE|3|2|3|2|myWaterDistance|7.06
+STATE|3|2|3|2|harvestYield|1.75
+STATE|3|2|3|2|playerHarvestRound|[2 2 5 10 10 0 7 8]
+STATE|3|2|3|2|fined?|false
+STATE|3|2|3|2|fineAmount|9.05
+STATE|3|2|3|2|cropOwner|7.83
+STATE|3|2|3|2|defended?|false
+STATE|3|2|3|2|cropCount|8.84
+STATE|3|2|3|2|vegCount|0.14
+STATE|3|2|3|2|ownedBy|2
+STATE|3|2|3|2|village|0
+STATE|3|2|3|2|shared?|false
+STATE|3|2|3|3|protected?|true
+STATE|3|2|3|3|water?|true
+STATE|3|2|3|3|cropped?|false
+STATE|3|2|3|3|driedUp?|false
+STATE|3|2|3|3|soilQuality|9.15
+STATE|3|2|3|3|treeCount|5.61
+STATE|3|2|3|3|currentBiomass|1.42
+STATE|3|2|3|3|waterLevel|1.75
+STATE|3|2|3|3|elephantCount|3.83
+STATE|3|2|3|3|myWaterDistance|6.91
+STATE|3|2|3|3|harvestYield|0.05
+STATE|3|2|3|3|playerHarvestRound|[8 0 5 6 10 3 9 6]
+STATE|3|2|3|3|fined?|false
+STATE|3|2|3|3|fineAmount|4.09
+STATE|3|2|3|3|cropOwner|9.6
+STATE|3|2|3|3|defended?|false
+STATE|3|2|3|3|cropCount|9.29
+STATE|3|2|3|3|vegCount|6.15
+STATE|3|2|3|3|ownedBy|1
+STATE|3|2|3|3|village|2
+STATE|3|2|3|3|shared?|true
+CHOICE|3|2|1|0|2|3|12:30:55.000 PM 28-Sep-2026
+CONFIRM|3|2|1|12:31:05.000 PM 28-Sep-2026
+CHOICE|3|2|2|1|3|1|12:31:13.000 PM 28-Sep-2026
+CHOICE|3|2|2|0|1|1|12:31:23.000 PM 28-Sep-2026
+CONFIRM|3|2|2|12:31:30.000 PM 28-Sep-2026
+CHOICE|3|2|3|3|0|-99|12:31:43.000 PM 28-Sep-2026
+CHOICE|3|2|3|3|0|1|12:31:53.000 PM 28-Sep-2026
+CONFIRM|3|2|3|12:32:07.000 PM 28-Sep-2026
+CHOICE|3|2|4|3|2|-99|12:32:15.000 PM 28-Sep-2026
+CHOICE|3|2|4|3|2|-99|12:32:23.000 PM 28-Sep-2026
+CONFIRM|3|2|4|12:32:37.000 PM 28-Sep-2026
+CHOICE|3|2|5|2|1|-99|12:32:42.000 PM 28-Sep-2026
+CHOICE|3|2|5|2|1|4|12:32:55.000 PM 28-Sep-2026
+CHOICE|3|2|5|2|1|3|12:33:03.000 PM 28-Sep-2026
+CONFIRM|3|2|5|12:33:14.000 PM 28-Sep-2026
+CHOICE|3|2|6|3|3|1|12:33:26.000 PM 28-Sep-2026
+CHOICE|3|2|6|2|0|2|12:33:32.000 PM 28-Sep-2026
+CONFIRM|3|2|6|12:33:43.000 PM 28-Sep-2026
+CHOICE|3|2|7|1|2|1|12:33:51.000 PM 28-Sep-2026
+CHOICE|3|2|7|1|2|-99|12:34:05.000 PM 28-Sep-2026
+CONFIRM|3|2|7|12:34:18.000 PM 28-Sep-2026
+CHOICE|3|2|8|1|3|1|12:34:30.000 PM 28-Sep-2026
+CONFIRM|3|2|8|12:34:35.000 PM 28-Sep-2026
+SCORE|3|2|1|10|48|5
+SCORE|3|2|2|4|45|3
+SCORE|3|2|3|20|31|16
+SCORE|3|2|4|8|29|5
+SCORE|3|2|5|5|19|15
+SCORE|3|2|6|7|23|8
+SCORE|3|2|7|1|15|5
+SCORE|3|2|8|19|38|2
+PHASE|phase-3-3|12:34:46.000 PM 28-Sep-2026
+STATE|3|3|0|0|protected?|true
+STATE|3|3|0|0|water?|false
+STATE|3|3|0|0|cropped?|false
+STATE|3|3|0|0|driedUp?|true
+STATE|3|3|0|0|soilQuality|4.16
+STATE|3|3|0|0|treeCount|4.7
+STATE|3|3|0|0|currentBiomass|3.13
+STATE|3|3|0|0|waterLevel|0.6
+STATE|3|3|0|0|elephantCount|3.84
+STATE|3|3|0|0|myWaterDistance|6.53
+STATE|3|3|0|0|harvestYield|4.81
+STATE|3|3|0|0|playerHarvestRound|[8 3 4 2 8 10 1 8]
+STATE|3|3|0|0|fined?|true
+STATE|3|3|0|0|fineAmount|8.89
+STATE|3|3|0|0|cropOwner|9.15
+STATE|3|3|0|0|defended?|false
+STATE|3|3|0|0|cropCount|4.7
+STATE|3|3|0|0|vegCount|9.33
+STATE|3|3|0|0|ownedBy|3
+STATE|3|3|0|0|village|1
+STATE|3|3|0|0|shared?|true
+STATE|3|3|0|1|protected?|true
+STATE|3|3|0|1|water?|false
+STATE|3|3|0|1|cropped?|true
+STATE|3|3|0|1|driedUp?|true
+STATE|3|3|0|1|soilQuality|0.95
+STATE|3|3|0|1|treeCount|3.8
+STATE|3|3|0|1|currentBiomass|1.12
+STATE|3|3|0|1|waterLevel|9.7
+STATE|3|3|0|1|elephantCount|4.99
+STATE|3|3|0|1|myWaterDistance|2.83
+STATE|3|3|0|1|harvestYield|3.3
+STATE|3|3|0|1|playerHarvestRound|[9 8 2 5 0 5 3 7]
+STATE|3|3|0|1|fined?|true
+STATE|3|3|0|1|fineAmount|2.84
+STATE|3|3|0|1|cropOwner|6.29
+STATE|3|3|0|1|defended?|false
+STATE|3|3|0|1|cropCount|9.48
+STATE|3|3|0|1|vegCount|6.85
+STATE|3|3|0|1|ownedBy|1
+STATE|3|3|0|1|village|2
+STATE|3|3|0|1|shared?|false
+STATE|3|3|0|2|protected?|false
+STATE|3|3|0|2|water?|false
+STATE|3|3|0|2|cropped?|false
+STATE|3|3|0|2|driedUp?|false
+STATE|3|3|0|2|soilQuality|3.6
+STATE|3|3|0|2|treeCount|6.05
+STATE|3|3|0|2|currentBiomass|3.0
+STATE|3|3|0|2|waterLevel|9.69
+STATE|3|3|0|2|elephantCount|2.44
+STATE|3|3|0|2|myWaterDistance|9.73
+STATE|3|3|0|2|harvestYield|0.64
+STATE|3|3|0|2|playerHarvestRound|[0 3 8 1 3 8 8 10]
+STATE|3|3|0|2|fined?|true
+STATE|3|3|0|2|fineAmount|8.37
+STATE|3|3|0|2|cropOwner|6.69
+STATE|3|3|0|2|defended?|false
+STATE|3|3|0|2|cropCount|9.27
+STATE|3|3|0|2|vegCount|9.92
+STATE|3|3|0|2|ownedBy|3
+STATE|3|3|0|2|village|3
+STATE|3|3|0|2|shared?|false
+STATE|3|3|0|3|protected?|true
+STATE|3|3|0|3|water?|true
+STATE|3|3|0|3|cropped?|true
+STATE|3|3|0|3|driedUp?|false
+STATE|3|3|0|3|soilQuality|3.13
+STATE|3|3|0|3|treeCount|5.68
+STATE|3|3|0|3|currentBiomass|0.09
+STATE|3|3|0|3|waterLevel|4.16
+STATE|3|3|0|3|elephantCount|9.03
+STATE|3|3|0|3|myWaterDistance|5.9
+STATE|3|3|0|3|harvestYield|8.24
+STATE|3|3|0|3|playerHarvestRound|[0 9 3 2 3 1 3 1]
+STATE|3|3|0|3|fined?|true
+STATE|3|3|0|3|fineAmount|8.8
+STATE|3|3|0|3|cropOwner|5.16
+STATE|3|3|0|3|defended?|true
+STATE|3|3|0|3|cropCount|9.66
+STATE|3|3|0|3|vegCount|4.05
+STATE|3|3|0|3|ownedBy|3
+STATE|3|3|0|3|village|0
+STATE|3|3|0|3|shared?|true
+STATE|3|3|1|0|protected?|false
+STATE|3|3|1|0|water?|false
+STATE|3|3|1|0|cropped?|true
+STATE|3|3|1|0|driedUp?|false
+STATE|3|3|1|0|soilQuality|2.7
+STATE|3|3|1|0|treeCount|1.48
+STATE|3|3|1|0|currentBiomass|3.64
+STATE|3|3|1|0|waterLevel|6.62
+STATE|3|3|1|0|elephantCount|9.54
+STATE|3|3|1|0|myWaterDistance|9.94
+STATE|3|3|1|0|harvestYield|9.94
+STATE|3|3|1|0|playerHarvestRound|[9 8 10 6 2 5 5 8]
+STATE|3|3|1|0|fined?|true
+STATE|3|3|1|0|fineAmount|9.19
+STATE|3|3|1|0|cropOwner|3.7
+STATE|3|3|1|0|defended?|false
+STATE|3|3|1|0|cropCount|1.63
+STATE|3|3|1|0|vegCount|1.52
+STATE|3|3|1|0|ownedBy|0
+STATE|3|3|1|0|village|3
+STATE|3|3|1|0|shared?|false
+STATE|3|3|1|1|protected?|true
+STATE|3|3|1|1|water?|true
+STATE|3|3|1|1|cropped?|false
+STATE|3|3|1|1|driedUp?|true
+STATE|3|3|1|1|soilQuality|4.97
+STATE|3|3|1|1|treeCount|4.63
+STATE|3|3|1|1|currentBiomass|7.5
+STATE|3|3|1|1|waterLevel|7.27
+STATE|3|3|1|1|elephantCount|2.36
+STATE|3|3|1|1|myWaterDistance|1.4
+STATE|3|3|1|1|harvestYield|9.26
+STATE|3|3|1|1|playerHarvestRound|[0 3 5 3 1 7 9 6]
+STATE|3|3|1|1|fined?|true
+STATE|3|3|1|1|fineAmount|4.76
+STATE|3|3|1|1|cropOwner|0.42
+STATE|3|3|1|1|defended?|false
+STATE|3|3|1|1|cropCount|9.93
+STATE|3|3|1|1|vegCount|0.49
+STATE|3|3|1|1|ownedBy|3
+STATE|3|3|1|1|village|0
+STATE|3|3|1|1|shared?|false
+STATE|3|3|1|2|protected?|false
+STATE|3|3|1|2|water?|true
+STATE|3|3|1|2|cropped?|true
+STATE|3|3|1|2|driedUp?|true
+STATE|3|3|1|2|soilQuality|3.32
+STATE|3|3|1|2|treeCount|0.89
+STATE|3|3|1|2|currentBiomass|6.49
+STATE|3|3|1|2|waterLevel|4.24
+STATE|3|3|1|2|elephantCount|3.09
+STATE|3|3|1|2|myWaterDistance|5.12
+STATE|3|3|1|2|harvestYield|9.37
+STATE|3|3|1|2|playerHarvestRound|[3 10 2 2 4 6 5 1]
+STATE|3|3|1|2|fined?|false
+STATE|3|3|1|2|fineAmount|4.29
+STATE|3|3|1|2|cropOwner|1.66
+STATE|3|3|1|2|defended?|true
+STATE|3|3|1|2|cropCount|1.22
+STATE|3|3|1|2|vegCount|8.47
+STATE|3|3|1|2|ownedBy|3
+STATE|3|3|1|2|village|3
+STATE|3|3|1|2|shared?|true
+STATE|3|3|1|3|protected?|false
+STATE|3|3|1|3|water?|true
+STATE|3|3|1|3|cropped?|false
+STATE|3|3|1|3|driedUp?|true
+STATE|3|3|1|3|soilQuality|1.02
+STATE|3|3|1|3|treeCount|7.42
+STATE|3|3|1|3|currentBiomass|7.17
+STATE|3|3|1|3|waterLevel|5.11
+STATE|3|3|1|3|elephantCount|1.68
+STATE|3|3|1|3|myWaterDistance|6.7
+STATE|3|3|1|3|harvestYield|4.33
+STATE|3|3|1|3|playerHarvestRound|[10 7 1 3 7 0 3 10]
+STATE|3|3|1|3|fined?|true
+STATE|3|3|1|3|fineAmount|1.98
+STATE|3|3|1|3|cropOwner|0.88
+STATE|3|3|1|3|defended?|false
+STATE|3|3|1|3|cropCount|9.94
+STATE|3|3|1|3|vegCount|3.35
+STATE|3|3|1|3|ownedBy|1
+STATE|3|3|1|3|village|3
+STATE|3|3|1|3|shared?|false
+STATE|3|3|2|0|protected?|true
+STATE|3|3|2|0|water?|true
+STATE|3|3|2|0|cropped?|false
+STATE|3|3|2|0|driedUp?|true
+STATE|3|3|2|0|soilQuality|1.56
+STATE|3|3|2|0|treeCount|0.7
+STATE|3|3|2|0|currentBiomass|5.43
+STATE|3|3|2|0|waterLevel|9.91
+STATE|3|3|2|0|elephantCount|9.2
+STATE|3|3|2|0|myWaterDistance|1.0
+STATE|3|3|2|0|harvestYield|5.02
+STATE|3|3|2|0|playerHarvestRound|[7 4 3 1 10 7 9 7]
+STATE|3|3|2|0|fined?|true
+STATE|3|3|2|0|fineAmount|9.34
+STATE|3|3|2|0|cropOwner|8.15
+STATE|3|3|2|0|defended?|true
+STATE|3|3|2|0|cropCount|1.41
+STATE|3|3|2|0|vegCount|4.84
+STATE|3|3|2|0|ownedBy|0
+STATE|3|3|2|0|village|3
+STATE|3|3|2|0|shared?|false
+STATE|3|3|2|1|protected?|false
+STATE|3|3|2|1|water?|false
+STATE|3|3|2|1|cropped?|false
+STATE|3|3|2|1|driedUp?|true
+STATE|3|3|2|1|soilQuality|7.15
+STATE|3|3|2|1|treeCount|8.01
+STATE|3|3|2|1|currentBiomass|1.13
+STATE|3|3|2|1|waterLevel|3.22
+STATE|3|3|2|1|elephantCount|0.54
+STATE|3|3|2|1|myWaterDistance|5.83
+STATE|3|3|2|1|harvestYield|7.23
+STATE|3|3|2|1|playerHarvestRound|[5 2 5 6 4 2 7 7]
+STATE|3|3|2|1|fined?|true
+STATE|3|3|2|1|fineAmount|1.32
+STATE|3|3|2|1|cropOwner|5.44
+STATE|3|3|2|1|defended?|true
+STATE|3|3|2|1|cropCount|2.35
+STATE|3|3|2|1|vegCount|9.07
+STATE|3|3|2|1|ownedBy|3
+STATE|3|3|2|1|village|1
+STATE|3|3|2|1|shared?|false
+STATE|3|3|2|2|protected?|true
+STATE|3|3|2|2|water?|true
+STATE|3|3|2|2|cropped?|false
+STATE|3|3|2|2|driedUp?|true
+STATE|3|3|2|2|soilQuality|0.42
+STATE|3|3|2|2|treeCount|3.54
+STATE|3|3|2|2|currentBiomass|8.75
+STATE|3|3|2|2|waterLevel|9.96
+STATE|3|3|2|2|elephantCount|3.18
+STATE|3|3|2|2|myWaterDistance|9.09
+STATE|3|3|2|2|harvestYield|7.86
+STATE|3|3|2|2|playerHarvestRound|[9 7 10 9 8 3 4 8]
+STATE|3|3|2|2|fined?|true
+STATE|3|3|2|2|fineAmount|7.27
+STATE|3|3|2|2|cropOwner|1.26
+STATE|3|3|2|2|defended?|true
+STATE|3|3|2|2|cropCount|5.59
+STATE|3|3|2|2|vegCount|9.9
+STATE|3|3|2|2|ownedBy|3
+STATE|3|3|2|2|village|1
+STATE|3|3|2|2|shared?|false
+STATE|3|3|2|3|protected?|true
+STATE|3|3|2|3|water?|true
+STATE|3|3|2|3|cropped?|true
+STATE|3|3|2|3|driedUp?|false
+STATE|3|3|2|3|soilQuality|0.44
+STATE|3|3|2|3|treeCount|2.93
+STATE|3|3|2|3|currentBiomass|1.19
+STATE|3|3|2|3|waterLevel|6.28
+STATE|3|3|2|3|elephantCount|4.46
+STATE|3|3|2|3|myWaterDistance|3.75
+STATE|3|3|2|3|harvestYield|4.76
+STATE|3|3|2|3|playerHarvestRound|[8 8 6 8 4 4 6 0]
+STATE|3|3|2|3|fined?|false
+STATE|3|3|2|3|fineAmount|4.83
+STATE|3|3|2|3|cropOwner|7.31
+STATE|3|3|2|3|defended?|true
+STATE|3|3|2|3|cropCount|4.52
+STATE|3|3|2|3|vegCount|3.58
+STATE|3|3|2|3|ownedBy|1
+STATE|3|3|2|3|village|2
+STATE|3|3|2|3|shared?|true
+STATE|3|3|3|0|protected?|false
+STATE|3|3|3|0|water?|false
+STATE|3|3|3|0|cropped?|true
+STATE|3|3|3|0|driedUp?|true
+STATE|3|3|3|0|soilQuality|7.84
+STATE|3|3|3|0|treeCount|6.55
+STATE|3|3|3|0|currentBiomass|6.76
+STATE|3|3|3|0|waterLevel|6.35
+STATE|3|3|3|0|elephantCount|6.93
+STATE|3|3|3|0|myWaterDistance|2.73
+STATE|3|3|3|0|harvestYield|0.61
+STATE|3|3|3|0|playerHarvestRound|[5 6 0 6 9 8 10 4]
+STATE|3|3|3|0|fined?|false
+STATE|3|3|3|0|fineAmount|2.29
+STATE|3|3|3|0|cropOwner|3.37
+STATE|3|3|3|0|defended?|true
+STATE|3|3|3|0|cropCount|7.96
+STATE|3|3|3|0|vegCount|7.37
+STATE|3|3|3|0|ownedBy|2
+STATE|3|3|3|0|village|0
+STATE|3|3|3|0|shared?|true
+STATE|3|3|3|1|protected?|true
+STATE|3|3|3|1|water?|true
+STATE|3|3|3|1|cropped?|false
+STATE|3|3|3|1|driedUp?|false
+STATE|3|3|3|1|soilQuality|8.49
+STATE|3|3|3|1|treeCount|8.68
+STATE|3|3|3|1|currentBiomass|4.39
+STATE|3|3|3|1|waterLevel|4.21
+STATE|3|3|3|1|elephantCount|3.14
+STATE|3|3|3|1|myWaterDistance|9.74
+STATE|3|3|3|1|harvestYield|1.83
+STATE|3|3|3|1|playerHarvestRound|[2 5 4 0 10 3 5 0]
+STATE|3|3|3|1|fined?|false
+STATE|3|3|3|1|fineAmount|8.91
+STATE|3|3|3|1|cropOwner|4.27
+STATE|3|3|3|1|defended?|true
+STATE|3|3|3|1|cropCount|7.73
+STATE|3|3|3|1|vegCount|3.75
+STATE|3|3|3|1|ownedBy|0
+STATE|3|3|3|1|village|0
+STATE|3|3|3|1|shared?|false
+STATE|3|3|3|2|protected?|true
+STATE|3|3|3|2|water?|true
+STATE|3|3|3|2|cropped?|false
+STATE|3|3|3|2|driedUp?|true
+STATE|3|3|3|2|soilQuality|0.2
+STATE|3|3|3|2|treeCount|3.9
+STATE|3|3|3|2|currentBiomass|3.79
+STATE|3|3|3|2|waterLevel|0.11
+STATE|3|3|3|2|elephantCount|3.72
+STATE|3|3|3|2|myWaterDistance|7.61
+STATE|3|3|3|2|harvestYield|3.33
+STATE|3|3|3|2|playerHarvestRound|[10 0 9 3 3 0 9 10]
+STATE|3|3|3|2|fined?|false
+STATE|3|3|3|2|fineAmount|2.32
+STATE|3|3|3|2|cropOwner|0.98
+STATE|3|3|3|2|defended?|false
+STATE|3|3|3|2|cropCount|8.49
+STATE|3|3|3|2|vegCount|2.41
+STATE|3|3|3|2|ownedBy|2
+STATE|3|3|3|2|village|3
+STATE|3|3|3|2|shared?|false
+STATE|3|3|3|3|protected?|false
+STATE|3|3|3|3|water?|true
+STATE|3|3|3|3|cropped?|false
+STATE|3|3|3|3|driedUp?|false
+STATE|3|3|3|3|soilQuality|8.5
+STATE|3|3|3|3|treeCount|0.9
+STATE|3|3|3|3|currentBiomass|4.6
+STATE|3|3|3|3|waterLevel|2.37
+STATE|3|3|3|3|elephantCount|4.41
+STATE|3|3|3|3|myWaterDistance|9.93
+STATE|3|3|3|3|harvestYield|9.15
+STATE|3|3|3|3|playerHarvestRound|[0 3 1 5 6 3 10 6]
+STATE|3|3|3|3|fined?|true
+STATE|3|3|3|3|fineAmount|5.87
+STATE|3|3|3|3|cropOwner|3.77
+STATE|3|3|3|3|defended?|true
+STATE|3|3|3|3|cropCount|7.96
+STATE|3|3|3|3|vegCount|8.1
+STATE|3|3|3|3|ownedBy|1
+STATE|3|3|3|3|village|2
+STATE|3|3|3|3|shared?|false
+CHOICE|3|3|1|3|0|-99|12:34:53.000 PM 28-Sep-2026
+CHOICE|3|3|1|3|0|2|12:35:06.000 PM 28-Sep-2026
+CONFIRM|3|3|1|12:35:16.000 PM 28-Sep-2026
+CHOICE|3|3|2|3|1|1|12:35:21.000 PM 28-Sep-2026
+CHOICE|3|3|2|3|0|2|12:35:33.000 PM 28-Sep-2026
+CONFIRM|3|3|2|12:35:34.000 PM 28-Sep-2026
+CHOICE|3|3|3|0|0|1|12:35:41.000 PM 28-Sep-2026
+CONFIRM|3|3|3|12:35:48.000 PM 28-Sep-2026
+CHOICE|3|3|4|3|2|3|12:35:57.000 PM 28-Sep-2026
+CHOICE|3|3|4|3|2|1|12:36:06.000 PM 28-Sep-2026
+CHOICE|3|3|4|3|2|3|12:36:20.000 PM 28-Sep-2026
+CONFIRM|3|3|4|12:36:29.000 PM 28-Sep-2026
+CHOICE|3|3|5|1|3|3|12:36:39.000 PM 28-Sep-2026
+CONFIRM|3|3|5|12:36:49.000 PM 28-Sep-2026
+CHOICE|3|3|6|2|2|3|12:37:03.000 PM 28-Sep-2026
+CHOICE|3|3|6|2|2|3|12:37:06.000 PM 28-Sep-2026
+CHOICE|3|3|6|2|2|3|12:37:09.000 PM 28-Sep-2026
+CONFIRM|3|3|6|12:37:16.000 PM 28-Sep-2026
+CHOICE|3|3|7|2|1|2|12:37:27.000 PM 28-Sep-2026
+CONFIRM|3|3|7|12:37:31.000 PM 28-Sep-2026
+CHOICE|3|3|8|3|2|2|12:37:34.000 PM 28-Sep-2026
+CHOICE|3|3|8|3|1|3|12:37:48.000 PM 28-Sep-2026
+CHOICE|3|3|8|0|3|3|12:37:59.000 PM 28-Sep-2026
+CONFIRM|3|3|8|12:38:06.000 PM 28-Sep-2026
+SCORE|3|3|1|1|32|17
+SCORE|3|3|2|15|27|17
+SCORE|3|3|3|5|9|20
+SCORE|3|3|4|5|49|5
+SCORE|3|3|5|8|49|16
+SCORE|3|3|6|4|48|19
+SCORE|3|3|7|5|47|16
+SCORE|3|3|8|10|28|17
+PHASE|phase-3-4|12:38:15.000 PM 28-Sep-2026
+STATE|3|4|0|0|protected?|true
+STATE|3|4|0|0|water?|true
+STATE|3|4|0|0|cropped?|false
+STATE|3|4|0|0|driedUp?|true
+STATE|3|4|0|0|soilQuality|3.09
+STATE|3|4|0|0|treeCount|6.79
+STATE|3|4|0|0|currentBiomass|5.46
+STATE|3|4|0|0|waterLevel|6.17
+STATE|3|4|0|0|elephantCount|7.8
+STATE|3|4|0|0|myWaterDistance|5.71
+STATE|3|4|0|0|harvestYield|2.22
+STATE|3|4|0|0|playerHarvestRound|[7 5 9 2 5 7 7 8]
+STATE|3|4|0|0|fined?|false
+STATE|3|4|0|0|fineAmount|8.22
+STATE|3|4|0|0|cropOwner|6.53
+STATE|3|4|0|0|defended?|true
+STATE|3|4|0|0|cropCount|6.12
+STATE|3|4|0|0|vegCount|0.33
+STATE|3|4|0|0|ownedBy|3
+STATE|3|4|0|0|village|3
+STATE|3|4|0|0|shared?|false
+STATE|3|4|0|1|protected?|true
+STATE|3|4|0|1|water?|false
+STATE|3|4|0|1|cropped?|true
+STATE|3|4|0|1|driedUp?|false
+STATE|3|4|0|1|soilQuality|5.21
+STATE|3|4|0|1|treeCount|0.16
+STATE|3|4|0|1|currentBiomass|8.9
+STATE|3|4|0|1|waterLevel|4.4
+STATE|3|4|0|1|elephantCount|8.3
+STATE|3|4|0|1|myWaterDistance|6.88
+STATE|3|4|0|1|harvestYield|5.33
+STATE|3|4|0|1|playerHarvestRound|[2 3 5 10 5 9 0 2]
+STATE|3|4|0|1|fined?|true
+STATE|3|4|0|1|fineAmount|0.66
+STATE|3|4|0|1|cropOwner|0.72
+STATE|3|4|0|1|defended?|false
+STATE|3|4|0|1|cropCount|1.21
+STATE|3|4|0|1|vegCount|1.6
+STATE|3|4|0|1|ownedBy|1
+STATE|3|4|0|1|village|3
+STATE|3|4|0|1|shared?|true
+STATE|3|4|0|2|protected?|false
+STATE|3|4|0|2|water?|false
+STATE|3|4|0|2|cropped?|false
+STATE|3|4|0|2|driedUp?|false
+STATE|3|4|0|2|soilQuality|4.4
+STATE|3|4|0|2|treeCount|7.96
+STATE|3|4|0|2|currentBiomass|2.81
+STATE|3|4|0|2|waterLevel|9.26
+STATE|3|4|0|2|elephantCount|8.11
+STATE|3|4|0|2|myWaterDistance|7.32
+STATE|3|4|0|2|harvestYield|2.28
+STATE|3|4|0|2|playerHarvestRound|[1 10 8 7 9 9 2 6]
+STATE|3|4|0|2|fined?|false
+STATE|3|4|0|2|fineAmount|4.64
+STATE|3|4|0|2|cropOwner|7.86
+STATE|3|4|0|2|defended?|true
+STATE|3|4|0|2|cropCount|1.97
+STATE|3|4|0|2|vegCount|9.56
+STATE|3|4|0|2|ownedBy|1
+STATE|3|4|0|2|village|1
+STATE|3|4|0|2|shared?|false
+STATE|3|4|0|3|protected?|false
+STATE|3|4|0|3|water?|true
+STATE|3|4|0|3|cropped?|false
+STATE|3|4|0|3|driedUp?|true
+STATE|3|4|0|3|soilQuality|2.24
+STATE|3|4|0|3|treeCount|2.17
+STATE|3|4|0|3|currentBiomass|9.54
+STATE|3|4|0|3|waterLevel|3.68
+STATE|3|4|0|3|elephantCount|5.1
+STATE|3|4|0|3|myWaterDistance|5.01
+STATE|3|4|0|3|harvestYield|0.27
+STATE|3|4|0|3|playerHarvestRound|[5 6 3 2 5 7 10 6]
+STATE|3|4|0|3|fined?|true
+STATE|3|4|0|3|fineAmount|7.64
+STATE|3|4|0|3|cropOwner|4.25
+STATE|3|4|0|3|defended?|true
+STATE|3|4|0|3|cropCount|9.71
+STATE|3|4|0|3|vegCount|2.1
+STATE|3|4|0|3|ownedBy|0
+STATE|3|4|0|3|village|3
+STATE|3|4|0|3|shared?|false
+STATE|3|4|1|0|protected?|true
+STATE|3|4|1|0|water?|false
+STATE|3|4|1|0|cropped?|true
+STATE|3|4|1|0|driedUp?|true
+STATE|3|4|1|0|soilQuality|6.36
+STATE|3|4|1|0|treeCount|4.82
+STATE|3|4|1|0|currentBiomass|3.77
+STATE|3|4|1|0|waterLevel|5.79
+STATE|3|4|1|0|elephantCount|2.18
+STATE|3|4|1|0|myWaterDistance|4.37
+STATE|3|4|1|0|harvestYield|0.02
+STATE|3|4|1|0|playerHarvestRound|[4 4 2 8 8 9 9 10]
+STATE|3|4|1|0|fined?|false
+STATE|3|4|1|0|fineAmount|7.01
+STATE|3|4|1|0|cropOwner|1.7
+STATE|3|4|1|0|defended?|false
+STATE|3|4|1|0|cropCount|0.96
+STATE|3|4|1|0|vegCount|9.71
+STATE|3|4|1|0|ownedBy|2
+STATE|3|4|1|0|village|2
+STATE|3|4|1|0|shared?|true
+STATE|3|4|1|1|protected?|false
+STATE|3|4|1|1|water?|false
+STATE|3|4|1|1|cropped?|true
+STATE|3|4|1|1|driedUp?|true
+STATE|3|4|1|1|soilQuality|4.12
+STATE|3|4|1|1|treeCount|5.1
+STATE|3|4|1|1|currentBiomass|1.49
+STATE|3|4|1|1|waterLevel|2.21
+STATE|3|4|1|1|elephantCount|8.67
+STATE|3|4|1|1|myWaterDistance|3.88
+STATE|3|4|1|1|harvestYield|1.49
+STATE|3|4|1|1|playerHarvestRound|[2 9 3 2 7 9 8 3]
+STATE|3|4|1|1|fined?|true
+STATE|3|4|1|1|fineAmount|5.04
+STATE|3|4|1|1|cropOwner|8.37
+STATE|3|4|1|1|defended?|true
+STATE|3|4|1|1|cropCount|9.3
+STATE|3|4|1|1|vegCount|1.99
+STATE|3|4|1|1|ownedBy|0
+STATE|3|4|1|1|village|3
+STATE|3|4|1|1|shared?|false
+STATE|3|4|1|2|protected?|false
+STATE|3|4|1|2|water?|true
+STATE|3|4|1|2|cropped?|false
+STATE|3|4|1|2|driedUp?|true
+STATE|3|4|1|2|soilQuality|7.27
+STATE|3|4|1|2|treeCount|2.28
+STATE|3|4|1|2|currentBiomass|5.73
+STATE|3|4|1|2|waterLevel|6.48
+STATE|3|4|1|2|elephantCount|3.72
+STATE|3|4|1|2|myWaterDistance|4.8
+STATE|3|4|1|2|harvestYield|0.65
+STATE|3|4|1|2|playerHarvestRound|[10 2 4 2 4 8 1 0]
+STATE|3|4|1|2|fined?|false
+STATE|3|4|1|2|fineAmount|8.7
+STATE|3|4|1|2|cropOwner|0.5
+STATE|3|4|1|2|defended?|true
+STATE|3|4|1|2|cropCount|0.84
+STATE|3|4|1|2|vegCount|2.53
+STATE|3|4|1|2|ownedBy|0
+STATE|3|4|1|2|village|1
+STATE|3|4|1|2|shared?|true
+STATE|3|4|1|3|protected?|true
+STATE|3|4|1|3|water?|true
+STATE|3|4|1|3|cropped?|true
+STATE|3|4|1|3|driedUp?|true
+STATE|3|4|1|3|soilQuality|7.88
+STATE|3|4|1|3|treeCount|7.23
+STATE|3|4|1|3|currentBiomass|1.14
+STATE|3|4|1|3|waterLevel|2.23
+STATE|3|4|1|3|elephantCount|0.08
+STATE|3|4|1|3|myWaterDistance|3.29
+STATE|3|4|1|3|harvestYield|1.08
+STATE|3|4|1|3|playerHarvestRound|[7 0 3 3 5 0 5 6]
+STATE|3|4|1|3|fined?|true
+STATE|3|4|1|3|fineAmount|9.31
+STATE|3|4|1|3|cropOwner|3.92
+STATE|3|4|1|3|defended?|true
+STATE|3|4|1|3|cropCount|0.73
+STATE|3|4|1|3|vegCount|9.48
+STATE|3|4|1|3|ownedBy|3
+STATE|3|4|1|3|village|3
+STATE|3|4|1|3|shared?|true
+STATE|3|4|2|0|protected?|true
+STATE|3|4|2|0|water?|false
+STATE|3|4|2|0|cropped?|false
+STATE|3|4|2|0|driedUp?|true
+STATE|3|4|2|0|soilQuality|1.78
+STATE|3|4|2|0|treeCount|4.06
+STATE|3|4|2|0|currentBiomass|8.91
+STATE|3|4|2|0|waterLevel|4.08
+STATE|3|4|2|0|elephantCount|6.61
+STATE|3|4|2|0|myWaterDistance|5.6
+STATE|3|4|2|0|harvestYield|4.61
+STATE|3|4|2|0|playerHarvestRound|[9 3 8 8 1 1 10 5]
+STATE|3|4|2|0|fined?|false
+STATE|3|4|2|0|fineAmount|4.31
+STATE|3|4|2|0|cropOwner|0.09
+STATE|3|4|2|0|defended?|true
+STATE|3|4|2|0|cropCount|4.88
+STATE|3|4|2|0|vegCount|1.58
+STATE|3|4|2|0|ownedBy|0
+STATE|3|4|2|0|village|2
+STATE|3|4|2|0|shared?|false
+STATE|3|4|2|1|protected?|false
+STATE|3|4|2|1|water?|true
+STATE|3|4|2|1|cropped?|false
+STATE|3|4|2|1|driedUp?|false
+STATE|3|4|2|1|soilQuality|1.43
+STATE|3|4|2|1|treeCount|3.93
+STATE|3|4|2|1|currentBiomass|0.03
+STATE|3|4|2|1|waterLevel|2.96
+STATE|3|4|2|1|elephantCount|3.82
+STATE|3|4|2|1|myWaterDistance|7.2
+STATE|3|4|2|1|harvestYield|5.2
+STATE|3|4|2|1|playerHarvestRound|[3 5 1 2 0 10 1 4]
+STATE|3|4|2|1|fined?|true
+STATE|3|4|2|1|fineAmount|2.95
+STATE|3|4|2|1|cropOwner|7.96
+STATE|3|4|2|1|defended?|false
+STATE|3|4|2|1|cropCount|1.62
+STATE|3|4|2|1|vegCount|0.92
+STATE|3|4|2|1|ownedBy|3
+STATE|3|4|2|1|village|0
+STATE|3|4|2|1|shared?|false
+STATE|3|4|2|2|protected?|true
+STATE|3|4|2|2|water?|false
+STATE|3|4|2|2|cropped?|false
+STATE|3|4|2|2|driedUp?|false
+STATE|3|4|2|2|soilQuality|6.16
+STATE|3|4|2|2|treeCount|6.37
+STATE|3|4|2|2|currentBiomass|7.4
+STATE|3|4|2|2|waterLevel|8.95
+STATE|3|4|2|2|elephantCount|1.18
+STATE|3|4|2|2|myWaterDistance|4.64
+STATE|3|4|2|2|harvestYield|4.87
+STATE|3|4|2|2|playerHarvestRound|[7 6 1 6 3 6 3 5]
+STATE|3|4|2|2|fined?|true
+STATE|3|4|2|2|fineAmount|7.12
+STATE|3|4|2|2|cropOwner|3.79
+STATE|3|4|2|2|defended?|false
+STATE|3|4|2|2|cropCount|5.56
+STATE|3|4|2|2|vegCount|8.34
+STATE|3|4|2|2|ownedBy|3
+STATE|3|4|2|2|village|0
+STATE|3|4|2|2|shared?|false
+STATE|3|4|2|3|protected?|true
+STATE|3|4|2|3|water?|false
+STATE|3|4|2|3|cropped?|true
+STATE|3|4|2|3|driedUp?|true
+STATE|3|4|2|3|soilQuality|6.1
+STATE|3|4|2|3|treeCount|3.61
+STATE|3|4|2|3|currentBiomass|6.03
+STATE|3|4|2|3|waterLevel|1.71
+STATE|3|4|2|3|elephantCount|1.49
+STATE|3|4|2|3|myWaterDistance|2.73
+STATE|3|4|2|3|harvestYield|8.38
+STATE|3|4|2|3|playerHarvestRound|[1 8 0 6 1 0 9 7]
+STATE|3|4|2|3|fined?|false
+STATE|3|4|2|3|fineAmount|7.9
+STATE|3|4|2|3|cropOwner|9.11
+STATE|3|4|2|3|defended?|true
+STATE|3|4|2|3|cropCount|7.63
+STATE|3|4|2|3|vegCount|1.02
+STATE|3|4|2|3|ownedBy|0
+STATE|3|4|2|3|village|2
+STATE|3|4|2|3|shared?|true
+STATE|3|4|3|0|protected?|false
+STATE|3|4|3|0|water?|true
+STATE|3|4|3|0|cropped?|true
+STATE|3|4|3|0|driedUp?|true
+STATE|3|4|3|0|soilQuality|4.73
+STATE|3|4|3|0|treeCount|0.16
+STATE|3|4|3|0|currentBiomass|1.51
+STATE|3|4|3|0|waterLevel|2.22
+STATE|3|4|3|0|elephantCount|0.81
+STATE|3|4|3|0|myWaterDistance|0.91
+STATE|3|4|3|0|harvestYield|1.94
+STATE|3|4|3|0|playerHarvestRound|[8 1 2 4 6 7 4 9]
+STATE|3|4|3|0|fined?|true
+STATE|3|4|3|0|fineAmount|8.4
+STATE|3|4|3|0|cropOwner|0.47
+STATE|3|4|3|0|defended?|false
+STATE|3|4|3|0|cropCount|0.98
+STATE|3|4|3|0|vegCount|9.45
+STATE|3|4|3|0|ownedBy|2
+STATE|3|4|3|0|village|1
+STATE|3|4|3|0|shared?|false
+STATE|3|4|3|1|protected?|false
+STATE|3|4|3|1|water?|true
+STATE|3|4|3|1|cropped?|true
+STATE|3|4|3|1|driedUp?|false
+STATE|3|4|3|1|soilQuality|5.88
+STATE|3|4|3|1|treeCount|7.21
+STATE|3|4|3|1|currentBiomass|2.78
+STATE|3|4|3|1|waterLevel|4.97
+STATE|3|4|3|1|elephantCount|1.87
+STATE|3|4|3|1|myWaterDistance|4.37
+STATE|3|4|3|1|harvestYield|2.82
+STATE|3|4|3|1|playerHarvestRound|[9 5 4 8 4 10 10 8]
+STATE|3|4|3|1|fined?|true
+STATE|3|4|3|1|fineAmount|8.01
+STATE|3|4|3|1|cropOwner|4.96
+STATE|3|4|3|1|defended?|true
+STATE|3|4|3|1|cropCount|1.15
+STATE|3|4|3|1|vegCount|5.09
+STATE|3|4|3|1|ownedBy|3
+STATE|3|4|3|1|village|1
+STATE|3|4|3|1|shared?|false
+STATE|3|4|3|2|protected?|true
+STATE|3|4|3|2|water?|true
+STATE|3|4|3|2|cropped?|false
+STATE|3|4|3|2|driedUp?|true
+STATE|3|4|3|2|soilQuality|9.81
+STATE|3|4|3|2|treeCount|8.93
+STATE|3|4|3|2|currentBiomass|9.9
+STATE|3|4|3|2|waterLevel|9.43
+STATE|3|4|3|2|elephantCount|2.57
+STATE|3|4|3|2|myWaterDistance|8.14
+STATE|3|4|3|2|harvestYield|6.12
+STATE|3|4|3|2|playerHarvestRound|[3 2 8 10 2 8 0 1]
+STATE|3|4|3|2|fined?|true
+STATE|3|4|3|2|fineAmount|7.04
+STATE|3|4|3|2|cropOwner|3.6
+STATE|3|4|3|2|defended?|false
+STATE|3|4|3|2|cropCount|9.3
+STATE|3|4|3|2|vegCount|3.99
+STATE|3|4|3|2|ownedBy|0
+STATE|3|4|3|2|village|3
+STATE|3|4|3|2|shared?|false
+STATE|3|4|3|3|protected?|true
+STATE|3|4|3|3|water?|false
+STATE|3|4|3|3|cropped?|true
+STATE|3|4|3|3|driedUp?|false
+STATE|3|4|3|3|soilQuality|5.29
+STATE|3|4|3|3|treeCount|4.2
+STATE|3|4|3|3|currentBiomass|8.96
+STATE|3|4|3|3|waterLevel|9.58
+STATE|3|4|3|3|elephantCount|3.92
+STATE|3|4|3|3|myWaterDistance|6.85
+STATE|3|4|3|3|harvestYield|1.96
+STATE|3|4|3|3|playerHarvestRound|[10 8 10 4 6 10 9 6]
+STATE|3|4|3|3|fined?|false
+STATE|3|4|3|3|fineAmount|1.88
+STATE|3|4|3|3|cropOwner|9.49
+STATE|3|4|3|3|defended?|false
+STATE|3|4|3|3|cropCount|7.77
+STATE|3|4|3|3|vegCount|9.93
+STATE|3|4|3|3|ownedBy|2
+STATE|3|4|3|3|village|0
+STATE|3|4|3|3|shared?|false
+CHOICE|3|4|1|0|1|3|12:38:30.000 PM 28-Sep-2026
+CONFIRM|3|4|1|12:38:43.000 PM 28-Sep-2026
+CHOICE|3|4|2|3|2|3|12:38:56.000 PM 28-Sep-2026
+CHOICE|3|4|2|1|1|2|12:39:11.000 PM 28-Sep-2026
+CONFIRM|3|4|2|12:39:21.000 PM 28-Sep-2026
+CHOICE|3|4|3|1|3|1|12:39:30.000 PM 28-Sep-2026
+CHOICE|3|4|3|1|3|2|12:39:44.000 PM 28-Sep-2026
+CHOICE|3|4|3|2|2|-99|12:39:48.000 PM 28-Sep-2026
+CONFIRM|3|4|3|12:39:55.000 PM 28-Sep-2026
+CHOICE|3|4|4|3|1|1|12:40:03.000 PM 28-Sep-2026
+CONFIRM|3|4|4|12:40:17.000 PM 28-Sep-2026
+CHOICE|3|4|5|3|0|-99|12:40:21.000 PM 28-Sep-2026
+CHOICE|3|4|5|3|0|1|12:40:29.000 PM 28-Sep-2026
+CHOICE|3|4|5|0|1|2|12:40:30.000 PM 28-Sep-2026
+CONFIRM|3|4|5|12:40:36.000 PM 28-Sep-2026
+CHOICE|3|4|6|0|0|1|12:40:47.000 PM 28-Sep-2026
+CHOICE|3|4|6|3|1|2|12:41:02.000 PM 28-Sep-2026
+CHOICE|3|4|6|3|1|4|12:41:05.000 PM 28-Sep-2026
+CONFIRM|3|4|6|12:41:09.000 PM 28-Sep-2026
+CHOICE|3|4|7|2|3|3|12:41:19.000 PM 28-Sep-2026
+CONFIRM|3|4|7|12:41:30.000 PM 28-Sep-2026
+CHOICE|3|4|8|0|2|1|12:41:36.000 PM 28-Sep-2026
+CHOICE|3|4|8|0|2|3|12:41:47.000 PM 28-Sep-2026
+CONFIRM|3|4|8|12:41:52.000 PM 28-Sep-2026
+SCORE|3|4|1|13|62|16
+SCORE|3|4|2|14|42|14
+SCORE|3|4|3|14|62|18
+SCORE|3|4|4|10|17|19
+SCORE|3|4|5|5|12|7
+SCORE|3|4|6|4|17|4
+SCORE|3|4|7|6|37|10
+SCORE|3|4|8|6|27|14
+PHASE|phase-4-1|12:42:00.000 PM 28-Sep-2026
+STATE|4|1|0|0|protected?|false
+STATE|4|1|0|0|water?|false
+STATE|4|1|0|0|cropped?|true
+STATE|4|1|0|0|driedUp?|false
+STATE|4|1|0|0|soilQuality|1.74
+STATE|4|1|0|0|treeCount|0.76
+STATE|4|1|0|0|currentBiomass|4.53
+STATE|4|1|0|0|waterLevel|0.18
+STATE|4|1|0|0|elephantCount|4.81
+STATE|4|1|0|0|myWaterDistance|4.12
+STATE|4|1|0|0|harvestYield|9.54
+STATE|4|1|0|0|playerHarvestRound|[6 3 2 0 9 6 3 5]
+STATE|4|1|0|0|fined?|true
+STATE|4|1|0|0|fineAmount|4.91
+STATE|4|1|0|0|cropOwner|3.95
+STATE|4|1|0|0|defended?|false
+STATE|4|1|0|0|cropCount|5.05
+STATE|4|1|0|0|vegCount|3.23
+STATE|4|1|0|0|ownedBy|3
+STATE|4|1|0|0|village|2
+STATE|4|1|0|0|shared?|true
+STATE|4|1|0|1|protected?|true
+STATE|4|1|0|1|water?|true
+STATE|4|1|0|1|cropped?|true
+STATE|4|1|0|1|driedUp?|true
+STATE|4|1|0|1|soilQuality|4.23
+STATE|4|1|0|1|treeCount|8.37
+STATE|4|1|0|1|currentBiomass|6.98
+STATE|4|1|0|1|waterLevel|9.66
+STATE|4|1|0|1|elephantCount|8.37
+STATE|4|1|0|1|myWaterDistance|5.86
+STATE|4|1|0|1|harvestYield|5.8
+STATE|4|1|0|1|playerHarvestRound|[0 6 10 4 6 9 1 7]
+STATE|4|1|0|1|fined?|false
+STATE|4|1|0|1|fineAmount|3.76
+STATE|4|1|0|1|cropOwner|4.92
+STATE|4|1|0|1|defended?|true
+STATE|4|1|0|1|cropCount|1.02
+STATE|4|1|0|1|vegCount|7.31
+STATE|4|1|0|1|ownedBy|3
+STATE|4|1|0|1|village|3
+STATE|4|1|0|1|shared?|true
+STATE|4|1|0|2|protected?|false
+STATE|4|1|0|2|water?|true
+STATE|4|1|0|2|cropped?|false
+STATE|4|1|0|2|driedUp?|false
+STATE|4|1|0|2|soilQuality|3.04
+STATE|4|1|0|2|treeCount|6.06
+STATE|4|1|0|2|currentBiomass|4.21
+STATE|4|1|0|2|waterLevel|5.96
+STATE|4|1|0|2|elephantCount|6.68
+STATE|4|1|0|2|myWaterDistance|0.03
+STATE|4|1|0|2|harvestYield|4.75
+STATE|4|1|0|2|playerHarvestRound|[3 5 9 7 6 1 4 10]
+STATE|4|1|0|2|fined?|false
+STATE|4|1|0|2|fineAmount|6.17
+STATE|4|1|0|2|cropOwner|3.32
+STATE|4|1|0|2|defended?|false
+STATE|4|1|0|2|cropCount|9.28
+STATE|4|1|0|2|vegCount|5.67
+STATE|4|1|0|2|ownedBy|3
+STATE|4|1|0|2|village|3
+STATE|4|1|0|2|shared?|true
+STATE|4|1|0|3|protected?|true
+STATE|4|1|0|3|water?|false
+STATE|4|1|0|3|cropped?|false
+STATE|4|1|0|3|driedUp?|false
+STATE|4|1|0|3|soilQuality|6.23
+STATE|4|1|0|3|treeCount|4.78
+STATE|4|1|0|3|currentBiomass|6.34
+STATE|4|1|0|3|waterLevel|5.33
+STATE|4|1|0|3|elephantCount|7.05
+STATE|4|1|0|3|myWaterDistance|9.47
+STATE|4|1|0|3|harvestYield|0.14
+STATE|4|1|0|3|playerHarvestRound|[5 0 3 0 10 2 4 3]
+STATE|4|1|0|3|fined?|false
+STATE|4|1|0|3|fineAmount|8.37
+STATE|4|1|0|3|cropOwner|7.46
+STATE|4|1|0|3|defended?|false
+STATE|4|1|0|3|cropCount|9.79
+STATE|4|1|0|3|vegCount|7.7
+STATE|4|1|0|3|ownedBy|3
+STATE|4|1|0|3|village|3
+STATE|4|1|0|3|shared?|true
+STATE|4|1|1|0|protected?|false
+STATE|4|1|1|0|water?|false
+STATE|4|1|1|0|cropped?|true
+STATE|4|1|1|0|driedUp?|true
+STATE|4|1|1|0|soilQuality|8.86
+STATE|4|1|1|0|treeCount|9.52
+STATE|4|1|1|0|currentBiomass|1.54
+STATE|4|1|1|0|waterLevel|4.48
+STATE|4|1|1|0|elephantCount|8.44
+STATE|4|1|1|0|myWaterDistance|9.62
+STATE|4|1|1|0|harvestYield|2.89
+STATE|4|1|1|0|playerHarvestRound|[5 0 8 4 7 0 1 2]
+STATE|4|1|1|0|fined?|false
+STATE|4|1|1|0|fineAmount|0.01
+STATE|4|1|1|0|cropOwner|8.35
+STATE|4|1|1|0|defended?|false
+STATE|4|1|1|0|cropCount|7.47
+STATE|4|1|1|0|vegCount|3.26
+STATE|4|1|1|0|ownedBy|0
+STATE|4|1|1|0|village|0
+STATE|4|1|1|0|shared?|true
+STATE|4|1|1|1|protected?|false
+STATE|4|1|1|1|water?|false
+STATE|4|1|1|1|cropped?|true
+STATE|4|1|1|1|driedUp?|false
+STATE|4|1|1|1|soilQuality|8.53
+STATE|4|1|1|1|treeCount|4.6
+STATE|4|1|1|1|currentBiomass|7.51
+STATE|4|1|1|1|waterLevel|4.87
+STATE|4|1|1|1|elephantCount|8.37
+STATE|4|1|1|1|myWaterDistance|1.21
+STATE|4|1|1|1|harvestYield|8.87
+STATE|4|1|1|1|playerHarvestRound|[2 4 3 0 0 4 1 2]
+STATE|4|1|1|1|fined?|false
+STATE|4|1|1|1|fineAmount|6.34
+STATE|4|1|1|1|cropOwner|8.33
+STATE|4|1|1|1|defended?|false
+STATE|4|1|1|1|cropCount|3.28
+STATE|4|1|1|1|vegCount|8.34
+STATE|4|1|1|1|ownedBy|0
+STATE|4|1|1|1|village|1
+STATE|4|1|1|1|shared?|false
+STATE|4|1|1|2|protected?|true
+STATE|4|1|1|2|water?|true
+STATE|4|1|1|2|cropped?|false
+STATE|4|1|1|2|driedUp?|true
+STATE|4|1|1|2|soilQuality|8.06
+STATE|4|1|1|2|treeCount|6.05
+STATE|4|1|1|2|currentBiomass|1.83
+STATE|4|1|1|2|waterLevel|6.15
+STATE|4|1|1|2|elephantCount|3.72
+STATE|4|1|1|2|myWaterDistance|1.52
+STATE|4|1|1|2|harvestYield|6.95
+STATE|4|1|1|2|playerHarvestRound|[0 10 1 3 4 0 4 5]
+STATE|4|1|1|2|fined?|true
+STATE|4|1|1|2|fineAmount|2.82
+STATE|4|1|1|2|cropOwner|7.72
+STATE|4|1|1|2|defended?|true
+STATE|4|1|1|2|cropCount|8.15
+STATE|4|1|1|2|vegCount|1.6
+STATE|4|1|1|2|ownedBy|0
+STATE|4|1|1|2|village|0
+STATE|4|1|1|2|shared?|true
+STATE|4|1|1|3|protected?|false
+STATE|4|1|1|3|water?|true
+STATE|4|1|1|3|cropped?|true
+STATE|4|1|1|3|driedUp?|false
+STATE|4|1|1|3|soilQuality|0.91
+STATE|4|1|1|3|treeCount|6.68
+STATE|4|1|1|3|currentBiomass|0.83
+STATE|4|1|1|3|waterLevel|2.47
+STATE|4|1|1|3|elephantCount|6.64
+STATE|4|1|1|3|myWaterDistance|8.74
+STATE|4|1|1|3|harvestYield|4.09
+STATE|4|1|1|3|playerHarvestRound|[7 1 0 6 5 3 3 9]
+STATE|4|1|1|3|fined?|false
+STATE|4|1|1|3|fineAmount|7.14
+STATE|4|1|1|3|cropOwner|7.84
+STATE|4|1|1|3|defended?|false
+STATE|4|1|1|3|cropCount|6.99
+STATE|4|1|1|3|vegCount|1.27
+STATE|4|1|1|3|ownedBy|2
+STATE|4|1|1|3|village|0
+STATE|4|1|1|3|shared?|true
+STATE|4|1|2|0|protected?|true
+STATE|4|1|2|0|water?|false
+STATE|4|1|2|0|cropped?|true
+STATE|4|1|2|0|driedUp?|true
+STATE|4|1|2|0|soilQuality|2.82
+STATE|4|1|2|0|treeCount|8.64
+STATE|4|1|2|0|currentBiomass|6.38
+STATE|4|1|2|0|waterLevel|4.81
+STATE|4|1|2|0|elephantCount|3.8
+STATE|4|1|2|0|myWaterDistance|9.22
+STATE|4|1|2|0|harvestYield|9.39
+STATE|4|1|2|0|playerHarvestRound|[7 1 9 7 6 4 7 4]
+STATE|4|1|2|0|fined?|true
+STATE|4|1|2|0|fineAmount|2.32
+STATE|4|1|2|0|cropOwner|7.01
+STATE|4|1|2|0|defended?|false
+STATE|4|1|2|0|cropCount|5.11
+STATE|4|1|2|0|vegCount|1.91
+STATE|4|1|2|0|ownedBy|0
+STATE|4|1|2|0|village|2
+STATE|4|1|2|0|shared?|false
+STATE|4|1|2|1|protected?|false
+STATE|4|1|2|1|water?|false
+STATE|4|1|2|1|cropped?|true
+STATE|4|1|2|1|driedUp?|false
+STATE|4|1|2|1|soilQuality|5.57
+STATE|4|1|2|1|treeCount|7.23
+STATE|4|1|2|1|currentBiomass|0.84
+STATE|4|1|2|1|waterLevel|3.92
+STATE|4|1|2|1|elephantCount|1.56
+STATE|4|1|2|1|myWaterDistance|4.1
+STATE|4|1|2|1|harvestYield|1.28
+STATE|4|1|2|1|playerHarvestRound|[5 7 7 4 9 7 9 9]
+STATE|4|1|2|1|fined?|true
+STATE|4|1|2|1|fineAmount|9.21
+STATE|4|1|2|1|cropOwner|6.4
+STATE|4|1|2|1|defended?|false
+STATE|4|1|2|1|cropCount|4.13
+STATE|4|1|2|1|vegCount|9.91
+STATE|4|1|2|1|ownedBy|0
+STATE|4|1|2|1|village|1
+STATE|4|1|2|1|shared?|false
+STATE|4|1|2|2|protected?|false
+STATE|4|1|2|2|water?|true
+STATE|4|1|2|2|cropped?|false
+STATE|4|1|2|2|driedUp?|true
+STATE|4|1|2|2|soilQuality|7.53
+STATE|4|1|2|2|treeCount|4.68
+STATE|4|1|2|2|currentBiomass|4.11
+STATE|4|1|2|2|waterLevel|1.97
+STATE|4|1|2|2|elephantCount|8.0
+STATE|4|1|2|2|myWaterDistance|7.31
+STATE|4|1|2|2|harvestYield|0.89
+STATE|4|1|2|2|playerHarvestRound|[3 4 6 3 6 5 9 10]
+STATE|4|1|2|2|fined?|false
+STATE|4|1|2|2|fineAmount|9.45
+STATE|4|1|2|2|cropOwner|6.33
+STATE|4|1|2|2|defended?|true
+STATE|4|1|2|2|cropCount|1.07
+STATE|4|1|2|2|vegCount|0.69
+STATE|4|1|2|2|ownedBy|3
+STATE|4|1|2|2|village|0
+STATE|4|1|2|2|shared?|false
+STATE|4|1|2|3|protected?|true
+STATE|4|1|2|3|water?|false
+STATE|4|1|2|3|cropped?|true
+STATE|4|1|2|3|driedUp?|true
+STATE|4|1|2|3|soilQuality|4.18
+STATE|4|1|2|3|treeCount|1.72
+STATE|4|1|2|3|currentBiomass|9.39
+STATE|4|1|2|3|waterLevel|5.91
+STATE|4|1|2|3|elephantCount|5.43
+STATE|4|1|2|3|myWaterDistance|4.26
+STATE|4|1|2|3|harvestYield|2.5
+STATE|4|1|2|3|playerHarvestRound|[5 7 7 0 7 9 8 3]
+STATE|4|1|2|3|fined?|false
+STATE|4|1|2|3|fineAmount|8.13
+STATE|4|1|2|3|cropOwner|0.56
+STATE|4|1|2|3|defended?|true
+STATE|4|1|2|3|cropCount|0.79
+STATE|4|1|2|3|vegCount|2.16
+STATE|4|1|2|3|ownedBy|2
+STATE|4|1|2|3|village|1
+STATE|4|1|2|3|shared?|true
+STATE|4|1|3|0|protected?|false
+STATE|4|1|3|0|water?|false
+STATE|4|1|3|0|cropped?|true
+STATE|4|1|3|0|driedUp?|true
+STATE|4|1|3|0|soilQuality|6.68
+STATE|4|1|3|0|treeCount|6.89
+STATE|4|1|3|0|currentBiomass|3.8
+STATE|4|1|3|0|waterLevel|9.19
+STATE|4|1|3|0|elephantCount|8.2
+STATE|4|1|3|0|myWaterDistance|3.02
+STATE|4|1|3|0|harvestYield|0.67
+STATE|4|1|3|0|playerHarvestRound|[8 5 10 6 3 1 0 1]
+STATE|4|1|3|0|fined?|true
+STATE|4|1|3|0|fineAmount|0.34
+STATE|4|1|3|0|cropOwner|7.37
+STATE|4|1|3|0|defended?|false
+STATE|4|1|3|0|cropCount|2.79
+STATE|4|1|3|0|vegCount|4.46
+STATE|4|1|3|0|ownedBy|0
+STATE|4|1|3|0|village|1
+STATE|4|1|3|0|shared?|true
+STATE|4|1|3|1|protected?|true
+STATE|4|1|3|1|water?|false
+STATE|4|1|3|1|cropped?|true
+STATE|4|1|3|1|driedUp?|false
+STATE|4|1|3|1|soilQuality|3.48
+STATE|4|1|3|1|treeCount|8.07
+STATE|4|1|3|1|currentBiomass|5.96
+STATE|4|1|3|1|waterLevel|6.54
+STATE|4|1|3|1|elephantCount|3.93
+STATE|4|1|3|1|myWaterDistance|5.62
+STATE|4|1|3|1|harvestYield|1.91
+STATE|4|1|3|1|playerHarvestRound|[5 10 4 8 3 10 1 8]
+STATE|4|1|3|1|fined?|true
+STATE|4|1|3|1|fineAmount|2.31
+STATE|4|1|3|1|cropOwner|8.43
+STATE|4|1|3|1|defended?|true
+STATE|4|1|3|1|cropCount|4.45
+STATE|4|1|3|1|vegCount|8.69
+STATE|4|1|3|1|ownedBy|3
+STATE|4|1|3|1|village|3
+STATE|4|1|3|1|shared?|true
+STATE|4|1|3|2|protected?|true
+STATE|4|1|3|2|water?|false
+STATE|4|1|3|2|cropped?|true
+STATE|4|1|3|2|driedUp?|true
+STATE|4|1|3|2|soilQuality|6.34
+STATE|4|1|3|2|treeCount|5.61
+STATE|4|1|3|2|currentBiomass|4.78
+STATE|4|1|3|2|waterLevel|3.56
+STATE|4|1|3|2|elephantCount|6.97
+STATE|4|1|3|2|myWaterDistance|9.2
+STATE|4|1|3|2|harvestYield|0.83
+STATE|4|1|3|2|playerHarvestRound|[0 9 0 9 8 6 10 10]
+STATE|4|1|3|2|fined?|true
+STATE|4|1|3|2|fineAmount|2.08
+STATE|4|1|3|2|cropOwner|7.84
+STATE|4|1|3|2|defended?|false
+STATE|4|1|3|2|cropCount|7.56
+STATE|4|1|3|2|vegCount|4.89
+STATE|4|1|3|2|ownedBy|0
+STATE|4|1|3|2|village|2
+STATE|4|1|3|2|shared?|false
+STATE|4|1|3|3|protected?|true
+STATE|4|1|3|3|water?|true
+STATE|4|1|3|3|cropped?|true
+STATE|4|1|3|3|driedUp?|true
+STATE|4|1|3|3|soilQuality|6.66
+STATE|4|1|3|3|treeCount|7.64
+STATE|4|1|3|3|currentBiomass|6.36
+STATE|4|1|3|3|waterLevel|4.43
+STATE|4|1|3|3|elephantCount|7.33
+STATE|4|1|3|3|myWaterDistance|6.69
+STATE|4|1|3|3|harvestYield|2.06
+STATE|4|1|3|3|playerHarvestRound|[8 7 9 2 3 4 6 5]
+STATE|4|1|3|3|fined?|true
+STATE|4|1|3|3|fineAmount|2.97
+STATE|4|1|3|3|cropOwner|9.15
+STATE|4|1|3|3|defended?|true
+STATE|4|1|3|3|cropCount|1.47
+STATE|4|1|3|3|vegCount|4.14
+STATE|4|1|3|3|ownedBy|1
+STATE|4|1|3|3|village|0
+STATE|4|1|3|3|shared?|true
+CHOICE|4|1|1|1|0|4|12:42:05.000 PM 28-Sep-2026
+CHOICE|4|1|1|1|0|3|12:42:18.000 PM 28-Sep-2026
+CHOICE|4|1|1|2|2|1|12:42:22.000 PM 28-Sep-2026
+CONFIRM|4|1|1|12:42:28.000 PM 28-Sep-2026
+CHOICE|4|1|2|2|1|3|12:42:43.000 PM 28-Sep-2026
+CONFIRM|4|1|2|12:42:49.000 PM 28-Sep-2026
+CHOICE|4|1|3|2|2|-99|12:43:04.000 PM 28-Sep-2026
+CONFIRM|4|1|3|12:43:09.000 PM 28-Sep-2026
+CHOICE|4|1|4|1|2|3|12:43:15.000 PM 28-Sep-2026
+CONFIRM|4|1|4|12:43:17.000 PM 28-Sep-2026
+CHOICE|4|1|5|1|3|4|12:43:25.000 PM 28-Sep-2026
+CHOICE|4|1|5|1|3|1|12:43:31.000 PM 28-Sep-2026
+CHOICE|4|1|5|1|3|3|12:43:40.000 PM 28-Sep-2026
+CONFIRM|4|1|5|12:43:43.000 PM 28-Sep-2026
+CHOICE|4|1|6|3|2|2|12:43:58.000 PM 28-Sep-2026
+CHOICE|4|1|6|3|2|2|12:44:13.000 PM 28-Sep-2026
+CONFIRM|4|1|6|12:44:17.000 PM 28-Sep-2026
+CHOICE|4|1|7|0|1|2|12:44:20.000 PM 28-Sep-2026
+CONFIRM|4|1|7|12:44:29.000 PM 28-Sep-2026
+CHOICE|4|1|8|3|2|3|12:44:40.000 PM 28-Sep-2026
+CHOICE|4|1|8|3|2|2|12:44:47.000 PM 28-Sep-2026
+CHOICE|4|1|8|3|2|1|12:44:59.000 PM 28-Sep-2026
+CONFIRM|4|1|8|12:45:05.000 PM 28-Sep-2026
+SCORE|4|1|1|1|6|8
+SCORE|4|1|2|11|18|15
+SCORE|4|1|3|4|36|16
+SCORE|4|1|4|5|55|20
+SCORE|4|1|5|3|36|19
+SCORE|4|1|6|4|28|4
+SCORE|4|1|7|9|22|18
+SCORE|4|1|8|10|40|2
+PHASE|phase-4-2|12:45:20.000 PM 28-Sep-2026
+STATE|4|2|0|0|protected?|true
+STATE|4|2|0|0|water?|false
+STATE|4|2|0|0|cropped?|true
+STATE|4|2|0|0|driedUp?|false
+STATE|4|2|0|0|soilQuality|0.2
+STATE|4|2|0|0|treeCount|4.91
+STATE|4|2|0|0|currentBiomass|4.88
+STATE|4|2|0|0|waterLevel|1.99
+STATE|4|2|0|0|elephantCount|5.03
+STATE|4|2|0|0|myWaterDistance|9.71
+STATE|4|2|0|0|harvestYield|6.89
+STATE|4|2|0|0|playerHarvestRound|[7 3 9 1 5 2 1 3]
+STATE|4|2|0|0|fined?|false
+STATE|4|2|0|0|fineAmount|7.23
+STATE|4|2|0|0|cropOwner|3.17
+STATE|4|2|0|0|defended?|false
+STATE|4|2|0|0|cropCount|4.11
+STATE|4|2|0|0|vegCount|7.51
+STATE|4|2|0|0|ownedBy|0
+STATE|4|2|0|0|village|1
+STATE|4|2|0|0|shared?|false
+STATE|4|2|0|1|protected?|true
+STATE|4|2|0|1|water?|false
+STATE|4|2|0|1|cropped?|true
+STATE|4|2|0|1|driedUp?|false
+STATE|4|2|0|1|soilQuality|3.01
+STATE|4|2|0|1|treeCount|5.45
+STATE|4|2|0|1|currentBiomass|0.25
+STATE|4|2|0|1|waterLevel|4.89
+STATE|4|2|0|1|elephantCount|0.79
+STATE|4|2|0|1|myWaterDistance|8.59
+STATE|4|2|0|1|harvestYield|6.77
+STATE|4|2|0|1|playerHarvestRound|[6 3 1 10 1 8 0 9]
+STATE|4|2|0|1|fined?|true
+STATE|4|2|0|1|fineAmount|5.27
+STATE|4|2|0|1|cropOwner|4.88
+STATE|4|2|0|1|defended?|false
+STATE|4|2|0|1|cropCount|6.61
+STATE|4|2|0|1|vegCount|2.53
+STATE|4|2|0|1|ownedBy|0
+STATE|4|2|0|1|village|2
+STATE|4|2|0|1|shared?|false
+STATE|4|2|0|2|protected?|true
+STATE|4|2|0|2|water?|true
+STATE|4|2|0|2|cropped?|true
+STATE|4|2|0|2|driedUp?|false
+STATE|4|2|0|2|soilQuality|7.4
+STATE|4|2|0|2|treeCount|2.1
+STATE|4|2|0|2|currentBiomass|1.46
+STATE|4|2|0|2|waterLevel|8.98
+STATE|4|2|0|2|elephantCount|6.65
+STATE|4|2|0|2|myWaterDistance|5.83
+STATE|4|2|0|2|harvestYield|1.31
+STATE|4|2|0|2|playerHarvestRound|[6 5 0 6 6 0 8 1]
+STATE|4|2|0|2|fined?|true
+STATE|4|2|0|2|fineAmount|5.84
+STATE|4|2|0|2|cropOwner|8.48
+STATE|4|2|0|2|defended?|false
+STATE|4|2|0|2|cropCount|4.05
+STATE|4|2|0|2|vegCount|1.36
+STATE|4|2|0|2|ownedBy|2
+STATE|4|2|0|2|village|0
+STATE|4|2|0|2|shared?|true
+STATE|4|2|0|3|protected?|false
+STATE|4|2|0|3|water?|false
+STATE|4|2|0|3|cropped?|true
+STATE|4|2|0|3|driedUp?|false
+STATE|4|2|0|3|soilQuality|4.2
+STATE|4|2|0|3|treeCount|2.66
+STATE|4|2|0|3|currentBiomass|2.39
+STATE|4|2|0|3|waterLevel|4.6
+STATE|4|2|0|3|elephantCount|6.47
+STATE|4|2|0|3|myWaterDistance|5.7
+STATE|4|2|0|3|harvestYield|8.9
+STATE|4|2|0|3|playerHarvestRound|[8 8 8 2 8 3 2 0]
+STATE|4|2|0|3|fined?|true
+STATE|4|2|0|3|fineAmount|2.31
+STATE|4|2|0|3|cropOwner|2.29
+STATE|4|2|0|3|defended?|true
+STATE|4|2|0|3|cropCount|1.81
+STATE|4|2|0|3|vegCount|0.93
+STATE|4|2|0|3|ownedBy|2
+STATE|4|2|0|3|village|2
+STATE|4|2|0|3|shared?|false
+STATE|4|2|1|0|protected?|false
+STATE|4|2|1|0|water?|false
+STATE|4|2|1|0|cropped?|true
+STATE|4|2|1|0|driedUp?|true
+STATE|4|2|1|0|soilQuality|7.51
+STATE|4|2|1|0|treeCount|6.33
+STATE|4|2|1|0|currentBiomass|1.43
+STATE|4|2|1|0|waterLevel|6.81
+STATE|4|2|1|0|elephantCount|4.64
+STATE|4|2|1|0|myWaterDistance|4.7
+STATE|4|2|1|0|harvestYield|0.42
+STATE|4|2|1|0|playerHarvestRound|[8 3 5 1 3 7 1 1]
+STATE|4|2|1|0|fined?|false
+STATE|4|2|1|0|fineAmount|7.45
+STATE|4|2|1|0|cropOwner|6.48
+STATE|4|2|1|0|defended?|false
+STATE|4|2|1|0|cropCount|5.16
+STATE|4|2|1|0|vegCount|5.62
+STATE|4|2|1|0|ownedBy|3
+STATE|4|2|1|0|village|3
+STATE|4|2|1|0|shared?|true
+STATE|4|2|1|1|protected?|true
+STATE|4|2|1|1|water?|true
+STATE|4|2|1|1|cropped?|false
+STATE|4|2|1|1|driedUp?|true
+STATE|4|2|1|1|soilQuality|0.54
+STATE|4|2|1|1|treeCount|3.3
+STATE|4|2|1|1|currentBiomass|6.28
+STATE|4|2|1|1|waterLevel|0.67
+STATE|4|2|1|1|elephantCount|2.4
+STATE|4|2|1|1|myWaterDistance|5.19
+STATE|4|2|1|1|harvestYield|5.17
+STATE|4|2|1|1|playerHarvestRound|[2 6 4 5 4 9 1 7]
+STATE|4|2|1|1|fined?|true
+STATE|4|2|1|1|fineAmount|7.21
+STATE|4|2|1|1|cropOwner|3.95
+STATE|4|2|1|1|defended?|true
+STATE|4|2|1|1|cropCount|5.92
+STATE|4|2|1|1|vegCount|3.67
+STATE|4|2|1|1|ownedBy|0
+STATE|4|2|1|1|village|3
+STATE|4|2|1|1|shared?|true
+STATE|4|2|1|2|protected?|false
+STATE|4|2|1|2|water?|false
+STATE|4|2|1|2|cropped?|true
+STATE|4|2|1|2|driedUp?|true
+STATE|4|2|1|2|soilQuality|3.24
+STATE|4|2|1|2|treeCount|0.58
+STATE|4|2|1|2|currentBiomass|8.93
+STATE|4|2|1|2|waterLevel|8.36
+STATE|4|2|1|2|elephantCount|2.41
+STATE|4|2|1|2|myWaterDistance|2.55
+STATE|4|2|1|2|harvestYield|6.98
+STATE|4|2|1|2|playerHarvestRound|[7 7 6 1 3 2 5 1]
+STATE|4|2|1|2|fined?|true
+STATE|4|2|1|2|fineAmount|8.17
+STATE|4|2|1|2|cropOwner|7.05
+STATE|4|2|1|2|defended?|false
+STATE|4|2|1|2|cropCount|9.15
+STATE|4|2|1|2|vegCount|9.68
+STATE|4|2|1|2|ownedBy|2
+STATE|4|2|1|2|village|3
+STATE|4|2|1|2|shared?|true
+STATE|4|2|1|3|protected?|false
+STATE|4|2|1|3|water?|true
+STATE|4|2|1|3|cropped?|false
+STATE|4|2|1|3|driedUp?|false
+STATE|4|2|1|3|soilQuality|9.37
+STATE|4|2|1|3|treeCount|7.65
+STATE|4|2|1|3|currentBiomass|1.3
+STATE|4|2|1|3|waterLevel|6.96
+STATE|4|2|1|3|elephantCount|0.08
+STATE|4|2|1|3|myWaterDistance|4.09
+STATE|4|2|1|3|harvestYield|5.03
+STATE|4|2|1|3|playerHarvestRound|[1 9 3 7 5 3 9 5]
+STATE|4|2|1|3|fined?|true
+STATE|4|2|1|3|fineAmount|6.12
+STATE|4|2|1|3|cropOwner|8.45
+STATE|4|2|1|3|defended?|false
+STATE|4|2|1|3|cropCount|5.18
+STATE|4|2|1|3|vegCount|9.67
+STATE|4|2|1|3|ownedBy|3
+STATE|4|2|1|3|village|0
+STATE|4|2|1|3|shared?|true
+STATE|4|2|2|0|protected?|false
+STATE|4|2|2|0|water?|true
+STATE|4|2|2|0|cropped?|true
+STATE|4|2|2|0|driedUp?|false
+STATE|4|2|2|0|soilQuality|6.38
+STATE|4|2|2|0|treeCount|3.43
+STATE|4|2|2|0|currentBiomass|0.34
+STATE|4|2|2|0|waterLevel|1.24
+STATE|4|2|2|0|elephantCount|5.6
+STATE|4|2|2|0|myWaterDistance|1.71
+STATE|4|2|2|0|harvestYield|3.06
+STATE|4|2|2|0|playerHarvestRound|[9 2 8 4 4 9 10 4]
+STATE|4|2|2|0|fined?|true
+STATE|4|2|2|0|fineAmount|7.26
+STATE|4|2|2|0|cropOwner|2.93
+STATE|4|2|2|0|defended?|false
+STATE|4|2|2|0|cropCount|2.13
+STATE|4|2|2|0|vegCount|6.08
+STATE|4|2|2|0|ownedBy|3
+STATE|4|2|2|0|village|0
+STATE|4|2|2|0|shared?|true
+STATE|4|2|2|1|protected?|false
+STATE|4|2|2|1|water?|false
+STATE|4|2|2|1|cropped?|true
+STATE|4|2|2|1|driedUp?|false
+STATE|4|2|2|1|soilQuality|3.05
+STATE|4|2|2|1|treeCount|8.53
+STATE|4|2|2|1|currentBiomass|9.81
+STATE|4|2|2|1|waterLevel|1.55
+STATE|4|2|2|1|elephantCount|3.65
+STATE|4|2|2|1|myWaterDistance|0.48
+STATE|4|2|2|1|harvestYield|8.26
+STATE|4|2|2|1|playerHarvestRound|[10 4 2 8 5 10 3 6]
+STATE|4|2|2|1|fined?|false
+STATE|4|2|2|1|fineAmount|8.26
+STATE|4|2|2|1|cropOwner|1.29
+STATE|4|2|2|1|defended?|false
+STATE|4|2|2|1|cropCount|9.99
+STATE|4|2|2|1|vegCount|8.19
+STATE|4|2|2|1|ownedBy|3
+STATE|4|2|2|1|village|3
+STATE|4|2|2|1|shared?|false
+STATE|4|2|2|2|protected?|true
+STATE|4|2|2|2|water?|false
+STATE|4|2|2|2|cropped?|false
+STATE|4|2|2|2|driedUp?|false
+STATE|4|2|2|2|soilQuality|2.65
+STATE|4|2|2|2|treeCount|6.74
+STATE|4|2|2|2|currentBiomass|7.48
+STATE|4|2|2|2|waterLevel|1.86
+STATE|4|2|2|2|elephantCount|9.62
+STATE|4|2|2|2|myWaterDistance|0.91
+STATE|4|2|2|2|harvestYield|1.09
+STATE|4|2|2|2|playerHarvestRound|[4 8 7 5 9 3 4 4]
+STATE|4|2|2|2|fined?|false
+STATE|4|2|2|2|fineAmount|6.77
+STATE|4|2|2|2|cropOwner|6.97
+STATE|4|2|2|2|defended?|true
+STATE|4|2|2|2|cropCount|7.45
+STATE|4|2|2|2|vegCount|5.66
+STATE|4|2|2|2|ownedBy|3
+STATE|4|2|2|2|village|0
+STATE|4|2|2|2|shared?|false
+STATE|4|2|2|3|protected?|true
+STATE|4|2|2|3|water?|false
+STATE|4|2|2|3|cropped?|false
+STATE|4|2|2|3|driedUp?|true
+STATE|4|2|2|3|soilQuality|6.29
+STATE|4|2|2|3|treeCount|8.65
+STATE|4|2|2|3|currentBiomass|1.93
+STATE|4|2|2|3|waterLevel|4.89
+STATE|4|2|2|3|elephantCount|5.44
+STATE|4|2|2|3|myWaterDistance|8.07
+STATE|4|2|2|3|harvestYield|4.54
+STATE|4|2|2|3|playerHarvestRound|[4 4 1 6 10 5 8 4]
+STATE|4|2|2|3|fined?|false
+STATE|4|2|2|3|fineAmount|7.46
+STATE|4|2|2|3|cropOwner|9.52
+STATE|4|2|2|3|defended?|false
+STATE|4|2|2|3|cropCount|6.05
+STATE|4|2|2|3|vegCount|7.11
+STATE|4|2|2|3|ownedBy|1
+STATE|4|2|2|3|village|1
+STATE|4|2|2|3|shared?|true
+STATE|4|2|3|0|protected?|false
+STATE|4|2|3|0|water?|true
+STATE|4|2|3|0|cropped?|false
+STATE|4|2|3|0|driedUp?|true
+STATE|4|2|3|0|soilQuality|3.82
+STATE|4|2|3|0|treeCount|5.74
+STATE|4|2|3|0|currentBiomass|6.54
+STATE|4|2|3|0|waterLevel|3.4
+STATE|4|2|3|0|elephantCount|2.69
+STATE|4|2|3|0|myWaterDistance|6.25
+STATE|4|2|3|0|harvestYield|8.66
+STATE|4|2|3|0|playerHarvestRound|[10 8 8 4 2 9 1 8]
+STATE|4|2|3|0|fined?|true
+STATE|4|2|3|0|fineAmount|2.42
+STATE|4|2|3|0|cropOwner|5.14
+STATE|4|2|3|0|defended?|true
+STATE|4|2|3|0|cropCount|5.54
+STATE|4|2|3|0|vegCount|7.27
+STATE|4|2|3|0|ownedBy|3
+STATE|4|2|3|0|village|2
+STATE|4|2|3|0|shared?|true
+STATE|4|2|3|1|protected?|true
+STATE|4|2|3|1|water?|true
+STATE|4|2|3|1|cropped?|false
+STATE|4|2|3|1|driedUp?|false
+STATE|4|2|3|1|soilQuality|0.26
+STATE|4|2|3|1|treeCount|0.6
+STATE|4|2|3|1|currentBiomass|1.84
+STATE|4|2|3|1|waterLevel|3.04
+STATE|4|2|3|1|elephantCount|8.2
+STATE|4|2|3|1|myWaterDistance|8.67
+STATE|4|2|3|1|harvestYield|9.65
+STATE|4|2|3|1|playerHarvestRound|[8 10 2 6 10 2 8 10]
+STATE|4|2|3|1|fined?|true
+STATE|4|2|3|1|fineAmount|1.76
+STATE|4|2|3|1|cropOwner|4.49
+STATE|4|2|3|1|defended?|true
+STATE|4|2|3|1|cropCount|1.8
+STATE|4|2|3|1|vegCount|3.03
+STATE|4|2|3|1|ownedBy|0
+STATE|4|2|3|1|village|3
+STATE|4|2|3|1|shared?|true
+STATE|4|2|3|2|protected?|true
+STATE|4|2|3|2|water?|true
+STATE|4|2|3|2|cropped?|false
+STATE|4|2|3|2|driedUp?|false
+STATE|4|2|3|2|soilQuality|6.06
+STATE|4|2|3|2|treeCount|4.57
+STATE|4|2|3|2|currentBiomass|7.47
+STATE|4|2|3|2|waterLevel|0.95
+STATE|4|2|3|2|elephantCount|7.51
+STATE|4|2|3|2|myWaterDistance|5.54
+STATE|4|2|3|2|harvestYield|6.28
+STATE|4|2|3|2|playerHarvestRound|[1 9 4 9 1 2 5 5]
+STATE|4|2|3|2|fined?|false
+STATE|4|2|3|2|fineAmount|0.19
+STATE|4|2|3|2|cropOwner|0.98
+STATE|4|2|3|2|defended?|true
+STATE|4|2|3|2|cropCount|9.37
+STATE|4|2|3|2|vegCount|4.21
+STATE|4|2|3|2|ownedBy|1
+STATE|4|2|3|2|village|1
+STATE|4|2|3|2|shared?|true
+STATE|4|2|3|3|protected?|false
+STATE|4|2|3|3|water?|true
+STATE|4|2|3|3|cropped?|true
+STATE|4|2|3|3|driedUp?|true
+STATE|4|2|3|3|soilQuality|6.51
+STATE|4|2|3|3|treeCount|9.24
+STATE|4|2|3|3|currentBiomass|4.57
+STATE|4|2|3|3|waterLevel|6.53
+STATE|4|2|3|3|elephantCount|0.44
+STATE|4|2|3|3|myWaterDistance|3.04
+STATE|4|2|3|3|harvestYield|7.09
+STATE|4|2|3|3|playerHarvestRound|[1 5 0 5 8 6 10 5]
+STATE|4|2|3|3|fined?|false
+STATE|4|2|3|3|fineAmount|5.55
+STATE|4|2|3|3|cropOwner|3.63
+STATE|4|2|3|3|defended?|true
+STATE|4|2|3|3|cropCount|8.85
+STATE|4|2|3|3|vegCount|8.01
+STATE|4|2|3|3|ownedBy|1
+STATE|4|2|3|3|village|3
+STATE|4|2|3|3|shared?|true
+CHOICE|4|2|1|3|0|-99|12:45:35.000 PM 28-Sep-2026
+CONFIRM|4|2|1|12:45:44.000 PM 28-Sep-2026
+CHOICE|4|2|2|1|3|1|12:45:47.000 PM 28-Sep-2026
+CHOICE|4|2|2|0|1|4|12:45:58.000 PM 28-Sep-2026
+CONFIRM|4|2|2|12:46:08.000 PM 28-Sep-2026
+CHOICE|4|2|3|0|1|-99|12:46:09.000 PM 28-Sep-2026
+CHOICE|4|2|3|1|3|2|12:46:12.000 PM 28-Sep-2026
+CHOICE|4|2|3|3|3|1|12:46:26.000 PM 28-Sep-2026
+CONFIRM|4|2|3|12:46:39.000 PM 28-Sep-2026
+CHOICE|4|2|4|2|2|4|12:46:54.000 PM 28-Sep-2026
+CONFIRM|4|2|4|12:47:07.000 PM 28-Sep-2026
+CHOICE|4|2|5|2|3|4|12:47:10.000 PM 28-Sep-2026
+CONFIRM|4|2|5|12:47:20.000 PM 28-Sep-2026
+CHOICE|4|2|6|2|0|4|12:47:29.000 PM 28-Sep-2026
+CHOICE|4|2|6|1|0|4|12:47:35.000 PM 28-Sep-2026
+CHOICE|4|2|6|1|0|-99|12:47:43.000 PM 28-Sep-2026
+CONFIRM|4|2|6|12:47:44.000 PM 28-Sep-2026
+CHOICE|4|2|7|3|0|-99|12:47:51.000 PM 28-Sep-2026
+CONFIRM|4|2|7|12:47:57.000 PM 28-Sep-2026
+CHOICE|4|2|8|2|3|4|12:48:12.000 PM 28-Sep-2026
+CONFIRM|4|2|8|12:48:21.000 PM 28-Sep-2026
+SCORE|4|2|1|17|45|18
+SCORE|4|2|2|9|42|19
+SCORE|4|2|3|17|39|15
+SCORE|4|2|4|6|33|2
+SCORE|4|2|5|13|20|16
+SCORE|4|2|6|11|56|4
+SCORE|4|2|7|17|44|6
+SCORE|4|2|8|7|21|7
+PHASE|phase-4-3|12:48:25.000 PM 28-Sep-2026
+STATE|4|3|0|0|protected?|true
+STATE|4|3|0|0|water?|true
+STATE|4|3|0|0|cropped?|true
+STATE|4|3|0|0|driedUp?|true
+STATE|4|3|0|0|soilQuality|4.19
+STATE|4|3|0|0|treeCount|9.2
+STATE|4|3|0|0|currentBiomass|7.88
+STATE|4|3|0|0|waterLevel|3.9
+STATE|4|3|0|0|elephantCount|7.28
+STATE|4|3|0|0|myWaterDistance|7.6
+STATE|4|3|0|0|harvestYield|5.74
+STATE|4|3|0|0|playerHarvestRound|[10 2 7 7 7 4 6 0]
+STATE|4|3|0|0|fined?|true
+STATE|4|3|0|0|fineAmount|9.47
+STATE|4|3|0|0|cropOwner|3.23
+STATE|4|3|0|0|defended?|false
+STATE|4|3|0|0|cropCount|5.07
+STATE|4|3|0|0|vegCount|0.28
+STATE|4|3|0|0|ownedBy|3
+STATE|4|3|0|0|village|2
+STATE|4|3|0|0|shared?|false
+STATE|4|3|0|1|protected?|true
+STATE|4|3|0|1|water?|true
+STATE|4|3|0|1|cropped?|false
+STATE|4|3|0|1|driedUp?|false
+STATE|4|3|0|1|soilQuality|3.29
+STATE|4|3|0|1|treeCount|5.82
+STATE|4|3|0|1|currentBiomass|9.15
+STATE|4|3|0|1|waterLevel|3.87
+STATE|4|3|0|1|elephantCount|7.52
+STATE|4|3|0|1|myWaterDistance|9.46
+STATE|4|3|0|1|harvestYield|8.84
+STATE|4|3|0|1|playerHarvestRound|[5 5 4 2 2 0 9 1]
+STATE|4|3|0|1|fined?|true
+STATE|4|3|0|1|fineAmount|9.83
+STATE|4|3|0|1|cropOwner|3.14
+STATE|4|3|0|1|defended?|true
+STATE|4|3|0|1|cropCount|5.02
+STATE|4|3|0|1|vegCount|0.02
+STATE|4|3|0|1|ownedBy|0
+STATE|4|3|0|1|village|2
+STATE|4|3|0|1|shared?|false
+STATE|4|3|0|2|protected?|false
+STATE|4|3|0|2|water?|true
+STATE|4|3|0|2|cropped?|true
+STATE|4|3|0|2|driedUp?|false
+STATE|4|3|0|2|soilQuality|2.64
+STATE|4|3|0|2|treeCount|5.61
+STATE|4|3|0|2|currentBiomass|3.61
+STATE|4|3|0|2|waterLevel|5.78
+STATE|4|3|0|2|elephantCount|9.34
+STATE|4|3|0|2|myWaterDistance|9.47
+STATE|4|3|0|2|harvestYield|8.77
+STATE|4|3|0|2|playerHarvestRound|[4 0 5 6 0 4 4 0]
+STATE|4|3|0|2|fined?|true
+STATE|4|3|0|2|fineAmount|5.82
+STATE|4|3|0|2|cropOwner|2.37
+STATE|4|3|0|2|defended?|false
+STATE|4|3|0|2|cropCount|6.53
+STATE|4|3|0|2|vegCount|0.95
+STATE|4|3|0|2|ownedBy|1
+STATE|4|3|0|2|village|0
+STATE|4|3|0|2|shared?|false
+STATE|4|3|0|3|protected?|true
+STATE|4|3|0|3|water?|true
+STATE|4|3|0|3|cropped?|false
+STATE|4|3|0|3|driedUp?|false
+STATE|4|3|0|3|soilQuality|7.84
+STATE|4|3|0|3|treeCount|8.48
+STATE|4|3|0|3|currentBiomass|4.49
+STATE|4|3|0|3|waterLevel|2.36
+STATE|4|3|0|3|elephantCount|1.79
+STATE|4|3|0|3|myWaterDistance|7.15
+STATE|4|3|0|3|harvestYield|8.09
+STATE|4|3|0|3|playerHarvestRound|[8 5 7 10 4 6 9 8]
+STATE|4|3|0|3|fined?|false
+STATE|4|3|0|3|fineAmount|8.19
+STATE|4|3|0|3|cropOwner|0.85
+STATE|4|3|0|3|defended?|false
+STATE|4|3|0|3|cropCount|5.43
+STATE|4|3|0|3|vegCount|8.57
+STATE|4|3|0|3|ownedBy|0
+STATE|4|3|0|3|village|0
+STATE|4|3|0|3|shared?|false
+STATE|4|3|1|0|protected?|false
+STATE|4|3|1|0|water?|true
+STATE|4|3|1|0|cropped?|true
+STATE|4|3|1|0|driedUp?|false
+STATE|4|3|1|0|soilQuality|2.96
+STATE|4|3|1|0|treeCount|1.93
+STATE|4|3|1|0|currentBiomass|6.82
+STATE|4|3|1|0|waterLevel|8.24
+STATE|4|3|1|0|elephantCount|5.45
+STATE|4|3|1|0|myWaterDistance|1.28
+STATE|4|3|1|0|harvestYield|4.43
+STATE|4|3|1|0|playerHarvestRound|[9 10 2 0 0 9 5 5]
+STATE|4|3|1|0|fined?|true
+STATE|4|3|1|0|fineAmount|4.31
+STATE|4|3|1|0|cropOwner|2.37
+STATE|4|3|1|0|defended?|false
+STATE|4|3|1|0|cropCount|9.81
+STATE|4|3|1|0|vegCount|2.09
+STATE|4|3|1|0|ownedBy|0
+STATE|4|3|1|0|village|3
+STATE|4|3|1|0|shared?|false
+STATE|4|3|1|1|protected?|true
+STATE|4|3|1|1|water?|true
+STATE|4|3|1|1|cropped?|true
+STATE|4|3|1|1|driedUp?|false
+STATE|4|3|1|1|soilQuality|3.24
+STATE|4|3|1|1|treeCount|3.16
+STATE|4|3|1|1|currentBiomass|4.75
+STATE|4|3|1|1|waterLevel|1.62
+STATE|4|3|1|1|elephantCount|4.02
+STATE|4|3|1|1|myWaterDistance|7.0
+STATE|4|3|1|1|harvestYield|3.24
+STATE|4|3|1|1|playerHarvestRound|[7 2 8 1 10 10 1 7]
+STATE|4|3|1|1|fined?|false
+STATE|4|3|1|1|fineAmount|4.94
+STATE|4|3|1|1|cropOwner|0.73
+STATE|4|3|1|1|defended?|true
+STATE|4|3|1|1|cropCount|7.96
+STATE|4|3|1|1|vegCount|8.53
+STATE|4|3|1|1|ownedBy|0
+STATE|4|3|1|1|village|3
+STATE|4|3|1|1|shared?|false
+STATE|4|3|1|2|protected?|true
+STATE|4|3|1|2|water?|false
+STATE|4|3|1|2|cropped?|true
+STATE|4|3|1|2|driedUp?|true
+STATE|4|3|1|2|soilQuality|8.65
+STATE|4|3|1|2|treeCount|4.96
+STATE|4|3|1|2|currentBiomass|9.3
+STATE|4|3|1|2|waterLevel|2.88
+STATE|4|3|1|2|elephantCount|0.95
+STATE|4|3|1|2|myWaterDistance|6.0
+STATE|4|3|1|2|harvestYield|8.97
+STATE|4|3|1|2|playerHarvestRound|[2 5 5 3 9 10 3 3]
+STATE|4|3|1|2|fined?|true
+STATE|4|3|1|2|fineAmount|8.17
+STATE|4|3|1|2|cropOwner|8.58
+STATE|4|3|1|2|defended?|false
+STATE|4|3|1|2|cropCount|4.95
+STATE|4|3|1|2|vegCount|5.39
+STATE|4|3|1|2|ownedBy|0
+STATE|4|3|1|2|village|0
+STATE|4|3|1|2|shared?|true
+STATE|4|3|1|3|protected?|false
+STATE|4|3|1|3|water?|true
+STATE|4|3|1|3|cropped?|true
+STATE|4|3|1|3|driedUp?|true
+STATE|4|3|1|3|soilQuality|1.8
+STATE|4|3|1|3|treeCount|4.62
+STATE|4|3|1|3|currentBiomass|9.68
+STATE|4|3|1|3|waterLevel|8.79
+STATE|4|3|1|3|elephantCount|4.69
+STATE|4|3|1|3|myWaterDistance|4.03
+STATE|4|3|1|3|harvestYield|5.8
+STATE|4|3|1|3|playerHarvestRound|[8 6 3 0 8 10 2 3]
+STATE|4|3|1|3|fined?|false
+STATE|4|3|1|3|fineAmount|3.44
+STATE|4|3|1|3|cropOwner|3.25
+STATE|4|3|1|3|defended?|true
+STATE|4|3|1|3|cropCount|6.49
+STATE|4|3|1|3|vegCount|1.93
+STATE|4|3|1|3|ownedBy|1
+STATE|4|3|1|3|village|0
+STATE|4|3|1|3|shared?|false
+STATE|4|3|2|0|protected?|true
+STATE|4|3|2|0|water?|true
+STATE|4|3|2|0|cropped?|true
+STATE|4|3|2|0|driedUp?|false
+STATE|4|3|2|0|soilQuality|5.01
+STATE|4|3|2|0|treeCount|0.37
+STATE|4|3|2|0|currentBiomass|2.99
+STATE|4|3|2|0|waterLevel|6.1
+STATE|4|3|2|0|elephantCount|8.09
+STATE|4|3|2|0|myWaterDistance|1.09
+STATE|4|3|2|0|harvestYield|7.79
+STATE|4|3|2|0|playerHarvestRound|[6 8 6 7 5 0 10 9]
+STATE|4|3|2|0|fined?|false
+STATE|4|3|2|0|fineAmount|1.42
+STATE|4|3|2|0|cropOwner|0.35
+STATE|4|3|2|0|defended?|false
+STATE|4|3|2|0|cropCount|6.73
+STATE|4|3|2|0|vegCount|6.31
+STATE|4|3|2|0|ownedBy|1
+STATE|4|3|2|0|village|3
+STATE|4|3|2|0|shared?|true
+STATE|4|3|2|1|protected?|false
+STATE|4|3|2|1|water?|false
+STATE|4|3|2|1|cropped?|true
+STATE|4|3|2|1|driedUp?|true
+STATE|4|3|2|1|soilQuality|3.49
+STATE|4|3|2|1|treeCount|0.68
+STATE|4|3|2|1|currentBiomass|9.78
+STATE|4|3|2|1|waterLevel|9.03
+STATE|4|3|2|1|elephantCount|8.15
+STATE|4|3|2|1|myWaterDistance|0.04
+STATE|4|3|2|1|harvestYield|4.18
+STATE|4|3|2|1|playerHarvestRound|[1 7 1 1 4 0 6 1]
+STATE|4|3|2|1|fined?|false
+STATE|4|3|2|1|fineAmount|5.31
+STATE|4|3|2|1|cropOwner|6.29
+STATE|4|3|2|1|defended?|false
+STATE|4|3|2|1|cropCount|3.96
+STATE|4|3|2|1|vegCount|2.22
+STATE|4|3|2|1|ownedBy|3
+STATE|4|3|2|1|village|1
+STATE|4|3|2|1|shared?|false
+STATE|4|3|2|2|protected?|false
+STATE|4|3|2|2|water?|false
+STATE|4|3|2|2|cropped?|false
+STATE|4|3|2|2|driedUp?|false
+STATE|4|3|2|2|soilQuality|5.68
+STATE|4|3|2|2|treeCount|1.65
+STATE|4|3|2|2|currentBiomass|5.29
+STATE|4|3|2|2|waterLevel|6.34
+STATE|4|3|2|2|elephantCount|6.34
+STATE|4|3|2|2|myWaterDistance|0.08
+STATE|4|3|2|2|harvestYield|1.76
+STATE|4|3|2|2|playerHarvestRound|[3 3 2 5 5 6 0 5]
+STATE|4|3|2|2|fined?|true
+STATE|4|3|2|2|fineAmount|1.28
+STATE|4|3|2|2|cropOwner|9.97
+STATE|4|3|2|2|defended?|true
+STATE|4|3|2|2|cropCount|7.02
+STATE|4|3|2|2|vegCount|5.2
+STATE|4|3|2|2|ownedBy|0
+STATE|4|3|2|2|village|1
+STATE|4|3|2|2|shared?|false
+STATE|4|3|2|3|protected?|true
+STATE|4|3|2|3|water?|true
+STATE|4|3|2|3|cropped?|false
+STATE|4|3|2|3|driedUp?|true
+STATE|4|3|2|3|soilQuality|0.41
+STATE|4|3|2|3|treeCount|3.39
+STATE|4|3|2|3|currentBiomass|3.88
+STATE|4|3|2|3|waterLevel|2.3
+STATE|4|3|2|3|elephantCount|9.32
+STATE|4|3|2|3|myWaterDistance|3.85
+STATE|4|3|2|3|harvestYield|0.91
+STATE|4|3|2|3|playerHarvestRound|[1 4 8 1 7 0 1 9]
+STATE|4|3|2|3|fined?|true
+STATE|4|3|2|3|fineAmount|0.37
+STATE|4|3|2|3|cropOwner|1.25
+STATE|4|3|2|3|defended?|false
+STATE|4|3|2|3|cropCount|5.29
+STATE|4|3|2|3|vegCount|6.21
+STATE|4|3|2|3|ownedBy|2
+STATE|4|3|2|3|village|2
+STATE|4|3|2|3|shared?|true
+STATE|4|3|3|0|protected?|true
+STATE|4|3|3|0|water?|false
+STATE|4|3|3|0|cropped?|true
+STATE|4|3|3|0|driedUp?|true
+STATE|4|3|3|0|soilQuality|9.99
+STATE|4|3|3|0|treeCount|4.49
+STATE|4|3|3|0|currentBiomass|9.62
+STATE|4|3|3|0|waterLevel|4.66
+STATE|4|3|3|0|elephantCount|8.56
+STATE|4|3|3|0|myWaterDistance|2.18
+STATE|4|3|3|0|harvestYield|2.27
+STATE|4|3|3|0|playerHarvestRound|[4 9 10 10 9 9 8 5]
+STATE|4|3|3|0|fined?|false
+STATE|4|3|3|0|fineAmount|7.34
+STATE|4|3|3|0|cropOwner|5.42
+STATE|4|3|3|0|defended?|false
+STATE|4|3|3|0|cropCount|0.74
+STATE|4|3|3|0|vegCount|9.93
+STATE|4|3|3|0|ownedBy|3
+STATE|4|3|3|0|village|3
+STATE|4|3|3|0|shared?|false
+STATE|4|3|3|1|protected?|false
+STATE|4|3|3|1|water?|true
+STATE|4|3|3|1|cropped?|true
+STATE|4|3|3|1|driedUp?|false
+STATE|4|3|3|1|soilQuality|3.66
+STATE|4|3|3|1|treeCount|8.19
+STATE|4|3|3|1|currentBiomass|4.84
+STATE|4|3|3|1|waterLevel|8.14
+STATE|4|3|3|1|elephantCount|6.86
+STATE|4|3|3|1|myWaterDistance|8.56
+STATE|4|3|3|1|harvestYield|1.35
+STATE|4|3|3|1|playerHarvestRound|[4 5 5 5 2 0 8 4]
+STATE|4|3|3|1|fined?|false
+STATE|4|3|3|1|fineAmount|4.93
+STATE|4|3|3|1|cropOwner|0.03
+STATE|4|3|3|1|defended?|true
+STATE|4|3|3|1|cropCount|9.01
+STATE|4|3|3|1|vegCount|4.57
+STATE|4|3|3|1|ownedBy|0
+STATE|4|3|3|1|village|2
+STATE|4|3|3|1|shared?|false
+STATE|4|3|3|2|protected?|true
+STATE|4|3|3|2|water?|false
+STATE|4|3|3|2|cropped?|false
+STATE|4|3|3|2|driedUp?|true
+STATE|4|3|3|2|soilQuality|3.19
+STATE|4|3|3|2|treeCount|6.18
+STATE|4|3|3|2|currentBiomass|6.74
+STATE|4|3|3|2|waterLevel|6.28
+STATE|4|3|3|2|elephantCount|6.2
+STATE|4|3|3|2|myWaterDistance|3.78
+STATE|4|3|3|2|harvestYield|0.69
+STATE|4|3|3|2|playerHarvestRound|[0 3 9 4 1 1 2 7]
+STATE|4|3|3|2|fined?|true
+STATE|4|3|3|2|fineAmount|2.0
+STATE|4|3|3|2|cropOwner|8.6
+STATE|4|3|3|2|defended?|false
+STATE|4|3|3|2|cropCount|8.33
+STATE|4|3|3|2|vegCount|3.81
+STATE|4|3|3|2|ownedBy|0
+STATE|4|3|3|2|village|1
+STATE|4|3|3|2|shared?|true
+STATE|4|3|3|3|protected?|true
+STATE|4|3|3|3|water?|true
+STATE|4|3|3|3|cropped?|true
+STATE|4|3|3|3|driedUp?|true
+STATE|4|3|3|3|soilQuality|4.25
+STATE|4|3|3|3|treeCount|5.3
+STATE|4|3|3|3|currentBiomass|1.63
+STATE|4|3|3|3|waterLevel|8.64
+STATE|4|3|3|3|elephantCount|1.5
+STATE|4|3|3|3|myWaterDistance|6.62
+STATE|4|3|3|3|harvestYield|1.42
+STATE|4|3|3|3|playerHarvestRound|[3 7 8 2 3 3 2 2]
+STATE|4|3|3|3|fined?|true
+STATE|4|3|3|3|fineAmount|4.69
+STATE|4|3|3|3|cropOwner|6.94
+STATE|4|3|3|3|defended?|true
+STATE|4|3|3|3|cropCount|6.62
+STATE|4|3|3|3|vegCount|9.77
+STATE|4|3|3|3|ownedBy|0
+STATE|4|3|3|3|village|3
+STATE|4|3|3|3|shared?|false
+CHOICE|4|3|1|0|0|1|12:48:27.000 PM 28-Sep-2026
+CONFIRM|4|3|1|12:48:40.000 PM 28-Sep-2026
+CHOICE|4|3|2|1|3|3|12:48:46.000 PM 28-Sep-2026
+CHOICE|4|3|2|3|3|2|12:48:59.000 PM 28-Sep-2026
+CONFIRM|4|3|2|12:49:10.000 PM 28-Sep-2026
+CHOICE|4|3|3|0|2|2|12:49:13.000 PM 28-Sep-2026
+CHOICE|4|3|3|0|2|2|12:49:20.000 PM 28-Sep-2026
+CHOICE|4|3|3|1|0|4|12:49:27.000 PM 28-Sep-2026
+CONFIRM|4|3|3|12:49:39.000 PM 28-Sep-2026
+CHOICE|4|3|4|2|3|3|12:49:51.000 PM 28-Sep-2026
+CHOICE|4|3|4|2|3|1|12:49:59.000 PM 28-Sep-2026
+CONFIRM|4|3|4|12:50:07.000 PM 28-Sep-2026
+CHOICE|4|3|5|0|3|3|12:50:12.000 PM 28-Sep-2026
+CHOICE|4|3|5|0|3|1|12:50:27.000 PM 28-Sep-2026
+CONFIRM|4|3|5|12:50:30.000 PM 28-Sep-2026
+CHOICE|4|3|6|3|2|3|12:50:39.000 PM 28-Sep-2026
+CHOICE|4|3|6|3|2|4|12:50:40.000 PM 28-Sep-2026
+CONFIRM|4|3|6|12:50:51.000 PM 28-Sep-2026
+CHOICE|4|3|7|0|2|3|12:51:04.000 PM 28-Sep-2026
+CHOICE|4|3|7|0|2|4|12:51:14.000 PM 28-Sep-2026
+CHOICE|4|3|7|0|1|2|12:51:29.000 PM 28-Sep-2026
+CONFIRM|4|3|7|12:51:35.000 PM 28-Sep-2026
+CHOICE|4|3|8|3|2|4|12:51:45.000 PM 28-Sep-2026
+CONFIRM|4|3|8|12:51:55.000 PM 28-Sep-2026
+SCORE|4|3|1|16|18|20
+SCORE|4|3|2|18|56|7
+SCORE|4|3|3|10|54|1
+SCORE|4|3|4|4|38|18
+SCORE|4|3|5|18|22|9
+SCORE|4|3|6|11|37|20
+SCORE|4|3|7|15|33|12
+SCORE|4|3|8|16|39|6
+PHASE|phase-4-4|12:52:00.000 PM 28-Sep-2026
+STATE|4|4|0|0|protected?|false
+STATE|4|4|0|0|water?|true
+STATE|4|4|0|0|cropped?|true
+STATE|4|4|0|0|driedUp?|true
+STATE|4|4|0|0|soilQuality|7.43
+STATE|4|4|0|0|treeCount|5.48
+STATE|4|4|0|0|currentBiomass|9.47
+STATE|4|4|0|0|waterLevel|4.69
+STATE|4|4|0|0|elephantCount|8.66
+STATE|4|4|0|0|myWaterDistance|9.91
+STATE|4|4|0|0|harvestYield|5.06
+STATE|4|4|0|0|playerHarvestRound|[4 1 1 1 5 7 3 7]
+STATE|4|4|0|0|fined?|true
+STATE|4|4|0|0|fineAmount|8.77
+STATE|4|4|0|0|cropOwner|3.68
+STATE|4|4|0|0|defended?|false
+STATE|4|4|0|0|cropCount|9.12
+STATE|4|4|0|0|vegCount|1.26
+STATE|4|4|0|0|ownedBy|0
+STATE|4|4|0|0|village|3
+STATE|4|4|0|0|shared?|false
+STATE|4|4|0|1|protected?|false
+STATE|4|4|0|1|water?|false
+STATE|4|4|0|1|cropped?|true
+STATE|4|4|0|1|driedUp?|true
+STATE|4|4|0|1|soilQuality|4.69
+STATE|4|4|0|1|treeCount|1.08
+STATE|4|4|0|1|currentBiomass|2.63
+STATE|4|4|0|1|waterLevel|9.22
+STATE|4|4|0|1|elephantCount|7.24
+STATE|4|4|0|1|myWaterDistance|5.09
+STATE|4|4|0|1|harvestYield|6.09
+STATE|4|4|0|1|playerHarvestRound|[1 4 9 0 4 10 2 3]
+STATE|4|4|0|1|fined?|false
+STATE|4|4|0|1|fineAmount|6.16
+STATE|4|4|0|1|cropOwner|9.15
+STATE|4|4|0|1|defended?|false
+STATE|4|4|0|1|cropCount|1.34
+STATE|4|4|0|1|vegCount|0.1
+STATE|4|4|0|1|ownedBy|0
+STATE|4|4|0|1|village|3
+STATE|4|4|0|1|shared?|false
+STATE|4|4|0|2|protected?|true
+STATE|4|4|0|2|water?|true
+STATE|4|4|0|2|cropped?|false
+STATE|4|4|0|2|driedUp?|true
+STATE|4|4|0|2|soilQuality|3.17
+STATE|4|4|0|2|treeCount|4.64
+STATE|4|4|0|2|currentBiomass|2.3
+STATE|4|4|0|2|waterLevel|2.54
+STATE|4|4|0|2|elephantCount|1.56
+STATE|4|4|0|2|myWaterDistance|7.8
+STATE|4|4|0|2|harvestYield|8.74
+STATE|4|4|0|2|playerHarvestRound|[1 2 3 8 3 7 2 1]
+STATE|4|4|0|2|fined?|true
+STATE|4|4|0|2|fineAmount|3.24
+STATE|4|4|0|2|cropOwner|3.79
+STATE|4|4|0|2|defended?|true
+STATE|4|4|0|2|cropCount|1.53
+STATE|4|4|0|2|vegCount|9.54
+STATE|4|4|0|2|ownedBy|2
+STATE|4|4|0|2|village|0
+STATE|4|4|0|2|shared?|false
+STATE|4|4|0|3|protected?|true
+STATE|4|4|0|3|water?|true
+STATE|4|4|0|3|cropped?|true
+STATE|4|4|0|3|driedUp?|false
+STATE|4|4|0|3|soilQuality|1.6
+STATE|4|4|0|3|treeCount|7.4
+STATE|4|4|0|3|currentBiomass|1.05
+STATE|4|4|0|3|waterLevel|2.35
+STATE|4|4|0|3|elephantCount|3.24
+STATE|4|4|0|3|myWaterDistance|6.53
+STATE|4|4|0|3|harvestYield|7.72
+STATE|4|4|0|3|playerHarvestRound|[8 5 1 0 8 2 8 8]
+STATE|4|4|0|3|fined?|true
+STATE|4|4|0|3|fineAmount|5.8
+STATE|4|4|0|3|cropOwner|4.46
+STATE|4|4|0|3|defended?|true
+STATE|4|4|0|3|cropCount|8.3
+STATE|4|4|0|3|vegCount|6.91
+STATE|4|4|0|3|ownedBy|0
+STATE|4|4|0|3|village|2
+STATE|4|4|0|3|shared?|true
+STATE|4|4|1|0|protected?|true
+STATE|4|4|1|0|water?|true
+STATE|4|4|1|0|cropped?|false
+STATE|4|4|1|0|driedUp?|false
+STATE|4|4|1|0|soilQuality|9.69
+STATE|4|4|1|0|treeCount|8.64
+STATE|4|4|1|0|currentBiomass|1.24
+STATE|4|4|1|0|waterLevel|7.92
+STATE|4|4|1|0|elephantCount|7.62
+STATE|4|4|1|0|myWaterDistance|4.73
+STATE|4|4|1|0|harvestYield|9.96
+STATE|4|4|1|0|playerHarvestRound|[9 7 1 3 3 2 0 9]
+STATE|4|4|1|0|fined?|true
+STATE|4|4|1|0|fineAmount|7.68
+STATE|4|4|1|0|cropOwner|6.9
+STATE|4|4|1|0|defended?|false
+STATE|4|4|1|0|cropCount|0.77
+STATE|4|4|1|0|vegCount|1.76
+STATE|4|4|1|0|ownedBy|3
+STATE|4|4|1|0|village|1
+STATE|4|4|1|0|shared?|true
+STATE|4|4|1|1|protected?|false
+STATE|4|4|1|1|water?|true
+STATE|4|4|1|1|cropped?|true
+STATE|4|4|1|1|driedUp?|true
+STATE|4|4|1|1|soilQuality|9.81
+STATE|4|4|1|1|treeCount|8.29
+STATE|4|4|1|1|currentBiomass|1.81
+STATE|4|4|1|1|waterLevel|1.95
+STATE|4|4|1|1|elephantCount|4.21
+STATE|4|4|1|1|myWaterDistance|5.07
+STATE|4|4|1|1|harvestYield|0.37
+STATE|4|4|1|1|playerHarvestRound|[1 3 2 10 0 1 1 4]
+STATE|4|4|1|1|fined?|true
+STATE|4|4|1|1|fineAmount|7.96
+STATE|4|4|1|1|cropOwner|5.46
+STATE|4|4|1|1|defended?|true
+STATE|4|4|1|1|cropCount|9.64
+STATE|4|4|1|1|vegCount|5.81
+STATE|4|4|1|1|ownedBy|0
+STATE|4|4|1|1|village|0
+STATE|4|4|1|1|shared?|false
+STATE|4|4|1|2|protected?|false
+STATE|4|4|1|2|water?|true
+STATE|4|4|1|2|cropped?|true
+STATE|4|4|1|2|driedUp?|false
+STATE|4|4|1|2|soilQuality|9.87
+STATE|4|4|1|2|treeCount|6.39
+STATE|4|4|1|2|currentBiomass|1.81
+STATE|4|4|1|2|waterLevel|5.82
+STATE|4|4|1|2|elephantCount|3.21
+STATE|4|4|1|2|myWaterDistance|4.73
+STATE|4|4|1|2|harvestYield|7.13
+STATE|4|4|1|2|playerHarvestRound|[0 8 4 5 8 9 7 7]
+STATE|4|4|1|2|fined?|false
+STATE|4|4|1|2|fineAmount|0.93
+STATE|4|4|1|2|cropOwner|1.14
+STATE|4|4|1|2|defended?|true
+STATE|4|4|1|2|cropCount|0.29
+STATE|4|4|1|2|vegCount|8.67
+STATE|4|4|1|2|ownedBy|2
+STATE|4|4|1|2|village|2
+STATE|4|4|1|2|shared?|true
+STATE|4|4|1|3|protected?|true
+STATE|4|4|1|3|water?|true
+STATE|4|4|1|3|cropped?|true
+STATE|4|4|1|3|driedUp?|false
+STATE|4|4|1|3|soilQuality|3.71
+STATE|4|4|1|3|treeCount|3.09
+STATE|4|4|1|3|currentBiomass|5.87
+STATE|4|4|1|3|waterLevel|6.22
+STATE|4|4|1|3|elephantCount|0.26
+STATE|4|4|1|3|myWaterDistance|8.83
+STATE|4|4|1|3|harvestYield|3.0
+STATE|4|4|1|3|playerHarvestRound|[9 7 4 10 4 2 6 5]
+STATE|4|4|1|3|fined?|true
+STATE|4|4|1|3|fineAmount|0.89
+STATE|4|4|1|3|cropOwner|4.6
+STATE|4|4|1|3|defended?|false
+STATE|4|4|1|3|cropCount|1.17
+STATE|4|4|1|3|vegCount|5.16
+STATE|4|4|1|3|ownedBy|0
+STATE|4|4|1|3|village|1
+STATE|4|4|1|3|shared?|false
+STATE|4|4|2|0|protected?|false
+STATE|4|4|2|0|water?|false
+STATE|4|4|2|0|cropped?|false
+STATE|4|4|2|0|driedUp?|false
+STATE|4|4|2|0|soilQuality|4.69
+STATE|4|4|2|0|treeCount|5.18
+STATE|4|4|2|0|currentBiomass|2.81
+STATE|4|4|2|0|waterLevel|4.64
+STATE|4|4|2|0|elephantCount|9.37
+STATE|4|4|2|0|myWaterDistance|4.88
+STATE|4|4|2|0|harvestYield|0.02
+STATE|4|4|2|0|playerHarvestRound|[5 3 1 9 0 8 8 7]
+STATE|4|4|2|0|fined?|true
+STATE|4|4|2|0|fineAmount|2.5
+STATE|4|4|2|0|cropOwner|1.6
+STATE|4|4|2|0|defended?|true
+STATE|4|4|2|0|cropCount|3.73
+STATE|4|4|2|0|vegCount|3.81
+STATE|4|4|2|0|ownedBy|0
+STATE|4|4|2|0|village|3
+STATE|4|4|2|0|shared?|false
+STATE|4|4|2|1|protected?|true
+STATE|4|4|2|1|water?|true
+STATE|4|4|2|1|cropped?|false
+STATE|4|4|2|1|driedUp?|true
+STATE|4|4|2|1|soilQuality|1.47
+STATE|4|4|2|1|treeCount|3.45
+STATE|4|4|2|1|currentBiomass|6.79
+STATE|4|4|2|1|waterLevel|0.89
+STATE|4|4|2|1|elephantCount|7.76
+STATE|4|4|2|1|myWaterDistance|1.93
+STATE|4|4|2|1|harvestYield|8.4
+STATE|4|4|2|1|playerHarvestRound|[10 1 4 7 6 5 10 2]
+STATE|4|4|2|1|fined?|true
+STATE|4|4|2|1|fineAmount|5.8
+STATE|4|4|2|1|cropOwner|3.59
+STATE|4|4|2|1|defended?|true
+STATE|4|4|2|1|cropCount|9.36
+STATE|4|4|2|1|vegCount|8.46
+STATE|4|4|2|1|ownedBy|3
+STATE|4|4|2|1|village|2
+STATE|4|4|2|1|shared?|false
+STATE|4|4|2|2|protected?|true
+STATE|4|4|2|2|water?|false
+STATE|4|4|2|2|cropped?|true
+STATE|4|4|2|2|driedUp?|true
+STATE|4|4|2|2|soilQuality|1.49
+STATE|4|4|2|2|treeCount|4.64
+STATE|4|4|2|2|currentBiomass|0.46
+STATE|4|4|2|2|waterLevel|6.57
+STATE|4|4|2|2|elephantCount|6.46
+STATE|4|4|2|2|myWaterDistance|9.05
+STATE|4|4|2|2|harvestYield|7.68
+STATE|4|4|2|2|playerHarvestRound|[1 9 8 6 5 7 1 5]
+STATE|4|4|2|2|fined?|false
+STATE|4|4|2|2|fineAmount|1.73
+STATE|4|4|2|2|cropOwner|9.84
+STATE|4|4|2|2|defended?|false
+STATE|4|4|2|2|cropCount|9.02
+STATE|4|4|2|2|vegCount|4.93
+STATE|4|4|2|2|ownedBy|1
+STATE|4|4|2|2|village|1
+STATE|4|4|2|2|shared?|false
+STATE|4|4|2|3|protected?|false
+STATE|4|4|2|3|water?|true
+STATE|4|4|2|3|cropped?|true
+STATE|4|4|2|3|driedUp?|true
+STATE|4|4|2|3|soilQuality|7.15
+STATE|4|4|2|3|treeCount|2.28
+STATE|4|4|2|3|currentBiomass|1.58
+STATE|4|4|2|3|waterLevel|4.84
+STATE|4|4|2|3|elephantCount|6.58
+STATE|4|4|2|3|myWaterDistance|0.67
+STATE|4|4|2|3|harvestYield|2.71
+STATE|4|4|2|3|playerHarvestRound|[0 4 10 4 1 1 1 7]
+STATE|4|4|2|3|fined?|true
+STATE|4|4|2|3|fineAmount|9.98
+STATE|4|4|2|3|cropOwner|3.21
+STATE|4|4|2|3|defended?|false
+STATE|4|4|2|3|cropCount|9.5
+STATE|4|4|2|3|vegCount|4.28
+STATE|4|4|2|3|ownedBy|3
+STATE|4|4|2|3|village|0
+STATE|4|4|2|3|shared?|false
+STATE|4|4|3|0|protected?|true
+STATE|4|4|3|0|water?|false
+STATE|4|4|3|0|cropped?|true
+STATE|4|4|3|0|driedUp?|true
+STATE|4|4|3|0|soilQuality|8.52
+STATE|4|4|3|0|treeCount|5.68
+STATE|4|4|3|0|currentBiomass|5.11
+STATE|4|4|3|0|waterLevel|7.1
+STATE|4|4|3|0|elephantCount|4.92
+STATE|4|4|3|0|myWaterDistance|3.84
+STATE|4|4|3|0|harvestYield|5.52
+STATE|4|4|3|0|playerHarvestRound|[0 10 5 6 0 4 8 1]
+STATE|4|4|3|0|fined?|false
+STATE|4|4|3|0|fineAmount|1.58
+STATE|4|4|3|0|cropOwner|8.55
+STATE|4|4|3|0|defended?|true
+STATE|4|4|3|0|cropCount|8.05
+STATE|4|4|3|0|vegCount|6.51
+STATE|4|4|3|0|ownedBy|3
+STATE|4|4|3|0|village|3
+STATE|4|4|3|0|shared?|false
+STATE|4|4|3|1|protected?|true
+STATE|4|4|3|1|water?|false
+STATE|4|4|3|1|cropped?|false
+STATE|4|4|3|1|driedUp?|false
+STATE|4|4|3|1|soilQuality|2.23
+STATE|4|4|3|1|treeCount|0.11
+STATE|4|4|3|1|currentBiomass|3.69
+STATE|4|4|3|1|waterLevel|5.55
+STATE|4|4|3|1|elephantCount|7.64
+STATE|4|4|3|1|myWaterDistance|5.71
+STATE|4|4|3|1|harvestYield|2.67
+STATE|4|4|3|1|playerHarvestRound|[6 8 8 7 1 0 5 1]
+STATE|4|4|3|1|fined?|false
+STATE|4|4|3|1|fineAmount|5.35
+STATE|4|4|3|1|cropOwner|4.97
+STATE|4|4|3|1|defended?|true
+STATE|4|4|3|1|cropCount|2.23
+STATE|4|4|3|1|vegCount|6.7
+STATE|4|4|3|1|ownedBy|1
+STATE|4|4|3|1|village|0
+STATE|4|4|3|1|shared?|false
+STATE|4|4|3|2|protected?|false
+STATE|4|4|3|2|water?|false
+STATE|4|4|3|2|cropped?|true
+STATE|4|4|3|2|driedUp?|false
+STATE|4|4|3|2|soilQuality|1.04
+STATE|4|4|3|2|treeCount|3.59
+STATE|4|4|3|2|currentBiomass|0.75
+STATE|4|4|3|2|waterLevel|5.02
+STATE|4|4|3|2|elephantCount|9.57
+STATE|4|4|3|2|myWaterDistance|7.62
+STATE|4|4|3|2|harvestYield|3.64
+STATE|4|4|3|2|playerHarvestRound|[4 0 9 3 1 10 10 3]
+STATE|4|4|3|2|fined?|true
+STATE|4|4|3|2|fineAmount|4.25
+STATE|4|4|3|2|cropOwner|6.09
+STATE|4|4|3|2|defended?|false
+STATE|4|4|3|2|cropCount|8.68
+STATE|4|4|3|2|vegCount|8.95
+STATE|4|4|3|2|ownedBy|1
+STATE|4|4|3|2|village|0
+STATE|4|4|3|2|shared?|true
+STATE|4|4|3|3|protected?|false
+STATE|4|4|3|3|water?|false
+STATE|4|4|3|3|cropped?|false
+STATE|4|4|3|3|driedUp?|true
+STATE|4|4|3|3|soilQuality|0.76
+STATE|4|4|3|3|treeCount|8.99
+STATE|4|4|3|3|currentBiomass|3.64
+STATE|4|4|3|3|waterLevel|4.73
+STATE|4|4|3|3|elephantCount|9.73
+STATE|4|4|3|3|myWaterDistance|1.95
+STATE|4|4|3|3|harvestYield|6.35
+STATE|4|4|3|3|playerHarvestRound|[0 5 8 8 8 2 2 5]
+STATE|4|4|3|3|fined?|false
+STATE|4|4|3|3|fineAmount|7.91
+STATE|4|4|3|3|cropOwner|9.47
+STATE|4|4|3|3|defended?|false
+STATE|4|4|3|3|cropCount|5.48
+STATE|4|4|3|3|vegCount|8.24
+STATE|4|4|3|3|ownedBy|3
+STATE|4|4|3|3|village|3
+STATE|4|4|3|3|shared?|false
+CHOICE|4|4|1|0|2|2|12:52:05.000 PM 28-Sep-2026
+CHOICE|4|4|1|0|2|1|12:52:06.000 PM 28-Sep-2026
+CONFIRM|4|4|1|12:52:14.000 PM 28-Sep-2026
+CHOICE|4|4|2|0|1|4|12:52:20.000 PM 28-Sep-2026
+CHOICE|4|4|2|1|3|3|12:52:31.000 PM 28-Sep-2026
+CONFIRM|4|4|2|12:52:40.000 PM 28-Sep-2026
+CHOICE|4|4|3|3|1|1|12:52:53.000 PM 28-Sep-2026
+CHOICE|4|4|3|3|1|-99|12:53:00.000 PM 28-Sep-2026
+CHOICE|4|4|3|1|0|2|12:53:14.000 PM 28-Sep-2026
+CONFIRM|4|4|3|12:53:19.000 PM 28-Sep-2026
+CHOICE|4|4|4|3|0|4|12:53:31.000 PM 28-Sep-2026
+CHOICE|4|4|4|3|0|3|12:53:32.000 PM 28-Sep-2026
+CHOICE|4|4|4|1|1|3|12:53:36.000 PM 28-Sep-2026
+CONFIRM|4|4|4|12:53:48.000 PM 28-Sep-2026
+CHOICE|4|4|5|0|2|3|12:53:51.000 PM 28-Sep-2026
+CHOICE|4|4|5|2|3|1|12:53:56.000 PM 28-Sep-2026
+CONFIRM|4|4|5|12:54:11.000 PM 28-Sep-2026
+CHOICE|4|4|6|3|3|3|12:54:16.000 PM 28-Sep-2026
+CHOICE|4|4|6|3|3|3|12:54:28.000 PM 28-Sep-2026
+CHOICE|4|4|6|3|3|4|12:54:30.000 PM 28-Sep-2026
+CONFIRM|4|4|6|12:54:35.000 PM 28-Sep-2026
+CHOICE|4|4|7|3|1|2|12:54:50.000 PM 28-Sep-2026
+CONFIRM|4|4|7|12:55:01.000 PM 28-Sep-2026
+CHOICE|4|4|8|1|1|2|12:55:09.000 PM 28-Sep-2026
+CHOICE|4|4|8|1|1|3|12:55:11.000 PM 28-Sep-2026
+CONFIRM|4|4|8|12:55:24.000 PM 28-Sep-2026
+SCORE|4|4|1|2|45|15
+SCORE|4|4|2|13|51|17
+SCORE|4|4|3|14|61|2
+SCORE|4|4|4|11|41|11
+SCORE|4|4|5|3|43|2
+SCORE|4|4|6|2|27|2
+SCORE|4|4|7|11|30|11
+SCORE|4|4|8|16|32|0
