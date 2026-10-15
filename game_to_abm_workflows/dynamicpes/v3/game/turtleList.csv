@@ -1,0 +1,7 @@
+turtleID,countMeasure,imageName,mobile?,turtleSizeMin,turtleSizeMax,transparent?
+1,flowerCount,flower,FALSE,0.45,0.45,TRUE
+2,canolaCount,canola,FALSE,0.45,0.45,TRUE
+3,grassCount,grass,FALSE,0.45,0.45,TRUE
+4,predatorCount,predator,TRUE,0.1,0.1,FALSE
+5,pollinatorCount,bee 2,TRUE,0.05,0.05,FALSE
+6,pestCount,bug,TRUE,0.05,0.05,FALSE

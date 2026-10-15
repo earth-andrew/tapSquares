@@ -1,0 +1,10 @@
+variable,role,encoding,period,unassignedValue,treatmentCandidate,notes
+round,counter,exclude,,,, "Default: excluded, same as before. Set encoding to numeric/cyclical/categorical to test it as a real predictor (e.g. multi-year climate cycles a player could learn)."
+phase,counter,exclude,,,, "Same as round -- exclude by default, override encoding to test."
+ownedBy,ownership_individual,categorical,,0,FALSE,"Sentinel 0 = unassigned/unowned patch. Modeled as a factor with an explicit 'unassigned' level, not dropped."
+village,ownership_group,categorical,,0,FALSE,"Group/shared-ownership id. Sentinel 0 = unassigned. Distinct from ownedBy -- a patch can have a village and no individual owner, or vice versa, depending on the game."
+shared?,ownership_flag,boolean,,,FALSE,"Already boolean -- included automatically like any other patches-own boolean, no special handling needed beyond flagging its role for documentation."
+p_fine,session_parameter,,,,TRUE,"EXAMPLE. A session-level setting (a column of sessionList.csv) you vary on purpose. Declaring it here (or treatmentCandidate = TRUE) lists it first in the Step 5a diagnostics; it is only used as a predictor if the pool has enough variation and it improves held-out prediction."
+numRounds,not_treatment,,,,FALSE,"EXAMPLE. Stops a setting that varies for design reasons from being auto-detected as a treatment."
+cropOwner,player_reference,,,,FALSE,"EXAMPLE. A patch variable whose value is a PLAYER NUMBER. The raw number is meaningless to the model; it is replaced by <name>_mine (1 if it equals the acting player). The ABM computes the same from the agent's own number."
+numPlayers,not_treatment,,,,FALSE,"EXAMPLE. The notebook derives numPlayers (people who joined) and offers it as a candidate like any setting; use this role to ignore it when it is a head-count, not a manipulation."

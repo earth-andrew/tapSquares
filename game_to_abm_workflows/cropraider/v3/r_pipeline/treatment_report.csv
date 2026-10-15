@@ -1,0 +1,35 @@
+variable,source,n_sessions,n_distinct,min_value,max_value,min_sessions_per_level,variation_verdict,notes,abm_evaluable,type,levels,integer_valued,cv_gain,used,overall
+p_fine,declared,54,3,0.05,0.2,18,adequate,,TRUE,numeric,NA,FALSE,-2.149515238730193e-4,FALSE,not used: no held-out improvement
+defendCost,declared,54,3,2,8,18,adequate,,TRUE,numeric,NA,TRUE,0.009688277092858938,TRUE,USED as predictor
+fine,declared,54,2,2,4,27,limited,"two levels only: direction testable, shape is not",TRUE,numeric,NA,TRUE,-0.0017659191423909648,FALSE,not used: no held-out improvement
+chooseVillageLand?,auto-detected,54,1,0,0,54,not testable,constant across all sessions,TRUE,logical,NA,FALSE,NA,FALSE,not used: not testable with this pool
+choosePrivateLand?,auto-detected,54,1,0,0,54,not testable,constant across all sessions,TRUE,logical,NA,FALSE,NA,FALSE,not used: not testable with this pool
+maxPrivateSquares,auto-detected,54,1,1,1,54,not testable,constant across all sessions,TRUE,numeric,NA,TRUE,NA,FALSE,not used: not testable with this pool
+actionListFileName,auto-detected,54,1,NA,NA,54,not testable,constant across all sessions,TRUE,categorical,actionList.csv,FALSE,NA,FALSE,not used: not testable with this pool
+initialConditionListFileName,auto-detected,54,1,NA,NA,54,not testable,constant across all sessions,TRUE,categorical,initialConditionList.csv,FALSE,NA,FALSE,not used: not testable with this pool
+stateListFileName,auto-detected,54,1,NA,NA,54,not testable,constant across all sessions,TRUE,categorical,stateList.csv,FALSE,NA,FALSE,not used: not testable with this pool
+endowment,auto-detected,54,1,12,12,54,not testable,constant across all sessions,TRUE,numeric,NA,TRUE,NA,FALSE,not used: not testable with this pool
+spatialFunctionListFileName,auto-detected,54,1,NA,NA,54,not testable,constant across all sessions,TRUE,categorical,spatialFunctionList.csv,FALSE,NA,FALSE,not used: not testable with this pool
+scoringFunctionFileName,auto-detected,54,1,NA,NA,54,not testable,constant across all sessions,TRUE,categorical,scoringFunction.csv,FALSE,NA,FALSE,not used: not testable with this pool
+infoScreenListFileName,auto-detected,54,1,NA,NA,54,not testable,constant across all sessions,TRUE,categorical,infoScreenList.csv,FALSE,NA,FALSE,not used: not testable with this pool
+turtleListFileName,auto-detected,54,1,NA,NA,54,not testable,constant across all sessions,TRUE,categorical,turtleList.csv,FALSE,NA,FALSE,not used: not testable with this pool
+nonSpatialFunctionListFileName,auto-detected,54,1,NA,NA,54,not testable,constant across all sessions,TRUE,categorical,nonSpatialFunctionList.csv,FALSE,NA,FALSE,not used: not testable with this pool
+patch_color_property,auto-detected,54,1,1,1,54,not testable,constant across all sessions,TRUE,numeric,NA,TRUE,NA,FALSE,not used: not testable with this pool
+fractionWater,auto-detected,54,1,0.3,0.3,54,not testable,constant across all sessions,TRUE,numeric,NA,FALSE,NA,FALSE,not used: not testable with this pool
+probWaterConnected,auto-detected,54,1,0.5,0.5,54,not testable,constant across all sessions,TRUE,numeric,NA,FALSE,NA,FALSE,not used: not testable with this pool
+fullVeg,auto-detected,54,1,20,20,54,not testable,constant across all sessions,TRUE,numeric,NA,TRUE,NA,FALSE,not used: not testable with this pool
+fullCrop,auto-detected,54,1,20,20,54,not testable,constant across all sessions,TRUE,numeric,NA,TRUE,NA,FALSE,not used: not testable with this pool
+cropR,auto-detected,54,1,0.4,0.4,54,not testable,constant across all sessions,TRUE,numeric,NA,FALSE,NA,FALSE,not used: not testable with this pool
+vegR,auto-detected,54,1,0.4,0.4,54,not testable,constant across all sessions,TRUE,numeric,NA,FALSE,NA,FALSE,not used: not testable with this pool
+rainFactorMin,auto-detected,54,1,0.25,0.25,54,not testable,constant across all sessions,TRUE,numeric,NA,FALSE,NA,FALSE,not used: not testable with this pool
+pointsPerYield,auto-detected,54,1,3,3,54,not testable,constant across all sessions,TRUE,numeric,NA,TRUE,NA,FALSE,not used: not testable with this pool
+pa_count,auto-detected,54,1,2,2,54,not testable,constant across all sessions,TRUE,numeric,NA,TRUE,NA,FALSE,not used: not testable with this pool
+pa_size,auto-detected,54,1,10,10,54,not testable,constant across all sessions,TRUE,numeric,NA,TRUE,NA,FALSE,not used: not testable with this pool
+p_defend,auto-detected,54,1,0.7,0.7,54,not testable,constant across all sessions,TRUE,numeric,NA,FALSE,NA,FALSE,not used: not testable with this pool
+soilWaterBias,auto-detected,54,1,0.5,0.5,54,not testable,constant across all sessions,TRUE,numeric,NA,FALSE,NA,FALSE,not used: not testable with this pool
+paSoilBonus,auto-detected,54,1,0.3,0.3,54,not testable,constant across all sessions,TRUE,numeric,NA,FALSE,NA,FALSE,not used: not testable with this pool
+soilWaterRange,auto-detected,54,1,4,4,54,not testable,constant across all sessions,TRUE,numeric,NA,TRUE,NA,FALSE,not used: not testable with this pool
+villageMembership_mean,auto-detected,54,1,1.5,1.5,54,not testable,constant across all sessions; mean of a list-valued setting; the ABM cannot evaluate this name,FALSE,numeric,NA,FALSE,NA,FALSE,not used: not testable with this pool
+patch_color_min_mean,auto-detected,54,1,58.3333333333333,58.3333333333333,54,not testable,constant across all sessions; mean of a list-valued setting; the ABM cannot evaluate this name,FALSE,numeric,NA,FALSE,NA,FALSE,not used: not testable with this pool
+patch_color_max_mean,auto-detected,54,1,58.3333333333333,58.3333333333333,54,not testable,constant across all sessions; mean of a list-valued setting; the ABM cannot evaluate this name,FALSE,numeric,NA,FALSE,NA,FALSE,not used: not testable with this pool
+pRain_mean,auto-detected,54,1,0.44,0.44,54,not testable,constant across all sessions; mean of a list-valued setting; the ABM cannot evaluate this name,FALSE,numeric,NA,FALSE,NA,FALSE,not used: not testable with this pool

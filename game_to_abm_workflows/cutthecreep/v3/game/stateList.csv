@@ -1,0 +1,4 @@
+stateID,flags,imageName,stateColor
+1,"""hasResource""",hasResource,
+2,"""degraded""",degraded,
+3,"""hasResource"" ""degraded""",hasResourceDegraded,

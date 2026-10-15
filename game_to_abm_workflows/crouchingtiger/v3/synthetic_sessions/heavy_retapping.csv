@@ -1,0 +1,2039 @@
+PLAYER|1|Person_11|12:00:00.000 PM 28-Sep-2026
+PLAYER|2|Person_05|12:00:00.000 PM 28-Sep-2026
+PLAYER|3|Person_13|12:00:00.000 PM 28-Sep-2026
+PLAYER|4|Person_02|12:00:00.000 PM 28-Sep-2026
+PLAYER|5|Person_03|12:00:00.000 PM 28-Sep-2026
+PLAYER|6|Person_14|12:00:00.000 PM 28-Sep-2026
+PLAYER|7|Person_09|12:00:00.000 PM 28-Sep-2026
+PLAYER|8|Person_17|12:00:00.000 PM 28-Sep-2026
+PLAYER|9|Person_06|12:00:00.000 PM 28-Sep-2026
+PLAYER|10|Person_10|12:00:00.000 PM 28-Sep-2026
+PLAYER|11|Person_01|12:00:00.000 PM 28-Sep-2026
+PLAYER|12|Person_15|12:00:00.000 PM 28-Sep-2026
+PLAYER|13|Person_04|12:00:00.000 PM 28-Sep-2026
+PLAYER|14|Person_20|12:00:00.000 PM 28-Sep-2026
+PLAYER|15|Person_07|12:00:00.000 PM 28-Sep-2026
+PLAYER|16|Person_08|12:00:00.000 PM 28-Sep-2026
+PLAYER|17|Person_19|12:00:00.000 PM 28-Sep-2026
+PLAYER|18|Person_12|12:00:00.000 PM 28-Sep-2026
+PLAYER|19|Person_16|12:00:00.000 PM 28-Sep-2026
+PLAYER|20|Person_18|12:00:00.000 PM 28-Sep-2026
+PHASE|phase-1-1|12:00:09.000 PM 28-Sep-2026
+STATE|1|1|0|0|animalCount|[6 0 9 1 3 10 10 9 0 9 9 6 0 3 0 8 2 4 6 2]
+STATE|1|1|0|0|forageCount|5.41
+STATE|1|1|0|0|forageMass|5.71
+STATE|1|1|0|0|fenced?|false
+STATE|1|1|0|0|attacked?|false
+STATE|1|1|0|0|cropped|true
+STATE|1|1|0|0|totalLivestock|[9 10 3 5 1 8 1 9 0 9 3 7 10 8 6 5 7 9 7 5]
+STATE|1|1|0|0|treeCount|3.0
+STATE|1|1|0|0|grassMass|7.94
+STATE|1|1|0|0|pAttack|6.99
+STATE|1|1|0|0|arable|true
+STATE|1|1|0|0|totalHarvest|5.74
+STATE|1|1|0|0|animalLoss|5.25
+STATE|1|1|0|0|ownedBy|1
+STATE|1|1|0|0|village|3
+STATE|1|1|0|0|shared?|true
+STATE|1|1|0|1|animalCount|[9 1 1 8 6 2 5 2 7 6 0 10 1 8 9 5 5 5 9 7]
+STATE|1|1|0|1|forageCount|5.8
+STATE|1|1|0|1|forageMass|4.56
+STATE|1|1|0|1|fenced?|false
+STATE|1|1|0|1|attacked?|false
+STATE|1|1|0|1|cropped|true
+STATE|1|1|0|1|totalLivestock|[10 1 0 4 10 9 10 7 4 6 10 5 0 7 5 2 9 1 7 0]
+STATE|1|1|0|1|treeCount|2.18
+STATE|1|1|0|1|grassMass|2.87
+STATE|1|1|0|1|pAttack|7.38
+STATE|1|1|0|1|arable|true
+STATE|1|1|0|1|totalHarvest|9.17
+STATE|1|1|0|1|animalLoss|4.97
+STATE|1|1|0|1|ownedBy|0
+STATE|1|1|0|1|village|2
+STATE|1|1|0|1|shared?|true
+STATE|1|1|0|2|animalCount|[4 2 6 8 4 6 5 10 6 3 2 1 2 2 3 10 3 0 7 9]
+STATE|1|1|0|2|forageCount|1.82
+STATE|1|1|0|2|forageMass|2.82
+STATE|1|1|0|2|fenced?|true
+STATE|1|1|0|2|attacked?|false
+STATE|1|1|0|2|cropped|false
+STATE|1|1|0|2|totalLivestock|[5 2 8 9 10 10 0 7 10 8 6 6 6 6 1 7 10 6 0 3]
+STATE|1|1|0|2|treeCount|0.67
+STATE|1|1|0|2|grassMass|2.09
+STATE|1|1|0|2|pAttack|1.62
+STATE|1|1|0|2|arable|true
+STATE|1|1|0|2|totalHarvest|0.53
+STATE|1|1|0|2|animalLoss|0.0
+STATE|1|1|0|2|ownedBy|0
+STATE|1|1|0|2|village|3
+STATE|1|1|0|2|shared?|true
+STATE|1|1|0|3|animalCount|[5 9 0 1 3 9 6 2 10 4 5 9 5 7 1 1 7 7 7 7]
+STATE|1|1|0|3|forageCount|3.12
+STATE|1|1|0|3|forageMass|1.44
+STATE|1|1|0|3|fenced?|false
+STATE|1|1|0|3|attacked?|false
+STATE|1|1|0|3|cropped|true
+STATE|1|1|0|3|totalLivestock|[2 8 0 3 8 5 2 8 0 8 4 10 1 4 8 5 2 5 3 8]
+STATE|1|1|0|3|treeCount|5.42
+STATE|1|1|0|3|grassMass|5.03
+STATE|1|1|0|3|pAttack|6.36
+STATE|1|1|0|3|arable|false
+STATE|1|1|0|3|totalHarvest|7.88
+STATE|1|1|0|3|animalLoss|7.58
+STATE|1|1|0|3|ownedBy|0
+STATE|1|1|0|3|village|0
+STATE|1|1|0|3|shared?|false
+STATE|1|1|1|0|animalCount|[3 3 8 7 5 0 0 4 7 4 3 9 5 7 5 5 1 3 1 3]
+STATE|1|1|1|0|forageCount|4.7
+STATE|1|1|1|0|forageMass|3.38
+STATE|1|1|1|0|fenced?|true
+STATE|1|1|1|0|attacked?|false
+STATE|1|1|1|0|cropped|false
+STATE|1|1|1|0|totalLivestock|[0 7 10 5 10 1 10 1 6 3 7 2 6 10 5 1 6 7 6 1]
+STATE|1|1|1|0|treeCount|7.25
+STATE|1|1|1|0|grassMass|1.7
+STATE|1|1|1|0|pAttack|1.27
+STATE|1|1|1|0|arable|true
+STATE|1|1|1|0|totalHarvest|9.05
+STATE|1|1|1|0|animalLoss|8.07
+STATE|1|1|1|0|ownedBy|0
+STATE|1|1|1|0|village|3
+STATE|1|1|1|0|shared?|false
+STATE|1|1|1|1|animalCount|[7 10 5 2 8 8 2 0 0 10 1 8 2 6 3 3 0 4 3 4]
+STATE|1|1|1|1|forageCount|5.01
+STATE|1|1|1|1|forageMass|7.64
+STATE|1|1|1|1|fenced?|true
+STATE|1|1|1|1|attacked?|false
+STATE|1|1|1|1|cropped|false
+STATE|1|1|1|1|totalLivestock|[0 5 7 10 9 8 6 8 2 8 2 8 8 0 7 2 9 0 2 2]
+STATE|1|1|1|1|treeCount|1.42
+STATE|1|1|1|1|grassMass|6.19
+STATE|1|1|1|1|pAttack|1.2
+STATE|1|1|1|1|arable|true
+STATE|1|1|1|1|totalHarvest|6.82
+STATE|1|1|1|1|animalLoss|5.31
+STATE|1|1|1|1|ownedBy|2
+STATE|1|1|1|1|village|0
+STATE|1|1|1|1|shared?|false
+STATE|1|1|1|2|animalCount|[0 3 3 4 0 1 8 7 8 0 1 7 5 9 8 9 8 3 4 7]
+STATE|1|1|1|2|forageCount|5.08
+STATE|1|1|1|2|forageMass|8.07
+STATE|1|1|1|2|fenced?|false
+STATE|1|1|1|2|attacked?|true
+STATE|1|1|1|2|cropped|false
+STATE|1|1|1|2|totalLivestock|[4 8 3 7 2 6 1 6 7 5 1 10 3 6 1 3 10 4 1 2]
+STATE|1|1|1|2|treeCount|9.4
+STATE|1|1|1|2|grassMass|6.43
+STATE|1|1|1|2|pAttack|3.66
+STATE|1|1|1|2|arable|true
+STATE|1|1|1|2|totalHarvest|1.37
+STATE|1|1|1|2|animalLoss|4.68
+STATE|1|1|1|2|ownedBy|3
+STATE|1|1|1|2|village|0
+STATE|1|1|1|2|shared?|true
+STATE|1|1|1|3|animalCount|[7 2 10 3 2 6 8 6 5 6 3 5 5 1 5 0 5 8 7 7]
+STATE|1|1|1|3|forageCount|7.03
+STATE|1|1|1|3|forageMass|3.84
+STATE|1|1|1|3|fenced?|false
+STATE|1|1|1|3|attacked?|true
+STATE|1|1|1|3|cropped|false
+STATE|1|1|1|3|totalLivestock|[1 3 1 1 4 4 0 2 4 2 6 10 4 6 2 8 8 9 7 5]
+STATE|1|1|1|3|treeCount|0.89
+STATE|1|1|1|3|grassMass|0.58
+STATE|1|1|1|3|pAttack|6.88
+STATE|1|1|1|3|arable|true
+STATE|1|1|1|3|totalHarvest|0.72
+STATE|1|1|1|3|animalLoss|9.38
+STATE|1|1|1|3|ownedBy|3
+STATE|1|1|1|3|village|0
+STATE|1|1|1|3|shared?|false
+STATE|1|1|2|0|animalCount|[1 9 3 1 4 1 7 0 5 8 6 4 9 2 0 8 3 1 2 4]
+STATE|1|1|2|0|forageCount|0.5
+STATE|1|1|2|0|forageMass|2.02
+STATE|1|1|2|0|fenced?|true
+STATE|1|1|2|0|attacked?|true
+STATE|1|1|2|0|cropped|false
+STATE|1|1|2|0|totalLivestock|[4 7 8 10 2 4 5 0 4 0 0 0 8 8 3 8 7 3 7 1]
+STATE|1|1|2|0|treeCount|6.58
+STATE|1|1|2|0|grassMass|6.5
+STATE|1|1|2|0|pAttack|6.57
+STATE|1|1|2|0|arable|false
+STATE|1|1|2|0|totalHarvest|8.89
+STATE|1|1|2|0|animalLoss|9.7
+STATE|1|1|2|0|ownedBy|1
+STATE|1|1|2|0|village|3
+STATE|1|1|2|0|shared?|true
+STATE|1|1|2|1|animalCount|[3 5 3 10 2 6 5 0 2 0 1 10 4 6 2 0 1 10 6 8]
+STATE|1|1|2|1|forageCount|6.71
+STATE|1|1|2|1|forageMass|2.82
+STATE|1|1|2|1|fenced?|true
+STATE|1|1|2|1|attacked?|true
+STATE|1|1|2|1|cropped|true
+STATE|1|1|2|1|totalLivestock|[2 4 7 0 4 5 5 8 5 3 0 4 3 5 2 0 5 6 1 7]
+STATE|1|1|2|1|treeCount|2.79
+STATE|1|1|2|1|grassMass|6.56
+STATE|1|1|2|1|pAttack|2.48
+STATE|1|1|2|1|arable|false
+STATE|1|1|2|1|totalHarvest|0.91
+STATE|1|1|2|1|animalLoss|8.17
+STATE|1|1|2|1|ownedBy|0
+STATE|1|1|2|1|village|2
+STATE|1|1|2|1|shared?|false
+STATE|1|1|2|2|animalCount|[6 0 4 4 10 3 1 9 8 2 10 9 6 5 7 2 4 9 10 2]
+STATE|1|1|2|2|forageCount|0.44
+STATE|1|1|2|2|forageMass|8.35
+STATE|1|1|2|2|fenced?|false
+STATE|1|1|2|2|attacked?|false
+STATE|1|1|2|2|cropped|false
+STATE|1|1|2|2|totalLivestock|[8 2 8 8 9 0 10 9 10 10 3 1 0 0 2 10 5 1 6 7]
+STATE|1|1|2|2|treeCount|5.59
+STATE|1|1|2|2|grassMass|6.28
+STATE|1|1|2|2|pAttack|6.26
+STATE|1|1|2|2|arable|false
+STATE|1|1|2|2|totalHarvest|4.89
+STATE|1|1|2|2|animalLoss|0.03
+STATE|1|1|2|2|ownedBy|0
+STATE|1|1|2|2|village|3
+STATE|1|1|2|2|shared?|false
+STATE|1|1|2|3|animalCount|[8 1 10 8 1 7 4 1 4 3 3 3 10 7 7 6 1 7 10 4]
+STATE|1|1|2|3|forageCount|7.67
+STATE|1|1|2|3|forageMass|6.17
+STATE|1|1|2|3|fenced?|false
+STATE|1|1|2|3|attacked?|true
+STATE|1|1|2|3|cropped|true
+STATE|1|1|2|3|totalLivestock|[4 10 4 9 9 2 0 7 0 7 4 10 1 3 10 7 4 8 4 7]
+STATE|1|1|2|3|treeCount|4.66
+STATE|1|1|2|3|grassMass|7.67
+STATE|1|1|2|3|pAttack|9.93
+STATE|1|1|2|3|arable|false
+STATE|1|1|2|3|totalHarvest|3.12
+STATE|1|1|2|3|animalLoss|0.86
+STATE|1|1|2|3|ownedBy|2
+STATE|1|1|2|3|village|0
+STATE|1|1|2|3|shared?|true
+STATE|1|1|3|0|animalCount|[1 8 7 4 6 3 3 1 9 1 2 8 4 5 2 9 10 8 4 1]
+STATE|1|1|3|0|forageCount|7.03
+STATE|1|1|3|0|forageMass|2.31
+STATE|1|1|3|0|fenced?|false
+STATE|1|1|3|0|attacked?|true
+STATE|1|1|3|0|cropped|true
+STATE|1|1|3|0|totalLivestock|[0 7 10 7 6 4 2 6 5 6 5 1 5 0 5 5 6 1 3 0]
+STATE|1|1|3|0|treeCount|9.02
+STATE|1|1|3|0|grassMass|2.9
+STATE|1|1|3|0|pAttack|3.72
+STATE|1|1|3|0|arable|true
+STATE|1|1|3|0|totalHarvest|9.99
+STATE|1|1|3|0|animalLoss|5.89
+STATE|1|1|3|0|ownedBy|1
+STATE|1|1|3|0|village|2
+STATE|1|1|3|0|shared?|false
+STATE|1|1|3|1|animalCount|[0 4 1 0 10 4 10 2 3 4 6 8 5 3 5 6 0 10 6 8]
+STATE|1|1|3|1|forageCount|5.49
+STATE|1|1|3|1|forageMass|7.2
+STATE|1|1|3|1|fenced?|true
+STATE|1|1|3|1|attacked?|false
+STATE|1|1|3|1|cropped|true
+STATE|1|1|3|1|totalLivestock|[2 10 4 7 0 8 2 2 7 6 5 4 4 4 10 4 6 10 3 4]
+STATE|1|1|3|1|treeCount|4.83
+STATE|1|1|3|1|grassMass|6.69
+STATE|1|1|3|1|pAttack|1.2
+STATE|1|1|3|1|arable|false
+STATE|1|1|3|1|totalHarvest|0.75
+STATE|1|1|3|1|animalLoss|5.01
+STATE|1|1|3|1|ownedBy|2
+STATE|1|1|3|1|village|3
+STATE|1|1|3|1|shared?|true
+STATE|1|1|3|2|animalCount|[5 7 6 2 8 3 3 1 2 5 8 1 5 3 5 4 9 3 0 6]
+STATE|1|1|3|2|forageCount|3.83
+STATE|1|1|3|2|forageMass|7.46
+STATE|1|1|3|2|fenced?|true
+STATE|1|1|3|2|attacked?|true
+STATE|1|1|3|2|cropped|false
+STATE|1|1|3|2|totalLivestock|[7 4 9 5 2 10 8 8 10 3 1 4 3 6 6 10 7 6 4 0]
+STATE|1|1|3|2|treeCount|1.27
+STATE|1|1|3|2|grassMass|4.25
+STATE|1|1|3|2|pAttack|7.64
+STATE|1|1|3|2|arable|false
+STATE|1|1|3|2|totalHarvest|9.68
+STATE|1|1|3|2|animalLoss|4.9
+STATE|1|1|3|2|ownedBy|0
+STATE|1|1|3|2|village|2
+STATE|1|1|3|2|shared?|false
+STATE|1|1|3|3|animalCount|[8 7 7 3 1 3 2 2 8 10 1 10 7 1 8 0 0 2 3 9]
+STATE|1|1|3|3|forageCount|9.2
+STATE|1|1|3|3|forageMass|6.46
+STATE|1|1|3|3|fenced?|true
+STATE|1|1|3|3|attacked?|true
+STATE|1|1|3|3|cropped|true
+STATE|1|1|3|3|totalLivestock|[10 6 1 1 1 4 8 9 3 6 4 3 9 0 0 8 4 7 4 5]
+STATE|1|1|3|3|treeCount|6.45
+STATE|1|1|3|3|grassMass|8.84
+STATE|1|1|3|3|pAttack|4.75
+STATE|1|1|3|3|arable|true
+STATE|1|1|3|3|totalHarvest|2.47
+STATE|1|1|3|3|animalLoss|9.61
+STATE|1|1|3|3|ownedBy|3
+STATE|1|1|3|3|village|3
+STATE|1|1|3|3|shared?|true
+CHOICE|1|1|1|1|3|4|12:00:11.000 PM 28-Sep-2026
+CONFIRM|1|1|1|12:00:16.000 PM 28-Sep-2026
+CHOICE|1|1|2|3|2|1|12:00:28.000 PM 28-Sep-2026
+CONFIRM|1|1|2|12:00:34.000 PM 28-Sep-2026
+CHOICE|1|1|3|3|2|2|12:00:35.000 PM 28-Sep-2026
+CHOICE|1|1|3|0|1|2|12:00:40.000 PM 28-Sep-2026
+CHOICE|1|1|3|1|1|3|12:00:53.000 PM 28-Sep-2026
+CONFIRM|1|1|3|12:01:08.000 PM 28-Sep-2026
+CHOICE|1|1|4|0|3|2|12:01:16.000 PM 28-Sep-2026
+CHOICE|1|1|4|0|3|2|12:01:31.000 PM 28-Sep-2026
+CONFIRM|1|1|4|12:01:38.000 PM 28-Sep-2026
+CHOICE|1|1|5|1|0|2|12:01:45.000 PM 28-Sep-2026
+CONFIRM|1|1|5|12:01:46.000 PM 28-Sep-2026
+CHOICE|1|1|6|0|1|3|12:01:58.000 PM 28-Sep-2026
+CHOICE|1|1|6|0|1|-99|12:02:01.000 PM 28-Sep-2026
+CHOICE|1|1|6|0|1|4|12:02:02.000 PM 28-Sep-2026
+CONFIRM|1|1|6|12:02:07.000 PM 28-Sep-2026
+CHOICE|1|1|7|3|2|4|12:02:10.000 PM 28-Sep-2026
+CHOICE|1|1|7|3|2|-99|12:02:12.000 PM 28-Sep-2026
+CHOICE|1|1|7|3|2|1|12:02:21.000 PM 28-Sep-2026
+CONFIRM|1|1|7|12:02:34.000 PM 28-Sep-2026
+CHOICE|1|1|8|3|2|3|12:02:48.000 PM 28-Sep-2026
+CONFIRM|1|1|8|12:03:01.000 PM 28-Sep-2026
+CHOICE|1|1|9|0|0|2|12:03:07.000 PM 28-Sep-2026
+CHOICE|1|1|9|0|0|3|12:03:13.000 PM 28-Sep-2026
+CONFIRM|1|1|9|12:03:25.000 PM 28-Sep-2026
+CHOICE|1|1|10|0|3|4|12:03:26.000 PM 28-Sep-2026
+CHOICE|1|1|10|0|3|1|12:03:31.000 PM 28-Sep-2026
+CONFIRM|1|1|10|12:03:35.000 PM 28-Sep-2026
+CHOICE|1|1|11|0|2|3|12:03:45.000 PM 28-Sep-2026
+CHOICE|1|1|11|0|2|3|12:04:00.000 PM 28-Sep-2026
+CHOICE|1|1|11|0|2|-99|12:04:13.000 PM 28-Sep-2026
+CONFIRM|1|1|11|12:04:23.000 PM 28-Sep-2026
+CHOICE|1|1|12|0|0|1|12:04:31.000 PM 28-Sep-2026
+CHOICE|1|1|12|3|3|4|12:04:45.000 PM 28-Sep-2026
+CHOICE|1|1|12|3|3|2|12:04:46.000 PM 28-Sep-2026
+CONFIRM|1|1|12|12:04:59.000 PM 28-Sep-2026
+CHOICE|1|1|13|2|1|3|12:05:13.000 PM 28-Sep-2026
+CHOICE|1|1|13|2|1|1|12:05:22.000 PM 28-Sep-2026
+CHOICE|1|1|13|2|1|2|12:05:29.000 PM 28-Sep-2026
+CONFIRM|1|1|13|12:05:31.000 PM 28-Sep-2026
+CHOICE|1|1|14|0|3|3|12:05:34.000 PM 28-Sep-2026
+CHOICE|1|1|14|0|0|1|12:05:38.000 PM 28-Sep-2026
+CHOICE|1|1|14|0|0|4|12:05:41.000 PM 28-Sep-2026
+CONFIRM|1|1|14|12:05:45.000 PM 28-Sep-2026
+CHOICE|1|1|15|3|3|2|12:05:57.000 PM 28-Sep-2026
+CONFIRM|1|1|15|12:06:06.000 PM 28-Sep-2026
+CHOICE|1|1|16|0|2|3|12:06:12.000 PM 28-Sep-2026
+CHOICE|1|1|16|0|2|4|12:06:16.000 PM 28-Sep-2026
+CHOICE|1|1|16|0|2|3|12:06:31.000 PM 28-Sep-2026
+CONFIRM|1|1|16|12:06:46.000 PM 28-Sep-2026
+CHOICE|1|1|17|1|2|-99|12:06:51.000 PM 28-Sep-2026
+CHOICE|1|1|17|1|0|1|12:06:53.000 PM 28-Sep-2026
+CHOICE|1|1|17|1|0|2|12:07:07.000 PM 28-Sep-2026
+CONFIRM|1|1|17|12:07:15.000 PM 28-Sep-2026
+CHOICE|1|1|18|0|2|1|12:07:19.000 PM 28-Sep-2026
+CHOICE|1|1|18|0|2|2|12:07:34.000 PM 28-Sep-2026
+CONFIRM|1|1|18|12:07:36.000 PM 28-Sep-2026
+CHOICE|1|1|19|1|3|1|12:07:38.000 PM 28-Sep-2026
+CHOICE|1|1|19|1|3|3|12:07:42.000 PM 28-Sep-2026
+CONFIRM|1|1|19|12:07:43.000 PM 28-Sep-2026
+CHOICE|1|1|20|2|1|-99|12:07:48.000 PM 28-Sep-2026
+CHOICE|1|1|20|2|1|2|12:08:02.000 PM 28-Sep-2026
+CONFIRM|1|1|20|12:08:03.000 PM 28-Sep-2026
+SCORE|1|1|1|10|36|11
+SCORE|1|1|2|5|44|9
+SCORE|1|1|3|2|15|1
+SCORE|1|1|4|15|50|15
+SCORE|1|1|5|2|28|3
+SCORE|1|1|6|12|54|17
+SCORE|1|1|7|4|44|17
+SCORE|1|1|8|2|43|5
+SCORE|1|1|9|12|56|8
+SCORE|1|1|10|13|31|9
+SCORE|1|1|11|13|16|9
+SCORE|1|1|12|18|40|13
+SCORE|1|1|13|13|14|11
+SCORE|1|1|14|20|32|12
+SCORE|1|1|15|12|25|0
+SCORE|1|1|16|13|23|13
+SCORE|1|1|17|3|8|12
+SCORE|1|1|18|18|41|14
+SCORE|1|1|19|5|13|0
+SCORE|1|1|20|1|36|4
+PHASE|phase-1-2|12:08:14.000 PM 28-Sep-2026
+STATE|1|2|0|0|animalCount|[6 1 9 9 5 8 2 2 5 4 2 8 2 1 1 6 7 3 4 2]
+STATE|1|2|0|0|forageCount|8.37
+STATE|1|2|0|0|forageMass|0.43
+STATE|1|2|0|0|fenced?|false
+STATE|1|2|0|0|attacked?|true
+STATE|1|2|0|0|cropped|false
+STATE|1|2|0|0|totalLivestock|[10 6 1 9 2 10 3 9 6 9 3 7 2 9 3 0 6 8 2 6]
+STATE|1|2|0|0|treeCount|3.59
+STATE|1|2|0|0|grassMass|1.49
+STATE|1|2|0|0|pAttack|9.71
+STATE|1|2|0|0|arable|false
+STATE|1|2|0|0|totalHarvest|1.93
+STATE|1|2|0|0|animalLoss|8.84
+STATE|1|2|0|0|ownedBy|3
+STATE|1|2|0|0|village|0
+STATE|1|2|0|0|shared?|false
+STATE|1|2|0|1|animalCount|[5 1 6 9 7 8 10 4 10 6 4 9 3 6 6 10 5 7 8 7]
+STATE|1|2|0|1|forageCount|1.79
+STATE|1|2|0|1|forageMass|0.04
+STATE|1|2|0|1|fenced?|false
+STATE|1|2|0|1|attacked?|true
+STATE|1|2|0|1|cropped|true
+STATE|1|2|0|1|totalLivestock|[9 7 2 7 6 1 1 2 5 6 5 1 7 8 8 10 0 0 10 2]
+STATE|1|2|0|1|treeCount|0.82
+STATE|1|2|0|1|grassMass|7.33
+STATE|1|2|0|1|pAttack|7.78
+STATE|1|2|0|1|arable|false
+STATE|1|2|0|1|totalHarvest|0.54
+STATE|1|2|0|1|animalLoss|5.04
+STATE|1|2|0|1|ownedBy|2
+STATE|1|2|0|1|village|3
+STATE|1|2|0|1|shared?|false
+STATE|1|2|0|2|animalCount|[2 0 1 9 1 3 2 7 4 2 10 3 1 5 9 4 2 5 9 4]
+STATE|1|2|0|2|forageCount|9.05
+STATE|1|2|0|2|forageMass|4.56
+STATE|1|2|0|2|fenced?|true
+STATE|1|2|0|2|attacked?|false
+STATE|1|2|0|2|cropped|true
+STATE|1|2|0|2|totalLivestock|[9 4 9 8 3 5 5 0 3 2 6 2 10 4 10 5 6 2 4 1]
+STATE|1|2|0|2|treeCount|7.68
+STATE|1|2|0|2|grassMass|0.49
+STATE|1|2|0|2|pAttack|8.58
+STATE|1|2|0|2|arable|false
+STATE|1|2|0|2|totalHarvest|4.53
+STATE|1|2|0|2|animalLoss|5.21
+STATE|1|2|0|2|ownedBy|3
+STATE|1|2|0|2|village|0
+STATE|1|2|0|2|shared?|true
+STATE|1|2|0|3|animalCount|[8 10 6 5 4 6 5 9 2 5 5 1 7 3 2 9 0 4 8 4]
+STATE|1|2|0|3|forageCount|3.1
+STATE|1|2|0|3|forageMass|9.66
+STATE|1|2|0|3|fenced?|false
+STATE|1|2|0|3|attacked?|false
+STATE|1|2|0|3|cropped|false
+STATE|1|2|0|3|totalLivestock|[0 0 3 2 4 9 10 6 6 8 5 0 2 7 3 9 10 0 0 0]
+STATE|1|2|0|3|treeCount|0.03
+STATE|1|2|0|3|grassMass|3.55
+STATE|1|2|0|3|pAttack|1.06
+STATE|1|2|0|3|arable|true
+STATE|1|2|0|3|totalHarvest|2.24
+STATE|1|2|0|3|animalLoss|5.84
+STATE|1|2|0|3|ownedBy|3
+STATE|1|2|0|3|village|0
+STATE|1|2|0|3|shared?|true
+STATE|1|2|1|0|animalCount|[9 7 2 2 0 3 2 7 1 1 10 2 10 4 6 4 0 0 10 8]
+STATE|1|2|1|0|forageCount|8.93
+STATE|1|2|1|0|forageMass|5.95
+STATE|1|2|1|0|fenced?|false
+STATE|1|2|1|0|attacked?|false
+STATE|1|2|1|0|cropped|false
+STATE|1|2|1|0|totalLivestock|[7 3 2 0 0 0 8 0 6 2 3 2 0 1 0 9 8 10 3 2]
+STATE|1|2|1|0|treeCount|4.13
+STATE|1|2|1|0|grassMass|5.18
+STATE|1|2|1|0|pAttack|6.43
+STATE|1|2|1|0|arable|false
+STATE|1|2|1|0|totalHarvest|4.15
+STATE|1|2|1|0|animalLoss|6.13
+STATE|1|2|1|0|ownedBy|3
+STATE|1|2|1|0|village|1
+STATE|1|2|1|0|shared?|true
+STATE|1|2|1|1|animalCount|[10 0 7 8 0 6 6 7 1 10 7 2 3 1 4 3 10 0 1 5]
+STATE|1|2|1|1|forageCount|8.91
+STATE|1|2|1|1|forageMass|9.25
+STATE|1|2|1|1|fenced?|false
+STATE|1|2|1|1|attacked?|true
+STATE|1|2|1|1|cropped|true
+STATE|1|2|1|1|totalLivestock|[10 8 10 6 10 8 4 4 10 3 1 8 0 2 4 3 3 2 5 3]
+STATE|1|2|1|1|treeCount|8.8
+STATE|1|2|1|1|grassMass|3.29
+STATE|1|2|1|1|pAttack|2.39
+STATE|1|2|1|1|arable|false
+STATE|1|2|1|1|totalHarvest|6.31
+STATE|1|2|1|1|animalLoss|6.93
+STATE|1|2|1|1|ownedBy|3
+STATE|1|2|1|1|village|3
+STATE|1|2|1|1|shared?|true
+STATE|1|2|1|2|animalCount|[8 0 0 6 3 9 4 3 6 9 9 1 9 2 2 0 0 1 1 9]
+STATE|1|2|1|2|forageCount|9.29
+STATE|1|2|1|2|forageMass|3.45
+STATE|1|2|1|2|fenced?|true
+STATE|1|2|1|2|attacked?|true
+STATE|1|2|1|2|cropped|true
+STATE|1|2|1|2|totalLivestock|[10 10 0 1 0 1 9 5 3 8 10 1 6 1 3 3 3 1 0 0]
+STATE|1|2|1|2|treeCount|9.49
+STATE|1|2|1|2|grassMass|9.11
+STATE|1|2|1|2|pAttack|7.54
+STATE|1|2|1|2|arable|true
+STATE|1|2|1|2|totalHarvest|7.51
+STATE|1|2|1|2|animalLoss|6.32
+STATE|1|2|1|2|ownedBy|2
+STATE|1|2|1|2|village|0
+STATE|1|2|1|2|shared?|true
+STATE|1|2|1|3|animalCount|[10 3 4 5 5 6 4 0 5 4 4 0 5 5 9 8 7 4 9 0]
+STATE|1|2|1|3|forageCount|7.89
+STATE|1|2|1|3|forageMass|0.31
+STATE|1|2|1|3|fenced?|false
+STATE|1|2|1|3|attacked?|true
+STATE|1|2|1|3|cropped|true
+STATE|1|2|1|3|totalLivestock|[0 8 9 3 1 9 4 2 6 0 8 3 4 0 0 5 7 1 7 2]
+STATE|1|2|1|3|treeCount|9.67
+STATE|1|2|1|3|grassMass|5.93
+STATE|1|2|1|3|pAttack|9.57
+STATE|1|2|1|3|arable|false
+STATE|1|2|1|3|totalHarvest|5.78
+STATE|1|2|1|3|animalLoss|1.59
+STATE|1|2|1|3|ownedBy|0
+STATE|1|2|1|3|village|3
+STATE|1|2|1|3|shared?|true
+STATE|1|2|2|0|animalCount|[2 1 10 1 7 8 1 10 5 5 1 6 6 1 6 10 0 5 3 4]
+STATE|1|2|2|0|forageCount|2.63
+STATE|1|2|2|0|forageMass|9.01
+STATE|1|2|2|0|fenced?|false
+STATE|1|2|2|0|attacked?|true
+STATE|1|2|2|0|cropped|false
+STATE|1|2|2|0|totalLivestock|[3 7 2 8 9 9 10 0 5 9 5 8 2 7 10 8 5 2 7 7]
+STATE|1|2|2|0|treeCount|6.89
+STATE|1|2|2|0|grassMass|2.57
+STATE|1|2|2|0|pAttack|2.31
+STATE|1|2|2|0|arable|true
+STATE|1|2|2|0|totalHarvest|6.43
+STATE|1|2|2|0|animalLoss|6.97
+STATE|1|2|2|0|ownedBy|3
+STATE|1|2|2|0|village|0
+STATE|1|2|2|0|shared?|true
+STATE|1|2|2|1|animalCount|[9 2 2 3 5 9 8 5 2 3 5 3 4 1 2 10 1 3 6 2]
+STATE|1|2|2|1|forageCount|9.84
+STATE|1|2|2|1|forageMass|7.95
+STATE|1|2|2|1|fenced?|false
+STATE|1|2|2|1|attacked?|true
+STATE|1|2|2|1|cropped|true
+STATE|1|2|2|1|totalLivestock|[10 1 4 3 6 7 0 0 6 6 3 8 10 4 7 0 2 4 9 6]
+STATE|1|2|2|1|treeCount|0.06
+STATE|1|2|2|1|grassMass|2.42
+STATE|1|2|2|1|pAttack|8.53
+STATE|1|2|2|1|arable|false
+STATE|1|2|2|1|totalHarvest|5.87
+STATE|1|2|2|1|animalLoss|6.47
+STATE|1|2|2|1|ownedBy|0
+STATE|1|2|2|1|village|3
+STATE|1|2|2|1|shared?|false
+STATE|1|2|2|2|animalCount|[10 9 3 10 2 10 1 7 6 5 4 10 1 6 3 6 10 2 4 6]
+STATE|1|2|2|2|forageCount|4.83
+STATE|1|2|2|2|forageMass|0.2
+STATE|1|2|2|2|fenced?|false
+STATE|1|2|2|2|attacked?|false
+STATE|1|2|2|2|cropped|false
+STATE|1|2|2|2|totalLivestock|[2 10 5 0 6 7 1 0 4 8 3 2 3 8 5 1 9 7 8 3]
+STATE|1|2|2|2|treeCount|7.17
+STATE|1|2|2|2|grassMass|5.12
+STATE|1|2|2|2|pAttack|6.39
+STATE|1|2|2|2|arable|false
+STATE|1|2|2|2|totalHarvest|5.22
+STATE|1|2|2|2|animalLoss|4.1
+STATE|1|2|2|2|ownedBy|2
+STATE|1|2|2|2|village|0
+STATE|1|2|2|2|shared?|false
+STATE|1|2|2|3|animalCount|[2 6 8 1 9 5 10 0 4 4 6 6 0 0 1 6 6 10 10 5]
+STATE|1|2|2|3|forageCount|5.8
+STATE|1|2|2|3|forageMass|1.09
+STATE|1|2|2|3|fenced?|true
+STATE|1|2|2|3|attacked?|true
+STATE|1|2|2|3|cropped|false
+STATE|1|2|2|3|totalLivestock|[3 6 7 3 2 2 1 10 3 7 10 8 3 2 5 10 10 6 7 4]
+STATE|1|2|2|3|treeCount|7.6
+STATE|1|2|2|3|grassMass|6.5
+STATE|1|2|2|3|pAttack|7.8
+STATE|1|2|2|3|arable|true
+STATE|1|2|2|3|totalHarvest|7.84
+STATE|1|2|2|3|animalLoss|2.3
+STATE|1|2|2|3|ownedBy|3
+STATE|1|2|2|3|village|2
+STATE|1|2|2|3|shared?|false
+STATE|1|2|3|0|animalCount|[6 10 2 7 0 4 5 3 10 4 5 7 7 6 9 10 1 10 5 2]
+STATE|1|2|3|0|forageCount|9.29
+STATE|1|2|3|0|forageMass|8.54
+STATE|1|2|3|0|fenced?|true
+STATE|1|2|3|0|attacked?|false
+STATE|1|2|3|0|cropped|false
+STATE|1|2|3|0|totalLivestock|[2 8 5 10 9 0 10 0 3 1 10 4 4 9 1 9 2 3 2 7]
+STATE|1|2|3|0|treeCount|3.46
+STATE|1|2|3|0|grassMass|1.53
+STATE|1|2|3|0|pAttack|9.04
+STATE|1|2|3|0|arable|false
+STATE|1|2|3|0|totalHarvest|1.68
+STATE|1|2|3|0|animalLoss|8.91
+STATE|1|2|3|0|ownedBy|3
+STATE|1|2|3|0|village|0
+STATE|1|2|3|0|shared?|false
+STATE|1|2|3|1|animalCount|[8 10 4 3 7 3 8 1 7 10 1 8 1 4 6 3 2 7 7 8]
+STATE|1|2|3|1|forageCount|0.58
+STATE|1|2|3|1|forageMass|4.67
+STATE|1|2|3|1|fenced?|true
+STATE|1|2|3|1|attacked?|true
+STATE|1|2|3|1|cropped|true
+STATE|1|2|3|1|totalLivestock|[8 9 0 2 5 7 9 7 10 4 7 5 6 6 10 1 2 10 5 10]
+STATE|1|2|3|1|treeCount|6.47
+STATE|1|2|3|1|grassMass|0.21
+STATE|1|2|3|1|pAttack|0.46
+STATE|1|2|3|1|arable|false
+STATE|1|2|3|1|totalHarvest|9.99
+STATE|1|2|3|1|animalLoss|8.09
+STATE|1|2|3|1|ownedBy|0
+STATE|1|2|3|1|village|3
+STATE|1|2|3|1|shared?|true
+STATE|1|2|3|2|animalCount|[2 0 3 6 10 2 5 1 10 5 5 7 8 8 3 4 6 5 6 4]
+STATE|1|2|3|2|forageCount|5.54
+STATE|1|2|3|2|forageMass|8.27
+STATE|1|2|3|2|fenced?|true
+STATE|1|2|3|2|attacked?|false
+STATE|1|2|3|2|cropped|true
+STATE|1|2|3|2|totalLivestock|[8 4 8 5 3 10 7 1 5 3 5 4 2 9 10 1 0 6 8 6]
+STATE|1|2|3|2|treeCount|5.45
+STATE|1|2|3|2|grassMass|0.5
+STATE|1|2|3|2|pAttack|3.0
+STATE|1|2|3|2|arable|true
+STATE|1|2|3|2|totalHarvest|1.9
+STATE|1|2|3|2|animalLoss|9.21
+STATE|1|2|3|2|ownedBy|3
+STATE|1|2|3|2|village|3
+STATE|1|2|3|2|shared?|true
+STATE|1|2|3|3|animalCount|[8 8 9 6 9 2 10 10 9 10 1 3 0 10 10 7 10 2 1 10]
+STATE|1|2|3|3|forageCount|1.81
+STATE|1|2|3|3|forageMass|0.37
+STATE|1|2|3|3|fenced?|false
+STATE|1|2|3|3|attacked?|false
+STATE|1|2|3|3|cropped|false
+STATE|1|2|3|3|totalLivestock|[5 2 4 8 4 4 2 6 0 5 0 6 9 10 9 0 7 9 8 0]
+STATE|1|2|3|3|treeCount|8.25
+STATE|1|2|3|3|grassMass|7.74
+STATE|1|2|3|3|pAttack|4.21
+STATE|1|2|3|3|arable|false
+STATE|1|2|3|3|totalHarvest|4.05
+STATE|1|2|3|3|animalLoss|0.67
+STATE|1|2|3|3|ownedBy|3
+STATE|1|2|3|3|village|2
+STATE|1|2|3|3|shared?|false
+CHOICE|1|2|1|1|3|1|12:08:16.000 PM 28-Sep-2026
+CHOICE|1|2|1|1|3|2|12:08:27.000 PM 28-Sep-2026
+CHOICE|1|2|1|1|3|-99|12:08:38.000 PM 28-Sep-2026
+CONFIRM|1|2|1|12:08:49.000 PM 28-Sep-2026
+CHOICE|1|2|2|0|1|2|12:08:57.000 PM 28-Sep-2026
+CONFIRM|1|2|2|12:08:58.000 PM 28-Sep-2026
+CHOICE|1|2|3|1|3|2|12:09:13.000 PM 28-Sep-2026
+CHOICE|1|2|3|1|3|2|12:09:25.000 PM 28-Sep-2026
+CONFIRM|1|2|3|12:09:38.000 PM 28-Sep-2026
+CHOICE|1|2|4|2|3|3|12:09:53.000 PM 28-Sep-2026
+CONFIRM|1|2|4|12:09:54.000 PM 28-Sep-2026
+CHOICE|1|2|5|0|0|-99|12:10:09.000 PM 28-Sep-2026
+CHOICE|1|2|5|0|0|1|12:10:16.000 PM 28-Sep-2026
+CHOICE|1|2|5|0|0|2|12:10:30.000 PM 28-Sep-2026
+CONFIRM|1|2|5|12:10:44.000 PM 28-Sep-2026
+CHOICE|1|2|6|0|2|4|12:10:52.000 PM 28-Sep-2026
+CHOICE|1|2|6|0|2|1|12:10:58.000 PM 28-Sep-2026
+CONFIRM|1|2|6|12:11:09.000 PM 28-Sep-2026
+CHOICE|1|2|7|3|3|4|12:11:14.000 PM 28-Sep-2026
+CONFIRM|1|2|7|12:11:27.000 PM 28-Sep-2026
+CHOICE|1|2|8|2|2|3|12:11:41.000 PM 28-Sep-2026
+CHOICE|1|2|8|2|2|2|12:11:51.000 PM 28-Sep-2026
+CHOICE|1|2|8|3|1|4|12:12:01.000 PM 28-Sep-2026
+CONFIRM|1|2|8|12:12:14.000 PM 28-Sep-2026
+CHOICE|1|2|9|3|2|3|12:12:19.000 PM 28-Sep-2026
+CONFIRM|1|2|9|12:12:24.000 PM 28-Sep-2026
+CHOICE|1|2|10|1|0|2|12:12:37.000 PM 28-Sep-2026
+CHOICE|1|2|10|1|2|4|12:12:43.000 PM 28-Sep-2026
+CONFIRM|1|2|10|12:12:52.000 PM 28-Sep-2026
+CHOICE|1|2|11|3|3|2|12:12:57.000 PM 28-Sep-2026
+CONFIRM|1|2|11|12:13:07.000 PM 28-Sep-2026
+CHOICE|1|2|12|3|3|3|12:13:17.000 PM 28-Sep-2026
+CONFIRM|1|2|12|12:13:30.000 PM 28-Sep-2026
+CHOICE|1|2|13|3|3|3|12:13:43.000 PM 28-Sep-2026
+CONFIRM|1|2|13|12:13:45.000 PM 28-Sep-2026
+CHOICE|1|2|14|3|2|3|12:13:53.000 PM 28-Sep-2026
+CONFIRM|1|2|14|12:14:02.000 PM 28-Sep-2026
+CHOICE|1|2|15|1|1|1|12:14:05.000 PM 28-Sep-2026
+CHOICE|1|2|15|2|2|3|12:14:12.000 PM 28-Sep-2026
+CHOICE|1|2|15|1|1|-99|12:14:20.000 PM 28-Sep-2026
+CONFIRM|1|2|15|12:14:26.000 PM 28-Sep-2026
+CHOICE|1|2|16|2|3|2|12:14:32.000 PM 28-Sep-2026
+CONFIRM|1|2|16|12:14:42.000 PM 28-Sep-2026
+CHOICE|1|2|17|2|2|1|12:14:44.000 PM 28-Sep-2026
+CONFIRM|1|2|17|12:14:45.000 PM 28-Sep-2026
+CHOICE|1|2|18|3|1|3|12:14:52.000 PM 28-Sep-2026
+CONFIRM|1|2|18|12:14:54.000 PM 28-Sep-2026
+CHOICE|1|2|19|1|2|3|12:14:58.000 PM 28-Sep-2026
+CHOICE|1|2|19|3|0|-99|12:14:59.000 PM 28-Sep-2026
+CONFIRM|1|2|19|12:15:08.000 PM 28-Sep-2026
+CHOICE|1|2|20|3|3|1|12:15:22.000 PM 28-Sep-2026
+CHOICE|1|2|20|3|3|1|12:15:34.000 PM 28-Sep-2026
+CONFIRM|1|2|20|12:15:36.000 PM 28-Sep-2026
+SCORE|1|2|1|8|28|18
+SCORE|1|2|2|7|48|2
+SCORE|1|2|3|16|41|5
+SCORE|1|2|4|14|24|11
+SCORE|1|2|5|7|53|7
+SCORE|1|2|6|5|7|8
+SCORE|1|2|7|11|14|17
+SCORE|1|2|8|0|3|8
+SCORE|1|2|9|16|61|20
+SCORE|1|2|10|15|18|3
+SCORE|1|2|11|4|24|0
+SCORE|1|2|12|6|49|9
+SCORE|1|2|13|18|55|14
+SCORE|1|2|14|20|26|15
+SCORE|1|2|15|10|33|8
+SCORE|1|2|16|12|19|11
+SCORE|1|2|17|15|39|5
+SCORE|1|2|18|14|29|4
+SCORE|1|2|19|0|29|6
+SCORE|1|2|20|1|11|7
+PHASE|phase-2-1|12:15:38.000 PM 28-Sep-2026
+STATE|2|1|0|0|animalCount|[9 5 2 7 1 6 0 10 1 7 5 5 3 7 1 10 5 2 5 3]
+STATE|2|1|0|0|forageCount|7.36
+STATE|2|1|0|0|forageMass|1.8
+STATE|2|1|0|0|fenced?|true
+STATE|2|1|0|0|attacked?|false
+STATE|2|1|0|0|cropped|true
+STATE|2|1|0|0|totalLivestock|[2 4 6 6 3 2 0 4 9 4 5 2 4 7 1 5 7 7 1 2]
+STATE|2|1|0|0|treeCount|9.79
+STATE|2|1|0|0|grassMass|0.57
+STATE|2|1|0|0|pAttack|8.95
+STATE|2|1|0|0|arable|false
+STATE|2|1|0|0|totalHarvest|2.11
+STATE|2|1|0|0|animalLoss|4.77
+STATE|2|1|0|0|ownedBy|1
+STATE|2|1|0|0|village|0
+STATE|2|1|0|0|shared?|true
+STATE|2|1|0|1|animalCount|[3 5 6 4 3 3 1 6 4 6 2 0 4 2 10 0 7 8 5 8]
+STATE|2|1|0|1|forageCount|1.4
+STATE|2|1|0|1|forageMass|0.02
+STATE|2|1|0|1|fenced?|false
+STATE|2|1|0|1|attacked?|false
+STATE|2|1|0|1|cropped|true
+STATE|2|1|0|1|totalLivestock|[6 0 6 3 4 9 2 2 2 8 3 2 3 9 1 1 9 7 4 2]
+STATE|2|1|0|1|treeCount|2.06
+STATE|2|1|0|1|grassMass|6.12
+STATE|2|1|0|1|pAttack|7.08
+STATE|2|1|0|1|arable|false
+STATE|2|1|0|1|totalHarvest|5.83
+STATE|2|1|0|1|animalLoss|2.02
+STATE|2|1|0|1|ownedBy|0
+STATE|2|1|0|1|village|3
+STATE|2|1|0|1|shared?|false
+STATE|2|1|0|2|animalCount|[6 0 8 5 5 4 10 7 1 0 6 7 2 10 4 3 2 9 5 0]
+STATE|2|1|0|2|forageCount|1.63
+STATE|2|1|0|2|forageMass|3.71
+STATE|2|1|0|2|fenced?|false
+STATE|2|1|0|2|attacked?|true
+STATE|2|1|0|2|cropped|false
+STATE|2|1|0|2|totalLivestock|[7 8 1 1 5 3 5 6 9 0 4 1 7 7 8 0 8 8 2 0]
+STATE|2|1|0|2|treeCount|2.44
+STATE|2|1|0|2|grassMass|0.89
+STATE|2|1|0|2|pAttack|6.19
+STATE|2|1|0|2|arable|true
+STATE|2|1|0|2|totalHarvest|3.12
+STATE|2|1|0|2|animalLoss|5.55
+STATE|2|1|0|2|ownedBy|0
+STATE|2|1|0|2|village|0
+STATE|2|1|0|2|shared?|true
+STATE|2|1|0|3|animalCount|[3 4 0 9 10 9 7 8 3 7 1 5 1 2 0 4 1 7 7 9]
+STATE|2|1|0|3|forageCount|5.01
+STATE|2|1|0|3|forageMass|2.8
+STATE|2|1|0|3|fenced?|true
+STATE|2|1|0|3|attacked?|true
+STATE|2|1|0|3|cropped|true
+STATE|2|1|0|3|totalLivestock|[9 3 3 2 10 9 7 6 2 0 10 6 6 9 9 8 0 6 0 5]
+STATE|2|1|0|3|treeCount|3.39
+STATE|2|1|0|3|grassMass|2.4
+STATE|2|1|0|3|pAttack|3.35
+STATE|2|1|0|3|arable|true
+STATE|2|1|0|3|totalHarvest|9.81
+STATE|2|1|0|3|animalLoss|8.04
+STATE|2|1|0|3|ownedBy|1
+STATE|2|1|0|3|village|2
+STATE|2|1|0|3|shared?|false
+STATE|2|1|1|0|animalCount|[0 5 8 2 10 5 3 6 10 10 0 5 1 8 2 1 5 6 3 8]
+STATE|2|1|1|0|forageCount|6.69
+STATE|2|1|1|0|forageMass|2.25
+STATE|2|1|1|0|fenced?|true
+STATE|2|1|1|0|attacked?|true
+STATE|2|1|1|0|cropped|false
+STATE|2|1|1|0|totalLivestock|[7 10 0 0 0 10 9 4 10 9 4 10 8 0 9 1 4 1 8 0]
+STATE|2|1|1|0|treeCount|4.34
+STATE|2|1|1|0|grassMass|9.51
+STATE|2|1|1|0|pAttack|2.88
+STATE|2|1|1|0|arable|true
+STATE|2|1|1|0|totalHarvest|6.48
+STATE|2|1|1|0|animalLoss|1.2
+STATE|2|1|1|0|ownedBy|3
+STATE|2|1|1|0|village|3
+STATE|2|1|1|0|shared?|false
+STATE|2|1|1|1|animalCount|[1 7 9 8 2 7 1 8 2 4 6 9 4 4 3 1 8 4 7 9]
+STATE|2|1|1|1|forageCount|6.95
+STATE|2|1|1|1|forageMass|2.22
+STATE|2|1|1|1|fenced?|true
+STATE|2|1|1|1|attacked?|false
+STATE|2|1|1|1|cropped|true
+STATE|2|1|1|1|totalLivestock|[8 4 9 7 7 4 0 3 5 3 3 8 8 6 9 6 0 5 2 3]
+STATE|2|1|1|1|treeCount|3.24
+STATE|2|1|1|1|grassMass|3.25
+STATE|2|1|1|1|pAttack|2.7
+STATE|2|1|1|1|arable|false
+STATE|2|1|1|1|totalHarvest|2.16
+STATE|2|1|1|1|animalLoss|0.57
+STATE|2|1|1|1|ownedBy|0
+STATE|2|1|1|1|village|0
+STATE|2|1|1|1|shared?|false
+STATE|2|1|1|2|animalCount|[9 5 7 10 0 8 6 7 5 1 8 3 10 2 6 5 10 5 2 10]
+STATE|2|1|1|2|forageCount|2.02
+STATE|2|1|1|2|forageMass|6.11
+STATE|2|1|1|2|fenced?|true
+STATE|2|1|1|2|attacked?|false
+STATE|2|1|1|2|cropped|true
+STATE|2|1|1|2|totalLivestock|[7 4 10 10 2 6 1 0 6 8 9 1 7 6 9 2 6 4 9 9]
+STATE|2|1|1|2|treeCount|1.11
+STATE|2|1|1|2|grassMass|8.52
+STATE|2|1|1|2|pAttack|6.93
+STATE|2|1|1|2|arable|true
+STATE|2|1|1|2|totalHarvest|3.53
+STATE|2|1|1|2|animalLoss|3.53
+STATE|2|1|1|2|ownedBy|3
+STATE|2|1|1|2|village|3
+STATE|2|1|1|2|shared?|false
+STATE|2|1|1|3|animalCount|[10 5 0 7 6 7 4 2 8 4 2 6 9 6 9 3 1 5 5 9]
+STATE|2|1|1|3|forageCount|8.38
+STATE|2|1|1|3|forageMass|9.59
+STATE|2|1|1|3|fenced?|true
+STATE|2|1|1|3|attacked?|true
+STATE|2|1|1|3|cropped|false
+STATE|2|1|1|3|totalLivestock|[0 0 0 4 9 7 4 8 4 8 9 6 8 8 10 6 6 7 5 0]
+STATE|2|1|1|3|treeCount|5.95
+STATE|2|1|1|3|grassMass|3.51
+STATE|2|1|1|3|pAttack|9.48
+STATE|2|1|1|3|arable|false
+STATE|2|1|1|3|totalHarvest|5.25
+STATE|2|1|1|3|animalLoss|0.99
+STATE|2|1|1|3|ownedBy|1
+STATE|2|1|1|3|village|3
+STATE|2|1|1|3|shared?|true
+STATE|2|1|2|0|animalCount|[8 9 2 3 6 7 6 7 9 9 5 8 1 2 5 5 5 1 4 8]
+STATE|2|1|2|0|forageCount|1.76
+STATE|2|1|2|0|forageMass|6.56
+STATE|2|1|2|0|fenced?|true
+STATE|2|1|2|0|attacked?|true
+STATE|2|1|2|0|cropped|false
+STATE|2|1|2|0|totalLivestock|[8 6 10 2 8 4 8 3 8 3 6 2 0 10 9 9 1 5 9 10]
+STATE|2|1|2|0|treeCount|6.37
+STATE|2|1|2|0|grassMass|0.42
+STATE|2|1|2|0|pAttack|4.11
+STATE|2|1|2|0|arable|false
+STATE|2|1|2|0|totalHarvest|3.07
+STATE|2|1|2|0|animalLoss|6.91
+STATE|2|1|2|0|ownedBy|0
+STATE|2|1|2|0|village|1
+STATE|2|1|2|0|shared?|true
+STATE|2|1|2|1|animalCount|[1 9 0 10 0 3 2 7 8 9 4 10 8 8 2 9 3 6 9 1]
+STATE|2|1|2|1|forageCount|1.45
+STATE|2|1|2|1|forageMass|5.18
+STATE|2|1|2|1|fenced?|false
+STATE|2|1|2|1|attacked?|true
+STATE|2|1|2|1|cropped|true
+STATE|2|1|2|1|totalLivestock|[8 7 7 9 6 0 10 0 10 9 5 2 3 5 4 2 0 4 10 1]
+STATE|2|1|2|1|treeCount|8.59
+STATE|2|1|2|1|grassMass|9.48
+STATE|2|1|2|1|pAttack|0.63
+STATE|2|1|2|1|arable|true
+STATE|2|1|2|1|totalHarvest|6.24
+STATE|2|1|2|1|animalLoss|0.2
+STATE|2|1|2|1|ownedBy|0
+STATE|2|1|2|1|village|2
+STATE|2|1|2|1|shared?|false
+STATE|2|1|2|2|animalCount|[0 7 0 9 3 3 3 0 2 9 2 5 0 7 4 6 9 4 7 1]
+STATE|2|1|2|2|forageCount|2.43
+STATE|2|1|2|2|forageMass|3.9
+STATE|2|1|2|2|fenced?|false
+STATE|2|1|2|2|attacked?|true
+STATE|2|1|2|2|cropped|true
+STATE|2|1|2|2|totalLivestock|[7 0 3 1 2 2 5 6 2 0 4 6 8 5 1 5 8 6 5 6]
+STATE|2|1|2|2|treeCount|6.51
+STATE|2|1|2|2|grassMass|9.61
+STATE|2|1|2|2|pAttack|4.22
+STATE|2|1|2|2|arable|false
+STATE|2|1|2|2|totalHarvest|5.54
+STATE|2|1|2|2|animalLoss|3.87
+STATE|2|1|2|2|ownedBy|2
+STATE|2|1|2|2|village|1
+STATE|2|1|2|2|shared?|true
+STATE|2|1|2|3|animalCount|[6 0 4 10 0 5 2 3 2 1 3 4 8 2 8 7 7 3 2 5]
+STATE|2|1|2|3|forageCount|3.53
+STATE|2|1|2|3|forageMass|7.22
+STATE|2|1|2|3|fenced?|true
+STATE|2|1|2|3|attacked?|false
+STATE|2|1|2|3|cropped|true
+STATE|2|1|2|3|totalLivestock|[7 8 3 3 7 10 2 4 9 7 9 5 8 3 6 9 8 3 2 1]
+STATE|2|1|2|3|treeCount|6.78
+STATE|2|1|2|3|grassMass|0.91
+STATE|2|1|2|3|pAttack|8.52
+STATE|2|1|2|3|arable|false
+STATE|2|1|2|3|totalHarvest|7.65
+STATE|2|1|2|3|animalLoss|0.29
+STATE|2|1|2|3|ownedBy|3
+STATE|2|1|2|3|village|3
+STATE|2|1|2|3|shared?|true
+STATE|2|1|3|0|animalCount|[0 6 1 2 3 5 3 10 1 1 8 5 8 4 3 1 4 1 3 4]
+STATE|2|1|3|0|forageCount|1.26
+STATE|2|1|3|0|forageMass|7.17
+STATE|2|1|3|0|fenced?|true
+STATE|2|1|3|0|attacked?|true
+STATE|2|1|3|0|cropped|false
+STATE|2|1|3|0|totalLivestock|[10 10 2 4 2 0 5 10 10 5 6 0 10 7 3 6 5 10 1 2]
+STATE|2|1|3|0|treeCount|2.91
+STATE|2|1|3|0|grassMass|2.71
+STATE|2|1|3|0|pAttack|6.09
+STATE|2|1|3|0|arable|true
+STATE|2|1|3|0|totalHarvest|6.77
+STATE|2|1|3|0|animalLoss|4.05
+STATE|2|1|3|0|ownedBy|3
+STATE|2|1|3|0|village|0
+STATE|2|1|3|0|shared?|true
+STATE|2|1|3|1|animalCount|[4 2 6 0 8 4 10 10 2 9 3 9 7 8 4 6 10 10 9 5]
+STATE|2|1|3|1|forageCount|9.36
+STATE|2|1|3|1|forageMass|1.12
+STATE|2|1|3|1|fenced?|false
+STATE|2|1|3|1|attacked?|false
+STATE|2|1|3|1|cropped|false
+STATE|2|1|3|1|totalLivestock|[9 9 0 3 10 1 0 5 3 5 1 6 6 9 3 4 8 1 5 6]
+STATE|2|1|3|1|treeCount|4.43
+STATE|2|1|3|1|grassMass|3.4
+STATE|2|1|3|1|pAttack|5.03
+STATE|2|1|3|1|arable|false
+STATE|2|1|3|1|totalHarvest|8.39
+STATE|2|1|3|1|animalLoss|6.26
+STATE|2|1|3|1|ownedBy|3
+STATE|2|1|3|1|village|0
+STATE|2|1|3|1|shared?|false
+STATE|2|1|3|2|animalCount|[3 6 10 8 2 7 3 0 8 4 2 8 2 10 3 8 4 3 0 2]
+STATE|2|1|3|2|forageCount|3.58
+STATE|2|1|3|2|forageMass|4.12
+STATE|2|1|3|2|fenced?|true
+STATE|2|1|3|2|attacked?|true
+STATE|2|1|3|2|cropped|true
+STATE|2|1|3|2|totalLivestock|[7 10 7 3 3 0 8 7 2 10 5 4 2 2 9 9 3 5 10 1]
+STATE|2|1|3|2|treeCount|5.48
+STATE|2|1|3|2|grassMass|7.61
+STATE|2|1|3|2|pAttack|1.69
+STATE|2|1|3|2|arable|false
+STATE|2|1|3|2|totalHarvest|5.99
+STATE|2|1|3|2|animalLoss|4.61
+STATE|2|1|3|2|ownedBy|2
+STATE|2|1|3|2|village|0
+STATE|2|1|3|2|shared?|true
+STATE|2|1|3|3|animalCount|[4 0 5 7 3 0 0 4 4 3 1 4 7 1 2 5 7 7 9 5]
+STATE|2|1|3|3|forageCount|2.9
+STATE|2|1|3|3|forageMass|5.58
+STATE|2|1|3|3|fenced?|true
+STATE|2|1|3|3|attacked?|true
+STATE|2|1|3|3|cropped|false
+STATE|2|1|3|3|totalLivestock|[7 1 5 9 4 1 10 7 6 7 3 8 5 0 5 1 10 4 10 9]
+STATE|2|1|3|3|treeCount|9.35
+STATE|2|1|3|3|grassMass|6.53
+STATE|2|1|3|3|pAttack|2.51
+STATE|2|1|3|3|arable|true
+STATE|2|1|3|3|totalHarvest|1.39
+STATE|2|1|3|3|animalLoss|0.28
+STATE|2|1|3|3|ownedBy|2
+STATE|2|1|3|3|village|0
+STATE|2|1|3|3|shared?|true
+CHOICE|2|1|1|1|0|3|12:15:50.000 PM 28-Sep-2026
+CONFIRM|2|1|1|12:16:00.000 PM 28-Sep-2026
+CHOICE|2|1|2|3|1|3|12:16:06.000 PM 28-Sep-2026
+CHOICE|2|1|2|3|1|3|12:16:20.000 PM 28-Sep-2026
+CONFIRM|2|1|2|12:16:34.000 PM 28-Sep-2026
+CHOICE|2|1|3|1|0|-99|12:16:44.000 PM 28-Sep-2026
+CHOICE|2|1|3|3|0|4|12:16:51.000 PM 28-Sep-2026
+CONFIRM|2|1|3|12:16:59.000 PM 28-Sep-2026
+CHOICE|2|1|4|1|2|1|12:17:02.000 PM 28-Sep-2026
+CHOICE|2|1|4|1|2|4|12:17:13.000 PM 28-Sep-2026
+CHOICE|2|1|4|0|0|4|12:17:17.000 PM 28-Sep-2026
+CONFIRM|2|1|4|12:17:21.000 PM 28-Sep-2026
+CHOICE|2|1|5|2|0|-99|12:17:31.000 PM 28-Sep-2026
+CHOICE|2|1|5|3|1|1|12:17:40.000 PM 28-Sep-2026
+CHOICE|2|1|5|2|0|2|12:17:55.000 PM 28-Sep-2026
+CONFIRM|2|1|5|12:18:07.000 PM 28-Sep-2026
+CHOICE|2|1|6|3|2|-99|12:18:20.000 PM 28-Sep-2026
+CONFIRM|2|1|6|12:18:30.000 PM 28-Sep-2026
+CHOICE|2|1|7|2|1|3|12:18:39.000 PM 28-Sep-2026
+CHOICE|2|1|7|2|1|2|12:18:46.000 PM 28-Sep-2026
+CHOICE|2|1|7|0|0|3|12:18:56.000 PM 28-Sep-2026
+CONFIRM|2|1|7|12:19:07.000 PM 28-Sep-2026
+CHOICE|2|1|8|3|2|2|12:19:12.000 PM 28-Sep-2026
+CHOICE|2|1|8|0|1|4|12:19:24.000 PM 28-Sep-2026
+CONFIRM|2|1|8|12:19:26.000 PM 28-Sep-2026
+CHOICE|2|1|9|2|3|2|12:19:36.000 PM 28-Sep-2026
+CONFIRM|2|1|9|12:19:44.000 PM 28-Sep-2026
+CHOICE|2|1|10|2|0|2|12:19:53.000 PM 28-Sep-2026
+CHOICE|2|1|10|1|2|2|12:20:02.000 PM 28-Sep-2026
+CONFIRM|2|1|10|12:20:13.000 PM 28-Sep-2026
+CHOICE|2|1|11|3|1|2|12:20:22.000 PM 28-Sep-2026
+CHOICE|2|1|11|3|1|1|12:20:36.000 PM 28-Sep-2026
+CONFIRM|2|1|11|12:20:43.000 PM 28-Sep-2026
+CHOICE|2|1|12|0|3|1|12:20:54.000 PM 28-Sep-2026
+CHOICE|2|1|12|0|3|4|12:21:03.000 PM 28-Sep-2026
+CHOICE|2|1|12|0|3|4|12:21:16.000 PM 28-Sep-2026
+CONFIRM|2|1|12|12:21:18.000 PM 28-Sep-2026
+CHOICE|2|1|13|2|0|1|12:21:24.000 PM 28-Sep-2026
+CONFIRM|2|1|13|12:21:25.000 PM 28-Sep-2026
+CHOICE|2|1|14|1|3|2|12:21:32.000 PM 28-Sep-2026
+CONFIRM|2|1|14|12:21:47.000 PM 28-Sep-2026
+CHOICE|2|1|15|1|0|3|12:21:50.000 PM 28-Sep-2026
+CONFIRM|2|1|15|12:21:56.000 PM 28-Sep-2026
+CHOICE|2|1|16|2|0|1|12:22:00.000 PM 28-Sep-2026
+CHOICE|2|1|16|2|0|3|12:22:12.000 PM 28-Sep-2026
+CHOICE|2|1|16|2|0|3|12:22:14.000 PM 28-Sep-2026
+CONFIRM|2|1|16|12:22:20.000 PM 28-Sep-2026
+CHOICE|2|1|17|2|0|-99|12:22:35.000 PM 28-Sep-2026
+CHOICE|2|1|17|2|0|2|12:22:47.000 PM 28-Sep-2026
+CHOICE|2|1|17|2|0|4|12:22:49.000 PM 28-Sep-2026
+CONFIRM|2|1|17|12:23:02.000 PM 28-Sep-2026
+CHOICE|2|1|18|3|0|-99|12:23:07.000 PM 28-Sep-2026
+CONFIRM|2|1|18|12:23:10.000 PM 28-Sep-2026
+CHOICE|2|1|19|2|3|3|12:23:19.000 PM 28-Sep-2026
+CONFIRM|2|1|19|12:23:31.000 PM 28-Sep-2026
+CHOICE|2|1|20|3|0|-99|12:23:34.000 PM 28-Sep-2026
+CHOICE|2|1|20|3|0|1|12:23:47.000 PM 28-Sep-2026
+CONFIRM|2|1|20|12:24:01.000 PM 28-Sep-2026
+SCORE|2|1|1|1|5|5
+SCORE|2|1|2|19|60|19
+SCORE|2|1|3|12|42|5
+SCORE|2|1|4|14|39|7
+SCORE|2|1|5|19|52|2
+SCORE|2|1|6|11|32|16
+SCORE|2|1|7|6|25|4
+SCORE|2|1|8|18|57|1
+SCORE|2|1|9|6|16|11
+SCORE|2|1|10|14|35|18
+SCORE|2|1|11|14|38|11
+SCORE|2|1|12|10|10|10
+SCORE|2|1|13|18|48|10
+SCORE|2|1|14|7|8|7
+SCORE|2|1|15|14|52|1
+SCORE|2|1|16|20|29|4
+SCORE|2|1|17|8|32|8
+SCORE|2|1|18|2|34|8
+SCORE|2|1|19|11|47|18
+SCORE|2|1|20|16|53|4
+PHASE|phase-2-2|12:24:13.000 PM 28-Sep-2026
+STATE|2|2|0|0|animalCount|[0 8 1 3 6 10 9 10 1 5 4 3 2 10 1 4 5 5 8 10]
+STATE|2|2|0|0|forageCount|2.45
+STATE|2|2|0|0|forageMass|8.73
+STATE|2|2|0|0|fenced?|false
+STATE|2|2|0|0|attacked?|true
+STATE|2|2|0|0|cropped|false
+STATE|2|2|0|0|totalLivestock|[10 5 7 8 5 3 3 5 2 2 3 0 10 7 6 7 6 9 4 2]
+STATE|2|2|0|0|treeCount|5.87
+STATE|2|2|0|0|grassMass|1.44
+STATE|2|2|0|0|pAttack|7.2
+STATE|2|2|0|0|arable|true
+STATE|2|2|0|0|totalHarvest|5.72
+STATE|2|2|0|0|animalLoss|6.59
+STATE|2|2|0|0|ownedBy|1
+STATE|2|2|0|0|village|0
+STATE|2|2|0|0|shared?|false
+STATE|2|2|0|1|animalCount|[9 1 9 2 4 9 5 7 5 6 1 7 5 2 4 4 8 0 2 10]
+STATE|2|2|0|1|forageCount|2.68
+STATE|2|2|0|1|forageMass|7.04
+STATE|2|2|0|1|fenced?|true
+STATE|2|2|0|1|attacked?|true
+STATE|2|2|0|1|cropped|true
+STATE|2|2|0|1|totalLivestock|[9 4 8 10 1 3 3 0 2 9 0 1 1 9 5 2 0 3 4 8]
+STATE|2|2|0|1|treeCount|6.42
+STATE|2|2|0|1|grassMass|0.15
+STATE|2|2|0|1|pAttack|3.23
+STATE|2|2|0|1|arable|true
+STATE|2|2|0|1|totalHarvest|3.22
+STATE|2|2|0|1|animalLoss|8.68
+STATE|2|2|0|1|ownedBy|0
+STATE|2|2|0|1|village|3
+STATE|2|2|0|1|shared?|true
+STATE|2|2|0|2|animalCount|[9 10 5 2 0 6 0 1 10 9 5 7 9 6 4 7 0 0 5 9]
+STATE|2|2|0|2|forageCount|6.54
+STATE|2|2|0|2|forageMass|3.13
+STATE|2|2|0|2|fenced?|true
+STATE|2|2|0|2|attacked?|false
+STATE|2|2|0|2|cropped|false
+STATE|2|2|0|2|totalLivestock|[2 1 0 2 3 2 8 1 5 5 6 5 8 10 9 8 2 10 9 9]
+STATE|2|2|0|2|treeCount|3.31
+STATE|2|2|0|2|grassMass|7.41
+STATE|2|2|0|2|pAttack|2.58
+STATE|2|2|0|2|arable|false
+STATE|2|2|0|2|totalHarvest|7.63
+STATE|2|2|0|2|animalLoss|7.76
+STATE|2|2|0|2|ownedBy|1
+STATE|2|2|0|2|village|3
+STATE|2|2|0|2|shared?|false
+STATE|2|2|0|3|animalCount|[7 8 4 5 8 8 4 2 4 0 8 7 1 10 5 2 10 3 6 1]
+STATE|2|2|0|3|forageCount|9.37
+STATE|2|2|0|3|forageMass|6.25
+STATE|2|2|0|3|fenced?|true
+STATE|2|2|0|3|attacked?|false
+STATE|2|2|0|3|cropped|true
+STATE|2|2|0|3|totalLivestock|[2 4 9 5 2 2 2 8 0 5 3 7 7 3 10 5 6 7 3 5]
+STATE|2|2|0|3|treeCount|7.9
+STATE|2|2|0|3|grassMass|0.26
+STATE|2|2|0|3|pAttack|6.6
+STATE|2|2|0|3|arable|true
+STATE|2|2|0|3|totalHarvest|8.07
+STATE|2|2|0|3|animalLoss|9.14
+STATE|2|2|0|3|ownedBy|3
+STATE|2|2|0|3|village|1
+STATE|2|2|0|3|shared?|true
+STATE|2|2|1|0|animalCount|[9 6 6 6 10 10 3 0 4 0 4 6 3 3 5 3 5 6 10 4]
+STATE|2|2|1|0|forageCount|2.98
+STATE|2|2|1|0|forageMass|9.94
+STATE|2|2|1|0|fenced?|true
+STATE|2|2|1|0|attacked?|false
+STATE|2|2|1|0|cropped|true
+STATE|2|2|1|0|totalLivestock|[4 2 4 4 1 5 0 7 3 2 5 10 9 9 7 3 9 0 3 5]
+STATE|2|2|1|0|treeCount|0.46
+STATE|2|2|1|0|grassMass|7.74
+STATE|2|2|1|0|pAttack|4.39
+STATE|2|2|1|0|arable|true
+STATE|2|2|1|0|totalHarvest|1.4
+STATE|2|2|1|0|animalLoss|9.36
+STATE|2|2|1|0|ownedBy|3
+STATE|2|2|1|0|village|0
+STATE|2|2|1|0|shared?|false
+STATE|2|2|1|1|animalCount|[2 0 2 4 2 8 5 1 2 7 10 6 1 6 5 10 10 6 5 0]
+STATE|2|2|1|1|forageCount|5.85
+STATE|2|2|1|1|forageMass|2.01
+STATE|2|2|1|1|fenced?|false
+STATE|2|2|1|1|attacked?|true
+STATE|2|2|1|1|cropped|true
+STATE|2|2|1|1|totalLivestock|[9 3 9 6 1 0 0 5 1 1 1 7 2 8 6 0 2 3 10 8]
+STATE|2|2|1|1|treeCount|1.48
+STATE|2|2|1|1|grassMass|7.38
+STATE|2|2|1|1|pAttack|5.01
+STATE|2|2|1|1|arable|true
+STATE|2|2|1|1|totalHarvest|3.54
+STATE|2|2|1|1|animalLoss|4.96
+STATE|2|2|1|1|ownedBy|0
+STATE|2|2|1|1|village|1
+STATE|2|2|1|1|shared?|false
+STATE|2|2|1|2|animalCount|[3 1 4 2 0 4 4 1 0 3 8 0 6 8 5 4 0 5 0 10]
+STATE|2|2|1|2|forageCount|4.54
+STATE|2|2|1|2|forageMass|2.82
+STATE|2|2|1|2|fenced?|true
+STATE|2|2|1|2|attacked?|true
+STATE|2|2|1|2|cropped|false
+STATE|2|2|1|2|totalLivestock|[4 6 6 5 8 6 6 2 6 6 6 2 10 0 3 9 8 4 9 6]
+STATE|2|2|1|2|treeCount|9.91
+STATE|2|2|1|2|grassMass|8.26
+STATE|2|2|1|2|pAttack|6.63
+STATE|2|2|1|2|arable|true
+STATE|2|2|1|2|totalHarvest|6.21
+STATE|2|2|1|2|animalLoss|0.34
+STATE|2|2|1|2|ownedBy|3
+STATE|2|2|1|2|village|0
+STATE|2|2|1|2|shared?|true
+STATE|2|2|1|3|animalCount|[8 5 10 10 7 8 10 5 7 9 0 7 10 7 8 5 9 8 6 3]
+STATE|2|2|1|3|forageCount|8.25
+STATE|2|2|1|3|forageMass|7.91
+STATE|2|2|1|3|fenced?|false
+STATE|2|2|1|3|attacked?|true
+STATE|2|2|1|3|cropped|true
+STATE|2|2|1|3|totalLivestock|[8 4 9 10 10 5 1 10 8 10 3 9 4 4 7 5 8 9 7 9]
+STATE|2|2|1|3|treeCount|2.21
+STATE|2|2|1|3|grassMass|1.42
+STATE|2|2|1|3|pAttack|9.27
+STATE|2|2|1|3|arable|false
+STATE|2|2|1|3|totalHarvest|5.24
+STATE|2|2|1|3|animalLoss|5.27
+STATE|2|2|1|3|ownedBy|1
+STATE|2|2|1|3|village|0
+STATE|2|2|1|3|shared?|false
+STATE|2|2|2|0|animalCount|[2 10 7 2 10 10 0 5 6 5 6 1 6 2 4 6 1 5 5 10]
+STATE|2|2|2|0|forageCount|8.03
+STATE|2|2|2|0|forageMass|5.21
+STATE|2|2|2|0|fenced?|true
+STATE|2|2|2|0|attacked?|true
+STATE|2|2|2|0|cropped|true
+STATE|2|2|2|0|totalLivestock|[7 1 7 10 7 2 8 2 0 10 2 5 7 8 10 3 9 5 8 5]
+STATE|2|2|2|0|treeCount|8.02
+STATE|2|2|2|0|grassMass|2.53
+STATE|2|2|2|0|pAttack|5.56
+STATE|2|2|2|0|arable|true
+STATE|2|2|2|0|totalHarvest|2.6
+STATE|2|2|2|0|animalLoss|5.91
+STATE|2|2|2|0|ownedBy|1
+STATE|2|2|2|0|village|3
+STATE|2|2|2|0|shared?|false
+STATE|2|2|2|1|animalCount|[5 4 3 4 7 1 8 10 7 1 3 2 6 4 9 5 0 7 6 5]
+STATE|2|2|2|1|forageCount|0.42
+STATE|2|2|2|1|forageMass|7.53
+STATE|2|2|2|1|fenced?|false
+STATE|2|2|2|1|attacked?|true
+STATE|2|2|2|1|cropped|false
+STATE|2|2|2|1|totalLivestock|[4 5 3 6 9 2 9 3 9 5 1 10 3 5 1 1 7 6 6 8]
+STATE|2|2|2|1|treeCount|4.15
+STATE|2|2|2|1|grassMass|9.36
+STATE|2|2|2|1|pAttack|6.43
+STATE|2|2|2|1|arable|false
+STATE|2|2|2|1|totalHarvest|1.08
+STATE|2|2|2|1|animalLoss|5.63
+STATE|2|2|2|1|ownedBy|2
+STATE|2|2|2|1|village|3
+STATE|2|2|2|1|shared?|false
+STATE|2|2|2|2|animalCount|[6 7 2 1 7 6 7 2 8 0 10 3 3 6 8 0 10 4 8 5]
+STATE|2|2|2|2|forageCount|7.69
+STATE|2|2|2|2|forageMass|7.7
+STATE|2|2|2|2|fenced?|true
+STATE|2|2|2|2|attacked?|true
+STATE|2|2|2|2|cropped|true
+STATE|2|2|2|2|totalLivestock|[0 1 7 1 3 9 7 0 10 3 5 7 0 8 6 9 2 6 0 10]
+STATE|2|2|2|2|treeCount|1.46
+STATE|2|2|2|2|grassMass|3.34
+STATE|2|2|2|2|pAttack|5.18
+STATE|2|2|2|2|arable|true
+STATE|2|2|2|2|totalHarvest|9.89
+STATE|2|2|2|2|animalLoss|2.75
+STATE|2|2|2|2|ownedBy|1
+STATE|2|2|2|2|village|0
+STATE|2|2|2|2|shared?|true
+STATE|2|2|2|3|animalCount|[4 10 4 8 6 8 6 10 0 4 4 3 6 6 8 4 4 3 2 0]
+STATE|2|2|2|3|forageCount|2.08
+STATE|2|2|2|3|forageMass|6.52
+STATE|2|2|2|3|fenced?|false
+STATE|2|2|2|3|attacked?|false
+STATE|2|2|2|3|cropped|false
+STATE|2|2|2|3|totalLivestock|[2 5 5 3 7 8 10 0 5 0 8 1 6 9 5 0 4 3 7 4]
+STATE|2|2|2|3|treeCount|2.01
+STATE|2|2|2|3|grassMass|2.09
+STATE|2|2|2|3|pAttack|9.73
+STATE|2|2|2|3|arable|false
+STATE|2|2|2|3|totalHarvest|4.06
+STATE|2|2|2|3|animalLoss|7.28
+STATE|2|2|2|3|ownedBy|0
+STATE|2|2|2|3|village|0
+STATE|2|2|2|3|shared?|true
+STATE|2|2|3|0|animalCount|[6 10 1 0 2 1 9 7 2 0 8 2 7 3 10 10 4 3 8 2]
+STATE|2|2|3|0|forageCount|1.46
+STATE|2|2|3|0|forageMass|9.18
+STATE|2|2|3|0|fenced?|true
+STATE|2|2|3|0|attacked?|true
+STATE|2|2|3|0|cropped|true
+STATE|2|2|3|0|totalLivestock|[1 0 6 3 10 4 7 10 6 2 0 2 0 2 7 4 3 9 5 8]
+STATE|2|2|3|0|treeCount|7.19
+STATE|2|2|3|0|grassMass|3.1
+STATE|2|2|3|0|pAttack|2.58
+STATE|2|2|3|0|arable|false
+STATE|2|2|3|0|totalHarvest|2.15
+STATE|2|2|3|0|animalLoss|9.46
+STATE|2|2|3|0|ownedBy|3
+STATE|2|2|3|0|village|0
+STATE|2|2|3|0|shared?|true
+STATE|2|2|3|1|animalCount|[0 5 6 2 10 4 3 10 8 1 3 7 2 2 6 5 10 6 1 0]
+STATE|2|2|3|1|forageCount|8.28
+STATE|2|2|3|1|forageMass|1.22
+STATE|2|2|3|1|fenced?|false
+STATE|2|2|3|1|attacked?|false
+STATE|2|2|3|1|cropped|false
+STATE|2|2|3|1|totalLivestock|[8 1 4 7 5 0 7 1 3 7 4 4 9 9 8 1 3 2 7 4]
+STATE|2|2|3|1|treeCount|7.68
+STATE|2|2|3|1|grassMass|7.65
+STATE|2|2|3|1|pAttack|9.04
+STATE|2|2|3|1|arable|false
+STATE|2|2|3|1|totalHarvest|3.0
+STATE|2|2|3|1|animalLoss|5.8
+STATE|2|2|3|1|ownedBy|0
+STATE|2|2|3|1|village|0
+STATE|2|2|3|1|shared?|true
+STATE|2|2|3|2|animalCount|[2 10 4 0 2 5 5 7 7 3 5 5 2 1 4 1 8 7 1 8]
+STATE|2|2|3|2|forageCount|1.13
+STATE|2|2|3|2|forageMass|1.61
+STATE|2|2|3|2|fenced?|true
+STATE|2|2|3|2|attacked?|true
+STATE|2|2|3|2|cropped|true
+STATE|2|2|3|2|totalLivestock|[9 1 6 10 2 6 9 5 1 5 10 2 5 2 10 1 5 0 10 7]
+STATE|2|2|3|2|treeCount|3.03
+STATE|2|2|3|2|grassMass|2.61
+STATE|2|2|3|2|pAttack|1.07
+STATE|2|2|3|2|arable|true
+STATE|2|2|3|2|totalHarvest|1.53
+STATE|2|2|3|2|animalLoss|2.7
+STATE|2|2|3|2|ownedBy|3
+STATE|2|2|3|2|village|0
+STATE|2|2|3|2|shared?|true
+STATE|2|2|3|3|animalCount|[3 2 9 8 0 8 4 5 3 4 6 8 3 2 3 8 8 3 1 0]
+STATE|2|2|3|3|forageCount|1.06
+STATE|2|2|3|3|forageMass|0.54
+STATE|2|2|3|3|fenced?|false
+STATE|2|2|3|3|attacked?|false
+STATE|2|2|3|3|cropped|true
+STATE|2|2|3|3|totalLivestock|[3 1 2 2 4 0 6 6 9 8 1 4 9 1 1 10 9 3 3 3]
+STATE|2|2|3|3|treeCount|5.95
+STATE|2|2|3|3|grassMass|7.84
+STATE|2|2|3|3|pAttack|7.11
+STATE|2|2|3|3|arable|true
+STATE|2|2|3|3|totalHarvest|2.46
+STATE|2|2|3|3|animalLoss|5.99
+STATE|2|2|3|3|ownedBy|0
+STATE|2|2|3|3|village|0
+STATE|2|2|3|3|shared?|true
+CHOICE|2|2|1|1|2|4|12:24:23.000 PM 28-Sep-2026
+CHOICE|2|2|1|0|2|4|12:24:36.000 PM 28-Sep-2026
+CHOICE|2|2|1|0|2|-99|12:24:40.000 PM 28-Sep-2026
+CONFIRM|2|2|1|12:24:43.000 PM 28-Sep-2026
+CHOICE|2|2|2|1|1|2|12:24:47.000 PM 28-Sep-2026
+CHOICE|2|2|2|1|1|3|12:24:59.000 PM 28-Sep-2026
+CHOICE|2|2|2|0|3|-99|12:25:08.000 PM 28-Sep-2026
+CONFIRM|2|2|2|12:25:21.000 PM 28-Sep-2026
+CHOICE|2|2|3|0|0|1|12:25:35.000 PM 28-Sep-2026
+CHOICE|2|2|3|0|0|3|12:25:45.000 PM 28-Sep-2026
+CONFIRM|2|2|3|12:25:48.000 PM 28-Sep-2026
+CHOICE|2|2|4|3|1|3|12:26:03.000 PM 28-Sep-2026
+CHOICE|2|2|4|3|1|2|12:26:10.000 PM 28-Sep-2026
+CONFIRM|2|2|4|12:26:17.000 PM 28-Sep-2026
+CHOICE|2|2|5|2|0|-99|12:26:30.000 PM 28-Sep-2026
+CHOICE|2|2|5|2|1|4|12:26:39.000 PM 28-Sep-2026
+CHOICE|2|2|5|2|1|1|12:26:46.000 PM 28-Sep-2026
+CONFIRM|2|2|5|12:26:57.000 PM 28-Sep-2026
+CHOICE|2|2|6|2|3|1|12:27:01.000 PM 28-Sep-2026
+CHOICE|2|2|6|2|3|3|12:27:12.000 PM 28-Sep-2026
+CONFIRM|2|2|6|12:27:22.000 PM 28-Sep-2026
+CHOICE|2|2|7|2|0|1|12:27:24.000 PM 28-Sep-2026
+CHOICE|2|2|7|3|3|3|12:27:32.000 PM 28-Sep-2026
+CONFIRM|2|2|7|12:27:35.000 PM 28-Sep-2026
+CHOICE|2|2|8|1|0|4|12:27:45.000 PM 28-Sep-2026
+CHOICE|2|2|8|1|0|3|12:27:48.000 PM 28-Sep-2026
+CONFIRM|2|2|8|12:28:00.000 PM 28-Sep-2026
+CHOICE|2|2|9|3|1|1|12:28:07.000 PM 28-Sep-2026
+CHOICE|2|2|9|1|3|2|12:28:13.000 PM 28-Sep-2026
+CONFIRM|2|2|9|12:28:16.000 PM 28-Sep-2026
+CHOICE|2|2|10|2|3|3|12:28:31.000 PM 28-Sep-2026
+CONFIRM|2|2|10|12:28:40.000 PM 28-Sep-2026
+CHOICE|2|2|11|1|1|1|12:28:41.000 PM 28-Sep-2026
+CHOICE|2|2|11|0|1|3|12:28:53.000 PM 28-Sep-2026
+CHOICE|2|2|11|0|1|4|12:28:56.000 PM 28-Sep-2026
+CONFIRM|2|2|11|12:29:11.000 PM 28-Sep-2026
+CHOICE|2|2|12|3|0|3|12:29:19.000 PM 28-Sep-2026
+CHOICE|2|2|12|3|0|3|12:29:30.000 PM 28-Sep-2026
+CONFIRM|2|2|12|12:29:42.000 PM 28-Sep-2026
+CHOICE|2|2|13|3|0|4|12:29:50.000 PM 28-Sep-2026
+CHOICE|2|2|13|3|0|1|12:30:05.000 PM 28-Sep-2026
+CHOICE|2|2|13|0|3|2|12:30:17.000 PM 28-Sep-2026
+CONFIRM|2|2|13|12:30:27.000 PM 28-Sep-2026
+CHOICE|2|2|14|3|0|4|12:30:30.000 PM 28-Sep-2026
+CHOICE|2|2|14|3|0|3|12:30:33.000 PM 28-Sep-2026
+CHOICE|2|2|14|3|0|1|12:30:40.000 PM 28-Sep-2026
+CONFIRM|2|2|14|12:30:43.000 PM 28-Sep-2026
+CHOICE|2|2|15|2|1|1|12:30:50.000 PM 28-Sep-2026
+CHOICE|2|2|15|2|1|1|12:31:03.000 PM 28-Sep-2026
+CHOICE|2|2|15|3|3|3|12:31:15.000 PM 28-Sep-2026
+CONFIRM|2|2|15|12:31:30.000 PM 28-Sep-2026
+CHOICE|2|2|16|2|1|4|12:31:44.000 PM 28-Sep-2026
+CHOICE|2|2|16|2|1|2|12:31:48.000 PM 28-Sep-2026
+CONFIRM|2|2|16|12:31:57.000 PM 28-Sep-2026
+CHOICE|2|2|17|1|2|2|12:32:08.000 PM 28-Sep-2026
+CONFIRM|2|2|17|12:32:13.000 PM 28-Sep-2026
+CHOICE|2|2|18|2|3|3|12:32:25.000 PM 28-Sep-2026
+CONFIRM|2|2|18|12:32:28.000 PM 28-Sep-2026
+CHOICE|2|2|19|2|3|3|12:32:43.000 PM 28-Sep-2026
+CHOICE|2|2|19|2|3|3|12:32:49.000 PM 28-Sep-2026
+CONFIRM|2|2|19|12:32:56.000 PM 28-Sep-2026
+CHOICE|2|2|20|3|3|2|12:33:11.000 PM 28-Sep-2026
+CHOICE|2|2|20|3|3|3|12:33:12.000 PM 28-Sep-2026
+CONFIRM|2|2|20|12:33:15.000 PM 28-Sep-2026
+SCORE|2|2|1|8|56|17
+SCORE|2|2|2|15|57|17
+SCORE|2|2|3|13|61|2
+SCORE|2|2|4|8|33|11
+SCORE|2|2|5|12|45|9
+SCORE|2|2|6|20|27|8
+SCORE|2|2|7|14|63|0
+SCORE|2|2|8|1|35|18
+SCORE|2|2|9|9|31|19
+SCORE|2|2|10|11|27|7
+SCORE|2|2|11|2|37|3
+SCORE|2|2|12|19|62|13
+SCORE|2|2|13|3|22|5
+SCORE|2|2|14|20|31|20
+SCORE|2|2|15|3|52|12
+SCORE|2|2|16|12|62|10
+SCORE|2|2|17|12|37|15
+SCORE|2|2|18|10|32|5
+SCORE|2|2|19|4|38|16
+SCORE|2|2|20|13|55|9
+PHASE|phase-3-1|12:33:18.000 PM 28-Sep-2026
+STATE|3|1|0|0|animalCount|[3 5 10 1 6 1 8 0 9 10 3 9 6 6 3 9 4 10 2 2]
+STATE|3|1|0|0|forageCount|2.22
+STATE|3|1|0|0|forageMass|8.5
+STATE|3|1|0|0|fenced?|true
+STATE|3|1|0|0|attacked?|true
+STATE|3|1|0|0|cropped|true
+STATE|3|1|0|0|totalLivestock|[0 10 6 4 2 10 6 9 4 1 9 9 8 4 9 3 3 4 1 5]
+STATE|3|1|0|0|treeCount|6.76
+STATE|3|1|0|0|grassMass|9.75
+STATE|3|1|0|0|pAttack|8.02
+STATE|3|1|0|0|arable|true
+STATE|3|1|0|0|totalHarvest|6.99
+STATE|3|1|0|0|animalLoss|0.72
+STATE|3|1|0|0|ownedBy|1
+STATE|3|1|0|0|village|0
+STATE|3|1|0|0|shared?|true
+STATE|3|1|0|1|animalCount|[10 2 7 4 8 0 7 9 8 9 0 0 8 7 1 7 3 4 10 5]
+STATE|3|1|0|1|forageCount|9.65
+STATE|3|1|0|1|forageMass|5.31
+STATE|3|1|0|1|fenced?|true
+STATE|3|1|0|1|attacked?|false
+STATE|3|1|0|1|cropped|false
+STATE|3|1|0|1|totalLivestock|[4 9 8 0 3 2 0 8 4 6 5 1 10 4 1 9 1 6 6 8]
+STATE|3|1|0|1|treeCount|9.55
+STATE|3|1|0|1|grassMass|4.09
+STATE|3|1|0|1|pAttack|6.67
+STATE|3|1|0|1|arable|false
+STATE|3|1|0|1|totalHarvest|0.55
+STATE|3|1|0|1|animalLoss|3.71
+STATE|3|1|0|1|ownedBy|3
+STATE|3|1|0|1|village|1
+STATE|3|1|0|1|shared?|false
+STATE|3|1|0|2|animalCount|[4 1 10 7 9 2 6 7 10 9 7 3 5 9 3 1 6 2 4 3]
+STATE|3|1|0|2|forageCount|0.76
+STATE|3|1|0|2|forageMass|8.97
+STATE|3|1|0|2|fenced?|true
+STATE|3|1|0|2|attacked?|false
+STATE|3|1|0|2|cropped|false
+STATE|3|1|0|2|totalLivestock|[3 4 3 8 4 0 9 0 1 5 3 6 0 10 10 8 4 8 5 10]
+STATE|3|1|0|2|treeCount|1.64
+STATE|3|1|0|2|grassMass|6.32
+STATE|3|1|0|2|pAttack|9.91
+STATE|3|1|0|2|arable|true
+STATE|3|1|0|2|totalHarvest|0.44
+STATE|3|1|0|2|animalLoss|1.75
+STATE|3|1|0|2|ownedBy|1
+STATE|3|1|0|2|village|2
+STATE|3|1|0|2|shared?|false
+STATE|3|1|0|3|animalCount|[7 1 5 1 2 5 7 7 1 5 5 7 2 1 8 9 4 8 6 3]
+STATE|3|1|0|3|forageCount|3.54
+STATE|3|1|0|3|forageMass|6.56
+STATE|3|1|0|3|fenced?|false
+STATE|3|1|0|3|attacked?|true
+STATE|3|1|0|3|cropped|true
+STATE|3|1|0|3|totalLivestock|[8 6 6 2 6 2 2 0 1 3 9 8 6 0 0 1 7 0 3 9]
+STATE|3|1|0|3|treeCount|5.34
+STATE|3|1|0|3|grassMass|0.71
+STATE|3|1|0|3|pAttack|3.23
+STATE|3|1|0|3|arable|false
+STATE|3|1|0|3|totalHarvest|8.85
+STATE|3|1|0|3|animalLoss|4.85
+STATE|3|1|0|3|ownedBy|3
+STATE|3|1|0|3|village|0
+STATE|3|1|0|3|shared?|true
+STATE|3|1|1|0|animalCount|[3 5 6 1 1 9 2 3 7 7 9 9 10 10 7 1 9 0 7 2]
+STATE|3|1|1|0|forageCount|4.0
+STATE|3|1|1|0|forageMass|6.73
+STATE|3|1|1|0|fenced?|false
+STATE|3|1|1|0|attacked?|true
+STATE|3|1|1|0|cropped|false
+STATE|3|1|1|0|totalLivestock|[7 9 2 1 7 9 6 1 3 3 0 6 9 3 10 10 0 3 1 3]
+STATE|3|1|1|0|treeCount|8.03
+STATE|3|1|1|0|grassMass|0.38
+STATE|3|1|1|0|pAttack|0.49
+STATE|3|1|1|0|arable|true
+STATE|3|1|1|0|totalHarvest|9.31
+STATE|3|1|1|0|animalLoss|2.2
+STATE|3|1|1|0|ownedBy|3
+STATE|3|1|1|0|village|0
+STATE|3|1|1|0|shared?|false
+STATE|3|1|1|1|animalCount|[10 9 6 4 0 2 7 0 7 1 1 2 2 8 2 9 8 5 1 8]
+STATE|3|1|1|1|forageCount|7.87
+STATE|3|1|1|1|forageMass|8.9
+STATE|3|1|1|1|fenced?|false
+STATE|3|1|1|1|attacked?|true
+STATE|3|1|1|1|cropped|false
+STATE|3|1|1|1|totalLivestock|[8 10 1 8 8 9 9 9 8 1 0 10 8 9 4 7 6 10 0 8]
+STATE|3|1|1|1|treeCount|7.45
+STATE|3|1|1|1|grassMass|0.24
+STATE|3|1|1|1|pAttack|8.3
+STATE|3|1|1|1|arable|false
+STATE|3|1|1|1|totalHarvest|4.58
+STATE|3|1|1|1|animalLoss|1.22
+STATE|3|1|1|1|ownedBy|3
+STATE|3|1|1|1|village|3
+STATE|3|1|1|1|shared?|true
+STATE|3|1|1|2|animalCount|[6 1 9 1 8 8 5 10 1 1 3 1 1 5 4 4 4 4 2 7]
+STATE|3|1|1|2|forageCount|6.06
+STATE|3|1|1|2|forageMass|9.79
+STATE|3|1|1|2|fenced?|false
+STATE|3|1|1|2|attacked?|true
+STATE|3|1|1|2|cropped|true
+STATE|3|1|1|2|totalLivestock|[1 10 9 3 8 6 7 6 9 9 10 3 1 0 0 0 10 10 2 6]
+STATE|3|1|1|2|treeCount|8.01
+STATE|3|1|1|2|grassMass|0.55
+STATE|3|1|1|2|pAttack|6.19
+STATE|3|1|1|2|arable|true
+STATE|3|1|1|2|totalHarvest|2.55
+STATE|3|1|1|2|animalLoss|1.34
+STATE|3|1|1|2|ownedBy|1
+STATE|3|1|1|2|village|1
+STATE|3|1|1|2|shared?|true
+STATE|3|1|1|3|animalCount|[6 1 2 7 2 10 10 7 9 5 4 3 0 6 8 0 5 3 8 5]
+STATE|3|1|1|3|forageCount|9.21
+STATE|3|1|1|3|forageMass|3.29
+STATE|3|1|1|3|fenced?|false
+STATE|3|1|1|3|attacked?|false
+STATE|3|1|1|3|cropped|false
+STATE|3|1|1|3|totalLivestock|[1 8 2 1 0 5 6 10 5 5 1 8 1 7 2 3 8 0 10 10]
+STATE|3|1|1|3|treeCount|5.38
+STATE|3|1|1|3|grassMass|9.38
+STATE|3|1|1|3|pAttack|4.08
+STATE|3|1|1|3|arable|false
+STATE|3|1|1|3|totalHarvest|6.9
+STATE|3|1|1|3|animalLoss|9.67
+STATE|3|1|1|3|ownedBy|0
+STATE|3|1|1|3|village|3
+STATE|3|1|1|3|shared?|true
+STATE|3|1|2|0|animalCount|[4 0 4 6 1 2 9 7 9 10 2 4 6 3 5 4 0 1 3 10]
+STATE|3|1|2|0|forageCount|2.6
+STATE|3|1|2|0|forageMass|9.64
+STATE|3|1|2|0|fenced?|false
+STATE|3|1|2|0|attacked?|false
+STATE|3|1|2|0|cropped|false
+STATE|3|1|2|0|totalLivestock|[9 1 6 4 1 1 1 8 0 1 5 1 2 8 1 7 10 8 4 7]
+STATE|3|1|2|0|treeCount|1.78
+STATE|3|1|2|0|grassMass|1.0
+STATE|3|1|2|0|pAttack|3.03
+STATE|3|1|2|0|arable|true
+STATE|3|1|2|0|totalHarvest|6.9
+STATE|3|1|2|0|animalLoss|4.45
+STATE|3|1|2|0|ownedBy|3
+STATE|3|1|2|0|village|0
+STATE|3|1|2|0|shared?|false
+STATE|3|1|2|1|animalCount|[7 5 5 3 0 6 3 1 3 5 10 5 4 9 0 3 1 1 2 10]
+STATE|3|1|2|1|forageCount|6.62
+STATE|3|1|2|1|forageMass|3.12
+STATE|3|1|2|1|fenced?|true
+STATE|3|1|2|1|attacked?|true
+STATE|3|1|2|1|cropped|true
+STATE|3|1|2|1|totalLivestock|[0 6 4 10 1 9 9 3 0 1 4 0 4 2 5 5 8 2 2 5]
+STATE|3|1|2|1|treeCount|7.88
+STATE|3|1|2|1|grassMass|2.52
+STATE|3|1|2|1|pAttack|3.66
+STATE|3|1|2|1|arable|false
+STATE|3|1|2|1|totalHarvest|1.11
+STATE|3|1|2|1|animalLoss|2.48
+STATE|3|1|2|1|ownedBy|0
+STATE|3|1|2|1|village|1
+STATE|3|1|2|1|shared?|false
+STATE|3|1|2|2|animalCount|[0 3 10 3 3 6 5 3 10 7 4 0 0 1 10 6 5 3 4 0]
+STATE|3|1|2|2|forageCount|4.73
+STATE|3|1|2|2|forageMass|4.87
+STATE|3|1|2|2|fenced?|true
+STATE|3|1|2|2|attacked?|false
+STATE|3|1|2|2|cropped|true
+STATE|3|1|2|2|totalLivestock|[6 1 7 7 2 3 6 7 0 1 3 1 4 5 7 7 3 5 8 0]
+STATE|3|1|2|2|treeCount|0.72
+STATE|3|1|2|2|grassMass|2.22
+STATE|3|1|2|2|pAttack|7.44
+STATE|3|1|2|2|arable|false
+STATE|3|1|2|2|totalHarvest|8.7
+STATE|3|1|2|2|animalLoss|9.62
+STATE|3|1|2|2|ownedBy|2
+STATE|3|1|2|2|village|0
+STATE|3|1|2|2|shared?|true
+STATE|3|1|2|3|animalCount|[6 8 0 3 8 2 8 5 3 1 1 7 4 7 7 2 1 7 10 5]
+STATE|3|1|2|3|forageCount|0.98
+STATE|3|1|2|3|forageMass|2.81
+STATE|3|1|2|3|fenced?|false
+STATE|3|1|2|3|attacked?|true
+STATE|3|1|2|3|cropped|false
+STATE|3|1|2|3|totalLivestock|[7 7 4 2 8 0 10 10 8 0 10 7 10 0 8 10 3 7 10 9]
+STATE|3|1|2|3|treeCount|1.39
+STATE|3|1|2|3|grassMass|3.64
+STATE|3|1|2|3|pAttack|3.87
+STATE|3|1|2|3|arable|false
+STATE|3|1|2|3|totalHarvest|3.22
+STATE|3|1|2|3|animalLoss|0.42
+STATE|3|1|2|3|ownedBy|1
+STATE|3|1|2|3|village|3
+STATE|3|1|2|3|shared?|false
+STATE|3|1|3|0|animalCount|[2 3 0 9 7 1 7 3 0 4 7 2 3 4 5 9 3 1 6 0]
+STATE|3|1|3|0|forageCount|6.79
+STATE|3|1|3|0|forageMass|0.13
+STATE|3|1|3|0|fenced?|false
+STATE|3|1|3|0|attacked?|true
+STATE|3|1|3|0|cropped|true
+STATE|3|1|3|0|totalLivestock|[8 7 10 3 9 3 3 7 3 4 7 4 3 5 0 6 2 5 6 10]
+STATE|3|1|3|0|treeCount|7.09
+STATE|3|1|3|0|grassMass|5.69
+STATE|3|1|3|0|pAttack|7.7
+STATE|3|1|3|0|arable|true
+STATE|3|1|3|0|totalHarvest|8.37
+STATE|3|1|3|0|animalLoss|1.55
+STATE|3|1|3|0|ownedBy|1
+STATE|3|1|3|0|village|3
+STATE|3|1|3|0|shared?|true
+STATE|3|1|3|1|animalCount|[8 8 6 2 4 3 8 1 4 6 2 2 8 2 9 5 0 2 3 6]
+STATE|3|1|3|1|forageCount|1.68
+STATE|3|1|3|1|forageMass|5.86
+STATE|3|1|3|1|fenced?|true
+STATE|3|1|3|1|attacked?|true
+STATE|3|1|3|1|cropped|false
+STATE|3|1|3|1|totalLivestock|[10 3 2 4 6 1 0 6 1 0 4 1 4 2 2 6 1 8 6 4]
+STATE|3|1|3|1|treeCount|8.07
+STATE|3|1|3|1|grassMass|6.53
+STATE|3|1|3|1|pAttack|5.13
+STATE|3|1|3|1|arable|true
+STATE|3|1|3|1|totalHarvest|2.44
+STATE|3|1|3|1|animalLoss|6.58
+STATE|3|1|3|1|ownedBy|3
+STATE|3|1|3|1|village|3
+STATE|3|1|3|1|shared?|false
+STATE|3|1|3|2|animalCount|[8 8 3 6 1 9 4 9 6 2 4 10 3 6 5 8 4 10 1 0]
+STATE|3|1|3|2|forageCount|6.24
+STATE|3|1|3|2|forageMass|4.72
+STATE|3|1|3|2|fenced?|false
+STATE|3|1|3|2|attacked?|false
+STATE|3|1|3|2|cropped|true
+STATE|3|1|3|2|totalLivestock|[7 5 10 10 2 7 5 3 6 1 3 8 6 6 2 3 5 5 6 10]
+STATE|3|1|3|2|treeCount|4.94
+STATE|3|1|3|2|grassMass|3.65
+STATE|3|1|3|2|pAttack|9.98
+STATE|3|1|3|2|arable|false
+STATE|3|1|3|2|totalHarvest|8.79
+STATE|3|1|3|2|animalLoss|1.13
+STATE|3|1|3|2|ownedBy|3
+STATE|3|1|3|2|village|0
+STATE|3|1|3|2|shared?|false
+STATE|3|1|3|3|animalCount|[9 6 10 1 7 9 7 5 9 8 5 5 6 5 2 7 0 10 10 2]
+STATE|3|1|3|3|forageCount|3.94
+STATE|3|1|3|3|forageMass|1.17
+STATE|3|1|3|3|fenced?|false
+STATE|3|1|3|3|attacked?|true
+STATE|3|1|3|3|cropped|false
+STATE|3|1|3|3|totalLivestock|[3 10 3 9 3 5 4 10 4 2 1 9 7 10 9 0 3 0 9 8]
+STATE|3|1|3|3|treeCount|4.12
+STATE|3|1|3|3|grassMass|5.61
+STATE|3|1|3|3|pAttack|0.29
+STATE|3|1|3|3|arable|false
+STATE|3|1|3|3|totalHarvest|8.37
+STATE|3|1|3|3|animalLoss|0.86
+STATE|3|1|3|3|ownedBy|0
+STATE|3|1|3|3|village|0
+STATE|3|1|3|3|shared?|true
+CHOICE|3|1|1|2|1|-99|12:33:20.000 PM 28-Sep-2026
+CONFIRM|3|1|1|12:33:22.000 PM 28-Sep-2026
+CHOICE|3|1|2|1|1|1|12:33:31.000 PM 28-Sep-2026
+CONFIRM|3|1|2|12:33:37.000 PM 28-Sep-2026
+CHOICE|3|1|3|2|3|3|12:33:43.000 PM 28-Sep-2026
+CHOICE|3|1|3|2|3|-99|12:33:46.000 PM 28-Sep-2026
+CONFIRM|3|1|3|12:33:51.000 PM 28-Sep-2026
+CHOICE|3|1|4|0|0|3|12:33:54.000 PM 28-Sep-2026
+CONFIRM|3|1|4|12:34:07.000 PM 28-Sep-2026
+CHOICE|3|1|5|2|2|2|12:34:11.000 PM 28-Sep-2026
+CHOICE|3|1|5|2|2|1|12:34:24.000 PM 28-Sep-2026
+CHOICE|3|1|5|2|2|4|12:34:29.000 PM 28-Sep-2026
+CONFIRM|3|1|5|12:34:41.000 PM 28-Sep-2026
+CHOICE|3|1|6|1|2|4|12:34:43.000 PM 28-Sep-2026
+CONFIRM|3|1|6|12:34:45.000 PM 28-Sep-2026
+CHOICE|3|1|7|1|1|4|12:34:58.000 PM 28-Sep-2026
+CHOICE|3|1|7|1|1|1|12:35:12.000 PM 28-Sep-2026
+CHOICE|3|1|7|1|1|2|12:35:13.000 PM 28-Sep-2026
+CONFIRM|3|1|7|12:35:17.000 PM 28-Sep-2026
+CHOICE|3|1|8|1|0|4|12:35:21.000 PM 28-Sep-2026
+CHOICE|3|1|8|3|2|1|12:35:25.000 PM 28-Sep-2026
+CHOICE|3|1|8|1|2|4|12:35:35.000 PM 28-Sep-2026
+CONFIRM|3|1|8|12:35:39.000 PM 28-Sep-2026
+CHOICE|3|1|9|1|2|3|12:35:42.000 PM 28-Sep-2026
+CONFIRM|3|1|9|12:35:45.000 PM 28-Sep-2026
+CHOICE|3|1|10|1|3|3|12:35:52.000 PM 28-Sep-2026
+CONFIRM|3|1|10|12:35:58.000 PM 28-Sep-2026
+CHOICE|3|1|11|2|0|3|12:36:00.000 PM 28-Sep-2026
+CHOICE|3|1|11|2|0|2|12:36:03.000 PM 28-Sep-2026
+CHOICE|3|1|11|2|0|2|12:36:11.000 PM 28-Sep-2026
+CONFIRM|3|1|11|12:36:12.000 PM 28-Sep-2026
+CHOICE|3|1|12|2|0|3|12:36:23.000 PM 28-Sep-2026
+CONFIRM|3|1|12|12:36:35.000 PM 28-Sep-2026
+CHOICE|3|1|13|2|0|1|12:36:45.000 PM 28-Sep-2026
+CHOICE|3|1|13|2|0|3|12:36:58.000 PM 28-Sep-2026
+CONFIRM|3|1|13|12:37:09.000 PM 28-Sep-2026
+CHOICE|3|1|14|1|3|4|12:37:21.000 PM 28-Sep-2026
+CHOICE|3|1|14|1|3|4|12:37:34.000 PM 28-Sep-2026
+CHOICE|3|1|14|2|0|4|12:37:36.000 PM 28-Sep-2026
+CONFIRM|3|1|14|12:37:47.000 PM 28-Sep-2026
+CHOICE|3|1|15|1|0|2|12:37:49.000 PM 28-Sep-2026
+CHOICE|3|1|15|1|0|3|12:38:00.000 PM 28-Sep-2026
+CONFIRM|3|1|15|12:38:02.000 PM 28-Sep-2026
+CHOICE|3|1|16|2|3|2|12:38:09.000 PM 28-Sep-2026
+CHOICE|3|1|16|2|3|1|12:38:10.000 PM 28-Sep-2026
+CHOICE|3|1|16|2|3|2|12:38:19.000 PM 28-Sep-2026
+CONFIRM|3|1|16|12:38:21.000 PM 28-Sep-2026
+CHOICE|3|1|17|0|2|4|12:38:24.000 PM 28-Sep-2026
+CHOICE|3|1|17|0|2|4|12:38:36.000 PM 28-Sep-2026
+CHOICE|3|1|17|0|2|2|12:38:44.000 PM 28-Sep-2026
+CONFIRM|3|1|17|12:38:53.000 PM 28-Sep-2026
+CHOICE|3|1|18|0|2|4|12:39:01.000 PM 28-Sep-2026
+CONFIRM|3|1|18|12:39:05.000 PM 28-Sep-2026
+CHOICE|3|1|19|2|3|2|12:39:17.000 PM 28-Sep-2026
+CONFIRM|3|1|19|12:39:30.000 PM 28-Sep-2026
+CHOICE|3|1|20|1|3|3|12:39:43.000 PM 28-Sep-2026
+CONFIRM|3|1|20|12:39:47.000 PM 28-Sep-2026
+SCORE|3|1|1|0|16|16
+SCORE|3|1|2|15|59|4
+SCORE|3|1|3|19|39|10
+SCORE|3|1|4|5|51|10
+SCORE|3|1|5|6|48|13
+SCORE|3|1|6|1|1|7
+SCORE|3|1|7|18|40|0
+SCORE|3|1|8|8|46|1
+SCORE|3|1|9|1|21|7
+SCORE|3|1|10|10|27|11
+SCORE|3|1|11|9|32|19
+SCORE|3|1|12|11|36|12
+SCORE|3|1|13|9|16|7
+SCORE|3|1|14|0|43|13
+SCORE|3|1|15|20|69|18
+SCORE|3|1|16|7|48|1
+SCORE|3|1|17|5|53|4
+SCORE|3|1|18|9|25|16
+SCORE|3|1|19|20|40|12
+SCORE|3|1|20|13|32|4
+PHASE|phase-3-2|12:39:51.000 PM 28-Sep-2026
+STATE|3|2|0|0|animalCount|[8 5 10 0 5 2 5 2 10 8 10 0 8 7 5 7 7 3 5 5]
+STATE|3|2|0|0|forageCount|2.49
+STATE|3|2|0|0|forageMass|1.0
+STATE|3|2|0|0|fenced?|true
+STATE|3|2|0|0|attacked?|true
+STATE|3|2|0|0|cropped|false
+STATE|3|2|0|0|totalLivestock|[3 5 1 9 1 7 0 3 7 10 6 4 7 6 4 10 10 9 7 5]
+STATE|3|2|0|0|treeCount|9.0
+STATE|3|2|0|0|grassMass|7.34
+STATE|3|2|0|0|pAttack|3.12
+STATE|3|2|0|0|arable|false
+STATE|3|2|0|0|totalHarvest|5.73
+STATE|3|2|0|0|animalLoss|1.06
+STATE|3|2|0|0|ownedBy|3
+STATE|3|2|0|0|village|3
+STATE|3|2|0|0|shared?|true
+STATE|3|2|0|1|animalCount|[7 6 0 10 3 3 3 5 8 5 10 1 10 9 0 7 9 9 6 0]
+STATE|3|2|0|1|forageCount|7.17
+STATE|3|2|0|1|forageMass|4.29
+STATE|3|2|0|1|fenced?|true
+STATE|3|2|0|1|attacked?|false
+STATE|3|2|0|1|cropped|false
+STATE|3|2|0|1|totalLivestock|[5 1 3 9 0 3 5 6 2 6 10 1 6 3 5 4 5 8 2 7]
+STATE|3|2|0|1|treeCount|5.47
+STATE|3|2|0|1|grassMass|5.0
+STATE|3|2|0|1|pAttack|6.68
+STATE|3|2|0|1|arable|true
+STATE|3|2|0|1|totalHarvest|9.57
+STATE|3|2|0|1|animalLoss|10.0
+STATE|3|2|0|1|ownedBy|3
+STATE|3|2|0|1|village|0
+STATE|3|2|0|1|shared?|true
+STATE|3|2|0|2|animalCount|[10 8 1 9 5 0 0 3 8 0 8 3 8 7 2 8 3 2 2 10]
+STATE|3|2|0|2|forageCount|4.38
+STATE|3|2|0|2|forageMass|0.3
+STATE|3|2|0|2|fenced?|true
+STATE|3|2|0|2|attacked?|false
+STATE|3|2|0|2|cropped|false
+STATE|3|2|0|2|totalLivestock|[3 6 3 8 10 7 0 1 0 5 2 3 8 4 3 8 2 3 9 2]
+STATE|3|2|0|2|treeCount|9.04
+STATE|3|2|0|2|grassMass|2.02
+STATE|3|2|0|2|pAttack|5.86
+STATE|3|2|0|2|arable|false
+STATE|3|2|0|2|totalHarvest|7.49
+STATE|3|2|0|2|animalLoss|7.12
+STATE|3|2|0|2|ownedBy|3
+STATE|3|2|0|2|village|0
+STATE|3|2|0|2|shared?|true
+STATE|3|2|0|3|animalCount|[6 8 0 7 0 7 1 1 8 10 6 2 5 7 2 10 3 8 5 6]
+STATE|3|2|0|3|forageCount|7.67
+STATE|3|2|0|3|forageMass|2.45
+STATE|3|2|0|3|fenced?|true
+STATE|3|2|0|3|attacked?|true
+STATE|3|2|0|3|cropped|true
+STATE|3|2|0|3|totalLivestock|[9 6 4 4 2 10 3 7 1 2 3 9 5 1 8 4 2 6 7 7]
+STATE|3|2|0|3|treeCount|7.69
+STATE|3|2|0|3|grassMass|5.92
+STATE|3|2|0|3|pAttack|4.73
+STATE|3|2|0|3|arable|true
+STATE|3|2|0|3|totalHarvest|5.19
+STATE|3|2|0|3|animalLoss|4.72
+STATE|3|2|0|3|ownedBy|3
+STATE|3|2|0|3|village|0
+STATE|3|2|0|3|shared?|false
+STATE|3|2|1|0|animalCount|[3 1 5 6 1 6 1 5 6 5 5 6 10 2 7 9 8 0 0 7]
+STATE|3|2|1|0|forageCount|3.54
+STATE|3|2|1|0|forageMass|6.3
+STATE|3|2|1|0|fenced?|false
+STATE|3|2|1|0|attacked?|true
+STATE|3|2|1|0|cropped|true
+STATE|3|2|1|0|totalLivestock|[4 2 8 10 10 0 10 2 10 5 10 6 5 9 9 10 3 5 2 8]
+STATE|3|2|1|0|treeCount|5.52
+STATE|3|2|1|0|grassMass|6.51
+STATE|3|2|1|0|pAttack|2.86
+STATE|3|2|1|0|arable|true
+STATE|3|2|1|0|totalHarvest|9.04
+STATE|3|2|1|0|animalLoss|9.75
+STATE|3|2|1|0|ownedBy|3
+STATE|3|2|1|0|village|1
+STATE|3|2|1|0|shared?|false
+STATE|3|2|1|1|animalCount|[7 7 4 5 8 0 5 8 8 5 10 7 1 5 4 6 9 9 9 4]
+STATE|3|2|1|1|forageCount|0.17
+STATE|3|2|1|1|forageMass|8.0
+STATE|3|2|1|1|fenced?|true
+STATE|3|2|1|1|attacked?|false
+STATE|3|2|1|1|cropped|false
+STATE|3|2|1|1|totalLivestock|[0 4 5 4 7 2 6 0 1 3 3 0 2 2 4 3 3 0 6 4]
+STATE|3|2|1|1|treeCount|1.22
+STATE|3|2|1|1|grassMass|9.71
+STATE|3|2|1|1|pAttack|9.07
+STATE|3|2|1|1|arable|true
+STATE|3|2|1|1|totalHarvest|1.44
+STATE|3|2|1|1|animalLoss|5.51
+STATE|3|2|1|1|ownedBy|0
+STATE|3|2|1|1|village|0
+STATE|3|2|1|1|shared?|true
+STATE|3|2|1|2|animalCount|[3 0 7 6 6 1 10 2 9 2 4 0 1 0 2 1 0 0 5 10]
+STATE|3|2|1|2|forageCount|1.68
+STATE|3|2|1|2|forageMass|4.63
+STATE|3|2|1|2|fenced?|true
+STATE|3|2|1|2|attacked?|true
+STATE|3|2|1|2|cropped|true
+STATE|3|2|1|2|totalLivestock|[3 5 1 6 5 6 6 4 7 3 7 0 10 2 2 2 2 5 10 10]
+STATE|3|2|1|2|treeCount|0.59
+STATE|3|2|1|2|grassMass|5.3
+STATE|3|2|1|2|pAttack|6.81
+STATE|3|2|1|2|arable|true
+STATE|3|2|1|2|totalHarvest|4.4
+STATE|3|2|1|2|animalLoss|7.91
+STATE|3|2|1|2|ownedBy|3
+STATE|3|2|1|2|village|0
+STATE|3|2|1|2|shared?|true
+STATE|3|2|1|3|animalCount|[0 9 10 5 10 6 8 2 0 8 8 2 7 2 6 2 10 0 8 8]
+STATE|3|2|1|3|forageCount|9.39
+STATE|3|2|1|3|forageMass|8.44
+STATE|3|2|1|3|fenced?|true
+STATE|3|2|1|3|attacked?|false
+STATE|3|2|1|3|cropped|true
+STATE|3|2|1|3|totalLivestock|[6 10 6 5 7 9 9 2 5 6 3 4 3 10 9 0 9 5 5 10]
+STATE|3|2|1|3|treeCount|7.58
+STATE|3|2|1|3|grassMass|2.62
+STATE|3|2|1|3|pAttack|6.11
+STATE|3|2|1|3|arable|true
+STATE|3|2|1|3|totalHarvest|8.58
+STATE|3|2|1|3|animalLoss|4.89
+STATE|3|2|1|3|ownedBy|1
+STATE|3|2|1|3|village|0
+STATE|3|2|1|3|shared?|true
+STATE|3|2|2|0|animalCount|[0 2 6 1 9 6 4 9 8 6 0 1 9 2 1 6 4 1 9 6]
+STATE|3|2|2|0|forageCount|4.42
+STATE|3|2|2|0|forageMass|7.26
+STATE|3|2|2|0|fenced?|true
+STATE|3|2|2|0|attacked?|false
+STATE|3|2|2|0|cropped|false
+STATE|3|2|2|0|totalLivestock|[1 0 7 4 3 1 10 4 4 5 3 8 8 8 6 9 10 4 7 10]
+STATE|3|2|2|0|treeCount|8.64
+STATE|3|2|2|0|grassMass|4.01
+STATE|3|2|2|0|pAttack|9.5
+STATE|3|2|2|0|arable|true
+STATE|3|2|2|0|totalHarvest|1.19
+STATE|3|2|2|0|animalLoss|7.49
+STATE|3|2|2|0|ownedBy|0
+STATE|3|2|2|0|village|3
+STATE|3|2|2|0|shared?|true
+STATE|3|2|2|1|animalCount|[9 8 2 5 10 6 3 4 8 0 7 7 0 1 1 0 3 7 9 7]
+STATE|3|2|2|1|forageCount|8.76
+STATE|3|2|2|1|forageMass|0.81
+STATE|3|2|2|1|fenced?|true
+STATE|3|2|2|1|attacked?|false
+STATE|3|2|2|1|cropped|false
+STATE|3|2|2|1|totalLivestock|[2 10 1 10 2 8 4 5 2 2 3 7 3 4 4 0 3 2 9 4]
+STATE|3|2|2|1|treeCount|9.71
+STATE|3|2|2|1|grassMass|7.71
+STATE|3|2|2|1|pAttack|6.31
+STATE|3|2|2|1|arable|false
+STATE|3|2|2|1|totalHarvest|8.55
+STATE|3|2|2|1|animalLoss|4.44
+STATE|3|2|2|1|ownedBy|0
+STATE|3|2|2|1|village|2
+STATE|3|2|2|1|shared?|false
+STATE|3|2|2|2|animalCount|[5 10 0 6 3 10 7 7 8 3 4 2 8 10 1 8 5 6 2 2]
+STATE|3|2|2|2|forageCount|8.99
+STATE|3|2|2|2|forageMass|4.7
+STATE|3|2|2|2|fenced?|false
+STATE|3|2|2|2|attacked?|false
+STATE|3|2|2|2|cropped|true
+STATE|3|2|2|2|totalLivestock|[7 9 5 2 5 1 5 6 1 2 7 9 4 5 6 9 8 2 5 0]
+STATE|3|2|2|2|treeCount|3.18
+STATE|3|2|2|2|grassMass|4.58
+STATE|3|2|2|2|pAttack|9.57
+STATE|3|2|2|2|arable|true
+STATE|3|2|2|2|totalHarvest|3.69
+STATE|3|2|2|2|animalLoss|7.78
+STATE|3|2|2|2|ownedBy|3
+STATE|3|2|2|2|village|3
+STATE|3|2|2|2|shared?|true
+STATE|3|2|2|3|animalCount|[10 3 8 10 10 2 5 3 9 3 4 4 3 9 1 6 0 3 8 1]
+STATE|3|2|2|3|forageCount|2.06
+STATE|3|2|2|3|forageMass|5.07
+STATE|3|2|2|3|fenced?|true
+STATE|3|2|2|3|attacked?|false
+STATE|3|2|2|3|cropped|false
+STATE|3|2|2|3|totalLivestock|[10 4 1 3 10 9 10 0 4 0 6 1 4 5 9 0 8 6 5 9]
+STATE|3|2|2|3|treeCount|5.33
+STATE|3|2|2|3|grassMass|1.81
+STATE|3|2|2|3|pAttack|5.73
+STATE|3|2|2|3|arable|false
+STATE|3|2|2|3|totalHarvest|9.06
+STATE|3|2|2|3|animalLoss|2.24
+STATE|3|2|2|3|ownedBy|0
+STATE|3|2|2|3|village|0
+STATE|3|2|2|3|shared?|true
+STATE|3|2|3|0|animalCount|[8 5 10 6 6 0 1 9 6 1 4 8 2 6 5 10 0 0 0 6]
+STATE|3|2|3|0|forageCount|6.23
+STATE|3|2|3|0|forageMass|6.53
+STATE|3|2|3|0|fenced?|true
+STATE|3|2|3|0|attacked?|false
+STATE|3|2|3|0|cropped|false
+STATE|3|2|3|0|totalLivestock|[5 5 4 8 2 2 2 2 2 1 9 1 2 4 8 9 9 1 8 7]
+STATE|3|2|3|0|treeCount|4.13
+STATE|3|2|3|0|grassMass|5.44
+STATE|3|2|3|0|pAttack|0.15
+STATE|3|2|3|0|arable|true
+STATE|3|2|3|0|totalHarvest|4.23
+STATE|3|2|3|0|animalLoss|2.37
+STATE|3|2|3|0|ownedBy|0
+STATE|3|2|3|0|village|0
+STATE|3|2|3|0|shared?|false
+STATE|3|2|3|1|animalCount|[5 3 1 7 9 6 6 5 7 0 3 10 0 7 8 3 0 9 2 3]
+STATE|3|2|3|1|forageCount|0.7
+STATE|3|2|3|1|forageMass|0.82
+STATE|3|2|3|1|fenced?|true
+STATE|3|2|3|1|attacked?|true
+STATE|3|2|3|1|cropped|false
+STATE|3|2|3|1|totalLivestock|[6 4 1 8 7 3 10 2 2 4 6 5 1 8 6 2 9 0 7 1]
+STATE|3|2|3|1|treeCount|9.9
+STATE|3|2|3|1|grassMass|7.35
+STATE|3|2|3|1|pAttack|7.42
+STATE|3|2|3|1|arable|false
+STATE|3|2|3|1|totalHarvest|7.9
+STATE|3|2|3|1|animalLoss|2.85
+STATE|3|2|3|1|ownedBy|0
+STATE|3|2|3|1|village|1
+STATE|3|2|3|1|shared?|true
+STATE|3|2|3|2|animalCount|[8 3 8 6 2 3 10 3 6 4 10 7 1 3 7 0 3 10 6 1]
+STATE|3|2|3|2|forageCount|1.98
+STATE|3|2|3|2|forageMass|0.88
+STATE|3|2|3|2|fenced?|false
+STATE|3|2|3|2|attacked?|false
+STATE|3|2|3|2|cropped|true
+STATE|3|2|3|2|totalLivestock|[4 10 10 5 3 0 6 6 6 1 2 1 1 0 8 3 4 10 1 6]
+STATE|3|2|3|2|treeCount|5.02
+STATE|3|2|3|2|grassMass|4.88
+STATE|3|2|3|2|pAttack|1.94
+STATE|3|2|3|2|arable|false
+STATE|3|2|3|2|totalHarvest|4.96
+STATE|3|2|3|2|animalLoss|8.09
+STATE|3|2|3|2|ownedBy|1
+STATE|3|2|3|2|village|0
+STATE|3|2|3|2|shared?|false
+STATE|3|2|3|3|animalCount|[7 2 2 1 7 6 2 10 10 0 2 9 0 1 1 5 3 0 3 9]
+STATE|3|2|3|3|forageCount|9.48
+STATE|3|2|3|3|forageMass|2.68
+STATE|3|2|3|3|fenced?|true
+STATE|3|2|3|3|attacked?|false
+STATE|3|2|3|3|cropped|true
+STATE|3|2|3|3|totalLivestock|[4 2 7 7 2 0 2 1 8 6 3 10 2 10 4 1 1 6 1 10]
+STATE|3|2|3|3|treeCount|2.21
+STATE|3|2|3|3|grassMass|1.53
+STATE|3|2|3|3|pAttack|8.74
+STATE|3|2|3|3|arable|true
+STATE|3|2|3|3|totalHarvest|3.06
+STATE|3|2|3|3|animalLoss|5.9
+STATE|3|2|3|3|ownedBy|3
+STATE|3|2|3|3|village|3
+STATE|3|2|3|3|shared?|false
+CHOICE|3|2|1|3|1|2|12:39:59.000 PM 28-Sep-2026
+CHOICE|3|2|1|1|2|2|12:40:09.000 PM 28-Sep-2026
+CHOICE|3|2|1|1|2|1|12:40:16.000 PM 28-Sep-2026
+CONFIRM|3|2|1|12:40:23.000 PM 28-Sep-2026
+CHOICE|3|2|2|1|0|3|12:40:25.000 PM 28-Sep-2026
+CHOICE|3|2|2|3|2|2|12:40:37.000 PM 28-Sep-2026
+CHOICE|3|2|2|3|2|1|12:40:51.000 PM 28-Sep-2026
+CONFIRM|3|2|2|12:40:56.000 PM 28-Sep-2026
+CHOICE|3|2|3|2|1|3|12:41:08.000 PM 28-Sep-2026
+CHOICE|3|2|3|2|1|3|12:41:20.000 PM 28-Sep-2026
+CONFIRM|3|2|3|12:41:31.000 PM 28-Sep-2026
+CHOICE|3|2|4|1|3|3|12:41:42.000 PM 28-Sep-2026
+CONFIRM|3|2|4|12:41:48.000 PM 28-Sep-2026
+CHOICE|3|2|5|0|2|3|12:41:54.000 PM 28-Sep-2026
+CHOICE|3|2|5|0|2|3|12:42:07.000 PM 28-Sep-2026
+CHOICE|3|2|5|2|2|2|12:42:15.000 PM 28-Sep-2026
+CONFIRM|3|2|5|12:42:17.000 PM 28-Sep-2026
+CHOICE|3|2|6|1|2|1|12:42:29.000 PM 28-Sep-2026
+CHOICE|3|2|6|1|2|4|12:42:43.000 PM 28-Sep-2026
+CONFIRM|3|2|6|12:42:51.000 PM 28-Sep-2026
+CHOICE|3|2|7|3|1|2|12:43:03.000 PM 28-Sep-2026
+CHOICE|3|2|7|3|1|2|12:43:09.000 PM 28-Sep-2026
+CONFIRM|3|2|7|12:43:10.000 PM 28-Sep-2026
+CHOICE|3|2|8|0|3|2|12:43:23.000 PM 28-Sep-2026
+CONFIRM|3|2|8|12:43:36.000 PM 28-Sep-2026
+CHOICE|3|2|9|0|0|4|12:43:45.000 PM 28-Sep-2026
+CHOICE|3|2|9|0|0|3|12:43:46.000 PM 28-Sep-2026
+CONFIRM|3|2|9|12:43:53.000 PM 28-Sep-2026
+CHOICE|3|2|10|1|3|3|12:43:55.000 PM 28-Sep-2026
+CHOICE|3|2|10|2|1|2|12:43:59.000 PM 28-Sep-2026
+CONFIRM|3|2|10|12:44:00.000 PM 28-Sep-2026
+CHOICE|3|2|11|1|2|-99|12:44:12.000 PM 28-Sep-2026
+CHOICE|3|2|11|1|1|3|12:44:14.000 PM 28-Sep-2026
+CHOICE|3|2|11|1|1|1|12:44:23.000 PM 28-Sep-2026
+CONFIRM|3|2|11|12:44:31.000 PM 28-Sep-2026
+CHOICE|3|2|12|1|1|4|12:44:46.000 PM 28-Sep-2026
+CONFIRM|3|2|12|12:44:52.000 PM 28-Sep-2026
+CHOICE|3|2|13|1|0|4|12:44:56.000 PM 28-Sep-2026
+CONFIRM|3|2|13|12:45:07.000 PM 28-Sep-2026
+CHOICE|3|2|14|1|2|4|12:45:18.000 PM 28-Sep-2026
+CHOICE|3|2|14|1|2|3|12:45:23.000 PM 28-Sep-2026
+CONFIRM|3|2|14|12:45:31.000 PM 28-Sep-2026
+CHOICE|3|2|15|3|3|1|12:45:42.000 PM 28-Sep-2026
+CHOICE|3|2|15|3|3|2|12:45:55.000 PM 28-Sep-2026
+CHOICE|3|2|15|3|3|4|12:45:58.000 PM 28-Sep-2026
+CONFIRM|3|2|15|12:46:11.000 PM 28-Sep-2026
+CHOICE|3|2|16|2|3|1|12:46:16.000 PM 28-Sep-2026
+CONFIRM|3|2|16|12:46:24.000 PM 28-Sep-2026
+CHOICE|3|2|17|0|0|-99|12:46:26.000 PM 28-Sep-2026
+CONFIRM|3|2|17|12:46:29.000 PM 28-Sep-2026
+CHOICE|3|2|18|0|3|4|12:46:34.000 PM 28-Sep-2026
+CHOICE|3|2|18|2|2|2|12:46:36.000 PM 28-Sep-2026
+CONFIRM|3|2|18|12:46:45.000 PM 28-Sep-2026
+CHOICE|3|2|19|3|0|2|12:46:49.000 PM 28-Sep-2026
+CHOICE|3|2|19|2|2|3|12:46:54.000 PM 28-Sep-2026
+CHOICE|3|2|19|2|0|3|12:46:57.000 PM 28-Sep-2026
+CONFIRM|3|2|19|12:47:03.000 PM 28-Sep-2026
+CHOICE|3|2|20|0|2|1|12:47:18.000 PM 28-Sep-2026
+CHOICE|3|2|20|0|2|2|12:47:29.000 PM 28-Sep-2026
+CHOICE|3|2|20|0|2|3|12:47:36.000 PM 28-Sep-2026
+CONFIRM|3|2|20|12:47:41.000 PM 28-Sep-2026
+SCORE|3|2|1|7|18|14
+SCORE|3|2|2|5|28|1
+SCORE|3|2|3|0|24|7
+SCORE|3|2|4|10|53|12
+SCORE|3|2|5|1|32|17
+SCORE|3|2|6|15|27|17
+SCORE|3|2|7|5|9|20
+SCORE|3|2|8|5|49|5
+SCORE|3|2|9|8|49|16
+SCORE|3|2|10|4|48|19
+SCORE|3|2|11|5|47|16
+SCORE|3|2|12|10|28|17
+SCORE|3|2|13|17|25|15
+SCORE|3|2|14|19|26|4
+SCORE|3|2|15|8|27|9
+SCORE|3|2|16|6|40|19
+SCORE|3|2|17|18|32|14
+SCORE|3|2|18|10|46|4
+SCORE|3|2|19|11|42|14
+SCORE|3|2|20|17|27|1

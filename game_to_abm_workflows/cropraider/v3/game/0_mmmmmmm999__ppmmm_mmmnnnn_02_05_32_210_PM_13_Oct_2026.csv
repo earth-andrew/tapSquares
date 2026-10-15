@@ -1,0 +1,4568 @@
+PLAYER|1|mmmmmmm999|02:05:32.215 PM 13-Oct-2026
+PLAYER|2|ppmmm|02:05:32.216 PM 13-Oct-2026
+PLAYER|3|mmmnnnn|02:05:32.216 PM 13-Oct-2026
+sessionID: 1
+gameID: 1
+numRounds: 3
+numPhases: 10
+chooseVillageLand?: false
+choosePrivateLand?: false
+villageMembership: 1 2 1 2 1 2 1 2
+maxPrivateSquares: 1
+actionListFileName: actionList.csv
+initialConditionListFileName: initialConditionList.csv
+stateListFileName: stateList.csv
+endowment: 10
+spatialFunctionListFileName: spatialFunctionList.csv
+scoringFunctionFileName: scoringFunction.csv
+infoScreenListFileName: infoScreenList.csv
+turtleListFileName: turtleList.csv
+nonSpatialFunctionListFileName: nonSpatialFunctionList.csv
+patch_color_min: 100 75 0
+patch_color_max: 100 75 0
+patch_color_property: 1
+fractionWater: 0.3
+probWaterConnected: 0.5
+fullVeg: 20
+fullCrop: 20
+cropR: 0.35
+vegR: 0.4
+pRain: 0.1 0.1 0.3 0.7 1 1 0.7 0.3 0.1 0.1
+rainFactorMin: 0.45
+pointsPerYield: 3
+pa_count: 2
+pa_size: 11
+p_fine: 0.02
+fine: 2
+p_defend: 0.7
+soilWaterBias: 0.5
+paSoilBonus: 0.72
+soilWaterRange: 4
+defendCost: 2
+
+actionID: 1
+imageName: growCrop
+round_play: 1 2 3
+phaseAvailable: 1 2 3 4 5 6 7 8 9 10
+effort: 4
+flags: "not water?" "not cropped?"
+actionID: 2
+imageName: waterCrop
+round_play: 1 2 3
+phaseAvailable: 1 2 3 4 5 6 7 8 9 10
+effort: round (2 * myWaterDistance)
+flags: "cropped?" "not raining?"
+actionID: 3
+imageName: harvestCrop
+round_play: 1 2 3
+phaseAvailable: 1 2 3 4 5 6 7 8 9 10
+effort: 2
+flags: "cropped?"
+actionID: 4
+imageName: defendCrop
+round_play: 1 2 3
+phaseAvailable: 1 2 3 4 5 6 7 8 9 10
+effort: defendCost
+flags: "cropped?" "not defended?"
+stateID: 1
+flags: "water?"
+imageName: water
+stateColor: deepestWaterColor + [waterLevel] of patch-here
+stateID: 2
+flags: "cropped?"
+imageName: furrows
+stateColor: 
+stateID: 3
+flags: "protected?"
+imageName: protected
+stateColor: 
+stateID: 4
+flags: "defended?"
+imageName: defended
+stateColor: 
+turtleID: 1
+countMeasure: cropCount
+imageName: crop
+mobile?: false
+turtleSizeMin: 0.1
+turtleSizeMax: 0.25
+turtleID: 2
+countMeasure: vegCount
+imageName: grass
+mobile?: false
+turtleSizeMin: 0.1
+turtleSizeMax: 0.25
+turtleID: 3
+countMeasure: treeCount
+imageName: tree
+mobile?: false
+turtleSizeMin: 0.4
+turtleSizeMax: 0.7
+turtleID: 4
+countMeasure: elephantCount
+imageName: elephant
+mobile?: false
+turtleSizeMin: 0.4
+turtleSizeMax: 0.6
+functionID: 0
+trigger: 1 = 1
+localVariables: 
+localTargets: 
+expression: set harvestYield 0 set fined? False set fineAmount 0
+round_play: 1 2 3
+phase: 1 2 3 4 5 6 7 8 9 10
+xOffset: 0
+yOffset: 0
+functionID: 1
+trigger: currentChoice = 1
+localVariables: 
+localTargets: 
+expression: set cropped? TRUE set cropOwner selectedBy set vegCount 0 set cropCount round ( soilQuality * fullCrop ) ask displayTurtles-here with [shape = \"grass\" or shape = \"tree\"] [die]
+round_play: 1 2 3
+phase: 1 2 3 4 5 6 7 8 9 10
+xOffset: 0
+yOffset: 0
+functionID: 2
+trigger: cropped?
+localVariables: 
+localTargets: 
+expression: ask displayTurtles-here with [shape = \"crop\" ] [set size size + (cropR * size * (1 - size / cropMaxSize) * (ifelse-value (currentChoice = 2) [1] [rainFactor]))]
+round_play: 1 2 3
+phase: 1 2 3 4 5 6 7 8 9 10
+xOffset: 0
+yOffset: 0
+functionID: 3
+trigger: not cropped? and not water?
+localVariables: 
+localTargets: 
+expression: ask displayTurtles-here with [shape = \"grass\" ] [set size size + (vegR * size * (1 - size / vegMaxSize) * rainFactor)]
+round_play: 1 2 3
+phase: 1 2 3 4 5 6 7 8 9 10
+xOffset: 0
+yOffset: 0
+functionID: 4
+trigger: currentChoice = 3
+localVariables: 
+localTargets: 
+expression: harvest-crop-here
+round_play: 1 2 3
+phase: 1 2 3 4 5 6 7 8 9 10
+xOffset: 0
+yOffset: 0
+functionID: 5
+trigger: protected? and cropped?
+localVariables: 
+localTargets: 
+expression: if random-float 1 < p_fine [set fined? True]
+round_play: 1 2 3
+phase: 1 2 3 4 5 6 7 8 9 10
+xOffset: 0
+yOffset: 0
+functionID: 6
+trigger: currentChoice = 4
+localVariables: 
+localTargets: 
+expression: set defended? True
+round_play: 1 2 3
+phase: 1 2 3 4 5 6 7 8 9 10
+xOffset: 0
+yOffset: 0
+functionID: 1
+expression: assign-elephants
+round_play: 0
+phase: 1
+functionID: 2
+expression: ask patches with [inGame?] [set playerHarvestRound n-values numPlayers [0]]
+round_play: 1 2 3
+phase: 1
+functionID: 3
+expression: move-elephants
+round_play: 1 2 3
+phase: 1 2 3 4 5 6 7 8 9 10
+functionID: 4
+expression: feed-elephants
+round_play: 1 2 3
+phase: 1 2 3 4 5 6 7 8 9 10
+functionID: 5
+expression: make-rain (item (currentPhase - 1) pRain)
+round_play: 1 2 3
+phase: 1 2 3 4 5 6 7 8 9 10
+functionID: 6
+expression: aggregate-harvest
+round_play: 1 2 3
+phase: 10
+scoreID: 1
+patchLevel?: true
+trigger: harvestYield > 0
+property: harvestYield
+value: pointsPerYield
+localTarget: 
+playerTarget: playerCurrentScore
+loop?: false
+playerMarker: selectedBy
+operation: add
+show?: true
+imageName: payment
+column: 1
+round_play: 1 2 3
+phase: 1 2 3 4 5 6 7 8 9 10
+scoreID: 2
+patchLevel?: true
+trigger: fined? and cropOwner > 0
+property: fined?
+value: fine
+localTarget: fineAmount
+playerTarget: 
+loop?: false
+playerMarker: cropOwner
+operation: set
+show?: true
+imageName: fine
+column: 1
+round_play: 1 2 3
+phase: 1 2 3 4 5 6 7 8 9 10
+scoreID: 3
+patchLevel?: true
+trigger: fined? and cropOwner > 0
+property: fined?
+value: fine * (- 1)
+localTarget: 
+playerTarget: playerCurrentScore
+loop?: false
+playerMarker: cropOwner
+operation: add
+show?: false
+imageName: 
+column: 
+round_play: 1 2 3
+phase: 1 2 3 4 5 6 7 8 9 10
+scoreID: 4
+patchLevel?: true
+trigger: fined? and cropOwner > 0
+property: fined?
+value: fine
+localTarget: 
+playerTarget: playerTotalFines
+loop?: false
+playerMarker: cropOwner
+operation: add
+show?: false
+imageName: 
+column: 
+round_play: 1 2 3
+phase: 1 2 3 4 5 6 7 8 9 10
+screenID: 1
+level: patch
+parameter: round(harvestYield)
+round_play: 1 2 3
+phase: 1 2 3 4 5 6 7 8 9 10
+screenID: 2
+level: player
+parameter: playerTotalHarvestRound
+round_play: 1 2 3
+phase: 10
+screenID: 3
+level: player
+parameter: playerTotalFines
+round_play: 1 2 3
+phase: 10
+conditionID: 1
+variable: vegCount
+conditionType: boolean
+probability: 1
+onlyIf: 
+notIf: "water?"
+valueMode: expression
+valueExpression: soilQuality * fullVeg
+minValue: 
+maxValue: 
+conditionID: 2
+variable: treeCount
+conditionType: boolean
+probability: 0.3
+onlyIf: 
+notIf: "water?"
+valueMode: integer
+valueExpression: 
+minValue: 1
+maxValue: 2
+conditionID: 3
+variable: elephantCount
+conditionType: boolean
+probability: 0.05
+onlyIf: 
+notIf: "water?"
+valueMode: integer
+valueExpression: 
+minValue: 3
+maxValue: 9
+PHASE|beginning-land-use|02:05:33.106 PM 13-Oct-2026
+STATE|1|1|0|2|ownedBy|-99
+STATE|1|1|6|0|ownedBy|-99
+STATE|1|1|3|7|ownedBy|-99
+STATE|1|1|7|3|ownedBy|-99
+STATE|1|1|2|1|ownedBy|-99
+STATE|1|1|6|2|ownedBy|-99
+STATE|1|1|0|0|ownedBy|-99
+STATE|1|1|4|1|ownedBy|-99
+STATE|1|1|5|4|ownedBy|-99
+STATE|1|1|4|6|ownedBy|-99
+STATE|1|1|1|1|ownedBy|-99
+STATE|1|1|5|7|ownedBy|-99
+STATE|1|1|0|4|ownedBy|-99
+STATE|1|1|5|0|ownedBy|-99
+STATE|1|1|6|1|ownedBy|-99
+STATE|1|1|1|4|ownedBy|-99
+STATE|1|1|3|1|ownedBy|-99
+STATE|1|1|4|2|ownedBy|-99
+STATE|1|1|0|1|ownedBy|-99
+STATE|1|1|7|4|ownedBy|-99
+STATE|1|1|7|0|ownedBy|-99
+STATE|1|1|6|7|ownedBy|-99
+STATE|1|1|3|5|ownedBy|-99
+STATE|1|1|7|6|ownedBy|-99
+STATE|1|1|3|4|ownedBy|-99
+STATE|1|1|7|5|ownedBy|-99
+STATE|1|1|5|6|ownedBy|-99
+STATE|1|1|6|3|ownedBy|-99
+STATE|1|1|1|5|ownedBy|-99
+STATE|1|1|5|5|ownedBy|-99
+STATE|1|1|1|0|ownedBy|-99
+STATE|1|1|1|3|ownedBy|-99
+STATE|1|1|3|2|ownedBy|-99
+STATE|1|1|1|2|ownedBy|-99
+STATE|1|1|3|3|ownedBy|-99
+STATE|1|1|0|7|ownedBy|-99
+STATE|1|1|4|5|ownedBy|-99
+STATE|1|1|6|5|ownedBy|-99
+STATE|1|1|0|3|ownedBy|-99
+STATE|1|1|5|1|ownedBy|-99
+STATE|1|1|4|3|ownedBy|-99
+STATE|1|1|2|3|ownedBy|-99
+STATE|1|1|0|5|ownedBy|-99
+STATE|1|1|7|7|ownedBy|-99
+STATE|1|1|1|6|ownedBy|-99
+STATE|1|1|4|0|ownedBy|-99
+STATE|1|1|2|4|ownedBy|-99
+STATE|1|1|4|4|ownedBy|-99
+STATE|1|1|3|0|ownedBy|-99
+STATE|1|1|3|6|ownedBy|-99
+STATE|1|1|0|6|ownedBy|-99
+STATE|1|1|7|1|ownedBy|-99
+STATE|1|1|2|7|ownedBy|-99
+STATE|1|1|5|2|ownedBy|-99
+STATE|1|1|2|5|ownedBy|-99
+STATE|1|1|2|6|ownedBy|-99
+STATE|1|1|7|2|ownedBy|-99
+STATE|1|1|6|4|ownedBy|-99
+STATE|1|1|4|7|ownedBy|-99
+STATE|1|1|2|2|ownedBy|-99
+STATE|1|1|5|3|ownedBy|-99
+STATE|1|1|6|6|ownedBy|-99
+STATE|1|1|1|7|ownedBy|-99
+STATE|1|1|2|0|ownedBy|-99
+STATE|1|1|5|6|village|0
+STATE|1|1|6|1|village|0
+STATE|1|1|7|7|village|0
+STATE|1|1|5|3|village|0
+STATE|1|1|0|3|village|0
+STATE|1|1|4|1|village|0
+STATE|1|1|5|4|village|0
+STATE|1|1|6|2|village|0
+STATE|1|1|4|0|village|0
+STATE|1|1|0|6|village|0
+STATE|1|1|2|7|village|0
+STATE|1|1|5|2|village|0
+STATE|1|1|3|4|village|0
+STATE|1|1|1|1|village|0
+STATE|1|1|2|4|village|0
+STATE|1|1|1|5|village|0
+STATE|1|1|4|5|village|0
+STATE|1|1|4|6|village|0
+STATE|1|1|5|5|village|0
+STATE|1|1|1|2|village|0
+STATE|1|1|5|0|village|0
+STATE|1|1|7|1|village|0
+STATE|1|1|0|1|village|0
+STATE|1|1|7|3|village|0
+STATE|1|1|3|7|village|0
+STATE|1|1|6|7|village|0
+STATE|1|1|7|0|village|0
+STATE|1|1|3|0|village|0
+STATE|1|1|0|0|village|0
+STATE|1|1|6|3|village|0
+STATE|1|1|1|0|village|0
+STATE|1|1|4|7|village|0
+STATE|1|1|3|6|village|0
+STATE|1|1|7|5|village|0
+STATE|1|1|3|3|village|0
+STATE|1|1|1|6|village|0
+STATE|1|1|5|7|village|0
+STATE|1|1|2|5|village|0
+STATE|1|1|5|1|village|0
+STATE|1|1|4|3|village|0
+STATE|1|1|3|2|village|0
+STATE|1|1|6|0|village|0
+STATE|1|1|0|4|village|0
+STATE|1|1|6|5|village|0
+STATE|1|1|1|7|village|0
+STATE|1|1|2|2|village|0
+STATE|1|1|2|3|village|0
+STATE|1|1|6|6|village|0
+STATE|1|1|4|2|village|0
+STATE|1|1|1|3|village|0
+STATE|1|1|7|6|village|0
+STATE|1|1|1|4|village|0
+STATE|1|1|7|4|village|0
+STATE|1|1|7|2|village|0
+STATE|1|1|6|4|village|0
+STATE|1|1|2|6|village|0
+STATE|1|1|3|5|village|0
+STATE|1|1|0|2|village|0
+STATE|1|1|4|4|village|0
+STATE|1|1|2|0|village|0
+STATE|1|1|0|5|village|0
+STATE|1|1|2|1|village|0
+STATE|1|1|0|7|village|0
+STATE|1|1|3|1|village|0
+STATE|1|1|2|7|shared?|0
+STATE|1|1|6|7|shared?|0
+STATE|1|1|7|2|shared?|0
+STATE|1|1|6|3|shared?|0
+STATE|1|1|7|6|shared?|0
+STATE|1|1|0|2|shared?|0
+STATE|1|1|4|4|shared?|0
+STATE|1|1|6|0|shared?|0
+STATE|1|1|2|4|shared?|0
+STATE|1|1|0|0|shared?|0
+STATE|1|1|1|2|shared?|0
+STATE|1|1|5|5|shared?|0
+STATE|1|1|3|7|shared?|0
+STATE|1|1|4|5|shared?|0
+STATE|1|1|5|6|shared?|0
+STATE|1|1|5|3|shared?|0
+STATE|1|1|4|2|shared?|0
+STATE|1|1|2|5|shared?|0
+STATE|1|1|1|3|shared?|0
+STATE|1|1|6|1|shared?|0
+STATE|1|1|1|1|shared?|0
+STATE|1|1|3|6|shared?|0
+STATE|1|1|4|7|shared?|0
+STATE|1|1|4|6|shared?|0
+STATE|1|1|3|0|shared?|0
+STATE|1|1|0|6|shared?|0
+STATE|1|1|5|1|shared?|0
+STATE|1|1|1|4|shared?|0
+STATE|1|1|6|2|shared?|0
+STATE|1|1|1|5|shared?|0
+STATE|1|1|0|3|shared?|0
+STATE|1|1|3|1|shared?|0
+STATE|1|1|5|2|shared?|0
+STATE|1|1|0|4|shared?|0
+STATE|1|1|4|3|shared?|0
+STATE|1|1|4|1|shared?|0
+STATE|1|1|2|2|shared?|0
+STATE|1|1|7|5|shared?|0
+STATE|1|1|6|5|shared?|0
+STATE|1|1|2|3|shared?|0
+STATE|1|1|0|5|shared?|0
+STATE|1|1|2|6|shared?|0
+STATE|1|1|7|7|shared?|0
+STATE|1|1|1|0|shared?|0
+STATE|1|1|5|0|shared?|0
+STATE|1|1|6|6|shared?|0
+STATE|1|1|2|0|shared?|0
+STATE|1|1|3|4|shared?|0
+STATE|1|1|7|3|shared?|0
+STATE|1|1|7|0|shared?|0
+STATE|1|1|7|1|shared?|0
+STATE|1|1|5|7|shared?|0
+STATE|1|1|0|7|shared?|0
+STATE|1|1|0|1|shared?|0
+STATE|1|1|7|4|shared?|0
+STATE|1|1|5|4|shared?|0
+STATE|1|1|3|3|shared?|0
+STATE|1|1|1|7|shared?|0
+STATE|1|1|1|6|shared?|0
+STATE|1|1|2|1|shared?|0
+STATE|1|1|6|4|shared?|0
+STATE|1|1|3|2|shared?|0
+STATE|1|1|3|5|shared?|0
+STATE|1|1|4|0|shared?|0
+STATE|1|1|5|7|landChoices|[-99]
+STATE|1|1|2|6|landChoices|[-99]
+STATE|1|1|4|3|landChoices|[-99]
+STATE|1|1|3|5|landChoices|[-99 1]
+STATE|1|1|7|5|landChoices|[-99 1]
+STATE|1|1|2|3|landChoices|[-99 1]
+STATE|1|1|3|4|landChoices|[-99 1]
+STATE|1|1|4|2|landChoices|[-99 1]
+STATE|1|1|1|0|landChoices|[-99 1]
+STATE|1|1|6|5|landChoices|[-99 1]
+STATE|1|1|7|7|landChoices|[-99 1]
+STATE|1|1|5|2|landChoices|[-99]
+STATE|1|1|6|3|landChoices|[-99 1]
+STATE|1|1|3|1|landChoices|[-99 1]
+STATE|1|1|0|0|landChoices|[-99 1]
+STATE|1|1|1|6|landChoices|[-99]
+STATE|1|1|1|7|landChoices|[-99]
+STATE|1|1|6|6|landChoices|[-99]
+STATE|1|1|4|5|landChoices|[-99 1]
+STATE|1|1|5|4|landChoices|[-99]
+STATE|1|1|0|7|landChoices|[-99 1]
+STATE|1|1|7|3|landChoices|[-99 1]
+STATE|1|1|5|0|landChoices|[-99 1]
+STATE|1|1|3|0|landChoices|[-99 1]
+STATE|1|1|1|2|landChoices|[-99 1]
+STATE|1|1|2|2|landChoices|[-99 1]
+STATE|1|1|7|4|landChoices|[-99 1]
+STATE|1|1|2|5|landChoices|[-99 1]
+STATE|1|1|0|5|landChoices|[-99 1]
+STATE|1|1|7|1|landChoices|[-99 1]
+STATE|1|1|1|1|landChoices|[-99 1]
+STATE|1|1|3|6|landChoices|[-99]
+STATE|1|1|6|2|landChoices|[-99 1]
+STATE|1|1|4|1|landChoices|[-99 1]
+STATE|1|1|3|3|landChoices|[-99]
+STATE|1|1|6|7|landChoices|[-99]
+STATE|1|1|4|4|landChoices|[-99 1]
+STATE|1|1|4|0|landChoices|[-99 1]
+STATE|1|1|0|6|landChoices|[-99 1]
+STATE|1|1|2|4|landChoices|[-99 1]
+STATE|1|1|6|1|landChoices|[-99]
+STATE|1|1|0|2|landChoices|[-99 1]
+STATE|1|1|7|2|landChoices|[-99 1]
+STATE|1|1|3|7|landChoices|[-99]
+STATE|1|1|2|7|landChoices|[-99 1]
+STATE|1|1|4|6|landChoices|[-99]
+STATE|1|1|2|1|landChoices|[-99 1]
+STATE|1|1|5|1|landChoices|[-99 1]
+STATE|1|1|5|3|landChoices|[-99]
+STATE|1|1|7|6|landChoices|[-99 1]
+STATE|1|1|5|5|landChoices|[-99]
+STATE|1|1|7|0|landChoices|[-99 1]
+STATE|1|1|1|3|landChoices|[-99 1]
+STATE|1|1|5|6|landChoices|[-99]
+STATE|1|1|0|1|landChoices|[-99 1]
+STATE|1|1|6|4|landChoices|[-99 1]
+STATE|1|1|2|0|landChoices|[-99 1]
+STATE|1|1|1|5|landChoices|[-99]
+STATE|1|1|6|0|landChoices|[-99]
+STATE|1|1|0|3|landChoices|[-99 1]
+STATE|1|1|4|7|landChoices|[-99 1]
+STATE|1|1|0|4|landChoices|[-99 1]
+STATE|1|1|3|2|landChoices|[-99 1]
+STATE|1|1|1|4|landChoices|[-99 1]
+STATE|1|1|4|7|protected?|true
+STATE|1|1|7|2|protected?|false
+STATE|1|1|6|1|protected?|false
+STATE|1|1|3|6|protected?|true
+STATE|1|1|1|6|protected?|false
+STATE|1|1|2|6|protected?|true
+STATE|1|1|2|7|protected?|true
+STATE|1|1|3|0|protected?|false
+STATE|1|1|5|7|protected?|true
+STATE|1|1|6|2|protected?|false
+STATE|1|1|7|5|protected?|false
+STATE|1|1|0|2|protected?|true
+STATE|1|1|3|7|protected?|true
+STATE|1|1|4|0|protected?|false
+STATE|1|1|1|2|protected?|true
+STATE|1|1|2|4|protected?|true
+STATE|1|1|7|0|protected?|false
+STATE|1|1|2|5|protected?|true
+STATE|1|1|0|3|protected?|true
+STATE|1|1|7|3|protected?|false
+STATE|1|1|4|1|protected?|false
+STATE|1|1|2|3|protected?|false
+STATE|1|1|1|7|protected?|true
+STATE|1|1|2|0|protected?|false
+STATE|1|1|4|5|protected?|false
+STATE|1|1|3|1|protected?|false
+STATE|1|1|0|4|protected?|true
+STATE|1|1|1|4|protected?|true
+STATE|1|1|3|2|protected?|false
+STATE|1|1|5|2|protected?|false
+STATE|1|1|1|3|protected?|true
+STATE|1|1|0|6|protected?|true
+STATE|1|1|6|4|protected?|false
+STATE|1|1|7|7|protected?|false
+STATE|1|1|3|5|protected?|true
+STATE|1|1|4|3|protected?|false
+STATE|1|1|4|2|protected?|false
+STATE|1|1|7|6|protected?|false
+STATE|1|1|2|2|protected?|false
+STATE|1|1|5|3|protected?|false
+STATE|1|1|5|0|protected?|false
+STATE|1|1|1|5|protected?|false
+STATE|1|1|6|5|protected?|true
+STATE|1|1|2|1|protected?|false
+STATE|1|1|1|0|protected?|false
+STATE|1|1|3|4|protected?|false
+STATE|1|1|1|1|protected?|false
+STATE|1|1|0|0|protected?|false
+STATE|1|1|4|4|protected?|false
+STATE|1|1|5|4|protected?|false
+STATE|1|1|6|6|protected?|true
+STATE|1|1|0|7|protected?|true
+STATE|1|1|7|4|protected?|false
+STATE|1|1|0|1|protected?|false
+STATE|1|1|4|6|protected?|false
+STATE|1|1|6|3|protected?|false
+STATE|1|1|3|3|protected?|false
+STATE|1|1|7|1|protected?|false
+STATE|1|1|5|6|protected?|false
+STATE|1|1|6|0|protected?|false
+STATE|1|1|6|7|protected?|true
+STATE|1|1|5|5|protected?|true
+STATE|1|1|5|1|protected?|false
+STATE|1|1|0|5|protected?|false
+STATE|1|1|6|3|water?|false
+STATE|1|1|4|7|water?|false
+STATE|1|1|4|3|water?|true
+STATE|1|1|1|7|water?|true
+STATE|1|1|3|7|water?|true
+STATE|1|1|0|4|water?|false
+STATE|1|1|6|7|water?|true
+STATE|1|1|0|1|water?|false
+STATE|1|1|5|6|water?|true
+STATE|1|1|2|5|water?|false
+STATE|1|1|4|4|water?|false
+STATE|1|1|4|0|water?|false
+STATE|1|1|6|1|water?|true
+STATE|1|1|5|1|water?|false
+STATE|1|1|5|4|water?|true
+STATE|1|1|2|6|water?|true
+STATE|1|1|3|5|water?|false
+STATE|1|1|3|2|water?|false
+STATE|1|1|6|4|water?|false
+STATE|1|1|5|3|water?|true
+STATE|1|1|3|1|water?|false
+STATE|1|1|2|0|water?|false
+STATE|1|1|0|6|water?|false
+STATE|1|1|2|1|water?|false
+STATE|1|1|0|0|water?|false
+STATE|1|1|5|5|water?|true
+STATE|1|1|7|3|water?|false
+STATE|1|1|1|3|water?|false
+STATE|1|1|3|3|water?|true
+STATE|1|1|7|5|water?|false
+STATE|1|1|6|0|water?|true
+STATE|1|1|1|0|water?|false
+STATE|1|1|0|2|water?|false
+STATE|1|1|7|1|water?|false
+STATE|1|1|7|6|water?|false
+STATE|1|1|6|2|water?|false
+STATE|1|1|2|4|water?|false
+STATE|1|1|3|6|water?|true
+STATE|1|1|4|5|water?|false
+STATE|1|1|7|2|water?|false
+STATE|1|1|6|5|water?|false
+STATE|1|1|4|2|water?|false
+STATE|1|1|0|7|water?|false
+STATE|1|1|1|5|water?|true
+STATE|1|1|7|4|water?|false
+STATE|1|1|2|7|water?|false
+STATE|1|1|3|0|water?|false
+STATE|1|1|4|1|water?|false
+STATE|1|1|7|0|water?|false
+STATE|1|1|0|3|water?|false
+STATE|1|1|1|6|water?|true
+STATE|1|1|5|0|water?|false
+STATE|1|1|5|2|water?|true
+STATE|1|1|3|4|water?|false
+STATE|1|1|2|2|water?|false
+STATE|1|1|2|3|water?|false
+STATE|1|1|1|1|water?|false
+STATE|1|1|7|7|water?|false
+STATE|1|1|0|5|water?|false
+STATE|1|1|6|6|water?|true
+STATE|1|1|5|7|water?|true
+STATE|1|1|1|4|water?|false
+STATE|1|1|4|6|water?|true
+STATE|1|1|1|2|water?|false
+STATE|1|1|5|4|cropped?|false
+STATE|1|1|0|1|cropped?|false
+STATE|1|1|5|1|cropped?|false
+STATE|1|1|6|4|cropped?|false
+STATE|1|1|0|5|cropped?|false
+STATE|1|1|3|5|cropped?|false
+STATE|1|1|6|2|cropped?|false
+STATE|1|1|3|2|cropped?|false
+STATE|1|1|6|7|cropped?|false
+STATE|1|1|4|1|cropped?|false
+STATE|1|1|1|3|cropped?|false
+STATE|1|1|0|4|cropped?|false
+STATE|1|1|5|0|cropped?|false
+STATE|1|1|6|0|cropped?|false
+STATE|1|1|7|7|cropped?|false
+STATE|1|1|2|7|cropped?|false
+STATE|1|1|4|5|cropped?|false
+STATE|1|1|4|6|cropped?|false
+STATE|1|1|6|5|cropped?|false
+STATE|1|1|4|0|cropped?|false
+STATE|1|1|2|6|cropped?|false
+STATE|1|1|1|7|cropped?|false
+STATE|1|1|7|4|cropped?|false
+STATE|1|1|7|6|cropped?|false
+STATE|1|1|1|1|cropped?|false
+STATE|1|1|5|5|cropped?|false
+STATE|1|1|4|3|cropped?|false
+STATE|1|1|3|4|cropped?|false
+STATE|1|1|1|6|cropped?|false
+STATE|1|1|5|6|cropped?|false
+STATE|1|1|3|1|cropped?|false
+STATE|1|1|2|2|cropped?|false
+STATE|1|1|6|1|cropped?|false
+STATE|1|1|0|7|cropped?|false
+STATE|1|1|3|7|cropped?|false
+STATE|1|1|2|5|cropped?|false
+STATE|1|1|5|3|cropped?|false
+STATE|1|1|4|4|cropped?|false
+STATE|1|1|2|0|cropped?|false
+STATE|1|1|0|3|cropped?|false
+STATE|1|1|5|7|cropped?|false
+STATE|1|1|7|2|cropped?|false
+STATE|1|1|7|5|cropped?|false
+STATE|1|1|0|2|cropped?|false
+STATE|1|1|4|2|cropped?|false
+STATE|1|1|2|1|cropped?|false
+STATE|1|1|4|7|cropped?|false
+STATE|1|1|0|6|cropped?|false
+STATE|1|1|3|3|cropped?|false
+STATE|1|1|3|0|cropped?|false
+STATE|1|1|6|3|cropped?|false
+STATE|1|1|2|3|cropped?|false
+STATE|1|1|3|6|cropped?|false
+STATE|1|1|7|1|cropped?|false
+STATE|1|1|1|0|cropped?|false
+STATE|1|1|2|4|cropped?|false
+STATE|1|1|6|6|cropped?|false
+STATE|1|1|7|0|cropped?|false
+STATE|1|1|5|2|cropped?|false
+STATE|1|1|1|2|cropped?|false
+STATE|1|1|1|4|cropped?|false
+STATE|1|1|1|5|cropped?|false
+STATE|1|1|7|3|cropped?|false
+STATE|1|1|0|0|cropped?|false
+STATE|1|1|2|4|driedUp?|false
+STATE|1|1|4|3|driedUp?|false
+STATE|1|1|6|1|driedUp?|false
+STATE|1|1|4|2|driedUp?|false
+STATE|1|1|3|1|driedUp?|false
+STATE|1|1|1|5|driedUp?|false
+STATE|1|1|7|0|driedUp?|false
+STATE|1|1|2|3|driedUp?|false
+STATE|1|1|3|3|driedUp?|false
+STATE|1|1|6|3|driedUp?|false
+STATE|1|1|2|5|driedUp?|false
+STATE|1|1|5|1|driedUp?|false
+STATE|1|1|2|0|driedUp?|false
+STATE|1|1|1|3|driedUp?|false
+STATE|1|1|6|2|driedUp?|false
+STATE|1|1|7|4|driedUp?|false
+STATE|1|1|5|6|driedUp?|false
+STATE|1|1|6|4|driedUp?|false
+STATE|1|1|7|2|driedUp?|false
+STATE|1|1|7|5|driedUp?|false
+STATE|1|1|0|4|driedUp?|false
+STATE|1|1|4|5|driedUp?|false
+STATE|1|1|4|1|driedUp?|false
+STATE|1|1|5|5|driedUp?|false
+STATE|1|1|6|7|driedUp?|false
+STATE|1|1|6|0|driedUp?|false
+STATE|1|1|0|2|driedUp?|false
+STATE|1|1|5|3|driedUp?|false
+STATE|1|1|2|6|driedUp?|true
+STATE|1|1|2|7|driedUp?|false
+STATE|1|1|0|7|driedUp?|false
+STATE|1|1|7|7|driedUp?|false
+STATE|1|1|3|6|driedUp?|false
+STATE|1|1|7|1|driedUp?|false
+STATE|1|1|4|7|driedUp?|false
+STATE|1|1|7|6|driedUp?|false
+STATE|1|1|3|4|driedUp?|false
+STATE|1|1|5|0|driedUp?|false
+STATE|1|1|1|0|driedUp?|false
+STATE|1|1|3|5|driedUp?|false
+STATE|1|1|4|4|driedUp?|false
+STATE|1|1|5|2|driedUp?|false
+STATE|1|1|5|7|driedUp?|false
+STATE|1|1|6|6|driedUp?|false
+STATE|1|1|1|6|driedUp?|false
+STATE|1|1|5|4|driedUp?|false
+STATE|1|1|0|3|driedUp?|false
+STATE|1|1|7|3|driedUp?|false
+STATE|1|1|4|6|driedUp?|false
+STATE|1|1|1|7|driedUp?|false
+STATE|1|1|0|5|driedUp?|false
+STATE|1|1|1|1|driedUp?|false
+STATE|1|1|0|0|driedUp?|false
+STATE|1|1|1|4|driedUp?|false
+STATE|1|1|1|2|driedUp?|false
+STATE|1|1|0|6|driedUp?|false
+STATE|1|1|0|1|driedUp?|false
+STATE|1|1|3|0|driedUp?|false
+STATE|1|1|4|0|driedUp?|false
+STATE|1|1|2|1|driedUp?|false
+STATE|1|1|6|5|driedUp?|false
+STATE|1|1|2|2|driedUp?|false
+STATE|1|1|3|2|driedUp?|false
+STATE|1|1|3|7|driedUp?|false
+STATE|1|1|0|2|soilQuality|0.5188272243309568
+STATE|1|1|6|7|soilQuality|0.7699901914228519
+STATE|1|1|0|7|soilQuality|0.8381033022289677
+STATE|1|1|3|6|soilQuality|0.8337722516697893
+STATE|1|1|7|2|soilQuality|0.0937902127492002
+STATE|1|1|7|3|soilQuality|0.21651775778310417
+STATE|1|1|6|1|soilQuality|0.3437410829161933
+STATE|1|1|0|5|soilQuality|0.40841397007021063
+STATE|1|1|7|7|soilQuality|0.21564349360095575
+STATE|1|1|6|4|soilQuality|0.3738873685589282
+STATE|1|1|2|5|soilQuality|0.7789216213631958
+STATE|1|1|4|5|soilQuality|0.2202347671208634
+STATE|1|1|6|0|soilQuality|0.47237302584763935
+STATE|1|1|7|5|soilQuality|0.3305949615339811
+STATE|1|1|1|3|soilQuality|0.7697490156359442
+STATE|1|1|2|4|soilQuality|0.6933078940843319
+STATE|1|1|2|6|soilQuality|0.9796394489608165
+STATE|1|1|3|3|soilQuality|0.3854838326397576
+STATE|1|1|1|2|soilQuality|0.6718902901996282
+STATE|1|1|4|1|soilQuality|0.38644723076137283
+STATE|1|1|6|5|soilQuality|0.8502812956330691
+STATE|1|1|3|1|soilQuality|0.39282086142357053
+STATE|1|1|1|1|soilQuality|0.17295188505218528
+STATE|1|1|0|1|soilQuality|0.15756605831187775
+STATE|1|1|5|5|soilQuality|0.8580280851871221
+STATE|1|1|4|3|soilQuality|0.4132704556106724
+STATE|1|1|7|1|soilQuality|0.3604222655681097
+STATE|1|1|2|3|soilQuality|0.42242142701974783
+STATE|1|1|3|4|soilQuality|0.3624190564283126
+STATE|1|1|0|4|soilQuality|0.823324816046571
+STATE|1|1|4|7|soilQuality|0.8466880603572666
+STATE|1|1|3|0|soilQuality|0.21396529949248125
+STATE|1|1|7|4|soilQuality|0.3211457490231281
+STATE|1|1|2|1|soilQuality|0.24999580025514903
+STATE|1|1|5|3|soilQuality|0.39712429006621325
+STATE|1|1|1|7|soilQuality|0.9639808597938596
+STATE|1|1|5|1|soilQuality|0.33509345149573155
+STATE|1|1|7|6|soilQuality|0.27841379937191446
+STATE|1|1|3|5|soilQuality|0.7394292696762036
+STATE|1|1|7|0|soilQuality|0.15331522337317974
+STATE|1|1|5|6|soilQuality|0.4233302957375045
+STATE|1|1|6|2|soilQuality|0.344135706642193
+STATE|1|1|5|4|soilQuality|0.3956027283199262
+STATE|1|1|1|5|soilQuality|0.34012059593982186
+STATE|1|1|0|3|soilQuality|0.7492214534526822
+STATE|1|1|5|0|soilQuality|0.44540848937868643
+STATE|1|1|2|2|soilQuality|0.22365568142233216
+STATE|1|1|3|2|soilQuality|0.30922301012603437
+STATE|1|1|6|3|soilQuality|0.2807770378815415
+STATE|1|1|0|0|soilQuality|0
+STATE|1|1|2|0|soilQuality|0.03629039292412171
+STATE|1|1|1|0|soilQuality|0.1641443591560664
+STATE|1|1|5|2|soilQuality|0.41203661943770153
+STATE|1|1|4|4|soilQuality|0.19266234740961466
+STATE|1|1|4|0|soilQuality|0.3887759081603293
+STATE|1|1|4|2|soilQuality|0.4500539496213846
+STATE|1|1|2|7|soilQuality|0.8983258551737238
+STATE|1|1|6|6|soilQuality|0.8005701940782252
+STATE|1|1|1|4|soilQuality|0.7760436784442216
+STATE|1|1|1|6|soilQuality|0.5503782747471313
+STATE|1|1|3|7|soilQuality|1
+STATE|1|1|0|6|soilQuality|0.9801502338960659
+STATE|1|1|5|7|soilQuality|0.8397372995684785
+STATE|1|1|4|6|soilQuality|0.25864938489437633
+STATE|1|1|3|1|treeCount|0
+STATE|1|1|3|7|treeCount|0
+STATE|1|1|4|1|treeCount|0
+STATE|1|1|2|0|treeCount|1
+STATE|1|1|6|3|treeCount|0
+STATE|1|1|3|0|treeCount|0
+STATE|1|1|6|1|treeCount|0
+STATE|1|1|2|4|treeCount|1
+STATE|1|1|0|1|treeCount|0
+STATE|1|1|6|0|treeCount|0
+STATE|1|1|6|7|treeCount|0
+STATE|1|1|6|6|treeCount|0
+STATE|1|1|1|7|treeCount|0
+STATE|1|1|5|6|treeCount|0
+STATE|1|1|6|5|treeCount|1
+STATE|1|1|7|3|treeCount|1
+STATE|1|1|7|7|treeCount|0
+STATE|1|1|0|6|treeCount|0
+STATE|1|1|4|4|treeCount|1
+STATE|1|1|7|4|treeCount|0
+STATE|1|1|3|5|treeCount|1
+STATE|1|1|3|3|treeCount|0
+STATE|1|1|1|4|treeCount|0
+STATE|1|1|1|0|treeCount|0
+STATE|1|1|0|5|treeCount|0
+STATE|1|1|4|5|treeCount|0
+STATE|1|1|2|1|treeCount|1
+STATE|1|1|4|0|treeCount|0
+STATE|1|1|2|7|treeCount|0
+STATE|1|1|3|6|treeCount|0
+STATE|1|1|2|3|treeCount|0
+STATE|1|1|1|1|treeCount|0
+STATE|1|1|4|3|treeCount|0
+STATE|1|1|0|4|treeCount|1
+STATE|1|1|7|5|treeCount|0
+STATE|1|1|2|6|treeCount|0
+STATE|1|1|7|1|treeCount|0
+STATE|1|1|7|6|treeCount|2
+STATE|1|1|0|3|treeCount|2
+STATE|1|1|5|4|treeCount|0
+STATE|1|1|5|7|treeCount|0
+STATE|1|1|7|0|treeCount|0
+STATE|1|1|4|6|treeCount|0
+STATE|1|1|5|5|treeCount|0
+STATE|1|1|5|2|treeCount|0
+STATE|1|1|4|2|treeCount|0
+STATE|1|1|2|5|treeCount|1
+STATE|1|1|1|5|treeCount|0
+STATE|1|1|1|2|treeCount|0
+STATE|1|1|3|4|treeCount|0
+STATE|1|1|0|7|treeCount|0
+STATE|1|1|3|2|treeCount|0
+STATE|1|1|1|3|treeCount|2
+STATE|1|1|7|2|treeCount|0
+STATE|1|1|5|1|treeCount|2
+STATE|1|1|4|7|treeCount|0
+STATE|1|1|6|2|treeCount|2
+STATE|1|1|1|6|treeCount|0
+STATE|1|1|6|4|treeCount|0
+STATE|1|1|5|3|treeCount|0
+STATE|1|1|2|2|treeCount|0
+STATE|1|1|0|2|treeCount|0
+STATE|1|1|0|0|treeCount|0
+STATE|1|1|5|0|treeCount|0
+STATE|1|1|7|0|currentBiomass|0
+STATE|1|1|5|0|currentBiomass|0
+STATE|1|1|1|1|currentBiomass|0
+STATE|1|1|2|6|currentBiomass|0
+STATE|1|1|7|4|currentBiomass|0
+STATE|1|1|6|6|currentBiomass|0
+STATE|1|1|4|6|currentBiomass|0
+STATE|1|1|2|1|currentBiomass|0
+STATE|1|1|0|5|currentBiomass|0
+STATE|1|1|5|4|currentBiomass|0
+STATE|1|1|1|0|currentBiomass|0
+STATE|1|1|2|2|currentBiomass|0
+STATE|1|1|2|3|currentBiomass|0
+STATE|1|1|0|3|currentBiomass|0
+STATE|1|1|3|5|currentBiomass|0
+STATE|1|1|3|6|currentBiomass|0
+STATE|1|1|1|2|currentBiomass|0
+STATE|1|1|3|4|currentBiomass|0
+STATE|1|1|1|4|currentBiomass|0
+STATE|1|1|0|0|currentBiomass|0
+STATE|1|1|6|3|currentBiomass|0
+STATE|1|1|3|7|currentBiomass|0
+STATE|1|1|0|4|currentBiomass|0
+STATE|1|1|7|3|currentBiomass|0
+STATE|1|1|6|0|currentBiomass|0
+STATE|1|1|4|2|currentBiomass|0
+STATE|1|1|6|5|currentBiomass|0
+STATE|1|1|7|7|currentBiomass|0
+STATE|1|1|7|1|currentBiomass|0
+STATE|1|1|6|7|currentBiomass|0
+STATE|1|1|4|0|currentBiomass|0
+STATE|1|1|0|6|currentBiomass|0
+STATE|1|1|6|1|currentBiomass|0
+STATE|1|1|7|2|currentBiomass|0
+STATE|1|1|2|4|currentBiomass|0
+STATE|1|1|5|7|currentBiomass|0
+STATE|1|1|1|6|currentBiomass|0
+STATE|1|1|5|5|currentBiomass|0
+STATE|1|1|6|2|currentBiomass|0
+STATE|1|1|3|3|currentBiomass|0
+STATE|1|1|0|7|currentBiomass|0
+STATE|1|1|4|3|currentBiomass|0
+STATE|1|1|1|5|currentBiomass|0
+STATE|1|1|3|2|currentBiomass|0
+STATE|1|1|2|0|currentBiomass|0
+STATE|1|1|2|7|currentBiomass|0
+STATE|1|1|0|2|currentBiomass|0
+STATE|1|1|6|4|currentBiomass|0
+STATE|1|1|4|7|currentBiomass|0
+STATE|1|1|5|3|currentBiomass|0
+STATE|1|1|4|5|currentBiomass|0
+STATE|1|1|7|5|currentBiomass|0
+STATE|1|1|0|1|currentBiomass|0
+STATE|1|1|2|5|currentBiomass|0
+STATE|1|1|5|6|currentBiomass|0
+STATE|1|1|7|6|currentBiomass|0
+STATE|1|1|5|1|currentBiomass|0
+STATE|1|1|5|2|currentBiomass|0
+STATE|1|1|4|1|currentBiomass|0
+STATE|1|1|1|3|currentBiomass|0
+STATE|1|1|1|7|currentBiomass|0
+STATE|1|1|3|0|currentBiomass|0
+STATE|1|1|4|4|currentBiomass|0
+STATE|1|1|3|1|currentBiomass|0
+STATE|1|1|6|6|waterLevel|2
+STATE|1|1|1|7|waterLevel|0
+STATE|1|1|1|1|waterLevel|-99
+STATE|1|1|0|0|waterLevel|-99
+STATE|1|1|0|3|waterLevel|-99
+STATE|1|1|1|5|waterLevel|2
+STATE|1|1|5|1|waterLevel|-99
+STATE|1|1|7|7|waterLevel|-99
+STATE|1|1|7|4|waterLevel|-99
+STATE|1|1|3|1|waterLevel|-99
+STATE|1|1|2|3|waterLevel|-99
+STATE|1|1|3|7|waterLevel|0
+STATE|1|1|4|1|waterLevel|-99
+STATE|1|1|4|0|waterLevel|-99
+STATE|1|1|5|5|waterLevel|2
+STATE|1|1|5|4|waterLevel|0
+STATE|1|1|7|2|waterLevel|-99
+STATE|1|1|0|6|waterLevel|-99
+STATE|1|1|6|4|waterLevel|-99
+STATE|1|1|2|2|waterLevel|-99
+STATE|1|1|3|3|waterLevel|3
+STATE|1|1|0|1|waterLevel|-99
+STATE|1|1|7|6|waterLevel|-99
+STATE|1|1|2|4|waterLevel|-99
+STATE|1|1|4|3|waterLevel|2
+STATE|1|1|1|2|waterLevel|-99
+STATE|1|1|4|5|waterLevel|-99
+STATE|1|1|7|1|waterLevel|-99
+STATE|1|1|4|6|waterLevel|2
+STATE|1|1|0|5|waterLevel|-99
+STATE|1|1|6|5|waterLevel|-99
+STATE|1|1|5|2|waterLevel|0
+STATE|1|1|7|3|waterLevel|-99
+STATE|1|1|2|0|waterLevel|-99
+STATE|1|1|3|5|waterLevel|-99
+STATE|1|1|5|3|waterLevel|1
+STATE|1|1|0|7|waterLevel|-99
+STATE|1|1|1|6|waterLevel|1
+STATE|1|1|3|6|waterLevel|3
+STATE|1|1|6|0|waterLevel|0
+STATE|1|1|3|2|waterLevel|-99
+STATE|1|1|7|5|waterLevel|-99
+STATE|1|1|6|1|waterLevel|1
+STATE|1|1|2|5|waterLevel|-99
+STATE|1|1|0|4|waterLevel|-99
+STATE|1|1|6|3|waterLevel|-99
+STATE|1|1|2|6|waterLevel|4
+STATE|1|1|5|0|waterLevel|-99
+STATE|1|1|6|2|waterLevel|-99
+STATE|1|1|5|7|waterLevel|0
+STATE|1|1|7|0|waterLevel|-99
+STATE|1|1|3|4|waterLevel|-99
+STATE|1|1|1|3|waterLevel|-99
+STATE|1|1|1|0|waterLevel|-99
+STATE|1|1|2|1|waterLevel|-99
+STATE|1|1|6|7|waterLevel|1
+STATE|1|1|1|4|waterLevel|-99
+STATE|1|1|4|2|waterLevel|-99
+STATE|1|1|3|0|waterLevel|-99
+STATE|1|1|5|6|waterLevel|1
+STATE|1|1|4|7|waterLevel|-99
+STATE|1|1|2|7|waterLevel|-99
+STATE|1|1|4|4|waterLevel|-99
+STATE|1|1|0|2|waterLevel|-99
+STATE|1|1|5|3|elephantCount|0
+STATE|1|1|5|2|elephantCount|0
+STATE|1|1|7|5|elephantCount|0
+STATE|1|1|2|4|elephantCount|0
+STATE|1|1|6|6|elephantCount|0
+STATE|1|1|7|2|elephantCount|0
+STATE|1|1|7|4|elephantCount|3
+STATE|1|1|6|0|elephantCount|0
+STATE|1|1|5|7|elephantCount|0
+STATE|1|1|3|5|elephantCount|0
+STATE|1|1|1|7|elephantCount|0
+STATE|1|1|1|5|elephantCount|0
+STATE|1|1|1|0|elephantCount|0
+STATE|1|1|5|4|elephantCount|0
+STATE|1|1|7|6|elephantCount|0
+STATE|1|1|3|3|elephantCount|0
+STATE|1|1|6|2|elephantCount|0
+STATE|1|1|4|0|elephantCount|0
+STATE|1|1|2|3|elephantCount|0
+STATE|1|1|0|4|elephantCount|0
+STATE|1|1|3|2|elephantCount|0
+STATE|1|1|4|3|elephantCount|0
+STATE|1|1|5|1|elephantCount|0
+STATE|1|1|3|4|elephantCount|0
+STATE|1|1|1|1|elephantCount|0
+STATE|1|1|6|3|elephantCount|0
+STATE|1|1|2|5|elephantCount|0
+STATE|1|1|4|4|elephantCount|0
+STATE|1|1|0|7|elephantCount|0
+STATE|1|1|2|0|elephantCount|0
+STATE|1|1|7|3|elephantCount|0
+STATE|1|1|1|6|elephantCount|0
+STATE|1|1|4|1|elephantCount|0
+STATE|1|1|3|0|elephantCount|0
+STATE|1|1|7|0|elephantCount|0
+STATE|1|1|4|5|elephantCount|0
+STATE|1|1|6|5|elephantCount|0
+STATE|1|1|2|2|elephantCount|0
+STATE|1|1|0|1|elephantCount|0
+STATE|1|1|3|1|elephantCount|8
+STATE|1|1|0|6|elephantCount|0
+STATE|1|1|0|3|elephantCount|0
+STATE|1|1|0|5|elephantCount|0
+STATE|1|1|4|6|elephantCount|0
+STATE|1|1|5|6|elephantCount|0
+STATE|1|1|5|5|elephantCount|0
+STATE|1|1|1|3|elephantCount|0
+STATE|1|1|3|7|elephantCount|0
+STATE|1|1|7|7|elephantCount|0
+STATE|1|1|2|6|elephantCount|0
+STATE|1|1|2|1|elephantCount|0
+STATE|1|1|2|7|elephantCount|0
+STATE|1|1|6|7|elephantCount|0
+STATE|1|1|6|1|elephantCount|0
+STATE|1|1|6|4|elephantCount|0
+STATE|1|1|7|1|elephantCount|0
+STATE|1|1|1|2|elephantCount|0
+STATE|1|1|3|6|elephantCount|0
+STATE|1|1|4|2|elephantCount|0
+STATE|1|1|1|4|elephantCount|0
+STATE|1|1|4|7|elephantCount|0
+STATE|1|1|0|0|elephantCount|0
+STATE|1|1|5|0|elephantCount|0
+STATE|1|1|0|2|elephantCount|0
+STATE|1|1|7|7|myWaterDistance|1
+STATE|1|1|0|4|myWaterDistance|1.4142135623730951
+STATE|1|1|7|6|myWaterDistance|1
+STATE|1|1|6|1|myWaterDistance|0
+STATE|1|1|2|4|myWaterDistance|1.4142135623730951
+STATE|1|1|5|4|myWaterDistance|0
+STATE|1|1|4|4|myWaterDistance|1
+STATE|1|1|6|4|myWaterDistance|1
+STATE|1|1|5|2|myWaterDistance|0
+STATE|1|1|5|3|myWaterDistance|0
+STATE|1|1|6|0|myWaterDistance|0
+STATE|1|1|2|6|myWaterDistance|1
+STATE|1|1|3|6|myWaterDistance|0
+STATE|1|1|1|3|myWaterDistance|2
+STATE|1|1|0|7|myWaterDistance|1
+STATE|1|1|2|5|myWaterDistance|1
+STATE|1|1|4|6|myWaterDistance|0
+STATE|1|1|5|7|myWaterDistance|0
+STATE|1|1|7|0|myWaterDistance|1
+STATE|1|1|3|2|myWaterDistance|1
+STATE|1|1|2|7|myWaterDistance|1
+STATE|1|1|1|5|myWaterDistance|0
+STATE|1|1|0|5|myWaterDistance|1
+STATE|1|1|1|1|myWaterDistance|2.8284271247461903
+STATE|1|1|4|7|myWaterDistance|1
+STATE|1|1|1|0|myWaterDistance|3.605551275463989
+STATE|1|1|4|1|myWaterDistance|1.4142135623730951
+STATE|1|1|2|0|myWaterDistance|3.1622776601683795
+STATE|1|1|5|0|myWaterDistance|1
+STATE|1|1|4|5|myWaterDistance|1
+STATE|1|1|2|3|myWaterDistance|1
+STATE|1|1|0|3|myWaterDistance|2.23606797749979
+STATE|1|1|4|3|myWaterDistance|0
+STATE|1|1|0|1|myWaterDistance|3.605551275463989
+STATE|1|1|1|4|myWaterDistance|1
+STATE|1|1|4|0|myWaterDistance|2
+STATE|1|1|0|0|myWaterDistance|4.242640687119285
+STATE|1|1|6|7|myWaterDistance|0
+STATE|1|1|2|2|myWaterDistance|1.4142135623730951
+STATE|1|1|3|3|myWaterDistance|0
+STATE|1|1|7|2|myWaterDistance|1.4142135623730951
+STATE|1|1|7|1|myWaterDistance|1
+STATE|1|1|1|6|myWaterDistance|0
+STATE|1|1|3|0|myWaterDistance|2.8284271247461903
+STATE|1|1|5|6|myWaterDistance|0
+STATE|1|1|3|1|myWaterDistance|2
+STATE|1|1|6|2|myWaterDistance|1
+STATE|1|1|0|2|myWaterDistance|3.1622776601683795
+STATE|1|1|1|7|myWaterDistance|0
+STATE|1|1|6|6|myWaterDistance|0
+STATE|1|1|3|7|myWaterDistance|0
+STATE|1|1|7|5|myWaterDistance|1.4142135623730951
+STATE|1|1|2|1|myWaterDistance|2.23606797749979
+STATE|1|1|1|2|myWaterDistance|2.23606797749979
+STATE|1|1|3|5|myWaterDistance|1
+STATE|1|1|7|4|myWaterDistance|2
+STATE|1|1|5|1|myWaterDistance|1
+STATE|1|1|6|3|myWaterDistance|1
+STATE|1|1|0|6|myWaterDistance|1
+STATE|1|1|3|4|myWaterDistance|1
+STATE|1|1|4|2|myWaterDistance|1
+STATE|1|1|7|3|myWaterDistance|2
+STATE|1|1|6|5|myWaterDistance|1
+STATE|1|1|5|5|myWaterDistance|0
+STATE|1|1|0|3|harvestYield|0
+STATE|1|1|2|4|harvestYield|0
+STATE|1|1|3|1|harvestYield|0
+STATE|1|1|7|3|harvestYield|0
+STATE|1|1|3|6|harvestYield|0
+STATE|1|1|7|2|harvestYield|0
+STATE|1|1|0|6|harvestYield|0
+STATE|1|1|3|0|harvestYield|0
+STATE|1|1|1|7|harvestYield|0
+STATE|1|1|0|4|harvestYield|0
+STATE|1|1|4|4|harvestYield|0
+STATE|1|1|7|7|harvestYield|0
+STATE|1|1|3|5|harvestYield|0
+STATE|1|1|3|4|harvestYield|0
+STATE|1|1|3|2|harvestYield|0
+STATE|1|1|7|0|harvestYield|0
+STATE|1|1|1|2|harvestYield|0
+STATE|1|1|5|2|harvestYield|0
+STATE|1|1|2|5|harvestYield|0
+STATE|1|1|0|0|harvestYield|0
+STATE|1|1|0|5|harvestYield|0
+STATE|1|1|7|5|harvestYield|0
+STATE|1|1|2|7|harvestYield|0
+STATE|1|1|1|0|harvestYield|0
+STATE|1|1|7|4|harvestYield|0
+STATE|1|1|1|5|harvestYield|0
+STATE|1|1|0|2|harvestYield|0
+STATE|1|1|6|5|harvestYield|0
+STATE|1|1|4|1|harvestYield|0
+STATE|1|1|1|1|harvestYield|0
+STATE|1|1|3|7|harvestYield|0
+STATE|1|1|5|7|harvestYield|0
+STATE|1|1|1|4|harvestYield|0
+STATE|1|1|4|2|harvestYield|0
+STATE|1|1|2|3|harvestYield|0
+STATE|1|1|5|6|harvestYield|0
+STATE|1|1|5|3|harvestYield|0
+STATE|1|1|2|1|harvestYield|0
+STATE|1|1|6|6|harvestYield|0
+STATE|1|1|1|6|harvestYield|0
+STATE|1|1|2|2|harvestYield|0
+STATE|1|1|5|0|harvestYield|0
+STATE|1|1|2|6|harvestYield|0
+STATE|1|1|6|0|harvestYield|0
+STATE|1|1|5|4|harvestYield|0
+STATE|1|1|6|1|harvestYield|0
+STATE|1|1|3|3|harvestYield|0
+STATE|1|1|4|6|harvestYield|0
+STATE|1|1|6|7|harvestYield|0
+STATE|1|1|1|3|harvestYield|0
+STATE|1|1|5|1|harvestYield|0
+STATE|1|1|4|7|harvestYield|0
+STATE|1|1|6|4|harvestYield|0
+STATE|1|1|0|1|harvestYield|0
+STATE|1|1|6|2|harvestYield|0
+STATE|1|1|4|3|harvestYield|0
+STATE|1|1|5|5|harvestYield|0
+STATE|1|1|4|5|harvestYield|0
+STATE|1|1|7|6|harvestYield|0
+STATE|1|1|7|1|harvestYield|0
+STATE|1|1|2|0|harvestYield|0
+STATE|1|1|6|3|harvestYield|0
+STATE|1|1|4|0|harvestYield|0
+STATE|1|1|0|7|harvestYield|0
+STATE|1|1|7|6|playerHarvestRound|[0 0 0]
+STATE|1|1|3|2|playerHarvestRound|[0 0 0]
+STATE|1|1|7|1|playerHarvestRound|[0 0 0]
+STATE|1|1|0|1|playerHarvestRound|[0 0 0]
+STATE|1|1|2|4|playerHarvestRound|[0 0 0]
+STATE|1|1|2|6|playerHarvestRound|[0 0 0]
+STATE|1|1|1|4|playerHarvestRound|[0 0 0]
+STATE|1|1|5|6|playerHarvestRound|[0 0 0]
+STATE|1|1|6|6|playerHarvestRound|[0 0 0]
+STATE|1|1|7|3|playerHarvestRound|[0 0 0]
+STATE|1|1|4|3|playerHarvestRound|[0 0 0]
+STATE|1|1|1|7|playerHarvestRound|[0 0 0]
+STATE|1|1|4|0|playerHarvestRound|[0 0 0]
+STATE|1|1|2|5|playerHarvestRound|[0 0 0]
+STATE|1|1|0|6|playerHarvestRound|[0 0 0]
+STATE|1|1|0|5|playerHarvestRound|[0 0 0]
+STATE|1|1|2|1|playerHarvestRound|[0 0 0]
+STATE|1|1|1|0|playerHarvestRound|[0 0 0]
+STATE|1|1|1|6|playerHarvestRound|[0 0 0]
+STATE|1|1|5|5|playerHarvestRound|[0 0 0]
+STATE|1|1|0|7|playerHarvestRound|[0 0 0]
+STATE|1|1|6|0|playerHarvestRound|[0 0 0]
+STATE|1|1|4|4|playerHarvestRound|[0 0 0]
+STATE|1|1|3|1|playerHarvestRound|[0 0 0]
+STATE|1|1|7|2|playerHarvestRound|[0 0 0]
+STATE|1|1|0|3|playerHarvestRound|[0 0 0]
+STATE|1|1|0|4|playerHarvestRound|[0 0 0]
+STATE|1|1|2|7|playerHarvestRound|[0 0 0]
+STATE|1|1|5|0|playerHarvestRound|[0 0 0]
+STATE|1|1|1|5|playerHarvestRound|[0 0 0]
+STATE|1|1|3|4|playerHarvestRound|[0 0 0]
+STATE|1|1|6|3|playerHarvestRound|[0 0 0]
+STATE|1|1|5|1|playerHarvestRound|[0 0 0]
+STATE|1|1|7|5|playerHarvestRound|[0 0 0]
+STATE|1|1|4|6|playerHarvestRound|[0 0 0]
+STATE|1|1|3|0|playerHarvestRound|[0 0 0]
+STATE|1|1|2|2|playerHarvestRound|[0 0 0]
+STATE|1|1|5|2|playerHarvestRound|[0 0 0]
+STATE|1|1|6|1|playerHarvestRound|[0 0 0]
+STATE|1|1|7|4|playerHarvestRound|[0 0 0]
+STATE|1|1|6|5|playerHarvestRound|[0 0 0]
+STATE|1|1|0|0|playerHarvestRound|[0 0 0]
+STATE|1|1|6|2|playerHarvestRound|[0 0 0]
+STATE|1|1|7|0|playerHarvestRound|[0 0 0]
+STATE|1|1|5|3|playerHarvestRound|[0 0 0]
+STATE|1|1|4|5|playerHarvestRound|[0 0 0]
+STATE|1|1|7|7|playerHarvestRound|[0 0 0]
+STATE|1|1|6|4|playerHarvestRound|[0 0 0]
+STATE|1|1|5|4|playerHarvestRound|[0 0 0]
+STATE|1|1|1|3|playerHarvestRound|[0 0 0]
+STATE|1|1|3|6|playerHarvestRound|[0 0 0]
+STATE|1|1|2|3|playerHarvestRound|[0 0 0]
+STATE|1|1|4|7|playerHarvestRound|[0 0 0]
+STATE|1|1|2|0|playerHarvestRound|[0 0 0]
+STATE|1|1|1|1|playerHarvestRound|[0 0 0]
+STATE|1|1|3|7|playerHarvestRound|[0 0 0]
+STATE|1|1|3|5|playerHarvestRound|[0 0 0]
+STATE|1|1|5|7|playerHarvestRound|[0 0 0]
+STATE|1|1|4|2|playerHarvestRound|[0 0 0]
+STATE|1|1|1|2|playerHarvestRound|[0 0 0]
+STATE|1|1|3|3|playerHarvestRound|[0 0 0]
+STATE|1|1|0|2|playerHarvestRound|[0 0 0]
+STATE|1|1|4|1|playerHarvestRound|[0 0 0]
+STATE|1|1|6|7|playerHarvestRound|[0 0 0]
+STATE|1|1|5|7|fined?|false
+STATE|1|1|0|4|fined?|false
+STATE|1|1|2|6|fined?|false
+STATE|1|1|2|2|fined?|false
+STATE|1|1|1|7|fined?|false
+STATE|1|1|2|5|fined?|false
+STATE|1|1|1|0|fined?|false
+STATE|1|1|7|0|fined?|false
+STATE|1|1|7|6|fined?|false
+STATE|1|1|7|1|fined?|false
+STATE|1|1|7|7|fined?|false
+STATE|1|1|6|2|fined?|false
+STATE|1|1|4|6|fined?|false
+STATE|1|1|1|1|fined?|false
+STATE|1|1|4|2|fined?|false
+STATE|1|1|3|0|fined?|false
+STATE|1|1|1|3|fined?|false
+STATE|1|1|6|4|fined?|false
+STATE|1|1|4|0|fined?|false
+STATE|1|1|4|3|fined?|false
+STATE|1|1|0|6|fined?|false
+STATE|1|1|5|1|fined?|false
+STATE|1|1|3|1|fined?|false
+STATE|1|1|3|7|fined?|false
+STATE|1|1|2|1|fined?|false
+STATE|1|1|3|2|fined?|false
+STATE|1|1|5|6|fined?|false
+STATE|1|1|0|3|fined?|false
+STATE|1|1|1|6|fined?|false
+STATE|1|1|4|1|fined?|false
+STATE|1|1|5|4|fined?|false
+STATE|1|1|1|2|fined?|false
+STATE|1|1|7|2|fined?|false
+STATE|1|1|6|6|fined?|false
+STATE|1|1|2|0|fined?|false
+STATE|1|1|6|7|fined?|false
+STATE|1|1|3|4|fined?|false
+STATE|1|1|5|3|fined?|false
+STATE|1|1|2|3|fined?|false
+STATE|1|1|4|4|fined?|false
+STATE|1|1|6|1|fined?|false
+STATE|1|1|0|0|fined?|false
+STATE|1|1|7|5|fined?|false
+STATE|1|1|1|4|fined?|false
+STATE|1|1|0|1|fined?|false
+STATE|1|1|5|0|fined?|false
+STATE|1|1|4|5|fined?|false
+STATE|1|1|4|7|fined?|false
+STATE|1|1|3|6|fined?|false
+STATE|1|1|0|2|fined?|false
+STATE|1|1|6|3|fined?|false
+STATE|1|1|7|3|fined?|false
+STATE|1|1|1|5|fined?|false
+STATE|1|1|3|5|fined?|false
+STATE|1|1|3|3|fined?|false
+STATE|1|1|2|7|fined?|false
+STATE|1|1|6|0|fined?|false
+STATE|1|1|7|4|fined?|false
+STATE|1|1|5|2|fined?|false
+STATE|1|1|6|5|fined?|false
+STATE|1|1|0|7|fined?|false
+STATE|1|1|0|5|fined?|false
+STATE|1|1|5|5|fined?|false
+STATE|1|1|2|4|fined?|false
+STATE|1|1|5|4|fineAmount|0
+STATE|1|1|5|6|fineAmount|0
+STATE|1|1|4|5|fineAmount|0
+STATE|1|1|0|5|fineAmount|0
+STATE|1|1|7|5|fineAmount|0
+STATE|1|1|6|2|fineAmount|0
+STATE|1|1|2|2|fineAmount|0
+STATE|1|1|1|6|fineAmount|0
+STATE|1|1|3|4|fineAmount|0
+STATE|1|1|1|4|fineAmount|0
+STATE|1|1|6|3|fineAmount|0
+STATE|1|1|2|4|fineAmount|0
+STATE|1|1|1|2|fineAmount|0
+STATE|1|1|7|0|fineAmount|0
+STATE|1|1|3|5|fineAmount|0
+STATE|1|1|0|1|fineAmount|0
+STATE|1|1|4|0|fineAmount|0
+STATE|1|1|3|7|fineAmount|0
+STATE|1|1|2|1|fineAmount|0
+STATE|1|1|4|1|fineAmount|0
+STATE|1|1|6|4|fineAmount|0
+STATE|1|1|3|1|fineAmount|0
+STATE|1|1|7|1|fineAmount|0
+STATE|1|1|6|1|fineAmount|0
+STATE|1|1|0|4|fineAmount|0
+STATE|1|1|1|3|fineAmount|0
+STATE|1|1|5|2|fineAmount|0
+STATE|1|1|5|0|fineAmount|0
+STATE|1|1|4|6|fineAmount|0
+STATE|1|1|1|1|fineAmount|0
+STATE|1|1|0|7|fineAmount|0
+STATE|1|1|3|2|fineAmount|0
+STATE|1|1|3|6|fineAmount|0
+STATE|1|1|7|3|fineAmount|0
+STATE|1|1|1|5|fineAmount|0
+STATE|1|1|7|6|fineAmount|0
+STATE|1|1|0|6|fineAmount|0
+STATE|1|1|7|7|fineAmount|0
+STATE|1|1|6|7|fineAmount|0
+STATE|1|1|0|0|fineAmount|0
+STATE|1|1|5|7|fineAmount|0
+STATE|1|1|5|1|fineAmount|0
+STATE|1|1|1|7|fineAmount|0
+STATE|1|1|6|5|fineAmount|0
+STATE|1|1|6|6|fineAmount|0
+STATE|1|1|0|3|fineAmount|0
+STATE|1|1|4|7|fineAmount|0
+STATE|1|1|4|2|fineAmount|0
+STATE|1|1|4|3|fineAmount|0
+STATE|1|1|3|0|fineAmount|0
+STATE|1|1|5|3|fineAmount|0
+STATE|1|1|6|0|fineAmount|0
+STATE|1|1|2|5|fineAmount|0
+STATE|1|1|7|4|fineAmount|0
+STATE|1|1|2|6|fineAmount|0
+STATE|1|1|1|0|fineAmount|0
+STATE|1|1|2|3|fineAmount|0
+STATE|1|1|2|7|fineAmount|0
+STATE|1|1|0|2|fineAmount|0
+STATE|1|1|5|5|fineAmount|0
+STATE|1|1|7|2|fineAmount|0
+STATE|1|1|3|3|fineAmount|0
+STATE|1|1|2|0|fineAmount|0
+STATE|1|1|4|4|fineAmount|0
+STATE|1|1|2|1|cropOwner|-99
+STATE|1|1|6|0|cropOwner|-99
+STATE|1|1|0|3|cropOwner|-99
+STATE|1|1|0|1|cropOwner|-99
+STATE|1|1|0|7|cropOwner|-99
+STATE|1|1|3|0|cropOwner|-99
+STATE|1|1|1|6|cropOwner|-99
+STATE|1|1|3|6|cropOwner|-99
+STATE|1|1|5|7|cropOwner|-99
+STATE|1|1|4|6|cropOwner|-99
+STATE|1|1|4|7|cropOwner|-99
+STATE|1|1|4|0|cropOwner|-99
+STATE|1|1|2|7|cropOwner|-99
+STATE|1|1|0|0|cropOwner|-99
+STATE|1|1|3|4|cropOwner|-99
+STATE|1|1|2|3|cropOwner|-99
+STATE|1|1|6|6|cropOwner|-99
+STATE|1|1|0|5|cropOwner|-99
+STATE|1|1|7|6|cropOwner|-99
+STATE|1|1|7|1|cropOwner|-99
+STATE|1|1|7|2|cropOwner|-99
+STATE|1|1|6|3|cropOwner|-99
+STATE|1|1|3|5|cropOwner|-99
+STATE|1|1|7|5|cropOwner|-99
+STATE|1|1|1|1|cropOwner|-99
+STATE|1|1|3|1|cropOwner|-99
+STATE|1|1|4|5|cropOwner|-99
+STATE|1|1|1|4|cropOwner|-99
+STATE|1|1|4|1|cropOwner|-99
+STATE|1|1|1|3|cropOwner|-99
+STATE|1|1|2|4|cropOwner|-99
+STATE|1|1|2|2|cropOwner|-99
+STATE|1|1|4|4|cropOwner|-99
+STATE|1|1|5|3|cropOwner|-99
+STATE|1|1|2|5|cropOwner|-99
+STATE|1|1|2|0|cropOwner|-99
+STATE|1|1|1|2|cropOwner|-99
+STATE|1|1|3|2|cropOwner|-99
+STATE|1|1|7|0|cropOwner|-99
+STATE|1|1|5|4|cropOwner|-99
+STATE|1|1|6|4|cropOwner|-99
+STATE|1|1|6|2|cropOwner|-99
+STATE|1|1|1|5|cropOwner|-99
+STATE|1|1|3|3|cropOwner|-99
+STATE|1|1|5|0|cropOwner|-99
+STATE|1|1|0|4|cropOwner|-99
+STATE|1|1|0|2|cropOwner|-99
+STATE|1|1|5|2|cropOwner|-99
+STATE|1|1|2|6|cropOwner|-99
+STATE|1|1|1|7|cropOwner|-99
+STATE|1|1|4|2|cropOwner|-99
+STATE|1|1|3|7|cropOwner|-99
+STATE|1|1|7|3|cropOwner|-99
+STATE|1|1|0|6|cropOwner|-99
+STATE|1|1|6|7|cropOwner|-99
+STATE|1|1|5|1|cropOwner|-99
+STATE|1|1|1|0|cropOwner|-99
+STATE|1|1|6|1|cropOwner|-99
+STATE|1|1|5|6|cropOwner|-99
+STATE|1|1|7|4|cropOwner|-99
+STATE|1|1|4|3|cropOwner|-99
+STATE|1|1|6|5|cropOwner|-99
+STATE|1|1|5|5|cropOwner|-99
+STATE|1|1|7|7|cropOwner|-99
+STATE|1|1|4|4|defended?|false
+STATE|1|1|3|2|defended?|false
+STATE|1|1|1|7|defended?|false
+STATE|1|1|6|4|defended?|false
+STATE|1|1|6|5|defended?|false
+STATE|1|1|6|3|defended?|false
+STATE|1|1|3|7|defended?|false
+STATE|1|1|3|5|defended?|false
+STATE|1|1|1|5|defended?|false
+STATE|1|1|2|4|defended?|false
+STATE|1|1|0|3|defended?|false
+STATE|1|1|0|5|defended?|false
+STATE|1|1|3|4|defended?|false
+STATE|1|1|7|2|defended?|false
+STATE|1|1|5|2|defended?|false
+STATE|1|1|2|6|defended?|false
+STATE|1|1|0|0|defended?|false
+STATE|1|1|0|7|defended?|false
+STATE|1|1|4|5|defended?|false
+STATE|1|1|2|5|defended?|false
+STATE|1|1|1|4|defended?|false
+STATE|1|1|5|5|defended?|false
+STATE|1|1|4|7|defended?|false
+STATE|1|1|2|0|defended?|false
+STATE|1|1|2|3|defended?|false
+STATE|1|1|1|0|defended?|false
+STATE|1|1|0|4|defended?|false
+STATE|1|1|5|4|defended?|false
+STATE|1|1|7|6|defended?|false
+STATE|1|1|6|1|defended?|false
+STATE|1|1|3|3|defended?|false
+STATE|1|1|3|0|defended?|false
+STATE|1|1|1|3|defended?|false
+STATE|1|1|2|7|defended?|false
+STATE|1|1|7|0|defended?|false
+STATE|1|1|1|2|defended?|false
+STATE|1|1|0|6|defended?|false
+STATE|1|1|0|2|defended?|false
+STATE|1|1|2|1|defended?|false
+STATE|1|1|6|0|defended?|false
+STATE|1|1|3|1|defended?|false
+STATE|1|1|4|3|defended?|false
+STATE|1|1|0|1|defended?|false
+STATE|1|1|1|6|defended?|false
+STATE|1|1|6|6|defended?|false
+STATE|1|1|4|6|defended?|false
+STATE|1|1|5|6|defended?|false
+STATE|1|1|7|5|defended?|false
+STATE|1|1|5|0|defended?|false
+STATE|1|1|1|1|defended?|false
+STATE|1|1|4|1|defended?|false
+STATE|1|1|4|2|defended?|false
+STATE|1|1|6|7|defended?|false
+STATE|1|1|3|6|defended?|false
+STATE|1|1|4|0|defended?|false
+STATE|1|1|7|4|defended?|false
+STATE|1|1|5|7|defended?|false
+STATE|1|1|6|2|defended?|false
+STATE|1|1|5|3|defended?|false
+STATE|1|1|2|2|defended?|false
+STATE|1|1|7|3|defended?|false
+STATE|1|1|7|7|defended?|false
+STATE|1|1|5|1|defended?|false
+STATE|1|1|7|1|defended?|false
+STATE|1|1|2|4|cropCount|0
+STATE|1|1|4|4|cropCount|0
+STATE|1|1|3|2|cropCount|0
+STATE|1|1|2|7|cropCount|0
+STATE|1|1|3|4|cropCount|0
+STATE|1|1|4|3|cropCount|0
+STATE|1|1|2|6|cropCount|0
+STATE|1|1|6|0|cropCount|0
+STATE|1|1|5|1|cropCount|0
+STATE|1|1|7|5|cropCount|0
+STATE|1|1|7|7|cropCount|0
+STATE|1|1|0|4|cropCount|0
+STATE|1|1|6|3|cropCount|0
+STATE|1|1|2|0|cropCount|0
+STATE|1|1|5|2|cropCount|0
+STATE|1|1|5|0|cropCount|0
+STATE|1|1|3|5|cropCount|0
+STATE|1|1|5|3|cropCount|0
+STATE|1|1|1|3|cropCount|0
+STATE|1|1|7|2|cropCount|0
+STATE|1|1|3|3|cropCount|0
+STATE|1|1|3|7|cropCount|0
+STATE|1|1|4|1|cropCount|0
+STATE|1|1|7|4|cropCount|0
+STATE|1|1|3|6|cropCount|0
+STATE|1|1|0|6|cropCount|0
+STATE|1|1|6|6|cropCount|0
+STATE|1|1|4|5|cropCount|0
+STATE|1|1|0|7|cropCount|0
+STATE|1|1|7|1|cropCount|0
+STATE|1|1|2|2|cropCount|0
+STATE|1|1|1|5|cropCount|0
+STATE|1|1|1|4|cropCount|0
+STATE|1|1|5|6|cropCount|0
+STATE|1|1|0|0|cropCount|0
+STATE|1|1|3|0|cropCount|0
+STATE|1|1|2|1|cropCount|0
+STATE|1|1|0|2|cropCount|0
+STATE|1|1|1|1|cropCount|0
+STATE|1|1|7|6|cropCount|0
+STATE|1|1|0|1|cropCount|0
+STATE|1|1|5|7|cropCount|0
+STATE|1|1|6|5|cropCount|0
+STATE|1|1|6|2|cropCount|0
+STATE|1|1|5|4|cropCount|0
+STATE|1|1|1|6|cropCount|0
+STATE|1|1|1|2|cropCount|0
+STATE|1|1|6|7|cropCount|0
+STATE|1|1|4|2|cropCount|0
+STATE|1|1|2|5|cropCount|0
+STATE|1|1|1|0|cropCount|0
+STATE|1|1|0|3|cropCount|0
+STATE|1|1|7|0|cropCount|0
+STATE|1|1|4|6|cropCount|0
+STATE|1|1|3|1|cropCount|0
+STATE|1|1|7|3|cropCount|0
+STATE|1|1|5|5|cropCount|0
+STATE|1|1|0|5|cropCount|0
+STATE|1|1|6|1|cropCount|0
+STATE|1|1|6|4|cropCount|0
+STATE|1|1|4|7|cropCount|0
+STATE|1|1|1|7|cropCount|0
+STATE|1|1|4|0|cropCount|0
+STATE|1|1|2|3|cropCount|0
+STATE|1|1|2|2|vegCount|4.473113628446644
+STATE|1|1|6|4|vegCount|7.477747371178563
+STATE|1|1|7|2|vegCount|1.875804254984004
+STATE|1|1|4|7|vegCount|16.93376120714533
+STATE|1|1|5|6|vegCount|0
+STATE|1|1|2|5|vegCount|15.578432427263916
+STATE|1|1|4|0|vegCount|7.775518163206586
+STATE|1|1|3|2|vegCount|6.184460202520688
+STATE|1|1|3|0|vegCount|4.279305989849625
+STATE|1|1|3|4|vegCount|7.248381128566253
+STATE|1|1|1|3|vegCount|15.394980312718884
+STATE|1|1|3|3|vegCount|0
+STATE|1|1|6|7|vegCount|0
+STATE|1|1|2|0|vegCount|0.7258078584824341
+STATE|1|1|0|5|vegCount|8.168279401404213
+STATE|1|1|6|6|vegCount|0
+STATE|1|1|0|7|vegCount|16.762066044579353
+STATE|1|1|2|1|vegCount|4.999916005102981
+STATE|1|1|4|6|vegCount|0
+STATE|1|1|2|4|vegCount|13.866157881686638
+STATE|1|1|6|0|vegCount|0
+STATE|1|1|1|1|vegCount|3.4590377010437057
+STATE|1|1|5|5|vegCount|0
+STATE|1|1|0|6|vegCount|19.60300467792132
+STATE|1|1|3|6|vegCount|0
+STATE|1|1|0|2|vegCount|10.376544486619137
+STATE|1|1|4|3|vegCount|0
+STATE|1|1|2|7|vegCount|17.966517103474477
+STATE|1|1|4|2|vegCount|9.001078992427692
+STATE|1|1|0|1|vegCount|3.151321166237555
+STATE|1|1|6|3|vegCount|5.61554075763083
+STATE|1|1|1|6|vegCount|0
+STATE|1|1|5|1|vegCount|6.701869029914631
+STATE|1|1|5|0|vegCount|8.908169787573728
+STATE|1|1|6|1|vegCount|0
+STATE|1|1|0|4|vegCount|16.46649632093142
+STATE|1|1|1|4|vegCount|15.520873568884433
+STATE|1|1|4|5|vegCount|4.404695342417268
+STATE|1|1|6|2|vegCount|6.88271413284386
+STATE|1|1|4|1|vegCount|7.728944615227457
+STATE|1|1|0|3|vegCount|14.984429069053643
+STATE|1|1|3|1|vegCount|7.856417228471411
+STATE|1|1|7|4|vegCount|6.422914980462561
+STATE|1|1|7|6|vegCount|5.568275987438289
+STATE|1|1|7|0|vegCount|3.0663044674635946
+STATE|1|1|2|3|vegCount|8.448428540394957
+STATE|1|1|2|6|vegCount|0
+STATE|1|1|1|0|vegCount|3.282887183121328
+STATE|1|1|7|1|vegCount|7.208445311362194
+STATE|1|1|5|4|vegCount|0
+STATE|1|1|7|3|vegCount|4.330355155662083
+STATE|1|1|1|7|vegCount|0
+STATE|1|1|5|3|vegCount|0
+STATE|1|1|6|5|vegCount|17.005625912661383
+STATE|1|1|7|7|vegCount|4.312869872019115
+STATE|1|1|1|5|vegCount|0
+STATE|1|1|0|0|vegCount|0
+STATE|1|1|1|2|vegCount|13.437805803992564
+STATE|1|1|7|5|vegCount|6.611899230679622
+STATE|1|1|5|2|vegCount|0
+STATE|1|1|5|7|vegCount|0
+STATE|1|1|4|4|vegCount|3.853246948192293
+STATE|1|1|3|5|vegCount|14.788585393524071
+STATE|1|1|3|7|vegCount|0
+CHOICE|1|1|2|2|3|1|02:17:47.861 PM 13-Oct-2026
+CHOICE|1|1|2|1|3|1|02:17:49.844 PM 13-Oct-2026
+CHOICE|1|1|1|4|5|1|02:18:07.622 PM 13-Oct-2026
+CHOICE|1|1|1|3|5|1|02:18:09.097 PM 13-Oct-2026
+CONFIRM|1|1|1|02:18:10.858 PM 13-Oct-2026
+CONFIRM|1|1|2|02:18:12.879 PM 13-Oct-2026
+CHOICE|1|1|3|1|1|1|02:18:17.939 PM 13-Oct-2026
+CONFIRM|1|1|3|02:18:19.618 PM 13-Oct-2026
+SCORE|1|1|1|0|0|2
+SCORE|1|1|2|0|0|2
+SCORE|1|1|3|0|0|6
+CONFIRM|1|1|3|02:18:28.750 PM 13-Oct-2026
+CONFIRM|1|1|2|02:18:30.466 PM 13-Oct-2026
+CONFIRM|1|1|1|02:18:32.659 PM 13-Oct-2026
+STATE|1|2|6|1|ownedBy|-99
+STATE|1|2|7|1|ownedBy|-99
+STATE|1|2|5|3|ownedBy|-99
+STATE|1|2|7|0|ownedBy|-99
+STATE|1|2|7|5|ownedBy|-99
+STATE|1|2|2|0|ownedBy|-99
+STATE|1|2|7|3|ownedBy|-99
+STATE|1|2|0|6|ownedBy|-99
+STATE|1|2|0|5|ownedBy|-99
+STATE|1|2|7|7|ownedBy|-99
+STATE|1|2|4|4|ownedBy|-99
+STATE|1|2|1|4|ownedBy|-99
+STATE|1|2|6|3|ownedBy|-99
+STATE|1|2|2|3|ownedBy|-99
+STATE|1|2|2|1|ownedBy|-99
+STATE|1|2|5|0|ownedBy|-99
+STATE|1|2|4|3|ownedBy|-99
+STATE|1|2|2|5|ownedBy|-99
+STATE|1|2|0|1|ownedBy|-99
+STATE|1|2|0|7|ownedBy|-99
+STATE|1|2|3|5|ownedBy|-99
+STATE|1|2|2|2|ownedBy|-99
+STATE|1|2|7|2|ownedBy|-99
+STATE|1|2|3|2|ownedBy|-99
+STATE|1|2|0|2|ownedBy|-99
+STATE|1|2|0|4|ownedBy|-99
+STATE|1|2|5|2|ownedBy|-99
+STATE|1|2|2|7|ownedBy|-99
+STATE|1|2|5|7|ownedBy|-99
+STATE|1|2|3|7|ownedBy|-99
+STATE|1|2|1|7|ownedBy|-99
+STATE|1|2|0|0|ownedBy|-99
+STATE|1|2|3|3|ownedBy|-99
+STATE|1|2|1|1|ownedBy|-99
+STATE|1|2|1|2|ownedBy|-99
+STATE|1|2|6|5|ownedBy|-99
+STATE|1|2|1|3|ownedBy|-99
+STATE|1|2|4|6|ownedBy|-99
+STATE|1|2|4|1|ownedBy|-99
+STATE|1|2|5|6|ownedBy|-99
+STATE|1|2|4|0|ownedBy|-99
+STATE|1|2|4|5|ownedBy|-99
+STATE|1|2|5|5|ownedBy|-99
+STATE|1|2|1|6|ownedBy|-99
+STATE|1|2|3|0|ownedBy|-99
+STATE|1|2|0|3|ownedBy|-99
+STATE|1|2|5|4|ownedBy|-99
+STATE|1|2|3|1|ownedBy|-99
+STATE|1|2|6|2|ownedBy|-99
+STATE|1|2|2|4|ownedBy|-99
+STATE|1|2|7|6|ownedBy|-99
+STATE|1|2|3|6|ownedBy|-99
+STATE|1|2|2|6|ownedBy|-99
+STATE|1|2|6|7|ownedBy|-99
+STATE|1|2|5|1|ownedBy|-99
+STATE|1|2|6|6|ownedBy|-99
+STATE|1|2|1|5|ownedBy|-99
+STATE|1|2|3|4|ownedBy|-99
+STATE|1|2|6|4|ownedBy|-99
+STATE|1|2|4|2|ownedBy|-99
+STATE|1|2|1|0|ownedBy|-99
+STATE|1|2|7|4|ownedBy|-99
+STATE|1|2|4|7|ownedBy|-99
+STATE|1|2|6|0|ownedBy|-99
+STATE|1|2|5|3|village|0
+STATE|1|2|2|1|village|0
+STATE|1|2|3|5|village|0
+STATE|1|2|1|6|village|0
+STATE|1|2|5|1|village|0
+STATE|1|2|4|1|village|0
+STATE|1|2|1|5|village|0
+STATE|1|2|4|0|village|0
+STATE|1|2|5|2|village|0
+STATE|1|2|6|1|village|0
+STATE|1|2|7|4|village|0
+STATE|1|2|7|2|village|0
+STATE|1|2|7|7|village|0
+STATE|1|2|0|1|village|0
+STATE|1|2|7|5|village|0
+STATE|1|2|3|1|village|0
+STATE|1|2|6|3|village|0
+STATE|1|2|2|4|village|0
+STATE|1|2|5|6|village|0
+STATE|1|2|0|5|village|0
+STATE|1|2|0|7|village|0
+STATE|1|2|1|3|village|0
+STATE|1|2|2|0|village|0
+STATE|1|2|0|6|village|0
+STATE|1|2|3|6|village|0
+STATE|1|2|4|6|village|0
+STATE|1|2|7|3|village|0
+STATE|1|2|7|1|village|0
+STATE|1|2|0|2|village|0
+STATE|1|2|0|4|village|0
+STATE|1|2|4|3|village|0
+STATE|1|2|4|2|village|0
+STATE|1|2|5|4|village|0
+STATE|1|2|5|0|village|0
+STATE|1|2|1|1|village|0
+STATE|1|2|2|5|village|0
+STATE|1|2|5|7|village|0
+STATE|1|2|6|6|village|0
+STATE|1|2|3|2|village|0
+STATE|1|2|6|4|village|0
+STATE|1|2|6|2|village|0
+STATE|1|2|0|3|village|0
+STATE|1|2|2|2|village|0
+STATE|1|2|3|7|village|0
+STATE|1|2|6|0|village|0
+STATE|1|2|4|5|village|0
+STATE|1|2|7|6|village|0
+STATE|1|2|7|0|village|0
+STATE|1|2|2|7|village|0
+STATE|1|2|6|7|village|0
+STATE|1|2|4|7|village|0
+STATE|1|2|1|4|village|0
+STATE|1|2|0|0|village|0
+STATE|1|2|1|0|village|0
+STATE|1|2|1|2|village|0
+STATE|1|2|2|6|village|0
+STATE|1|2|6|5|village|0
+STATE|1|2|2|3|village|0
+STATE|1|2|3|0|village|0
+STATE|1|2|5|5|village|0
+STATE|1|2|1|7|village|0
+STATE|1|2|4|4|village|0
+STATE|1|2|3|3|village|0
+STATE|1|2|3|4|village|0
+STATE|1|2|7|5|shared?|0
+STATE|1|2|4|1|shared?|0
+STATE|1|2|0|1|shared?|0
+STATE|1|2|1|3|shared?|0
+STATE|1|2|5|6|shared?|0
+STATE|1|2|6|5|shared?|0
+STATE|1|2|4|6|shared?|0
+STATE|1|2|6|1|shared?|0
+STATE|1|2|0|6|shared?|0
+STATE|1|2|0|5|shared?|0
+STATE|1|2|2|1|shared?|0
+STATE|1|2|1|4|shared?|0
+STATE|1|2|6|4|shared?|0
+STATE|1|2|0|7|shared?|0
+STATE|1|2|1|7|shared?|0
+STATE|1|2|2|4|shared?|0
+STATE|1|2|6|2|shared?|0
+STATE|1|2|4|5|shared?|0
+STATE|1|2|3|5|shared?|0
+STATE|1|2|4|4|shared?|0
+STATE|1|2|0|3|shared?|0
+STATE|1|2|7|3|shared?|0
+STATE|1|2|1|5|shared?|0
+STATE|1|2|0|2|shared?|0
+STATE|1|2|3|0|shared?|0
+STATE|1|2|5|0|shared?|0
+STATE|1|2|2|3|shared?|0
+STATE|1|2|6|0|shared?|0
+STATE|1|2|5|7|shared?|0
+STATE|1|2|3|4|shared?|0
+STATE|1|2|7|7|shared?|0
+STATE|1|2|6|3|shared?|0
+STATE|1|2|1|2|shared?|0
+STATE|1|2|1|0|shared?|0
+STATE|1|2|2|5|shared?|0
+STATE|1|2|7|6|shared?|0
+STATE|1|2|4|2|shared?|0
+STATE|1|2|2|0|shared?|0
+STATE|1|2|1|1|shared?|0
+STATE|1|2|7|2|shared?|0
+STATE|1|2|7|1|shared?|0
+STATE|1|2|0|0|shared?|0
+STATE|1|2|3|2|shared?|0
+STATE|1|2|3|7|shared?|0
+STATE|1|2|1|6|shared?|0
+STATE|1|2|4|0|shared?|0
+STATE|1|2|5|1|shared?|0
+STATE|1|2|2|2|shared?|0
+STATE|1|2|2|6|shared?|0
+STATE|1|2|3|6|shared?|0
+STATE|1|2|3|3|shared?|0
+STATE|1|2|4|7|shared?|0
+STATE|1|2|3|1|shared?|0
+STATE|1|2|5|5|shared?|0
+STATE|1|2|6|7|shared?|0
+STATE|1|2|5|2|shared?|0
+STATE|1|2|7|0|shared?|0
+STATE|1|2|7|4|shared?|0
+STATE|1|2|0|4|shared?|0
+STATE|1|2|2|7|shared?|0
+STATE|1|2|6|6|shared?|0
+STATE|1|2|4|3|shared?|0
+STATE|1|2|5|4|shared?|0
+STATE|1|2|5|3|shared?|0
+STATE|1|2|7|6|landChoices|[-99 1]
+STATE|1|2|3|4|landChoices|[-99 1]
+STATE|1|2|3|6|landChoices|[-99]
+STATE|1|2|6|3|landChoices|[-99 1]
+STATE|1|2|3|3|landChoices|[-99]
+STATE|1|2|4|6|landChoices|[-99]
+STATE|1|2|2|7|landChoices|[-99 1]
+STATE|1|2|6|5|landChoices|[-99 1]
+STATE|1|2|2|1|landChoices|[-99 1]
+STATE|1|2|2|0|landChoices|[-99 1]
+STATE|1|2|1|1|landChoices|[-99 2 3 4]
+STATE|1|2|3|1|landChoices|[-99 1]
+STATE|1|2|0|6|landChoices|[-99 1]
+STATE|1|2|1|5|landChoices|[-99]
+STATE|1|2|7|1|landChoices|[-99 1]
+STATE|1|2|2|2|landChoices|[-99 1]
+STATE|1|2|6|7|landChoices|[-99]
+STATE|1|2|1|0|landChoices|[-99 1]
+STATE|1|2|7|4|landChoices|[-99 1]
+STATE|1|2|6|0|landChoices|[-99]
+STATE|1|2|2|4|landChoices|[-99 1]
+STATE|1|2|5|2|landChoices|[-99]
+STATE|1|2|7|0|landChoices|[-99 1]
+STATE|1|2|0|3|landChoices|[-99 1]
+STATE|1|2|4|4|landChoices|[-99 1]
+STATE|1|2|5|3|landChoices|[-99]
+STATE|1|2|2|3|landChoices|[-99 2 3 4]
+STATE|1|2|5|1|landChoices|[-99 1]
+STATE|1|2|0|2|landChoices|[-99 1]
+STATE|1|2|5|5|landChoices|[-99]
+STATE|1|2|7|2|landChoices|[-99 1]
+STATE|1|2|0|0|landChoices|[-99 1]
+STATE|1|2|3|2|landChoices|[-99 1]
+STATE|1|2|6|2|landChoices|[-99 1]
+STATE|1|2|7|7|landChoices|[-99 1]
+STATE|1|2|2|5|landChoices|[-99 1]
+STATE|1|2|1|3|landChoices|[-99 2 3 4]
+STATE|1|2|2|6|landChoices|[-99]
+STATE|1|2|4|2|landChoices|[-99 1]
+STATE|1|2|4|0|landChoices|[-99 1]
+STATE|1|2|5|7|landChoices|[-99]
+STATE|1|2|0|7|landChoices|[-99 1]
+STATE|1|2|4|7|landChoices|[-99 1]
+STATE|1|2|1|4|landChoices|[-99 1]
+STATE|1|2|1|2|landChoices|[-99 1]
+STATE|1|2|6|6|landChoices|[-99]
+STATE|1|2|1|6|landChoices|[-99]
+STATE|1|2|0|5|landChoices|[-99 1]
+STATE|1|2|3|7|landChoices|[-99]
+STATE|1|2|5|4|landChoices|[-99]
+STATE|1|2|6|4|landChoices|[-99 1]
+STATE|1|2|7|3|landChoices|[-99 1]
+STATE|1|2|4|5|landChoices|[-99 2 3 4]
+STATE|1|2|4|3|landChoices|[-99]
+STATE|1|2|7|5|landChoices|[-99 1]
+STATE|1|2|5|6|landChoices|[-99]
+STATE|1|2|0|4|landChoices|[-99 1]
+STATE|1|2|0|1|landChoices|[-99 1]
+STATE|1|2|3|5|landChoices|[-99 2 3 4]
+STATE|1|2|5|0|landChoices|[-99 1]
+STATE|1|2|1|7|landChoices|[-99]
+STATE|1|2|4|1|landChoices|[-99 1]
+STATE|1|2|3|0|landChoices|[-99 1]
+STATE|1|2|6|1|landChoices|[-99]
+STATE|1|2|6|6|protected?|true
+STATE|1|2|0|7|protected?|true
+STATE|1|2|5|2|protected?|false
+STATE|1|2|4|2|protected?|false
+STATE|1|2|5|4|protected?|false
+STATE|1|2|3|1|protected?|false
+STATE|1|2|6|0|protected?|false
+STATE|1|2|6|1|protected?|false
+STATE|1|2|0|0|protected?|false
+STATE|1|2|0|2|protected?|true
+STATE|1|2|5|1|protected?|false
+STATE|1|2|0|4|protected?|true
+STATE|1|2|7|5|protected?|false
+STATE|1|2|1|7|protected?|true
+STATE|1|2|2|4|protected?|true
+STATE|1|2|3|6|protected?|true
+STATE|1|2|4|3|protected?|false
+STATE|1|2|3|3|protected?|false
+STATE|1|2|4|7|protected?|true
+STATE|1|2|7|3|protected?|false
+STATE|1|2|1|5|protected?|false
+STATE|1|2|3|2|protected?|false
+STATE|1|2|2|0|protected?|false
+STATE|1|2|4|0|protected?|false
+STATE|1|2|1|3|protected?|true
+STATE|1|2|3|4|protected?|false
+STATE|1|2|4|4|protected?|false
+STATE|1|2|2|7|protected?|true
+STATE|1|2|5|5|protected?|true
+STATE|1|2|2|3|protected?|false
+STATE|1|2|2|5|protected?|true
+STATE|1|2|1|4|protected?|true
+STATE|1|2|2|6|protected?|true
+STATE|1|2|5|7|protected?|true
+STATE|1|2|3|0|protected?|false
+STATE|1|2|4|5|protected?|false
+STATE|1|2|0|1|protected?|false
+STATE|1|2|7|4|protected?|false
+STATE|1|2|7|7|protected?|false
+STATE|1|2|0|3|protected?|true
+STATE|1|2|0|6|protected?|true
+STATE|1|2|6|3|protected?|false
+STATE|1|2|1|2|protected?|true
+STATE|1|2|2|1|protected?|false
+STATE|1|2|2|2|protected?|false
+STATE|1|2|3|5|protected?|true
+STATE|1|2|7|6|protected?|false
+STATE|1|2|0|5|protected?|false
+STATE|1|2|1|0|protected?|false
+STATE|1|2|7|0|protected?|false
+STATE|1|2|6|2|protected?|false
+STATE|1|2|7|2|protected?|false
+STATE|1|2|6|4|protected?|false
+STATE|1|2|7|1|protected?|false
+STATE|1|2|4|1|protected?|false
+STATE|1|2|5|0|protected?|false
+STATE|1|2|5|3|protected?|false
+STATE|1|2|1|6|protected?|false
+STATE|1|2|6|7|protected?|true
+STATE|1|2|1|1|protected?|false
+STATE|1|2|6|5|protected?|true
+STATE|1|2|4|6|protected?|false
+STATE|1|2|3|7|protected?|true
+STATE|1|2|5|6|protected?|false
+STATE|1|2|5|6|water?|true
+STATE|1|2|7|5|water?|false
+STATE|1|2|6|4|water?|false
+STATE|1|2|4|6|water?|true
+STATE|1|2|5|5|water?|true
+STATE|1|2|2|6|water?|true
+STATE|1|2|1|1|water?|false
+STATE|1|2|4|3|water?|true
+STATE|1|2|5|7|water?|true
+STATE|1|2|3|1|water?|false
+STATE|1|2|7|1|water?|false
+STATE|1|2|6|3|water?|false
+STATE|1|2|3|4|water?|false
+STATE|1|2|1|7|water?|true
+STATE|1|2|3|5|water?|false
+STATE|1|2|1|0|water?|false
+STATE|1|2|4|4|water?|false
+STATE|1|2|0|6|water?|false
+STATE|1|2|6|5|water?|false
+STATE|1|2|2|7|water?|false
+STATE|1|2|3|6|water?|true
+STATE|1|2|4|7|water?|false
+STATE|1|2|2|5|water?|false
+STATE|1|2|2|4|water?|false
+STATE|1|2|0|2|water?|false
+STATE|1|2|3|3|water?|true
+STATE|1|2|0|7|water?|false
+STATE|1|2|4|1|water?|false
+STATE|1|2|7|3|water?|false
+STATE|1|2|1|6|water?|true
+STATE|1|2|6|1|water?|true
+STATE|1|2|7|4|water?|false
+STATE|1|2|0|5|water?|false
+STATE|1|2|4|5|water?|false
+STATE|1|2|5|1|water?|false
+STATE|1|2|1|2|water?|false
+STATE|1|2|6|2|water?|false
+STATE|1|2|6|6|water?|true
+STATE|1|2|0|0|water?|false
+STATE|1|2|5|2|water?|true
+STATE|1|2|3|7|water?|true
+STATE|1|2|7|7|water?|false
+STATE|1|2|2|1|water?|false
+STATE|1|2|5|3|water?|true
+STATE|1|2|0|4|water?|false
+STATE|1|2|0|3|water?|false
+STATE|1|2|4|0|water?|false
+STATE|1|2|7|0|water?|false
+STATE|1|2|7|2|water?|false
+STATE|1|2|4|2|water?|false
+STATE|1|2|3|2|water?|false
+STATE|1|2|3|0|water?|false
+STATE|1|2|1|4|water?|false
+STATE|1|2|2|2|water?|false
+STATE|1|2|5|0|water?|false
+STATE|1|2|6|0|water?|true
+STATE|1|2|7|6|water?|false
+STATE|1|2|1|3|water?|false
+STATE|1|2|6|7|water?|true
+STATE|1|2|5|4|water?|true
+STATE|1|2|2|3|water?|false
+STATE|1|2|0|1|water?|false
+STATE|1|2|2|0|water?|false
+STATE|1|2|1|5|water?|true
+STATE|1|2|4|0|cropped?|false
+STATE|1|2|2|5|cropped?|false
+STATE|1|2|2|7|cropped?|false
+STATE|1|2|3|0|cropped?|false
+STATE|1|2|4|4|cropped?|false
+STATE|1|2|0|3|cropped?|false
+STATE|1|2|2|2|cropped?|false
+STATE|1|2|7|5|cropped?|false
+STATE|1|2|7|0|cropped?|false
+STATE|1|2|0|1|cropped?|false
+STATE|1|2|7|7|cropped?|false
+STATE|1|2|1|2|cropped?|false
+STATE|1|2|6|3|cropped?|false
+STATE|1|2|1|6|cropped?|false
+STATE|1|2|2|0|cropped?|false
+STATE|1|2|6|4|cropped?|false
+STATE|1|2|0|2|cropped?|false
+STATE|1|2|2|1|cropped?|false
+STATE|1|2|1|5|cropped?|false
+STATE|1|2|1|4|cropped?|false
+STATE|1|2|3|5|cropped?|true
+STATE|1|2|4|6|cropped?|false
+STATE|1|2|6|7|cropped?|false
+STATE|1|2|1|7|cropped?|false
+STATE|1|2|2|4|cropped?|false
+STATE|1|2|0|5|cropped?|false
+STATE|1|2|7|6|cropped?|false
+STATE|1|2|6|5|cropped?|false
+STATE|1|2|6|0|cropped?|false
+STATE|1|2|3|6|cropped?|false
+STATE|1|2|3|4|cropped?|false
+STATE|1|2|5|2|cropped?|false
+STATE|1|2|7|3|cropped?|false
+STATE|1|2|3|7|cropped?|false
+STATE|1|2|4|7|cropped?|false
+STATE|1|2|4|1|cropped?|false
+STATE|1|2|5|6|cropped?|false
+STATE|1|2|5|3|cropped?|false
+STATE|1|2|5|4|cropped?|false
+STATE|1|2|6|6|cropped?|false
+STATE|1|2|0|6|cropped?|false
+STATE|1|2|3|2|cropped?|false
+STATE|1|2|0|7|cropped?|false
+STATE|1|2|0|0|cropped?|false
+STATE|1|2|2|3|cropped?|true
+STATE|1|2|3|1|cropped?|false
+STATE|1|2|4|5|cropped?|true
+STATE|1|2|5|7|cropped?|false
+STATE|1|2|4|2|cropped?|false
+STATE|1|2|7|4|cropped?|false
+STATE|1|2|5|1|cropped?|false
+STATE|1|2|6|1|cropped?|false
+STATE|1|2|3|3|cropped?|false
+STATE|1|2|1|0|cropped?|false
+STATE|1|2|2|6|cropped?|false
+STATE|1|2|7|1|cropped?|false
+STATE|1|2|4|3|cropped?|false
+STATE|1|2|5|0|cropped?|false
+STATE|1|2|7|2|cropped?|false
+STATE|1|2|6|2|cropped?|false
+STATE|1|2|0|4|cropped?|false
+STATE|1|2|5|5|cropped?|false
+STATE|1|2|1|3|cropped?|true
+STATE|1|2|1|1|cropped?|true
+STATE|1|2|0|6|driedUp?|false
+STATE|1|2|0|0|driedUp?|false
+STATE|1|2|1|0|driedUp?|false
+STATE|1|2|4|7|driedUp?|false
+STATE|1|2|5|7|driedUp?|false
+STATE|1|2|6|6|driedUp?|false
+STATE|1|2|6|2|driedUp?|false
+STATE|1|2|2|0|driedUp?|false
+STATE|1|2|3|1|driedUp?|false
+STATE|1|2|1|5|driedUp?|false
+STATE|1|2|6|5|driedUp?|false
+STATE|1|2|1|4|driedUp?|false
+STATE|1|2|3|5|driedUp?|false
+STATE|1|2|6|7|driedUp?|false
+STATE|1|2|0|3|driedUp?|false
+STATE|1|2|2|3|driedUp?|false
+STATE|1|2|0|5|driedUp?|false
+STATE|1|2|5|3|driedUp?|false
+STATE|1|2|6|4|driedUp?|false
+STATE|1|2|0|1|driedUp?|false
+STATE|1|2|4|5|driedUp?|false
+STATE|1|2|3|0|driedUp?|false
+STATE|1|2|0|7|driedUp?|false
+STATE|1|2|2|5|driedUp?|false
+STATE|1|2|4|6|driedUp?|false
+STATE|1|2|7|4|driedUp?|false
+STATE|1|2|2|2|driedUp?|false
+STATE|1|2|4|3|driedUp?|false
+STATE|1|2|7|2|driedUp?|false
+STATE|1|2|1|3|driedUp?|false
+STATE|1|2|4|2|driedUp?|false
+STATE|1|2|7|0|driedUp?|false
+STATE|1|2|7|5|driedUp?|false
+STATE|1|2|7|1|driedUp?|false
+STATE|1|2|6|1|driedUp?|false
+STATE|1|2|2|4|driedUp?|false
+STATE|1|2|5|5|driedUp?|false
+STATE|1|2|4|1|driedUp?|false
+STATE|1|2|4|4|driedUp?|false
+STATE|1|2|3|4|driedUp?|false
+STATE|1|2|7|6|driedUp?|false
+STATE|1|2|3|3|driedUp?|true
+STATE|1|2|1|7|driedUp?|false
+STATE|1|2|5|2|driedUp?|false
+STATE|1|2|7|3|driedUp?|false
+STATE|1|2|6|3|driedUp?|false
+STATE|1|2|1|2|driedUp?|false
+STATE|1|2|3|6|driedUp?|true
+STATE|1|2|4|0|driedUp?|false
+STATE|1|2|5|0|driedUp?|false
+STATE|1|2|3|2|driedUp?|false
+STATE|1|2|0|2|driedUp?|false
+STATE|1|2|7|7|driedUp?|false
+STATE|1|2|5|1|driedUp?|false
+STATE|1|2|0|4|driedUp?|false
+STATE|1|2|5|6|driedUp?|false
+STATE|1|2|5|4|driedUp?|false
+STATE|1|2|2|1|driedUp?|false
+STATE|1|2|2|6|driedUp?|true
+STATE|1|2|3|7|driedUp?|false
+STATE|1|2|6|0|driedUp?|false
+STATE|1|2|1|1|driedUp?|false
+STATE|1|2|2|7|driedUp?|false
+STATE|1|2|1|6|driedUp?|false
+STATE|1|2|4|0|soilQuality|0.3887759081603293
+STATE|1|2|7|2|soilQuality|0.0937902127492002
+STATE|1|2|7|5|soilQuality|0.3305949615339811
+STATE|1|2|1|3|soilQuality|0.7697490156359442
+STATE|1|2|2|7|soilQuality|0.8983258551737238
+STATE|1|2|4|3|soilQuality|0.4132704556106724
+STATE|1|2|3|3|soilQuality|0.3854838326397576
+STATE|1|2|0|4|soilQuality|0.823324816046571
+STATE|1|2|7|4|soilQuality|0.3211457490231281
+STATE|1|2|1|4|soilQuality|0.7760436784442216
+STATE|1|2|5|5|soilQuality|0.8580280851871221
+STATE|1|2|2|0|soilQuality|0.03629039292412171
+STATE|1|2|4|6|soilQuality|0.25864938489437633
+STATE|1|2|7|7|soilQuality|0.21564349360095575
+STATE|1|2|1|0|soilQuality|0.1641443591560664
+STATE|1|2|2|3|soilQuality|0.42242142701974783
+STATE|1|2|7|6|soilQuality|0.27841379937191446
+STATE|1|2|1|1|soilQuality|0.17295188505218528
+STATE|1|2|0|5|soilQuality|0.40841397007021063
+STATE|1|2|0|0|soilQuality|0
+STATE|1|2|4|7|soilQuality|0.8466880603572666
+STATE|1|2|0|7|soilQuality|0.8381033022289677
+STATE|1|2|6|6|soilQuality|0.8005701940782252
+STATE|1|2|5|2|soilQuality|0.41203661943770153
+STATE|1|2|1|2|soilQuality|0.6718902901996282
+STATE|1|2|0|1|soilQuality|0.15756605831187775
+STATE|1|2|1|7|soilQuality|0.9639808597938596
+STATE|1|2|2|4|soilQuality|0.6933078940843319
+STATE|1|2|3|6|soilQuality|0.8337722516697893
+STATE|1|2|7|1|soilQuality|0.3604222655681097
+STATE|1|2|0|3|soilQuality|0.7492214534526822
+STATE|1|2|6|4|soilQuality|0.3738873685589282
+STATE|1|2|6|3|soilQuality|0.2807770378815415
+STATE|1|2|7|0|soilQuality|0.15331522337317974
+STATE|1|2|3|5|soilQuality|0.7394292696762036
+STATE|1|2|5|4|soilQuality|0.3956027283199262
+STATE|1|2|6|7|soilQuality|0.7699901914228519
+STATE|1|2|3|2|soilQuality|0.30922301012603437
+STATE|1|2|6|5|soilQuality|0.8502812956330691
+STATE|1|2|6|1|soilQuality|0.3437410829161933
+STATE|1|2|3|0|soilQuality|0.21396529949248125
+STATE|1|2|6|0|soilQuality|0.47237302584763935
+STATE|1|2|4|4|soilQuality|0.19266234740961466
+STATE|1|2|4|1|soilQuality|0.38644723076137283
+STATE|1|2|3|7|soilQuality|1
+STATE|1|2|5|7|soilQuality|0.8397372995684785
+STATE|1|2|1|6|soilQuality|0.5503782747471313
+STATE|1|2|2|5|soilQuality|0.7789216213631958
+STATE|1|2|3|1|soilQuality|0.39282086142357053
+STATE|1|2|5|6|soilQuality|0.4233302957375045
+STATE|1|2|4|2|soilQuality|0.4500539496213846
+STATE|1|2|4|5|soilQuality|0.2202347671208634
+STATE|1|2|5|3|soilQuality|0.39712429006621325
+STATE|1|2|2|2|soilQuality|0.22365568142233216
+STATE|1|2|5|1|soilQuality|0.33509345149573155
+STATE|1|2|1|5|soilQuality|0.34012059593982186
+STATE|1|2|0|2|soilQuality|0.5188272243309568
+STATE|1|2|3|4|soilQuality|0.3624190564283126
+STATE|1|2|0|6|soilQuality|0.9801502338960659
+STATE|1|2|7|3|soilQuality|0.21651775778310417
+STATE|1|2|5|0|soilQuality|0.44540848937868643
+STATE|1|2|6|2|soilQuality|0.344135706642193
+STATE|1|2|2|6|soilQuality|0.9796394489608165
+STATE|1|2|2|1|soilQuality|0.24999580025514903
+STATE|1|2|5|5|treeCount|0
+STATE|1|2|2|7|treeCount|0
+STATE|1|2|5|4|treeCount|0
+STATE|1|2|3|3|treeCount|0
+STATE|1|2|0|7|treeCount|0
+STATE|1|2|1|7|treeCount|0
+STATE|1|2|3|6|treeCount|0
+STATE|1|2|1|1|treeCount|0
+STATE|1|2|7|3|treeCount|1
+STATE|1|2|5|0|treeCount|0
+STATE|1|2|3|7|treeCount|0
+STATE|1|2|3|5|treeCount|1
+STATE|1|2|6|0|treeCount|0
+STATE|1|2|1|2|treeCount|0
+STATE|1|2|0|6|treeCount|0
+STATE|1|2|6|7|treeCount|0
+STATE|1|2|4|0|treeCount|0
+STATE|1|2|0|5|treeCount|0
+STATE|1|2|6|2|treeCount|2
+STATE|1|2|1|0|treeCount|0
+STATE|1|2|4|7|treeCount|0
+STATE|1|2|5|2|treeCount|0
+STATE|1|2|7|7|treeCount|0
+STATE|1|2|0|4|treeCount|1
+STATE|1|2|2|1|treeCount|1
+STATE|1|2|0|3|treeCount|2
+STATE|1|2|3|2|treeCount|0
+STATE|1|2|3|1|treeCount|0
+STATE|1|2|6|4|treeCount|0
+STATE|1|2|2|0|treeCount|1
+STATE|1|2|2|4|treeCount|1
+STATE|1|2|1|3|treeCount|2
+STATE|1|2|0|0|treeCount|0
+STATE|1|2|2|6|treeCount|0
+STATE|1|2|4|4|treeCount|1
+STATE|1|2|2|3|treeCount|0
+STATE|1|2|1|6|treeCount|0
+STATE|1|2|2|2|treeCount|0
+STATE|1|2|4|3|treeCount|0
+STATE|1|2|5|7|treeCount|0
+STATE|1|2|2|5|treeCount|1
+STATE|1|2|4|2|treeCount|0
+STATE|1|2|1|4|treeCount|0
+STATE|1|2|0|2|treeCount|0
+STATE|1|2|7|5|treeCount|0
+STATE|1|2|5|3|treeCount|0
+STATE|1|2|6|3|treeCount|0
+STATE|1|2|4|1|treeCount|0
+STATE|1|2|3|4|treeCount|0
+STATE|1|2|7|0|treeCount|0
+STATE|1|2|1|5|treeCount|0
+STATE|1|2|5|1|treeCount|2
+STATE|1|2|7|6|treeCount|2
+STATE|1|2|4|5|treeCount|0
+STATE|1|2|4|6|treeCount|0
+STATE|1|2|7|2|treeCount|0
+STATE|1|2|7|4|treeCount|0
+STATE|1|2|5|6|treeCount|0
+STATE|1|2|6|5|treeCount|1
+STATE|1|2|7|1|treeCount|0
+STATE|1|2|0|1|treeCount|0
+STATE|1|2|3|0|treeCount|0
+STATE|1|2|6|1|treeCount|0
+STATE|1|2|6|6|treeCount|0
+STATE|1|2|7|7|currentBiomass|0
+STATE|1|2|3|0|currentBiomass|0
+STATE|1|2|4|4|currentBiomass|0
+STATE|1|2|2|6|currentBiomass|0
+STATE|1|2|6|5|currentBiomass|0
+STATE|1|2|4|6|currentBiomass|0
+STATE|1|2|2|0|currentBiomass|0
+STATE|1|2|3|5|currentBiomass|0
+STATE|1|2|1|4|currentBiomass|0
+STATE|1|2|4|7|currentBiomass|0
+STATE|1|2|5|6|currentBiomass|0
+STATE|1|2|1|6|currentBiomass|0
+STATE|1|2|0|2|currentBiomass|0
+STATE|1|2|0|3|currentBiomass|0
+STATE|1|2|5|5|currentBiomass|0
+STATE|1|2|4|0|currentBiomass|0
+STATE|1|2|0|0|currentBiomass|0
+STATE|1|2|4|1|currentBiomass|0
+STATE|1|2|5|4|currentBiomass|0
+STATE|1|2|0|6|currentBiomass|0
+STATE|1|2|2|7|currentBiomass|0
+STATE|1|2|6|0|currentBiomass|0
+STATE|1|2|7|3|currentBiomass|0
+STATE|1|2|1|3|currentBiomass|0
+STATE|1|2|4|2|currentBiomass|0
+STATE|1|2|2|1|currentBiomass|0
+STATE|1|2|3|2|currentBiomass|0
+STATE|1|2|7|6|currentBiomass|0
+STATE|1|2|0|1|currentBiomass|0
+STATE|1|2|7|0|currentBiomass|0
+STATE|1|2|0|5|currentBiomass|0
+STATE|1|2|7|1|currentBiomass|0
+STATE|1|2|5|0|currentBiomass|0
+STATE|1|2|3|7|currentBiomass|0
+STATE|1|2|6|3|currentBiomass|0
+STATE|1|2|4|3|currentBiomass|0
+STATE|1|2|1|5|currentBiomass|0
+STATE|1|2|7|4|currentBiomass|0
+STATE|1|2|1|2|currentBiomass|0
+STATE|1|2|5|7|currentBiomass|0
+STATE|1|2|2|4|currentBiomass|0
+STATE|1|2|3|1|currentBiomass|0
+STATE|1|2|5|1|currentBiomass|0
+STATE|1|2|7|5|currentBiomass|0
+STATE|1|2|0|7|currentBiomass|0
+STATE|1|2|3|4|currentBiomass|0
+STATE|1|2|2|2|currentBiomass|0
+STATE|1|2|5|3|currentBiomass|0
+STATE|1|2|0|4|currentBiomass|0
+STATE|1|2|2|5|currentBiomass|0
+STATE|1|2|1|1|currentBiomass|0
+STATE|1|2|6|7|currentBiomass|0
+STATE|1|2|6|2|currentBiomass|0
+STATE|1|2|5|2|currentBiomass|0
+STATE|1|2|6|1|currentBiomass|0
+STATE|1|2|2|3|currentBiomass|0
+STATE|1|2|1|0|currentBiomass|0
+STATE|1|2|7|2|currentBiomass|0
+STATE|1|2|6|4|currentBiomass|0
+STATE|1|2|6|6|currentBiomass|0
+STATE|1|2|3|6|currentBiomass|0
+STATE|1|2|4|5|currentBiomass|0
+STATE|1|2|3|3|currentBiomass|0
+STATE|1|2|1|7|currentBiomass|0
+STATE|1|2|1|7|waterLevel|0
+STATE|1|2|2|4|waterLevel|-99
+STATE|1|2|4|7|waterLevel|-99
+STATE|1|2|1|6|waterLevel|1
+STATE|1|2|4|6|waterLevel|2
+STATE|1|2|5|5|waterLevel|2
+STATE|1|2|0|1|waterLevel|-99
+STATE|1|2|1|1|waterLevel|-99
+STATE|1|2|3|5|waterLevel|-99
+STATE|1|2|7|4|waterLevel|-99
+STATE|1|2|0|4|waterLevel|-99
+STATE|1|2|5|4|waterLevel|0
+STATE|1|2|6|0|waterLevel|0
+STATE|1|2|2|0|waterLevel|-99
+STATE|1|2|0|5|waterLevel|-99
+STATE|1|2|7|7|waterLevel|-99
+STATE|1|2|6|3|waterLevel|-99
+STATE|1|2|6|5|waterLevel|-99
+STATE|1|2|0|3|waterLevel|-99
+STATE|1|2|7|0|waterLevel|-99
+STATE|1|2|3|3|waterLevel|3
+STATE|1|2|1|3|waterLevel|-99
+STATE|1|2|5|1|waterLevel|-99
+STATE|1|2|2|6|waterLevel|4
+STATE|1|2|6|7|waterLevel|1
+STATE|1|2|0|6|waterLevel|-99
+STATE|1|2|3|7|waterLevel|0
+STATE|1|2|7|1|waterLevel|-99
+STATE|1|2|2|3|waterLevel|-99
+STATE|1|2|0|7|waterLevel|-99
+STATE|1|2|1|0|waterLevel|-99
+STATE|1|2|5|6|waterLevel|1
+STATE|1|2|4|0|waterLevel|-99
+STATE|1|2|6|4|waterLevel|-99
+STATE|1|2|1|2|waterLevel|-99
+STATE|1|2|2|2|waterLevel|-99
+STATE|1|2|7|2|waterLevel|-99
+STATE|1|2|1|5|waterLevel|2
+STATE|1|2|2|5|waterLevel|-99
+STATE|1|2|5|2|waterLevel|0
+STATE|1|2|3|0|waterLevel|-99
+STATE|1|2|3|1|waterLevel|-99
+STATE|1|2|7|3|waterLevel|-99
+STATE|1|2|6|1|waterLevel|1
+STATE|1|2|5|3|waterLevel|1
+STATE|1|2|0|2|waterLevel|-99
+STATE|1|2|7|5|waterLevel|-99
+STATE|1|2|4|5|waterLevel|-99
+STATE|1|2|3|6|waterLevel|3
+STATE|1|2|2|1|waterLevel|-99
+STATE|1|2|3|2|waterLevel|-99
+STATE|1|2|4|4|waterLevel|-99
+STATE|1|2|6|6|waterLevel|2
+STATE|1|2|1|4|waterLevel|-99
+STATE|1|2|0|0|waterLevel|-99
+STATE|1|2|2|7|waterLevel|-99
+STATE|1|2|4|1|waterLevel|-99
+STATE|1|2|7|6|waterLevel|-99
+STATE|1|2|4|2|waterLevel|-99
+STATE|1|2|5|0|waterLevel|-99
+STATE|1|2|4|3|waterLevel|2
+STATE|1|2|5|7|waterLevel|0
+STATE|1|2|6|2|waterLevel|-99
+STATE|1|2|3|4|waterLevel|-99
+STATE|1|2|3|2|elephantCount|0
+STATE|1|2|6|0|elephantCount|0
+STATE|1|2|0|0|elephantCount|0
+STATE|1|2|2|3|elephantCount|0
+STATE|1|2|4|4|elephantCount|0
+STATE|1|2|0|7|elephantCount|0
+STATE|1|2|2|7|elephantCount|0
+STATE|1|2|3|6|elephantCount|0
+STATE|1|2|3|7|elephantCount|0
+STATE|1|2|1|4|elephantCount|2
+STATE|1|2|7|3|elephantCount|0
+STATE|1|2|2|4|elephantCount|2
+STATE|1|2|5|1|elephantCount|0
+STATE|1|2|2|2|elephantCount|0
+STATE|1|2|6|6|elephantCount|0
+STATE|1|2|6|1|elephantCount|0
+STATE|1|2|7|1|elephantCount|0
+STATE|1|2|0|3|elephantCount|0
+STATE|1|2|6|2|elephantCount|0
+STATE|1|2|1|7|elephantCount|0
+STATE|1|2|2|1|elephantCount|0
+STATE|1|2|3|1|elephantCount|0
+STATE|1|2|5|6|elephantCount|0
+STATE|1|2|5|4|elephantCount|1
+STATE|1|2|7|7|elephantCount|0
+STATE|1|2|4|2|elephantCount|0
+STATE|1|2|4|6|elephantCount|0
+STATE|1|2|1|1|elephantCount|0
+STATE|1|2|1|3|elephantCount|0
+STATE|1|2|5|3|elephantCount|1
+STATE|1|2|3|5|elephantCount|0
+STATE|1|2|0|2|elephantCount|0
+STATE|1|2|1|2|elephantCount|0
+STATE|1|2|6|3|elephantCount|0
+STATE|1|2|6|4|elephantCount|1
+STATE|1|2|4|0|elephantCount|0
+STATE|1|2|1|5|elephantCount|1
+STATE|1|2|2|0|elephantCount|0
+STATE|1|2|4|7|elephantCount|0
+STATE|1|2|5|5|elephantCount|0
+STATE|1|2|4|3|elephantCount|0
+STATE|1|2|2|6|elephantCount|0
+STATE|1|2|6|7|elephantCount|0
+STATE|1|2|4|1|elephantCount|0
+STATE|1|2|7|5|elephantCount|0
+STATE|1|2|7|6|elephantCount|0
+STATE|1|2|4|5|elephantCount|0
+STATE|1|2|7|0|elephantCount|0
+STATE|1|2|3|3|elephantCount|0
+STATE|1|2|3|4|elephantCount|0
+STATE|1|2|5|0|elephantCount|0
+STATE|1|2|2|5|elephantCount|0
+STATE|1|2|7|4|elephantCount|0
+STATE|1|2|0|1|elephantCount|0
+STATE|1|2|3|0|elephantCount|0
+STATE|1|2|1|0|elephantCount|0
+STATE|1|2|0|5|elephantCount|1
+STATE|1|2|5|2|elephantCount|0
+STATE|1|2|1|6|elephantCount|0
+STATE|1|2|0|4|elephantCount|2
+STATE|1|2|5|7|elephantCount|0
+STATE|1|2|0|6|elephantCount|0
+STATE|1|2|6|5|elephantCount|0
+STATE|1|2|7|2|elephantCount|0
+STATE|1|2|6|1|myWaterDistance|0
+STATE|1|2|3|5|myWaterDistance|1.4142135623730951
+STATE|1|2|0|3|myWaterDistance|2.23606797749979
+STATE|1|2|6|4|myWaterDistance|1
+STATE|1|2|7|5|myWaterDistance|1.4142135623730951
+STATE|1|2|7|4|myWaterDistance|2
+STATE|1|2|3|2|myWaterDistance|1.4142135623730951
+STATE|1|2|6|3|myWaterDistance|1
+STATE|1|2|0|4|myWaterDistance|1.4142135623730951
+STATE|1|2|1|3|myWaterDistance|2
+STATE|1|2|5|7|myWaterDistance|0
+STATE|1|2|5|0|myWaterDistance|1
+STATE|1|2|4|2|myWaterDistance|1
+STATE|1|2|5|1|myWaterDistance|1
+STATE|1|2|4|6|myWaterDistance|0
+STATE|1|2|7|0|myWaterDistance|1
+STATE|1|2|2|1|myWaterDistance|2.8284271247461903
+STATE|1|2|2|7|myWaterDistance|1
+STATE|1|2|5|2|myWaterDistance|0
+STATE|1|2|3|0|myWaterDistance|2.8284271247461903
+STATE|1|2|3|7|myWaterDistance|0
+STATE|1|2|1|7|myWaterDistance|0
+STATE|1|2|2|2|myWaterDistance|2.23606797749979
+STATE|1|2|4|1|myWaterDistance|1.4142135623730951
+STATE|1|2|7|1|myWaterDistance|1
+STATE|1|2|3|3|myWaterDistance|1
+STATE|1|2|0|0|myWaterDistance|5
+STATE|1|2|7|2|myWaterDistance|1.4142135623730951
+STATE|1|2|5|6|myWaterDistance|0
+STATE|1|2|4|5|myWaterDistance|1
+STATE|1|2|6|6|myWaterDistance|0
+STATE|1|2|1|0|myWaterDistance|4.242640687119285
+STATE|1|2|2|4|myWaterDistance|1.4142135623730951
+STATE|1|2|3|4|myWaterDistance|1.4142135623730951
+STATE|1|2|4|3|myWaterDistance|0
+STATE|1|2|7|3|myWaterDistance|2
+STATE|1|2|1|1|myWaterDistance|3.605551275463989
+STATE|1|2|0|1|myWaterDistance|4.123105625617661
+STATE|1|2|1|2|myWaterDistance|3
+STATE|1|2|6|5|myWaterDistance|1
+STATE|1|2|7|7|myWaterDistance|1
+STATE|1|2|0|7|myWaterDistance|1
+STATE|1|2|2|6|myWaterDistance|1
+STATE|1|2|6|2|myWaterDistance|1
+STATE|1|2|4|4|myWaterDistance|1
+STATE|1|2|3|6|myWaterDistance|1
+STATE|1|2|6|0|myWaterDistance|0
+STATE|1|2|2|3|myWaterDistance|2
+STATE|1|2|1|4|myWaterDistance|1
+STATE|1|2|2|0|myWaterDistance|3.605551275463989
+STATE|1|2|4|0|myWaterDistance|2
+STATE|1|2|4|7|myWaterDistance|1
+STATE|1|2|5|4|myWaterDistance|0
+STATE|1|2|6|7|myWaterDistance|0
+STATE|1|2|0|6|myWaterDistance|1
+STATE|1|2|0|2|myWaterDistance|3.1622776601683795
+STATE|1|2|3|1|myWaterDistance|2.23606797749979
+STATE|1|2|5|5|myWaterDistance|0
+STATE|1|2|1|5|myWaterDistance|0
+STATE|1|2|1|6|myWaterDistance|0
+STATE|1|2|0|5|myWaterDistance|1
+STATE|1|2|5|3|myWaterDistance|0
+STATE|1|2|2|5|myWaterDistance|1
+STATE|1|2|7|6|myWaterDistance|1
+STATE|1|2|6|3|harvestYield|0
+STATE|1|2|0|5|harvestYield|0
+STATE|1|2|0|1|harvestYield|0
+STATE|1|2|6|4|harvestYield|0
+STATE|1|2|6|2|harvestYield|0
+STATE|1|2|3|7|harvestYield|0
+STATE|1|2|5|3|harvestYield|0
+STATE|1|2|7|5|harvestYield|0
+STATE|1|2|3|6|harvestYield|0
+STATE|1|2|3|5|harvestYield|0
+STATE|1|2|1|3|harvestYield|0
+STATE|1|2|0|4|harvestYield|0
+STATE|1|2|5|2|harvestYield|0
+STATE|1|2|0|0|harvestYield|0
+STATE|1|2|2|5|harvestYield|0
+STATE|1|2|7|6|harvestYield|0
+STATE|1|2|4|0|harvestYield|0
+STATE|1|2|0|6|harvestYield|0
+STATE|1|2|7|3|harvestYield|0
+STATE|1|2|1|1|harvestYield|0
+STATE|1|2|7|0|harvestYield|0
+STATE|1|2|5|7|harvestYield|0
+STATE|1|2|7|1|harvestYield|0
+STATE|1|2|6|7|harvestYield|0
+STATE|1|2|7|4|harvestYield|0
+STATE|1|2|4|3|harvestYield|0
+STATE|1|2|1|7|harvestYield|0
+STATE|1|2|4|1|harvestYield|0
+STATE|1|2|3|2|harvestYield|0
+STATE|1|2|2|0|harvestYield|0
+STATE|1|2|4|6|harvestYield|0
+STATE|1|2|2|3|harvestYield|0
+STATE|1|2|2|4|harvestYield|0
+STATE|1|2|3|3|harvestYield|0
+STATE|1|2|1|0|harvestYield|0
+STATE|1|2|4|4|harvestYield|0
+STATE|1|2|2|6|harvestYield|0
+STATE|1|2|1|2|harvestYield|0
+STATE|1|2|6|1|harvestYield|0
+STATE|1|2|0|3|harvestYield|0
+STATE|1|2|1|4|harvestYield|0
+STATE|1|2|7|2|harvestYield|0
+STATE|1|2|6|5|harvestYield|0
+STATE|1|2|3|4|harvestYield|0
+STATE|1|2|3|1|harvestYield|0
+STATE|1|2|1|5|harvestYield|0
+STATE|1|2|1|6|harvestYield|0
+STATE|1|2|2|2|harvestYield|0
+STATE|1|2|2|1|harvestYield|0
+STATE|1|2|5|0|harvestYield|0
+STATE|1|2|5|1|harvestYield|0
+STATE|1|2|7|7|harvestYield|0
+STATE|1|2|5|4|harvestYield|0
+STATE|1|2|4|7|harvestYield|0
+STATE|1|2|2|7|harvestYield|0
+STATE|1|2|0|7|harvestYield|0
+STATE|1|2|6|0|harvestYield|0
+STATE|1|2|3|0|harvestYield|0
+STATE|1|2|4|2|harvestYield|0
+STATE|1|2|4|5|harvestYield|0
+STATE|1|2|5|5|harvestYield|0
+STATE|1|2|5|6|harvestYield|0
+STATE|1|2|6|6|harvestYield|0
+STATE|1|2|0|2|harvestYield|0
+STATE|1|2|3|3|playerHarvestRound|[0 0 0]
+STATE|1|2|1|3|playerHarvestRound|[0 0 0]
+STATE|1|2|2|1|playerHarvestRound|[0 0 0]
+STATE|1|2|3|5|playerHarvestRound|[0 0 0]
+STATE|1|2|1|0|playerHarvestRound|[0 0 0]
+STATE|1|2|5|2|playerHarvestRound|[0 0 0]
+STATE|1|2|6|7|playerHarvestRound|[0 0 0]
+STATE|1|2|0|7|playerHarvestRound|[0 0 0]
+STATE|1|2|1|4|playerHarvestRound|[0 0 0]
+STATE|1|2|3|7|playerHarvestRound|[0 0 0]
+STATE|1|2|4|3|playerHarvestRound|[0 0 0]
+STATE|1|2|6|1|playerHarvestRound|[0 0 0]
+STATE|1|2|5|4|playerHarvestRound|[0 0 0]
+STATE|1|2|5|1|playerHarvestRound|[0 0 0]
+STATE|1|2|3|1|playerHarvestRound|[0 0 0]
+STATE|1|2|7|2|playerHarvestRound|[0 0 0]
+STATE|1|2|1|1|playerHarvestRound|[0 0 0]
+STATE|1|2|7|4|playerHarvestRound|[0 0 0]
+STATE|1|2|7|0|playerHarvestRound|[0 0 0]
+STATE|1|2|7|6|playerHarvestRound|[0 0 0]
+STATE|1|2|2|6|playerHarvestRound|[0 0 0]
+STATE|1|2|7|3|playerHarvestRound|[0 0 0]
+STATE|1|2|1|5|playerHarvestRound|[0 0 0]
+STATE|1|2|5|7|playerHarvestRound|[0 0 0]
+STATE|1|2|4|1|playerHarvestRound|[0 0 0]
+STATE|1|2|1|2|playerHarvestRound|[0 0 0]
+STATE|1|2|1|7|playerHarvestRound|[0 0 0]
+STATE|1|2|7|5|playerHarvestRound|[0 0 0]
+STATE|1|2|5|3|playerHarvestRound|[0 0 0]
+STATE|1|2|5|5|playerHarvestRound|[0 0 0]
+STATE|1|2|3|0|playerHarvestRound|[0 0 0]
+STATE|1|2|2|5|playerHarvestRound|[0 0 0]
+STATE|1|2|7|7|playerHarvestRound|[0 0 0]
+STATE|1|2|6|2|playerHarvestRound|[0 0 0]
+STATE|1|2|4|4|playerHarvestRound|[0 0 0]
+STATE|1|2|0|2|playerHarvestRound|[0 0 0]
+STATE|1|2|6|5|playerHarvestRound|[0 0 0]
+STATE|1|2|3|4|playerHarvestRound|[0 0 0]
+STATE|1|2|0|0|playerHarvestRound|[0 0 0]
+STATE|1|2|6|6|playerHarvestRound|[0 0 0]
+STATE|1|2|5|6|playerHarvestRound|[0 0 0]
+STATE|1|2|4|5|playerHarvestRound|[0 0 0]
+STATE|1|2|4|7|playerHarvestRound|[0 0 0]
+STATE|1|2|4|0|playerHarvestRound|[0 0 0]
+STATE|1|2|6|4|playerHarvestRound|[0 0 0]
+STATE|1|2|0|1|playerHarvestRound|[0 0 0]
+STATE|1|2|3|6|playerHarvestRound|[0 0 0]
+STATE|1|2|4|2|playerHarvestRound|[0 0 0]
+STATE|1|2|3|2|playerHarvestRound|[0 0 0]
+STATE|1|2|2|3|playerHarvestRound|[0 0 0]
+STATE|1|2|0|5|playerHarvestRound|[0 0 0]
+STATE|1|2|6|0|playerHarvestRound|[0 0 0]
+STATE|1|2|2|0|playerHarvestRound|[0 0 0]
+STATE|1|2|2|2|playerHarvestRound|[0 0 0]
+STATE|1|2|6|3|playerHarvestRound|[0 0 0]
+STATE|1|2|2|7|playerHarvestRound|[0 0 0]
+STATE|1|2|0|3|playerHarvestRound|[0 0 0]
+STATE|1|2|7|1|playerHarvestRound|[0 0 0]
+STATE|1|2|5|0|playerHarvestRound|[0 0 0]
+STATE|1|2|0|4|playerHarvestRound|[0 0 0]
+STATE|1|2|1|6|playerHarvestRound|[0 0 0]
+STATE|1|2|4|6|playerHarvestRound|[0 0 0]
+STATE|1|2|2|4|playerHarvestRound|[0 0 0]
+STATE|1|2|0|6|playerHarvestRound|[0 0 0]
+STATE|1|2|4|0|fined?|false
+STATE|1|2|0|5|fined?|false
+STATE|1|2|3|3|fined?|false
+STATE|1|2|1|3|fined?|false
+STATE|1|2|4|3|fined?|false
+STATE|1|2|0|0|fined?|false
+STATE|1|2|5|4|fined?|false
+STATE|1|2|4|4|fined?|false
+STATE|1|2|1|6|fined?|false
+STATE|1|2|2|4|fined?|false
+STATE|1|2|5|0|fined?|false
+STATE|1|2|2|5|fined?|false
+STATE|1|2|4|2|fined?|false
+STATE|1|2|1|0|fined?|false
+STATE|1|2|2|2|fined?|false
+STATE|1|2|7|4|fined?|false
+STATE|1|2|3|7|fined?|false
+STATE|1|2|3|1|fined?|false
+STATE|1|2|7|3|fined?|false
+STATE|1|2|5|3|fined?|false
+STATE|1|2|5|1|fined?|false
+STATE|1|2|5|5|fined?|false
+STATE|1|2|4|5|fined?|false
+STATE|1|2|6|4|fined?|false
+STATE|1|2|7|2|fined?|false
+STATE|1|2|5|7|fined?|false
+STATE|1|2|1|1|fined?|false
+STATE|1|2|3|2|fined?|false
+STATE|1|2|6|7|fined?|false
+STATE|1|2|1|2|fined?|false
+STATE|1|2|4|6|fined?|false
+STATE|1|2|2|1|fined?|false
+STATE|1|2|0|3|fined?|false
+STATE|1|2|1|4|fined?|false
+STATE|1|2|1|5|fined?|false
+STATE|1|2|0|6|fined?|false
+STATE|1|2|3|6|fined?|false
+STATE|1|2|6|0|fined?|false
+STATE|1|2|2|7|fined?|false
+STATE|1|2|3|4|fined?|false
+STATE|1|2|6|1|fined?|false
+STATE|1|2|5|2|fined?|false
+STATE|1|2|6|6|fined?|false
+STATE|1|2|0|1|fined?|false
+STATE|1|2|5|6|fined?|false
+STATE|1|2|4|1|fined?|false
+STATE|1|2|3|5|fined?|false
+STATE|1|2|2|6|fined?|false
+STATE|1|2|6|3|fined?|false
+STATE|1|2|1|7|fined?|false
+STATE|1|2|7|6|fined?|false
+STATE|1|2|7|1|fined?|false
+STATE|1|2|2|3|fined?|false
+STATE|1|2|0|2|fined?|false
+STATE|1|2|7|7|fined?|false
+STATE|1|2|7|0|fined?|false
+STATE|1|2|3|0|fined?|false
+STATE|1|2|6|5|fined?|false
+STATE|1|2|2|0|fined?|false
+STATE|1|2|6|2|fined?|false
+STATE|1|2|4|7|fined?|false
+STATE|1|2|0|7|fined?|false
+STATE|1|2|0|4|fined?|false
+STATE|1|2|7|5|fined?|false
+STATE|1|2|2|3|fineAmount|0
+STATE|1|2|0|1|fineAmount|0
+STATE|1|2|7|4|fineAmount|0
+STATE|1|2|7|6|fineAmount|0
+STATE|1|2|1|6|fineAmount|0
+STATE|1|2|6|6|fineAmount|0
+STATE|1|2|1|3|fineAmount|0
+STATE|1|2|6|0|fineAmount|0
+STATE|1|2|0|5|fineAmount|0
+STATE|1|2|0|3|fineAmount|0
+STATE|1|2|3|7|fineAmount|0
+STATE|1|2|1|7|fineAmount|0
+STATE|1|2|5|7|fineAmount|0
+STATE|1|2|7|0|fineAmount|0
+STATE|1|2|3|2|fineAmount|0
+STATE|1|2|7|1|fineAmount|0
+STATE|1|2|5|3|fineAmount|0
+STATE|1|2|4|6|fineAmount|0
+STATE|1|2|0|4|fineAmount|0
+STATE|1|2|3|3|fineAmount|0
+STATE|1|2|4|7|fineAmount|0
+STATE|1|2|4|1|fineAmount|0
+STATE|1|2|5|6|fineAmount|0
+STATE|1|2|5|1|fineAmount|0
+STATE|1|2|7|3|fineAmount|0
+STATE|1|2|4|0|fineAmount|0
+STATE|1|2|6|3|fineAmount|0
+STATE|1|2|0|6|fineAmount|0
+STATE|1|2|7|5|fineAmount|0
+STATE|1|2|6|7|fineAmount|0
+STATE|1|2|3|5|fineAmount|0
+STATE|1|2|4|2|fineAmount|0
+STATE|1|2|5|5|fineAmount|0
+STATE|1|2|1|2|fineAmount|0
+STATE|1|2|2|2|fineAmount|0
+STATE|1|2|2|6|fineAmount|0
+STATE|1|2|2|7|fineAmount|0
+STATE|1|2|2|4|fineAmount|0
+STATE|1|2|1|5|fineAmount|0
+STATE|1|2|6|5|fineAmount|0
+STATE|1|2|6|1|fineAmount|0
+STATE|1|2|1|1|fineAmount|0
+STATE|1|2|5|2|fineAmount|0
+STATE|1|2|4|3|fineAmount|0
+STATE|1|2|3|4|fineAmount|0
+STATE|1|2|2|1|fineAmount|0
+STATE|1|2|3|1|fineAmount|0
+STATE|1|2|2|0|fineAmount|0
+STATE|1|2|3|0|fineAmount|0
+STATE|1|2|0|2|fineAmount|0
+STATE|1|2|7|2|fineAmount|0
+STATE|1|2|3|6|fineAmount|0
+STATE|1|2|2|5|fineAmount|0
+STATE|1|2|7|7|fineAmount|0
+STATE|1|2|1|4|fineAmount|0
+STATE|1|2|0|7|fineAmount|0
+STATE|1|2|6|4|fineAmount|0
+STATE|1|2|5|0|fineAmount|0
+STATE|1|2|6|2|fineAmount|0
+STATE|1|2|5|4|fineAmount|0
+STATE|1|2|4|4|fineAmount|0
+STATE|1|2|1|0|fineAmount|0
+STATE|1|2|4|5|fineAmount|0
+STATE|1|2|0|0|fineAmount|0
+STATE|1|2|7|5|cropOwner|-99
+STATE|1|2|2|1|cropOwner|-99
+STATE|1|2|1|4|cropOwner|-99
+STATE|1|2|0|0|cropOwner|-99
+STATE|1|2|1|2|cropOwner|-99
+STATE|1|2|7|0|cropOwner|-99
+STATE|1|2|4|2|cropOwner|-99
+STATE|1|2|2|5|cropOwner|-99
+STATE|1|2|2|3|cropOwner|2
+STATE|1|2|7|3|cropOwner|-99
+STATE|1|2|5|6|cropOwner|-99
+STATE|1|2|2|4|cropOwner|-99
+STATE|1|2|1|6|cropOwner|-99
+STATE|1|2|5|0|cropOwner|-99
+STATE|1|2|7|4|cropOwner|-99
+STATE|1|2|6|4|cropOwner|-99
+STATE|1|2|7|1|cropOwner|-99
+STATE|1|2|1|1|cropOwner|3
+STATE|1|2|3|2|cropOwner|-99
+STATE|1|2|0|1|cropOwner|-99
+STATE|1|2|3|0|cropOwner|-99
+STATE|1|2|3|3|cropOwner|-99
+STATE|1|2|0|6|cropOwner|-99
+STATE|1|2|2|6|cropOwner|-99
+STATE|1|2|5|3|cropOwner|-99
+STATE|1|2|2|0|cropOwner|-99
+STATE|1|2|6|0|cropOwner|-99
+STATE|1|2|1|7|cropOwner|-99
+STATE|1|2|4|0|cropOwner|-99
+STATE|1|2|2|2|cropOwner|-99
+STATE|1|2|5|5|cropOwner|-99
+STATE|1|2|7|2|cropOwner|-99
+STATE|1|2|4|4|cropOwner|-99
+STATE|1|2|6|6|cropOwner|-99
+STATE|1|2|4|6|cropOwner|-99
+STATE|1|2|5|7|cropOwner|-99
+STATE|1|2|4|5|cropOwner|1
+STATE|1|2|5|4|cropOwner|-99
+STATE|1|2|6|7|cropOwner|-99
+STATE|1|2|6|5|cropOwner|-99
+STATE|1|2|0|2|cropOwner|-99
+STATE|1|2|7|6|cropOwner|-99
+STATE|1|2|0|3|cropOwner|-99
+STATE|1|2|5|1|cropOwner|-99
+STATE|1|2|6|1|cropOwner|-99
+STATE|1|2|4|3|cropOwner|-99
+STATE|1|2|5|2|cropOwner|-99
+STATE|1|2|4|1|cropOwner|-99
+STATE|1|2|6|3|cropOwner|-99
+STATE|1|2|1|5|cropOwner|-99
+STATE|1|2|6|2|cropOwner|-99
+STATE|1|2|3|4|cropOwner|-99
+STATE|1|2|3|6|cropOwner|-99
+STATE|1|2|2|7|cropOwner|-99
+STATE|1|2|0|4|cropOwner|-99
+STATE|1|2|0|5|cropOwner|-99
+STATE|1|2|3|5|cropOwner|1
+STATE|1|2|4|7|cropOwner|-99
+STATE|1|2|1|3|cropOwner|2
+STATE|1|2|0|7|cropOwner|-99
+STATE|1|2|1|0|cropOwner|-99
+STATE|1|2|3|1|cropOwner|-99
+STATE|1|2|3|7|cropOwner|-99
+STATE|1|2|7|7|cropOwner|-99
+STATE|1|2|4|5|defended?|false
+STATE|1|2|1|6|defended?|false
+STATE|1|2|4|1|defended?|false
+STATE|1|2|4|7|defended?|false
+STATE|1|2|2|5|defended?|false
+STATE|1|2|0|6|defended?|false
+STATE|1|2|4|3|defended?|false
+STATE|1|2|3|0|defended?|false
+STATE|1|2|2|0|defended?|false
+STATE|1|2|2|6|defended?|false
+STATE|1|2|2|2|defended?|false
+STATE|1|2|0|4|defended?|false
+STATE|1|2|5|2|defended?|false
+STATE|1|2|3|1|defended?|false
+STATE|1|2|0|5|defended?|false
+STATE|1|2|2|3|defended?|false
+STATE|1|2|0|2|defended?|false
+STATE|1|2|7|4|defended?|false
+STATE|1|2|6|6|defended?|false
+STATE|1|2|3|5|defended?|false
+STATE|1|2|0|7|defended?|false
+STATE|1|2|7|3|defended?|false
+STATE|1|2|0|3|defended?|false
+STATE|1|2|6|5|defended?|false
+STATE|1|2|5|1|defended?|false
+STATE|1|2|1|5|defended?|false
+STATE|1|2|4|2|defended?|false
+STATE|1|2|4|4|defended?|false
+STATE|1|2|2|7|defended?|false
+STATE|1|2|5|5|defended?|false
+STATE|1|2|5|4|defended?|false
+STATE|1|2|5|6|defended?|false
+STATE|1|2|1|2|defended?|false
+STATE|1|2|5|3|defended?|false
+STATE|1|2|6|7|defended?|false
+STATE|1|2|1|3|defended?|false
+STATE|1|2|3|6|defended?|false
+STATE|1|2|6|3|defended?|false
+STATE|1|2|1|1|defended?|false
+STATE|1|2|3|7|defended?|false
+STATE|1|2|5|0|defended?|false
+STATE|1|2|7|0|defended?|false
+STATE|1|2|0|0|defended?|false
+STATE|1|2|7|6|defended?|false
+STATE|1|2|5|7|defended?|false
+STATE|1|2|2|4|defended?|false
+STATE|1|2|7|1|defended?|false
+STATE|1|2|3|4|defended?|false
+STATE|1|2|2|1|defended?|false
+STATE|1|2|0|1|defended?|false
+STATE|1|2|6|4|defended?|false
+STATE|1|2|6|2|defended?|false
+STATE|1|2|6|0|defended?|false
+STATE|1|2|3|3|defended?|false
+STATE|1|2|7|5|defended?|false
+STATE|1|2|7|2|defended?|false
+STATE|1|2|6|1|defended?|false
+STATE|1|2|4|0|defended?|false
+STATE|1|2|7|7|defended?|false
+STATE|1|2|3|2|defended?|false
+STATE|1|2|1|4|defended?|false
+STATE|1|2|1|7|defended?|false
+STATE|1|2|1|0|defended?|false
+STATE|1|2|4|6|defended?|false
+STATE|1|2|4|4|cropCount|0
+STATE|1|2|0|4|cropCount|0
+STATE|1|2|1|4|cropCount|0
+STATE|1|2|2|1|cropCount|0
+STATE|1|2|4|6|cropCount|0
+STATE|1|2|0|5|cropCount|0
+STATE|1|2|2|7|cropCount|0
+STATE|1|2|3|7|cropCount|0
+STATE|1|2|2|5|cropCount|0
+STATE|1|2|5|0|cropCount|0
+STATE|1|2|1|1|cropCount|3
+STATE|1|2|5|2|cropCount|0
+STATE|1|2|3|0|cropCount|0
+STATE|1|2|0|3|cropCount|0
+STATE|1|2|6|2|cropCount|0
+STATE|1|2|2|0|cropCount|0
+STATE|1|2|3|1|cropCount|0
+STATE|1|2|2|3|cropCount|8
+STATE|1|2|5|5|cropCount|0
+STATE|1|2|2|6|cropCount|0
+STATE|1|2|3|5|cropCount|15
+STATE|1|2|7|1|cropCount|0
+STATE|1|2|7|2|cropCount|0
+STATE|1|2|7|7|cropCount|0
+STATE|1|2|0|6|cropCount|0
+STATE|1|2|4|0|cropCount|0
+STATE|1|2|0|0|cropCount|0
+STATE|1|2|6|1|cropCount|0
+STATE|1|2|7|0|cropCount|0
+STATE|1|2|4|7|cropCount|0
+STATE|1|2|4|1|cropCount|0
+STATE|1|2|0|7|cropCount|0
+STATE|1|2|1|7|cropCount|0
+STATE|1|2|1|3|cropCount|15
+STATE|1|2|7|4|cropCount|0
+STATE|1|2|7|5|cropCount|0
+STATE|1|2|3|3|cropCount|0
+STATE|1|2|5|7|cropCount|0
+STATE|1|2|0|2|cropCount|0
+STATE|1|2|0|1|cropCount|0
+STATE|1|2|6|3|cropCount|0
+STATE|1|2|3|6|cropCount|0
+STATE|1|2|2|4|cropCount|0
+STATE|1|2|4|3|cropCount|0
+STATE|1|2|1|2|cropCount|0
+STATE|1|2|6|4|cropCount|0
+STATE|1|2|6|7|cropCount|0
+STATE|1|2|1|5|cropCount|0
+STATE|1|2|5|3|cropCount|0
+STATE|1|2|7|3|cropCount|0
+STATE|1|2|2|2|cropCount|0
+STATE|1|2|3|2|cropCount|0
+STATE|1|2|4|5|cropCount|4
+STATE|1|2|7|6|cropCount|0
+STATE|1|2|4|2|cropCount|0
+STATE|1|2|1|6|cropCount|0
+STATE|1|2|6|6|cropCount|0
+STATE|1|2|6|0|cropCount|0
+STATE|1|2|6|5|cropCount|0
+STATE|1|2|5|6|cropCount|0
+STATE|1|2|3|4|cropCount|0
+STATE|1|2|1|0|cropCount|0
+STATE|1|2|5|1|cropCount|0
+STATE|1|2|5|4|cropCount|0
+STATE|1|2|3|6|vegCount|0
+STATE|1|2|2|7|vegCount|17.966517103474477
+STATE|1|2|2|6|vegCount|0
+STATE|1|2|3|2|vegCount|6.184460202520688
+STATE|1|2|4|1|vegCount|7.728944615227457
+STATE|1|2|5|2|vegCount|0
+STATE|1|2|1|7|vegCount|0
+STATE|1|2|0|4|vegCount|16.46649632093142
+STATE|1|2|0|0|vegCount|0
+STATE|1|2|6|3|vegCount|5.61554075763083
+STATE|1|2|1|0|vegCount|3.282887183121328
+STATE|1|2|7|6|vegCount|5.568275987438289
+STATE|1|2|4|4|vegCount|3.853246948192293
+STATE|1|2|5|0|vegCount|8.908169787573728
+STATE|1|2|7|7|vegCount|4.312869872019115
+STATE|1|2|0|6|vegCount|19.60300467792132
+STATE|1|2|6|1|vegCount|0
+STATE|1|2|4|5|vegCount|0
+STATE|1|2|7|2|vegCount|1.875804254984004
+STATE|1|2|1|2|vegCount|13.437805803992564
+STATE|1|2|3|3|vegCount|0
+STATE|1|2|6|6|vegCount|0
+STATE|1|2|2|3|vegCount|0
+STATE|1|2|3|4|vegCount|7.248381128566253
+STATE|1|2|1|1|vegCount|0
+STATE|1|2|3|1|vegCount|7.856417228471411
+STATE|1|2|4|3|vegCount|0
+STATE|1|2|3|0|vegCount|4.279305989849625
+STATE|1|2|4|7|vegCount|16.93376120714533
+STATE|1|2|2|2|vegCount|4.473113628446644
+STATE|1|2|1|5|vegCount|0
+STATE|1|2|6|4|vegCount|7.477747371178563
+STATE|1|2|7|3|vegCount|4.330355155662083
+STATE|1|2|0|5|vegCount|8.168279401404213
+STATE|1|2|0|7|vegCount|16.762066044579353
+STATE|1|2|5|5|vegCount|0
+STATE|1|2|7|4|vegCount|6.422914980462561
+STATE|1|2|7|5|vegCount|6.611899230679622
+STATE|1|2|6|0|vegCount|0
+STATE|1|2|4|6|vegCount|0
+STATE|1|2|2|5|vegCount|15.578432427263916
+STATE|1|2|4|0|vegCount|7.775518163206586
+STATE|1|2|3|7|vegCount|0
+STATE|1|2|5|7|vegCount|0
+STATE|1|2|0|2|vegCount|10.376544486619137
+STATE|1|2|5|4|vegCount|0
+STATE|1|2|1|4|vegCount|15.520873568884433
+STATE|1|2|6|7|vegCount|0
+STATE|1|2|2|4|vegCount|13.866157881686638
+STATE|1|2|1|6|vegCount|0
+STATE|1|2|6|2|vegCount|6.88271413284386
+STATE|1|2|0|3|vegCount|14.984429069053643
+STATE|1|2|2|0|vegCount|0.7258078584824341
+STATE|1|2|2|1|vegCount|4.999916005102981
+STATE|1|2|7|0|vegCount|3.0663044674635946
+STATE|1|2|1|3|vegCount|0
+STATE|1|2|5|1|vegCount|6.701869029914631
+STATE|1|2|6|5|vegCount|17.005625912661383
+STATE|1|2|3|5|vegCount|0
+STATE|1|2|5|6|vegCount|0
+STATE|1|2|7|1|vegCount|7.208445311362194
+STATE|1|2|5|3|vegCount|0
+STATE|1|2|0|1|vegCount|3.151321166237555
+STATE|1|2|4|2|vegCount|9.001078992427692
+CHOICE|1|2|1|3|5|2|02:18:52.944 PM 13-Oct-2026
+CHOICE|1|2|1|3|5|3|02:18:54.159 PM 13-Oct-2026
+CHOICE|1|2|1|3|5|4|02:18:54.914 PM 13-Oct-2026
+CHOICE|1|2|1|2|3|2|02:19:01.561 PM 13-Oct-2026
+CHOICE|1|2|1|2|3|3|02:19:02.627 PM 13-Oct-2026
+CHOICE|1|2|1|2|3|4|02:19:03.398 PM 13-Oct-2026
+CHOICE|1|2|1|1|3|2|02:19:05.617 PM 13-Oct-2026
+CHOICE|1|2|1|1|3|3|02:19:06.310 PM 13-Oct-2026
+CHOICE|1|2|1|1|3|4|02:19:06.885 PM 13-Oct-2026
+CHOICE|1|2|1|1|3|-99|02:19:07.565 PM 13-Oct-2026
+CHOICE|1|2|1|1|3|2|02:19:08.410 PM 13-Oct-2026
+CONFIRM|1|2|1|02:19:29.089 PM 13-Oct-2026
+CONFIRM|1|2|2|02:19:30.353 PM 13-Oct-2026
+CONFIRM|1|2|3|02:19:40.655 PM 13-Oct-2026
+SCORE|1|2|1|0|0|2
+SCORE|1|2|2|0|0|10
+SCORE|1|2|3|0|0|10
+CONFIRM|1|2|1|02:19:45.574 PM 13-Oct-2026
+CONFIRM|1|2|3|02:19:47.672 PM 13-Oct-2026
+CONFIRM|1|2|2|02:19:49.505 PM 13-Oct-2026
+STATE|1|3|3|2|ownedBy|-99
+STATE|1|3|1|3|ownedBy|-99
+STATE|1|3|7|0|ownedBy|-99
+STATE|1|3|4|3|ownedBy|-99
+STATE|1|3|7|3|ownedBy|-99
+STATE|1|3|4|2|ownedBy|-99
+STATE|1|3|5|6|ownedBy|-99
+STATE|1|3|5|4|ownedBy|-99
+STATE|1|3|6|1|ownedBy|-99
+STATE|1|3|6|3|ownedBy|-99
+STATE|1|3|1|2|ownedBy|-99
+STATE|1|3|1|5|ownedBy|-99
+STATE|1|3|0|6|ownedBy|-99
+STATE|1|3|3|6|ownedBy|-99
+STATE|1|3|0|1|ownedBy|-99
+STATE|1|3|4|5|ownedBy|-99
+STATE|1|3|5|5|ownedBy|-99
+STATE|1|3|0|2|ownedBy|-99
+STATE|1|3|0|7|ownedBy|-99
+STATE|1|3|4|7|ownedBy|-99
+STATE|1|3|4|0|ownedBy|-99
+STATE|1|3|0|4|ownedBy|-99
+STATE|1|3|6|5|ownedBy|-99
+STATE|1|3|1|0|ownedBy|-99
+STATE|1|3|0|0|ownedBy|-99
+STATE|1|3|5|7|ownedBy|-99
+STATE|1|3|2|3|ownedBy|-99
+STATE|1|3|0|5|ownedBy|-99
+STATE|1|3|6|2|ownedBy|-99
+STATE|1|3|7|7|ownedBy|-99
+STATE|1|3|1|6|ownedBy|-99
+STATE|1|3|6|0|ownedBy|-99
+STATE|1|3|4|1|ownedBy|-99
+STATE|1|3|4|6|ownedBy|-99
+STATE|1|3|3|0|ownedBy|-99
+STATE|1|3|1|7|ownedBy|-99
+STATE|1|3|3|3|ownedBy|-99
+STATE|1|3|3|7|ownedBy|-99
+STATE|1|3|6|6|ownedBy|-99
+STATE|1|3|2|2|ownedBy|-99
+STATE|1|3|3|5|ownedBy|-99
+STATE|1|3|1|1|ownedBy|-99
+STATE|1|3|6|7|ownedBy|-99
+STATE|1|3|7|4|ownedBy|-99
+STATE|1|3|7|6|ownedBy|-99
+STATE|1|3|1|4|ownedBy|-99
+STATE|1|3|0|3|ownedBy|-99
+STATE|1|3|7|2|ownedBy|-99
+STATE|1|3|4|4|ownedBy|-99
+STATE|1|3|2|6|ownedBy|-99
+STATE|1|3|2|0|ownedBy|-99
+STATE|1|3|3|1|ownedBy|-99
+STATE|1|3|2|7|ownedBy|-99
+STATE|1|3|5|1|ownedBy|-99
+STATE|1|3|3|4|ownedBy|-99
+STATE|1|3|5|3|ownedBy|-99
+STATE|1|3|2|5|ownedBy|-99
+STATE|1|3|2|4|ownedBy|-99
+STATE|1|3|5|0|ownedBy|-99
+STATE|1|3|6|4|ownedBy|-99
+STATE|1|3|2|1|ownedBy|-99
+STATE|1|3|7|1|ownedBy|-99
+STATE|1|3|7|5|ownedBy|-99
+STATE|1|3|5|2|ownedBy|-99
+STATE|1|3|5|1|village|0
+STATE|1|3|0|7|village|0
+STATE|1|3|2|7|village|0
+STATE|1|3|3|5|village|0
+STATE|1|3|1|6|village|0
+STATE|1|3|6|7|village|0
+STATE|1|3|5|0|village|0
+STATE|1|3|7|7|village|0
+STATE|1|3|0|6|village|0
+STATE|1|3|4|2|village|0
+STATE|1|3|5|7|village|0
+STATE|1|3|4|3|village|0
+STATE|1|3|4|4|village|0
+STATE|1|3|2|2|village|0
+STATE|1|3|4|6|village|0
+STATE|1|3|5|4|village|0
+STATE|1|3|0|0|village|0
+STATE|1|3|6|3|village|0
+STATE|1|3|1|5|village|0
+STATE|1|3|1|7|village|0
+STATE|1|3|4|1|village|0
+STATE|1|3|1|3|village|0
+STATE|1|3|7|5|village|0
+STATE|1|3|0|5|village|0
+STATE|1|3|6|4|village|0
+STATE|1|3|2|0|village|0
+STATE|1|3|1|2|village|0
+STATE|1|3|4|7|village|0
+STATE|1|3|6|0|village|0
+STATE|1|3|3|1|village|0
+STATE|1|3|2|4|village|0
+STATE|1|3|3|3|village|0
+STATE|1|3|3|7|village|0
+STATE|1|3|7|3|village|0
+STATE|1|3|2|5|village|0
+STATE|1|3|4|0|village|0
+STATE|1|3|0|4|village|0
+STATE|1|3|1|0|village|0
+STATE|1|3|3|0|village|0
+STATE|1|3|5|6|village|0
+STATE|1|3|2|3|village|0
+STATE|1|3|0|3|village|0
+STATE|1|3|4|5|village|0
+STATE|1|3|3|4|village|0
+STATE|1|3|7|4|village|0
+STATE|1|3|0|2|village|0
+STATE|1|3|7|0|village|0
+STATE|1|3|7|2|village|0
+STATE|1|3|5|5|village|0
+STATE|1|3|0|1|village|0
+STATE|1|3|6|5|village|0
+STATE|1|3|5|2|village|0
+STATE|1|3|2|6|village|0
+STATE|1|3|6|6|village|0
+STATE|1|3|3|2|village|0
+STATE|1|3|2|1|village|0
+STATE|1|3|3|6|village|0
+STATE|1|3|6|2|village|0
+STATE|1|3|5|3|village|0
+STATE|1|3|1|4|village|0
+STATE|1|3|7|6|village|0
+STATE|1|3|7|1|village|0
+STATE|1|3|6|1|village|0
+STATE|1|3|1|1|village|0
+STATE|1|3|7|4|shared?|0
+STATE|1|3|3|5|shared?|0
+STATE|1|3|1|1|shared?|0
+STATE|1|3|5|3|shared?|0
+STATE|1|3|1|3|shared?|0
+STATE|1|3|6|1|shared?|0
+STATE|1|3|3|6|shared?|0
+STATE|1|3|2|2|shared?|0
+STATE|1|3|2|0|shared?|0
+STATE|1|3|7|7|shared?|0
+STATE|1|3|6|6|shared?|0
+STATE|1|3|6|2|shared?|0
+STATE|1|3|1|7|shared?|0
+STATE|1|3|3|1|shared?|0
+STATE|1|3|4|4|shared?|0
+STATE|1|3|3|0|shared?|0
+STATE|1|3|2|3|shared?|0
+STATE|1|3|1|5|shared?|0
+STATE|1|3|7|0|shared?|0
+STATE|1|3|4|5|shared?|0
+STATE|1|3|6|5|shared?|0
+STATE|1|3|1|0|shared?|0
+STATE|1|3|7|1|shared?|0
+STATE|1|3|2|5|shared?|0
+STATE|1|3|7|5|shared?|0
+STATE|1|3|4|7|shared?|0
+STATE|1|3|0|5|shared?|0
+STATE|1|3|5|4|shared?|0
+STATE|1|3|5|2|shared?|0
+STATE|1|3|4|3|shared?|0
+STATE|1|3|2|1|shared?|0
+STATE|1|3|3|4|shared?|0
+STATE|1|3|2|6|shared?|0
+STATE|1|3|4|0|shared?|0
+STATE|1|3|7|3|shared?|0
+STATE|1|3|1|2|shared?|0
+STATE|1|3|0|1|shared?|0
+STATE|1|3|3|2|shared?|0
+STATE|1|3|2|4|shared?|0
+STATE|1|3|0|2|shared?|0
+STATE|1|3|1|4|shared?|0
+STATE|1|3|2|7|shared?|0
+STATE|1|3|6|7|shared?|0
+STATE|1|3|0|4|shared?|0
+STATE|1|3|6|0|shared?|0
+STATE|1|3|0|6|shared?|0
+STATE|1|3|0|3|shared?|0
+STATE|1|3|3|7|shared?|0
+STATE|1|3|5|7|shared?|0
+STATE|1|3|5|0|shared?|0
+STATE|1|3|5|5|shared?|0
+STATE|1|3|3|3|shared?|0
+STATE|1|3|5|1|shared?|0
+STATE|1|3|6|3|shared?|0
+STATE|1|3|1|6|shared?|0
+STATE|1|3|4|2|shared?|0
+STATE|1|3|4|6|shared?|0
+STATE|1|3|7|6|shared?|0
+STATE|1|3|0|7|shared?|0
+STATE|1|3|6|4|shared?|0
+STATE|1|3|4|1|shared?|0
+STATE|1|3|7|2|shared?|0
+STATE|1|3|0|0|shared?|0
+STATE|1|3|5|6|shared?|0
+STATE|1|3|5|4|landChoices|[-99]
+STATE|1|3|2|4|landChoices|[-99 1]
+STATE|1|3|1|2|landChoices|[-99 1]
+STATE|1|3|6|4|landChoices|[-99 1]
+STATE|1|3|1|3|landChoices|[-99 2 3 4]
+STATE|1|3|7|4|landChoices|[-99 1]
+STATE|1|3|3|7|landChoices|[-99]
+STATE|1|3|0|1|landChoices|[-99 1]
+STATE|1|3|4|2|landChoices|[-99 1]
+STATE|1|3|7|0|landChoices|[-99 1]
+STATE|1|3|5|1|landChoices|[-99 1]
+STATE|1|3|0|2|landChoices|[-99 1]
+STATE|1|3|2|1|landChoices|[-99 1]
+STATE|1|3|7|6|landChoices|[-99 1]
+STATE|1|3|2|5|landChoices|[-99 1]
+STATE|1|3|1|5|landChoices|[-99]
+STATE|1|3|0|6|landChoices|[-99 1]
+STATE|1|3|5|5|landChoices|[-99]
+STATE|1|3|3|0|landChoices|[-99 1]
+STATE|1|3|7|5|landChoices|[-99 1]
+STATE|1|3|1|7|landChoices|[-99]
+STATE|1|3|5|6|landChoices|[-99]
+STATE|1|3|7|3|landChoices|[-99 1]
+STATE|1|3|7|7|landChoices|[-99 1]
+STATE|1|3|5|2|landChoices|[-99]
+STATE|1|3|1|1|landChoices|[-99 2 3 4]
+STATE|1|3|4|5|landChoices|[-99 2 3 4]
+STATE|1|3|4|3|landChoices|[-99]
+STATE|1|3|3|2|landChoices|[-99 1]
+STATE|1|3|5|0|landChoices|[-99 1]
+STATE|1|3|6|2|landChoices|[-99 1]
+STATE|1|3|3|5|landChoices|[-99 2 3]
+STATE|1|3|0|0|landChoices|[-99 1]
+STATE|1|3|7|2|landChoices|[-99 1]
+STATE|1|3|3|4|landChoices|[-99 1]
+STATE|1|3|2|0|landChoices|[-99 1]
+STATE|1|3|2|7|landChoices|[-99 1]
+STATE|1|3|0|3|landChoices|[-99 1]
+STATE|1|3|3|6|landChoices|[-99]
+STATE|1|3|4|0|landChoices|[-99 1]
+STATE|1|3|0|7|landChoices|[-99 1]
+STATE|1|3|4|1|landChoices|[-99 1]
+STATE|1|3|1|0|landChoices|[-99 1]
+STATE|1|3|1|4|landChoices|[-99 1]
+STATE|1|3|4|7|landChoices|[-99 1]
+STATE|1|3|5|3|landChoices|[-99]
+STATE|1|3|7|1|landChoices|[-99 1]
+STATE|1|3|1|6|landChoices|[-99]
+STATE|1|3|6|3|landChoices|[-99 1]
+STATE|1|3|0|4|landChoices|[-99 1]
+STATE|1|3|2|3|landChoices|[-99 2 3]
+STATE|1|3|6|6|landChoices|[-99]
+STATE|1|3|4|4|landChoices|[-99 1]
+STATE|1|3|2|2|landChoices|[-99 1]
+STATE|1|3|3|3|landChoices|[-99]
+STATE|1|3|6|1|landChoices|[-99]
+STATE|1|3|4|6|landChoices|[-99]
+STATE|1|3|5|7|landChoices|[-99]
+STATE|1|3|3|1|landChoices|[-99 1]
+STATE|1|3|0|5|landChoices|[-99 1]
+STATE|1|3|6|0|landChoices|[-99]
+STATE|1|3|6|5|landChoices|[-99 1]
+STATE|1|3|6|7|landChoices|[-99]
+STATE|1|3|2|6|landChoices|[-99]
+STATE|1|3|3|3|protected?|false
+STATE|1|3|5|1|protected?|false
+STATE|1|3|7|1|protected?|false
+STATE|1|3|1|6|protected?|false
+STATE|1|3|4|1|protected?|false
+STATE|1|3|4|5|protected?|false
+STATE|1|3|7|2|protected?|false
+STATE|1|3|2|7|protected?|true
+STATE|1|3|1|2|protected?|true
+STATE|1|3|1|7|protected?|true
+STATE|1|3|5|5|protected?|true
+STATE|1|3|3|1|protected?|false
+STATE|1|3|3|7|protected?|true
+STATE|1|3|6|7|protected?|true
+STATE|1|3|6|2|protected?|false
+STATE|1|3|5|3|protected?|false
+STATE|1|3|7|5|protected?|false
+STATE|1|3|0|6|protected?|true
+STATE|1|3|6|3|protected?|false
+STATE|1|3|0|5|protected?|false
+STATE|1|3|4|3|protected?|false
+STATE|1|3|3|0|protected?|false
+STATE|1|3|7|6|protected?|false
+STATE|1|3|4|6|protected?|false
+STATE|1|3|4|7|protected?|true
+STATE|1|3|0|7|protected?|true
+STATE|1|3|1|3|protected?|true
+STATE|1|3|2|1|protected?|false
+STATE|1|3|7|4|protected?|false
+STATE|1|3|7|0|protected?|false
+STATE|1|3|2|5|protected?|true
+STATE|1|3|6|4|protected?|false
+STATE|1|3|6|0|protected?|false
+STATE|1|3|2|4|protected?|true
+STATE|1|3|4|0|protected?|false
+STATE|1|3|4|2|protected?|false
+STATE|1|3|2|3|protected?|false
+STATE|1|3|6|1|protected?|false
+STATE|1|3|2|0|protected?|false
+STATE|1|3|1|1|protected?|false
+STATE|1|3|1|4|protected?|true
+STATE|1|3|5|4|protected?|false
+STATE|1|3|6|5|protected?|true
+STATE|1|3|2|2|protected?|false
+STATE|1|3|0|4|protected?|true
+STATE|1|3|0|0|protected?|false
+STATE|1|3|5|0|protected?|false
+STATE|1|3|6|6|protected?|true
+STATE|1|3|3|5|protected?|true
+STATE|1|3|0|1|protected?|false
+STATE|1|3|5|2|protected?|false
+STATE|1|3|3|4|protected?|false
+STATE|1|3|7|7|protected?|false
+STATE|1|3|3|2|protected?|false
+STATE|1|3|7|3|protected?|false
+STATE|1|3|1|0|protected?|false
+STATE|1|3|0|3|protected?|true
+STATE|1|3|2|6|protected?|true
+STATE|1|3|5|6|protected?|false
+STATE|1|3|1|5|protected?|false
+STATE|1|3|3|6|protected?|true
+STATE|1|3|5|7|protected?|true
+STATE|1|3|4|4|protected?|false
+STATE|1|3|0|2|protected?|true
+STATE|1|3|6|4|water?|false
+STATE|1|3|0|0|water?|false
+STATE|1|3|2|3|water?|false
+STATE|1|3|2|4|water?|false
+STATE|1|3|3|1|water?|false
+STATE|1|3|7|6|water?|false
+STATE|1|3|2|2|water?|false
+STATE|1|3|1|1|water?|false
+STATE|1|3|6|7|water?|true
+STATE|1|3|6|3|water?|false
+STATE|1|3|3|0|water?|false
+STATE|1|3|7|4|water?|false
+STATE|1|3|3|3|water?|true
+STATE|1|3|5|6|water?|true
+STATE|1|3|4|0|water?|false
+STATE|1|3|2|6|water?|true
+STATE|1|3|7|2|water?|false
+STATE|1|3|3|4|water?|false
+STATE|1|3|0|2|water?|false
+STATE|1|3|6|1|water?|true
+STATE|1|3|6|5|water?|false
+STATE|1|3|7|5|water?|false
+STATE|1|3|1|2|water?|false
+STATE|1|3|0|5|water?|false
+STATE|1|3|1|0|water?|false
+STATE|1|3|4|3|water?|true
+STATE|1|3|2|7|water?|false
+STATE|1|3|4|4|water?|false
+STATE|1|3|1|3|water?|false
+STATE|1|3|6|6|water?|true
+STATE|1|3|7|1|water?|false
+STATE|1|3|0|7|water?|false
+STATE|1|3|5|0|water?|false
+STATE|1|3|1|4|water?|false
+STATE|1|3|1|6|water?|true
+STATE|1|3|6|0|water?|true
+STATE|1|3|5|3|water?|true
+STATE|1|3|0|1|water?|false
+STATE|1|3|2|0|water?|false
+STATE|1|3|0|6|water?|false
+STATE|1|3|0|4|water?|false
+STATE|1|3|5|2|water?|true
+STATE|1|3|5|7|water?|true
+STATE|1|3|6|2|water?|false
+STATE|1|3|3|7|water?|true
+STATE|1|3|5|5|water?|true
+STATE|1|3|3|2|water?|false
+STATE|1|3|7|3|water?|false
+STATE|1|3|4|2|water?|false
+STATE|1|3|5|4|water?|true
+STATE|1|3|1|7|water?|true
+STATE|1|3|3|6|water?|true
+STATE|1|3|7|0|water?|false
+STATE|1|3|1|5|water?|true
+STATE|1|3|2|1|water?|false
+STATE|1|3|4|6|water?|true
+STATE|1|3|2|5|water?|false
+STATE|1|3|4|1|water?|false
+STATE|1|3|4|7|water?|false
+STATE|1|3|4|5|water?|false
+STATE|1|3|3|5|water?|false
+STATE|1|3|0|3|water?|false
+STATE|1|3|5|1|water?|false
+STATE|1|3|7|7|water?|false
+STATE|1|3|3|4|cropped?|false
+STATE|1|3|1|4|cropped?|false
+STATE|1|3|6|3|cropped?|false
+STATE|1|3|2|7|cropped?|false
+STATE|1|3|7|5|cropped?|false
+STATE|1|3|2|2|cropped?|false
+STATE|1|3|5|1|cropped?|false
+STATE|1|3|5|6|cropped?|false
+STATE|1|3|3|1|cropped?|false
+STATE|1|3|4|2|cropped?|false
+STATE|1|3|5|7|cropped?|false
+STATE|1|3|5|0|cropped?|false
+STATE|1|3|3|6|cropped?|false
+STATE|1|3|0|3|cropped?|false
+STATE|1|3|7|4|cropped?|false
+STATE|1|3|0|5|cropped?|false
+STATE|1|3|4|3|cropped?|false
+STATE|1|3|0|1|cropped?|false
+STATE|1|3|4|6|cropped?|false
+STATE|1|3|5|4|cropped?|false
+STATE|1|3|3|2|cropped?|false
+STATE|1|3|5|5|cropped?|false
+STATE|1|3|0|6|cropped?|false
+STATE|1|3|0|7|cropped?|false
+STATE|1|3|2|4|cropped?|false
+STATE|1|3|1|3|cropped?|true
+STATE|1|3|7|3|cropped?|false
+STATE|1|3|4|1|cropped?|false
+STATE|1|3|7|6|cropped?|false
+STATE|1|3|3|7|cropped?|false
+STATE|1|3|4|5|cropped?|true
+STATE|1|3|4|0|cropped?|false
+STATE|1|3|2|1|cropped?|false
+STATE|1|3|1|2|cropped?|false
+STATE|1|3|2|5|cropped?|false
+STATE|1|3|6|1|cropped?|false
+STATE|1|3|0|4|cropped?|false
+STATE|1|3|3|3|cropped?|false
+STATE|1|3|6|7|cropped?|false
+STATE|1|3|1|1|cropped?|true
+STATE|1|3|6|0|cropped?|false
+STATE|1|3|7|1|cropped?|false
+STATE|1|3|6|6|cropped?|false
+STATE|1|3|7|7|cropped?|false
+STATE|1|3|0|2|cropped?|false
+STATE|1|3|4|7|cropped?|false
+STATE|1|3|7|0|cropped?|false
+STATE|1|3|2|0|cropped?|false
+STATE|1|3|6|5|cropped?|false
+STATE|1|3|1|7|cropped?|false
+STATE|1|3|1|6|cropped?|false
+STATE|1|3|3|0|cropped?|false
+STATE|1|3|5|2|cropped?|false
+STATE|1|3|1|5|cropped?|false
+STATE|1|3|2|6|cropped?|false
+STATE|1|3|7|2|cropped?|false
+STATE|1|3|6|2|cropped?|false
+STATE|1|3|1|0|cropped?|false
+STATE|1|3|5|3|cropped?|false
+STATE|1|3|3|5|cropped?|true
+STATE|1|3|0|0|cropped?|false
+STATE|1|3|4|4|cropped?|false
+STATE|1|3|2|3|cropped?|true
+STATE|1|3|6|4|cropped?|false
+STATE|1|3|5|3|driedUp?|false
+STATE|1|3|3|7|driedUp?|false
+STATE|1|3|2|6|driedUp?|true
+STATE|1|3|7|0|driedUp?|false
+STATE|1|3|3|2|driedUp?|false
+STATE|1|3|1|6|driedUp?|false
+STATE|1|3|6|0|driedUp?|false
+STATE|1|3|1|1|driedUp?|false
+STATE|1|3|2|3|driedUp?|false
+STATE|1|3|6|7|driedUp?|false
+STATE|1|3|5|4|driedUp?|false
+STATE|1|3|4|4|driedUp?|false
+STATE|1|3|3|4|driedUp?|false
+STATE|1|3|1|3|driedUp?|false
+STATE|1|3|5|6|driedUp?|false
+STATE|1|3|4|7|driedUp?|false
+STATE|1|3|2|1|driedUp?|false
+STATE|1|3|6|1|driedUp?|false
+STATE|1|3|0|5|driedUp?|false
+STATE|1|3|7|5|driedUp?|false
+STATE|1|3|5|7|driedUp?|false
+STATE|1|3|7|2|driedUp?|false
+STATE|1|3|1|2|driedUp?|false
+STATE|1|3|0|7|driedUp?|false
+STATE|1|3|4|2|driedUp?|false
+STATE|1|3|7|3|driedUp?|false
+STATE|1|3|3|1|driedUp?|false
+STATE|1|3|1|0|driedUp?|false
+STATE|1|3|3|5|driedUp?|false
+STATE|1|3|1|7|driedUp?|false
+STATE|1|3|4|5|driedUp?|false
+STATE|1|3|2|7|driedUp?|false
+STATE|1|3|5|0|driedUp?|false
+STATE|1|3|7|7|driedUp?|false
+STATE|1|3|0|0|driedUp?|false
+STATE|1|3|6|2|driedUp?|false
+STATE|1|3|0|6|driedUp?|false
+STATE|1|3|5|2|driedUp?|false
+STATE|1|3|3|6|driedUp?|true
+STATE|1|3|4|1|driedUp?|false
+STATE|1|3|7|4|driedUp?|false
+STATE|1|3|0|1|driedUp?|false
+STATE|1|3|0|3|driedUp?|false
+STATE|1|3|2|2|driedUp?|false
+STATE|1|3|0|4|driedUp?|false
+STATE|1|3|3|0|driedUp?|false
+STATE|1|3|5|5|driedUp?|true
+STATE|1|3|1|4|driedUp?|false
+STATE|1|3|4|3|driedUp?|true
+STATE|1|3|2|0|driedUp?|false
+STATE|1|3|5|1|driedUp?|false
+STATE|1|3|6|5|driedUp?|false
+STATE|1|3|7|6|driedUp?|false
+STATE|1|3|6|4|driedUp?|false
+STATE|1|3|4|6|driedUp?|true
+STATE|1|3|4|0|driedUp?|false
+STATE|1|3|3|3|driedUp?|true
+STATE|1|3|6|6|driedUp?|true
+STATE|1|3|2|4|driedUp?|false
+STATE|1|3|7|1|driedUp?|false
+STATE|1|3|1|5|driedUp?|true
+STATE|1|3|6|3|driedUp?|false
+STATE|1|3|2|5|driedUp?|false
+STATE|1|3|0|2|driedUp?|false
+STATE|1|3|6|6|soilQuality|0.8005701940782252
+STATE|1|3|6|4|soilQuality|0.3738873685589282
+STATE|1|3|0|2|soilQuality|0.5188272243309568
+STATE|1|3|2|3|soilQuality|0.42242142701974783
+STATE|1|3|1|3|soilQuality|0.7697490156359442
+STATE|1|3|7|6|soilQuality|0.27841379937191446
+STATE|1|3|5|4|soilQuality|0.3956027283199262
+STATE|1|3|0|4|soilQuality|0.823324816046571
+STATE|1|3|2|4|soilQuality|0.6933078940843319
+STATE|1|3|0|5|soilQuality|0.40841397007021063
+STATE|1|3|3|2|soilQuality|0.30922301012603437
+STATE|1|3|2|1|soilQuality|0.24999580025514903
+STATE|1|3|1|2|soilQuality|0.6718902901996282
+STATE|1|3|7|1|soilQuality|0.3604222655681097
+STATE|1|3|7|3|soilQuality|0.21651775778310417
+STATE|1|3|6|2|soilQuality|0.344135706642193
+STATE|1|3|3|4|soilQuality|0.3624190564283126
+STATE|1|3|2|0|soilQuality|0.03629039292412171
+STATE|1|3|0|7|soilQuality|0.8381033022289677
+STATE|1|3|6|0|soilQuality|0.47237302584763935
+STATE|1|3|5|0|soilQuality|0.44540848937868643
+STATE|1|3|5|2|soilQuality|0.41203661943770153
+STATE|1|3|3|5|soilQuality|0.7394292696762036
+STATE|1|3|0|6|soilQuality|0.9801502338960659
+STATE|1|3|6|5|soilQuality|0.8502812956330691
+STATE|1|3|0|3|soilQuality|0.7492214534526822
+STATE|1|3|1|6|soilQuality|0.5503782747471313
+STATE|1|3|2|7|soilQuality|0.8983258551737238
+STATE|1|3|4|7|soilQuality|0.8466880603572666
+STATE|1|3|6|3|soilQuality|0.2807770378815415
+STATE|1|3|7|5|soilQuality|0.3305949615339811
+STATE|1|3|6|7|soilQuality|0.7699901914228519
+STATE|1|3|7|7|soilQuality|0.21564349360095575
+STATE|1|3|4|4|soilQuality|0.19266234740961466
+STATE|1|3|3|1|soilQuality|0.39282086142357053
+STATE|1|3|3|6|soilQuality|0.8337722516697893
+STATE|1|3|5|7|soilQuality|0.8397372995684785
+STATE|1|3|4|2|soilQuality|0.4500539496213846
+STATE|1|3|5|3|soilQuality|0.39712429006621325
+STATE|1|3|5|5|soilQuality|0.8580280851871221
+STATE|1|3|1|0|soilQuality|0.1641443591560664
+STATE|1|3|2|6|soilQuality|0.9796394489608165
+STATE|1|3|0|0|soilQuality|0
+STATE|1|3|2|2|soilQuality|0.22365568142233216
+STATE|1|3|4|3|soilQuality|0.4132704556106724
+STATE|1|3|4|0|soilQuality|0.3887759081603293
+STATE|1|3|1|4|soilQuality|0.7760436784442216
+STATE|1|3|6|1|soilQuality|0.3437410829161933
+STATE|1|3|2|5|soilQuality|0.7789216213631958
+STATE|1|3|0|1|soilQuality|0.15756605831187775
+STATE|1|3|4|6|soilQuality|0.25864938489437633
+STATE|1|3|7|4|soilQuality|0.3211457490231281
+STATE|1|3|1|5|soilQuality|0.34012059593982186
+STATE|1|3|4|1|soilQuality|0.38644723076137283
+STATE|1|3|3|3|soilQuality|0.3854838326397576
+STATE|1|3|1|7|soilQuality|0.9639808597938596
+STATE|1|3|3|7|soilQuality|1
+STATE|1|3|3|0|soilQuality|0.21396529949248125
+STATE|1|3|4|5|soilQuality|0.2202347671208634
+STATE|1|3|5|1|soilQuality|0.33509345149573155
+STATE|1|3|5|6|soilQuality|0.4233302957375045
+STATE|1|3|7|2|soilQuality|0.0937902127492002
+STATE|1|3|7|0|soilQuality|0.15331522337317974
+STATE|1|3|1|1|soilQuality|0.17295188505218528
+STATE|1|3|2|4|treeCount|1
+STATE|1|3|5|5|treeCount|0
+STATE|1|3|7|7|treeCount|0
+STATE|1|3|2|3|treeCount|0
+STATE|1|3|6|7|treeCount|0
+STATE|1|3|3|4|treeCount|0
+STATE|1|3|2|2|treeCount|0
+STATE|1|3|6|0|treeCount|0
+STATE|1|3|1|0|treeCount|0
+STATE|1|3|3|0|treeCount|0
+STATE|1|3|1|1|treeCount|0
+STATE|1|3|6|5|treeCount|1
+STATE|1|3|3|7|treeCount|0
+STATE|1|3|0|7|treeCount|0
+STATE|1|3|2|1|treeCount|1
+STATE|1|3|4|6|treeCount|0
+STATE|1|3|0|2|treeCount|0
+STATE|1|3|7|0|treeCount|0
+STATE|1|3|7|3|treeCount|1
+STATE|1|3|2|0|treeCount|1
+STATE|1|3|1|4|treeCount|0
+STATE|1|3|0|6|treeCount|0
+STATE|1|3|7|4|treeCount|0
+STATE|1|3|5|0|treeCount|0
+STATE|1|3|1|5|treeCount|0
+STATE|1|3|1|7|treeCount|0
+STATE|1|3|1|6|treeCount|0
+STATE|1|3|6|2|treeCount|2
+STATE|1|3|0|0|treeCount|0
+STATE|1|3|4|3|treeCount|0
+STATE|1|3|7|6|treeCount|2
+STATE|1|3|5|4|treeCount|0
+STATE|1|3|7|5|treeCount|0
+STATE|1|3|5|2|treeCount|0
+STATE|1|3|4|2|treeCount|0
+STATE|1|3|6|4|treeCount|0
+STATE|1|3|6|6|treeCount|0
+STATE|1|3|2|7|treeCount|0
+STATE|1|3|7|1|treeCount|0
+STATE|1|3|0|1|treeCount|0
+STATE|1|3|0|4|treeCount|1
+STATE|1|3|1|2|treeCount|0
+STATE|1|3|7|2|treeCount|0
+STATE|1|3|2|6|treeCount|0
+STATE|1|3|4|0|treeCount|0
+STATE|1|3|3|5|treeCount|1
+STATE|1|3|5|7|treeCount|0
+STATE|1|3|4|4|treeCount|1
+STATE|1|3|4|7|treeCount|0
+STATE|1|3|5|3|treeCount|0
+STATE|1|3|1|3|treeCount|2
+STATE|1|3|3|6|treeCount|0
+STATE|1|3|6|1|treeCount|0
+STATE|1|3|3|2|treeCount|0
+STATE|1|3|4|1|treeCount|0
+STATE|1|3|5|1|treeCount|2
+STATE|1|3|2|5|treeCount|1
+STATE|1|3|5|6|treeCount|0
+STATE|1|3|4|5|treeCount|0
+STATE|1|3|3|3|treeCount|0
+STATE|1|3|6|3|treeCount|0
+STATE|1|3|0|3|treeCount|2
+STATE|1|3|0|5|treeCount|0
+STATE|1|3|3|1|treeCount|0
+STATE|1|3|5|5|currentBiomass|0
+STATE|1|3|7|4|currentBiomass|0
+STATE|1|3|3|7|currentBiomass|0
+STATE|1|3|2|3|currentBiomass|0
+STATE|1|3|5|6|currentBiomass|0
+STATE|1|3|5|3|currentBiomass|0
+STATE|1|3|6|2|currentBiomass|0
+STATE|1|3|7|1|currentBiomass|0
+STATE|1|3|6|1|currentBiomass|0
+STATE|1|3|1|1|currentBiomass|0
+STATE|1|3|1|6|currentBiomass|0
+STATE|1|3|1|3|currentBiomass|0
+STATE|1|3|0|1|currentBiomass|0
+STATE|1|3|4|7|currentBiomass|0
+STATE|1|3|0|7|currentBiomass|0
+STATE|1|3|2|6|currentBiomass|0
+STATE|1|3|6|5|currentBiomass|0
+STATE|1|3|4|1|currentBiomass|0
+STATE|1|3|6|4|currentBiomass|0
+STATE|1|3|1|0|currentBiomass|0
+STATE|1|3|7|3|currentBiomass|0
+STATE|1|3|5|2|currentBiomass|0
+STATE|1|3|3|0|currentBiomass|0
+STATE|1|3|5|0|currentBiomass|0
+STATE|1|3|4|6|currentBiomass|0
+STATE|1|3|1|5|currentBiomass|0
+STATE|1|3|7|2|currentBiomass|0
+STATE|1|3|7|7|currentBiomass|0
+STATE|1|3|3|3|currentBiomass|0
+STATE|1|3|3|1|currentBiomass|0
+STATE|1|3|3|2|currentBiomass|0
+STATE|1|3|3|4|currentBiomass|0
+STATE|1|3|0|0|currentBiomass|0
+STATE|1|3|5|7|currentBiomass|0
+STATE|1|3|6|6|currentBiomass|0
+STATE|1|3|3|5|currentBiomass|0
+STATE|1|3|4|0|currentBiomass|0
+STATE|1|3|1|2|currentBiomass|0
+STATE|1|3|7|0|currentBiomass|0
+STATE|1|3|2|1|currentBiomass|0
+STATE|1|3|0|2|currentBiomass|0
+STATE|1|3|1|4|currentBiomass|0
+STATE|1|3|5|4|currentBiomass|0
+STATE|1|3|4|4|currentBiomass|0
+STATE|1|3|4|5|currentBiomass|0
+STATE|1|3|6|7|currentBiomass|0
+STATE|1|3|0|5|currentBiomass|0
+STATE|1|3|5|1|currentBiomass|0
+STATE|1|3|4|3|currentBiomass|0
+STATE|1|3|2|5|currentBiomass|0
+STATE|1|3|2|2|currentBiomass|0
+STATE|1|3|0|3|currentBiomass|0
+STATE|1|3|0|4|currentBiomass|0
+STATE|1|3|7|5|currentBiomass|0
+STATE|1|3|1|7|currentBiomass|0
+STATE|1|3|2|4|currentBiomass|0
+STATE|1|3|4|2|currentBiomass|0
+STATE|1|3|6|0|currentBiomass|0
+STATE|1|3|2|7|currentBiomass|0
+STATE|1|3|7|6|currentBiomass|0
+STATE|1|3|0|6|currentBiomass|0
+STATE|1|3|3|6|currentBiomass|0
+STATE|1|3|6|3|currentBiomass|0
+STATE|1|3|2|0|currentBiomass|0
+STATE|1|3|0|6|waterLevel|-99
+STATE|1|3|4|7|waterLevel|-99
+STATE|1|3|6|0|waterLevel|0
+STATE|1|3|4|6|waterLevel|2
+STATE|1|3|1|3|waterLevel|-99
+STATE|1|3|3|4|waterLevel|-99
+STATE|1|3|3|5|waterLevel|-99
+STATE|1|3|3|0|waterLevel|-99
+STATE|1|3|7|3|waterLevel|-99
+STATE|1|3|4|2|waterLevel|-99
+STATE|1|3|5|3|waterLevel|1
+STATE|1|3|3|3|waterLevel|3
+STATE|1|3|5|6|waterLevel|1
+STATE|1|3|4|5|waterLevel|-99
+STATE|1|3|4|4|waterLevel|-99
+STATE|1|3|7|7|waterLevel|-99
+STATE|1|3|2|0|waterLevel|-99
+STATE|1|3|5|7|waterLevel|0
+STATE|1|3|6|7|waterLevel|1
+STATE|1|3|2|6|waterLevel|4
+STATE|1|3|0|2|waterLevel|-99
+STATE|1|3|2|1|waterLevel|-99
+STATE|1|3|0|5|waterLevel|-99
+STATE|1|3|2|2|waterLevel|-99
+STATE|1|3|0|7|waterLevel|-99
+STATE|1|3|7|0|waterLevel|-99
+STATE|1|3|7|1|waterLevel|-99
+STATE|1|3|1|6|waterLevel|1
+STATE|1|3|1|5|waterLevel|2
+STATE|1|3|6|1|waterLevel|1
+STATE|1|3|5|4|waterLevel|0
+STATE|1|3|0|3|waterLevel|-99
+STATE|1|3|6|6|waterLevel|2
+STATE|1|3|4|1|waterLevel|-99
+STATE|1|3|7|2|waterLevel|-99
+STATE|1|3|1|1|waterLevel|-99
+STATE|1|3|3|7|waterLevel|0
+STATE|1|3|6|2|waterLevel|-99
+STATE|1|3|0|1|waterLevel|-99
+STATE|1|3|5|5|waterLevel|2
+STATE|1|3|5|1|waterLevel|-99
+STATE|1|3|2|4|waterLevel|-99
+STATE|1|3|3|6|waterLevel|3
+STATE|1|3|5|0|waterLevel|-99
+STATE|1|3|0|0|waterLevel|-99
+STATE|1|3|6|4|waterLevel|-99
+STATE|1|3|2|3|waterLevel|-99
+STATE|1|3|5|2|waterLevel|0
+STATE|1|3|4|0|waterLevel|-99
+STATE|1|3|0|4|waterLevel|-99
+STATE|1|3|3|1|waterLevel|-99
+STATE|1|3|7|6|waterLevel|-99
+STATE|1|3|6|5|waterLevel|-99
+STATE|1|3|2|5|waterLevel|-99
+STATE|1|3|4|3|waterLevel|2
+STATE|1|3|1|7|waterLevel|0
+STATE|1|3|1|0|waterLevel|-99
+STATE|1|3|1|2|waterLevel|-99
+STATE|1|3|1|4|waterLevel|-99
+STATE|1|3|6|3|waterLevel|-99
+STATE|1|3|7|4|waterLevel|-99
+STATE|1|3|3|2|waterLevel|-99
+STATE|1|3|2|7|waterLevel|-99
+STATE|1|3|7|5|waterLevel|-99
+STATE|1|3|1|6|elephantCount|0
+STATE|1|3|1|4|elephantCount|0
+STATE|1|3|4|5|elephantCount|1
+STATE|1|3|7|4|elephantCount|0
+STATE|1|3|0|2|elephantCount|0
+STATE|1|3|4|0|elephantCount|0
+STATE|1|3|1|7|elephantCount|0
+STATE|1|3|5|6|elephantCount|0
+STATE|1|3|5|1|elephantCount|0
+STATE|1|3|3|7|elephantCount|0
+STATE|1|3|7|6|elephantCount|0
+STATE|1|3|2|5|elephantCount|1
+STATE|1|3|6|6|elephantCount|0
+STATE|1|3|2|7|elephantCount|0
+STATE|1|3|0|6|elephantCount|0
+STATE|1|3|2|0|elephantCount|0
+STATE|1|3|6|5|elephantCount|0
+STATE|1|3|3|6|elephantCount|1
+STATE|1|3|1|0|elephantCount|0
+STATE|1|3|1|5|elephantCount|0
+STATE|1|3|4|2|elephantCount|2
+STATE|1|3|7|2|elephantCount|0
+STATE|1|3|0|5|elephantCount|0
+STATE|1|3|2|1|elephantCount|0
+STATE|1|3|4|7|elephantCount|0
+STATE|1|3|5|5|elephantCount|0
+STATE|1|3|5|3|elephantCount|0
+STATE|1|3|6|1|elephantCount|0
+STATE|1|3|3|0|elephantCount|0
+STATE|1|3|3|5|elephantCount|2
+STATE|1|3|3|3|elephantCount|0
+STATE|1|3|3|4|elephantCount|1
+STATE|1|3|6|0|elephantCount|0
+STATE|1|3|7|0|elephantCount|0
+STATE|1|3|4|4|elephantCount|1
+STATE|1|3|3|1|elephantCount|0
+STATE|1|3|5|4|elephantCount|0
+STATE|1|3|0|3|elephantCount|0
+STATE|1|3|6|7|elephantCount|0
+STATE|1|3|5|0|elephantCount|0
+STATE|1|3|7|3|elephantCount|0
+STATE|1|3|6|4|elephantCount|0
+STATE|1|3|4|3|elephantCount|0
+STATE|1|3|7|7|elephantCount|0
+STATE|1|3|2|3|elephantCount|0
+STATE|1|3|0|7|elephantCount|0
+STATE|1|3|1|1|elephantCount|0
+STATE|1|3|0|4|elephantCount|0
+STATE|1|3|1|2|elephantCount|0
+STATE|1|3|3|2|elephantCount|1
+STATE|1|3|4|1|elephantCount|0
+STATE|1|3|6|3|elephantCount|0
+STATE|1|3|2|4|elephantCount|1
+STATE|1|3|7|1|elephantCount|0
+STATE|1|3|6|2|elephantCount|0
+STATE|1|3|1|3|elephantCount|0
+STATE|1|3|5|7|elephantCount|0
+STATE|1|3|5|2|elephantCount|0
+STATE|1|3|7|5|elephantCount|0
+STATE|1|3|0|1|elephantCount|0
+STATE|1|3|4|6|elephantCount|0
+STATE|1|3|0|0|elephantCount|0
+STATE|1|3|2|6|elephantCount|0
+STATE|1|3|2|2|elephantCount|0
+STATE|1|3|0|2|myWaterDistance|4.123105625617661
+STATE|1|3|2|5|myWaterDistance|1.4142135623730951
+STATE|1|3|2|2|myWaterDistance|3
+STATE|1|3|1|0|myWaterDistance|4.47213595499958
+STATE|1|3|1|1|myWaterDistance|4.123105625617661
+STATE|1|3|2|7|myWaterDistance|1
+STATE|1|3|4|1|myWaterDistance|1.4142135623730951
+STATE|1|3|6|5|myWaterDistance|1.4142135623730951
+STATE|1|3|6|2|myWaterDistance|1
+STATE|1|3|1|7|myWaterDistance|0
+STATE|1|3|2|1|myWaterDistance|3.1622776601683795
+STATE|1|3|4|2|myWaterDistance|1
+STATE|1|3|0|1|myWaterDistance|5.0990195135927845
+STATE|1|3|1|2|myWaterDistance|4
+STATE|1|3|5|3|myWaterDistance|0
+STATE|1|3|3|5|myWaterDistance|2
+STATE|1|3|1|3|myWaterDistance|3
+STATE|1|3|4|7|myWaterDistance|1
+STATE|1|3|2|0|myWaterDistance|3.605551275463989
+STATE|1|3|3|7|myWaterDistance|0
+STATE|1|3|0|7|myWaterDistance|1
+STATE|1|3|0|0|myWaterDistance|5.385164807134504
+STATE|1|3|0|5|myWaterDistance|1.4142135623730951
+STATE|1|3|6|1|myWaterDistance|0
+STATE|1|3|3|1|myWaterDistance|2.23606797749979
+STATE|1|3|7|0|myWaterDistance|1
+STATE|1|3|0|4|myWaterDistance|2.23606797749979
+STATE|1|3|5|5|myWaterDistance|1
+STATE|1|3|6|7|myWaterDistance|0
+STATE|1|3|7|1|myWaterDistance|1
+STATE|1|3|1|4|myWaterDistance|2
+STATE|1|3|4|6|myWaterDistance|1
+STATE|1|3|6|6|myWaterDistance|1
+STATE|1|3|3|0|myWaterDistance|2.8284271247461903
+STATE|1|3|3|2|myWaterDistance|2
+STATE|1|3|7|7|myWaterDistance|1
+STATE|1|3|0|6|myWaterDistance|1
+STATE|1|3|3|4|myWaterDistance|2
+STATE|1|3|2|4|myWaterDistance|2.23606797749979
+STATE|1|3|4|5|myWaterDistance|1.4142135623730951
+STATE|1|3|4|0|myWaterDistance|2
+STATE|1|3|5|6|myWaterDistance|0
+STATE|1|3|6|0|myWaterDistance|0
+STATE|1|3|5|1|myWaterDistance|1
+STATE|1|3|7|6|myWaterDistance|1.4142135623730951
+STATE|1|3|5|7|myWaterDistance|0
+STATE|1|3|1|6|myWaterDistance|0
+STATE|1|3|5|2|myWaterDistance|0
+STATE|1|3|2|6|myWaterDistance|1
+STATE|1|3|3|6|myWaterDistance|1
+STATE|1|3|4|4|myWaterDistance|1
+STATE|1|3|5|0|myWaterDistance|1
+STATE|1|3|7|2|myWaterDistance|1.4142135623730951
+STATE|1|3|7|5|myWaterDistance|2.23606797749979
+STATE|1|3|3|3|myWaterDistance|2
+STATE|1|3|7|3|myWaterDistance|2
+STATE|1|3|6|3|myWaterDistance|1
+STATE|1|3|0|3|myWaterDistance|3.1622776601683795
+STATE|1|3|5|4|myWaterDistance|0
+STATE|1|3|6|4|myWaterDistance|1
+STATE|1|3|7|4|myWaterDistance|2
+STATE|1|3|2|3|myWaterDistance|3
+STATE|1|3|4|3|myWaterDistance|1
+STATE|1|3|1|5|myWaterDistance|1
+STATE|1|3|0|4|harvestYield|0
+STATE|1|3|7|6|harvestYield|0
+STATE|1|3|1|5|harvestYield|0
+STATE|1|3|7|5|harvestYield|0
+STATE|1|3|7|0|harvestYield|0
+STATE|1|3|7|1|harvestYield|0
+STATE|1|3|2|0|harvestYield|0
+STATE|1|3|3|4|harvestYield|0
+STATE|1|3|1|4|harvestYield|0
+STATE|1|3|2|5|harvestYield|0
+STATE|1|3|0|5|harvestYield|0
+STATE|1|3|3|6|harvestYield|0
+STATE|1|3|0|2|harvestYield|0
+STATE|1|3|5|3|harvestYield|0
+STATE|1|3|1|3|harvestYield|0
+STATE|1|3|1|1|harvestYield|0
+STATE|1|3|6|2|harvestYield|0
+STATE|1|3|5|1|harvestYield|0
+STATE|1|3|3|2|harvestYield|0
+STATE|1|3|3|0|harvestYield|0
+STATE|1|3|0|0|harvestYield|0
+STATE|1|3|3|3|harvestYield|0
+STATE|1|3|1|6|harvestYield|0
+STATE|1|3|1|2|harvestYield|0
+STATE|1|3|6|7|harvestYield|0
+STATE|1|3|5|2|harvestYield|0
+STATE|1|3|6|6|harvestYield|0
+STATE|1|3|0|6|harvestYield|0
+STATE|1|3|2|2|harvestYield|0
+STATE|1|3|2|4|harvestYield|0
+STATE|1|3|5|5|harvestYield|0
+STATE|1|3|7|7|harvestYield|0
+STATE|1|3|0|1|harvestYield|0
+STATE|1|3|6|3|harvestYield|0
+STATE|1|3|6|1|harvestYield|0
+STATE|1|3|3|1|harvestYield|0
+STATE|1|3|4|2|harvestYield|0
+STATE|1|3|3|5|harvestYield|0
+STATE|1|3|4|5|harvestYield|0
+STATE|1|3|2|3|harvestYield|0
+STATE|1|3|4|7|harvestYield|0
+STATE|1|3|6|0|harvestYield|0
+STATE|1|3|4|6|harvestYield|0
+STATE|1|3|1|0|harvestYield|0
+STATE|1|3|2|6|harvestYield|0
+STATE|1|3|7|4|harvestYield|0
+STATE|1|3|7|2|harvestYield|0
+STATE|1|3|7|3|harvestYield|0
+STATE|1|3|4|3|harvestYield|0
+STATE|1|3|4|0|harvestYield|0
+STATE|1|3|0|7|harvestYield|0
+STATE|1|3|5|0|harvestYield|0
+STATE|1|3|4|4|harvestYield|0
+STATE|1|3|0|3|harvestYield|0
+STATE|1|3|2|1|harvestYield|0
+STATE|1|3|3|7|harvestYield|0
+STATE|1|3|5|6|harvestYield|0
+STATE|1|3|4|1|harvestYield|0
+STATE|1|3|2|7|harvestYield|0
+STATE|1|3|6|4|harvestYield|0
+STATE|1|3|5|7|harvestYield|0
+STATE|1|3|1|7|harvestYield|0
+STATE|1|3|5|4|harvestYield|0
+STATE|1|3|6|5|harvestYield|0
+STATE|1|3|6|6|playerHarvestRound|[0 0 0]
+STATE|1|3|0|0|playerHarvestRound|[0 0 0]
+STATE|1|3|4|6|playerHarvestRound|[0 0 0]
+STATE|1|3|5|6|playerHarvestRound|[0 0 0]
+STATE|1|3|6|2|playerHarvestRound|[0 0 0]
+STATE|1|3|1|5|playerHarvestRound|[0 0 0]
+STATE|1|3|1|2|playerHarvestRound|[0 0 0]
+STATE|1|3|4|2|playerHarvestRound|[0 0 0]
+STATE|1|3|4|4|playerHarvestRound|[0 0 0]
+STATE|1|3|5|5|playerHarvestRound|[0 0 0]
+STATE|1|3|1|3|playerHarvestRound|[0 0 0]
+STATE|1|3|6|3|playerHarvestRound|[0 0 0]
+STATE|1|3|3|4|playerHarvestRound|[0 0 0]
+STATE|1|3|5|7|playerHarvestRound|[0 0 0]
+STATE|1|3|4|5|playerHarvestRound|[0 0 0]
+STATE|1|3|3|2|playerHarvestRound|[0 0 0]
+STATE|1|3|6|5|playerHarvestRound|[0 0 0]
+STATE|1|3|0|5|playerHarvestRound|[0 0 0]
+STATE|1|3|5|3|playerHarvestRound|[0 0 0]
+STATE|1|3|7|0|playerHarvestRound|[0 0 0]
+STATE|1|3|7|5|playerHarvestRound|[0 0 0]
+STATE|1|3|5|1|playerHarvestRound|[0 0 0]
+STATE|1|3|2|5|playerHarvestRound|[0 0 0]
+STATE|1|3|3|3|playerHarvestRound|[0 0 0]
+STATE|1|3|1|1|playerHarvestRound|[0 0 0]
+STATE|1|3|1|4|playerHarvestRound|[0 0 0]
+STATE|1|3|0|4|playerHarvestRound|[0 0 0]
+STATE|1|3|7|1|playerHarvestRound|[0 0 0]
+STATE|1|3|7|6|playerHarvestRound|[0 0 0]
+STATE|1|3|6|1|playerHarvestRound|[0 0 0]
+STATE|1|3|3|5|playerHarvestRound|[0 0 0]
+STATE|1|3|6|7|playerHarvestRound|[0 0 0]
+STATE|1|3|7|4|playerHarvestRound|[0 0 0]
+STATE|1|3|0|6|playerHarvestRound|[0 0 0]
+STATE|1|3|4|7|playerHarvestRound|[0 0 0]
+STATE|1|3|3|1|playerHarvestRound|[0 0 0]
+STATE|1|3|0|2|playerHarvestRound|[0 0 0]
+STATE|1|3|0|7|playerHarvestRound|[0 0 0]
+STATE|1|3|3|0|playerHarvestRound|[0 0 0]
+STATE|1|3|2|0|playerHarvestRound|[0 0 0]
+STATE|1|3|2|2|playerHarvestRound|[0 0 0]
+STATE|1|3|0|1|playerHarvestRound|[0 0 0]
+STATE|1|3|2|3|playerHarvestRound|[0 0 0]
+STATE|1|3|7|7|playerHarvestRound|[0 0 0]
+STATE|1|3|6|4|playerHarvestRound|[0 0 0]
+STATE|1|3|7|3|playerHarvestRound|[0 0 0]
+STATE|1|3|1|7|playerHarvestRound|[0 0 0]
+STATE|1|3|2|1|playerHarvestRound|[0 0 0]
+STATE|1|3|2|6|playerHarvestRound|[0 0 0]
+STATE|1|3|2|4|playerHarvestRound|[0 0 0]
+STATE|1|3|1|0|playerHarvestRound|[0 0 0]
+STATE|1|3|4|1|playerHarvestRound|[0 0 0]
+STATE|1|3|2|7|playerHarvestRound|[0 0 0]
+STATE|1|3|4|3|playerHarvestRound|[0 0 0]
+STATE|1|3|6|0|playerHarvestRound|[0 0 0]
+STATE|1|3|3|6|playerHarvestRound|[0 0 0]
+STATE|1|3|7|2|playerHarvestRound|[0 0 0]
+STATE|1|3|0|3|playerHarvestRound|[0 0 0]
+STATE|1|3|5|0|playerHarvestRound|[0 0 0]
+STATE|1|3|5|2|playerHarvestRound|[0 0 0]
+STATE|1|3|3|7|playerHarvestRound|[0 0 0]
+STATE|1|3|4|0|playerHarvestRound|[0 0 0]
+STATE|1|3|1|6|playerHarvestRound|[0 0 0]
+STATE|1|3|5|4|playerHarvestRound|[0 0 0]
+STATE|1|3|4|4|fined?|false
+STATE|1|3|6|0|fined?|false
+STATE|1|3|0|7|fined?|false
+STATE|1|3|1|7|fined?|false
+STATE|1|3|1|4|fined?|false
+STATE|1|3|5|5|fined?|false
+STATE|1|3|7|6|fined?|false
+STATE|1|3|1|6|fined?|false
+STATE|1|3|4|5|fined?|false
+STATE|1|3|4|3|fined?|false
+STATE|1|3|3|2|fined?|false
+STATE|1|3|2|1|fined?|false
+STATE|1|3|5|3|fined?|false
+STATE|1|3|5|7|fined?|false
+STATE|1|3|1|5|fined?|false
+STATE|1|3|6|1|fined?|false
+STATE|1|3|7|5|fined?|false
+STATE|1|3|1|1|fined?|false
+STATE|1|3|6|7|fined?|false
+STATE|1|3|1|3|fined?|false
+STATE|1|3|7|2|fined?|false
+STATE|1|3|2|7|fined?|false
+STATE|1|3|5|2|fined?|false
+STATE|1|3|4|7|fined?|false
+STATE|1|3|0|3|fined?|false
+STATE|1|3|2|0|fined?|false
+STATE|1|3|2|4|fined?|false
+STATE|1|3|1|2|fined?|false
+STATE|1|3|3|4|fined?|false
+STATE|1|3|4|0|fined?|false
+STATE|1|3|3|1|fined?|false
+STATE|1|3|3|7|fined?|false
+STATE|1|3|3|0|fined?|false
+STATE|1|3|7|4|fined?|false
+STATE|1|3|7|0|fined?|false
+STATE|1|3|5|0|fined?|false
+STATE|1|3|2|6|fined?|false
+STATE|1|3|2|3|fined?|false
+STATE|1|3|0|4|fined?|false
+STATE|1|3|5|6|fined?|false
+STATE|1|3|7|1|fined?|false
+STATE|1|3|4|6|fined?|false
+STATE|1|3|7|3|fined?|false
+STATE|1|3|6|6|fined?|false
+STATE|1|3|0|6|fined?|false
+STATE|1|3|5|1|fined?|false
+STATE|1|3|2|2|fined?|false
+STATE|1|3|4|2|fined?|false
+STATE|1|3|0|0|fined?|false
+STATE|1|3|0|5|fined?|false
+STATE|1|3|5|4|fined?|false
+STATE|1|3|6|2|fined?|false
+STATE|1|3|3|3|fined?|false
+STATE|1|3|0|2|fined?|false
+STATE|1|3|3|6|fined?|false
+STATE|1|3|0|1|fined?|false
+STATE|1|3|4|1|fined?|false
+STATE|1|3|3|5|fined?|false
+STATE|1|3|6|5|fined?|false
+STATE|1|3|6|4|fined?|false
+STATE|1|3|7|7|fined?|false
+STATE|1|3|1|0|fined?|false
+STATE|1|3|2|5|fined?|false
+STATE|1|3|6|3|fined?|false
+STATE|1|3|6|3|fineAmount|0
+STATE|1|3|4|7|fineAmount|0
+STATE|1|3|0|0|fineAmount|0
+STATE|1|3|2|6|fineAmount|0
+STATE|1|3|1|1|fineAmount|0
+STATE|1|3|1|7|fineAmount|0
+STATE|1|3|0|6|fineAmount|0
+STATE|1|3|3|3|fineAmount|0
+STATE|1|3|3|7|fineAmount|0
+STATE|1|3|7|4|fineAmount|0
+STATE|1|3|4|4|fineAmount|0
+STATE|1|3|7|5|fineAmount|0
+STATE|1|3|5|2|fineAmount|0
+STATE|1|3|5|4|fineAmount|0
+STATE|1|3|3|0|fineAmount|0
+STATE|1|3|1|0|fineAmount|0
+STATE|1|3|0|3|fineAmount|0
+STATE|1|3|5|1|fineAmount|0
+STATE|1|3|0|1|fineAmount|0
+STATE|1|3|0|7|fineAmount|0
+STATE|1|3|6|7|fineAmount|0
+STATE|1|3|3|2|fineAmount|0
+STATE|1|3|4|0|fineAmount|0
+STATE|1|3|4|3|fineAmount|0
+STATE|1|3|4|6|fineAmount|0
+STATE|1|3|1|6|fineAmount|0
+STATE|1|3|2|5|fineAmount|0
+STATE|1|3|4|5|fineAmount|0
+STATE|1|3|3|4|fineAmount|0
+STATE|1|3|1|3|fineAmount|0
+STATE|1|3|7|6|fineAmount|0
+STATE|1|3|2|7|fineAmount|0
+STATE|1|3|0|2|fineAmount|0
+STATE|1|3|2|4|fineAmount|0
+STATE|1|3|6|5|fineAmount|0
+STATE|1|3|0|4|fineAmount|0
+STATE|1|3|2|0|fineAmount|0
+STATE|1|3|7|7|fineAmount|0
+STATE|1|3|2|3|fineAmount|0
+STATE|1|3|6|1|fineAmount|0
+STATE|1|3|5|5|fineAmount|0
+STATE|1|3|4|1|fineAmount|0
+STATE|1|3|7|3|fineAmount|0
+STATE|1|3|0|5|fineAmount|0
+STATE|1|3|7|0|fineAmount|0
+STATE|1|3|5|6|fineAmount|0
+STATE|1|3|2|1|fineAmount|0
+STATE|1|3|5|0|fineAmount|0
+STATE|1|3|1|5|fineAmount|0
+STATE|1|3|6|2|fineAmount|0
+STATE|1|3|6|6|fineAmount|0
+STATE|1|3|5|3|fineAmount|0
+STATE|1|3|7|2|fineAmount|0
+STATE|1|3|2|2|fineAmount|0
+STATE|1|3|1|4|fineAmount|0
+STATE|1|3|3|6|fineAmount|0
+STATE|1|3|6|4|fineAmount|0
+STATE|1|3|7|1|fineAmount|0
+STATE|1|3|5|7|fineAmount|0
+STATE|1|3|3|1|fineAmount|0
+STATE|1|3|1|2|fineAmount|0
+STATE|1|3|6|0|fineAmount|0
+STATE|1|3|3|5|fineAmount|0
+STATE|1|3|4|2|fineAmount|0
+STATE|1|3|7|0|cropOwner|-99
+STATE|1|3|2|2|cropOwner|-99
+STATE|1|3|7|7|cropOwner|-99
+STATE|1|3|3|6|cropOwner|-99
+STATE|1|3|4|4|cropOwner|-99
+STATE|1|3|1|1|cropOwner|3
+STATE|1|3|0|5|cropOwner|-99
+STATE|1|3|6|6|cropOwner|-99
+STATE|1|3|6|5|cropOwner|-99
+STATE|1|3|2|4|cropOwner|-99
+STATE|1|3|5|3|cropOwner|-99
+STATE|1|3|3|2|cropOwner|-99
+STATE|1|3|1|3|cropOwner|2
+STATE|1|3|1|5|cropOwner|-99
+STATE|1|3|0|1|cropOwner|-99
+STATE|1|3|6|2|cropOwner|-99
+STATE|1|3|4|7|cropOwner|-99
+STATE|1|3|2|1|cropOwner|-99
+STATE|1|3|4|5|cropOwner|1
+STATE|1|3|4|2|cropOwner|-99
+STATE|1|3|6|7|cropOwner|-99
+STATE|1|3|6|1|cropOwner|-99
+STATE|1|3|3|7|cropOwner|-99
+STATE|1|3|0|6|cropOwner|-99
+STATE|1|3|4|6|cropOwner|-99
+STATE|1|3|6|0|cropOwner|-99
+STATE|1|3|5|4|cropOwner|-99
+STATE|1|3|0|7|cropOwner|-99
+STATE|1|3|5|6|cropOwner|-99
+STATE|1|3|3|1|cropOwner|-99
+STATE|1|3|3|0|cropOwner|-99
+STATE|1|3|0|3|cropOwner|-99
+STATE|1|3|5|0|cropOwner|-99
+STATE|1|3|0|4|cropOwner|-99
+STATE|1|3|1|7|cropOwner|-99
+STATE|1|3|2|5|cropOwner|-99
+STATE|1|3|3|5|cropOwner|1
+STATE|1|3|7|2|cropOwner|-99
+STATE|1|3|1|4|cropOwner|-99
+STATE|1|3|3|3|cropOwner|-99
+STATE|1|3|5|7|cropOwner|-99
+STATE|1|3|7|6|cropOwner|-99
+STATE|1|3|7|5|cropOwner|-99
+STATE|1|3|5|5|cropOwner|-99
+STATE|1|3|5|1|cropOwner|-99
+STATE|1|3|4|0|cropOwner|-99
+STATE|1|3|7|3|cropOwner|-99
+STATE|1|3|7|1|cropOwner|-99
+STATE|1|3|7|4|cropOwner|-99
+STATE|1|3|3|4|cropOwner|-99
+STATE|1|3|2|3|cropOwner|2
+STATE|1|3|2|7|cropOwner|-99
+STATE|1|3|2|6|cropOwner|-99
+STATE|1|3|0|0|cropOwner|-99
+STATE|1|3|1|2|cropOwner|-99
+STATE|1|3|4|3|cropOwner|-99
+STATE|1|3|0|2|cropOwner|-99
+STATE|1|3|1|0|cropOwner|-99
+STATE|1|3|1|6|cropOwner|-99
+STATE|1|3|5|2|cropOwner|-99
+STATE|1|3|2|0|cropOwner|-99
+STATE|1|3|6|3|cropOwner|-99
+STATE|1|3|6|4|cropOwner|-99
+STATE|1|3|4|1|cropOwner|-99
+STATE|1|3|6|3|defended?|false
+STATE|1|3|6|0|defended?|false
+STATE|1|3|1|0|defended?|false
+STATE|1|3|4|3|defended?|false
+STATE|1|3|7|3|defended?|false
+STATE|1|3|7|1|defended?|false
+STATE|1|3|5|0|defended?|false
+STATE|1|3|3|3|defended?|false
+STATE|1|3|4|7|defended?|false
+STATE|1|3|7|7|defended?|false
+STATE|1|3|6|1|defended?|false
+STATE|1|3|5|5|defended?|false
+STATE|1|3|3|2|defended?|false
+STATE|1|3|4|1|defended?|false
+STATE|1|3|2|4|defended?|false
+STATE|1|3|1|5|defended?|false
+STATE|1|3|0|5|defended?|false
+STATE|1|3|7|4|defended?|false
+STATE|1|3|7|5|defended?|false
+STATE|1|3|4|0|defended?|false
+STATE|1|3|3|6|defended?|false
+STATE|1|3|0|0|defended?|false
+STATE|1|3|1|1|defended?|false
+STATE|1|3|5|1|defended?|false
+STATE|1|3|3|0|defended?|false
+STATE|1|3|5|6|defended?|false
+STATE|1|3|7|2|defended?|false
+STATE|1|3|1|2|defended?|false
+STATE|1|3|4|6|defended?|false
+STATE|1|3|7|0|defended?|false
+STATE|1|3|1|4|defended?|false
+STATE|1|3|5|3|defended?|false
+STATE|1|3|5|2|defended?|false
+STATE|1|3|6|4|defended?|false
+STATE|1|3|6|5|defended?|false
+STATE|1|3|1|7|defended?|false
+STATE|1|3|0|3|defended?|false
+STATE|1|3|0|1|defended?|false
+STATE|1|3|3|7|defended?|false
+STATE|1|3|1|3|defended?|false
+STATE|1|3|0|4|defended?|false
+STATE|1|3|7|6|defended?|false
+STATE|1|3|2|5|defended?|false
+STATE|1|3|6|7|defended?|false
+STATE|1|3|3|1|defended?|false
+STATE|1|3|2|3|defended?|true
+STATE|1|3|5|4|defended?|false
+STATE|1|3|0|6|defended?|false
+STATE|1|3|3|4|defended?|false
+STATE|1|3|2|2|defended?|false
+STATE|1|3|6|6|defended?|false
+STATE|1|3|6|2|defended?|false
+STATE|1|3|3|5|defended?|true
+STATE|1|3|2|6|defended?|false
+STATE|1|3|4|5|defended?|false
+STATE|1|3|2|0|defended?|false
+STATE|1|3|0|2|defended?|false
+STATE|1|3|1|6|defended?|false
+STATE|1|3|4|2|defended?|false
+STATE|1|3|2|1|defended?|false
+STATE|1|3|0|7|defended?|false
+STATE|1|3|5|7|defended?|false
+STATE|1|3|2|7|defended?|false
+STATE|1|3|4|4|defended?|false
+STATE|1|3|0|4|cropCount|0
+STATE|1|3|7|7|cropCount|0
+STATE|1|3|1|2|cropCount|0
+STATE|1|3|0|5|cropCount|0
+STATE|1|3|6|5|cropCount|0
+STATE|1|3|5|1|cropCount|0
+STATE|1|3|3|2|cropCount|0
+STATE|1|3|0|2|cropCount|0
+STATE|1|3|6|7|cropCount|0
+STATE|1|3|7|6|cropCount|0
+STATE|1|3|2|6|cropCount|0
+STATE|1|3|2|1|cropCount|0
+STATE|1|3|3|3|cropCount|0
+STATE|1|3|1|6|cropCount|0
+STATE|1|3|6|3|cropCount|0
+STATE|1|3|4|4|cropCount|0
+STATE|1|3|4|3|cropCount|0
+STATE|1|3|4|0|cropCount|0
+STATE|1|3|7|2|cropCount|0
+STATE|1|3|4|1|cropCount|0
+STATE|1|3|1|1|cropCount|3
+STATE|1|3|5|0|cropCount|0
+STATE|1|3|2|4|cropCount|0
+STATE|1|3|7|3|cropCount|0
+STATE|1|3|2|3|cropCount|8
+STATE|1|3|7|1|cropCount|0
+STATE|1|3|5|5|cropCount|0
+STATE|1|3|6|0|cropCount|0
+STATE|1|3|4|7|cropCount|0
+STATE|1|3|0|3|cropCount|0
+STATE|1|3|6|2|cropCount|0
+STATE|1|3|6|1|cropCount|0
+STATE|1|3|1|3|cropCount|15
+STATE|1|3|1|4|cropCount|0
+STATE|1|3|6|4|cropCount|0
+STATE|1|3|0|1|cropCount|0
+STATE|1|3|5|3|cropCount|0
+STATE|1|3|0|7|cropCount|0
+STATE|1|3|1|0|cropCount|0
+STATE|1|3|3|1|cropCount|0
+STATE|1|3|7|0|cropCount|0
+STATE|1|3|5|4|cropCount|0
+STATE|1|3|0|6|cropCount|0
+STATE|1|3|4|5|cropCount|4
+STATE|1|3|5|2|cropCount|0
+STATE|1|3|6|6|cropCount|0
+STATE|1|3|7|4|cropCount|0
+STATE|1|3|1|5|cropCount|0
+STATE|1|3|4|6|cropCount|0
+STATE|1|3|0|0|cropCount|0
+STATE|1|3|3|0|cropCount|0
+STATE|1|3|5|7|cropCount|0
+STATE|1|3|2|2|cropCount|0
+STATE|1|3|4|2|cropCount|0
+STATE|1|3|3|4|cropCount|0
+STATE|1|3|2|7|cropCount|0
+STATE|1|3|1|7|cropCount|0
+STATE|1|3|3|5|cropCount|15
+STATE|1|3|5|6|cropCount|0
+STATE|1|3|2|0|cropCount|0
+STATE|1|3|7|5|cropCount|0
+STATE|1|3|3|6|cropCount|0
+STATE|1|3|3|7|cropCount|0
+STATE|1|3|2|5|cropCount|0
+STATE|1|3|2|4|vegCount|13.866157881686638
+STATE|1|3|4|0|vegCount|7.775518163206586
+STATE|1|3|4|5|vegCount|0
+STATE|1|3|6|3|vegCount|5.61554075763083
+STATE|1|3|7|3|vegCount|4.330355155662083
+STATE|1|3|7|6|vegCount|5.568275987438289
+STATE|1|3|0|3|vegCount|14.984429069053643
+STATE|1|3|5|4|vegCount|0
+STATE|1|3|5|6|vegCount|0
+STATE|1|3|5|3|vegCount|0
+STATE|1|3|6|6|vegCount|0
+STATE|1|3|0|7|vegCount|16.762066044579353
+STATE|1|3|3|5|vegCount|0
+STATE|1|3|1|5|vegCount|0
+STATE|1|3|7|5|vegCount|6.611899230679622
+STATE|1|3|1|4|vegCount|15.520873568884433
+STATE|1|3|1|0|vegCount|3.282887183121328
+STATE|1|3|7|2|vegCount|1.875804254984004
+STATE|1|3|1|1|vegCount|0
+STATE|1|3|6|0|vegCount|0
+STATE|1|3|2|6|vegCount|0
+STATE|1|3|4|7|vegCount|16.93376120714533
+STATE|1|3|0|0|vegCount|0
+STATE|1|3|6|1|vegCount|0
+STATE|1|3|6|5|vegCount|17.005625912661383
+STATE|1|3|1|6|vegCount|0
+STATE|1|3|3|0|vegCount|4.279305989849625
+STATE|1|3|3|3|vegCount|0
+STATE|1|3|4|1|vegCount|7.728944615227457
+STATE|1|3|0|1|vegCount|3.151321166237555
+STATE|1|3|4|2|vegCount|9.001078992427692
+STATE|1|3|5|7|vegCount|0
+STATE|1|3|3|7|vegCount|0
+STATE|1|3|2|7|vegCount|17.966517103474477
+STATE|1|3|6|4|vegCount|7.477747371178563
+STATE|1|3|3|2|vegCount|6.184460202520688
+STATE|1|3|7|1|vegCount|7.208445311362194
+STATE|1|3|4|6|vegCount|0
+STATE|1|3|2|5|vegCount|15.578432427263916
+STATE|1|3|0|4|vegCount|16.46649632093142
+STATE|1|3|3|6|vegCount|0
+STATE|1|3|7|0|vegCount|3.0663044674635946
+STATE|1|3|5|0|vegCount|8.908169787573728
+STATE|1|3|1|2|vegCount|13.437805803992564
+STATE|1|3|6|7|vegCount|0
+STATE|1|3|4|4|vegCount|3.853246948192293
+STATE|1|3|0|2|vegCount|10.376544486619137
+STATE|1|3|1|3|vegCount|0
+STATE|1|3|3|1|vegCount|7.856417228471411
+STATE|1|3|1|7|vegCount|0
+STATE|1|3|6|2|vegCount|6.88271413284386
+STATE|1|3|0|6|vegCount|19.60300467792132
+STATE|1|3|0|5|vegCount|8.168279401404213
+STATE|1|3|3|4|vegCount|7.248381128566253
+STATE|1|3|5|1|vegCount|6.701869029914631
+STATE|1|3|7|4|vegCount|6.422914980462561
+STATE|1|3|2|2|vegCount|4.473113628446644
+STATE|1|3|2|0|vegCount|0.7258078584824341
+STATE|1|3|5|2|vegCount|0
+STATE|1|3|7|7|vegCount|4.312869872019115
+STATE|1|3|5|5|vegCount|0
+STATE|1|3|4|3|vegCount|0
+STATE|1|3|2|1|vegCount|4.999916005102981
+STATE|1|3|2|3|vegCount|0
+CHOICE|1|3|2|2|3|2|02:19:55.902 PM 13-Oct-2026
+CHOICE|1|3|2|2|3|3|02:19:56.933 PM 13-Oct-2026
+CHOICE|1|3|2|1|3|2|02:19:58.515 PM 13-Oct-2026
+CHOICE|1|3|2|1|3|3|02:19:59.627 PM 13-Oct-2026
+CONFIRM|1|3|2|02:20:01.247 PM 13-Oct-2026
+CHOICE|1|3|1|4|4|1|02:20:02.282 PM 13-Oct-2026
+CONFIRM|1|3|1|02:20:03.358 PM 13-Oct-2026
+CONFIRM|1|3|3|02:20:04.994 PM 13-Oct-2026
+SCORE|1|3|1|0|0|6
+SCORE|1|3|2|9|9|6
+SCORE|1|3|3|0|0|10

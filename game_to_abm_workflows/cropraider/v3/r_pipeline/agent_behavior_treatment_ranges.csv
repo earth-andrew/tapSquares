@@ -1,0 +1,4 @@
+variable,source,min_value,max_value,n_sessions,n_distinct,cv_gain,type,levels,integer_valued,acts_through
+p_fine,declared,0.05,0.2,54,3,-2.149515238730193e-4,numeric,,FALSE,patch_choice
+defendCost,declared,2,8,54,3,0.009688277092858938,numeric,,TRUE,action+patch_choice
+fine,declared,2,4,54,2,-0.0017659191423909648,numeric,,TRUE,patch_choice

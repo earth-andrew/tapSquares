@@ -1,0 +1,131 @@
+globals [
+
+    ;;GAME-SPECIFIC GLOBALS
+  ;;(game builders should expect to change these values as they build)
+  ;;these should be initialized in game input files
+
+  predatorR
+  pestR
+  pollinatorR
+  soilQualityMean
+  soilQualitySD
+  canola_predatorK
+  flower_predatorK
+  grass_predatorK
+  canola_pestK
+  flower_pestK
+  grass_pestK
+  canola_pollinatorK
+  flower_pollinatorK
+  grass_pollinatorK
+  increment_orth_1
+  increment_diagonal_1
+  increment_orth_2
+  increment_diagonal_2
+  increment_mixed_2
+  canola_baseYield
+  dPest_predator
+  dYield_pest
+  dYield_pollinator
+  initial_predator_count
+  initial_pollinator_count
+  initial_pest_count
+  fullCanola
+  fullFlower
+  fullGrass
+  sprayMortality
+  bonusFlower
+  bonusGrass
+
+]
+
+
+patches-own [
+  hasGrass
+  hasCanola
+  hasFlower
+  soilQuality
+  grassCount
+  canolaCount
+  flowerCount
+  predatorCount
+  pollinatorCount
+  pestCount
+  predatorK
+  pollinatorK
+  pestK
+  yield
+  canolaPoints
+  paymentPoints
+]
+
+
+to set-initial-patch-conditions
+
+  ;; declared patches-own variables default to 0, not FALSE/TRUE, until explicitly set.
+  ;; initialConditionList.csv's notIf/onlyIf checks (e.g. hasCanola's notIf "hasGrass") run
+  ;; "not runresult ..." on these, which errors on a bare 0.  Set real booleans here first,
+  ;; before the generic initial-condition engine (set-initial-conditions) runs.
+  set hasGrass FALSE
+  set hasCanola FALSE
+  set hasFlower FALSE
+
+  ;; these three were previously rows 6-8 of initialConditionList.csv (predatorCount, pollinatorCount,
+  ;; pestCount).  They are unconditional (probability 1, no onlyIf/notIf), so they're set directly here
+  ;; instead of going through the generic initial-condition engine.
+  set predatorCount initial_predator_count
+  set pollinatorCount initial_pollinator_count
+  set pestCount initial_pest_count
+
+end
+
+
+to set-initial-player-conditions
+
+
+
+end
+
+
+to set-additional-game-level-conditions
+
+  ;; patchPropertyList is declared as a core global but never populated by the template itself -
+  ;; advance-to-next-round uses it (list of patch variable names, as strings) to log each one to
+  ;; the game's output file every round.  Left unset it defaults to 0, and "length 0" errors.
+  ;; Logging all of this game's custom patch variables here; adjust the list if you want more/fewer
+  ;; fields recorded.
+  set patchPropertyList (list "hasGrass" "hasCanola" "hasFlower" "soilQuality" "grassCount"
+    "canolaCount" "flowerCount" "predatorCount" "pollinatorCount" "pestCount" "predatorK"
+    "pollinatorK" "pestK" "yield" "canolaPoints" "paymentPoints" "ownedBy")
+
+  ;; this session has chooseVillageLand? and choosePrivateLand? both FALSE (the old template's
+  ;; "randomLand?" mode).  v1.2's engine only sets ownedBy/draws ownership markers through the
+  ;; interactive choosing flows, so with both flows off we need to replicate the old
+  ;; randomly-assign-landscape behavior ourselves - see procedure below.
+  randomly-assign-landscape
+
+end
+
+to randomly-assign-landscape
+
+  ask patches with [inGame?] [set ownedBy -99]
+  ;; randomly assign home patches to players
+
+  let playerTick 1 ;; ownedBy is 1-indexed
+  ask n-of numPlayers patches with [inGame?] [
+    set ownedBy playerTick
+    set playerTick playerTick + 1
+
+    ]
+
+  ;; let ownership properties spread out from initial patch, allocating all patches to some player
+  while [any? patches with [inGame? and ownedBy < 0]] [
+    ask patches with [inGame? and ownedBy < 0] [
+      set ownedBy [ownedBy] of one-of (neighbors4 with [inGame?])
+    ]
+
+  ]
+
+  make-private-borders false
+
+end

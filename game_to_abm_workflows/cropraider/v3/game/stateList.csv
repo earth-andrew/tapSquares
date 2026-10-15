@@ -1,0 +1,5 @@
+stateID,flags,imageName,stateColor
+1,"""water?""",water,deepestWaterColor + [waterLevel] of patch-here
+2,"""cropped?""",furrows,
+3,"""protected?""",protected,
+4,"""defended?""",defended,

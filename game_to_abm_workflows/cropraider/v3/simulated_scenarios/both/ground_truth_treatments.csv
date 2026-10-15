@@ -1,0 +1,4 @@
+treatment,true_effect,scenario
+p_fine,strong,both
+defendCost,strong,both
+pa_size,none (land supply only),both

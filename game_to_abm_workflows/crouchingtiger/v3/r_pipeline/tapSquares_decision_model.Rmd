@@ -1,0 +1,2133 @@
+---
+title: "tapSquares Decision Modeling"
+subtitle: "Parsing session logs, allowing for heterogeneous players, and exporting an agent-behavior CSV for the ABM interpreter"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    df_print: paged
+---
+
+<!--
+HOW TO USE THIS FILE (R Markdown basics)
+=============================================================
+This is an R Markdown notebook (.Rmd) -- plain-text explanation (like
+this comment) mixed with "chunks" of R code, delimited by ```{r} ... ```.
+Run a chunk with the green play arrow at its top-right or Cmd/Ctrl+Enter
+with your cursor in it; run top to bottom the first time through, since
+later chunks depend on objects earlier ones create. "Knit" runs the
+whole thing and produces one HTML report.
+
+PIPELINE_CORE v3 -- what changed relative to v2
+  D. WHERE PEOPLE ACT. Step 6b adds a patch-choice model: at each pick a
+     player chooses one of the patches that could still be acted on (the
+     logged `landChoices` says which) or chooses to stop. Classes of
+     players are now formed from these patch preferences (class_basis =
+     "choice"), by recursive splitting so that one class does not swallow
+     most people. Needs logs written by tapSquares v3 (landChoices, and a
+     STATE for the very first phase); older logs fall back to the v2
+     behavior. Variables holding a player number (role = player_reference
+     in variableRoles.csv, e.g. cropOwner) become <name>_mine.
+  E. New outputs: agent_patch_choice_weights.csv (not yet read by the ABM),
+     per-class "where" heat map in the PDF guide.
+
+PIPELINE_CORE v2 -- what changed relative to v1
+  A. PERSON IDs. tapSquares v2 writes `PLAYER|number|enteredName|ts` lines.
+     Whatever a player typed at HubNet entry IS their ID (`person_id`),
+     verbatim (no HHID/name split). The same string in different sessions
+     is assumed to be the same person. Per-person fits, clustering and
+     class assignment are keyed by `person_id`, not by session-local
+     player number. Logs without PLAYER lines fall back to one distinct
+     person per session x player (with a warning).
+  B. SESSION PARAMETERS AS CANDIDATE TREATMENTS. Scalar numeric / TRUE-FALSE
+     parameters named in sessionList.csv are read from each log's header
+     (plus a derived `numPlayers`; ignore it with role not_treatment). Those that vary across the pool are
+     candidate treatments. Declared ones (variableRoles.csv:
+     treatmentCandidate = TRUE or role = session_parameter) and
+     auto-detected ones go through the same diagnostics (Step 5a): is there
+     enough variation, are they separable from each other, and does
+     adding them improve held-out prediction (session-blocked
+     cross-validation)? Only those that pass become predictors; the full
+     verdict table is written to treatment_report.csv.
+  C. Session logs are recognised by content (they contain PHASE/CHOICE/
+     STATE/PLAYER lines), not by file name.
+
+PIPELINE_CORE v1 -- reconciled from three copies that had diverged
+across games (CropRaider/PES were untouched from the original;
+Lantana had added an `excluded_predictors` mechanism and hardened
+round/phase into a permanent exclusion; Tiger only differed in a
+commented-out toggle). This version is the merge point going forward
+-- see CHANGELOG.md in this folder for the full list of what changed
+and why. Game-specific behavior belongs in that game's
+`variableRoles.csv` (optional, see Step 4a below), never in an edited
+copy of this file.
+
+What changed in this version, compared to the one that ran clean
+end-to-end on real CropRaider data:
+  1. Round/phase (or year, or whatever a game calls its counter) are
+     no longer unconditionally barred from being predictors. Some
+     games embed real structure in that counter (a multi-year climate
+     cycle, a seasonal effect) that a player could plausibly learn
+     even with no explicit variable telling them about it. Step 4a
+     reads an optional `variableRoles.csv` that can opt a counter
+     variable in, and choose how it's encoded (raw numeric, cyclical
+     sin/cos for a known period, or categorical) so the model can
+     extrapolate to round/phase values it never saw in training
+     instead of erroring or silently ignoring a real effect. Default
+     behavior with no config file present, or a counter not listed in
+     it, is unchanged: excluded, exactly as before.
+  2. Land-ownership variables (`ownedBy`, `village`, and similar) get
+     explicit handling: a configured sentinel value (e.g. 0) is kept
+     as its own real "unassigned" factor level rather than being
+     treated as just another number on a continuous scale. This
+     matters because ownership in tapSquares games is sometimes
+     player-selected, sometimes randomly/game-assigned, and some
+     patches can stay unassigned the whole game -- the model needs to
+     tell those cases apart, not average over them.
+  3. `excluded_predictors` (from the Lantana branch) is kept as-is: a
+     simple named-variable dropout list for anything that's a real
+     predictor you just don't want in this particular fit.
+  4. At the end, if `sessionList.csv` is present in the working
+     directory, this notebook now writes `sessionList_ABM.csv` itself
+     -- copying every column over and adding the three that point at
+     this notebook's own outputs (`agent_behavior_weights.csv`,
+     `agent_behavior_reference.csv`, `outcomePlotList.csv`). That
+     wiring used to be a manual, error-prone edit; now it's automatic.
+     Any other tuning for the ABM run (agent counts, world size, etc.)
+     is still a manual edit on top of the generated file.
+
+Honesty check, carried forward: steps 1-3 (parsing, pivoting, the
+original single dedup+join+pooled-model path) have run against real
+data and work. Steps 7-9 (per-player fits, clustering, per-class
+refit, long-format export) were carefully traced by hand but are less
+battle-tested -- treat a first error there as a real bug, not caution.
+Steps 4a/4b (variable-role handling) are new in this version and have
+only been checked against synthetic data, not real session logs yet.
+-->
+
+## Setup
+
+```{r setup, message = FALSE}
+# knitr/rmarkdown must be installed BEFORE this file can even be
+# opened/knit (RStudio's rendering pipeline depends on them). If you see
+# "there is no package called 'knitr'", run in the Console first:
+#   install.packages(c("rmarkdown", "knitr"))
+
+needed <- c("rmarkdown", "knitr", "readr", "dplyr", "stringr", "tidyr", "purrr", "nnet", "ggplot2", "scales", "cluster")
+missing_pkgs <- needed[!needed %in% installed.packages()[, "Package"]]
+if (length(missing_pkgs) > 0) install.packages(missing_pkgs)
+
+knitr::opts_chunk$set(warning = TRUE, message = FALSE)
+
+library(readr)
+library(dplyr)
+library(stringr)
+library(tidyr)
+library(purrr)
+library(nnet)
+library(ggplot2)
+```
+
+## Settings you may want to edit
+
+```{r settings}
+# --- where the session logs are ---
+session_dir <- "sample_sessions"      # folder of session logs (.csv or .csv.gz); e.g. "../simulated_scenarios/fine_only"
+exclude_game_ids <- 0                 # gameID(s) left out of the analysis, e.g. the practice game (gameID 0); use NULL to keep all
+
+# --- person identity ---
+# The string a player typed at entry is their ID, used verbatim. Set TRUE to
+# also trim whitespace and ignore case (so "Ana_07" and "ana_07 " match).
+normalize_ids <- FALSE
+
+# --- treatment diagnostics (Step 5a) ---
+use_autodetected_treatments <- TRUE   # consider session parameters that vary but were not declared
+min_sessions_total     <- 8           # fewer sessions than this: no treatment is testable
+min_sessions_per_level <- 3           # a treatment level seen in fewer sessions: not testable
+max_levels_for_counts  <- 6           # at or below this many distinct values, per-level session counts are checked
+max_abs_cor            <- 0.95        # treatments more correlated than this across sessions cannot be separated
+cv_folds               <- 5           # session-blocked folds
+cv_min_gain            <- 0.001       # held-out log-likelihood gain per decision a treatment must deliver
+min_decisions_per_person <- 20        # fewer decisions than this: person is not fitted individually
+
+# --- how weights are estimated and how classes are formed ---
+ridge_decay      <- 0.1               # small penalty on all weights (nnet 'decay'). Keeps weights finite when a choice is predicted perfectly from few decisions; 0 = none
+n_classes_forced <- NULL              # NULL: choose the number of classes from the data (best silhouette between 2 and max_classes); or a whole number to force it
+max_classes      <- 6
+class_basis      <- "choice"          # what people are grouped on:
+                                      #   "choice": which patches they go for (the patch-choice model, Step 6b)   <- recommended
+                                      #   "action":  what they do once on a patch (predicted action probabilities in common situations)
+                                      #   "both":    the two together
+                                      #   "coefficients": raw per-person action weights (very noisy with few decisions per person)
+                                      # If the logs have no landChoices (older games), "choice"/"both" fall back to "action".
+n_probes         <- 60                # number of common situations used for "action"
+min_class_size   <- 2                 # a split that leaves a class with fewer people than this is not considered
+class_split_min_sil <- 0.15           # a split into classes is kept only if its mean silhouette is at least this
+class_max_share  <- 0.4               # any class holding more than this share of people is split again if a good split exists
+
+# --- patch-choice model (Step 6b) ---
+use_patch_choice       <- TRUE        # model which patch a player goes for next (or whether they stop), alongside what they do there
+choice_ridge           <- 5           # penalty on the patch-choice weights (on the standardised scale)
+choice_max_alternatives <- 30         # patches considered per pick: the chosen one, "stop", and a random sample of the rest
+choice_scenes          <- 60          # common situations used to compare people's patch preferences
+min_choice_events_per_person <- 50    # fewer picks than this: person is not fitted individually
+use_choice_treatments  <- TRUE        # let session-level treatments shift which patches get picked (Step 6c)
+choice_screen_top      <- 8           # treatment x patch-feature terms that pass the screen and go to cross-validation
+choice_screen_min_t    <- 2           # a term must show at least this session-level t-statistic to pass the screen
+choice_cv_max_events   <- 12000       # picks used in the cross-validation (a random subset, to keep it fast)
+
+# --- hand-off to the ABM (last chunk) ---
+promote_to_abm <- TRUE                # TRUE: copy the outputs into the ABM folder and add the treatment widgets to the ABM interface
+abm_dir        <- "../abm"            # where the ABM folder is, relative to this notebook (the usual game layout)
+
+# --- synthesis guide (Step 11) ---
+make_pdf_report <- TRUE               # write a PDF guide to the dataset and the fitted model
+report_file     <- "dataset_guide.pdf"
+loading_clip    <- 10                 # heat-map colours are clipped at +/- this weight (numbers in cells are not)
+```
+
+## Point this at your session log(s)
+
+```{r path}
+# Default: every .csv in sample_sessions/. Swap to a single file (or a
+# short explicit vector) once you're working with one real session:
+#   log_paths <- "real_session.csv"
+log_paths <- list.files(session_dir, pattern = "\\.csv(\\.gz)?$", full.names = TRUE)
+
+# Anything else dropped in this folder (MANIFEST.csv, a README export, ...)
+# isn't a session log. Decide by content, not by name: a session log has
+# lines starting with PHASE|, CHOICE|, STATE| or PLAYER|.
+is_session_log <- function(path) {
+  ln <- tryCatch(read_lines(path), error = function(e) character(0))
+  any(str_detect(ln, "^(PHASE|CHOICE|STATE|PLAYER)\\|"))
+}
+log_paths <- log_paths[map_lgl(log_paths, is_session_log)]
+
+if (length(log_paths) == 0) {
+  stop("log_paths is empty -- check your working directory (", getwd(), ").")
+}
+missing_files <- log_paths[!file.exists(log_paths)]
+if (length(missing_files) > 0) {
+  stop("Can't find: ", paste(missing_files, collapse = ", "), " (working directory: ", getwd(), "). ",
+       "Check the path, and Session > Set Working Directory in RStudio if needed.")
+}
+
+log_paths
+```
+
+## Step 1: parse one file into tagged tables
+
+```{r parse-function}
+tag_schema <- list(
+  STATE             = c("round", "phase", "x", "y", "name", "value"),
+  CHOICE            = c("round", "phase", "player", "x", "y", "actionID", "timestamp"),
+  CONFIRM           = c("round", "phase", "player", "timestamp"),
+  VILLAGE           = c("round", "phase", "player", "x", "y", "status", "timestamp"),
+  VILLAGECONFIRMED  = c("village", "x", "y", "status", "timestamp"),
+  PRIVATE           = c("round", "phase", "player", "x", "y", "status", "timestamp"),
+  PRIVATECONFIRMED  = c("player", "x", "y", "status", "timestamp"),
+  SCORE             = c("round", "phase", "player", "currentScore", "totalScore", "resources"),
+  PHASE             = c("label", "timestamp"),
+  PLAYER            = c("player", "name", "timestamp"),  # v2: what each player typed at entry = their ID
+  OVERRIDE          = c("variable", "value", "timestamp") # v2 ABM: a setting changed by a slider after the session row was loaded
+)
+
+build_table <- function(split_lines, tags_found, tag, session_id) {
+  cols <- tag_schema[[tag]]
+  rows <- split_lines[tags_found == tag]
+  rows <- map(rows, ~ .x[-1])
+  good <- map_lgl(rows, ~ length(.x) == length(cols))
+  if (any(!good)) {
+    warning(sprintf("%s (%s): dropped %d malformed line(s) with the wrong field count",
+                     tag, session_id, sum(!good)))
+  }
+  rows <- rows[good]
+  if (length(rows) == 0) {
+    empty <- setNames(rep(list(character(0)), length(cols)), cols)   # one empty column per field
+    df <- tibble::as_tibble(empty)
+  } else {
+    df <- as.data.frame(do.call(rbind, rows), stringsAsFactors = FALSE)
+    names(df) <- cols
+    df <- tibble::as_tibble(df)
+  }
+  df$session_id <- session_id
+  df
+}
+
+# Header lines look like `key: value` (no "|"). Keep the FIRST occurrence of
+# each key whose value is a scalar number or true/false. A list-valued numeric
+# parameter (e.g. pRain "0.1 0.3 1") is kept only as its mean, named
+# <key>_mean, and flagged so the diagnostics can say it is not ABM-evaluable.
+parse_header_params <- function(raw_lines, tags_found, session_id) {
+  is_hdr <- !(tags_found %in% names(tag_schema)) & str_detect(raw_lines, "^[A-Za-z_][A-Za-z0-9_.?-]*: ")
+  hl <- raw_lines[is_hdr]
+  if (length(hl) == 0) return(tibble(session_id = character(), variable = character(), value = character(), derived = logical()))
+  m <- str_match(hl, "^([^:]+): (.*)$")
+  h <- tibble(variable = m[, 2], value = str_trim(m[, 3])) %>% filter(!duplicated(variable))
+  num_re  <- "^-?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)?$"
+  is_bool   <- tolower(h$value) %in% c("true", "false")
+  is_num    <- str_detect(h$value, num_re)
+  # a short single-token string (no spaces) is a categorical setting, e.g. mode: fence
+  is_str    <- !is_bool & !is_num & str_detect(h$value, "^[A-Za-z0-9_.+-]+$")
+  is_scalar <- is_bool | is_num | is_str
+  is_list   <- !is_scalar & str_detect(h$value, paste0("^", "-?[0-9.eE+-]+( +-?[0-9.eE+-]+)+$"))
+  scal <- h[is_scalar, ] %>%
+    mutate(value = if_else(tolower(value) %in% c("true", "false"), tolower(value), value), derived = FALSE)
+  lst  <- h[is_list, ] %>%
+    mutate(value = map_chr(value, ~ as.character(mean(as.numeric(str_split(.x, " +")[[1]]), na.rm = TRUE))),
+           variable = paste0(variable, "_mean"), derived = TRUE)
+  out <- bind_rows(scal, lst) %>% mutate(session_id = session_id) %>% select(session_id, variable, value, derived)
+  out
+}
+
+# An OVERRIDE line (ABM sliders) replaces the header value of the same setting,
+# or adds it if the header did not carry it. Last override wins.
+apply_overrides <- function(header, overrides) {
+  if (nrow(overrides) == 0) return(header)
+  ov <- overrides %>%
+    mutate(value = str_trim(value), value = if_else(tolower(value) %in% c("true", "false"), tolower(value), value)) %>%
+    group_by(variable) %>% slice_tail(n = 1) %>% ungroup()
+  for (i in seq_len(nrow(ov))) {
+    hit <- header$variable == ov$variable[i]
+    if (any(hit)) header$value[hit] <- ov$value[i]
+    else header <- bind_rows(header, tibble(session_id = ov$session_id[i], variable = ov$variable[i],
+                                           value = ov$value[i], derived = FALSE))
+  }
+  header
+}
+
+parse_one_log <- function(path) {
+  session_id <- sub("\\.csv(\\.gz)?$", "", basename(path))
+  raw_lines <- read_lines(path)
+  split_lines <- str_split(raw_lines, fixed("|"))
+  tags_found  <- map_chr(split_lines, ~ .x[1])
+
+  list(
+    state   = build_table(split_lines, tags_found, "STATE", session_id),
+    choice  = build_table(split_lines, tags_found, "CHOICE", session_id),
+    confirm = build_table(split_lines, tags_found, "CONFIRM", session_id),
+    score   = build_table(split_lines, tags_found, "SCORE", session_id),
+    roster  = build_table(split_lines, tags_found, "PLAYER", session_id),
+    header  = apply_overrides(parse_header_params(raw_lines, tags_found, session_id),
+                              build_table(split_lines, tags_found, "OVERRIDE", session_id))
+  )
+}
+```
+
+## Step 2: parse every file and combine
+
+```{r parse-all}
+parsed_sessions <- map(log_paths, parse_one_log)
+if (length(exclude_game_ids) > 0) {
+  is_excluded <- map_lgl(parsed_sessions, function(ps) {
+    g <- ps$header$value[ps$header$variable == "gameID"]
+    length(g) > 0 && g[1] %in% as.character(exclude_game_ids)
+  })
+  if (any(is_excluded)) message("Left out ", sum(is_excluded), " log(s) with gameID in {", paste(exclude_game_ids, collapse = ", "), "} (practice games). Set exclude_game_ids <- NULL to keep them.")
+  log_paths <- log_paths[!is_excluded]; parsed_sessions <- parsed_sessions[!is_excluded]
+}
+
+state_long <- map(parsed_sessions, "state")   %>% bind_rows()
+choice     <- map(parsed_sessions, "choice")  %>% bind_rows()
+confirm    <- map(parsed_sessions, "confirm") %>% bind_rows()
+score      <- map(parsed_sessions, "score")   %>% bind_rows()
+
+to_num <- function(df, cols) df %>% mutate(across(all_of(cols), as.numeric))
+
+state_long <- to_num(state_long, c("round", "phase", "x", "y"))
+choice     <- to_num(choice, c("round", "phase", "player", "x", "y", "actionID"))
+score      <- to_num(score, c("round", "phase", "player", "currentScore", "totalScore", "resources"))
+
+cat("sessions:", n_distinct(choice$session_id), "\n")
+cat("state rows:", nrow(state_long), " choice rows:", nrow(choice),
+    " confirm rows:", nrow(confirm), " score rows:", nrow(score), "\n")
+
+choice %>% group_by(session_id) %>% summarise(n_players = n_distinct(player))
+```
+
+## Step 2a: who is who (person IDs) and what each session's settings were
+
+```{r roster}
+roster <- map(parsed_sessions, "roster") %>% bind_rows() %>% mutate(player = as.numeric(player))
+
+# Every (session, player number) that acted gets a person_id: the entered
+# string verbatim; if a log has no PLAYER line for that player, a
+# session-local placeholder (a distinct "person" that cannot be linked
+# to any other session).
+players_seen <- choice %>% distinct(session_id, player)
+person_map <- players_seen %>%
+  left_join(roster %>% select(session_id, player, entered = name), by = c("session_id", "player")) %>%
+  mutate(person_id = if_else(is.na(entered) | entered == "", paste0(session_id, "#", player), entered))
+
+if (normalize_ids) {
+  person_map <- person_map %>% mutate(person_id = if_else(is.na(entered), person_id, tolower(str_trim(person_id))))
+}
+
+no_roster <- person_map %>% filter(is.na(entered) | entered == "")
+if (nrow(no_roster) > 0) {
+  warning(n_distinct(no_roster$session_id), " session(s) have no PLAYER line for ", nrow(no_roster),
+          " player(s): each is treated as a separate person (cannot be linked across sessions).")
+}
+
+# Two players in ONE session with the same ID would merge two people; make them distinct and say so.
+dups <- person_map %>% count(session_id, person_id) %>% filter(n > 1)
+if (nrow(dups) > 0) {
+  warning("Duplicate person IDs within a session: ", paste(unique(dups$person_id), collapse = ", "),
+          " -- suffixed with ~player number to keep them separate.")
+  person_map <- person_map %>%
+    group_by(session_id, person_id) %>%
+    mutate(person_id = if_else(n() > 1, paste0(person_id, "~", player), person_id)) %>%
+    ungroup()
+}
+person_map <- person_map %>% select(session_id, player, person_id)
+
+person_summary <- person_map %>% count(person_id, name = "n_sessions")
+cat("distinct persons:", nrow(person_summary), " | persons seen in 2+ sessions:", sum(person_summary$n_sessions > 1), "\n")
+
+# Session settings from the logs' headers. Only variables that are columns of
+# sessionList.csv are candidates (when that file is present).
+header_all <- map(parsed_sessions, "header") %>% bind_rows()
+if (file.exists("sessionList.csv")) {
+  sl_cols <- names(read_csv("sessionList.csv", n_max = 0, show_col_types = FALSE))
+  sl_cols <- c(sl_cols, paste0(sl_cols, "_mean"))
+  header_all <- header_all %>% filter(variable %in% sl_cols)
+}
+list_derived <- unique(header_all$variable[header_all$derived])
+
+coerce_param <- function(x) {
+  if (all(x %in% c("true", "false", NA))) return(x == "true")
+  n <- suppressWarnings(as.numeric(x))
+  if (!any(is.na(n) & !is.na(x))) return(n)
+  x   # categorical (text) setting
+}
+session_params <- header_all %>%
+  select(session_id, variable, value) %>%
+  pivot_wider(names_from = variable, values_from = value) %>%
+  mutate(across(-session_id, coerce_param))
+
+# Derived numPlayers (how many people joined) is offered as a candidate like any
+# other setting. If it is not a manipulation in your game, give it the role
+# not_treatment in variableRoles.csv and it is ignored.
+np <- person_map %>% count(session_id, name = "numPlayers")
+if (!"numPlayers" %in% names(session_params)) {
+  session_params <- session_params %>% full_join(np, by = "session_id")
+}
+session_params <- session_params %>% filter(session_id %in% unique(choice$session_id))
+
+cat("session settings read from log headers:", paste(setdiff(names(session_params), "session_id"), collapse = ", "), "\n")
+```
+
+## Step 3: reshape state from long to wide
+
+```{r pivot-state}
+state_wide <- state_long %>%
+  pivot_wider(id_cols = c(session_id, round, phase, x, y), names_from = name, values_from = value)
+
+smart_coerce <- function(x) {
+  if (all(x %in% c("true", "false", NA))) return(x == "true")
+  numeric_try <- suppressWarnings(as.numeric(x))
+  if (!any(is.na(numeric_try) & !is.na(x))) return(numeric_try)
+  x  # leave as character -- e.g. playerHarvestRound's "[1 2 3]" list literal
+}
+
+state_wide <- state_wide %>% mutate(across(-c(session_id, round, phase, x, y), smart_coerce))
+
+list_shaped <- names(state_wide)[map_lgl(state_wide, ~ is.character(.x) && any(str_detect(.x, fixed("[")), na.rm = TRUE))]
+if (length(list_shaped) > 0) {
+  message("List-shaped columns left as text, not used as predictors below: ",
+          paste(list_shaped, collapse = ", "))
+}
+```
+
+## Step 4: collapse taps into real decisions, without losing the taps themselves
+
+One row per action, per the earlier reasoning (a turn can span several
+patches, so one-row-per-turn doesn't fit a rectangular dataset). But
+`update-current-choice` cycles through options each time a player taps
+the *same* patch again, so only the last tap per patch is the real
+decision -- the earlier ones are menu-browsing, not separate choices.
+
+The count is kept as `n_taps_patch` (how many times this specific
+patch was retapped) and `n_taps_turn` (how many total taps happened
+across every patch this player touched that round/phase). Read these
+two differently: `n_taps_turn` is a reasonable candidate *predictor*
+-- it describes how much deliberation a player brought to the whole
+turn, independent of which specific action they ended up taking
+anywhere in it. `n_taps_patch` is murkier as a predictor of the action
+chosen *on that same patch*, since the cycling order itself is fixed
+by the game code. Left in as a candidate either way -- just worth
+treating with more suspicion than the state variables.
+
+```{r dedup-choice}
+cat("choice rows before collapsing cycling taps:", nrow(choice), "\n")
+
+choice <- choice %>%
+  group_by(session_id, round, phase, player, x, y) %>%
+  mutate(n_taps_patch = n()) %>%
+  ungroup() %>%
+  group_by(session_id, round, phase, player) %>%
+  mutate(n_taps_turn = n()) %>%
+  ungroup()
+
+choice_real <- choice %>%
+  group_by(session_id, round, phase, player, x, y) %>%
+  slice_tail(n = 1) %>%
+  ungroup()
+
+cat("choice rows after collapsing to real decisions:", nrow(choice_real), "\n")
+
+# tapSquares uses -99 as the sentinel for "explicitly chose nothing here."
+# TRUE keeps it as a real outcome level (modeling "did they act at all,
+# and on what" together); FALSE models only the choice of *which* action,
+# conditional on having taken one. Either is defensible -- flip this and
+# re-run rather than picking one silently.
+include_no_action_choice <- TRUE
+if (!include_no_action_choice) {
+  choice_real <- choice_real %>% filter(actionID != -99)
+  cat("choice rows after dropping 'no action' (-99):", nrow(choice_real), "\n")
+}
+```
+
+## Step 4a: load this game's variable-roles config (optional)
+
+`variableRoles.csv` is per-game, optional, and lives alongside the
+session logs. It tells this notebook how to treat three kinds of
+variable that need more than "is it numeric or logical":
+
+- **counters** (`round`, `phase`, `year`, or whatever a game calls its
+  turn/cycle number). Default (not listed, or no config file at all)
+  is `exclude` -- identical to every prior version of this notebook.
+  List one here with `encoding = numeric` to test it as a plain linear
+  predictor, or `encoding = cyclical` with a `period` to test it as a
+  repeating cycle (encoded as sin/cos pairs so the model can
+  extrapolate to a round number it never saw in training, rather than
+  needing every value seen during fitting).
+- **ownership** (`ownedBy`, `village`, or similar). `role =
+  ownership_individual`/`ownership_group` treats the variable as a
+  category (its sentinel value, e.g. 0 for unassigned, becomes its own
+  distinct level) rather than a number the model averages over.
+  `unassignedValue` is documentation for humans reading the config --
+  not consumed by this notebook -- so the raw value stays the level
+  text, matching what the ABM generator reads back from the patch.
+- **treatment candidates**: `treatmentCandidate = TRUE` doesn't change
+  modeling at all -- it's a flag carried through to the export/notes
+  so an ABM user knows which variables are the ones worth sweeping.
+
+A blank template with all of this documented lives at
+`variableRoles_TEMPLATE.csv` in pipeline_core.
+
+```{r load-variable-roles}
+role_schema <- c("variable", "role", "encoding", "period", "unassignedValue", "treatmentCandidate", "notes")
+
+if (file.exists("variableRoles.csv")) {
+  variable_roles <- read_csv("variableRoles.csv", col_types = cols(.default = "c"), show_col_types = FALSE)
+  missing_cols <- setdiff(role_schema, names(variable_roles))
+  if (length(missing_cols) > 0) {
+    stop("variableRoles.csv is missing column(s): ", paste(missing_cols, collapse = ", "))
+  }
+  cat("Loaded variableRoles.csv:", nrow(variable_roles), "variable(s) configured.\n")
+} else {
+  variable_roles <- tibble(variable = character(), role = character(), encoding = character(),
+                            period = character(), unassignedValue = character(),
+                            treatmentCandidate = character(), notes = character())
+  message("No variableRoles.csv found -- using defaults (round/phase excluded, everything else auto-detected).")
+}
+
+variable_roles
+```
+
+## Step 4b: apply counter and ownership encodings to the wide state table
+
+```{r apply-variable-roles}
+counter_defaults <- c("round", "phase")  # always excluded unless explicitly overridden below
+
+# Cyclical counters: replace the raw column with sin/cos pairs.
+cyclical_rows <- variable_roles %>% filter(role == "counter", encoding == "cyclical")
+for (i in seq_len(nrow(cyclical_rows))) {
+  v <- cyclical_rows$variable[i]
+  p <- suppressWarnings(as.numeric(cyclical_rows$period[i]))
+  if (v %in% names(state_wide) && !is.na(p) && p > 0) {
+    state_wide[[paste0(v, "_sin")]] <- sin(2 * pi * state_wide[[v]] / p)
+    state_wide[[paste0(v, "_cos")]] <- cos(2 * pi * state_wide[[v]] / p)
+    message(v, ": encoded as cyclical (period = ", p, ") -> ", v, "_sin, ", v, "_cos")
+  } else if (v %in% names(state_wide)) {
+    warning(v, ": role=counter, encoding=cyclical but no valid 'period' given -- left out of the model.")
+  }
+}
+
+# Numeric counters: leave the raw column in place, just don't structurally exclude it below.
+numeric_counter_vars <- variable_roles %>% filter(role == "counter", encoding == "numeric") %>% pull(variable)
+
+# Categorical counters (rare -- won't extrapolate to an unseen round/phase value,
+# only use this if you specifically want "round 3" treated as a distinct category).
+categorical_counter_vars <- variable_roles %>% filter(role == "counter", encoding == "categorical") %>% pull(variable)
+for (v in categorical_counter_vars) {
+  if (v %in% names(state_wide)) state_wide[[v]] <- factor(state_wide[[v]])
+}
+
+# Ownership variables: treated as a category (factor), not a number on a
+# continuous scale, so the sentinel (e.g. 0 = unassigned) is just another
+# distinct level rather than something the model averages toward. The raw
+# value is kept AS the level text (e.g. "0", "1", "2") rather than
+# relabeled to a word like "unassigned" -- R's dummy-coded coefficient
+# name is then <varname><rawvalue> (e.g. "village0"), which the ABM
+# generator's get-feature-value resolves by reading that same patch
+# variable's current value back as text. Relabeling to a word here would
+# require the ABM side to separately know the unassignedValue mapping
+# from variableRoles.csv just to reverse it -- unnecessary coupling for
+# no modeling benefit, since factor() already gives 0 its own level
+# either way. unassignedValue in variableRoles.csv is documentation for
+# humans reading the config, not consumed here.
+ownership_rows <- variable_roles %>% filter(role %in% c("ownership_individual", "ownership_group"))
+for (i in seq_len(nrow(ownership_rows))) {
+  v <- ownership_rows$variable[i]
+  if (v %in% names(state_wide)) {
+    state_wide[[v]] <- factor(as.character(state_wide[[v]]))
+    message(v, ": encoded as ownership factor (levels: ",
+            paste(levels(state_wide[[v]]), collapse = ", "), ")")
+  }
+}
+
+# round/phase stay excluded from the id-column list below UNLESS they were
+# given a non-"exclude" encoding above (numeric, cyclical, or categorical).
+counter_included <- variable_roles %>%
+  filter(role == "counter", encoding %in% c("numeric", "cyclical", "categorical")) %>%
+  pull(variable)
+counters_to_exclude <- setdiff(counter_defaults, counter_included)
+
+cat("Counters excluded from modeling:", paste(counters_to_exclude, collapse = ", "), "\n")
+if (length(counter_included) > 0) cat("Counters included (see encoding above):", paste(counter_included, collapse = ", "), "\n")
+```
+
+## Step 5: build one row per decision
+
+```{r model-data}
+model_data <- choice_real %>%
+  left_join(person_map, by = c("session_id", "player")) %>%
+  left_join(state_wide, by = c("session_id", "round", "phase", "x", "y")) %>%
+  left_join(score, by = c("session_id", "round", "phase", "player"))
+
+# Session-level settings join in last. A setting whose name collides with a
+# patch/score variable is dropped from treatment consideration (it would be
+# ambiguous which one the model, and later the ABM, means).
+sp_collide <- intersect(setdiff(names(session_params), "session_id"), names(model_data))
+if (length(sp_collide) > 0) {
+  message("Session settings dropped (name collides with a state/score variable): ", paste(sp_collide, collapse = ", "))
+  session_params <- session_params %>% select(-all_of(sp_collide))
+}
+session_param_cols <- setdiff(names(session_params), "session_id")
+model_data <- model_data %>% left_join(session_params, by = "session_id") %>%
+  mutate(across(all_of(session_param_cols), ~ if (is.character(.x)) factor(.x) else .x))
+
+# Variables that hold a PLAYER NUMBER (role = player_reference in variableRoles.csv, e.g. cropOwner)
+# are meaningless as raw numbers; what matters is whether the value is the acting player.
+# Replace each by <name>_mine (1 if it equals the player making the choice, else 0).
+# The ABM computes the same quantity from the agent's own number.
+ref_vars <- intersect(variable_roles$variable[variable_roles$role == "player_reference"], names(model_data))
+for (v in ref_vars) {
+  model_data[[paste0(v, "_mine")]] <- as.numeric(as.numeric(as.character(model_data[[v]])) == model_data$player)
+  model_data[[paste0(v, "_mine")]][is.na(model_data[[paste0(v, "_mine")]])] <- 0
+}
+if (length(ref_vars) > 0) message("player_reference variables replaced by <name>_mine: ", paste(ref_vars, collapse = ", "))
+
+# Always-bookkeeping columns: join keys / identifiers, never candidate
+# predictors regardless of configuration. round/phase are handled
+# separately just above -- excluded by default, includable via
+# variableRoles.csv -- since unlike these, a game *can* meaningfully
+# encode real state in its counter.
+id_cols <- c("session_id", "player", "person_id", "x", "y", "actionID", "timestamp")
+id_cols <- union(id_cols, counters_to_exclude)
+
+predictor_cols <- setdiff(names(model_data), id_cols)
+predictor_cols <- predictor_cols[map_lgl(model_data[predictor_cols],
+                                          ~ is.numeric(.x) || is.logical(.x) || is.factor(.x))]
+
+## Choose which real predictors the choice model may use
+##
+## `session_id`, `player`, `x`, `y`, `actionID`, and `timestamp` are
+## never candidates -- they're bookkeeping from the log format itself
+## (join keys and identifiers), not variables that exist anywhere in
+## the actual game/ABM. round/phase are excluded by the same logic
+## UNLESS variableRoles.csv opted them in (Step 4a/4b) -- see that
+## section for why a game might want to.
+##
+## What *does* belong in excluded_predictors below: any predictor
+## that's real (a patches-own variable that's actually in this game,
+## or a score-derived feature like `resources`) but that you know
+## isn't meaningful for this analysis and want dropped without
+## touching the data or the model-fitting code. Empty by default.
+excluded_predictors <- ref_vars   # raw player-number columns; their <name>_mine versions are used instead
+
+predictor_cols <- setdiff(predictor_cols, excluded_predictors)
+
+# Session-level settings are NOT part of the base predictor set; Step 5a
+# decides which (if any) of them earn a place.
+predictor_cols <- setdiff(predictor_cols, session_param_cols)
+predictor_cols_base <- predictor_cols
+
+cat("Excluded from the choice model by name (edit excluded_predictors above to add any):\n",
+    if (length(excluded_predictors) == 0) "(none)" else paste(excluded_predictors, collapse = ", "), "\n")
+
+# tapSquares names boolean patches-own variables with a trailing "?"
+# (water?, cropped?, ...) -- not valid bare terms in an R formula, so
+# every predictor gets backtick-wrapped regardless of whether it needs
+# it. Works the same for factor columns (ownership, categorical
+# counters) as for numeric/logical ones.
+predictor_terms <- paste0("`", predictor_cols, "`")
+
+cat("Predictors used (includes n_taps_patch, n_taps_turn):\n", paste(predictor_cols, collapse = ", "), "\n")
+
+# Coefficients from separately-fit models are only comparable if every
+# model uses the same reference/baseline outcome category. Fix one
+# explicitly and reuse it for every fit below (pooled, per-player,
+# per-class) rather than letting each fit pick its own default.
+#
+# The reference category MUST be -99 ("do nothing") whenever it's present
+# in the data, not just "whichever action happens to be most common."
+# A multinomial logit's reference level always scores exactly 0 -- no
+# fitted coefficients, no dependence on state at all, by construction --
+# and the ABM (choose-actions-for-agent, tapSquares_ABM_generator.nlogox)
+# picks every action by comparing its fitted score against -99's fitted
+# score (the margin over "doing nothing"). That comparison is only
+# mathematically sound when -99 itself is the reference: then every real
+# action's score directly IS its own log-odds relative to doing nothing,
+# and "margin > 0" means exactly what it's supposed to. Pick anything
+# else as reference and that ONE action instead gets pinned to a flat,
+# state-independent 0 score forever, while -99 gets real (often
+# comparatively favorable) fitted coefficients -- so the reference action
+# ends up silently, permanently excluded from every ABM agent's choices,
+# for a reason that has nothing to do with real behavior, just an
+# artifact of which action happened to get picked as the baseline.
+# Confirmed live: Crouching Tiger's synthetic training data (near-uniform
+# random action choice, no real signal) happened to make actionID 4
+# (buildFence) the most-frequent action by sampling noise alone -- it
+# became the reference, and fence-building was never chosen by any ABM
+# agent afterward, regardless of session/round/patch state.
+if (-99 %in% model_data$actionID) {
+  reference_action <- -99
+} else {
+  # -99 never appears in this session's data (every player acted every
+  # turn) -- fall back to the most frequent real action, same as before.
+  reference_action <- model_data %>% count(actionID, sort = TRUE) %>% slice(1) %>% pull(actionID)
+  message("Note: -99 (\"do nothing\") never appears in this session's data -- ",
+          "falling back to the most frequent action (", reference_action,
+          ") as the reference category instead.")
+}
+model_data <- model_data %>% mutate(actionID_f = relevel(factor(actionID), ref = as.character(reference_action)))
+cat("Reference category for all model fits below: actionID =", reference_action, "\n")
+
+make_form <- function(cols) as.formula(paste("actionID_f ~", paste0("`", cols, "`", collapse = " + ")))
+form_base <- make_form(predictor_cols_base)
+
+# A predictor that does not vary in the rows a given fit uses (a one-level
+# factor such as `village` when every patch logs 0, a constant numeric, a
+# column that is all NA) cannot be estimated and makes multinom() stop with
+# "contrasts can be applied only to factors with 2 or more levels". This
+# happens in the pooled data, and far more often in subsets (one person,
+# one class, one cross-validation fold). So every fit goes through fit_mn(),
+# which first drops predictors that do not vary in ITS data, repeating
+# until stable because dropping a column can change which rows are complete.
+varying_cols <- function(data, cols) {
+  cols <- cols[map_lgl(cols, ~ n_distinct(data[[.x]][!is.na(data[[.x]])]) > 1)]
+  repeat {
+    d <- data[complete.cases(data[, c("actionID_f", cols), drop = FALSE]), , drop = FALSE]
+    keep <- cols[map_lgl(cols, ~ n_distinct(d[[.x]]) > 1)]
+    if (length(keep) == length(cols)) break
+    cols <- keep
+  }
+  cols
+}
+fit_mn <- function(cols, data, ...) {
+  keep <- varying_cols(data, cols)
+  dropped <- setdiff(cols, keep)
+  if (length(dropped) > 0) message("Not estimable in this fit (no variation), left out: ", paste(dropped, collapse = ", "))
+  data <- droplevels(data[complete.cases(data[, c("actionID_f", keep), drop = FALSE]), , drop = FALSE])
+  frm <- if (length(keep) == 0) as.formula("actionID_f ~ 1") else make_form(keep)
+  # do.call (not a plain call): multinom() stores its call and summary()/vcov()
+  # re-evaluate it later, so the formula and data must be values in the call,
+  # not names that only exist inside this function.
+  do.call(multinom, c(list(formula = frm, data = data, trace = FALSE, MaxNWts = 50000, decay = ridge_decay), list(...)))
+}
+form <- form_base   # Step 5a extends this with any treatments that pass
+can_fit_model <- n_distinct(model_data$actionID) >= 2
+if (!can_fit_model) {
+  message("Only one action type appears in this data -- can't fit a choice model yet.")
+}
+
+model_data
+```
+
+
+## Step 5a: which session settings can be treated as treatments?
+
+Every scalar session setting that **varies across the pool of logs** is a
+candidate treatment. Nothing is assumed about which ones matter: ones you
+declared (`variableRoles.csv`: `treatmentCandidate = TRUE`, or `role =
+session_parameter`) and ones the notebook found on its own are put through
+the same checks, in this order:
+
+1. **Enough variation?** Not constant; at least `min_sessions_total`
+   sessions; each level (when there are few levels) seen in at least
+   `min_sessions_per_level` sessions.
+2. **Separable?** Settings that move together across sessions (|cor| above
+   `max_abs_cor`, or linearly dependent) cannot be told apart; the
+   declared one is kept, the other is reported as aliased.
+3. **Does it help?** Session-blocked cross-validation: sessions are split
+   into folds, and a treatment must raise the held-out log-likelihood per
+   decision by at least `cv_min_gain` over the state-only model, and the
+   accepted set together must too. This is what stops a treatment that
+   merely fits session-level noise from being exported as a "weight."
+
+Only treatments passing all three become predictors. Everything else
+(including why) is in `treatment_report.csv`. A treatment that fails is not
+shown to be irrelevant, only that this pool cannot demonstrate an effect.
+Settings enter as additive terms; effects that exist only in combination
+with a state (for example a fine that matters only on protected land) are
+not modeled yet.
+
+```{r treatment-diagnostics}
+declared_treatments <- variable_roles %>%
+  filter(toupper(treatmentCandidate) %in% c("TRUE", "T", "YES", "1") | role == "session_parameter") %>%
+  pull(variable)
+not_treatments <- variable_roles %>% filter(role == "not_treatment") %>% pull(variable)
+
+cand <- setdiff(session_param_cols, not_treatments)
+if (!use_autodetected_treatments) cand <- intersect(cand, declared_treatments)
+cand <- c(intersect(declared_treatments, cand), setdiff(cand, declared_treatments))  # declared first
+missing_declared <- setdiff(declared_treatments, session_param_cols)
+if (length(missing_declared) > 0) {
+  message("Declared as treatment but not found as a scalar setting in the log headers: ",
+          paste(missing_declared, collapse = ", "))
+}
+
+sp <- session_params %>% filter(session_id %in% unique(model_data$session_id))
+n_sess <- nrow(sp)
+
+diag_rows <- lapply(cand, function(v) {
+  x <- sp[[v]]
+  nd <- length(unique(x[!is.na(x)]))
+  min_lvl <- if (nd <= max_levels_for_counts && nd > 0) min(table(x)) else NA_integer_
+  verdict <- "adequate"; why <- character(0)
+  is_cat <- is.character(x)
+  if (nd < 2) {
+    verdict <- "not testable"; why <- "constant across all sessions"
+  } else if (is_cat && nd > max_levels_for_counts) {
+    verdict <- "not testable"; why <- sprintf("text setting with %d distinct values (looks like free text or a path, not a small set of conditions)", nd)
+  } else {
+    if (n_sess < min_sessions_total) {
+      verdict <- "not testable"; why <- c(why, sprintf("only %d sessions (need %d)", n_sess, min_sessions_total))
+    }
+    if (!is.na(min_lvl) && min_lvl < min_sessions_per_level) {
+      verdict <- "not testable"; why <- c(why, sprintf("a level occurs in only %d session(s) (need %d)", min_lvl, min_sessions_per_level))
+    }
+    if (verdict != "not testable" && nd == 2 && !is_cat) {
+      verdict <- "limited"; why <- c(why, "two levels only: direction testable, shape is not")
+    }
+  }
+  xn <- suppressWarnings(as.numeric(x))
+  if (nd >= 2 && nd == n_sess && !any(is.na(xn)) && all(xn == round(xn))) {
+    # a different whole number in every session is a label (sessionID, gameID), not a manipulation
+    verdict <- "not testable"; why <- c(why, "a different integer in every session: looks like an identifier")
+  }
+  if (v %in% list_derived) why <- c(why, "mean of a list-valued setting; the ABM cannot evaluate this name")
+  tibble(variable = v,
+         source = if (v %in% declared_treatments) "declared" else "auto-detected",
+         n_sessions = n_sess, n_distinct = nd,
+         min_value = if (is_cat) NA_real_ else suppressWarnings(min(as.numeric(x), na.rm = TRUE)),
+         max_value = if (is_cat) NA_real_ else suppressWarnings(max(as.numeric(x), na.rm = TRUE)),
+         min_sessions_per_level = min_lvl,
+         variation_verdict = verdict, notes = paste(why, collapse = "; "),
+         abm_evaluable = !(v %in% list_derived),
+         type = if (is.logical(x)) "logical" else if (is_cat) "categorical" else "numeric",
+         levels = if (is_cat) paste(sort(unique(x)), collapse = ";") else NA_character_,
+         integer_valued = is.numeric(x) && !anyNA(x) && all(x == round(x)))
+})
+treatment_diag <- if (length(diag_rows) > 0) bind_rows(diag_rows) else
+  tibble(variable = character(), source = character(), n_sessions = integer(), n_distinct = integer(),
+         min_value = numeric(), max_value = numeric(), min_sessions_per_level = integer(),
+         variation_verdict = character(), notes = character(), abm_evaluable = logical(),
+         type = character(), levels = character(), integer_valued = logical())
+
+# --- separability (aliasing) among the testable ones ---
+eligible <- treatment_diag %>% filter(variation_verdict != "not testable", abm_evaluable) %>% pull(variable)
+alias_dropped <- character(0)
+# numeric design columns for a setting: itself, or dummy columns for a categorical one
+design_block <- function(v) {
+  x <- sp[[v]]
+  if (is.character(x)) {
+    lv <- sort(unique(x))[-1]
+    matrix(sapply(lv, function(l) as.numeric(x == l)), nrow = length(x))
+  } else matrix(as.numeric(x), ncol = 1)
+}
+if (length(eligible) > 1) {
+  blocks <- setNames(lapply(eligible, design_block), eligible)
+  for (i in seq_along(eligible)[-1]) {
+    for (j in seq_len(i - 1)) {
+      vi <- eligible[i]; vj <- eligible[j]
+      if (vi %in% alias_dropped || vj %in% alias_dropped) next
+      cc <- suppressWarnings(abs(cor(blocks[[vi]], blocks[[vj]])))
+      r <- suppressWarnings(max(cc, na.rm = TRUE))
+      if (is.finite(r) && r > max_abs_cor) alias_dropped <- c(alias_dropped, vi)
+    }
+  }
+  kept <- setdiff(eligible, alias_dropped)
+  if (length(kept) > 1) {
+    Xk <- cbind(1, do.call(cbind, blocks[kept]))
+    owner <- c("(Intercept)", rep(kept, map_int(blocks[kept], ncol)))
+    q <- qr(Xk)
+    if (q$rank < ncol(Xk)) {
+      alias_dropped <- c(alias_dropped, unique(owner[q$pivot[seq_len(ncol(Xk)) > q$rank]]))
+    }
+  }
+}
+if (length(alias_dropped) > 0) {
+  treatment_diag <- treatment_diag %>%
+    mutate(notes = if_else(variable %in% alias_dropped,
+                           paste0(notes, if_else(notes == "", "", "; "), "moves together with another setting across sessions: effects cannot be separated"),
+                           notes),
+           variation_verdict = if_else(variable %in% alias_dropped, "not testable", variation_verdict))
+  eligible <- setdiff(eligible, alias_dropped)
+}
+
+# --- does it improve held-out prediction? (folds are whole sessions) ---
+cv_ll <- function(cols, data, folds) {
+  per_row <- lapply(sort(unique(folds)), function(f) {
+    tr <- data[folds != f, ]; te <- data[folds == f, ]
+    tr$actionID_f <- droplevels(tr$actionID_f)
+    if (nlevels(tr$actionID_f) < 2) return(NA_real_)
+    m <- tryCatch(fit_mn(cols, tr, maxit = 100), error = function(e) NULL)
+    if (is.null(m)) return(NA_real_)
+    p <- tryCatch(predict(m, newdata = te, type = "probs"), error = function(e) NULL)
+    if (is.null(p)) return(NA_real_)
+    if (is.null(dim(p))) { p <- cbind(1 - p, p); colnames(p) <- m$lev }
+    idx <- match(as.character(te$actionID_f), colnames(p))
+    pr <- ifelse(is.na(idx), 1e-6, p[cbind(seq_len(nrow(te)), ifelse(is.na(idx), 1, idx))])
+    log(pmax(pr, 1e-9))
+  })
+  if (any(map_lgl(per_row, ~ anyNA(.x)))) return(NA_real_)
+  mean(unlist(per_row))
+}
+
+treatment_diag$cv_gain <- NA_real_
+treatment_diag$used <- FALSE
+treatments_used <- character(0)
+combined_gain <- NA_real_
+
+if (can_fit_model && length(eligible) > 0 && n_sess >= 4) {
+  cv_cols <- c(predictor_cols_base, eligible)
+  cv_cols <- varying_cols(model_data, cv_cols)
+  eligible <- intersect(eligible, cv_cols)
+  cv_data <- model_data[complete.cases(model_data[, c("actionID_f", cv_cols)]), ]
+  K <- min(cv_folds, n_distinct(cv_data$session_id))
+  set.seed(1)
+  fold_of_session <- setNames(sample(rep(seq_len(K), length.out = n_distinct(cv_data$session_id))),
+                              unique(cv_data$session_id))
+  folds <- unname(fold_of_session[cv_data$session_id])
+
+  ll_base <- cv_ll(intersect(predictor_cols_base, cv_cols), cv_data, folds)
+  cat("held-out mean log-likelihood per decision, state-only model:", round(ll_base, 4), "\n")
+  if (!is.na(ll_base)) {
+    for (v in eligible) {
+      ll_v <- cv_ll(c(intersect(predictor_cols_base, cv_cols), v), cv_data, folds)
+      treatment_diag$cv_gain[treatment_diag$variable == v] <- ll_v - ll_base
+    }
+    treatments_used <- treatment_diag %>%
+      filter(variable %in% eligible, !is.na(cv_gain), cv_gain > cv_min_gain) %>% pull(variable)
+    if (length(treatments_used) > 0) {
+      combined_gain <- cv_ll(c(intersect(predictor_cols_base, cv_cols), treatments_used), cv_data, folds) - ll_base
+      if (is.na(combined_gain) || combined_gain <= cv_min_gain) {
+        message("Treatments individually helped but not together (combined held-out gain ",
+                round(combined_gain, 4), ") -- none used.")
+        treatments_used <- character(0)
+      }
+    }
+  }
+} else if (length(eligible) > 0) {
+  message("Too few sessions (", n_sess, ") for session-blocked cross-validation -- no treatment is used.")
+}
+
+treatment_diag <- treatment_diag %>%
+  mutate(used = variable %in% treatments_used,
+         overall = case_when(
+           used ~ "USED as predictor",
+           variation_verdict == "not testable" ~ "not used: not testable with this pool",
+           is.na(cv_gain) ~ "not used: no cross-validation possible",
+           TRUE ~ "not used: no held-out improvement"))
+
+if (length(treatments_used) > 0) {
+  predictor_cols <- c(predictor_cols_base, treatments_used)
+  predictor_terms <- paste0("`", predictor_cols, "`")
+  form <- make_form(predictor_cols)
+}
+cat("Treatments used as predictors:", if (length(treatments_used) == 0) "(none)" else paste(treatments_used, collapse = ", "), "\n")
+
+if (nrow(treatment_diag) > 0) write_csv(treatment_diag, "treatment_report.csv")
+treatment_diag
+```
+
+## Step 6: a single pooled model, as a baseline
+
+Useful as a sanity check and a point of comparison against the
+per-player/per-class versions below -- if the pooled and per-class
+models end up looking nearly identical, that's itself informative (not
+much heterogeneity to find, at least not yet, with this much data).
+
+```{r fit-pooled}
+if (can_fit_model) {
+  fit <- fit_mn(predictor_cols, model_data)
+  summary(fit)
+}
+```
+
+```{r plot-coefs}
+if (exists("fit")) {
+  coefs <- as.data.frame(coef(fit))
+  coefs$outcome_level <- rownames(coefs)
+  coefs_long <- coefs %>% pivot_longer(-outcome_level, names_to = "term", values_to = "weight")
+
+  ggplot(coefs_long, aes(x = term, y = weight, fill = outcome_level)) +
+    geom_col(position = "dodge") +
+    coord_flip() +
+    labs(title = "Pooled model: fitted feature weights per action",
+         x = NULL, y = "coefficient (log-odds scale, relative to the reference action)") +
+    theme_minimal()
+}
+```
+
+## Step 6b: which patch? (the patch-choice model)
+
+The action model above answers "given that I am on this patch, what do I do?"
+It cannot see WHERE a person chooses to act, because patches they did not
+touch are not in the data. This step adds that missing half. A turn is a
+sequence of picks: at each pick the player chooses one patch from those that
+could still be acted on (the logged `landChoices` says which), or chooses to
+**stop**. A conditional logit estimates how patch features (soil quality,
+distance to water, whether it is a protected area, whether the crop is yours,
+which actions are available there, ...) raise or lower the chance a patch is
+picked next, and how likely stopping is as picks accumulate. The same patch
+variables as the action model are used; nothing game-specific is added.
+
+Patches picked are those a player's last tap left with an action (a patch
+tapped and cycled back to "do nothing" is browsing, not a pick). Pick order is
+the order of first taps. When more than `choice_max_alternatives` patches are
+eligible, the unchosen ones are a random sample; that is unbiased for this
+model, so no correction is needed. Weights are shown per standard deviation of
+each feature in the guide, and per raw unit in `agent_patch_choice_weights.csv`.
+
+```{r patch-choice-data}
+patch_choice_ok <- FALSE
+pc <- NULL
+pc_fit <- NULL            # pc plus any treatment terms accepted in Step 6c
+pc_note <- "patch-choice model not run"
+
+fit_choice <- function(pc, S = NULL, ridge = choice_ridge, iters = 60) {
+  if (is.null(S)) S <- seq_len(pc$E)
+  A <- pc$A; E <- length(S)
+  rows <- rep((S - 1L) * A, each = A) + seq_len(A)
+  Xs <- pc$Xs[rows, , drop = FALSE]
+  V  <- matrix(pc$valid[rows], nrow = E, ncol = A, byrow = TRUE)
+  ch <- pc$CH[S]
+  d <- ncol(Xs); grp <- rep(seq_len(E), each = A)
+  xs <- Xs[(seq_len(E) - 1L) * A + ch, , drop = FALSE]
+  probs <- function(b) {
+    u <- matrix(as.vector(Xs %*% b), nrow = E, ncol = A, byrow = TRUE)
+    u[!V] <- -Inf
+    e <- exp(u - apply(u, 1, max))
+    e / rowSums(e)
+  }
+  objective <- function(b) {
+    p <- probs(b)
+    -sum(log(pmax(p[cbind(seq_len(E), ch)], 1e-300))) + ridge * sum(b^2)
+  }
+  b <- rep(0, d); f0 <- objective(b)
+  for (it in seq_len(iters)) {
+    p <- probs(b); pv <- as.vector(t(p))
+    xbar <- rowsum(Xs * pv, grp, reorder = FALSE)
+    g <- -colSums(xs - xbar) + 2 * ridge * b
+    Xw <- Xs * sqrt(pv)
+    H <- crossprod(Xw) - crossprod(xbar) + 2 * ridge * diag(d)
+    step <- tryCatch(solve(H + 1e-8 * diag(d), g), error = function(e) g / (max(abs(diag(H))) + 1))
+    tt <- 1; f1 <- f0
+    while (tt > 1e-6) {
+      f1 <- objective(b - tt * step)
+      if (is.finite(f1) && f1 <= f0) break
+      tt <- tt / 2
+    }
+    if (!(is.finite(f1) && f1 <= f0)) break
+    b <- b - tt * step
+    done <- abs(f0 - f1) < 1e-7 * max(1, abs(f0))
+    f0 <- f1
+    if (done) break
+  }
+  list(beta_std = b, beta_raw = b / pc$sdv,
+       mean_loglik = -(f0 - ridge * sum(b^2)) / E,
+       mean_loglik_uniform = -mean(log(rowSums(V))), n_events = E)
+}
+
+if (use_patch_choice && can_fit_model && "landChoices" %in% names(state_wide)) {
+  pc_note <- tryCatch({
+    action_ids <- sort(setdiff(unique(choice_real$actionID), -99))
+    own_vars <- intersect(unique(variable_roles$variable[variable_roles$role %in% c("ownership_individual", "player_reference")]), names(state_wide))
+
+    lc <- state_wide$landChoices
+    n_opts <- lengths(str_extract_all(ifelse(is.na(lc), "", lc), "-?[0-9]+")) - 1
+    PF <- state_wide[!is.na(lc) & n_opts > 0, , drop = FALSE]
+    if (nrow(PF) == 0) stop("no patch has any available action in landChoices")
+
+    player_level <- c("currentScore", "totalScore", "resources", "n_taps_patch", "n_taps_turn")
+    counters_in <- c(counter_included, paste0(counter_included, c("_sin", "_cos")))
+    A_cols <- setdiff(intersect(predictor_cols_base, names(PF)), c(player_level, own_vars, counters_in))
+    feat_df <- PF[, A_cols, drop = FALSE] %>% mutate(across(where(is.logical), as.numeric))
+    feat_df <- feat_df[, !map_lgl(feat_df, ~ is.factor(.x) && nlevels(droplevels(.x)) < 2), drop = FALSE]
+    mm <- if (ncol(feat_df) > 0) model.matrix(~ ., data = feat_df, na.action = na.pass)[, -1, drop = FALSE] else matrix(0, nrow(PF), 0)
+    mm[is.na(mm)] <- 0
+    avail <- sapply(action_ids, function(a) as.numeric(str_detect(PF$landChoices, paste0("(^|[^0-9-])", a, "($|[^0-9])"))))
+    avail <- matrix(avail, nrow = nrow(PF)); colnames(avail) <- paste0("avail_", action_ids)
+    PFmat <- cbind(mm, avail)
+    if (length(own_vars) > 0) {
+      OWN <- matrix(sapply(own_vars, function(v) as.numeric(as.character(PF[[v]]))), nrow = nrow(PF))
+      colnames(OWN) <- own_vars
+    } else OWN <- matrix(NA_real_, nrow(PF), 0)
+
+    PF_key   <- paste(PF$session_id, PF$round, PF$phase, PF$x, PF$y, sep = "|")
+    elig_by_phase <- split(seq_len(nrow(PF)), paste(PF$session_id, PF$round, PF$phase, sep = "|"))
+
+    # every tap in file order -> the patches each player picked in each turn, in order of first tap
+    tp <- choice %>% mutate(tap_i = row_number()) %>%
+      group_by(session_id, round, phase, player, x, y) %>%
+      summarise(first_i = min(tap_i), final = actionID[which.max(tap_i)], .groups = "drop") %>%
+      filter(final != -99) %>% arrange(first_i)
+    picks_by_turn <- split(paste(tp$session_id, tp$round, tp$phase, tp$x, tp$y, sep = "|"),
+                           paste(tp$session_id, tp$round, tp$phase, tp$player))
+
+    turns <- bind_rows(
+      confirm %>% transmute(session_id, round = as.numeric(round), phase = as.numeric(phase), player = as.numeric(player)),
+      choice %>% distinct(session_id, round, phase, player)) %>%
+      distinct() %>% left_join(person_map, by = c("session_id", "player")) %>%
+      arrange(session_id, round, phase, player)
+    turn_keys  <- paste(turns$session_id, turns$round, turns$phase, turns$player)
+    phase_keys <- paste(turns$session_id, turns$round, turns$phase, sep = "|")
+
+    A_max <- choice_max_alternatives
+    n_alloc <- nrow(tp) + nrow(turns)
+    ALT <- matrix(0L, nrow = n_alloc, ncol = A_max)
+    CH <- integer(n_alloc); EVP <- numeric(n_alloc); EVK <- numeric(n_alloc)
+    EV_person <- character(n_alloc); EV_session <- character(n_alloc)
+    STOP_ROW <- nrow(PF) + 1L
+    ne <- 0L
+    set.seed(1)
+    for (ti in seq_len(nrow(turns))) {
+      el <- elig_by_phase[[phase_keys[ti]]]
+      if (is.null(el)) next
+      pk <- picks_by_turn[[turn_keys[ti]]]
+      pick_rows <- if (is.null(pk)) integer(0) else match(pk, PF_key)
+      pick_rows <- pick_rows[!is.na(pick_rows)]
+      remaining <- el
+      seq_ev <- c(pick_rows, STOP_ROW)
+      for (k in seq_along(seq_ev)) {
+        chn <- seq_ev[k]
+        others <- setdiff(remaining, chn)
+        if (length(others) > A_max - 2) others <- others[sample.int(length(others), A_max - 2)]
+        alts <- if (chn == STOP_ROW) c(others, STOP_ROW) else c(others, chn, STOP_ROW)
+        ne <- ne + 1L
+        ALT[ne, seq_along(alts)] <- alts
+        CH[ne] <- if (chn == STOP_ROW) length(alts) else length(others) + 1L
+        EVP[ne] <- turns$player[ti]; EVK[ne] <- k - 1; EV_person[ne] <- turns$person_id[ti]; EV_session[ne] <- turns$session_id[ti]
+        if (chn != STOP_ROW) remaining <- setdiff(remaining, chn)
+      }
+    }
+    if (ne < 100) stop(sprintf("only %d choice events", ne))
+    ALT <- ALT[seq_len(ne), , drop = FALSE]
+    CH <- CH[seq_len(ne)]; EVP <- EVP[seq_len(ne)]; EVK <- EVK[seq_len(ne)]
+    EV_person <- EV_person[seq_len(ne)]; EV_session <- EV_session[seq_len(ne)]
+
+    # design matrix, event-major: rows (e-1)*A+1 ... e*A are event e's alternatives
+    PFfull  <- rbind(PFmat, 0)
+    OWNfull <- if (ncol(OWN) > 0) rbind(OWN, NA_real_) else OWN
+    idx <- as.vector(t(ALT))
+    valid <- idx != 0L
+    rows_i <- ifelse(valid, idx, STOP_ROW)
+    Xb <- PFfull[rows_i, , drop = FALSE]
+    if (ncol(OWN) > 0) {
+      mine <- OWNfull[rows_i, , drop = FALSE] == rep(EVP, each = A_max)
+      mine[is.na(mine)] <- FALSE
+      mine <- matrix(as.numeric(mine), nrow = length(idx)); colnames(mine) <- paste0(own_vars, "_mine")
+    } else mine <- matrix(0, nrow = length(idx), ncol = 0)
+    is_stop <- as.numeric(idx == STOP_ROW)
+    X <- cbind(Xb, mine, stop = is_stop, stop_k = is_stop * rep(EVK, each = A_max))
+    sdv <- apply(X[valid, , drop = FALSE], 2, sd)
+    keepc <- !is.na(sdv) & sdv > 1e-9
+    X <- X[, keepc, drop = FALSE]; sdv <- sdv[keepc]
+    Xs <- sweep(X, 2, sdv, "/")
+    Xs[!valid, ] <- 0
+
+    pc <- list(Xs = Xs, valid = valid, CH = CH, E = ne, A = A_max, EVP = EVP, EV_person = EV_person,
+               EV_session = EV_session, colnames = colnames(X), sdv = sdv)
+    pooled_choice_fit <- fit_choice(pc)
+    patch_choice_ok <- TRUE
+    sprintf("%d picks/stops from %d turns; %d patch-choice features; pooled mean log-likelihood per pick %.2f vs %.2f for choosing uniformly",
+            ne, nrow(turns), ncol(X), pooled_choice_fit$mean_loglik, pooled_choice_fit$mean_loglik_uniform)
+  }, error = function(e) {
+    message("Patch-choice model skipped: ", conditionMessage(e))
+    paste("patch-choice model skipped:", conditionMessage(e))
+  })
+} else if (use_patch_choice) {
+  pc_note <- "patch-choice model skipped: the logs have no landChoices (log them with tapSquares v3 or later)"
+  message(pc_note)
+}
+cat(pc_note, "\n")
+if (patch_choice_ok) {
+  print(tibble(feature = pc$colnames, weight_per_sd = round(pooled_choice_fit$beta_std, 2)), n = Inf)
+}
+```
+
+## Step 6c: do treatments change which patches get picked?
+
+A session-wide setting such as the fine probability is the same for every
+patch in a choice, so on its own it cannot change which patch is picked: it
+raises or lowers all patches together and cancels. What it CAN change is how
+attractive some kinds of patch are (for example, protected land when fines are
+high), or how soon people stop. Those are **interactions**: the treatment
+crossed with a patch feature (or with the "stop" option). There are many
+possible crossings, so they are screened first and then validated:
+
+1. **Screen.** With the patch-choice model fitted WITHOUT treatments, look at what
+   it gets wrong in each session (how far the picks fall from the model's
+   expectation for each feature). If a treatment crossed with a feature
+   matters, those session-level errors will line up with the treatment across
+   sessions. A t-statistic across sessions (so a few sessions cannot masquerade
+   as thousands of independent picks) ranks every crossing in one pass,
+   without refitting.
+2. **Validate.** The best few crossings per treatment are added to the model and
+   tested by cross-validation on whole sessions, like Step 5a. A treatment's
+   crossings are used only if they improve the prediction of picks in sessions
+   the model was not fitted on.
+
+```{r patch-choice-treatments}
+choice_treatment_table <- NULL
+choice_treatment_note <- "patch-choice treatments not examined"
+choice_used_treatments <- character(0)
+pc_fit <- pc
+
+choice_loglik <- function(b, pc, S) {
+  A <- pc$A; E <- length(S)
+  rows <- rep((S - 1L) * A, each = A) + seq_len(A)
+  u <- matrix(as.vector(pc$Xs[rows, , drop = FALSE] %*% b), nrow = E, ncol = A, byrow = TRUE)
+  V <- matrix(pc$valid[rows], nrow = E, ncol = A, byrow = TRUE)
+  u[!V] <- -Inf
+  m <- apply(u, 1, max)
+  u[cbind(seq_len(E), pc$CH[S])] - (m + log(rowSums(exp(u - m))))
+}
+
+choice_residual_matrix <- function(pc, b) {
+  E <- pc$E; A <- pc$A
+  u <- matrix(as.vector(pc$Xs %*% b), nrow = E, ncol = A, byrow = TRUE)
+  u[!matrix(pc$valid, nrow = E, ncol = A, byrow = TRUE)] <- -Inf
+  e <- exp(u - apply(u, 1, max)); p <- e / rowSums(e)
+  xbar <- rowsum(pc$Xs * as.vector(t(p)), rep(seq_len(E), each = A), reorder = FALSE)
+  pc$Xs[(seq_len(E) - 1L) * A + pc$CH, , drop = FALSE] - xbar
+}
+
+# the patch-choice design with extra columns: each term is (treatment x design column)
+add_choice_terms <- function(pc, terms) {
+  if (nrow(terms) == 0) return(pc)
+  newcols <- list(); inter <- list(); nm <- character(0); sdv_new <- numeric(0)
+  for (i in seq_len(nrow(terms))) {
+    tv <- as.numeric(session_params[[terms$treat[i]]][match(pc$EV_session, session_params$session_id)])
+    m <- mean(tv); sdt <- sd(tv)
+    fcol <- match(terms$feat[i], pc$colnames)
+    newcols[[i]] <- rep((tv - m) / sdt, each = pc$A) * pc$Xs[, fcol]
+    nm <- c(nm, paste0(terms$treat[i], ":", terms$feat[i]))
+    sdv_new <- c(sdv_new, pc$sdv[fcol] * sdt)
+    inter[[i]] <- tibble(feat_col = fcol, t_mean = m)
+  }
+  out <- pc
+  out$inter <- bind_rows(inter) %>% mutate(col = ncol(pc$Xs) + row_number(), treat = terms$treat, feat = terms$feat)
+  out$Xs <- cbind(pc$Xs, do.call(cbind, newcols))
+  out$colnames <- c(pc$colnames, nm)
+  out$sdv <- c(pc$sdv, sdv_new)
+  out
+}
+
+# weights on the ORIGINAL scale: for each feature value x and treatment value t,
+#   sum of  weight * x  +  weight_interaction * (t * x)
+choice_raw <- function(beta_std, pcx) {
+  raw <- beta_std / pcx$sdv
+  if (!is.null(pcx$inter)) for (j in seq_len(nrow(pcx$inter))) {
+    raw[pcx$inter$feat_col[j]] <- raw[pcx$inter$feat_col[j]] - raw[pcx$inter$col[j]] * pcx$inter$t_mean[j]
+  }
+  raw
+}
+
+cv_choice <- function(pcx, cols, S_all, fold_of_event) {
+  pcs <- pcx; pcs$Xs <- pcx$Xs[, cols, drop = FALSE]; pcs$sdv <- pcx$sdv[cols]
+  ll <- numeric(0)
+  for (k in sort(unique(fold_of_event))) {
+    f <- fit_choice(pcs, S_all[fold_of_event != k], iters = 25)
+    ll <- c(ll, choice_loglik(f$beta_std, pcs, S_all[fold_of_event == k]))
+  }
+  mean(ll)
+}
+
+if (use_choice_treatments && patch_choice_ok && exists("treatment_diag") && nrow(treatment_diag) > 0) {
+  choice_treatment_note <- tryCatch({
+    cand_t <- treatment_diag %>%
+      filter(variation_verdict != "not testable", abm_evaluable, type %in% c("numeric", "logical")) %>% pull(variable)
+    sess <- sort(unique(pc$EV_session))
+    if (length(cand_t) == 0) stop("no treatment varies enough across sessions")
+    if (length(sess) < 4) stop("fewer than 4 sessions")
+
+    # ---- 1. screen ----
+    R <- choice_residual_matrix(pc, pooled_choice_fit$beta_std)
+    Rs <- rowsum(R, pc$EV_session)
+    ns <- as.vector(rowsum(rep(1, pc$E), pc$EV_session))
+    Rbar <- Rs / ns
+    scr <- bind_rows(lapply(cand_t, function(tn) {
+      tvs <- as.numeric(session_params[[tn]][match(rownames(Rs), session_params$session_id)])
+      r <- suppressWarnings(as.vector(cor(tvs, Rbar)))
+      r[is.na(r)] <- 0
+      tibble(treat = tn, feat = pc$colnames, t_stat = r * sqrt((length(tvs) - 2) / pmax(1 - r^2, 1e-9)))
+    })) %>% arrange(desc(abs(t_stat)))
+    top <- scr %>% filter(abs(t_stat) >= choice_screen_min_t) %>% slice_head(n = choice_screen_top)
+    scr$screened <- paste(scr$treat, scr$feat) %in% paste(top$treat, top$feat)
+    scr$cv_gain <- NA_real_; scr$used <- FALSE
+    if (nrow(top) == 0) { choice_treatment_table <<- scr; stop("no treatment x patch-feature crossing showed a session-level association") }
+
+    # ---- 2. validate by cross-validation on whole sessions ----
+    set.seed(1)
+    S_cv <- if (pc$E > choice_cv_max_events) sort(sample.int(pc$E, choice_cv_max_events)) else seq_len(pc$E)
+    K <- min(cv_folds, length(sess))
+    fold_of_session <- setNames(sample(rep(seq_len(K), length.out = length(sess))), sess)
+    fold_ev <- unname(fold_of_session[pc$EV_session[S_cv]])
+    pc_all <- add_choice_terms(pc, top)
+    base_cols <- seq_len(ncol(pc$Xs))
+    ll_base <- cv_choice(pc_all, base_cols, S_cv, fold_ev)
+    cat("patch-choice held-out mean log-likelihood per pick, no treatment terms:", round(ll_base, 4), "\n")
+    for (tn in unique(top$treat)) {
+      add_cols <- ncol(pc$Xs) + which(top$treat == tn)
+      g <- cv_choice(pc_all, c(base_cols, add_cols), S_cv, fold_ev) - ll_base
+      scr$cv_gain[scr$treat == tn & scr$screened] <- g
+      cat("  + ", tn, " (", length(add_cols), " crossing(s)): gain ", sprintf("%+.4f", g), "\n", sep = "")
+    }
+    keep_t <- unique(scr$treat[scr$screened & !is.na(scr$cv_gain) & scr$cv_gain > cv_min_gain])
+    acc <- top %>% filter(treat %in% keep_t)
+    if (nrow(acc) > 0) {
+      add_cols <- ncol(pc$Xs) + which(top$treat %in% keep_t)
+      comb <- cv_choice(pc_all, c(base_cols, add_cols), S_cv, fold_ev) - ll_base
+      if (is.na(comb) || comb <= cv_min_gain) { message("Treatment crossings helped individually but not together -- none used."); acc <- acc[0, ] }
+    }
+    scr$used <- paste(scr$treat, scr$feat) %in% paste(acc$treat, acc$feat)
+    choice_treatment_table <<- scr
+    if (nrow(acc) > 0) {
+      choice_used_treatments <<- unique(acc$treat)
+      pc_fit <<- add_choice_terms(pc, acc)
+      pooled_choice_fit <<- fit_choice(pc_fit)
+      sprintf("treatment crossings used in patch choice: %s", paste(paste0(acc$treat, ":", acc$feat), collapse = ", "))
+    } else "no treatment crossing improved the prediction of picks in held-out sessions"
+  }, error = function(e) { message("Patch-choice treatments skipped: ", conditionMessage(e)); paste("skipped:", conditionMessage(e)) })
+}
+cat(choice_treatment_note, "\n")
+if (!is.null(choice_treatment_table)) {
+  write_csv(choice_treatment_table, "choice_treatment_report.csv")
+  print(choice_treatment_table %>% slice_head(n = 15))
+}
+# A treatment can matter through what people DO on a patch (Step 5a), through WHICH patches they
+# go for (this step), or both. Record where, so the ABM hand-off can list every treatment that matters.
+if (exists("treatment_diag") && nrow(treatment_diag) > 0) {
+  treatment_diag$used_choice <- treatment_diag$variable %in% choice_used_treatments
+  treatment_diag$acts_through <- case_when(
+    treatment_diag$used & treatment_diag$used_choice ~ "action+patch_choice",
+    treatment_diag$used ~ "action",
+    treatment_diag$used_choice ~ "patch_choice",
+    TRUE ~ NA_character_)
+  treatment_diag$overall <- case_when(
+    treatment_diag$used & treatment_diag$used_choice ~ "USED: action and patch choice",
+    treatment_diag$used_choice ~ "USED: patch choice only",
+    TRUE ~ treatment_diag$overall)
+  write_csv(treatment_diag, "treatment_report.csv")
+}
+```
+
+## Step 7: let people differ -- fit one model per person, then cluster
+
+A person is a `person_id`: the string typed at entry, shared across every
+session in which it appears. Per-person fits use the state-only formula
+(`form_base`) so that classes describe how people respond to the board, not
+which treatment sessions they happened to play in; class-level models in
+Step 8 then include the treatments that passed Step 5a.
+
+This is a practical two-step *approximation* to a true latent-class
+discrete choice model, not the real thing. A proper joint estimator
+(e.g. the `gmnl` package's latent-class multinomial logit) fits all
+classes simultaneously via EM, sharing information across players in a
+statistically principled way. That needs a data format (`mlogit`-style
+long-by-alternative, via `dfidx`) that's easy to get subtly wrong
+without being able to test it live, and with only a few players from
+one session there often isn't yet enough data to make a joint
+estimator worth the risk. This fit-per-player-then-cluster version
+reuses only the already-validated `multinom()` machinery, so it's far
+more likely to actually run -- worth upgrading to `gmnl` once there
+are enough sessions/players for a joint estimate to be meaningfully
+more powerful than this approximation.
+
+**With only a handful of players, treat this whole step as a
+mechanics check, not a real result** until there's enough data to say
+otherwise.
+
+```{r fit-per-player}
+fit_one_player <- function(pid) {
+  player_data <- model_data %>% filter(person_id == pid)
+  if (nrow(player_data) < min_decisions_per_person) {
+    message("Person ", pid, ": only ", nrow(player_data), " decisions (< ", min_decisions_per_person, ") -- skipping.")
+    return(NULL)
+  }
+  if (n_distinct(player_data$actionID) < 2) {
+    message("Person ", pid, ": only one action type observed -- skipping.")
+    return(NULL)
+  }
+  tryCatch(
+    fit_mn(predictor_cols_base, player_data),
+    error = function(e) {
+      message("Person ", pid, ": model failed to fit (", conditionMessage(e), ")")
+      NULL
+    }
+  )
+}
+
+if (can_fit_model) {
+  player_ids <- sort(unique(model_data$person_id))
+  player_fits <- set_names(map(player_ids, fit_one_player), player_ids)
+  player_fits <- compact(player_fits)
+  cat("Per-person models fit successfully for", length(player_fits), "person(s).\n")
+}
+```
+
+```{r fit-choice-per-person}
+# Patch-choice model, one per person: how does each person pick patches (and when do they stop)?
+pc_person_fits <- list()
+choice_fingerprint <- NULL
+if (patch_choice_ok) {
+  big <- which(rowSums(matrix(pc$valid, nrow = pc$E, ncol = pc$A, byrow = TRUE)) >= min(25, pc$A - 1))
+  set.seed(2)
+  scenes <- if (length(big) > choice_scenes) sample(big, choice_scenes) else big
+  scene_rows <- rep((scenes - 1L) * pc$A, each = pc$A) + seq_len(pc$A)
+  Xsc <- pc$Xs[scene_rows, , drop = FALSE]
+  Vsc <- matrix(pc$valid[scene_rows], nrow = length(scenes), ncol = pc$A, byrow = TRUE)
+  # A person's fingerprint: the probability their model gives to each alternative in each of
+  # the same common scenes. People who would pick alike in the same circumstances look alike.
+  choice_fingerprint <- function(b) {
+    u <- matrix(as.vector(Xsc %*% b), nrow = length(scenes), ncol = pc$A, byrow = TRUE)
+    u[!Vsc] <- -Inf
+    e <- exp(u - apply(u, 1, max))
+    as.vector(e / rowSums(e))
+  }
+  for (pid in sort(unique(pc$EV_person))) {
+    S <- which(pc$EV_person == pid)
+    if (length(S) < min_choice_events_per_person) {
+      message("Person ", pid, ": only ", length(S), " picks (< ", min_choice_events_per_person, ") -- no patch-choice fit.")
+      next
+    }
+    pc_person_fits[[pid]] <- tryCatch(fit_choice(pc, S), error = function(e) {
+      message("Person ", pid, ": patch-choice fit failed (", conditionMessage(e), ")"); NULL })
+  }
+  pc_person_fits <- compact(pc_person_fits)
+  cat("Patch-choice models fit for", length(pc_person_fits), "person(s).\n")
+}
+```
+
+```{r cluster-players}
+extract_coefs_long <- function(model, pid) {
+  cm <- coef(model)
+  if (is.null(dim(cm))) {
+    message("Person ", pid, ": exactly two action levels in this person's ",
+            "data, which changes coef()'s output shape -- skipping in clustering.")
+    return(NULL)
+  }
+  as.data.frame(cm) %>%
+    tibble::as_tibble() %>%
+    mutate(outcome_level = rownames(cm), person_id = pid) %>%
+    pivot_longer(-c(outcome_level, person_id), names_to = "feature", values_to = "weight")
+}
+
+
+# --- "behavior" basis: what each person's model predicts in the SAME set of situations ---
+# Per-person weights are noisy and partly interchangeable (many weight combinations give
+# nearly the same behavior), so clustering them mostly clusters noise. Instead, pick a
+# fixed set of representative situations from the pooled data (real rows, spread over the
+# observed range of the predictors), ask every person's model for its choice probabilities
+# in each, and cluster those probability profiles. People are grouped when they would act
+# alike in the same circumstances.
+build_probes <- function(data, cols, n_probe) {
+  d <- data[complete.cases(data[, cols, drop = FALSE]), , drop = FALSE]
+  if (nrow(d) > 4000) { set.seed(1); d <- d[sample(nrow(d), 4000), , drop = FALSE] }
+  num_cols <- cols[map_lgl(cols, ~ is.numeric(d[[.x]]) || is.logical(d[[.x]]))]
+  num_cols <- num_cols[map_lgl(num_cols, ~ n_distinct(d[[.x]]) > 1)]
+  if (length(num_cols) == 0 || nrow(d) <= n_probe) { set.seed(1); return(d[sample(nrow(d), min(n_probe, nrow(d))), , drop = FALSE]) }
+  M <- scale(sapply(num_cols, function(v) as.numeric(d[[v]])))
+  M[is.na(M)] <- 0
+  k <- min(n_probe, nrow(unique(as.data.frame(M))) - 1)
+  set.seed(1); km <- kmeans(M, centers = k, nstart = 3)
+  idx <- vapply(seq_len(k), function(j) which.min(rowSums((M - matrix(km$centers[j, ], nrow(M), ncol(M), byrow = TRUE))^2)), integer(1))
+  d[unique(idx), , drop = FALSE]
+}
+
+fingerprint_one <- function(m, probes, action_levels) {
+  nd <- as.data.frame(probes)
+  for (cn in names(m$xlevels)) {   # a factor level this person never met is replaced by one their model knows
+    cur <- as.character(nd[[cn]])
+    nd[[cn]] <- factor(ifelse(cur %in% m$xlevels[[cn]], cur, m$xlevels[[cn]][1]), levels = m$xlevels[[cn]])
+  }
+  pr <- predict(m, newdata = nd, type = "probs")
+  if (is.null(dim(pr))) { pr <- cbind(1 - pr, pr); colnames(pr) <- m$lev }
+  out <- matrix(0, nrow(nd), length(action_levels), dimnames = list(NULL, action_levels))
+  out[, colnames(pr)] <- pr
+  as.vector(out)
+}
+
+
+# Standardise a block of columns and give the block unit total variance, so blocks can be combined fairly.
+blk <- function(M) {
+  M <- M[, apply(M, 2, function(z) !anyNA(z) && sd(z) > 1e-8), drop = FALSE]
+  if (ncol(M) == 0) return(NULL)
+  scale(M) / sqrt(ncol(M))
+}
+
+# Split people into classes. Start with everyone; find the best split into 2-kmax groups (mean
+# silhouette) among those with no tiny group; keep it if it is good enough; then look inside any
+# class that still holds more than max_share of everyone and try again.
+recursive_classes <- function(X, min_sil, max_share, kmax, min_size) {
+  N <- nrow(X); lab <- rep(1L, N); next_id <- 2L; todo <- list(seq_len(N)); sils <- numeric(0)
+  while (length(todo) > 0) {
+    idx <- todo[[length(todo)]]; todo[[length(todo)]] <- NULL
+    if (length(idx) <= max_share * N || length(idx) < 2 * min_size + 1) next
+    Xi <- X[idx, , drop = FALSE]; dm <- dist(Xi); best <- NULL
+    for (kk in 2:min(kmax, length(idx) - 1)) {
+      cand <- tryCatch({ set.seed(1); kmeans(Xi, centers = kk, nstart = 20) }, error = function(e) NULL)
+      if (is.null(cand) || min(cand$size) < min_size) next
+      sil <- mean(cluster::silhouette(cand$cluster, dm)[, "sil_width"])
+      if (is.null(best) || sil > best$sil) best <- list(km = cand, sil = sil, k = kk)
+    }
+    if (is.null(best) || best$sil < min_sil) next
+    sils <- c(sils, best$sil)
+    sub <- best$km$cluster
+    for (cl in seq_len(best$k)[-1]) {
+      lab[idx[sub == cl]] <- next_id; todo[[length(todo) + 1]] <- idx[sub == cl]; next_id <- next_id + 1L
+    }
+    todo[[length(todo) + 1]] <- idx[sub == 1]
+  }
+  list(lab = lab, sils = sils)
+}
+
+player_classes <- NULL
+class_selection_note <- "no classes were formed"
+
+basis <- class_basis
+if (basis %in% c("choice", "both") && !(patch_choice_ok && length(pc_person_fits) >= 3)) {
+  message("Patch-choice profiles unavailable (", pc_note, ") -- grouping people on what they do once on a patch instead.")
+  basis <- "action"
+}
+blocks <- list()
+
+if (basis %in% c("choice", "both")) {
+  blocks$choice <- do.call(rbind, lapply(pc_person_fits, function(f) choice_fingerprint(f$beta_std)))
+}
+
+if (basis %in% c("action", "both", "coefficients") && can_fit_model && length(player_fits) > 0) {
+  if (basis %in% c("action", "both")) {
+    action_levels <- as.character(sort(unique(model_data$actionID)))
+    probes <- build_probes(model_data, predictor_cols_base, n_probes)
+    fps <- map(player_fits, ~ tryCatch(fingerprint_one(.x, probes, action_levels),
+                                       error = function(e) { message("Could not profile a person's model: ", conditionMessage(e)); NULL }))
+    fps <- compact(fps)
+    if (length(fps) > 0) { blocks$action <- do.call(rbind, fps); rownames(blocks$action) <- names(fps) }
+  } else {
+    player_coefs_long <- map2(player_fits, names(player_fits), extract_coefs_long) %>% compact() %>% bind_rows()
+    if (nrow(player_coefs_long) > 0) {
+      wide <- player_coefs_long %>%
+        mutate(col_name = paste(outcome_level, feature, sep = "__")) %>%
+        select(person_id, col_name, weight) %>% pivot_wider(names_from = col_name, values_from = weight)
+      M <- wide %>% select(-person_id) %>% mutate(across(everything(), ~ replace(.x, is.na(.x), 0))) %>% as.matrix()
+      rownames(M) <- wide$person_id
+      blocks$coef <- M
+    }
+  }
+}
+
+if (length(blocks) > 0) {
+  ids <- Reduce(intersect, lapply(blocks, rownames))
+  Xcl <- do.call(cbind, compact(lapply(blocks, function(M) blk(M[ids, , drop = FALSE]))))
+  if (length(ids) < 3 || is.null(Xcl) || ncol(Xcl) == 0) {
+    message("Not enough people or variation to form classes (", length(ids), " person(s)) -- falling back to the pooled model.")
+  } else {
+    basis_desc <- c(choice = "which patches they go for", action = "what they do once on a patch",
+                    both = "which patches they go for and what they do there", coefficients = "their raw per-person action weights")[[basis]]
+    if (!is.null(n_classes_forced)) {
+      k <- min(n_classes_forced, length(ids) - 1)
+      set.seed(1); km <- kmeans(Xcl, centers = k, nstart = 20)
+      lab <- km$cluster
+      class_selection_note <- sprintf("the number of classes (%d) was set by hand (n_classes_forced); people grouped by %s", k, basis_desc)
+    } else {
+      rc <- recursive_classes(Xcl, class_split_min_sil, class_max_share, max_classes, min_class_size)
+      lab <- rc$lab
+      class_selection_note <- sprintf("%d class(es) by recursive splitting (a class holding over %.0f%% of people is split again when a split reaches mean silhouette %.2f%s); people grouped by %s",
+                                      length(unique(lab)), 100 * class_max_share, class_split_min_sil,
+                                      if (length(rc$sils) > 0) paste0("; accepted splits scored ", paste(sprintf("%.2f", rc$sils), collapse = ", ")) else "",
+                                      basis_desc)
+    }
+    tb <- sort(table(lab), decreasing = TRUE)
+    lab <- match(as.character(lab), names(tb))
+    cat("Classes:", class_selection_note, "\n")
+    player_classes <- tibble(person_id = ids, class = paste0("class_", lab))
+  }
+}
+
+player_classes
+```
+
+## Step 8: refit one pooled model per discovered class
+
+```{r fit-per-class}
+class_fits <- list()
+
+if (!is.null(player_classes)) {
+  model_data_classed <- model_data %>% left_join(player_classes, by = "person_id")
+
+  fit_one_class <- function(cid) {
+    class_data <- model_data_classed %>% filter(class == cid)
+    if (n_distinct(class_data$actionID) < 2) {
+      message("Class ", cid, ": only one action type observed -- skipping.")
+      return(NULL)
+    }
+    tryCatch(
+      fit_mn(predictor_cols, class_data),
+      error = function(e) {
+        message("Class ", cid, ": failed to fit (", conditionMessage(e), ")")
+        NULL
+      }
+    )
+  }
+
+  class_ids <- sort(unique(model_data_classed$class))
+  class_fits <- set_names(map(class_ids, fit_one_class), class_ids)
+  class_fits <- compact(class_fits)
+  cat("Per-class models fit successfully for:", paste(names(class_fits), collapse = ", "), "\n")
+}
+```
+
+```{r fit-choice-per-class}
+class_choice_fits <- list()
+if (patch_choice_ok && !is.null(player_classes)) {
+  for (cl in sort(unique(player_classes$class))) {
+    S <- which(pc$EV_person %in% player_classes$person_id[player_classes$class == cl])
+    if (length(S) < min_choice_events_per_person) { message("Class ", cl, ": too few picks for a patch-choice fit."); next }
+    class_choice_fits[[cl]] <- tryCatch(fit_choice(pc_fit, S), error = function(e) { message("Class ", cl, ": patch-choice fit failed (", conditionMessage(e), ")"); NULL })
+  }
+  class_choice_fits <- compact(class_choice_fits)
+  cat("Patch-choice models fit for", length(class_choice_fits), "class(es).\n")
+}
+```
+
+## Step 9: export the agent-behavior CSV, and the ABM session list, for the interpreter
+
+Long format: `agent_type` (which class of player this row describes),
+`decision_stage` (fixed at `"action_choice"` for everyone right now --
+a placeholder column, not yet doing anything, since nothing in the
+data so far has justified a genuine two-stage strategy-then-tactic
+model), `outcome_option` (which action), `feature`, and `weight`.
+Falls back to the single pooled model, tagged `agent_type = "pooled"`,
+if clustering didn't produce usable per-class fits.
+
+```{r export}
+extract_export_rows <- function(model, agent_type) {
+  cm <- coef(model)
+  if (is.null(dim(cm))) {
+    message(agent_type, ": exactly two action levels -- skipping in export (see Step 7's note).")
+    return(NULL)
+  }
+  as.data.frame(cm) %>%
+    tibble::as_tibble() %>%
+    mutate(outcome_option = rownames(cm)) %>%
+    pivot_longer(-outcome_option, names_to = "feature", values_to = "weight") %>%
+    mutate(agent_type = agent_type, decision_stage = "action_choice") %>%
+    select(agent_type, decision_stage, outcome_option, feature, weight)
+}
+
+export_rows <- tibble()
+
+if (length(class_fits) > 0) {
+  export_rows <- map2(class_fits, names(class_fits), extract_export_rows) %>% compact() %>% bind_rows()
+}
+
+if (nrow(export_rows) == 0 && exists("fit")) {
+  message("No usable per-class models -- exporting the pooled model instead, as agent_type = 'pooled'.")
+  export_rows <- extract_export_rows(fit, "pooled")
+}
+
+if (nrow(export_rows) > 0) {
+  write_csv(export_rows, "agent_behavior_weights.csv")
+
+  # The ABM interpreter needs to know which actionID was the reference/
+  # baseline category, since a multinomial logit's reference level has no
+  # row in coef() at all -- its score is implicitly 0, everything else is
+  # a log-odds relative to it. Writing it out explicitly here rather than
+  # making the NetLogo side infer it.
+  write_csv(tibble(reference_actionID = reference_action), "agent_behavior_reference.csv")
+}
+
+export_rows
+```
+
+```{r export-treatment-extras}
+# Outputs for the ABM user. agent_behavior_treatment_ranges.csv lists the
+# settings the fitted behavior responds to and the range they were fitted on;
+# the ABM reads it (via the treatmentRangeFileName column) for its treatment
+# sliders and out-of-range warning. A stale copy from an earlier knit is
+# removed so the ABM never shows knobs the current weights do not have.
+# agent_class_shares.csv / person_classes.csv are informational only.
+any_treatment_used <- exists("treatment_diag") && any(treatment_diag$used | treatment_diag$used_choice, na.rm = TRUE)
+if (!any_treatment_used && file.exists("agent_behavior_treatment_ranges.csv")) {
+  file.remove("agent_behavior_treatment_ranges.csv")
+}
+if (any_treatment_used) {
+  write_csv(treatment_diag %>% filter(used | used_choice) %>%
+              select(variable, source, min_value, max_value, n_sessions, n_distinct, cv_gain, type, levels, integer_valued, acts_through),
+            "agent_behavior_treatment_ranges.csv", na = "")
+}
+if (patch_choice_ok) {
+  # Patch-choice weights (raw units, i.e. to multiply by the feature's value; and per standard deviation, for reading).
+  # NOT yet read by the ABM -- the ABM still chooses patches by its action scores.
+  fits_pc <- c(class_choice_fits, list(pooled = pooled_choice_fit))
+  write_csv(bind_rows(imap(fits_pc, function(f, nm) tibble(agent_type = nm, feature = pc_fit$colnames, weight = choice_raw(f$beta_std, pc_fit), weight_per_sd = f$beta_std))),
+            "agent_patch_choice_weights.csv")
+}
+if (!is.null(player_classes)) {
+  write_csv(player_classes %>% count(class, name = "n_persons") %>% mutate(share = n_persons / sum(n_persons)),
+            "agent_class_shares.csv")
+  write_csv(player_classes, "person_classes.csv")
+}
+```
+
+```{r export-sessionlist-abm}
+# Wire the ABM run's sessionList.csv automatically: same columns as the
+# game's own sessionList.csv, plus the three pointers to this notebook's
+# own outputs. Any other ABM-specific tuning (agent counts, a bigger
+# world, etc.) is still a manual edit on top of the file this writes --
+# only the error-prone pointer wiring is automated here.
+if (file.exists("sessionList.csv") && nrow(export_rows) > 0) {
+  session_list <- read_csv("sessionList.csv", show_col_types = FALSE)
+  session_list$behaviorListFileName     <- "agent_behavior_weights.csv"
+  session_list$referenceActionFileName  <- "agent_behavior_reference.csv"
+  session_list$outcomePlotListFileName  <- "outcomePlotList.csv"
+  # v2: tells the ABM which settings its fitted behavior responds to (and their fitted ranges)
+  if (file.exists("agent_behavior_treatment_ranges.csv")) {
+    session_list$treatmentRangeFileName <- "agent_behavior_treatment_ranges.csv"
+  }
+  # na = "" (not readr's default "NA") -- sessionList.csv can legitimately
+  # leave an optional column blank (e.g. patch_color_property, meaning "no
+  # property-driven shading, use the default color"). read_csv() reads
+  # that blank cell as R's NA; write_csv()'s default na="NA" would then
+  # serialize it back out as the literal 3-character string "NA", not an
+  # empty cell. The ABM generator's generic CSV-driven config loader has
+  # no way to tell "the text NA" apart from a real value, so it tries to
+  # runresult "NA" as a NetLogo expression and crashes ("Nothing named NA
+  # has been defined") the moment that column is used -- confirmed live,
+  # Cut the Creep's patch_color_property. na="" keeps a blank cell blank
+  # all the way through the round-trip, matching what a human-authored
+  # sessionList.csv would have.
+  write_csv(session_list, "sessionList_ABM.csv", na = "")
+  cat("Wrote sessionList_ABM.csv (", nrow(session_list), "row(s), from sessionList.csv plus the three output pointers).\n")
+} else if (!file.exists("sessionList.csv")) {
+  message("No sessionList.csv in the working directory -- skipped writing sessionList_ABM.csv. ",
+          "Copy the game's sessionList.csv here (or point setwd() at the game folder) and re-run this chunk.")
+}
+```
+
+## Step 10: hand the results to the ABM, including its treatment widgets
+
+With `promote_to_abm <- TRUE` (Settings, top of the notebook) this step copies
+the weights, reference, session list and treatment files into the ABM folder
+and edits the ABM file's interface so that every treatment the fitted behavior
+responds to has a widget:
+
+- a number -> a **slider** (fitted range widened by 50% each side, so users can try values outside the data; the ABM warns when they do),
+- TRUE/FALSE -> a **switch**,
+- a few named options -> a **chooser**.
+
+Widgets are named `sl_<setting>`. In the ABM, "Initialize Session" fills them from the chosen session, and "Setup" applies them. Set `promote_to_abm <- FALSE` to leave the ABM folder untouched. The ABM file is backed up once as `.bak`. Run this step again after any re-knit; it replaces earlier widgets.
+
+```{r promote-to-abm}
+fmt_num <- function(x) format(round(x, 10), scientific = FALSE, trim = TRUE)
+xml_attr <- function(x) gsub("\"", "&quot;", gsub(">", "&gt;", gsub("<", "&lt;", gsub("&", "&amp;", x))))
+
+make_widget_specs <- function(td, srow) {
+  specs <- list()
+  for (i in seq_len(nrow(td))) {
+    v <- td$variable[i]; ty <- td$type[i]
+    if (!grepl("^[A-Za-z_][A-Za-z0-9_]*$", v)) { message(v, ": name not usable as a widget variable -- skipped."); next }
+    raw <- if (!is.null(srow) && v %in% names(srow)) srow[[v]][1] else NA
+    if (ty == "logical") {
+      specs[[length(specs) + 1]] <- list(v = v, kind = "switch", on = isTRUE(as.logical(raw)))
+    } else if (ty == "categorical") {
+      lv <- strsplit(td$levels[i], ";", fixed = TRUE)[[1]]
+      if (length(lv) == 0) { message(v, ": no levels recorded -- skipped."); next }
+      cur <- match(as.character(raw), lv) - 1
+      specs[[length(specs) + 1]] <- list(v = v, kind = "chooser", levels = lv, cur = if (is.na(cur)) 0 else cur)
+    } else {
+      lo <- td$min_value[i]; hi <- td$max_value[i]; span <- hi - lo
+      smin <- lo - 0.5 * span; smax <- hi + 0.5 * span
+      if (lo >= 0) smin <- max(0, smin)
+      integer <- isTRUE(td$integer_valued[i])
+      step <- if (integer) 1 else if (smax > smin) 10^floor(log10((smax - smin) / 100)) else 0.01
+      if (integer) { smin <- floor(smin); smax <- ceiling(smax) }
+      d <- suppressWarnings(as.numeric(raw)); if (is.na(d)) d <- (lo + hi) / 2
+      specs[[length(specs) + 1]] <- list(v = v, kind = "slider", lo = smin, hi = smax,
+                                         d = min(max(d, smin), smax), step = step)
+    }
+  }
+  specs
+}
+
+widget_xml <- function(sp, y) {
+  v <- xml_attr(sp$v)
+  if (sp$kind == "slider") {
+    sprintf('<slider x="10" y="%d" width="320" height="34" min="%s" max="%s" default="%s" step="%s" direction="Horizontal" display="sl_%s" variable="sl_%s"></slider>',
+            y, fmt_num(sp$lo), fmt_num(sp$hi), fmt_num(sp$d), fmt_num(sp$step), v, v)
+  } else if (sp$kind == "switch") {
+    sprintf('<switch x="10" y="%d" width="320" height="34" display="sl_%s" variable="sl_%s" on="%s"></switch>',
+            y, v, v, if (sp$on) "true" else "false")
+  } else {
+    ch <- paste0('<choice type="string" value="', xml_attr(sp$levels), '"></choice>', collapse = "")
+    sprintf('<chooser x="10" y="%d" width="320" height="40" display="sl_%s" variable="sl_%s" current="%d">%s</chooser>',
+            y, v, v, as.integer(sp$cur), ch)
+  }
+}
+
+# Move every left-column (x = 10) widget whose y is at least y_from by dy.
+shift_y <- function(block, y_from, dy) {
+  m <- gregexpr('<[a-z]+ [^>]*?x="10" [^>]*?y="[0-9]+"', block, perl = TRUE)
+  tags <- regmatches(block, m)[[1]]
+  if (length(tags) == 0) return(block)
+  moved <- vapply(tags, function(t) {
+    y <- as.integer(sub('.*y="([0-9]+)"$', "\\1", t))
+    if (y >= y_from) sub('y="[0-9]+"$', sprintf('y="%d"', y + dy), t) else t
+  }, character(1), USE.NAMES = FALSE)
+  regmatches(block, m)[[1]] <- moved
+  block
+}
+
+update_abm_interface <- function(nl_path, specs) {
+  H <- 44
+  txt <- read_file(nl_path)
+  bak <- paste0(nl_path, ".bak")
+  if (!file.exists(bak)) file.copy(nl_path, bak)
+  # drop widgets from an earlier run (the layout is re-normalised below)
+  txt <- gsub('\n    <(slider|switch|chooser) [^\n]*variable="sl_[^"]*"[^\n]*</\\1>', "", txt, perl = TRUE)
+  w <- regexpr("(?s)<widgets>.*?</widgets>", txt, perl = TRUE)
+  if (w < 0) stop("No <widgets> section found in ", nl_path)
+  w_len <- attr(w, "match.length")
+  block <- substr(txt, w + nchar("<widgets>"), w + w_len - nchar("</widgets>") - 1)
+  init_y  <- regmatches(block, regexec('<button x="10"[^>]*?y="([0-9]+)"[^>]*?display="2\\. Initialize Session"', block, perl = TRUE))[[1]]
+  setup_y <- regmatches(block, regexec('<button x="10"[^>]*?y="([0-9]+)"[^>]*?display="3\\. Setup"', block, perl = TRUE))[[1]]
+  if (length(init_y) < 2 || length(setup_y) < 2) stop("Could not find the Initialize Session / Setup buttons in the ABM interface.")
+  y_init <- as.integer(init_y[2]); y_setup <- as.integer(setup_y[2])
+  y0 <- y_init + 43                                   # where Setup sits with no treatment widgets
+  if (y_setup != y0) block <- shift_y(block, y_setup, y0 - y_setup)
+  if (length(specs) > 0) block <- shift_y(block, y0, H * length(specs))
+  new <- paste0(vapply(seq_along(specs), function(k) paste0("\n    ", widget_xml(specs[[k]], y0 + H * (k - 1))), character(1)), collapse = "")
+  b <- regexpr('\n[ \t]*<button x="10"[^>]*?display="3\\. Setup"', block, perl = TRUE)
+  block <- paste0(substr(block, 1, b - 1), new, substr(block, b, nchar(block)))
+  txt <- paste0(substr(txt, 1, w - 1), "<widgets>", block, "</widgets>", substr(txt, w + w_len, nchar(txt)))
+  write_file(txt, nl_path)
+  invisible(length(specs))
+}
+
+if (promote_to_abm && nrow(export_rows) > 0) {
+  if (!dir.exists(abm_dir)) {
+    message("promote_to_abm: folder '", abm_dir, "' not found (relative to ", getwd(),
+            ") -- nothing copied. Edit abm_dir in Settings, or copy the files by hand.")
+  } else {
+    to_copy <- c("agent_behavior_weights.csv", "agent_behavior_reference.csv", "sessionList_ABM.csv",
+                 "agent_behavior_treatment_ranges.csv", "treatment_report.csv",
+                 "agent_class_shares.csv", "person_classes.csv", "agent_patch_choice_weights.csv", "choice_treatment_report.csv")
+    for (f in to_copy) if (file.exists(f)) file.copy(f, file.path(abm_dir, f), overwrite = TRUE)
+    if (!file.exists("agent_behavior_treatment_ranges.csv") &&
+        file.exists(file.path(abm_dir, "agent_behavior_treatment_ranges.csv"))) {
+      file.remove(file.path(abm_dir, "agent_behavior_treatment_ranges.csv"))
+    }
+    cat("Copied to", abm_dir, ":", paste(to_copy[file.exists(to_copy)], collapse = ", "), "\n")
+
+    nl_path <- file.path(abm_dir, "tapSquares_ABM_generator.nlogox")
+    if (!file.exists(nl_path)) {
+      message("No tapSquares_ABM_generator.nlogox in ", abm_dir, " -- treatment widgets not added.")
+    } else {
+      td_used <- treatment_diag %>% filter(used | used_choice)
+      srow <- if (exists("session_list")) session_list[1, , drop = FALSE] else NULL
+      specs <- make_widget_specs(td_used, srow)
+      update_abm_interface(nl_path, specs)
+      cat("ABM interface now has", length(specs), "treatment widget(s):",
+          if (length(specs) == 0) "(none)" else paste0(map_chr(specs, "v"), " [", map_chr(specs, "kind"), "]", collapse = ", "), "\n")
+    }
+  }
+} else if (!promote_to_abm) {
+  message("promote_to_abm is FALSE -- the ABM folder was not touched.")
+}
+```
+
+## Step 11: a PDF guide to the dataset and the fitted model
+
+With `make_pdf_report <- TRUE` this writes `dataset_guide.pdf` next to the
+notebook (no LaTeX needed): what data went in, how many classes of player
+were found, what each class does, the loadings behind it, which treatments
+were and were not usable, who is in which class, and a list of cautions the
+notebook can detect for itself. Read the cautions page before the pictures.
+
+```{r pdf-guide}
+if (make_pdf_report) tryCatch({
+  # ---- labels ----
+  action_labels <- c("-99" = "do nothing")
+  if (file.exists("actionList.csv")) {
+    al <- read_csv("actionList.csv", show_col_types = FALSE)
+    if (all(c("actionID", "imageName") %in% names(al))) {
+      action_labels <- c(action_labels, setNames(paste0(al$actionID, " ", al$imageName), as.character(al$actionID)))
+    }
+  }
+  lab_action <- function(a) { a <- as.character(a); unname(ifelse(a %in% names(action_labels), action_labels[a], a)) }
+  clean_feature <- function(f) gsub("`", "", f)
+
+  md <- model_data %>% mutate(action_lab = lab_action(actionID))
+  if (!is.null(player_classes)) md <- md %>% left_join(player_classes, by = "person_id") else md$class <- NA_character_
+  md <- md %>% mutate(class = coalesce(class, if (is.null(player_classes)) "all persons" else "unclassified"))
+
+  have_loadings <- exists("export_rows") && nrow(export_rows) > 0
+  weights_all <- if (have_loadings) export_rows %>%
+    mutate(feature = clean_feature(feature), action = lab_action(outcome_option)) else NULL
+  n_classes <- if (is.null(player_classes)) 0 else n_distinct(player_classes$class)
+
+  text_page <- function(title, lines, family = "sans", size = 3.6, width = 105) {
+    txt <- paste(unlist(lapply(lines, function(l) c(strwrap(l, width = width), ""))), collapse = "\n")
+    ggplot() +
+      annotate("text", x = 0, y = 1, label = txt, hjust = 0, vjust = 1, size = size, lineheight = 1.1, family = family) +
+      xlim(0, 1) + ylim(0, 1) + labs(title = title) + theme_void() +
+      theme(plot.title = element_text(face = "bold", size = 16), plot.margin = margin(20, 30, 20, 30))
+  }
+
+  # ---- cautions the notebook can detect ----
+  cautions <- character(0)
+  n_sess_all <- n_distinct(model_data$session_id)
+  if (n_sess_all < min_sessions_total) cautions <- c(cautions, sprintf(
+    "Only %d session(s) (treatment checks want at least %d): treatment effects cannot be judged, and everything else rests on few situations.", n_sess_all, min_sessions_total))
+  if (n_classes > 0) {
+    cs <- player_classes %>% count(class)
+    for (i in seq_len(nrow(cs))) if (cs$n[i] < 3) cautions <- c(cautions, sprintf(
+      "Class %s contains only %d person(s). A group that small is an outlier, not a type of player.", cs$class[i], cs$n[i]))
+  } else cautions <- c(cautions, "No classes were formed (too few people with enough decisions, or too little variation); the exported behavior is one pooled model.")
+  if (have_loadings) {
+    big <- sum(abs(export_rows$weight) > 20, na.rm = TRUE)
+    if (big > 0) cautions <- c(cautions, sprintf(
+      "%d of %d fitted weights exceed 20 in size. That usually means a few choices were predicted perfectly from too little data; those weights are not interpretable and can make ABM agents behave extremely.", big, nrow(export_rows)))
+  }
+  if (exists("no_roster") && nrow(no_roster) > 0) cautions <- c(cautions, sprintf(
+    "%d player(s) had no recorded ID, so each counts as a separate person and cannot be linked across sessions.", nrow(no_roster)))
+  per_person_n <- model_data %>% count(person_id)
+  few <- sum(per_person_n$n < min_decisions_per_person)
+  if (few > 0) cautions <- c(cautions, sprintf(
+    "%d of %d people have fewer than %d recorded decisions and were left out of the per-person fits and clustering.", few, nrow(per_person_n), min_decisions_per_person))
+  if (use_patch_choice && !patch_choice_ok) cautions <- c(cautions, paste0(
+    "Where people act could not be modeled (", pc_note, "), so classes cannot reflect which patches people choose."))
+  if (n_classes > 0) cautions <- c(cautions, paste0("How the classes were formed: ", class_selection_note,
+    ". Classes come from clustering noisy per-person weights, so treat them as a description of this sample."))
+  if (length(cautions) == 0) cautions <- "None detected."
+
+  # ---- pages ----
+  pages <- list()
+
+  pages$summary <- function() {
+    ts <- if (length(treatments_used) == 0) "none" else paste(treatments_used, collapse = ", ")
+    n_cand <- if (exists("treatment_diag")) nrow(treatment_diag) else 0
+    cls <- if (n_classes == 0) "none (pooled model)" else paste(
+      sprintf("%s: %d person(s)", (player_classes %>% count(class))$class, (player_classes %>% count(class))$n), collapse = "; ")
+    text_page("Dataset guide: summary", c(
+      sprintf("Sessions: %d.  People (distinct IDs): %d, of whom %d appear in more than one session.  Recorded decisions: %d.",
+              n_sess_all, n_distinct(model_data$person_id), sum(person_summary$n_sessions > 1), nrow(model_data)),
+      sprintf("Players per session: %s.  Rounds: up to %s.", paste(range((person_map %>% count(session_id))$n), collapse = " to "), max(model_data$round, na.rm = TRUE)),
+      sprintf("Choices modeled: %s.  Reference choice (all weights are log-odds relative to it): %s.",
+              paste(lab_action(sort(unique(model_data$actionID))), collapse = ", "), lab_action(reference_action)),
+      sprintf("Classes of player found: %d.  %s", n_classes, cls),
+      sprintf("Session settings examined as possible treatments: %d.  Used as predictors: %s.", n_cand, ts),
+      if (patch_choice_ok) paste0("Patch-choice model: ", pc_note, ". Treatments: ", choice_treatment_note, ".") else "Patch-choice model: not run.",
+      "CAUTIONS (detected automatically):", paste("-", cautions)), size = 3.8)
+  }
+
+  pages$how_to <- function() text_page("How to read this guide", c(
+    "A WEIGHT is a coefficient from a multinomial logit: how much a feature raises (positive) or lowers (negative) the log-odds of a choice, relative to the reference choice. A weight of 0.7 roughly doubles the odds; -0.7 roughly halves them, other things equal.",
+    "A CLASS is a group of people whose individual models would choose alike in the same circumstances. By default (class_basis = 'choice') that means which patches they go for next, or whether they stop (the patch-choice model, Step 6b); the action they take there is described separately. A class describes how people respond to the board and game state in this data; it is not a personality type. WHEN a person acts is invisible unless round/phase were switched on in variableRoles.csv.",
+    "PATCH-CHOICE weights (the 'where' heat map) are per standard deviation of each feature: blue = patches with more of it are more likely to be picked next, red = less likely. Rows named stop and stop_k describe the tendency to end the turn, and how it grows with the number of picks already made. cropOwner_mine (or similar) means the patch holds the player's own crop; avail_N means action N is possible there. A name like p_fine:protected? is a TREATMENT crossing: how a session setting changes the appeal of that kind of patch (negative: patches with it become less likely to be picked as the setting rises).",
+    "Heat maps: rows are features, columns are choices, colour shows the weight (clipped for readability; the printed number is the true value). Red lowers the chance of that choice, blue raises it.",
+    "TREATMENTS are session-level settings (e.g. fine probability, cost of protecting). A treatment is USED only if the data vary enough in it, it cannot be confused with another setting, and it improves prediction on whole sessions it was not fitted on. 'Not used' means this data cannot show an effect, not that there is none.",
+    "Features named like water?TRUE are yes/no state; names ending in a level (e.g. ownedBy1) are categories compared with the left-out level.",
+    "With few sessions or few people per class, treat every picture as a description of this sample, not a finding about farmers in general."), size = 3.8)
+
+  pages$actions <- function() {
+    d <- md %>% count(action_lab) %>% mutate(share = n / sum(n))
+    ggplot(d, aes(reorder(action_lab, n), n)) + geom_col(fill = "#4a7ab5") +
+      geom_text(aes(label = sprintf("%d (%.0f%%)", n, 100 * share)), hjust = -0.1, size = 3.5) +
+      coord_flip() + scale_y_continuous(expand = expansion(mult = c(0, 0.2))) +
+      labs(title = "What people chose", subtitle = "Recorded decisions by choice, all sessions", x = NULL, y = "decisions") + theme_minimal(base_size = 12)
+  }
+
+  pages$people <- function() {
+    d <- md %>% count(person_id, class) %>% arrange(desc(n))
+    d$person_id <- factor(d$person_id, levels = rev(d$person_id))
+    ggplot(d, aes(person_id, n, fill = class)) + geom_col() + coord_flip() +
+      geom_hline(yintercept = min_decisions_per_person, linetype = "dashed") +
+      labs(title = "How much data each person contributes", subtitle = sprintf("Dashed line = minimum (%d) for an individual fit", min_decisions_per_person),
+           x = NULL, y = "decisions", fill = "class") + theme_minimal(base_size = 10)
+  }
+
+  pages$class_mix <- function() {
+    d <- md %>% count(class, action_lab) %>% group_by(class) %>% mutate(share = n / sum(n)) %>% ungroup()
+    np <- md %>% distinct(class, person_id) %>% count(class, name = "persons")
+    d <- d %>% left_join(np, by = "class") %>% mutate(class_lab = sprintf("%s\n(%d people)", class, persons))
+    ggplot(d, aes(class_lab, share, fill = action_lab)) + geom_col() +
+      geom_text(aes(label = ifelse(share > 0.04, sprintf("%.0f%%", 100 * share), "")), position = position_stack(vjust = 0.5), size = 3.3) +
+      scale_y_continuous(labels = scales::percent) +
+      labs(title = "What each class does", subtitle = "Share of the class's decisions by choice", x = NULL, y = NULL, fill = "choice") + theme_minimal(base_size = 12)
+  }
+
+  pages$choice_loadings <- function() {
+    d <- bind_rows(imap(c(class_choice_fits, list(pooled = pooled_choice_fit)),
+                        function(f, nm) tibble(agent_type = nm, feature = pc_fit$colnames, w = f$beta_std)))
+    clipv <- 3
+    d <- d %>% mutate(w_clip = pmax(pmin(w, clipv), -clipv))
+    ord <- d %>% filter(agent_type == "pooled") %>% arrange(desc(abs(w))) %>% pull(feature)
+    d$feature <- factor(d$feature, levels = rev(ord))
+    d$agent_type <- factor(d$agent_type, levels = c(sort(setdiff(unique(d$agent_type), "pooled")), "pooled"))
+    ggplot(d, aes(agent_type, feature, fill = w_clip)) + geom_tile(color = "white") +
+      geom_text(aes(label = round(w, 1)), size = 2.8) +
+      scale_fill_gradient2(low = "#b2182b", mid = "white", high = "#2166ac", limits = c(-clipv, clipv), name = "weight\n(clipped)") +
+      labs(title = "Where each class acts: patch-choice weights",
+           subtitle = "Per standard deviation of each feature. Blue = more likely to be picked next; red = less likely. 'stop' = tendency to end the turn.",
+           x = NULL, y = NULL) + theme_minimal(base_size = 10)
+  }
+
+  loading_page <- function(at) function() {
+    d <- weights_all %>% filter(agent_type == at)
+    top <- d %>% group_by(feature) %>% summarise(m = max(abs(weight)), .groups = "drop") %>% arrange(desc(m)) %>% slice_head(n = 30) %>% pull(feature)
+    d <- d %>% filter(feature %in% top) %>%
+      mutate(feature = factor(feature, levels = rev(top)), w_clip = pmax(pmin(weight, loading_clip), -loading_clip))
+    npers <- if (n_classes > 0) sum(player_classes$class == at) else NA
+    ggplot(d, aes(action, feature, fill = w_clip)) + geom_tile(color = "white") +
+      geom_text(aes(label = round(weight, 1)), size = 2.7) +
+      scale_fill_gradient2(low = "#b2182b", mid = "white", high = "#2166ac", limits = c(-loading_clip, loading_clip), name = "weight\n(clipped)") +
+      labs(title = sprintf("Loadings: %s", at),
+           subtitle = sprintf("%s. Top %d features by largest weight; reference choice = %s",
+                              if (is.na(npers)) "pooled model" else sprintf("%d people", npers), length(top), lab_action(reference_action)),
+           x = "choice", y = NULL) + theme_minimal(base_size = 10)
+  }
+
+  pages$differences <- function() {
+    sp <- weights_all %>% group_by(feature, action) %>%
+      summarise(rng = max(weight) - min(weight), .groups = "drop") %>% arrange(desc(rng)) %>% slice_head(n = 20)
+    d <- weights_all %>% inner_join(sp, by = c("feature", "action")) %>% mutate(pair = paste0(action, "  |  ", feature))
+    d$pair <- factor(d$pair, levels = rev(unique(d$pair[order(-d$rng)])))
+    ggplot(d, aes(weight, pair, color = agent_type)) + geom_point(size = 3) +
+      geom_vline(xintercept = 0, linetype = "dotted") +
+      labs(title = "What separates the classes", subtitle = "The 20 (choice | feature) pairs whose weights differ most between classes",
+           x = "weight", y = NULL, color = "class") + theme_minimal(base_size = 10)
+  }
+
+  pages$treat_overview <- function() {
+    td <- treatment_diag
+    const <- td %>% filter(grepl("^constant", notes) | n_distinct == 1)
+    d <- td %>% filter(!(variable %in% const$variable)) %>% mutate(cv_plot = ifelse(is.na(cv_gain), 0, cv_gain))
+    sub <- sprintf("%d setting(s) did not vary across sessions and are not shown. Gain = improvement in predicting held-out sessions (needs > %g to be used).", nrow(const), cv_min_gain)
+    if (nrow(d) == 0) return(text_page("Treatments", c("No session setting varied across the sessions in this data, so no treatment could be examined.", sub)))
+    ggplot(d, aes(reorder(variable, cv_plot), cv_plot, fill = overall)) + geom_col() +
+      geom_hline(yintercept = cv_min_gain, linetype = "dashed") +
+      geom_text(aes(label = paste0(source, "; ", variation_verdict)), hjust = 0, size = 3, y = 0, nudge_y = max(d$cv_plot, cv_min_gain) * 0.02) +
+      coord_flip() + labs(title = "Treatments: what could be examined", subtitle = sub, x = NULL, y = "held-out gain per decision", fill = NULL) +
+      theme_minimal(base_size = 11) + theme(legend.position = "bottom")
+  }
+
+  pages$treat_effects <- function() {
+    tf <- weights_all %>% filter(Reduce(`|`, lapply(treatments_used, function(tv) startsWith(feature, tv))))
+    ggplot(tf, aes(weight, action, color = agent_type)) + geom_point(size = 3) +
+      geom_vline(xintercept = 0, linetype = "dotted") + facet_wrap(~ feature, scales = "free_x") +
+      labs(title = "Treatment effects in the fitted behavior", subtitle = "Weight of each used treatment, per choice and class (log-odds vs the reference choice)",
+           x = "weight", y = NULL, color = "class") + theme_minimal(base_size = 11)
+  }
+
+  roster_pages <- function() {
+    r <- person_summary %>% left_join(per_person_n, by = "person_id") %>%
+      left_join(if (is.null(player_classes)) tibble(person_id = character(), class = character()) else player_classes, by = "person_id") %>%
+      mutate(class = coalesce(class, "-")) %>% arrange(class, person_id)
+    r <- r %>% transmute(person = person_id, sessions = n_sessions, decisions = n, class = class)
+    chunks <- split(r, ceiling(seq_len(nrow(r)) / 40))
+    lapply(seq_along(chunks), function(i) function() {
+      tab <- capture.output(print(as.data.frame(chunks[[i]]), row.names = FALSE, right = FALSE))
+      text_page(sprintf("Who is in which class (%d of %d)", i, length(chunks)), tab, family = "mono", size = 3.4, width = 120)
+    })
+  }
+
+  page_list <- list(pages$summary, pages$how_to, pages$actions, pages$people)
+  if (n_classes > 0) page_list <- c(page_list, list(pages$class_mix))
+  if (patch_choice_ok) page_list <- c(page_list, list(pages$choice_loadings))
+  if (have_loadings) page_list <- c(page_list, lapply(sort(unique(weights_all$agent_type)), loading_page))
+  if (have_loadings && n_distinct(weights_all$agent_type) >= 2) page_list <- c(page_list, list(pages$differences))
+  if (exists("treatment_diag") && nrow(treatment_diag) > 0) page_list <- c(page_list, list(pages$treat_overview))
+  if (have_loadings && length(treatments_used) > 0) page_list <- c(page_list, list(pages$treat_effects))
+  page_list <- c(page_list, roster_pages())
+
+  pdf(report_file, width = 11, height = 8.5)
+  n_ok <- 0
+  for (pg in page_list) {
+    ok <- tryCatch({ print(pg()); TRUE }, error = function(e) { message("Guide page skipped: ", conditionMessage(e)); FALSE })
+    n_ok <- n_ok + ok
+  }
+  dev.off()
+  cat("Wrote", report_file, "with", n_ok, "of", length(page_list), "page(s).\n")
+}, error = function(e) message("PDF guide failed (the rest of the notebook is unaffected): ", conditionMessage(e)))
+```
+
+## Notes / what this notebook deliberately doesn't do yet
+
+- **Own-patch state only.** Predictors come only from the patch itself
+  (the action model) or from each candidate patch separately (the
+  patch-choice model), not from the fuller board-wide / multi-scale
+  feature set discussed earlier. Treatments enter only the action model
+  as additive effects, not the patch-choice model (a session-wide setting
+  cancels out of a choice among patches unless it is crossed with a
+  patch feature).
+- **Patch-choice treatment crossings (names like `p_fine:protected?`)** are products of a session setting and a patch feature; the ABM does not evaluate `a:b` names yet.
+- **The ABM does not use the patch-choice weights yet.** It still picks
+  where to act by scoring every action on every patch against "do
+  nothing". `agent_patch_choice_weights.csv` is written for the next step.
+- **No visibility-treatment handling** yet.
+- **Person identity is whatever was typed at entry.** The same string in
+  two sessions is taken to be the same person; typos, nicknames or two
+  people sharing a name will blur individuals. Logs without PLAYER lines
+  give every player a session-local placeholder ID.
+- **Treatments are additive main effects.** No interactions with state,
+  and no session-level random effects. Treatment weights from a small or
+  narrow pool are weak evidence; Step 5a reports whether the pool could
+  show an effect at all, not that the effect is real.
+- **Mean-of-list settings (e.g. `pRain_mean`) are diagnosed but not used**:
+  the ABM cannot evaluate those names.
+- **Assumes one consistent game per batch of files** (same
+  `patchPropertyList` schema across sessions).
+- **The per-player-then-cluster approach is an approximation.** A real
+  latent-class discrete choice model (`gmnl`, `model = "lc"`) is the
+  more rigorous version, worth moving to once there's enough data
+  across enough sessions/players to make joint EM estimation pay off
+  over this simpler two-step version.
+- **The two-stage `decision_stage` column is a placeholder.** Nothing
+  currently populates more than one stage.
+- **Exactly two available actions is a rough edge** for `coef()`'s
+  output shape, handled by skipping (with a message) rather than
+  guessing at a fix, in the per-player, clustering, and export steps.
+- **Categorical counter/ownership levels unseen at prediction time**
+  are this notebook's problem only insofar as they can't be fit on
+  data that doesn't contain them. Making the *ABM generator* degrade
+  gracefully (rather than erroring) when it encounters an unseen
+  categorical level at runtime is separate NetLogo-side work, tracked
+  alongside this file, not solved here.

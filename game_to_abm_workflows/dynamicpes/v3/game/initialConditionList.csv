@@ -1,0 +1,6 @@
+conditionID,variable,conditionType,probability,onlyIf,notIf,valueMode,valueExpression,minValue,maxValue
+1,hasGrass,boolean,0.25,,,fixed,TRUE,,
+2,hasCanola,boolean,1,,"""hasGrass""",fixed,TRUE,,
+3,soilQuality,numeric,1,,,expression,max (list 0 random-normal soilQualityMean soilQualitySD),,
+4,grassCount,numeric,1,"""hasGrass""",,expression,soilQuality * fullGrass,,
+5,canolaCount,numeric,1,"""hasCanola""",,expression,soilQuality * fullCanola,,
